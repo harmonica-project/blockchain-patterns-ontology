@@ -1,0 +1,224 @@
+@prefix : <http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns> .
+
+<http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BenefitsFrom
+:BenefitsFrom rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CanonicalExampleOf
+:CanonicalExampleOf rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :ConcreteExampleOf .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ConcreteExampleOf
+:ConcreteExampleOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#RelatedTo
+:RelatedTo rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Requires
+:Requires rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#VariantOf
+:VariantOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ArchitecturalPattern
+:ArchitecturalPattern rdf:type owl:Class ;
+                      rdfs:subClassOf :SoftwarePattern ;
+                      rdfs:label "Architectural pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BPMFeaturePattern
+:BPMFeaturePattern rdf:type owl:Class ;
+                   rdfs:subClassOf :FeaturePattern ;
+                   rdfs:label "BPM feature pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractAccessControlPattern
+:ContractAccessControlPattern rdf:type owl:Class ;
+                              rdfs:subClassOf :SmartContractPattern ;
+                              rdfs:label "Contract access-control pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractEfficiencyPattern
+:ContractEfficiencyPattern rdf:type owl:Class ;
+                           rdfs:subClassOf :SmartContractPattern ;
+                           rdfs:label "Contract efficiency pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractManagementPattern
+:ContractManagementPattern rdf:type owl:Class ;
+                           rdfs:subClassOf :SmartContractPattern ;
+                           rdfs:label "Contract management pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractSecurityPattern
+:ContractSecurityPattern rdf:type owl:Class ;
+                         rdfs:subClassOf :SmartContractPattern ;
+                         rdfs:label "Contract security pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DataManagementPattern
+:DataManagementPattern rdf:type owl:Class ;
+                       rdfs:subClassOf :OnChainPattern ;
+                       rdfs:label "Data management pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DecentralizedIdentityFeaturePattern
+:DecentralizedIdentityFeaturePattern rdf:type owl:Class ;
+                                     rdfs:subClassOf :FeaturePattern ;
+                                     rdfs:label "Decentralized identity feature pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DesignPattern
+:DesignPattern rdf:type owl:Class ;
+               rdfs:subClassOf :SoftwarePattern ;
+               rdfs:label "Design pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EncryptionPattern
+:EncryptionPattern rdf:type owl:Class ;
+                   rdfs:subClassOf :DataManagementPattern ;
+                   rdfs:label "Encryption pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FeaturePattern
+:FeaturePattern rdf:type owl:Class ;
+                rdfs:subClassOf :OnChainPattern ;
+                rdfs:label "Feature pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Idiom
+:Idiom rdf:type owl:Class ;
+       rdfs:subClassOf :SoftwarePattern ;
+       rdfs:label "Idiom"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MigrationPattern
+:MigrationPattern rdf:type owl:Class ;
+                  rdfs:subClassOf :DataManagementPattern ;
+                  rdfs:label "Migration pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainStoragePattern
+:OffChainStoragePattern rdf:type owl:Class ;
+                        rdfs:subClassOf :OnOffChainInteractionPattern ;
+                        rdfs:label "Off-chain storage pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainPattern
+:OnChainPattern rdf:type owl:Class ;
+                rdfs:subClassOf :DesignPattern ;
+                rdfs:label "On-chain pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnOffChainInteractionPattern
+:OnOffChainInteractionPattern rdf:type owl:Class ;
+                              rdfs:subClassOf :DesignPattern ;
+                              rdfs:label "On/off-chain interaction pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Oracle
+:Oracle rdf:type owl:Class ;
+        rdfs:subClassOf :OraclePattern ;
+        rdfs:label "Oracle"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OraclePattern
+:OraclePattern rdf:type owl:Class ;
+               rdfs:subClassOf :OnOffChainInteractionPattern ;
+               rdfs:label "Oracle pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OtherFeaturePattern
+:OtherFeaturePattern rdf:type owl:Class ;
+                     rdfs:subClassOf :FeaturePattern ;
+                     rdfs:label "Other feature pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Pattern
+:Pattern rdf:type owl:Class ;
+         rdfs:label "Pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ReverseOracle
+:ReverseOracle rdf:type owl:Class ;
+               rdfs:subClassOf :OraclePattern ;
+               rdfs:label "Reverse oracle"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractPattern
+:SmartContractPattern rdf:type owl:Class ;
+                      rdfs:subClassOf :OnChainPattern ;
+                      rdfs:label "Smart-contract pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SoftwarePattern
+:SoftwarePattern rdf:type owl:Class ;
+                 rdfs:subClassOf :Pattern ;
+                 rdfs:label "Software pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StoragePattern
+:StoragePattern rdf:type owl:Class ;
+                rdfs:subClassOf :DataManagementPattern ;
+                rdfs:label "Storage pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransactionsPattern
+:TransactionsPattern rdf:type owl:Class ;
+                     rdfs:subClassOf :OnOffChainInteractionPattern ;
+                     rdfs:label "Transactions pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#WalletAndKeysPattern
+:WalletAndKeysPattern rdf:type owl:Class ;
+                      rdfs:subClassOf :OnOffChainInteractionPattern ;
+                      rdfs:label "Wallet and keys pattern"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CanonicalOracle
+:CanonicalOracle rdf:type owl:NamedIndividual ,
+                          :Oracle ;
+                 :CanonicalExampleOf :OracleP1 ,
+                                     :OracleP2 .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OracleP1
+:OracleP1 rdf:type owl:NamedIndividual ,
+                   :Oracle .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OracleP2
+:OracleP2 rdf:type owl:NamedIndividual ,
+                   :Oracle .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
