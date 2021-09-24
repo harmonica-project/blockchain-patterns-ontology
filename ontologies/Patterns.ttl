@@ -64,13 +64,15 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContextAndProblem
 :ContextAndProblem rdf:type owl:DatatypeProperty ;
-                   rdfs:range xsd:string ;
+                   rdfs:domain :Pattern ;
+                   rdfs:range rdfs:Literal ;
                    rdfs:label "Context and problem" .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Solution
 :Solution rdf:type owl:DatatypeProperty ;
-          rdfs:range xsd:string ;
+          rdfs:domain :Pattern ;
+          rdfs:range rdfs:Literal ;
           rdfs:label "Solution" .
 
 
@@ -199,10 +201,10 @@ owl:topObjectProperty rdfs:domain :Pattern ;
             rdfs:label "Healthcare"@en .
 
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HyperledgerFabric
-:HyperledgerFabric rdf:type owl:Class ;
-                   rdfs:subClassOf :SpecificBlockchain ;
-                   rdfs:label "Hyperledger Fabric"@en .
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HyperledgerSawtooth
+:HyperledgerSawtooth rdf:type owl:Class ;
+                     rdfs:subClassOf :SpecificBlockchain ;
+                     rdfs:label "Hyperledger Sawtooth"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IdentityManagement
