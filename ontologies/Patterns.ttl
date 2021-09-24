@@ -12,49 +12,107 @@
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BenefitsFrom
-:BenefitsFrom rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf owl:topObjectProperty .
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#benefitsFrom
+:benefitsFrom rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Pattern ;
+              rdfs:range :Pattern .
 
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CanonicalExampleOf
-:CanonicalExampleOf rdf:type owl:ObjectProperty ;
-                    owl:inverseOf :ConcreteExampleOf .
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasCanonical
+:hasCanonical rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :hasExample ;
+              rdfs:domain :PaperBased ;
+              rdfs:range :Canonical .
 
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ConcreteExampleOf
-:ConcreteExampleOf rdf:type owl:ObjectProperty .
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasExample
+:hasExample rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Canonical ;
+            rdfs:range :PaperBased .
 
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#RelatedTo
-:RelatedTo rdf:type owl:ObjectProperty ;
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#relatedTo
+:relatedTo rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty .
 
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Requires
-:Requires rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf owl:topObjectProperty .
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#requires
+:requires rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Pattern ;
+          rdfs:range :Pattern .
 
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#VariantOf
-:VariantOf rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf owl:topObjectProperty .
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#variantOf
+:variantOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :Pattern ;
+           rdfs:range :Pattern .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdfs:domain :Pattern ;
+                      rdfs:range :Pattern .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContextAndProblem
+:ContextAndProblem rdf:type owl:DatatypeProperty ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "Context and problem" .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Solution
+:Solution rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:string ;
+          rdfs:label "Solution" .
 
 
 #################################################################
 #    Classes
 #################################################################
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AllBlockchains
+:AllBlockchains rdf:type owl:Class ;
+                rdfs:subClassOf :TargetedTechnology ;
+                owl:disjointWith :SpecificBlockchain ;
+                rdfs:label "All blockchains"@en .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ArchitecturalPattern
 :ArchitecturalPattern rdf:type owl:Class ;
-                      rdfs:subClassOf :SoftwarePattern ;
+                      rdfs:subClassOf :Pattern ;
                       rdfs:label "Architectural pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BPM
+:BPM rdf:type owl:Class ;
+     rdfs:subClassOf :Specific ;
+     rdfs:label "BPM"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BPMFeaturePattern
 :BPMFeaturePattern rdf:type owl:Class ;
                    rdfs:subClassOf :FeaturePattern ;
                    rdfs:label "BPM feature pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BigData
+:BigData rdf:type owl:Class ;
+         rdfs:subClassOf :Specific ;
+         rdfs:label "Big data"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Canonical
+:Canonical rdf:type owl:Class ;
+           rdfs:subClassOf :Scope ;
+           rdfs:label "Canonical"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractAccessControlPattern
@@ -95,8 +153,13 @@
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DesignPattern
 :DesignPattern rdf:type owl:Class ;
-               rdfs:subClassOf :SoftwarePattern ;
+               rdfs:subClassOf :Pattern ;
                rdfs:label "Design pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Domain
+:Domain rdf:type owl:Class ;
+        rdfs:label "Domain"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EncryptionPattern
@@ -105,15 +168,52 @@
                    rdfs:label "Encryption pattern"@en .
 
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Ethereum
+:Ethereum rdf:type owl:Class ;
+          rdfs:subClassOf :SpecificBlockchain ;
+          rdfs:label "Ethereum"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#External
+:External rdf:type owl:Class ;
+          rdfs:subClassOf :Scope ;
+          rdfs:label "External"@en .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FeaturePattern
 :FeaturePattern rdf:type owl:Class ;
                 rdfs:subClassOf :OnChainPattern ;
                 rdfs:label "Feature pattern"@en .
 
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#General
+:General rdf:type owl:Class ;
+         rdfs:subClassOf :Domain ;
+         owl:disjointWith :Specific ;
+         rdfs:label "General"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Healthcare
+:Healthcare rdf:type owl:Class ;
+            rdfs:subClassOf :Specific ;
+            rdfs:label "Healthcare"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HyperledgerFabric
+:HyperledgerFabric rdf:type owl:Class ;
+                   rdfs:subClassOf :SpecificBlockchain ;
+                   rdfs:label "Hyperledger Fabric"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IdentityManagement
+:IdentityManagement rdf:type owl:Class ;
+                    rdfs:subClassOf :Specific ;
+                    rdfs:label "Identity management"@en .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Idiom
 :Idiom rdf:type owl:Class ;
-       rdfs:subClassOf :SoftwarePattern ;
+       rdfs:subClassOf :Pattern ;
        rdfs:label "Idiom"@en .
 
 
@@ -159,8 +259,15 @@
                      rdfs:label "Other feature pattern"@en .
 
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PaperBased
+:PaperBased rdf:type owl:Class ;
+            rdfs:subClassOf :Scope ;
+            rdfs:label "Paper-based"@en .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Pattern
 :Pattern rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ;
          rdfs:label "Pattern"@en .
 
 
@@ -170,22 +277,57 @@
                rdfs:label "Reverse oracle"@en .
 
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Scope
+:Scope rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing ;
+       rdfs:label "Scope"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractEnabledBlockchains
+:SmartContractEnabledBlockchains rdf:type owl:Class ;
+                                 rdfs:subClassOf :AllBlockchains ;
+                                 rdfs:label "Smart-contract enabled blockchains"@en .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractPattern
 :SmartContractPattern rdf:type owl:Class ;
                       rdfs:subClassOf :OnChainPattern ;
                       rdfs:label "Smart-contract pattern"@en .
 
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SoftwarePattern
-:SoftwarePattern rdf:type owl:Class ;
-                 rdfs:subClassOf :Pattern ;
-                 rdfs:label "Software pattern"@en .
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Solidity
+:Solidity rdf:type owl:Class ;
+          rdfs:subClassOf :SpecificLanguage ;
+          rdfs:label "Solidity"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Specific
+:Specific rdf:type owl:Class ;
+          rdfs:subClassOf :Domain ;
+          rdfs:label "Specific"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SpecificBlockchain
+:SpecificBlockchain rdf:type owl:Class ;
+                    rdfs:subClassOf :TargetedTechnology ;
+                    rdfs:label "Specific blockchain"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SpecificLanguage
+:SpecificLanguage rdf:type owl:Class ;
+                  rdfs:subClassOf :TargetedTechnology ;
+                  rdfs:label "Specific language"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StoragePattern
 :StoragePattern rdf:type owl:Class ;
                 rdfs:subClassOf :DataManagementPattern ;
                 rdfs:label "Storage pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TargetedTechnology
+:TargetedTechnology rdf:type owl:Class ;
+                    rdfs:label "Targeted technology"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransactionsPattern
@@ -206,19 +348,24 @@
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CanonicalOracle
 :CanonicalOracle rdf:type owl:NamedIndividual ,
+                          :Canonical ,
                           :Oracle ;
-                 :CanonicalExampleOf :OracleP1 ,
-                                     :OracleP2 .
+                 :hasExample :OracleP1 ,
+                             :OracleP2 ;
+                 :ContextAndProblem "It is impossible for a blockchain system to query data from outside. Only transactions to the system can push new data into the blockchain. This is notably a problem for smart-contracts, as they might require up-to-date data to perform."@en ;
+                 :Solution "Use a component named Oracle to push data into the blockchain. An Oracle can push new data when an event is emitted from a smart-contract, or at defined intervals."@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OracleP1
 :OracleP1 rdf:type owl:NamedIndividual ,
-                   :Oracle .
+                   :Oracle ,
+                   :PaperBased .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OracleP2
 :OracleP2 rdf:type owl:NamedIndividual ,
-                   :Oracle .
+                   :Oracle ,
+                   :PaperBased .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
