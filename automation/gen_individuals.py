@@ -2,7 +2,7 @@ import json
 import re
 from string import Template
 
-def parseNameToURI(name):
+def parseToURI(name):
   nameArray = re.split('[, \-!?:()&]+', name)
   nameArray = [word.capitalize() for word in nameArray]
   name = ''.join(nameArray)
@@ -20,8 +20,15 @@ def loadClassTemplate():
 def run():
   patterns, papers = loadSLRData()
   template = loadClassTemplate()
-  print(template)
   for p in patterns:
-    print(Template(template).substitute(owner="nicolas", uri=parseNameToURI(p['Name']), name=p['Name']))
+    type = parseToURI(p['Type'])
+    print(p)
+    if type == "ArchitecturalPattern" or type == "Idiom":
+      print(Template(template).substitute(owner="nicolas", uri=parseToURI(p['Name']), name=p['Name'], category=type))
+    else:
+      if "Subsubcategory" in p:
+        print(Template(template).substitute(owner="nicolas", uri=parseToURI(p['Name']), name=p['Name'], category=parseToURI(p['Subsubcategory'])))
+      else:
+        print(Template(template).substitute(owner="nicolas", uri=parseToURI(p['Name']), name=p['Name'], category=parseToURI(p['Subcategory'])))
 
 run()
