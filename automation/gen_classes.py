@@ -3,7 +3,7 @@ import re
 from string import Template
 
 def parseToURI(name):
-  nameArray = re.split('[, \-!?:()&]+', name)
+  nameArray = re.split('[, \-!?:()&*]+', name)
   nameArray = [word.capitalize() for word in nameArray]
   name = ''.join(nameArray)
   return name
@@ -19,16 +19,19 @@ def loadClassTemplate():
 
 def run():
   patterns, papers = loadSLRData()
+  classes = ''
   template = loadClassTemplate()
   for p in patterns:
     type = parseToURI(p['Type'])
-    print(p)
     if type == "ArchitecturalPattern" or type == "Idiom":
-      print(Template(template).substitute(owner="nicolas", uri=parseToURI(p['Name']), name=p['Name'], category=type))
+      classes += Template(template).substitute(owner="nicolas", uri=parseToURI(p['Name']), name=p['Name'], category=type)
     else:
       if "Subsubcategory" in p:
-        print(Template(template).substitute(owner="nicolas", uri=parseToURI(p['Name']), name=p['Name'], category=parseToURI(p['Subsubcategory'])))
+        classes += Template(template).substitute(owner="nicolas", uri=parseToURI(p['Name']), name=p['Name'], category=parseToURI(p['Subsubcategory']))
       else:
-        print(Template(template).substitute(owner="nicolas", uri=parseToURI(p['Name']), name=p['Name'], category=parseToURI(p['Subcategory'])))
+        classes += Template(template).substitute(owner="nicolas", uri=parseToURI(p['Name']), name=p['Name'], category=parseToURI(p['Subcategory']))
+  
+  with open("classes.txt", "w") as text_file:
+    text_file.write(classes)
 
 run()

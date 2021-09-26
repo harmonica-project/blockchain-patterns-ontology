@@ -6,7 +6,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Storage patterns",
+            "Subsubcategory": "Storage pattern",
             "Target": "Any",
             "Applicability domain": "BPM"
         },
@@ -36,7 +36,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Domain-based pattern",
-            "Subsubcategory": "Other feature pattern",
+            "Subsubcategory": "Multi-domain feature pattern",
             "Target": "Any",
             "Applicability domain": "BPM"
         },
@@ -56,7 +56,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Storage patterns",
+            "Subsubcategory": "Storage pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -66,7 +66,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Storage patterns",
+            "Subsubcategory": "Storage pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -76,7 +76,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract access control patterns",
+            "Subsubcategory": "Contract access control pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -86,7 +86,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract access control patterns",
+            "Subsubcategory": "Contract access control pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -95,7 +95,7 @@
             "Paper": "5",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Oracles patterns",
+            "Subcategory": "Data exchange pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -105,7 +105,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Domain-based pattern",
-            "Subsubcategory": "Other feature pattern",
+            "Subsubcategory": "Multi-domain feature pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -115,7 +115,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Domain-based pattern",
-            "Subsubcategory": "Other feature pattern",
+            "Subsubcategory": "Multi-domain feature pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -125,7 +125,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Domain-based pattern",
-            "Subsubcategory": "Other feature pattern",
+            "Subsubcategory": "Multi-domain feature pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -135,7 +135,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Domain-based pattern",
-            "Subsubcategory": "Other feature pattern",
+            "Subsubcategory": "Multi-domain feature pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -145,7 +145,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract management patterns",
+            "Subsubcategory": "Contract management pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -155,7 +155,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract management patterns",
+            "Subsubcategory": "Contract management pattern",
             "Target": "Hyperledger Sawtooth",
             "Applicability domain": "General"
         },
@@ -165,7 +165,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Target": "Ethereum",
             "Applicability domain": "General"
         },
@@ -175,7 +175,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Target": "Ethereum",
             "Applicability domain": "General"
         },
@@ -195,7 +195,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Domain-based pattern",
-            "Subsubcategory": "Other feature pattern",
+            "Subsubcategory": "Multi-domain feature pattern",
             "Target": "Ethereum",
             "Applicability domain": "General"
         },
@@ -205,7 +205,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Domain-based pattern",
-            "Subsubcategory": "Other feature pattern",
+            "Subsubcategory": "Multi-domain feature pattern",
             "Target": "Ethereum",
             "Applicability domain": "General"
         },
@@ -215,7 +215,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Target": "Ethereum",
             "Applicability domain": "General"
         },
@@ -224,7 +224,7 @@
             "Paper": "11",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Oracles patterns",
+            "Subcategory": "Data exchange pattern",
             "Introduced in (paper ID)": "11, 13, 27, 32, 33, 9",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -252,7 +252,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract management patterns",
+            "Subsubcategory": "Contract management pattern",
             "Introduced in (paper ID)": "11, 13, 27, 32, 33",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -264,7 +264,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract access control patterns",
+            "Subsubcategory": "Contract access control pattern",
             "Introduced in (paper ID)": "7, 11, 13, 28, 33, 9",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -276,7 +276,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract management patterns",
+            "Subsubcategory": "Contract management pattern",
             "Introduced in (paper ID)": "11, 13, 38, 33, 34, 37",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -287,7 +287,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Introduced in (paper ID)": "11, 35, 32",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -298,7 +298,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Introduced in (paper ID)": "11, 35, 32, 33",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -309,7 +309,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Introduced in (paper ID)": "11, 35, 32, 33",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -320,7 +320,7 @@
             "Paper": "11",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Oracles patterns",
+            "Subcategory": "Data exchange pattern",
             "Introduced in (paper ID)": "11, 13, 33, 5",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -342,7 +342,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Encryption patterns",
+            "Subsubcategory": "Encryption pattern",
             "Introduced in (paper ID)": "11, 27, 32",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -354,7 +354,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract management patterns",
+            "Subsubcategory": "Contract management pattern",
             "Introduced in (paper ID)": "11, 27, 32, 33, 34, 37, 20, 38",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -365,7 +365,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract access control patterns",
+            "Subsubcategory": "Contract access control pattern",
             "Introduced in (paper ID)": "11, 28",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -376,7 +376,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract management patterns",
+            "Subsubcategory": "Contract management pattern",
             "Introduced in (paper ID)": "11, 38, 34",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -418,7 +418,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract access control patterns",
+            "Subsubcategory": "Contract access control pattern",
             "Introduced in (paper ID)": "13, 28, 37",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -429,7 +429,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract access control patterns",
+            "Subsubcategory": "Contract access control pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -438,7 +438,7 @@
             "Paper": "13",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Wallet and keys patterns",
+            "Subcategory": "Wallet and keys pattern",
             "Target": "Any",
             "Applicability domain": "Identity management"
         },
@@ -447,7 +447,7 @@
             "Paper": "14",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Wallet and keys patterns",
+            "Subcategory": "Wallet and keys pattern",
             "Target": "Any",
             "Applicability domain": "Identity management"
         },
@@ -456,7 +456,7 @@
             "Paper": "14",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Wallet and keys patterns",
+            "Subcategory": "Wallet and keys pattern",
             "Target": "Any",
             "Applicability domain": "Identity management"
         },
@@ -516,7 +516,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Domain-based pattern",
-            "Subsubcategory": "Other feature pattern",
+            "Subsubcategory": "Multi-domain feature pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "Identity management"
         },
@@ -526,7 +526,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Domain-based pattern",
-            "Subsubcategory": "Other feature pattern",
+            "Subsubcategory": "Multi-domain feature pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "Identity management"
         },
@@ -536,7 +536,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Domain-based pattern",
-            "Subsubcategory": "Other feature pattern",
+            "Subsubcategory": "Multi-domain feature pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "Identity management"
         },
@@ -546,7 +546,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Migration patterns",
+            "Subsubcategory": "Migration pattern",
             "Target": "Any",
             "Applicability domain": "General"
         },
@@ -556,7 +556,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Migration patterns",
+            "Subsubcategory": "Migration pattern",
             "Target": "Any",
             "Applicability domain": "General"
         },
@@ -566,7 +566,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Migration patterns",
+            "Subsubcategory": "Migration pattern",
             "Target": "Any",
             "Applicability domain": "General"
         },
@@ -576,7 +576,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Migration patterns",
+            "Subsubcategory": "Migration pattern",
             "Target": "Any",
             "Applicability domain": "General"
         },
@@ -586,7 +586,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Migration patterns",
+            "Subsubcategory": "Migration pattern",
             "Target": "Any",
             "Applicability domain": "General"
         },
@@ -596,7 +596,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Migration patterns",
+            "Subsubcategory": "Migration pattern",
             "Target": "Any",
             "Applicability domain": "General"
         },
@@ -606,7 +606,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Migration patterns",
+            "Subsubcategory": "Migration pattern",
             "Target": "Any",
             "Applicability domain": "General"
         },
@@ -616,7 +616,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Migration patterns",
+            "Subsubcategory": "Migration pattern",
             "Target": "Any",
             "Applicability domain": "General"
         },
@@ -626,7 +626,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Migration patterns",
+            "Subsubcategory": "Migration pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -636,7 +636,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Migration patterns",
+            "Subsubcategory": "Migration pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -646,7 +646,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Domain-based pattern",
-            "Subsubcategory": "Other feature pattern",
+            "Subsubcategory": "Big data pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "Big Data"
         },
@@ -656,7 +656,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Storage patterns",
+            "Subsubcategory": "Storage pattern",
             "Target": "Ethereum",
             "Applicability domain": "General"
         },
@@ -882,7 +882,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Domain-based pattern",
-            "Subsubcategory": "Other feature pattern",
+            "Subsubcategory": "Multi-domain feature pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -900,7 +900,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Encryption patterns",
+            "Subsubcategory": "Encryption pattern",
             "Introduced in (paper ID)": "31, 13, 33, 28",
             "Target": "Any",
             "Applicability domain": "General"
@@ -931,7 +931,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Domain-based pattern",
-            "Subsubcategory": "Other feature pattern",
+            "Subsubcategory": "Multi-domain feature pattern",
             "Introduced in (paper ID)": "32, 27",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -942,7 +942,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract access control patterns",
+            "Subsubcategory": "Contract access control pattern",
             "Introduced in (paper ID)": "32, 27, 33",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -953,7 +953,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract access control patterns",
+            "Subsubcategory": "Contract access control pattern",
             "Introduced in (paper ID)": "32, 27",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -973,7 +973,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Introduced in (paper ID)": "32, 27",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -984,7 +984,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract management patterns",
+            "Subsubcategory": "Contract management pattern",
             "Introduced in (paper ID)": "32, 27",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -995,7 +995,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Introduced in (paper ID)": "32, 35, 33",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -1006,7 +1006,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Introduced in (paper ID)": "32, 35, 33",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -1017,7 +1017,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Introduced in (paper ID)": "33, 35",
             "Target": "Ethereum",
             "Applicability domain": "General"
@@ -1028,7 +1028,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Target": "Ethereum",
             "Applicability domain": "General"
         },
@@ -1038,7 +1038,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Introduced in (paper ID)": "33, 9",
             "Target": "Ethereum",
             "Applicability domain": "General"
@@ -1049,7 +1049,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Introduced in (paper ID)": "33, 9",
             "Target": "Ethereum",
             "Applicability domain": "General"
@@ -1060,7 +1060,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract security patterns",
+            "Subsubcategory": "Contract security pattern",
             "Introduced in (paper ID)": "33, 9",
             "Target": "Ethereum",
             "Applicability domain": "General"
@@ -1083,7 +1083,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Data management pattern",
-            "Subsubcategory": "Storage patterns",
+            "Subsubcategory": "Storage pattern",
             "Introduced in (paper ID)": "13, 33, 25, 9, 5",
             "Target": "Ethereum",
             "Applicability domain": "General"
@@ -1093,7 +1093,7 @@
             "Paper": "33",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Transaction patterns",
+            "Subcategory": "Transaction pattern",
             "Introduced in (paper ID)": "13, 33",
             "Target": "Ethereum",
             "Applicability domain": "General"
@@ -1104,7 +1104,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract management patterns",
+            "Subsubcategory": "Contract management pattern",
             "Introduced in (paper ID)": "13, 20, 27, 32, 33",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -1152,7 +1152,7 @@
             "Paper": "39",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Oracles patterns",
+            "Subcategory": "Data exchange pattern",
             "Target": "Any",
             "Applicability domain": "General"
         },
@@ -1161,7 +1161,7 @@
             "Paper": "39",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Oracles patterns",
+            "Subcategory": "Data exchange pattern",
             "Target": "Any",
             "Applicability domain": "General"
         },
@@ -1170,7 +1170,7 @@
             "Paper": "39",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Oracles patterns",
+            "Subcategory": "Data exchange pattern",
             "Target": "Any",
             "Applicability domain": "General"
         },
@@ -1179,7 +1179,7 @@
             "Paper": "39",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Oracles patterns",
+            "Subcategory": "Data exchange pattern",
             "Target": "Any",
             "Applicability domain": "General"
         },
@@ -1189,7 +1189,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract management patterns",
+            "Subsubcategory": "Contract management pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -1199,7 +1199,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract management patterns",
+            "Subsubcategory": "Contract management pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -1209,7 +1209,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract management patterns",
+            "Subsubcategory": "Contract management pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -1219,7 +1219,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract management patterns",
+            "Subsubcategory": "Contract management pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -1229,7 +1229,7 @@
             "Type": "Design pattern",
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
-            "Subsubcategory": "Contract access control patterns",
+            "Subsubcategory": "Contract access control pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         }

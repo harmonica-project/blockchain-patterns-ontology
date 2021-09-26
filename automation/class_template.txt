@@ -2,3 +2,4 @@
 :$uri rdf:type owl:Class ;
                        rdfs:subClassOf :$category ;
                        rdfs:label "$name"@en .
+
