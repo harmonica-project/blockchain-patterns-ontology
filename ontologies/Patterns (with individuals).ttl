@@ -221,7 +221,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ConfidentialAndPseudoAnonymousContractEnforcement
 :ConfidentialAndPseudoAnonymousContractEnforcement rdf:type owl:Class ;
-                                                   rdfs:subClassOf :DataManagementPattern ;
+                                                   rdfs:subClassOf :OffChainStoragePattern ;
                                                    rdfs:label "Confidential and pseudo-anonymous contract enforcement"@en .
 
 
@@ -329,7 +329,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegatedComputation
 :DelegatedComputation rdf:type owl:Class ;
-                      rdfs:subClassOf :DataManagementPattern ;
+                      rdfs:subClassOf :OffChainStoragePattern ;
                       rdfs:label "Delegated Computation"@en .
 
 
@@ -491,7 +491,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HashTimestamping
 :HashTimestamping rdf:type owl:Class ;
-                  rdfs:subClassOf :DataManagementPattern ;
+                  rdfs:subClassOf :OffChainStoragePattern ;
                   rdfs:label "Hash timestamping"@en .
 
 
@@ -569,7 +569,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LegalAndSmartContractPair
 :LegalAndSmartContractPair rdf:type owl:Class ;
-                           rdfs:subClassOf :DataManagementPattern ;
+                           rdfs:subClassOf :OffChainStoragePattern ;
                            rdfs:label "Legal and smart-contract pair"@en .
 
 
@@ -683,13 +683,13 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainContractRegistry
 :OffChainContractRegistry rdf:type owl:Class ;
-                          rdfs:subClassOf :DataManagementPattern ;
+                          rdfs:subClassOf :OffChainStoragePattern ;
                           rdfs:label "(Off-chain) Contract Registry"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainDataStorage
 :OffChainDataStorage rdf:type owl:Class ;
-                     rdfs:subClassOf :DataManagementPattern ;
+                     rdfs:subClassOf :OffChainStoragePattern ;
                      rdfs:label "Off-chain data storage"@en .
 
 
@@ -701,7 +701,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainSignatures
 :OffChainSignatures rdf:type owl:Class ;
-                    rdfs:subClassOf :DataManagementPattern ;
+                    rdfs:subClassOf :OffChainStoragePattern ;
                     rdfs:label "Off-chain Signatures"@en .
 
 
@@ -959,7 +959,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateChannel
 :StateChannel rdf:type owl:Class ;
-              rdfs:subClassOf :DataManagementPattern ;
+              rdfs:subClassOf :OffChainStoragePattern ;
               rdfs:label "State Channel"@en .
 
 

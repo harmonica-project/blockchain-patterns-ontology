@@ -234,7 +234,7 @@
             "Paper": "11",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Data management pattern",
+            "Subcategory": "Off-chain storage pattern",
             "Introduced in (paper ID)": "11, 13",
             "Target": "Any",
             "Applicability domain": "General"
@@ -243,7 +243,7 @@
             "Name": "(Off-chain) Contract Registry",
             "Paper": "11",
             "Type": "Design pattern",
-            "Category": "On/off-chain interaction pattern",
+            "Category": "Off-chain storage pattern",
             "Subcategory": "Data management pattern"
         },
         {
@@ -396,7 +396,7 @@
             "Paper": "11",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Data management pattern",
+            "Subcategory": "Off-chain storage pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },
@@ -406,7 +406,7 @@
             "Paper": "13",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Data management pattern",
+            "Subcategory": "Off-chain storage pattern",
             "Introduced in (paper ID)": "2, 11, 13, 14, 25, 28, 36",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
@@ -851,7 +851,7 @@
             "Paper": "20",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Data management pattern",
+            "Subcategory": "Off-chain storage pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "BPM"
         },
@@ -910,7 +910,7 @@
             "Paper": "31",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Data management pattern",
+            "Subcategory": "Off-chain storage pattern",
             "Target": "Any",
             "Applicability domain": "General"
         },
@@ -1124,7 +1124,7 @@
             "Paper": "36",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Data management pattern",
+            "Subcategory": "Off-chain storage pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "Any"
         },
@@ -1133,7 +1133,7 @@
             "Paper": "36",
             "Type": "Design pattern",
             "Category": "On/off-chain interaction pattern",
-            "Subcategory": "Data management pattern",
+            "Subcategory": "Off-chain storage pattern",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "Any"
         },
