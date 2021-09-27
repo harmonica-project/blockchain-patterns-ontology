@@ -14,7 +14,7 @@ def loadSLRData():
     return data['Patterns'], data['Papers']
 
 def loadClassTemplate():
-  with open('class_template.txt', 'r') as file:
+  with open('./templates/class.txt', 'r') as file:
     return file.read()
 
 def run():

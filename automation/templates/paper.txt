@@ -1,0 +1,8 @@
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#$uri$author$year
+:$uri$author$year rdf:type owl:NamedIndividual ,
+                   :$refClass ,
+                   :PaperBased ,
+                   :$technology ;
+          :hasCanonical :$canonical ;
+          :ContextAndProblem "$context"^^rdfs:Literal ;
+          :Solution "$solution"^^rdfs:Literal .

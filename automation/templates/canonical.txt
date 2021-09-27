@@ -1,0 +1,8 @@
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#$uriCanonical
+:$uriCanonical rdf:type owl:NamedIndividual ,
+                          :$technology ,
+                          :Canonical ,
+                          :$refClass ;
+                 :hasExample :OracleXu ;
+                 :ContextAndProblem "$context"^^rdfs:Literal ;
+                 :Solution "$solution"^^rdfs:Literal .
