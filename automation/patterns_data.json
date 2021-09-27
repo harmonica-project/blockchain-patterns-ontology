@@ -24,7 +24,7 @@
             "Reason (if yes)": "N/A",
             "Nb of found patterns": "6",
             "DOI": "10.1007/978-3-030-58779-6_1",
-            "author": "M{ü}ller, Marcel and Ostern, Nadine and Rosemann, Michael",
+            "author": "Müller, Marcel and Ostern, Nadine and Rosemann, Michael",
             "journal": "Lecture Notes in Business Information Processing",
             "year": "2020",
             "source": "Scopus",
@@ -42,7 +42,7 @@
             "Reason (if yes)": "No clear pattern presented (QQ1)",
             "Nb of found patterns": "0",
             "DOI": "10.1007/978-3-030-45093-9_61",
-            "author": "G{ó}rski, Tomasz and Bednarski, Jakub",
+            "author": "Górski, Tomasz and Bednarski, Jakub",
             "journal": "Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)",
             "year": "2020",
             "source": "Scopus",
@@ -172,6 +172,7 @@
         {
             "ID": "11",
             "Title": "Emerging Design Patterns for Blockchain Applications",
+            "year": "2020",
             "Selected in phase": "1",
             "Rejected after reading": "No",
             "Reason (if yes)": "N/A",
@@ -2426,7 +2427,7 @@
             "Context & Problem": "Optimizing Solidity code to save gas in exhaustive way is difficult.",
             "Solution": "Always turn on the Solidity Optimizer. It is an option of all Solidity compilers, which performs all the optimizations that can be made by the compiler. However, it does not substitute the usage of the presented patterns, most of which need information that is not available to the compiler.",
             "Type (from paper)": "Design pattern",
-            "Type (determined)": "N/A",
+            "Type (determined)": "Idiom",
             "Target": "Ethereum",
             "Applicability domain": "General"
         },
@@ -3551,7 +3552,7 @@
         },
         {
             "ID": "193",
-            "Name": "Challenge Response Pattern",
+            "Name": "Challenge Response",
             "Paper": "36",
             "Solution": "Instead of checking whether a state is final or not in a smart contract on a blockchain, the same check is performed off-chain on the client side. A client can notify a smart contract when a final state has been reached. Other clients can prove claims wrong by providing a valid state transition. Using this pattern, the computation never has to be performed on-chain",
             "Benefits": "Cost saving at computation",
@@ -3566,7 +3567,7 @@
         },
         {
             "ID": "194",
-            "Name": "Off-chain Signatures Pattern",
+            "Name": "Off-chain Signatures",
             "Paper": "36",
             "Solution": "Together, the two participants specify a smart contract including a function, which applies an external state given as argument to the contract state. This function includes a signature check to ensure both participants agree with the state change. Only if valid signatures of both participants are supplied with a requested new state, the new state is applied. This contract is deployed to the blockchain and both participants optionally make a deposit. Then, the participants perform transactions purely off-chain and peer-topeer, without involving the blockchain: One participant computes a new state, wraps it in a transaction, signs it and sends it to his counterpart. The recipient then checks the new state, signs the transaction as well in case he agrees and sends it back to the sender. This transaction, signed by both parties, can now be sent to the smart contract by a participant at any point in time. After validating both signatures, the contract updates its state accordingly.",
             "Benefits": "Cost saving, Data privacy, Scalability",
@@ -3580,7 +3581,7 @@
         },
         {
             "ID": "195",
-            "Name": "Content-Addressable Storage Pattern",
+            "Name": "Content-Addressable Storage",
             "Paper": "36",
             "Solution": "Store the data off-chain in a content-addressable storage system and store the reference in the smart contract. Clients using the smart contract can retrieve the reference and based on that retrieve the data. Then, they can verify the data’s correctness by recomputing its address from itself and comparing it to the reference stored in the smart contract.",
             "Benefits": "Cost saving, Data privacy",
@@ -3593,7 +3594,7 @@
         },
         {
             "ID": "196",
-            "Name": "Delegated Computation Pattern",
+            "Name": "Delegated Computation",
             "Paper": "36",
             "Solution": "Outsource computation to an untrusted third party and, besides the result, generate a proof of correct execution. Instead of executing the computation itself, verify the proof of correct execution on-chain.",
             "Benefits": "Cost saving, Data privacy",
@@ -3606,7 +3607,7 @@
         },
         {
             "ID": "197",
-            "Name": "Low Contract Footprint Pattern",
+            "Name": "Low Contract Footprint",
             "Paper": "36",
             "Solution": "To optimize fees, contracts should be designed in a way that minimizes the number and size of on-chain transactions. The following two techniques can be used to reduce the footprint. – Do not check conditions on-chain after a state change. Let nodes perform the condition check locally and trigger an on-chain check in case of success. – Optimize for writes, not reads. Reading from a smart contracts is a local off-chain operation and does not require an on-chain transaction. Minimize writes and store information free of redundancy. Compute derived data locally during reads.",
             "Benefits": "Cost saving, Data privacy",
@@ -4123,8 +4124,19 @@
             "Applicability domain (generalized)": "General"
         },
         {
+            "ID": "34",
+            "Name": "Secure Ether Transfer",
+            "Paper": "11",
+            "Type (from paper)": "Design pattern",
+            "Type (determined)": "Idiom",
+            "Category": "Solidity",
+            "Target (generalized)": "Ethereum",
+            "Applicability domain (generalized)": "General"
+        },
+        {
             "ID": "35",
             "Name": "Oracle",
+            "Alternative names": "Oracle (Data Provider)",
             "Paper": "11",
             "Type (from paper)": "Design pattern",
             "Type (determined)": "Design pattern",
@@ -4160,6 +4172,7 @@
         {
             "ID": "39",
             "Name": "Data Contract",
+            "Alternative names": "Data Segregation, Eternal Storage / Data Contract",
             "Paper": "33",
             "Type (from paper)": "Design pattern",
             "Type (determined)": "Design pattern",
@@ -4187,7 +4200,7 @@
         {
             "ID": "41",
             "Name": "Factory Contract",
-            "Alternative names": "Reusability, Contract Factory",
+            "Alternative names": "Reusability, Contract Factory, Abstract factory",
             "Paper": "11",
             "Type (from paper)": "Design pattern",
             "Type (determined)": "Design pattern",
@@ -4227,6 +4240,7 @@
         {
             "ID": "44",
             "Name": "Contract Balance Limit",
+            "Alternative names": "Balance limit",
             "Paper": "11",
             "Type (from paper)": "Design pattern",
             "Type (determined)": "Design pattern",
@@ -4279,7 +4293,7 @@
         {
             "ID": "48",
             "Name": "Proxy Contract",
-            "Alternative names": "Proxy, Proxy Delegate / Decorator, Contract Relay",
+            "Alternative names": "Proxy, Proxy Delegate / Decorator, Contract Relay, Contract facade",
             "Paper": "11",
             "Type (from paper)": "Design pattern",
             "Type (determined)": "Design pattern",
@@ -4342,7 +4356,7 @@
         {
             "ID": "57",
             "Name": "Off-chain data storage",
-            "Alternative names": "Hash storage, Off-chain Datastore, Hash integrity, Mirror, Content-Addressable Storage Pattern, Anchoring to Blockchain",
+            "Alternative names": "Hash storage, Off-chain Datastore, Hash integrity, Mirror, Content-Addressable Storage, Anchoring to Blockchain, On-chain and off-chain",
             "Paper": "13",
             "Type (from paper)": "Design pattern",
             "Type (determined)": "Design pattern",
@@ -4529,6 +4543,18 @@
             "Subcategory": "Data management pattern",
             "Subsubcategory": "Migration pattern",
             "Target (generalized)": "All blockchains",
+            "Applicability domain (generalized)": "General"
+        },
+        {
+            "ID": "81",
+            "Name": "Token burning",
+            "Paper": "15",
+            "Type (from paper)": "Design pattern",
+            "Type (determined)": "Design pattern",
+            "Category": "On-chain pattern",
+            "Subcategory": "Data management pattern",
+            "Subsubcategory": "Migration pattern",
+            "Target (generalized)": "Smart-contract enabled blockchains",
             "Applicability domain (generalized)": "General"
         },
         {
@@ -4941,7 +4967,7 @@
         {
             "ID": "135",
             "Name": "On-chain encryption",
-            "Alternative names": "Privacy, Data Encryption",
+            "Alternative names": "Privacy, Data Encryption, Encrypting on-chain data",
             "Paper": "31",
             "Type (from paper)": "Design pattern",
             "Type (determined)": "Design pattern",
@@ -5081,6 +5107,7 @@
         {
             "ID": "161",
             "Name": "Check Effect Interaction",
+            "Alternative names": "Checks-Effects-Interaction, Checks-Effect-Interactions",
             "Paper": "33",
             "Type (from paper)": "Design pattern",
             "Type (determined)": "Design pattern",
@@ -5184,6 +5211,7 @@
         {
             "ID": "180",
             "Name": "Contract Registry",
+            "Alternative names": "Contract register",
             "Paper": "33",
             "Type (from paper)": "Design pattern",
             "Type (determined)": "Design pattern",

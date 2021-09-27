@@ -108,6 +108,11 @@
                        rdfs:subClassOf :ContractSecurityPattern ;
                        rdfs:label "Fork check"@en .
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SecureEtherTransfer
+:SecureEtherTransfer rdf:type owl:Class ;
+                       rdfs:subClassOf :Idiom ;
+                       rdfs:label "Secure Ether Transfer"@en .
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Oracle
 :Oracle rdf:type owl:Class ;
                        rdfs:subClassOf :DataExchangePattern ;
@@ -272,6 +277,11 @@
 :StateAggregation rdf:type owl:Class ;
                        rdfs:subClassOf :MigrationPattern ;
                        rdfs:label "State Aggregation"@en .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TokenBurning
+:TokenBurning rdf:type owl:Class ;
+                       rdfs:subClassOf :MigrationPattern ;
+                       rdfs:label "Token burning"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#NodeSync
 :NodeSync rdf:type owl:Class ;

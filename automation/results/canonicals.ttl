@@ -1,4 +1,4 @@
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransparentEventLog Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransparentEventLogCanonical
 :TransparentEventLogCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :BPM ,
@@ -9,7 +9,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Transparent Event Log" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainBpEngine Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainBpEngineCanonical
 :BlockchainBpEngineCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :BPM ,
@@ -20,7 +20,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Blockchain BP Engine" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractActivities Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractActivitiesCanonical
 :SmartContractActivitiesCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :BPM ,
@@ -31,7 +31,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Smart Contract Activities" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainBasedReputationSystem Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainBasedReputationSystemCanonical
 :BlockchainBasedReputationSystemCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :BPM ,
@@ -42,7 +42,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Blockchain-based reputation system" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DecentralizeBusinessProcess Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DecentralizeBusinessProcessCanonical
 :DecentralizeBusinessProcessCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :BPM ,
@@ -53,7 +53,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Decentralize business process" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#KeyValueStore Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#KeyValueStoreCanonical
 :KeyValueStoreCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -64,7 +64,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Key-value store" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AddressMapping Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AddressMappingCanonical
 :AddressMappingCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -75,7 +75,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Address mapping" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Authorization Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AuthorizationCanonical
 :AuthorizationCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -86,7 +86,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Authorization" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Judge Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#JudgeCanonical
 :JudgeCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -97,7 +97,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Judge" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TickerTape Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TickerTapeCanonical
 :TickerTapeCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -108,7 +108,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Ticker Tape" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Vote Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#VoteCanonical
 :VoteCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -119,7 +119,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Vote" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Blocklist Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlocklistCanonical
 :BlocklistCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -130,7 +130,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Blocklist" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Announcement Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AnnouncementCanonical
 :AnnouncementCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -141,7 +141,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Announcement" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BulletinBoard Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BulletinBoardCanonical
 :BulletinBoardCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -152,7 +152,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Bulletin Board" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Migration Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MigrationCanonical
 :MigrationCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -163,7 +163,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Migration" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InterFamilyCommunication Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InterFamilyCommunicationCanonical
 :InterFamilyCommunicationCanonical rdf:type owl:NamedIndividual ,
                           :HyperledgerSawtooth ,
                           :General ,
@@ -174,7 +174,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Inter-family communication" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Locking Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LockingCanonical
 :LockingCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -185,7 +185,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Locking" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransitionCounter Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransitionCounterCanonical
 :TransitionCounterCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -196,7 +196,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Transition Counter" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AutomaticTimedTransitions Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AutomaticTimedTransitionsCanonical
 :AutomaticTimedTransitionsCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -207,7 +207,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Automatic Timed Transitions" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Randomness Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#RandomnessCanonical
 :RandomnessCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -218,7 +218,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Randomness" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Poll Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PollCanonical
 :PollCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -229,7 +229,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Poll" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ForkCheck Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ForkCheckCanonical
 :ForkCheckCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -240,7 +240,18 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Fork check" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Oracle Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SecureEtherTransferCanonical
+:SecureEtherTransferCanonical rdf:type owl:NamedIndividual ,
+                          :Ethereum ,
+                          :General ,
+                          :Canonical ,
+                          :SecureEtherTransfer ;
+
+                 :ContextAndProblem ""^^rdfs:Literal ;
+                 :Solution ""^^rdfs:Literal ;
+                 rdfs:label "Secure Ether Transfer" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OracleCanonical
 :OracleCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -251,7 +262,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Oracle" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateChannel Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateChannelCanonical
 :StateChannelCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -262,7 +273,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "State Channel" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainContractRegistry Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainContractRegistryCanonical
 :OffChainContractRegistryCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -273,7 +284,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "(Off-chain) Contract Registry" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DataContract Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DataContractCanonical
 :DataContractCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -284,7 +295,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Data Contract" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EmbeddedPermission Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EmbeddedPermissionCanonical
 :EmbeddedPermissionCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -295,7 +306,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Embedded Permission" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FactoryContract Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FactoryContractCanonical
 :FactoryContractCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -306,7 +317,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Factory Contract" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EmergencyStop Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EmergencyStopCanonical
 :EmergencyStopCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -317,7 +328,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Emergency Stop" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Mutex Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MutexCanonical
 :MutexCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -328,7 +339,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Mutex" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractBalanceLimit Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractBalanceLimitCanonical
 :ContractBalanceLimitCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -339,7 +350,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Contract Balance Limit" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ReverseOracle Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ReverseOracleCanonical
 :ReverseOracleCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -350,7 +361,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Reverse Oracle" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IncentiveExecution Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IncentiveExecutionCanonical
 :IncentiveExecutionCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -361,7 +372,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Incentive Execution" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CommitAndReveal Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CommitAndRevealCanonical
 :CommitAndRevealCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -372,7 +383,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Commit and Reveal" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ProxyContract Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ProxyContractCanonical
 :ProxyContractCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -383,7 +394,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Proxy Contract" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DynamicBinding Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DynamicBindingCanonical
 :DynamicBindingCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -394,7 +405,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Dynamic Binding" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Flyweight Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FlyweightCanonical
 :FlyweightCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -405,7 +416,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Flyweight" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TightVariablePacking Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TightVariablePackingCanonical
 :TightVariablePackingCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -416,7 +427,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Tight Variable Packing" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LegalAndSmartContractPair Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LegalAndSmartContractPairCanonical
 :LegalAndSmartContractPairCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -427,7 +438,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Legal and smart-contract pair" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainDataStorage Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainDataStorageCanonical
 :OffChainDataStorageCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -438,7 +449,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Off-chain data storage" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleAuthorization Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleAuthorizationCanonical
 :MultipleAuthorizationCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -449,7 +460,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Multiple authorization" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainSecretEnabledDynamicAuthentication Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainSecretEnabledDynamicAuthenticationCanonical
 :OffChainSecretEnabledDynamicAuthenticationCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -460,7 +471,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Off-chain secret enabled dynamic authentication" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MasterSubKey Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MasterSubKeyCanonical
 :MasterSubKeyCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :IdentityManagement ,
@@ -471,7 +482,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Master & Sub Key" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HotColdWalletStorage Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HotColdWalletStorageCanonical
 :HotColdWalletStorageCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :IdentityManagement ,
@@ -482,7 +493,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Hot & Cold Wallet Storage" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#KeySharding Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#KeyShardingCanonical
 :KeyShardingCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :IdentityManagement ,
@@ -493,7 +504,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Key Sharding" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IdentifierRegistry Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IdentifierRegistryCanonical
 :IdentifierRegistryCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
@@ -504,7 +515,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Identifier Registry" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleRegistration Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleRegistrationCanonical
 :MultipleRegistrationCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
@@ -515,7 +526,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Multiple Registration" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BoundWithSocialMedia Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BoundWithSocialMediaCanonical
 :BoundWithSocialMediaCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
@@ -526,7 +537,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Bound with Social Media" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DualResolution Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DualResolutionCanonical
 :DualResolutionCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
@@ -537,7 +548,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Dual Resolution" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegateList Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegateListCanonical
 :DelegateListCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
@@ -548,7 +559,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Delegate List" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelectiveContentGeneration Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelectiveContentGenerationCanonical
 :SelectiveContentGenerationCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
@@ -559,7 +570,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Selective Content Generation" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TimeConstrainedAccess Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TimeConstrainedAccessCanonical
 :TimeConstrainedAccessCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
@@ -570,7 +581,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Time-Constrained Access" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OneOffAccess Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OneOffAccessCanonical
 :OneOffAccessCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
@@ -581,7 +592,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "One-Off Access" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Snapshotting Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SnapshottingCanonical
 :SnapshottingCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -592,7 +603,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Snapshotting" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateAggregation Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateAggregationCanonical
 :StateAggregationCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -603,7 +614,18 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "State Aggregation" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#NodeSync Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TokenBurningCanonical
+:TokenBurningCanonical rdf:type owl:NamedIndividual ,
+                          :SmartContractEnabledBlockchains ,
+                          :General ,
+                          :Canonical ,
+                          :TokenBurning ;
+
+                 :ContextAndProblem ""^^rdfs:Literal ;
+                 :Solution ""^^rdfs:Literal ;
+                 rdfs:label "Token burning" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#NodeSyncCanonical
 :NodeSyncCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -614,7 +636,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Node Sync" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EstablishGenesis Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EstablishGenesisCanonical
 :EstablishGenesisCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -625,7 +647,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Establish Genesis" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HardFork Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HardForkCanonical
 :HardForkCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -636,7 +658,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Hard Fork" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateInitialization Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateInitializationCanonical
 :StateInitializationCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -647,7 +669,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "State Initialization" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ExchangeTransfer Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ExchangeTransferCanonical
 :ExchangeTransferCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -658,7 +680,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Exchange Transfer" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransactionReplay Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransactionReplayCanonical
 :TransactionReplayCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -669,7 +691,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Transaction Replay" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#VirtualMachineEmulation Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#VirtualMachineEmulationCanonical
 :VirtualMachineEmulationCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -680,7 +702,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Virtual Machine Emulation" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractTranslation Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractTranslationCanonical
 :SmartContractTranslationCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -691,7 +713,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Smart Contract Translation" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainSecurityPatternForBigDataEcosystems Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainSecurityPatternForBigDataEcosystemsCanonical
 :BlockchainSecurityPatternForBigDataEcosystemsCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :BigData ,
@@ -702,7 +724,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Blockchain Security Pattern for Big Data Ecosystems" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EventLog Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EventLogCanonical
 :EventLogCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -713,7 +735,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Event log" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitStorage Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitStorageCanonical
 :LimitStorageCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -724,7 +746,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Limit storage" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PackingVariables Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PackingVariablesCanonical
 :PackingVariablesCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -735,7 +757,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Packing variables" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PackingBooleans Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PackingBooleansCanonical
 :PackingBooleansCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -746,7 +768,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Packing booleans" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#UintVsUint256 Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#UintVsUint256Canonical
 :UintVsUint256Canonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -757,7 +779,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Uint* vs Uint256" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MappingVsArray Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MappingVsArrayCanonical
 :MappingVsArrayCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -768,7 +790,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Mapping vs Array" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FixedSize Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FixedSizeCanonical
 :FixedSizeCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -779,7 +801,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Fixed size" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DefaultValue Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DefaultValueCanonical
 :DefaultValueCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -790,7 +812,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Default value" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MinimizeOnChainData Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MinimizeOnChainDataCanonical
 :MinimizeOnChainDataCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -801,7 +823,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Minimize on-chain data" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ExplicitelyMarkExternalFunction Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ExplicitelyMarkExternalFunctionCanonical
 :ExplicitelyMarkExternalFunctionCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -812,7 +834,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Explicitely mark external function" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitExternalCalls Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitExternalCallsCanonical
 :LimitExternalCallsCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -823,7 +845,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Limit external calls" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InternalFunctionCalls Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InternalFunctionCallsCanonical
 :InternalFunctionCallsCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -834,7 +856,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Internal function calls" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FewerFunctions Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FewerFunctionsCanonical
 :FewerFunctionsCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -845,7 +867,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Fewer functions" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#UseLibraries Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#UseLibrariesCanonical
 :UseLibrariesCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -856,7 +878,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Use libraries" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ShortCircuit Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ShortCircuitCanonical
 :ShortCircuitCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -867,7 +889,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Short circuit" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ShortConstantStrings Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ShortConstantStringsCanonical
 :ShortConstantStringsCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -878,7 +900,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Short constant strings" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitModifiers Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitModifiersCanonical
 :LimitModifiersCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -889,7 +911,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Limit modifiers" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AvoidRedundantOperations Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AvoidRedundantOperationsCanonical
 :AvoidRedundantOperationsCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -900,7 +922,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Avoid redundant operations" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SingleLineSwap Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SingleLineSwapCanonical
 :SingleLineSwapCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -911,7 +933,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Single-line swap" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#WriteValues Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#WriteValuesCanonical
 :WriteValuesCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -922,7 +944,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Write values" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FreeingStorage Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FreeingStorageCanonical
 :FreeingStorageCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -933,7 +955,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Freeing storage" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Optimizer Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OptimizerCanonical
 :OptimizerCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -944,7 +966,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Optimizer" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ConfidentialAndPseudoAnonymousContractEnforcement Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ConfidentialAndPseudoAnonymousContractEnforcementCanonical
 :ConfidentialAndPseudoAnonymousContractEnforcementCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :BPM ,
@@ -955,7 +977,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Confidential and pseudo-anonymous contract enforcement" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelfGeneratedTransactions Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelfGeneratedTransactionsCanonical
 :SelfGeneratedTransactionsCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -966,7 +988,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Self-Generated Transactions" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelfConfirmedTransactions Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelfConfirmedTransactionsCanonical
 :SelfConfirmedTransactionsCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -977,7 +999,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Self-Confirmed Transactions" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegatedTransactions Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegatedTransactionsCanonical
 :DelegatedTransactionsCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -988,7 +1010,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Delegated Transactions" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DigitalRecord Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DigitalRecordCanonical
 :DigitalRecordCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -999,7 +1021,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Digital Record" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleBlockchains Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleBlockchainsCanonical
 :MultipleBlockchainsCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -1010,7 +1032,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Multiple Blockchains" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainEncryption Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainEncryptionCanonical
 :OnChainEncryptionCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -1021,7 +1043,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "On-chain encryption" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HashTimestamping Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HashTimestampingCanonical
 :HashTimestampingCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -1032,7 +1054,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Hash timestamping" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullPayment Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullPaymentCanonical
 :PullPaymentCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1043,7 +1065,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Pull payment" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateMachine Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateMachineCanonical
 :StateMachineCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1054,7 +1076,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "State machine" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Ownership Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OwnershipCanonical
 :OwnershipCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1065,7 +1087,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Ownership" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AccessRestriction Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AccessRestrictionCanonical
 :AccessRestrictionCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1076,7 +1098,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Access Restriction" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Mortal Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MortalCanonical
 :MortalCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -1087,7 +1109,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Mortal" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AutomaticDeprecation Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AutomaticDeprecationCanonical
 :AutomaticDeprecationCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1098,7 +1120,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Automatic Deprecation" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Satellite Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SatelliteCanonical
 :SatelliteCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1109,7 +1131,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Satellite" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SpeedBump Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SpeedBumpCanonical
 :SpeedBumpCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1120,7 +1142,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Speed Bump" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#RateLimit Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#RateLimitCanonical
 :RateLimitCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1131,7 +1153,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Rate Limit" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CheckEffectInteraction Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CheckEffectInteractionCanonical
 :CheckEffectInteractionCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -1142,7 +1164,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Check Effect Interaction" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#GuardCheck Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#GuardCheckCanonical
 :GuardCheckCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -1153,7 +1175,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Guard Check" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TimeConstraint Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TimeConstraintCanonical
 :TimeConstraintCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -1164,7 +1186,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Time Constraint" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Termination Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TerminationCanonical
 :TerminationCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -1175,7 +1197,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Termination" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Math Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MathCanonical
 :MathCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -1186,7 +1208,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Math" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PublisherSubscriber Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PublisherSubscriberCanonical
 :PublisherSubscriberCanonical rdf:type owl:NamedIndividual ,
                           :Ethereum ,
                           :General ,
@@ -1197,7 +1219,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Publisher-Subscriber" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Tokenisation Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TokenisationCanonical
 :TokenisationCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -1208,7 +1230,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Tokenisation" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#XConfirmation Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#XConfirmationCanonical
 :XConfirmationCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1219,7 +1241,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "X-confirmation" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractRegistry Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractRegistryCanonical
 :ContractRegistryCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1230,7 +1252,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Contract Registry" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ChallengeResponse Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ChallengeResponseCanonical
 :ChallengeResponseCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1241,7 +1263,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Challenge Response" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainSignatures Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainSignaturesCanonical
 :OffChainSignaturesCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1252,7 +1274,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Off-chain Signatures" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegatedComputation Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegatedComputationCanonical
 :DelegatedComputationCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1263,7 +1285,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Delegated Computation" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LowContractFootprint Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LowContractFootprintCanonical
 :LowContractFootprintCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1274,7 +1296,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Low Contract Footprint" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullBasedInboundOracle Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullBasedInboundOracleCanonical
 :PullBasedInboundOracleCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -1285,7 +1307,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Pull-based inbound oracle" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PushBasedInboundOracle Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PushBasedInboundOracleCanonical
 :PushBasedInboundOracleCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -1296,7 +1318,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Push-based inbound oracle" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullBasedOutboundOracle Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullBasedOutboundOracleCanonical
 :PullBasedOutboundOracleCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -1307,7 +1329,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Pull-based outbound oracle" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PushBasedOutboundOracle Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PushBasedOutboundOracleCanonical
 :PushBasedOutboundOracleCanonical rdf:type owl:NamedIndividual ,
                           :AllBlockchains ,
                           :General ,
@@ -1318,7 +1340,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Push-based outbound oracle" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractComposer Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractComposerCanonical
 :ContractComposerCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1329,7 +1351,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Contract Composer" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractDecorator Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractDecoratorCanonical
 :ContractDecoratorCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1340,7 +1362,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Contract Decorator" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractMediator Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractMediatorCanonical
 :ContractMediatorCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1351,7 +1373,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Contract Mediator" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractObserver Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractObserverCanonical
 :ContractObserverCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
@@ -1362,7 +1384,7 @@
                  :Solution ""^^rdfs:Literal ;
                  rdfs:label "Contract Observer" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HashSecret Canonical
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HashSecretCanonical
 :HashSecretCanonical rdf:type owl:NamedIndividual ,
                           :SmartContractEnabledBlockchains ,
                           :General ,
