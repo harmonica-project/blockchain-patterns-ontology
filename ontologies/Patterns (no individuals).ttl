@@ -99,8 +99,8 @@ owl:topObjectProperty rdfs:domain :Pattern ;
      rdfs:label "BPM"@en .
 
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BPMFeaturePattern
-:BPMFeaturePattern rdf:type owl:Class ;
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BPMPattern
+:BPMPattern rdf:type owl:Class ;
                    rdfs:subClassOf :DomainBasedPattern ;
                    rdfs:label "BPM pattern"@en .
 
@@ -159,8 +159,8 @@ owl:topObjectProperty rdfs:domain :Pattern ;
                        rdfs:label "Data management pattern"@en .
 
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DecentralizedIdentityFeaturePattern
-:DecentralizedIdentityFeaturePattern rdf:type owl:Class ;
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DecentralizedIdentityPattern
+:DecentralizedIdentityPattern rdf:type owl:Class ;
                                      rdfs:subClassOf :DomainBasedPattern ;
                                      rdfs:label "Decentralized identity pattern"@en .
 
@@ -255,8 +255,8 @@ owl:topObjectProperty rdfs:domain :Pattern ;
                               rdfs:label "On/off-chain interaction pattern"@en .
 
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OtherFeaturePattern
-:OtherFeaturePattern rdf:type owl:Class ;
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultiDomainFeaturePattern
+:MultiDomainFeaturePattern rdf:type owl:Class ;
                      rdfs:subClassOf :DomainBasedPattern ;
                      rdfs:label "Multi-domain feature pattern"@en .
 
