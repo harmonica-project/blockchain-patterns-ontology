@@ -1191,7 +1191,7 @@
         },
         {
             "ID": "38",
-            "Name": "Contract Registry",
+            "Name": "(Off-chain) Contract Registry",
             "Paper": "11",
             "Context & Problem": "Code on a smart contract may need to be modified or updated to deal with bugs and changing requirements.",
             "Solution": "Every contract and its address are stored off-chain as key-value pairs. This mapping is mutable since it is off-chain, which means that the address of a contract can be updated in the registry. Since calls to any contract will now go through the registry, this leaves all dependencies intact. ",

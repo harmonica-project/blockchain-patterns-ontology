@@ -90,9 +90,11 @@ def createExempleToCanonicalMappings(canonical_patterns):
 
   for c in canonical_patterns:
     if 'Alternative names' in c:
-      canonical_mapping[parseToURI(c['Name'])] = [parseToURI(an) for an in c['Alternative names'].split(', ')]
+      canonical_mapping[parseToURI(c['Name'])] = [parseToURI(c['Name'])] + [parseToURI(an) for an in c['Alternative names'].split(', ')]
       for an in c['Alternative names'].split(', '):
         example_mapping[parseToURI(an)] = parseToURI(c['Name'])
+    else:
+      canonical_mapping[parseToURI(c['Name'])] = [parseToURI(c['Name'])]
     example_mapping[parseToURI(c['Name'])] = parseToURI(c['Name'])
 
   return canonical_mapping, example_mapping
@@ -110,8 +112,11 @@ def run():
   papers, paper_patterns, canonical_patterns = loadSLRData()
   classes = ''
   canonicals = ''
-  canonical_examples = ''
   examples = ''
+
+  with open('../ontologies/structure.ttl', 'r') as file:
+    ontology_structure = file.read()
+
   # this script use Template to generate Turtle files for the ontology
   class_template = loadTemplate('class')
   canonical_template = loadTemplate('canonical')
@@ -122,6 +127,7 @@ def run():
   canonical_mapping, example_mapping = createExempleToCanonicalMappings(canonical_patterns)
 
   for p in canonical_patterns:
+    canonical_examples = ''
     patternType = parseToURI(p['Type (determined)'])
     # links individual to its class
     if patternType == "ArchitecturalPattern" or patternType == "Idiom":
@@ -199,5 +205,8 @@ def run():
 
   with open("./results/examples.ttl", "w") as text_file_examples:
     text_file_examples.write(examples)
+
+  with open("../ontologies/result.ttl", "w") as text_file_ontology:
+    text_file_ontology.write(ontology_structure + classes + canonicals + examples)
 
 run()

@@ -462,9 +462,9 @@
           :Solution "Micro-transactions should not be stored on the blockchain; they should be stored off-chain and only the final settled amounts should be stored on-chain. There are some use-cases of this pattern, the most common being the Lightning Network in Bitcoin and Plasma in Ethereum."^^rdfs:Literal ;
           rdfs:label "State Channel" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractRegistryRajasekar2020
-:ContractRegistryRajasekar2020 rdf:type owl:NamedIndividual ,
-                   :ContractRegistry ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainContractRegistryRajasekar2020
+:OffChainContractRegistryRajasekar2020 rdf:type owl:NamedIndividual ,
+                   :OffChainContractRegistry ,
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
@@ -472,10 +472,10 @@
           :fromPattern :ContractRegisterRajasekar2020 ;
           :relatedTo :ProxyContractRajasekar2020 ;
 
-          :hasCanonical :ContractRegistryCanonical ;
+          :hasCanonical :OffChainContractRegistryCanonical ;
           :ContextAndProblem "Code on a smart contract may need to be modified or updated to deal with bugs and changing requirements."^^rdfs:Literal ;
           :Solution "Every contract and its address are stored off-chain as key-value pairs. This mapping is mutable since it is off-chain, which means that the address of a contract can be updated in the registry. Since calls to any contract will now go through the registry, this leaves all dependencies intact. "^^rdfs:Literal ;
-          rdfs:label "Contract Registry" .
+          rdfs:label "(Off-chain) Contract Registry" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DataContractRajasekar2020
 :DataContractRajasekar2020 rdf:type owl:NamedIndividual ,
@@ -605,7 +605,7 @@
                    :General ,
                    :SmartContractEnabledBlockchains ;
           :fromPattern :ContractRelayRajasekar2020 ;
-          :relatedTo :ContractRegistryRajasekar2020 ;
+          :relatedTo :OffChainContractRegistryRajasekar2020 ;
 
           :hasCanonical :ProxyContractCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
