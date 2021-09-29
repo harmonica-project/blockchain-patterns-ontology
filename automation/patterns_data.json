@@ -3111,7 +3111,7 @@
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
             "Subsubcategory (optional)": "Contract management pattern",
-            "From pattern": "[36],[13],185,209,91",
+            "From pattern": "[36], [13], 185, 209, 91",
             "Target": "Ethereum",
             "Applicability domain": "General"
         },
@@ -3399,7 +3399,7 @@
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
             "Subsubcategory (optional)": "Contract management pattern",
-            "From pattern": "183,206, 65",
+            "From pattern": "183, 206, 65",
             "Target": "Ethereum",
             "Applicability domain": "General"
         },
@@ -3780,7 +3780,7 @@
             "Category": "On-chain pattern",
             "Subcategory": "Smart-contract pattern",
             "Subsubcategory (optional)": "Contract management pattern",
-            "Benefits from": "207.208",
+            "Benefits from": "207, 208",
             "Target": "Smart-contract enabled blockchains",
             "Applicability domain": "General"
         },

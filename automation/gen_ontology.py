@@ -12,18 +12,24 @@ def capitalizeURI(word):
   else:
     return word
 
-def getPaperPatternFromId(papers, paper_id):
+def getPaperFromId(papers, paper_id):
   for p in papers:
     if p['ID'] == paper_id:
       return p
   return False
 
-def isNameInCanonicals(name, canonical_patterns):
-  for c in canonical_patterns:
-    if parseToURI(name) == parseToURI(c['Name']):
-      return True
+def getPaperPatternFromId(paper_patterns, paper_id):
+  for p in paper_patterns:
+    if p['ID'] == paper_id:
+      return p
   return False
-  
+
+def getPaperPatternFromURI(paper_patterns, paper_uri):
+  for p in paper_patterns:
+    if parseToURI(p['Name']) == paper_uri:
+      return p
+  return False
+
 def getFirstAuthor(authors):
   return re.split(', ', authors)[0]
 
@@ -39,7 +45,7 @@ def parseToRelation(name):
   name = ''.join(nameArray)
   return name
 
-def get_links_between_patterns(paper_patterns, paper_pattern, paper, canonical_patterns):
+def get_links_between_patterns(paper_patterns, paper_pattern, paper, example_mapping):
   link_types = ["From pattern", "Related to", "Variant Of", "Requires", "Benefits from"]
   relation_template = loadTemplate('relation')
   relations_str = ''
@@ -47,16 +53,17 @@ def get_links_between_patterns(paper_patterns, paper_pattern, paper, canonical_p
   for key in link_types:
     if key in paper_pattern:
       relations = re.split(', ', paper_pattern[key])
+      relation_type = parseToRelation(key)
       for r in relations:
         if r.isdigit():
           relation_paper = getPaperPatternFromId(paper_patterns, r)
           relation_paper_name = parseToURI(relation_paper['Name']) + getFirstAuthor(paper['author']) + paper['year']
         else:
-          if isNameInCanonicals(r, canonical_patterns):
-            relation_paper_name = parseToURI(r) + "Canonical"
+          if parseToURI(r) in example_mapping:
+            relation_paper_name = example_mapping[parseToURI(r)] + "Canonical"
           else:
             relation_paper_name = "Unknown"
-        relations_str += Template(relation_template).substitute(relation=parseToRelation(key), value=relation_paper_name)
+        relations_str += Template(relation_template).substitute(relation=relation_type, value=relation_paper_name)
 
   return relations_str
 
@@ -70,15 +77,17 @@ def loadTemplate(item):
     return file.read()
 
 def createExempleToCanonicalMappings(canonical_patterns):
+  canonical_mapping = {}
   example_mapping = {}
 
   for c in canonical_patterns:
     if 'Alternative names' in c:
+      canonical_mapping[parseToURI(c['Name'])] = [parseToURI(an) for an in c['Alternative names'].split(', ')]
       for an in c['Alternative names'].split(', '):
         example_mapping[parseToURI(an)] = parseToURI(c['Name'])
     example_mapping[parseToURI(c['Name'])] = parseToURI(c['Name'])
 
-  return example_mapping
+  return canonical_mapping, example_mapping
 
 def parseToOntologyLiteralIfExists(item, key):
   if key in item:
@@ -90,11 +99,13 @@ def run():
   papers, paper_patterns, canonical_patterns = loadSLRData()
   classes = ''
   canonicals = ''
+  canonical_examples = ''
   examples = ''
   class_template = loadTemplate('class')
   canonical_template = loadTemplate('canonical')
   example_template = loadTemplate('paper')
-  example_mapping = createExempleToCanonicalMappings(canonical_patterns)
+  relation_template = loadTemplate('relation')
+  canonical_mapping, example_mapping = createExempleToCanonicalMappings(canonical_patterns)
 
   for p in canonical_patterns:
     patternType = parseToURI(p['Type (determined)'])
@@ -113,6 +124,12 @@ def run():
       category=patternCategory
     )
 
+    if parseToURI(p['Name']) in canonical_mapping:
+      for ex in canonical_mapping[parseToURI(p['Name'])]:
+        paper_pattern = getPaperPatternFromURI(paper_patterns, ex)
+        paper = getPaperFromId(papers, paper_pattern['Paper'])
+        canonical_examples += Template(relation_template).substitute(relation="hasExample", value=(ex + getFirstAuthor(paper['author']) + paper['year']))
+
     canonicals += Template(canonical_template).substitute(
       owner="nicolas", 
       uri=parseToURI(p['Name']), 
@@ -120,7 +137,7 @@ def run():
       technology=parseToURI(p['Target (generalized)']), 
       domain=parseToURI(p['Applicability domain (generalized)']), 
       refClass=parseToURI(p['Name']), 
-      examples='', 
+      examples=canonical_examples, 
       context='', 
       solution=''
     )
@@ -147,7 +164,7 @@ def run():
       solution=parseToOntologyLiteralIfExists(p, 'Solution'),
       author=getFirstAuthor(paper['author']),
       year=paper['year'],
-      links=get_links_between_patterns(paper_patterns, p, paper, canonical_patterns)
+      links=get_links_between_patterns(paper_patterns, p, paper, example_mapping)
     )
   
   with open("./results/classes.ttl", "w") as text_file_classes:

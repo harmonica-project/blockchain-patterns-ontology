@@ -257,6 +257,7 @@
                           :General ,
                           :Canonical ,
                           :Oracle ;
+          :hasExample :OracleDataProviderWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -268,6 +269,7 @@
                           :General ,
                           :Canonical ,
                           :StateChannel ;
+          :hasExample :OracleDataProviderWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -279,6 +281,7 @@
                           :General ,
                           :Canonical ,
                           :OffChainContractRegistry ;
+          :hasExample :OracleDataProviderWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -290,6 +293,9 @@
                           :General ,
                           :Canonical ,
                           :DataContract ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -301,6 +307,11 @@
                           :General ,
                           :Canonical ,
                           :EmbeddedPermission ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -312,6 +323,14 @@
                           :General ,
                           :Canonical ,
                           :FactoryContract ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -323,6 +342,14 @@
                           :General ,
                           :Canonical ,
                           :EmergencyStop ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -334,6 +361,14 @@
                           :General ,
                           :Canonical ,
                           :Mutex ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -345,6 +380,15 @@
                           :General ,
                           :Canonical ,
                           :ContractBalanceLimit ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -356,6 +400,17 @@
                           :General ,
                           :Canonical ,
                           :ReverseOracle ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -367,6 +422,17 @@
                           :General ,
                           :Canonical ,
                           :IncentiveExecution ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -378,6 +444,17 @@
                           :General ,
                           :Canonical ,
                           :CommitAndReveal ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -389,6 +466,21 @@
                           :General ,
                           :Canonical ,
                           :ProxyContract ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -400,6 +492,21 @@
                           :General ,
                           :Canonical ,
                           :DynamicBinding ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -411,6 +518,21 @@
                           :General ,
                           :Canonical ,
                           :Flyweight ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -422,6 +544,21 @@
                           :General ,
                           :Canonical ,
                           :TightVariablePacking ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -433,6 +570,21 @@
                           :General ,
                           :Canonical ,
                           :LegalAndSmartContractPair ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -444,6 +596,28 @@
                           :General ,
                           :Canonical ,
                           :OffChainDataStorage ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -455,6 +629,30 @@
                           :General ,
                           :Canonical ,
                           :MultipleAuthorization ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -466,6 +664,30 @@
                           :General ,
                           :Canonical ,
                           :OffChainSecretEnabledDynamicAuthentication ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -477,6 +699,30 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :MasterSubKey ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -488,6 +734,30 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :HotColdWalletStorage ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -499,6 +769,30 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :KeySharding ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -510,6 +804,30 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :IdentifierRegistry ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -521,6 +839,30 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :MultipleRegistration ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -532,6 +874,30 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :BoundWithSocialMedia ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -543,6 +909,30 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :DualResolution ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -554,6 +944,30 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :DelegateList ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -565,6 +979,30 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :SelectiveContentGeneration ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -576,6 +1014,30 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :TimeConstrainedAccess ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -587,6 +1049,30 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :OneOffAccess ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -598,6 +1084,30 @@
                           :General ,
                           :Canonical ,
                           :Snapshotting ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -609,6 +1119,30 @@
                           :General ,
                           :Canonical ,
                           :StateAggregation ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -620,6 +1154,30 @@
                           :General ,
                           :Canonical ,
                           :TokenBurning ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -631,6 +1189,30 @@
                           :General ,
                           :Canonical ,
                           :NodeSync ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -642,6 +1224,30 @@
                           :General ,
                           :Canonical ,
                           :EstablishGenesis ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -653,6 +1259,30 @@
                           :General ,
                           :Canonical ,
                           :HardFork ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -664,6 +1294,30 @@
                           :General ,
                           :Canonical ,
                           :StateInitialization ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -675,6 +1329,30 @@
                           :General ,
                           :Canonical ,
                           :ExchangeTransfer ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -686,6 +1364,30 @@
                           :General ,
                           :Canonical ,
                           :TransactionReplay ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -697,6 +1399,30 @@
                           :General ,
                           :Canonical ,
                           :VirtualMachineEmulation ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -708,6 +1434,30 @@
                           :General ,
                           :Canonical ,
                           :SmartContractTranslation ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -719,6 +1469,30 @@
                           :BigData ,
                           :Canonical ,
                           :BlockchainSecurityPatternForBigDataEcosystems ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -730,6 +1504,30 @@
                           :General ,
                           :Canonical ,
                           :EventLog ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -741,6 +1539,30 @@
                           :General ,
                           :Canonical ,
                           :LimitStorage ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -752,6 +1574,30 @@
                           :General ,
                           :Canonical ,
                           :PackingVariables ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -763,6 +1609,30 @@
                           :General ,
                           :Canonical ,
                           :PackingBooleans ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -774,6 +1644,30 @@
                           :General ,
                           :Canonical ,
                           :UintVsUint256 ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -785,6 +1679,30 @@
                           :General ,
                           :Canonical ,
                           :MappingVsArray ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -796,6 +1714,30 @@
                           :General ,
                           :Canonical ,
                           :FixedSize ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -807,6 +1749,30 @@
                           :General ,
                           :Canonical ,
                           :DefaultValue ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -818,6 +1784,30 @@
                           :General ,
                           :Canonical ,
                           :MinimizeOnChainData ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -829,6 +1819,30 @@
                           :General ,
                           :Canonical ,
                           :ExplicitelyMarkExternalFunction ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -840,6 +1854,30 @@
                           :General ,
                           :Canonical ,
                           :LimitExternalCalls ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -851,6 +1889,30 @@
                           :General ,
                           :Canonical ,
                           :InternalFunctionCalls ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -862,6 +1924,30 @@
                           :General ,
                           :Canonical ,
                           :FewerFunctions ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -873,6 +1959,30 @@
                           :General ,
                           :Canonical ,
                           :UseLibraries ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -884,6 +1994,30 @@
                           :General ,
                           :Canonical ,
                           :ShortCircuit ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -895,6 +2029,30 @@
                           :General ,
                           :Canonical ,
                           :ShortConstantStrings ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -906,6 +2064,30 @@
                           :General ,
                           :Canonical ,
                           :LimitModifiers ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -917,6 +2099,30 @@
                           :General ,
                           :Canonical ,
                           :AvoidRedundantOperations ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -928,6 +2134,30 @@
                           :General ,
                           :Canonical ,
                           :SingleLineSwap ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -939,6 +2169,30 @@
                           :General ,
                           :Canonical ,
                           :WriteValues ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -950,6 +2204,30 @@
                           :General ,
                           :Canonical ,
                           :FreeingStorage ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -961,6 +2239,30 @@
                           :General ,
                           :Canonical ,
                           :Optimizer ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -972,6 +2274,30 @@
                           :BPM ,
                           :Canonical ,
                           :ConfidentialAndPseudoAnonymousContractEnforcement ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -983,6 +2309,30 @@
                           :General ,
                           :Canonical ,
                           :SelfGeneratedTransactions ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -994,6 +2344,30 @@
                           :General ,
                           :Canonical ,
                           :SelfConfirmedTransactions ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1005,6 +2379,30 @@
                           :General ,
                           :Canonical ,
                           :DelegatedTransactions ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1016,6 +2414,30 @@
                           :General ,
                           :Canonical ,
                           :DigitalRecord ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1027,6 +2449,30 @@
                           :General ,
                           :Canonical ,
                           :MultipleBlockchains ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1038,6 +2484,33 @@
                           :General ,
                           :Canonical ,
                           :OnChainEncryption ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1049,6 +2522,33 @@
                           :General ,
                           :Canonical ,
                           :HashTimestamping ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1060,6 +2560,33 @@
                           :General ,
                           :Canonical ,
                           :PullPayment ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1071,6 +2598,33 @@
                           :General ,
                           :Canonical ,
                           :StateMachine ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1082,6 +2636,33 @@
                           :General ,
                           :Canonical ,
                           :Ownership ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1093,6 +2674,33 @@
                           :General ,
                           :Canonical ,
                           :AccessRestriction ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1104,6 +2712,33 @@
                           :General ,
                           :Canonical ,
                           :Mortal ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1115,6 +2750,33 @@
                           :General ,
                           :Canonical ,
                           :AutomaticDeprecation ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1126,6 +2788,33 @@
                           :General ,
                           :Canonical ,
                           :Satellite ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1137,6 +2826,33 @@
                           :General ,
                           :Canonical ,
                           :SpeedBump ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1148,6 +2864,33 @@
                           :General ,
                           :Canonical ,
                           :RateLimit ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1159,6 +2902,35 @@
                           :General ,
                           :Canonical ,
                           :CheckEffectInteraction ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1170,6 +2942,35 @@
                           :General ,
                           :Canonical ,
                           :GuardCheck ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1181,6 +2982,35 @@
                           :General ,
                           :Canonical ,
                           :TimeConstraint ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1192,6 +3022,35 @@
                           :General ,
                           :Canonical ,
                           :Termination ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1203,6 +3062,35 @@
                           :General ,
                           :Canonical ,
                           :Math ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1214,6 +3102,35 @@
                           :General ,
                           :Canonical ,
                           :PublisherSubscriber ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1225,6 +3142,37 @@
                           :General ,
                           :Canonical ,
                           :Tokenisation ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1236,6 +3184,37 @@
                           :General ,
                           :Canonical ,
                           :XConfirmation ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1247,6 +3226,38 @@
                           :General ,
                           :Canonical ,
                           :ContractRegistry ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1258,6 +3269,38 @@
                           :General ,
                           :Canonical ,
                           :ChallengeResponse ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1269,6 +3312,38 @@
                           :General ,
                           :Canonical ,
                           :OffChainSignatures ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1280,6 +3355,38 @@
                           :General ,
                           :Canonical ,
                           :DelegatedComputation ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1291,6 +3398,38 @@
                           :General ,
                           :Canonical ,
                           :LowContractFootprint ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1302,6 +3441,38 @@
                           :General ,
                           :Canonical ,
                           :PullBasedInboundOracle ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1313,6 +3484,38 @@
                           :General ,
                           :Canonical ,
                           :PushBasedInboundOracle ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1324,6 +3527,38 @@
                           :General ,
                           :Canonical ,
                           :PullBasedOutboundOracle ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1335,6 +3570,38 @@
                           :General ,
                           :Canonical ,
                           :PushBasedOutboundOracle ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1346,6 +3613,38 @@
                           :General ,
                           :Canonical ,
                           :ContractComposer ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1357,6 +3656,38 @@
                           :General ,
                           :Canonical ,
                           :ContractDecorator ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1368,6 +3699,38 @@
                           :General ,
                           :Canonical ,
                           :ContractMediator ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1379,6 +3742,38 @@
                           :General ,
                           :Canonical ,
                           :ContractObserver ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;
@@ -1390,6 +3785,38 @@
                           :General ,
                           :Canonical ,
                           :HashSecret ;
+          :hasExample :OracleDataProviderWohrer2018 ;
+          :hasExample :DataSegregationWohrer2018 ;
+          :hasExample :EternalStorageDataContractMarchesi2020 ;
+          :hasExample :AccessControlMavridou2018 ;
+          :hasExample :AuthorizationWorley2019 ;
+          :hasExample :ReusabilityMarchesi2020 ;
+          :hasExample :ContractFactoryLiu2018 ;
+          :hasExample :AbstractFactoryMarchesi2020 ;
+          :hasExample :BalanceLimitWohrer2020 ;
+          :hasExample :ReverseVerifierRajasekar2020 ;
+          :hasExample :AntiOracleWorley2019 ;
+          :hasExample :ProxyMarchesi2020 ;
+          :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
+          :hasExample :ContractRelayWohrer2018 ;
+          :hasExample :ContractFacadeLiu2018 ;
+          :hasExample :HashStorageMüller2020 ;
+          :hasExample :OffChainDatastoreRajasekar2020 ;
+          :hasExample :HashIntegrityLu2019 ;
+          :hasExample :MirrorLemieux2017 ;
+          :hasExample :ContentAddressableStorageEberhardt2017 ;
+          :hasExample :AnchoringToBlockchainLiu2020 ;
+          :hasExample :OnChainAndOffChainLu2019 ;
+          :hasExample :MultipleAuthoritiesLu2019 ;
+          :hasExample :MultiSignatureLiu2018 ;
+          :hasExample :PrivacyMarchesi2020 ;
+          :hasExample :DataEncryptionLu2019 ;
+          :hasExample :EncryptingOnChainDataXu2018 ;
+          :hasExample :ChecksEffectsInteractionWohrer2020 ;
+          :hasExample :ChecksEffectInteractionsRajasekar2020 ;
+          :hasExample :TokenizedLemieux2017 ;
+          :hasExample :TokenWorley2019 ;
+          :hasExample :ContractRegisterWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
                  :Solution ""^^rdfs:Literal ;

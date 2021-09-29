@@ -338,7 +338,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :benefitsFrom :Unknown ;
+          :benefitsFrom :TokenisationCanonical ;
           :benefitsFrom :AddressMappingCanonical ;
 
           :hasCanonical :PollCanonical ;
@@ -2061,6 +2061,10 @@
                    :General ,
                    :Ethereum ;
           :fromPattern :Unknown ;
+          :fromPattern :Unknown ;
+          :fromPattern :ProxyMarchesi2020 ;
+          :fromPattern :ContractFacadeMarchesi2020 ;
+          :fromPattern :ProxyMarchesi2020 ;
 
           :hasCanonical :ProxyContractCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -2323,7 +2327,8 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :Unknown ;
+          :fromPattern :AbstractFactoryMarchesi2020 ;
+          :fromPattern :ContractFactoryMarchesi2020 ;
           :fromPattern :FactoryContractMarchesi2020 ;
 
           :hasCanonical :FactoryContractCanonical ;
@@ -2642,7 +2647,8 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :benefitsFrom :Unknown ;
+          :benefitsFrom :ContractComposerLiu2018 ;
+          :benefitsFrom :ContractDecoratorLiu2018 ;
 
           :hasCanonical :ContractDecoratorCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
