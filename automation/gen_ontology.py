@@ -50,7 +50,7 @@ def parseToRelation(name):
   return name
 
 # generate the links between example patterns. 5 different links exists, they are listed in the array below for easy detection in the dict
-def get_links_between_patterns(paper_patterns, paper_pattern, paper, example_mapping):
+def get_links_between_patterns(paper_patterns, paper_pattern, example_mapping, papers):
   link_types = ["From pattern", "Related to", "Variant Of", "Requires", "Benefits from"]
   relation_template = loadTemplate('relation')
   relations_str = ''
@@ -62,6 +62,7 @@ def get_links_between_patterns(paper_patterns, paper_pattern, paper, example_map
       for r in relations:
         if r.isdigit():
           relation_paper = getPaperPatternFromId(paper_patterns, r)
+          paper = getPaperFromId(papers, relation_paper['Paper'])
           relation_paper_name = parseToURI(relation_paper['Name']) + getFirstAuthor(paper['author']) + paper['year']
         else:
           if parseToURI(r) in example_mapping:
@@ -193,7 +194,7 @@ def run():
       solution=parseToOntologyLiteralIfExists(p, 'Solution'),
       author=getFirstAuthor(paper['author']),
       year=paper['year'],
-      links=get_links_between_patterns(paper_patterns, p, paper, example_mapping)
+      links=get_links_between_patterns(paper_patterns, p, example_mapping, papers)
     )
   
   # write classes, canonicals and examples in three distinct files, can be merged into a complete ontology

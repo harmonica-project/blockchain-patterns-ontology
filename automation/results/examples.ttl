@@ -140,7 +140,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :benefitsFrom :BlockchainBasedReputationSystemWorley2019 ;
+          :benefitsFrom :BlockchainBasedReputationSystemMüller2020 ;
 
           :hasCanonical :VoteCanonical ;
           :ContextAndProblem "A contract must supply data that cannot rely on a single source. A large number of data sources are present and must be decided between."^^rdfs:Literal ;
@@ -400,7 +400,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :ChecksEffectsInteractionRajasekar2020 ;
+          :fromPattern :ChecksEffectsInteractionWohrer2018 ;
 
           :hasCanonical :CheckEffectInteractionCanonical ;
           :ContextAndProblem "If the ”interactions” occur before the ”effects” are recorded and the invoked contract makes a callback to the original one, the system state can be exploited."^^rdfs:Literal ;
@@ -413,7 +413,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :ChecksEffectsInteractionRajasekar2020 ;
+          :fromPattern :ChecksEffectsInteractionWohrer2018 ;
 
           :hasCanonical :SecureEtherTransferCanonical ;
           :ContextAndProblem "Since the low-level function will forward all remaining gas to the invoked contract, using it allows further invocations to be made, provided the gas sent in the original call is sufficiently larger than the required minimum."^^rdfs:Literal ;
@@ -426,9 +426,9 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :OracleRajasekar2020 ;
-          :fromPattern :OracleDataProviderRajasekar2020 ;
-          :fromPattern :PublisherSubscriberRajasekar2020 ;
+          :fromPattern :OracleXu2018 ;
+          :fromPattern :OracleDataProviderWohrer2018 ;
+          :fromPattern :PublisherSubscriberRaj2018 ;
           :relatedTo :ReverseVerifierRajasekar2020 ;
 
           :hasCanonical :OracleCanonical ;
@@ -442,7 +442,7 @@
                    :PaperBased ,
                    :General ,
                    :AllBlockchains ;
-          :fromPattern :OnChainAndOffChainRajasekar2020 ;
+          :fromPattern :OnChainAndOffChainLu2019 ;
 
           :hasCanonical :OffChainDataStorageCanonical ;
           :ContextAndProblem "Since the blockchain is a distributed store of data, many nodes in the network must store the entire blockchain, which becomes infeasible if too much data is stored in every block."^^rdfs:Literal ;
@@ -455,7 +455,7 @@
                    :PaperBased ,
                    :General ,
                    :AllBlockchains ;
-          :fromPattern :StateChannelRajasekar2020 ;
+          :fromPattern :StateChannelXu2018 ;
 
           :hasCanonical :StateChannelCanonical ;
           :ContextAndProblem "As mentioned, storing large amounts of data on the blockchain is not sustainable for scalability and sometimes cost issues. In the case of micro-transactions, the amount being transacted is significantly lesser than the processing fees and will take up as much space as any other transaction on the chain."^^rdfs:Literal ;
@@ -468,8 +468,8 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :ContractRegistryRajasekar2020 ;
-          :fromPattern :ContractRegisterRajasekar2020 ;
+          :fromPattern :ContractRegistryXu2018 ;
+          :fromPattern :ContractRegisterWohrer2018 ;
           :relatedTo :ProxyContractRajasekar2020 ;
 
           :hasCanonical :OffChainContractRegistryCanonical ;
@@ -483,8 +483,8 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :DataContractRajasekar2020 ;
-          :fromPattern :DataSegregationRajasekar2020 ;
+          :fromPattern :DataContractXu2018 ;
+          :fromPattern :DataSegregationWohrer2018 ;
 
           :hasCanonical :DataContractCanonical ;
           :ContextAndProblem "If a contract stores its data within itself, modifying the contract using the registry or proxy pattern will mean rewriting all of the data to the updated version as well. Since the outdated contracts still remain on the blockchain, and are only indirectly replaced by the updated versions, the data will be stored redundantly with every new version of the contract (Volland, 2018). Conversely, storing the data on a data contract would reduce redundant data storage."^^rdfs:Literal ;
@@ -497,8 +497,8 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :EmbeddedPermissionRajasekar2020 ;
-          :fromPattern :EmbeddedPermissionRajasekar2020 ;
+          :fromPattern :EmbeddedPermissionXu2018 ;
+          :fromPattern :EmbeddedPermissionLu2019 ;
 
           :hasCanonical :EmbeddedPermissionCanonical ;
           :ContextAndProblem "A good example of a critical or sensitive function is self destruct() in Solidity2. The absence of embedded permission to execute this particular function was leveraged in the Parity Wallet hack."^^rdfs:Literal ;
@@ -511,8 +511,8 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :FactoryContractRajasekar2020 ;
-          :fromPattern :AbstractFactoryRajasekar2020 ;
+          :fromPattern :FactoryContractXu2018 ;
+          :fromPattern :AbstractFactoryRaj2018 ;
 
           :hasCanonical :FactoryContractCanonical ;
           :ContextAndProblem "Using a factory contract helps make a DApp’s code modular and reduces the amount of updates required when new functionality is added to the DApp. It also ensures that certain design principles are consistent throughout the application."^^rdfs:Literal ;
@@ -525,7 +525,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :EmergencyStopRajasekar2020 ;
+          :fromPattern :EmergencyStopWohrer2018 ;
 
           :hasCanonical :EmergencyStopCanonical ;
           :ContextAndProblem "If a contract is executing malicious functions recursively or for several iterations, without the ability to interrupt, the malicious function can run indefinitely and the nodes can do nothing till execution completes."^^rdfs:Literal ;
@@ -538,7 +538,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :MutexRajasekar2020 ;
+          :fromPattern :MutexWohrer2018 ;
 
           :hasCanonical :MutexCanonical ;
           :ContextAndProblem "Having a recursive call (or a callback) that modifies the state of the parent, before it has finished its execution, can cause serious issues as described several times above."^^rdfs:Literal ;
@@ -551,7 +551,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :BalanceLimitRajasekar2020 ;
+          :fromPattern :BalanceLimitWohrer2018 ;
 
           :hasCanonical :ContractBalanceLimitCanonical ;
           :ContextAndProblem "Having a contract with too much capital reduces the target area for a potential attack to take place."^^rdfs:Literal ;
@@ -564,7 +564,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :ReverseOracleRajasekar2020 ;
+          :fromPattern :ReverseOracleXu2018 ;
           :relatedTo :OracleRajasekar2020 ;
 
           :hasCanonical :ReverseOracleCanonical ;
@@ -578,7 +578,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :IncentiveExecutionRajasekar2020 ;
+          :fromPattern :IncentiveExecutionXu2018 ;
 
           :hasCanonical :IncentiveExecutionCanonical ;
           :ContextAndProblem "Some functions perform tasks like cleaning up expired records, making dividend payouts and destroying deprecated contracts. These utility functions also require gas to be executed, and the payout is usually not enough to offset the execution cost. "^^rdfs:Literal ;
@@ -591,7 +591,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :CommitAndRevealRajasekar2020 ;
+          :fromPattern :CommitAndRevealWohrer2018 ;
 
           :hasCanonical :CommitAndRevealCanonical ;
           :ContextAndProblem "If a contract’s internal state is visible to the network, it is possible for a malicious user to take advantage, and invoke the contract with deliberately selected variables that change the state to one they desire."^^rdfs:Literal ;
@@ -604,7 +604,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :ContractRelayRajasekar2020 ;
+          :fromPattern :ContractRelayWohrer2018 ;
           :relatedTo :OffChainContractRegistryRajasekar2020 ;
 
           :hasCanonical :ProxyContractCanonical ;
@@ -618,7 +618,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :DynamicBindingRajasekar2020 ;
+          :fromPattern :DynamicBindingLu2019 ;
 
           :hasCanonical :DynamicBindingCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -631,7 +631,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :FlyweightRajasekar2020 ;
+          :fromPattern :FlyweightRaj2018 ;
           :relatedTo :DataContractRajasekar2020 ;
 
           :hasCanonical :FlyweightCanonical ;
@@ -722,7 +722,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :relatedTo :ProxyXu2018 ;
+          :relatedTo :ProxyZhang2017 ;
 
           :hasCanonical :OffChainDataStorageCanonical ;
           :ContextAndProblem "Some applications consider using the blockchain to guarantee the integrity of large amounts of data. The blockchain, due to its full replication across all participants of the blockchain network, has limited storage capacity. Storing large amounts of data within a transaction may be impossible due to the limited size of the blocks of the blockchain (for example, Ethereum has a block gas limit to determine the number, computational complexity, and data size ofthe transactions included in the block). Data cannot take advantage of the immutability or integrity guarantees without being stored on the blockchain. How to store data of arbitrary size and take advantage of the immutability and integrity guarantees provided by the blockchain?"^^rdfs:Literal ;
@@ -735,7 +735,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :relatedTo :OffChainSignaturesXu2018 ;
+          :relatedTo :OffChainSignaturesEberhardt2017 ;
 
           :hasCanonical :StateChannelCanonical ;
           :ContextAndProblem "Micro-payments are payments that can be as small as a few cents, e.g., payment of a very small amount of money to a WiFi hot-spot for every 10 kilobytes of data usage. Blockchain has potential to be used for such financial transactions with tiny monetary value. The question is if it is necessary and cost effective to store all the micro-payment transactions on blockchain. The decentralized design of blockchain has limited performance. Transactions can take several minutes or even one hour (for Bitcoin blockchain) to be committed on the blockchain [17]. Due to the long commit time and high transaction fees on a public blockchain (where fees are largely independent of the transacted amount), it is often infeasible to store every micro-payment transaction on the blockchain network. "^^rdfs:Literal ;
@@ -800,7 +800,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :benefitsFrom :AuthorizationXu2018 ;
+          :benefitsFrom :AuthorizationWorley2019 ;
           :benefitsFrom :MultipleAuthorizationXu2018 ;
           :benefitsFrom :OffChainSecretEnabledDynamicAuthenticationXu2018 ;
 
@@ -894,8 +894,8 @@
                    :PaperBased ,
                    :IdentityManagement ,
                    :SmartContractEnabledBlockchains ;
-          :relatedTo :ContentAddressableStorageLiu2020 ;
-          :relatedTo :FlyweightLiu2020 ;
+          :relatedTo :ContentAddressableStorageEberhardt2017 ;
+          :relatedTo :FlyweightZhang2017 ;
           :requires :MasterSubKeyLiu2020 ;
           :benefitsFrom :DelegateListLiu2020 ;
 
@@ -952,7 +952,7 @@
                    :SmartContractEnabledBlockchains ;
           :relatedTo :DelegateListLiu2020 ;
           :benefitsFrom :IdentifierRegistryLiu2020 ;
-          :benefitsFrom :MutexLiu2020 ;
+          :benefitsFrom :MutexWohrer2018 ;
 
           :hasCanonical :DelegateListCanonical ;
           :ContextAndProblem "Each identity has a key pair to authenticate the transactions initiated by the user by means of digital signatures. A master-key may be compromised/stolen by malicious hackers. A compromised master-key results in the loss of ownership over all sub-keys and corresponding identifiers. The hacker may utilise the identifiers to further steal the entity’s identity data."^^rdfs:Literal ;
@@ -1006,8 +1006,8 @@
                    :PaperBased ,
                    :IdentityManagement ,
                    :AllBlockchains ;
-          :relatedTo :LowContractFootprintLiu2020 ;
-          :relatedTo :OffChainDataStorageLiu2020 ;
+          :relatedTo :LowContractFootprintEberhardt2017 ;
+          :relatedTo :OffChainDataStorageXu2018 ;
 
           :hasCanonical :OffChainDataStorageCanonical ;
           :ContextAndProblem "Blockchain’s nature configurations may limit its performance when facing a large number of transactions. Blockchain can ensure data integrity via storing data on-chain, but it costs real money to process the transaction in many public blockchain networks. In addition, according to the nature consensus mechanism, blockchain generates a block in a fixed period (i.e. block interval), which only includes a restricted number of transactions due to the block size. Consequently, blockchain’s performance may be restricted when users frequently initiate transactions."^^rdfs:Literal ;
@@ -1035,7 +1035,7 @@
                    :PaperBased ,
                    :General ,
                    :AllBlockchains ;
-          :requires :OffChainDataStorageBandara2020 ;
+          :requires :OffChainDataStorageXu2018 ;
           :benefitsFrom :SnapshottingBandara2020 ;
 
           :hasCanonical :StateAggregationCanonical ;
@@ -1716,7 +1716,7 @@
                    :PaperBased ,
                    :General ,
                    :AllBlockchains ;
-          :fromPattern :EncryptingOnChainDataSchinle2020 ;
+          :fromPattern :EncryptingOnChainDataXu2018 ;
 
           :hasCanonical :OnChainEncryptionCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1741,7 +1741,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :PullPaymentWohrer2020 ;
+          :fromPattern :PullPaymentWohrer2018 ;
 
           :hasCanonical :PullPaymentCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1754,7 +1754,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :StateMachineWohrer2020 ;
+          :fromPattern :StateMachineWohrer2018 ;
 
           :hasCanonical :StateMachineCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1767,7 +1767,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :CommitAndRevealWohrer2020 ;
+          :fromPattern :CommitAndRevealWohrer2018 ;
 
           :hasCanonical :CommitAndRevealCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1780,7 +1780,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :OracleDataProviderWohrer2020 ;
+          :fromPattern :OracleDataProviderWohrer2018 ;
 
           :hasCanonical :OracleCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1793,7 +1793,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :OwnershipWohrer2020 ;
+          :fromPattern :OwnershipWohrer2018 ;
 
           :hasCanonical :OwnershipCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1806,7 +1806,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :AccessRestrictionWohrer2020 ;
+          :fromPattern :AccessRestrictionWohrer2018 ;
 
           :hasCanonical :AccessRestrictionCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1819,7 +1819,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :MortalWohrer2020 ;
+          :fromPattern :MortalWohrer2018 ;
 
           :hasCanonical :MortalCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1832,7 +1832,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :AutomaticDeprecationWohrer2020 ;
+          :fromPattern :AutomaticDeprecationWohrer2018 ;
 
           :hasCanonical :AutomaticDeprecationCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1845,7 +1845,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :DataSegregationWohrer2020 ;
+          :fromPattern :DataSegregationWohrer2018 ;
 
           :hasCanonical :DataContractCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1858,7 +1858,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :SatelliteWohrer2020 ;
+          :fromPattern :SatelliteWohrer2018 ;
 
           :hasCanonical :SatelliteCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1871,7 +1871,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :ContractRegisterWohrer2020 ;
+          :fromPattern :ContractRegisterWohrer2018 ;
 
           :hasCanonical :ContractRegistryCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1884,7 +1884,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :ContractRelayWohrer2020 ;
+          :fromPattern :ContractRelayWohrer2018 ;
 
           :hasCanonical :ProxyContractCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1897,7 +1897,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :ChecksEffectsInteractionWohrer2020 ;
+          :fromPattern :ChecksEffectsInteractionWohrer2018 ;
 
           :hasCanonical :CheckEffectInteractionCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1910,7 +1910,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :EmergencyStopWohrer2020 ;
+          :fromPattern :EmergencyStopWohrer2018 ;
 
           :hasCanonical :EmergencyStopCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1923,7 +1923,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :SpeedBumpWohrer2020 ;
+          :fromPattern :SpeedBumpWohrer2018 ;
 
           :hasCanonical :SpeedBumpCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1936,7 +1936,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :RateLimitWohrer2020 ;
+          :fromPattern :RateLimitWohrer2018 ;
 
           :hasCanonical :RateLimitCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1949,7 +1949,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :MutexWohrer2020 ;
+          :fromPattern :MutexWohrer2018 ;
 
           :hasCanonical :MutexCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -1962,7 +1962,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
-          :fromPattern :BalanceLimitWohrer2020 ;
+          :fromPattern :BalanceLimitWohrer2018 ;
 
           :hasCanonical :ContractBalanceLimitCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -2047,7 +2047,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :ChecksEffectsInteractionMarchesi2020 ;
+          :fromPattern :ChecksEffectsInteractionWohrer2018 ;
 
           :hasCanonical :CheckEffectInteractionCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -2062,8 +2062,8 @@
                    :Ethereum ;
           :fromPattern :Unknown ;
           :fromPattern :Unknown ;
-          :fromPattern :ProxyMarchesi2020 ;
-          :fromPattern :ContractFacadeMarchesi2020 ;
+          :fromPattern :ProxyZhang2017 ;
+          :fromPattern :ContractFacadeLiu2018 ;
           :fromPattern :ProxyMarchesi2020 ;
 
           :hasCanonical :ProxyContractCanonical ;
@@ -2077,7 +2077,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :AuthorizationMarchesi2020 ;
+          :fromPattern :AuthorizationBartoletti2017 ;
 
           :hasCanonical :EmbeddedPermissionCanonical ;
           :ContextAndProblem "Since SCs are publicly accessible to all blockchain participants, it is critical to restrict authorizations to perform specific tasks. Specifically, for each contract method, developers must specify the subset of participants who can call it. Contracts usually define at least one contract owner, which is the only entity authorised to call critical methods."^^rdfs:Literal ;
@@ -2102,8 +2102,8 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :OracleMarchesi2020 ;
-          :fromPattern :OracleMarchesi2020 ;
+          :fromPattern :OracleBartoletti2017 ;
+          :fromPattern :OracleXu2018 ;
 
           :hasCanonical :OracleCanonical ;
           :ContextAndProblem "A smart contract is by nature isolated, and cannot acquire information directly. This is due to the fact that network nodes must agree on the state of transactions. To accomplish this, nodes should evaluate only static data. On the contrary, the outside world, for instance a website API, could provide different responses to the same query performed by different network nodes, breaking blockchain consensus."^^rdfs:Literal ;
@@ -2116,7 +2116,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :ReverseOracleMarchesi2020 ;
+          :fromPattern :ReverseOracleXu2018 ;
 
           :hasCanonical :ReverseOracleCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -2129,7 +2129,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :RateLimitMarchesi2020 ;
+          :fromPattern :RateLimitWohrer2018 ;
           :benefitsFrom :TimeConstraintMarchesi2020 ;
 
           :hasCanonical :RateLimitCanonical ;
@@ -2143,7 +2143,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :BalanceLimitMarchesi2020 ;
+          :fromPattern :BalanceLimitWohrer2018 ;
 
           :hasCanonical :ContractBalanceLimitCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -2169,7 +2169,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :TimeConstraintMarchesi2020 ;
+          :fromPattern :TimeConstraintBartoletti2017 ;
 
           :hasCanonical :TimeConstraintCanonical ;
           :ContextAndProblem "Different blockchain nodes could process transactions at different timestamps, due to network latency or further causes. Consequently, part of the network could consider an action as executed beyond the time constraint, and the corresponding transaction could be rejected by the whole network."^^rdfs:Literal ;
@@ -2182,7 +2182,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :TerminationMarchesi2020 ;
+          :fromPattern :TerminationBartoletti2017 ;
           :benefitsFrom :OwnershipMarchesi2020 ;
 
           :hasCanonical :TerminationCanonical ;
@@ -2196,7 +2196,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :MathMarchesi2020 ;
+          :fromPattern :MathBartoletti2017 ;
 
           :hasCanonical :MathCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -2209,7 +2209,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :EncryptingOnChainDataMarchesi2020 ;
+          :fromPattern :EncryptingOnChainDataXu2018 ;
 
           :hasCanonical :OnChainEncryptionCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -2222,7 +2222,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :FactoryContractMarchesi2020 ;
+          :fromPattern :FactoryContractXu2018 ;
 
           :hasCanonical :FactoryContractCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -2235,7 +2235,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :MutexMarchesi2020 ;
+          :fromPattern :MutexWohrer2018 ;
 
           :hasCanonical :MutexCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -2248,7 +2248,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :SpeedBumpMarchesi2020 ;
+          :fromPattern :SpeedBumpWohrer2018 ;
           :benefitsFrom :TimeConstraintMarchesi2020 ;
 
           :hasCanonical :SpeedBumpCanonical ;
@@ -2262,7 +2262,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :PublisherSubscriberMarchesi2020 ;
+          :fromPattern :PublisherSubscriberZhang2017 ;
 
           :hasCanonical :PublisherSubscriberCanonical ;
           :ContextAndProblem "When a module needs to receive some messages from other software modules (e.g. a smart contract), developers should implement a messag- ing infrastructure that allows each module to be easily notified when a new message is generated."^^rdfs:Literal ;
@@ -2275,7 +2275,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :TokenisationMarchesi2020 ;
+          :fromPattern :TokenisationXu2018 ;
 
           :hasCanonical :TokenisationCanonical ;
           :ContextAndProblem "The Ethereum ecosystem provides standards to handle several types of tokens, such as the ERC20 and ERC721."^^rdfs:Literal ;
@@ -2288,7 +2288,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :XConfirmationMarchesi2020 ;
+          :fromPattern :XConfirmationXu2018 ;
 
           :hasCanonical :XConfirmationCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -2301,7 +2301,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :ContractRegistryMarchesi2020 ;
+          :fromPattern :ContractRegistryXu2018 ;
 
           :hasCanonical :ContractRegistryCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -2314,7 +2314,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :DataContractMarchesi2020 ;
+          :fromPattern :DataContractXu2018 ;
 
           :hasCanonical :DataContractCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
@@ -2327,9 +2327,9 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
-          :fromPattern :AbstractFactoryMarchesi2020 ;
-          :fromPattern :ContractFactoryMarchesi2020 ;
-          :fromPattern :FactoryContractMarchesi2020 ;
+          :fromPattern :AbstractFactoryZhang2017 ;
+          :fromPattern :ContractFactoryLiu2018 ;
+          :fromPattern :FactoryContractXu2018 ;
 
           :hasCanonical :FactoryContractCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
