@@ -4,6 +4,7 @@
                           :$domain ,
                           :Canonical ,
                           :$refClass ;
+                          :$language ;
 $examples
                  :ContextAndProblem "$context"^^rdfs:Literal ;
                  :Solution "$solution"^^rdfs:Literal ;

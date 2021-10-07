@@ -4,6 +4,7 @@
                           :BPM ,
                           :Canonical ,
                           :TransparentEventLog ;
+                          :Unspecified ;
           :hasExample :TransparentEventLogMüller2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -16,6 +17,7 @@
                           :BPM ,
                           :Canonical ,
                           :BlockchainBpEngine ;
+                          :Unspecified ;
           :hasExample :BlockchainBpEngineMüller2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -28,6 +30,7 @@
                           :BPM ,
                           :Canonical ,
                           :SmartContractActivities ;
+                          :Unspecified ;
           :hasExample :SmartContractActivitiesMüller2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -40,6 +43,7 @@
                           :BPM ,
                           :Canonical ,
                           :BlockchainBasedReputationSystem ;
+                          :Unspecified ;
           :hasExample :BlockchainBasedReputationSystemMüller2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -52,6 +56,7 @@
                           :BPM ,
                           :Canonical ,
                           :DecentralizeBusinessProcess ;
+                          :Unspecified ;
           :hasExample :DecentralizeBusinessProcessMüller2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -64,6 +69,7 @@
                           :General ,
                           :Canonical ,
                           :KeyValueStore ;
+                          :Unspecified ;
           :hasExample :KeyValueStoreWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -76,6 +82,7 @@
                           :General ,
                           :Canonical ,
                           :AddressMapping ;
+                          :Unspecified ;
           :hasExample :AddressMappingWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -88,6 +95,7 @@
                           :General ,
                           :Canonical ,
                           :Authorization ;
+                          :Unspecified ;
           :hasExample :AuthorizationWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -100,6 +108,7 @@
                           :General ,
                           :Canonical ,
                           :Judge ;
+                          :Unspecified ;
           :hasExample :JudgeWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -112,6 +121,7 @@
                           :General ,
                           :Canonical ,
                           :TickerTape ;
+                          :Unspecified ;
           :hasExample :TickerTapeWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -124,6 +134,7 @@
                           :General ,
                           :Canonical ,
                           :Vote ;
+                          :Unspecified ;
           :hasExample :VoteWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -136,6 +147,7 @@
                           :General ,
                           :Canonical ,
                           :Blocklist ;
+                          :Unspecified ;
           :hasExample :BlocklistWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -148,6 +160,7 @@
                           :General ,
                           :Canonical ,
                           :Announcement ;
+                          :Unspecified ;
           :hasExample :AnnouncementWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -160,6 +173,7 @@
                           :General ,
                           :Canonical ,
                           :BulletinBoard ;
+                          :Unspecified ;
           :hasExample :BulletinBoardWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -172,6 +186,7 @@
                           :General ,
                           :Canonical ,
                           :Migration ;
+                          :Unspecified ;
           :hasExample :MigrationWorley2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -184,6 +199,7 @@
                           :General ,
                           :Canonical ,
                           :InterFamilyCommunication ;
+                          :Unspecified ;
           :hasExample :InterFamilyCommunicationOwens2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -196,6 +212,7 @@
                           :General ,
                           :Canonical ,
                           :Locking ;
+                          :Solidity ;
           :hasExample :LockingMavridou2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -208,6 +225,7 @@
                           :General ,
                           :Canonical ,
                           :TransitionCounter ;
+                          :Solidity ;
           :hasExample :TransitionCounterMavridou2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -220,6 +238,7 @@
                           :General ,
                           :Canonical ,
                           :AutomaticTimedTransitions ;
+                          :Solidity ;
           :hasExample :AutomaticTimedTransitionsMavridou2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -232,6 +251,7 @@
                           :General ,
                           :Canonical ,
                           :Randomness ;
+                          :Solidity ;
           :hasExample :RandomnessBartoletti2017 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -244,6 +264,7 @@
                           :General ,
                           :Canonical ,
                           :Poll ;
+                          :Solidity ;
           :hasExample :PollBartoletti2017 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -256,6 +277,7 @@
                           :General ,
                           :Canonical ,
                           :ForkCheck ;
+                          :Solidity ;
           :hasExample :ForkCheckBartoletti2017 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -268,6 +290,7 @@
                           :General ,
                           :Canonical ,
                           :SecureEtherTransfer ;
+                          :Solidity ;
           :hasExample :SecureEtherTransferRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -280,6 +303,7 @@
                           :General ,
                           :Canonical ,
                           :Oracle ;
+                          :Unspecified ;
           :hasExample :OracleBartoletti2017 ;
           :hasExample :OracleDataProviderWohrer2018 ;
 
@@ -293,6 +317,7 @@
                           :General ,
                           :Canonical ,
                           :StateChannel ;
+                          :Unspecified ;
           :hasExample :StateChannelRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -305,6 +330,7 @@
                           :General ,
                           :Canonical ,
                           :OffChainContractRegistry ;
+                          :Unspecified ;
           :hasExample :OffChainContractRegistryRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -317,6 +343,7 @@
                           :General ,
                           :Canonical ,
                           :DataContract ;
+                          :Unspecified ;
           :hasExample :DataContractRajasekar2020 ;
           :hasExample :DataSegregationWohrer2018 ;
           :hasExample :EternalStorageDataContractMarchesi2020 ;
@@ -331,6 +358,7 @@
                           :General ,
                           :Canonical ,
                           :EmbeddedPermission ;
+                          :Unspecified ;
           :hasExample :EmbeddedPermissionRajasekar2020 ;
           :hasExample :AccessControlMavridou2018 ;
           :hasExample :AuthorizationWorley2019 ;
@@ -345,6 +373,7 @@
                           :General ,
                           :Canonical ,
                           :FactoryContract ;
+                          :Unspecified ;
           :hasExample :FactoryContractRajasekar2020 ;
           :hasExample :ReusabilityMarchesi2020 ;
           :hasExample :ContractFactoryLiu2018 ;
@@ -360,6 +389,7 @@
                           :General ,
                           :Canonical ,
                           :EmergencyStop ;
+                          :Unspecified ;
           :hasExample :EmergencyStopRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -372,6 +402,7 @@
                           :General ,
                           :Canonical ,
                           :Mutex ;
+                          :Unspecified ;
           :hasExample :MutexRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -384,6 +415,7 @@
                           :General ,
                           :Canonical ,
                           :ContractBalanceLimit ;
+                          :Unspecified ;
           :hasExample :ContractBalanceLimitRajasekar2020 ;
           :hasExample :BalanceLimitWohrer2020 ;
 
@@ -397,6 +429,7 @@
                           :General ,
                           :Canonical ,
                           :ReverseOracle ;
+                          :Unspecified ;
           :hasExample :ReverseOracleXu2018 ;
           :hasExample :ReverseVerifierRajasekar2020 ;
           :hasExample :AntiOracleWorley2019 ;
@@ -411,6 +444,7 @@
                           :General ,
                           :Canonical ,
                           :IncentiveExecution ;
+                          :Unspecified ;
           :hasExample :IncentiveExecutionRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -423,6 +457,7 @@
                           :General ,
                           :Canonical ,
                           :CommitAndReveal ;
+                          :Unspecified ;
           :hasExample :CommitAndRevealRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -435,6 +470,7 @@
                           :General ,
                           :Canonical ,
                           :ProxyContract ;
+                          :Unspecified ;
           :hasExample :ProxyContractRajasekar2020 ;
           :hasExample :ProxyMarchesi2020 ;
           :hasExample :ProxyDelegateDecoratorMarchesi2020 ;
@@ -451,6 +487,7 @@
                           :General ,
                           :Canonical ,
                           :DynamicBinding ;
+                          :Unspecified ;
           :hasExample :DynamicBindingRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -463,6 +500,7 @@
                           :General ,
                           :Canonical ,
                           :Flyweight ;
+                          :Unspecified ;
           :hasExample :FlyweightRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -475,6 +513,7 @@
                           :General ,
                           :Canonical ,
                           :TightVariablePacking ;
+                          :Unspecified ;
           :hasExample :TightVariablePackingRajasekar2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -487,6 +526,7 @@
                           :General ,
                           :Canonical ,
                           :LegalAndSmartContractPair ;
+                          :Unspecified ;
           :hasExample :LegalAndSmartContractPairXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -499,6 +539,7 @@
                           :General ,
                           :Canonical ,
                           :OffChainDataStorage ;
+                          :Unspecified ;
           :hasExample :OffChainDataStorageXu2018 ;
           :hasExample :HashStorageMüller2020 ;
           :hasExample :OffChainDatastoreRajasekar2020 ;
@@ -518,6 +559,7 @@
                           :General ,
                           :Canonical ,
                           :MultipleAuthorization ;
+                          :Unspecified ;
           :hasExample :MultipleAuthorizationXu2018 ;
           :hasExample :MultipleAuthoritiesLu2019 ;
           :hasExample :MultiSignatureLiu2018 ;
@@ -532,6 +574,7 @@
                           :General ,
                           :Canonical ,
                           :OffChainSecretEnabledDynamicAuthentication ;
+                          :Unspecified ;
           :hasExample :OffChainSecretEnabledDynamicAuthenticationXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -544,6 +587,7 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :MasterSubKey ;
+                          :Unspecified ;
           :hasExample :MasterSubKeyLiu2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -556,6 +600,7 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :HotColdWalletStorage ;
+                          :Unspecified ;
           :hasExample :HotColdWalletStorageLiu2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -568,6 +613,7 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :KeySharding ;
+                          :Unspecified ;
           :hasExample :KeyShardingLiu2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -580,6 +626,7 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :IdentifierRegistry ;
+                          :Unspecified ;
           :hasExample :IdentifierRegistryLiu2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -592,6 +639,7 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :MultipleRegistration ;
+                          :Unspecified ;
           :hasExample :MultipleRegistrationLiu2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -604,6 +652,7 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :BoundWithSocialMedia ;
+                          :Unspecified ;
           :hasExample :BoundWithSocialMediaLiu2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -616,6 +665,7 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :DualResolution ;
+                          :Unspecified ;
           :hasExample :DualResolutionLiu2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -628,6 +678,7 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :DelegateList ;
+                          :Unspecified ;
           :hasExample :DelegateListLiu2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -640,6 +691,7 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :SelectiveContentGeneration ;
+                          :Unspecified ;
           :hasExample :SelectiveContentGenerationLiu2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -652,6 +704,7 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :TimeConstrainedAccess ;
+                          :Unspecified ;
           :hasExample :TimeConstrainedAccessLiu2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -664,6 +717,7 @@
                           :IdentityManagement ,
                           :Canonical ,
                           :OneOffAccess ;
+                          :Unspecified ;
           :hasExample :OneOffAccessLiu2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -676,6 +730,7 @@
                           :General ,
                           :Canonical ,
                           :Snapshotting ;
+                          :Unspecified ;
           :hasExample :SnapshottingBandara2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -688,6 +743,7 @@
                           :General ,
                           :Canonical ,
                           :StateAggregation ;
+                          :Unspecified ;
           :hasExample :StateAggregationBandara2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -700,6 +756,7 @@
                           :General ,
                           :Canonical ,
                           :TokenBurning ;
+                          :Unspecified ;
           :hasExample :TokenBurningBandara2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -712,6 +769,7 @@
                           :General ,
                           :Canonical ,
                           :NodeSync ;
+                          :Unspecified ;
           :hasExample :NodeSyncBandara2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -724,6 +782,7 @@
                           :General ,
                           :Canonical ,
                           :EstablishGenesis ;
+                          :Unspecified ;
           :hasExample :EstablishGenesisBandara2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -736,6 +795,7 @@
                           :General ,
                           :Canonical ,
                           :HardFork ;
+                          :Unspecified ;
           :hasExample :HardForkBandara2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -748,6 +808,7 @@
                           :General ,
                           :Canonical ,
                           :StateInitialization ;
+                          :Unspecified ;
           :hasExample :StateInitializationBandara2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -760,6 +821,7 @@
                           :General ,
                           :Canonical ,
                           :ExchangeTransfer ;
+                          :Unspecified ;
           :hasExample :ExchangeTransferBandara2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -772,6 +834,7 @@
                           :General ,
                           :Canonical ,
                           :TransactionReplay ;
+                          :Unspecified ;
           :hasExample :TransactionReplayBandara2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -784,6 +847,7 @@
                           :General ,
                           :Canonical ,
                           :VirtualMachineEmulation ;
+                          :Unspecified ;
           :hasExample :VirtualMachineEmulationBandara2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -796,6 +860,7 @@
                           :General ,
                           :Canonical ,
                           :SmartContractTranslation ;
+                          :Unspecified ;
           :hasExample :SmartContractTranslationBandara2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -808,6 +873,7 @@
                           :BigData ,
                           :Canonical ,
                           :BlockchainSecurityPatternForBigDataEcosystems ;
+                          :Unspecified ;
           :hasExample :BlockchainSecurityPatternForBigDataEcosystemsMoreno2019 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -820,6 +886,7 @@
                           :General ,
                           :Canonical ,
                           :EventLog ;
+                          :Solidity ;
           :hasExample :EventLogMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -832,6 +899,7 @@
                           :General ,
                           :Canonical ,
                           :LimitStorage ;
+                          :Solidity ;
           :hasExample :LimitStorageMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -844,6 +912,7 @@
                           :General ,
                           :Canonical ,
                           :PackingVariables ;
+                          :Solidity ;
           :hasExample :PackingVariablesMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -856,6 +925,7 @@
                           :General ,
                           :Canonical ,
                           :PackingBooleans ;
+                          :Solidity ;
           :hasExample :PackingBooleansMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -868,6 +938,7 @@
                           :General ,
                           :Canonical ,
                           :UintVsUint256 ;
+                          :Solidity ;
           :hasExample :UintVsUint256Marchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -880,6 +951,7 @@
                           :General ,
                           :Canonical ,
                           :MappingVsArray ;
+                          :Solidity ;
           :hasExample :MappingVsArrayMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -892,6 +964,7 @@
                           :General ,
                           :Canonical ,
                           :FixedSize ;
+                          :Solidity ;
           :hasExample :FixedSizeMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -904,6 +977,7 @@
                           :General ,
                           :Canonical ,
                           :DefaultValue ;
+                          :Solidity ;
           :hasExample :DefaultValueMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -916,6 +990,7 @@
                           :General ,
                           :Canonical ,
                           :MinimizeOnChainData ;
+                          :Solidity ;
           :hasExample :MinimizeOnChainDataMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -928,6 +1003,7 @@
                           :General ,
                           :Canonical ,
                           :ExplicitelyMarkExternalFunction ;
+                          :Solidity ;
           :hasExample :ExplicitelyMarkExternalFunctionMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -940,6 +1016,7 @@
                           :General ,
                           :Canonical ,
                           :LimitExternalCalls ;
+                          :Solidity ;
           :hasExample :LimitExternalCallsMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -952,6 +1029,7 @@
                           :General ,
                           :Canonical ,
                           :InternalFunctionCalls ;
+                          :Solidity ;
           :hasExample :InternalFunctionCallsMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -964,6 +1042,7 @@
                           :General ,
                           :Canonical ,
                           :FewerFunctions ;
+                          :Solidity ;
           :hasExample :FewerFunctionsMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -976,6 +1055,7 @@
                           :General ,
                           :Canonical ,
                           :UseLibraries ;
+                          :Solidity ;
           :hasExample :UseLibrariesMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -988,6 +1068,7 @@
                           :General ,
                           :Canonical ,
                           :ShortCircuit ;
+                          :Solidity ;
           :hasExample :ShortCircuitMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1000,6 +1081,7 @@
                           :General ,
                           :Canonical ,
                           :ShortConstantStrings ;
+                          :Solidity ;
           :hasExample :ShortConstantStringsMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1012,6 +1094,7 @@
                           :General ,
                           :Canonical ,
                           :LimitModifiers ;
+                          :Solidity ;
           :hasExample :LimitModifiersMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1024,6 +1107,7 @@
                           :General ,
                           :Canonical ,
                           :AvoidRedundantOperations ;
+                          :Solidity ;
           :hasExample :AvoidRedundantOperationsMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1036,6 +1120,7 @@
                           :General ,
                           :Canonical ,
                           :SingleLineSwap ;
+                          :Solidity ;
           :hasExample :SingleLineSwapMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1048,6 +1133,7 @@
                           :General ,
                           :Canonical ,
                           :WriteValues ;
+                          :Solidity ;
           :hasExample :WriteValuesMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1060,6 +1146,7 @@
                           :General ,
                           :Canonical ,
                           :FreeingStorage ;
+                          :Solidity ;
           :hasExample :FreeingStorageMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1072,6 +1159,7 @@
                           :General ,
                           :Canonical ,
                           :Optimizer ;
+                          :Solidity ;
           :hasExample :OptimizerMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1084,6 +1172,7 @@
                           :BPM ,
                           :Canonical ,
                           :ConfidentialAndPseudoAnonymousContractEnforcement ;
+                          :Unspecified ;
           :hasExample :ConfidentialAndPseudoAnonymousContractEnforcementSix2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1096,6 +1185,7 @@
                           :General ,
                           :Canonical ,
                           :SelfGeneratedTransactions ;
+                          :Unspecified ;
           :hasExample :SelfGeneratedTransactionsWessling2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1108,6 +1198,7 @@
                           :General ,
                           :Canonical ,
                           :SelfConfirmedTransactions ;
+                          :Unspecified ;
           :hasExample :SelfConfirmedTransactionsWessling2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1120,6 +1211,7 @@
                           :General ,
                           :Canonical ,
                           :DelegatedTransactions ;
+                          :Unspecified ;
           :hasExample :DelegatedTransactionsWessling2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1132,6 +1224,7 @@
                           :General ,
                           :Canonical ,
                           :DigitalRecord ;
+                          :Unspecified ;
           :hasExample :DigitalRecordLemieux2017 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1144,6 +1237,7 @@
                           :General ,
                           :Canonical ,
                           :MultipleBlockchains ;
+                          :Unspecified ;
           :hasExample :MultipleBlockchainsSchinle2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1156,6 +1250,7 @@
                           :General ,
                           :Canonical ,
                           :OnChainEncryption ;
+                          :Unspecified ;
           :hasExample :OnChainEncryptionSchinle2020 ;
           :hasExample :PrivacyMarchesi2020 ;
           :hasExample :DataEncryptionLu2019 ;
@@ -1171,6 +1266,7 @@
                           :General ,
                           :Canonical ,
                           :HashTimestamping ;
+                          :Unspecified ;
           :hasExample :HashTimestampingSchinle2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1183,6 +1279,7 @@
                           :General ,
                           :Canonical ,
                           :PullPayment ;
+                          :Unspecified ;
           :hasExample :PullPaymentWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1195,6 +1292,7 @@
                           :General ,
                           :Canonical ,
                           :StateMachine ;
+                          :Unspecified ;
           :hasExample :StateMachineWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1207,6 +1305,7 @@
                           :General ,
                           :Canonical ,
                           :Ownership ;
+                          :Unspecified ;
           :hasExample :OwnershipWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1219,6 +1318,7 @@
                           :General ,
                           :Canonical ,
                           :AccessRestriction ;
+                          :Unspecified ;
           :hasExample :AccessRestrictionWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1231,6 +1331,7 @@
                           :General ,
                           :Canonical ,
                           :Mortal ;
+                          :Solidity ;
           :hasExample :MortalWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1243,6 +1344,7 @@
                           :General ,
                           :Canonical ,
                           :AutomaticDeprecation ;
+                          :Unspecified ;
           :hasExample :AutomaticDeprecationWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1255,6 +1357,7 @@
                           :General ,
                           :Canonical ,
                           :Satellite ;
+                          :Unspecified ;
           :hasExample :SatelliteWohrer2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1267,6 +1370,7 @@
                           :General ,
                           :Canonical ,
                           :SpeedBump ;
+                          :Unspecified ;
           :hasExample :SpeedBumpWohrer2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1279,6 +1383,7 @@
                           :General ,
                           :Canonical ,
                           :RateLimit ;
+                          :Unspecified ;
           :hasExample :RateLimitWohrer2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1291,6 +1396,7 @@
                           :General ,
                           :Canonical ,
                           :CheckEffectInteraction ;
+                          :Solidity ;
           :hasExample :CheckEffectInteractionMarchesi2020 ;
           :hasExample :ChecksEffectsInteractionWohrer2020 ;
           :hasExample :ChecksEffectInteractionsRajasekar2020 ;
@@ -1305,6 +1411,7 @@
                           :General ,
                           :Canonical ,
                           :GuardCheck ;
+                          :Solidity ;
           :hasExample :GuardCheckMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1317,6 +1424,7 @@
                           :General ,
                           :Canonical ,
                           :TimeConstraint ;
+                          :Solidity ;
           :hasExample :TimeConstraintBartoletti2017 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1329,6 +1437,7 @@
                           :General ,
                           :Canonical ,
                           :Termination ;
+                          :Solidity ;
           :hasExample :TerminationBartoletti2017 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1341,6 +1450,7 @@
                           :General ,
                           :Canonical ,
                           :Math ;
+                          :Solidity ;
           :hasExample :MathBartoletti2017 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1353,6 +1463,7 @@
                           :General ,
                           :Canonical ,
                           :PublisherSubscriber ;
+                          :Solidity ;
           :hasExample :PublisherSubscriberMarchesi2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1365,6 +1476,7 @@
                           :General ,
                           :Canonical ,
                           :Tokenisation ;
+                          :Unspecified ;
           :hasExample :TokenisationXu2018 ;
           :hasExample :TokenizedLemieux2017 ;
           :hasExample :TokenWorley2019 ;
@@ -1379,6 +1491,7 @@
                           :General ,
                           :Canonical ,
                           :XConfirmation ;
+                          :Unspecified ;
           :hasExample :XConfirmationXu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1391,6 +1504,7 @@
                           :General ,
                           :Canonical ,
                           :ContractRegistry ;
+                          :Unspecified ;
           :hasExample :ContractRegistryXu2018 ;
           :hasExample :ContractRegisterWohrer2018 ;
 
@@ -1404,6 +1518,7 @@
                           :General ,
                           :Canonical ,
                           :ChallengeResponse ;
+                          :Unspecified ;
           :hasExample :ChallengeResponseEberhardt2017 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1416,6 +1531,7 @@
                           :General ,
                           :Canonical ,
                           :OffChainSignatures ;
+                          :Unspecified ;
           :hasExample :OffChainSignaturesEberhardt2017 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1428,6 +1544,7 @@
                           :General ,
                           :Canonical ,
                           :DelegatedComputation ;
+                          :Unspecified ;
           :hasExample :DelegatedComputationEberhardt2017 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1440,6 +1557,7 @@
                           :General ,
                           :Canonical ,
                           :LowContractFootprint ;
+                          :Unspecified ;
           :hasExample :LowContractFootprintEberhardt2017 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1452,6 +1570,7 @@
                           :General ,
                           :Canonical ,
                           :PullBasedInboundOracle ;
+                          :Unspecified ;
           :hasExample :PullBasedInboundOracleMühlberger2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1464,6 +1583,7 @@
                           :General ,
                           :Canonical ,
                           :PushBasedInboundOracle ;
+                          :Unspecified ;
           :hasExample :PushBasedInboundOracleMühlberger2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1476,6 +1596,7 @@
                           :General ,
                           :Canonical ,
                           :PullBasedOutboundOracle ;
+                          :Unspecified ;
           :hasExample :PullBasedOutboundOracleMühlberger2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1488,6 +1609,7 @@
                           :General ,
                           :Canonical ,
                           :PushBasedOutboundOracle ;
+                          :Unspecified ;
           :hasExample :PushBasedOutboundOracleMühlberger2020 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1500,6 +1622,7 @@
                           :General ,
                           :Canonical ,
                           :ContractComposer ;
+                          :Unspecified ;
           :hasExample :ContractComposerLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1512,6 +1635,7 @@
                           :General ,
                           :Canonical ,
                           :ContractDecorator ;
+                          :Unspecified ;
           :hasExample :ContractDecoratorLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1524,6 +1648,7 @@
                           :General ,
                           :Canonical ,
                           :ContractMediator ;
+                          :Unspecified ;
           :hasExample :ContractMediatorLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1536,6 +1661,7 @@
                           :General ,
                           :Canonical ,
                           :ContractObserver ;
+                          :Unspecified ;
           :hasExample :ContractObserverLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;
@@ -1548,6 +1674,7 @@
                           :General ,
                           :Canonical ,
                           :HashSecret ;
+                          :Unspecified ;
           :hasExample :HashSecretLiu2018 ;
 
                  :ContextAndProblem ""^^rdfs:Literal ;

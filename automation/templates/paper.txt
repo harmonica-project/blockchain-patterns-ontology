@@ -4,6 +4,7 @@
                    :PaperBased ,
                    :$domain ,
                    :$technology ;
+                   :$language ;
 $links
           :hasCanonical :${refClass}Canonical ;
           :ContextAndProblem "$context"^^rdfs:Literal ;

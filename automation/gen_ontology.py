@@ -164,7 +164,8 @@ def run():
       refClass=parseToURI(p['Name']), 
       examples=canonical_examples, 
       context='', 
-      solution=''
+      solution='',
+      language=parseToURI(p['Language (generalized)'])
     )
 
   # iterate on paper_patterns/examples to generate "paper" individuals
@@ -194,7 +195,8 @@ def run():
       solution=parseToOntologyLiteralIfExists(p, 'Solution'),
       author=getFirstAuthor(paper['author']),
       year=paper['year'],
-      links=get_links_between_patterns(paper_patterns, p, example_mapping, papers)
+      links=get_links_between_patterns(paper_patterns, p, example_mapping, papers),
+      language=parseToURI(p['Language'])
     )
   
   # write classes, canonicals and examples in three distinct files, can be merged into a complete ontology
