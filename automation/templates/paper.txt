@@ -3,7 +3,7 @@
                    :$refClass ,
                    :PaperBased ,
                    :$domain ,
-                   :$technology ;
+                   :$technology ,
                    :$language ;
 $links
           :hasCanonical :${refClass}Canonical ;

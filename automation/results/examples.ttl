@@ -3,7 +3,7 @@
                    :OffChainDataStorage ,
                    :PaperBased ,
                    :BPM ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :OffChainDataStorageCanonical ;
@@ -16,7 +16,7 @@
                    :TransparentEventLog ,
                    :PaperBased ,
                    :BPM ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :TransparentEventLogCanonical ;
@@ -29,7 +29,7 @@
                    :BlockchainBpEngine ,
                    :PaperBased ,
                    :BPM ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :requires :OracleCanonical ;
 
@@ -43,7 +43,7 @@
                    :SmartContractActivities ,
                    :PaperBased ,
                    :BPM ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :requires :OracleCanonical ;
 
@@ -57,7 +57,7 @@
                    :BlockchainBasedReputationSystem ,
                    :PaperBased ,
                    :BPM ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :BlockchainBasedReputationSystemCanonical ;
@@ -70,7 +70,7 @@
                    :DecentralizeBusinessProcess ,
                    :PaperBased ,
                    :BPM ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :DecentralizeBusinessProcessCanonical ;
@@ -83,7 +83,7 @@
                    :KeyValueStore ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :KeyValueStoreCanonical ;
@@ -96,7 +96,7 @@
                    :AddressMapping ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :AddressMappingCanonical ;
@@ -109,7 +109,7 @@
                    :EmbeddedPermission ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :EmbeddedPermissionCanonical ;
@@ -122,7 +122,7 @@
                    :Judge ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :variantOf :OracleBartoletti2017 ;
           :requires :AuthorizationWorley2019 ;
@@ -137,7 +137,7 @@
                    :TickerTape ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :variantOf :OracleBartoletti2017 ;
           :requires :AuthorizationWorley2019 ;
@@ -152,7 +152,7 @@
                    :Vote ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :variantOf :OracleBartoletti2017 ;
           :benefitsFrom :BlockchainBasedReputationSystemMÃ¼ller2020 ;
@@ -167,7 +167,7 @@
                    :ReverseOracle ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :ReverseOracleCanonical ;
@@ -180,7 +180,7 @@
                    :Blocklist ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :BlocklistCanonical ;
@@ -193,7 +193,7 @@
                    :Announcement ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :requires :AuthorizationWorley2019 ;
 
@@ -207,7 +207,7 @@
                    :BulletinBoard ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :JudgeWorley2019 ;
           :benefitsFrom :VoteWorley2019 ;
@@ -222,7 +222,7 @@
                    :Tokenisation ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :requires :AddressMappingWorley2019 ;
 
@@ -236,7 +236,7 @@
                    :Migration ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :MigrationCanonical ;
@@ -249,7 +249,7 @@
                    :InterFamilyCommunication ,
                    :PaperBased ,
                    :General ,
-                   :HyperledgerSawtooth ;
+                   :HyperledgerSawtooth ,
                    :Unspecified ;
 
           :hasCanonical :InterFamilyCommunicationCanonical ;
@@ -262,7 +262,7 @@
                    :Locking ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :LockingCanonical ;
@@ -275,7 +275,7 @@
                    :TransitionCounter ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :TransitionCounterCanonical ;
@@ -288,7 +288,7 @@
                    :AutomaticTimedTransitions ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :AutomaticTimedTransitionsCanonical ;
@@ -301,7 +301,7 @@
                    :EmbeddedPermission ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :EmbeddedPermissionCanonical ;
@@ -314,7 +314,7 @@
                    :Tokenisation ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :TokenisationCanonical ;
@@ -327,7 +327,7 @@
                    :EmbeddedPermission ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :EmbeddedPermissionCanonical ;
@@ -340,7 +340,7 @@
                    :Oracle ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :OracleCanonical ;
@@ -353,7 +353,7 @@
                    :Randomness ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :requires :OracleCanonical ;
 
@@ -367,7 +367,7 @@
                    :Poll ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :benefitsFrom :TokenisationCanonical ;
           :benefitsFrom :AddressMappingCanonical ;
@@ -382,7 +382,7 @@
                    :TimeConstraint ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :TimeConstraintCanonical ;
@@ -395,7 +395,7 @@
                    :Termination ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :TerminationCanonical ;
@@ -408,7 +408,7 @@
                    :Math ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :MathCanonical ;
@@ -421,7 +421,7 @@
                    :ForkCheck ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :ForkCheckCanonical ;
@@ -434,7 +434,7 @@
                    :CheckEffectInteraction ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :ChecksEffectsInteractionWohrer2018 ;
 
@@ -448,7 +448,7 @@
                    :SecureEtherTransfer ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :ChecksEffectsInteractionWohrer2018 ;
 
@@ -462,7 +462,7 @@
                    :Oracle ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :OracleXu2018 ;
           :fromPattern :OracleDataProviderWohrer2018 ;
@@ -479,7 +479,7 @@
                    :OffChainDataStorage ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :fromPattern :OnChainAndOffChainLu2019 ;
 
@@ -493,7 +493,7 @@
                    :StateChannel ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :fromPattern :StateChannelXu2018 ;
 
@@ -507,7 +507,7 @@
                    :OffChainContractRegistry ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :ContractRegistryXu2018 ;
           :fromPattern :ContractRegisterWohrer2018 ;
@@ -523,7 +523,7 @@
                    :DataContract ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :DataContractXu2018 ;
           :fromPattern :DataSegregationWohrer2018 ;
@@ -538,7 +538,7 @@
                    :EmbeddedPermission ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :EmbeddedPermissionXu2018 ;
           :fromPattern :EmbeddedPermissionLu2019 ;
@@ -553,7 +553,7 @@
                    :FactoryContract ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :FactoryContractXu2018 ;
           :fromPattern :AbstractFactoryRaj2018 ;
@@ -568,7 +568,7 @@
                    :EmergencyStop ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :EmergencyStopWohrer2018 ;
 
@@ -582,7 +582,7 @@
                    :Mutex ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :MutexWohrer2018 ;
 
@@ -596,7 +596,7 @@
                    :ContractBalanceLimit ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :BalanceLimitWohrer2018 ;
 
@@ -610,7 +610,7 @@
                    :ReverseOracle ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :ReverseOracleXu2018 ;
           :relatedTo :OracleRajasekar2020 ;
@@ -625,7 +625,7 @@
                    :IncentiveExecution ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :IncentiveExecutionXu2018 ;
 
@@ -639,7 +639,7 @@
                    :CommitAndReveal ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :CommitAndRevealWohrer2018 ;
 
@@ -653,7 +653,7 @@
                    :ProxyContract ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :ContractRelayWohrer2018 ;
           :relatedTo :OffChainContractRegistryRajasekar2020 ;
@@ -668,7 +668,7 @@
                    :DynamicBinding ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :DynamicBindingLu2019 ;
 
@@ -682,7 +682,7 @@
                    :Flyweight ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :FlyweightRaj2018 ;
           :relatedTo :DataContractRajasekar2020 ;
@@ -697,7 +697,7 @@
                    :TightVariablePacking ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :Unknown ;
 
@@ -711,7 +711,7 @@
                    :Oracle ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :relatedTo :ReverseOracleXu2018 ;
           :requires :Unknown ;
@@ -726,7 +726,7 @@
                    :ReverseOracle ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :relatedTo :OracleXu2018 ;
 
@@ -740,7 +740,7 @@
                    :LegalAndSmartContractPair ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :LegalAndSmartContractPairCanonical ;
@@ -753,7 +753,7 @@
                    :OnChainEncryption ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :relatedTo :OffChainDataStorageXu2018 ;
 
@@ -767,7 +767,7 @@
                    :Tokenisation ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :TokenisationCanonical ;
@@ -780,7 +780,7 @@
                    :OffChainDataStorage ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :relatedTo :ProxyZhang2017 ;
 
@@ -794,7 +794,7 @@
                    :StateChannel ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :relatedTo :OffChainSignaturesEberhardt2017 ;
 
@@ -808,7 +808,7 @@
                    :MultipleAuthorization ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :OffChainSecretEnabledDynamicAuthenticationXu2018 ;
 
@@ -822,7 +822,7 @@
                    :OffChainSecretEnabledDynamicAuthentication ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :MultipleAuthorizationXu2018 ;
 
@@ -836,7 +836,7 @@
                    :XConfirmation ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :XConfirmationCanonical ;
@@ -849,7 +849,7 @@
                    :ContractRegistry ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :EmbeddedPermissionXu2018 ;
           :benefitsFrom :DataContractXu2018 ;
@@ -864,7 +864,7 @@
                    :EmbeddedPermission ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :AuthorizationWorley2019 ;
           :benefitsFrom :MultipleAuthorizationXu2018 ;
@@ -880,7 +880,7 @@
                    :DataContract ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :ContractRegistryXu2018 ;
 
@@ -895,7 +895,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :FactoryContract ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :ContractRegistryXu2018 ;
 
@@ -909,7 +909,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :IncentiveExecution ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :IncentiveExecutionCanonical ;
@@ -922,7 +922,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :MasterSubKey ,
                    :PaperBased ,
                    :IdentityManagement ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :requires :HotColdWalletStorageLiu2020 ;
           :benefitsFrom :KeyShardingLiu2020 ;
@@ -937,7 +937,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :HotColdWalletStorage ,
                    :PaperBased ,
                    :IdentityManagement ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :benefitsFrom :DelegateListLiu2020 ;
 
@@ -951,7 +951,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :KeySharding ,
                    :PaperBased ,
                    :IdentityManagement ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :relatedTo :DelegateListLiu2020 ;
           :requires :HotColdWalletStorageLiu2020 ;
@@ -966,7 +966,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :IdentifierRegistry ,
                    :PaperBased ,
                    :IdentityManagement ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :relatedTo :ContentAddressableStorageEberhardt2017 ;
           :relatedTo :FlyweightZhang2017 ;
@@ -983,7 +983,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :MultipleRegistration ,
                    :PaperBased ,
                    :IdentityManagement ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :requires :IdentifierRegistryLiu2020 ;
           :requires :MasterSubKeyLiu2020 ;
@@ -998,7 +998,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :BoundWithSocialMedia ,
                    :PaperBased ,
                    :IdentityManagement ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :requires :IdentifierRegistryLiu2020 ;
 
@@ -1012,7 +1012,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :DualResolution ,
                    :PaperBased ,
                    :IdentityManagement ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :requires :IdentifierRegistryLiu2020 ;
 
@@ -1026,7 +1026,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :DelegateList ,
                    :PaperBased ,
                    :IdentityManagement ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :relatedTo :DelegateListLiu2020 ;
           :variantOf :MultipleAuthorizationXu2018 ;
@@ -1043,7 +1043,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :SelectiveContentGeneration ,
                    :PaperBased ,
                    :IdentityManagement ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :requires :AnchoringToBlockchainLiu2020 ;
           :benefitsFrom :TimeConstrainedAccessLiu2020 ;
@@ -1059,7 +1059,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :TimeConstrainedAccess ,
                    :PaperBased ,
                    :IdentityManagement ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :variantOf :OneOffAccessLiu2020 ;
           :benefitsFrom :SelectiveContentGenerationLiu2020 ;
@@ -1074,7 +1074,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :OneOffAccess ,
                    :PaperBased ,
                    :IdentityManagement ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :variantOf :TimeConstrainedAccessLiu2020 ;
           :benefitsFrom :SelectiveContentGenerationLiu2020 ;
@@ -1089,7 +1089,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :OffChainDataStorage ,
                    :PaperBased ,
                    :IdentityManagement ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :relatedTo :LowContractFootprintEberhardt2017 ;
           :relatedTo :OffChainDataStorageXu2018 ;
@@ -1104,7 +1104,7 @@ Problem: Storing data on blockchain is expensive and there is a limitation on th
                    :Snapshotting ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :requires :EstablishGenesisBandara2020 ;
           :requires :HardForkBandara2020 ;
@@ -1121,7 +1121,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :StateAggregation ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :requires :OffChainDataStorageXu2018 ;
           :benefitsFrom :SnapshottingBandara2020 ;
@@ -1136,7 +1136,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :TokenBurning ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :SnapshottingBandara2020 ;
 
@@ -1150,7 +1150,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :NodeSync ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :benefitsFrom :SnapshottingBandara2020 ;
           :benefitsFrom :StateAggregationBandara2020 ;
@@ -1165,7 +1165,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :EstablishGenesis ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :benefitsFrom :SnapshottingBandara2020 ;
           :benefitsFrom :StateAggregationBandara2020 ;
@@ -1180,7 +1180,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :HardFork ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :benefitsFrom :SnapshottingBandara2020 ;
           :benefitsFrom :StateAggregationBandara2020 ;
@@ -1195,7 +1195,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :StateInitialization ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :benefitsFrom :SnapshottingBandara2020 ;
           :benefitsFrom :StateAggregationBandara2020 ;
@@ -1210,7 +1210,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :ExchangeTransfer ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :benefitsFrom :SnapshottingBandara2020 ;
           :benefitsFrom :StateAggregationBandara2020 ;
@@ -1225,7 +1225,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :TransactionReplay ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :benefitsFrom :SnapshottingBandara2020 ;
           :benefitsFrom :StateAggregationBandara2020 ;
@@ -1240,7 +1240,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :VirtualMachineEmulation ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :SnapshottingBandara2020 ;
 
@@ -1254,7 +1254,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :SmartContractTranslation ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :SnapshottingBandara2020 ;
 
@@ -1268,7 +1268,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :BlockchainSecurityPatternForBigDataEcosystems ,
                    :PaperBased ,
                    :BigData ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :variantOf :Unknown ;
           :requires :Unknown ;
@@ -1284,7 +1284,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :ProxyContract ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :benefitsFrom :DataContractMarchesi2020 ;
 
@@ -1298,7 +1298,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :DataContract ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :DataContractCanonical ;
@@ -1311,7 +1311,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :EventLog ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :EventLogCanonical ;
@@ -1324,7 +1324,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :LimitStorage ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :LimitStorageCanonical ;
@@ -1337,7 +1337,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :PackingVariables ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :PackingVariablesCanonical ;
@@ -1350,7 +1350,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :PackingBooleans ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :PackingBooleansCanonical ;
@@ -1363,7 +1363,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :UintVsUint256 ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :relatedTo :UintVsUint256Marchesi2020 ;
 
@@ -1377,7 +1377,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :MappingVsArray ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :MappingVsArrayCanonical ;
@@ -1390,7 +1390,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :FixedSize ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :FixedSizeCanonical ;
@@ -1403,7 +1403,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :DefaultValue ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :DefaultValueCanonical ;
@@ -1416,7 +1416,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :MinimizeOnChainData ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :MinimizeOnChainDataCanonical ;
@@ -1429,7 +1429,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :ExplicitelyMarkExternalFunction ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :ExplicitelyMarkExternalFunctionCanonical ;
@@ -1442,7 +1442,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :LimitExternalCalls ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :LimitExternalCallsCanonical ;
@@ -1455,7 +1455,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :InternalFunctionCalls ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :InternalFunctionCallsCanonical ;
@@ -1468,7 +1468,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :FewerFunctions ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :FewerFunctionsCanonical ;
@@ -1481,7 +1481,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :UseLibraries ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :UseLibrariesCanonical ;
@@ -1494,7 +1494,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :ShortCircuit ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :ShortCircuitCanonical ;
@@ -1507,7 +1507,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :ShortConstantStrings ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :ShortConstantStringsCanonical ;
@@ -1520,7 +1520,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :LimitModifiers ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :LimitModifiersCanonical ;
@@ -1533,7 +1533,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :AvoidRedundantOperations ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :AvoidRedundantOperationsCanonical ;
@@ -1546,7 +1546,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :SingleLineSwap ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :SingleLineSwapCanonical ;
@@ -1559,7 +1559,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :WriteValues ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :WriteValuesCanonical ;
@@ -1572,7 +1572,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :FreeingStorage ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :FreeingStorageCanonical ;
@@ -1585,7 +1585,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :Optimizer ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :OptimizerCanonical ;
@@ -1598,7 +1598,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :ConfidentialAndPseudoAnonymousContractEnforcement ,
                    :PaperBased ,
                    :BPM ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :variantOf :LegalAndSmartContractPairXu2018 ;
 
@@ -1612,7 +1612,7 @@ How to get a complete account of states, smart contracts, and transactions on th
                    :SelfGeneratedTransactions ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :SelfGeneratedTransactionsCanonical ;
@@ -1626,7 +1626,7 @@ that the interface description (Application Binary Interface, ABI) of the EDCC i
                    :SelfConfirmedTransactions ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :SelfConfirmedTransactionsCanonical ;
@@ -1639,7 +1639,7 @@ that the interface description (Application Binary Interface, ABI) of the EDCC i
                    :DelegatedTransactions ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :DelegatedTransactionsCanonical ;
@@ -1652,7 +1652,7 @@ that the interface description (Application Binary Interface, ABI) of the EDCC i
                    :OffChainDataStorage ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :OffChainDataStorageCanonical ;
@@ -1665,7 +1665,7 @@ that the interface description (Application Binary Interface, ABI) of the EDCC i
                    :DigitalRecord ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :DigitalRecordCanonical ;
@@ -1678,7 +1678,7 @@ that the interface description (Application Binary Interface, ABI) of the EDCC i
                    :Tokenisation ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :TokenisationCanonical ;
@@ -1691,7 +1691,7 @@ that the interface description (Application Binary Interface, ABI) of the EDCC i
                    :PullPayment ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :PullPaymentCanonical ;
@@ -1705,7 +1705,7 @@ of funds by executing expensive operations in the fallback method, causing an â€
                    :StateMachine ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :StateMachineCanonical ;
@@ -1718,7 +1718,7 @@ of funds by executing expensive operations in the fallback method, causing an â€
                    :CommitAndReveal ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :CommitAndRevealCanonical ;
@@ -1731,7 +1731,7 @@ of funds by executing expensive operations in the fallback method, causing an â€
                    :Oracle ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :OracleCanonical ;
@@ -1744,7 +1744,7 @@ of funds by executing expensive operations in the fallback method, causing an â€
                    :Ownership ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :OwnershipCanonical ;
@@ -1757,7 +1757,7 @@ of funds by executing expensive operations in the fallback method, causing an â€
                    :AccessRestriction ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :AccessRestrictionCanonical ;
@@ -1771,7 +1771,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :Mortal ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :MortalCanonical ;
@@ -1784,7 +1784,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :AutomaticDeprecation ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :AutomaticDeprecationCanonical ;
@@ -1797,7 +1797,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :DataContract ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :DataContractCanonical ;
@@ -1810,7 +1810,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :Satellite ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :SatelliteCanonical ;
@@ -1823,7 +1823,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :ContractRegistry ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :ContractRegistryCanonical ;
@@ -1836,7 +1836,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :ProxyContract ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :ProxyContractCanonical ;
@@ -1849,7 +1849,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :MultipleBlockchains ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :MultipleBlockchainsCanonical ;
@@ -1862,7 +1862,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :OnChainEncryption ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
           :fromPattern :EncryptingOnChainDataXu2018 ;
 
@@ -1876,7 +1876,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :HashTimestamping ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :HashTimestampingCanonical ;
@@ -1889,7 +1889,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :PullPayment ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :PullPaymentWohrer2018 ;
 
@@ -1903,7 +1903,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :StateMachine ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :StateMachineWohrer2018 ;
 
@@ -1917,7 +1917,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :CommitAndReveal ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :CommitAndRevealWohrer2018 ;
 
@@ -1931,7 +1931,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :Oracle ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :OracleDataProviderWohrer2018 ;
 
@@ -1945,7 +1945,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :Ownership ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :OwnershipWohrer2018 ;
 
@@ -1959,7 +1959,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :AccessRestriction ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :AccessRestrictionWohrer2018 ;
 
@@ -1973,7 +1973,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :Mortal ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :MortalWohrer2018 ;
 
@@ -1987,7 +1987,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :AutomaticDeprecation ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :AutomaticDeprecationWohrer2018 ;
 
@@ -2001,7 +2001,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :DataContract ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :DataSegregationWohrer2018 ;
 
@@ -2015,7 +2015,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :Satellite ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :SatelliteWohrer2018 ;
 
@@ -2029,7 +2029,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :ContractRegistry ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :ContractRegisterWohrer2018 ;
 
@@ -2043,7 +2043,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :ProxyContract ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :ContractRelayWohrer2018 ;
 
@@ -2057,7 +2057,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :CheckEffectInteraction ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :ChecksEffectsInteractionWohrer2018 ;
 
@@ -2071,7 +2071,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :EmergencyStop ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :EmergencyStopWohrer2018 ;
 
@@ -2085,7 +2085,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :SpeedBump ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :SpeedBumpWohrer2018 ;
 
@@ -2099,7 +2099,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :RateLimit ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :RateLimitWohrer2018 ;
 
@@ -2113,7 +2113,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :Mutex ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :MutexWohrer2018 ;
 
@@ -2127,7 +2127,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :ContractBalanceLimit ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :fromPattern :BalanceLimitWohrer2018 ;
 
@@ -2141,7 +2141,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :OffChainDataStorage ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :OffChainDataStorageCanonical ;
@@ -2154,7 +2154,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :OnChainEncryption ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :OnChainEncryptionCanonical ;
@@ -2167,7 +2167,7 @@ privileges, a common pattern is to restrict function execution. It is often requ
                    :OffChainDataStorage ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :OffChainDataStorageCanonical ;
@@ -2181,7 +2181,7 @@ stores the hash of the raw data on blockchain to achieve data integrity of the r
                    :MultipleAuthorization ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :MultipleAuthorizationCanonical ;
@@ -2194,7 +2194,7 @@ stores the hash of the raw data on blockchain to achieve data integrity of the r
                    :DynamicBinding ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :DynamicBindingCanonical ;
@@ -2208,7 +2208,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :EmbeddedPermission ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :EmbeddedPermissionCanonical ;
@@ -2221,7 +2221,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :CheckEffectInteraction ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :ChecksEffectsInteractionWohrer2018 ;
 
@@ -2235,7 +2235,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :ProxyContract ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :Unknown ;
           :fromPattern :Unknown ;
@@ -2253,7 +2253,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :EmbeddedPermission ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :AuthorizationBartoletti2017 ;
 
@@ -2267,7 +2267,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :Ownership ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :variantOf :AuthorizationBartoletti2017 ;
 
@@ -2281,7 +2281,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :Oracle ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :OracleBartoletti2017 ;
           :fromPattern :OracleXu2018 ;
@@ -2296,7 +2296,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :ReverseOracle ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :ReverseOracleXu2018 ;
 
@@ -2310,7 +2310,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :RateLimit ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :RateLimitWohrer2018 ;
           :benefitsFrom :TimeConstraintMarchesi2020 ;
@@ -2325,7 +2325,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :ContractBalanceLimit ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :BalanceLimitWohrer2018 ;
 
@@ -2339,7 +2339,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :GuardCheck ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :Unknown ;
 
@@ -2353,7 +2353,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :TimeConstraint ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :TimeConstraintBartoletti2017 ;
 
@@ -2367,7 +2367,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :Termination ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :TerminationBartoletti2017 ;
           :benefitsFrom :OwnershipMarchesi2020 ;
@@ -2382,7 +2382,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :Math ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :MathBartoletti2017 ;
 
@@ -2396,7 +2396,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :OnChainEncryption ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :EncryptingOnChainDataXu2018 ;
 
@@ -2410,7 +2410,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :FactoryContract ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :FactoryContractXu2018 ;
 
@@ -2424,7 +2424,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :Mutex ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :MutexWohrer2018 ;
 
@@ -2438,7 +2438,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :SpeedBump ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :SpeedBumpWohrer2018 ;
           :benefitsFrom :TimeConstraintMarchesi2020 ;
@@ -2453,7 +2453,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :PublisherSubscriber ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :PublisherSubscriberZhang2017 ;
 
@@ -2467,7 +2467,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :Tokenisation ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :TokenisationXu2018 ;
 
@@ -2481,7 +2481,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :XConfirmation ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :XConfirmationXu2018 ;
 
@@ -2495,7 +2495,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :ContractRegistry ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :ContractRegistryXu2018 ;
 
@@ -2509,7 +2509,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :DataContract ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :DataContractXu2018 ;
 
@@ -2523,7 +2523,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :FactoryContract ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
           :fromPattern :AbstractFactoryZhang2017 ;
           :fromPattern :ContractFactoryLiu2018 ;
@@ -2539,7 +2539,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :FactoryContract ,
                    :PaperBased ,
                    :Healthcare ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :FactoryContractCanonical ;
@@ -2552,7 +2552,7 @@ tion when the participant approving a transaction is unknown beforehand. Users n
                    :Flyweight ,
                    :PaperBased ,
                    :Healthcare ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :FlyweightCanonical ;
@@ -2566,7 +2566,7 @@ transaction records are maintained in the blockchain by replicating and distribu
                    :ProxyContract ,
                    :PaperBased ,
                    :Healthcare ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :Unknown ;
 
@@ -2581,7 +2581,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :PublisherSubscriber ,
                    :PaperBased ,
                    :Healthcare ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :PublisherSubscriberCanonical ;
@@ -2594,7 +2594,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :CheckEffectInteraction ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :CheckEffectInteractionCanonical ;
@@ -2607,7 +2607,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :EmergencyStop ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :EmergencyStopCanonical ;
@@ -2620,7 +2620,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :SpeedBump ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :SpeedBumpCanonical ;
@@ -2633,7 +2633,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :RateLimit ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :RateLimitCanonical ;
@@ -2646,7 +2646,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :Mutex ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :MutexCanonical ;
@@ -2659,7 +2659,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :ContractBalanceLimit ,
                    :PaperBased ,
                    :General ,
-                   :Ethereum ;
+                   :Ethereum ,
                    :Solidity ;
 
           :hasCanonical :ContractBalanceLimitCanonical ;
@@ -2672,7 +2672,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :ChallengeResponse ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :ChallengeResponseCanonical ;
@@ -2685,7 +2685,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :OffChainSignatures ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :OffChainSignaturesCanonical ;
@@ -2698,7 +2698,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :OffChainDataStorage ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :OffChainDataStorageCanonical ;
@@ -2711,7 +2711,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :DelegatedComputation ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :DelegatedComputationCanonical ;
@@ -2724,7 +2724,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :LowContractFootprint ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :LowContractFootprintCanonical ;
@@ -2737,7 +2737,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :FactoryContract ,
                    :PaperBased ,
                    :Healthcare ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :FactoryContractCanonical ;
@@ -2750,7 +2750,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :Flyweight ,
                    :PaperBased ,
                    :Healthcare ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :requires :AbstractFactoryRaj2018 ;
 
@@ -2764,7 +2764,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :ProxyContract ,
                    :PaperBased ,
                    :Healthcare ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :requires :OracleCanonical ;
 
@@ -2778,7 +2778,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :PublisherSubscriber ,
                    :PaperBased ,
                    :Healthcare ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :PublisherSubscriberCanonical ;
@@ -2791,7 +2791,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :PullBasedInboundOracle ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :PullBasedInboundOracleCanonical ;
@@ -2804,7 +2804,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :PushBasedInboundOracle ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :PushBasedInboundOracleCanonical ;
@@ -2817,7 +2817,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :PullBasedOutboundOracle ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :PullBasedOutboundOracleCanonical ;
@@ -2830,7 +2830,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :PushBasedOutboundOracle ,
                    :PaperBased ,
                    :General ,
-                   :AllBlockchains ;
+                   :AllBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :PushBasedOutboundOracleCanonical ;
@@ -2843,7 +2843,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :FactoryContract ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :relatedTo :ContractComposerLiu2018 ;
 
@@ -2857,7 +2857,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :ContractComposer ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :relatedTo :ContractFactoryLiu2018 ;
 
@@ -2871,7 +2871,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :ContractDecorator ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :ContractComposerLiu2018 ;
           :benefitsFrom :ContractDecoratorLiu2018 ;
@@ -2886,7 +2886,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :ProxyContract ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :ContractComposerLiu2018 ;
           :benefitsFrom :ContractDecoratorLiu2018 ;
@@ -2903,7 +2903,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :ContractMediator ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :ContractMediatorCanonical ;
@@ -2916,7 +2916,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :ContractObserver ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
           :benefitsFrom :ContractDecoratorLiu2018 ;
 
@@ -2930,7 +2930,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :HashSecret ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :HashSecretCanonical ;
@@ -2943,7 +2943,7 @@ resolve the tension created by the public and immutable aspects of the blockchai
                    :MultipleAuthorization ,
                    :PaperBased ,
                    :General ,
-                   :SmartContractEnabledBlockchains ;
+                   :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
           :hasCanonical :MultipleAuthorizationCanonical ;

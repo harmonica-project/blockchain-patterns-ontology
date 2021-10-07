@@ -3,7 +3,7 @@
                           :$technology ,
                           :$domain ,
                           :Canonical ,
-                          :$refClass ;
+                          :$refClass ,
                           :$language ;
 $examples
                  :ContextAndProblem "$context"^^rdfs:Literal ;

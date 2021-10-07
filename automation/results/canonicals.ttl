@@ -3,7 +3,7 @@
                           :AllBlockchains ,
                           :BPM ,
                           :Canonical ,
-                          :TransparentEventLog ;
+                          :TransparentEventLog ,
                           :Unspecified ;
           :hasExample :TransparentEventLogMüller2020 ;
 
@@ -16,7 +16,7 @@
                           :AllBlockchains ,
                           :BPM ,
                           :Canonical ,
-                          :BlockchainBpEngine ;
+                          :BlockchainBpEngine ,
                           :Unspecified ;
           :hasExample :BlockchainBpEngineMüller2020 ;
 
@@ -29,7 +29,7 @@
                           :SmartContractEnabledBlockchains ,
                           :BPM ,
                           :Canonical ,
-                          :SmartContractActivities ;
+                          :SmartContractActivities ,
                           :Unspecified ;
           :hasExample :SmartContractActivitiesMüller2020 ;
 
@@ -42,7 +42,7 @@
                           :AllBlockchains ,
                           :BPM ,
                           :Canonical ,
-                          :BlockchainBasedReputationSystem ;
+                          :BlockchainBasedReputationSystem ,
                           :Unspecified ;
           :hasExample :BlockchainBasedReputationSystemMüller2020 ;
 
@@ -55,7 +55,7 @@
                           :AllBlockchains ,
                           :BPM ,
                           :Canonical ,
-                          :DecentralizeBusinessProcess ;
+                          :DecentralizeBusinessProcess ,
                           :Unspecified ;
           :hasExample :DecentralizeBusinessProcessMüller2020 ;
 
@@ -68,7 +68,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :KeyValueStore ;
+                          :KeyValueStore ,
                           :Unspecified ;
           :hasExample :KeyValueStoreWorley2019 ;
 
@@ -81,7 +81,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :AddressMapping ;
+                          :AddressMapping ,
                           :Unspecified ;
           :hasExample :AddressMappingWorley2019 ;
 
@@ -94,7 +94,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :Authorization ;
+                          :Authorization ,
                           :Unspecified ;
           :hasExample :AuthorizationWorley2019 ;
 
@@ -107,7 +107,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :Judge ;
+                          :Judge ,
                           :Unspecified ;
           :hasExample :JudgeWorley2019 ;
 
@@ -120,7 +120,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :TickerTape ;
+                          :TickerTape ,
                           :Unspecified ;
           :hasExample :TickerTapeWorley2019 ;
 
@@ -133,7 +133,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :Vote ;
+                          :Vote ,
                           :Unspecified ;
           :hasExample :VoteWorley2019 ;
 
@@ -146,7 +146,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :Blocklist ;
+                          :Blocklist ,
                           :Unspecified ;
           :hasExample :BlocklistWorley2019 ;
 
@@ -159,7 +159,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :Announcement ;
+                          :Announcement ,
                           :Unspecified ;
           :hasExample :AnnouncementWorley2019 ;
 
@@ -172,7 +172,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :BulletinBoard ;
+                          :BulletinBoard ,
                           :Unspecified ;
           :hasExample :BulletinBoardWorley2019 ;
 
@@ -185,7 +185,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :Migration ;
+                          :Migration ,
                           :Unspecified ;
           :hasExample :MigrationWorley2019 ;
 
@@ -198,7 +198,7 @@
                           :HyperledgerSawtooth ,
                           :General ,
                           :Canonical ,
-                          :InterFamilyCommunication ;
+                          :InterFamilyCommunication ,
                           :Unspecified ;
           :hasExample :InterFamilyCommunicationOwens2019 ;
 
@@ -211,7 +211,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :Locking ;
+                          :Locking ,
                           :Solidity ;
           :hasExample :LockingMavridou2018 ;
 
@@ -224,7 +224,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :TransitionCounter ;
+                          :TransitionCounter ,
                           :Solidity ;
           :hasExample :TransitionCounterMavridou2018 ;
 
@@ -237,7 +237,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :AutomaticTimedTransitions ;
+                          :AutomaticTimedTransitions ,
                           :Solidity ;
           :hasExample :AutomaticTimedTransitionsMavridou2018 ;
 
@@ -250,7 +250,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :Randomness ;
+                          :Randomness ,
                           :Solidity ;
           :hasExample :RandomnessBartoletti2017 ;
 
@@ -263,7 +263,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :Poll ;
+                          :Poll ,
                           :Solidity ;
           :hasExample :PollBartoletti2017 ;
 
@@ -276,7 +276,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :ForkCheck ;
+                          :ForkCheck ,
                           :Solidity ;
           :hasExample :ForkCheckBartoletti2017 ;
 
@@ -289,7 +289,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :SecureEtherTransfer ;
+                          :SecureEtherTransfer ,
                           :Solidity ;
           :hasExample :SecureEtherTransferRajasekar2020 ;
 
@@ -302,7 +302,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :Oracle ;
+                          :Oracle ,
                           :Unspecified ;
           :hasExample :OracleBartoletti2017 ;
           :hasExample :OracleDataProviderWohrer2018 ;
@@ -316,7 +316,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :StateChannel ;
+                          :StateChannel ,
                           :Unspecified ;
           :hasExample :StateChannelRajasekar2020 ;
 
@@ -329,7 +329,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :OffChainContractRegistry ;
+                          :OffChainContractRegistry ,
                           :Unspecified ;
           :hasExample :OffChainContractRegistryRajasekar2020 ;
 
@@ -342,7 +342,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :DataContract ;
+                          :DataContract ,
                           :Unspecified ;
           :hasExample :DataContractRajasekar2020 ;
           :hasExample :DataSegregationWohrer2018 ;
@@ -357,7 +357,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :EmbeddedPermission ;
+                          :EmbeddedPermission ,
                           :Unspecified ;
           :hasExample :EmbeddedPermissionRajasekar2020 ;
           :hasExample :AccessControlMavridou2018 ;
@@ -372,7 +372,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :FactoryContract ;
+                          :FactoryContract ,
                           :Unspecified ;
           :hasExample :FactoryContractRajasekar2020 ;
           :hasExample :ReusabilityMarchesi2020 ;
@@ -388,7 +388,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :EmergencyStop ;
+                          :EmergencyStop ,
                           :Unspecified ;
           :hasExample :EmergencyStopRajasekar2020 ;
 
@@ -401,7 +401,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :Mutex ;
+                          :Mutex ,
                           :Unspecified ;
           :hasExample :MutexRajasekar2020 ;
 
@@ -414,7 +414,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :ContractBalanceLimit ;
+                          :ContractBalanceLimit ,
                           :Unspecified ;
           :hasExample :ContractBalanceLimitRajasekar2020 ;
           :hasExample :BalanceLimitWohrer2020 ;
@@ -428,7 +428,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :ReverseOracle ;
+                          :ReverseOracle ,
                           :Unspecified ;
           :hasExample :ReverseOracleXu2018 ;
           :hasExample :ReverseVerifierRajasekar2020 ;
@@ -443,7 +443,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :IncentiveExecution ;
+                          :IncentiveExecution ,
                           :Unspecified ;
           :hasExample :IncentiveExecutionRajasekar2020 ;
 
@@ -456,7 +456,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :CommitAndReveal ;
+                          :CommitAndReveal ,
                           :Unspecified ;
           :hasExample :CommitAndRevealRajasekar2020 ;
 
@@ -469,7 +469,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :ProxyContract ;
+                          :ProxyContract ,
                           :Unspecified ;
           :hasExample :ProxyContractRajasekar2020 ;
           :hasExample :ProxyMarchesi2020 ;
@@ -486,7 +486,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :DynamicBinding ;
+                          :DynamicBinding ,
                           :Unspecified ;
           :hasExample :DynamicBindingRajasekar2020 ;
 
@@ -499,7 +499,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :Flyweight ;
+                          :Flyweight ,
                           :Unspecified ;
           :hasExample :FlyweightRajasekar2020 ;
 
@@ -512,7 +512,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :TightVariablePacking ;
+                          :TightVariablePacking ,
                           :Unspecified ;
           :hasExample :TightVariablePackingRajasekar2020 ;
 
@@ -525,7 +525,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :LegalAndSmartContractPair ;
+                          :LegalAndSmartContractPair ,
                           :Unspecified ;
           :hasExample :LegalAndSmartContractPairXu2018 ;
 
@@ -538,7 +538,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :OffChainDataStorage ;
+                          :OffChainDataStorage ,
                           :Unspecified ;
           :hasExample :OffChainDataStorageXu2018 ;
           :hasExample :HashStorageMüller2020 ;
@@ -558,7 +558,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :MultipleAuthorization ;
+                          :MultipleAuthorization ,
                           :Unspecified ;
           :hasExample :MultipleAuthorizationXu2018 ;
           :hasExample :MultipleAuthoritiesLu2019 ;
@@ -573,7 +573,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :OffChainSecretEnabledDynamicAuthentication ;
+                          :OffChainSecretEnabledDynamicAuthentication ,
                           :Unspecified ;
           :hasExample :OffChainSecretEnabledDynamicAuthenticationXu2018 ;
 
@@ -586,7 +586,7 @@
                           :AllBlockchains ,
                           :IdentityManagement ,
                           :Canonical ,
-                          :MasterSubKey ;
+                          :MasterSubKey ,
                           :Unspecified ;
           :hasExample :MasterSubKeyLiu2020 ;
 
@@ -599,7 +599,7 @@
                           :AllBlockchains ,
                           :IdentityManagement ,
                           :Canonical ,
-                          :HotColdWalletStorage ;
+                          :HotColdWalletStorage ,
                           :Unspecified ;
           :hasExample :HotColdWalletStorageLiu2020 ;
 
@@ -612,7 +612,7 @@
                           :AllBlockchains ,
                           :IdentityManagement ,
                           :Canonical ,
-                          :KeySharding ;
+                          :KeySharding ,
                           :Unspecified ;
           :hasExample :KeyShardingLiu2020 ;
 
@@ -625,7 +625,7 @@
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
                           :Canonical ,
-                          :IdentifierRegistry ;
+                          :IdentifierRegistry ,
                           :Unspecified ;
           :hasExample :IdentifierRegistryLiu2020 ;
 
@@ -638,7 +638,7 @@
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
                           :Canonical ,
-                          :MultipleRegistration ;
+                          :MultipleRegistration ,
                           :Unspecified ;
           :hasExample :MultipleRegistrationLiu2020 ;
 
@@ -651,7 +651,7 @@
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
                           :Canonical ,
-                          :BoundWithSocialMedia ;
+                          :BoundWithSocialMedia ,
                           :Unspecified ;
           :hasExample :BoundWithSocialMediaLiu2020 ;
 
@@ -664,7 +664,7 @@
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
                           :Canonical ,
-                          :DualResolution ;
+                          :DualResolution ,
                           :Unspecified ;
           :hasExample :DualResolutionLiu2020 ;
 
@@ -677,7 +677,7 @@
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
                           :Canonical ,
-                          :DelegateList ;
+                          :DelegateList ,
                           :Unspecified ;
           :hasExample :DelegateListLiu2020 ;
 
@@ -690,7 +690,7 @@
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
                           :Canonical ,
-                          :SelectiveContentGeneration ;
+                          :SelectiveContentGeneration ,
                           :Unspecified ;
           :hasExample :SelectiveContentGenerationLiu2020 ;
 
@@ -703,7 +703,7 @@
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
                           :Canonical ,
-                          :TimeConstrainedAccess ;
+                          :TimeConstrainedAccess ,
                           :Unspecified ;
           :hasExample :TimeConstrainedAccessLiu2020 ;
 
@@ -716,7 +716,7 @@
                           :SmartContractEnabledBlockchains ,
                           :IdentityManagement ,
                           :Canonical ,
-                          :OneOffAccess ;
+                          :OneOffAccess ,
                           :Unspecified ;
           :hasExample :OneOffAccessLiu2020 ;
 
@@ -729,7 +729,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :Snapshotting ;
+                          :Snapshotting ,
                           :Unspecified ;
           :hasExample :SnapshottingBandara2020 ;
 
@@ -742,7 +742,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :StateAggregation ;
+                          :StateAggregation ,
                           :Unspecified ;
           :hasExample :StateAggregationBandara2020 ;
 
@@ -755,7 +755,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :TokenBurning ;
+                          :TokenBurning ,
                           :Unspecified ;
           :hasExample :TokenBurningBandara2020 ;
 
@@ -768,7 +768,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :NodeSync ;
+                          :NodeSync ,
                           :Unspecified ;
           :hasExample :NodeSyncBandara2020 ;
 
@@ -781,7 +781,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :EstablishGenesis ;
+                          :EstablishGenesis ,
                           :Unspecified ;
           :hasExample :EstablishGenesisBandara2020 ;
 
@@ -794,7 +794,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :HardFork ;
+                          :HardFork ,
                           :Unspecified ;
           :hasExample :HardForkBandara2020 ;
 
@@ -807,7 +807,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :StateInitialization ;
+                          :StateInitialization ,
                           :Unspecified ;
           :hasExample :StateInitializationBandara2020 ;
 
@@ -820,7 +820,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :ExchangeTransfer ;
+                          :ExchangeTransfer ,
                           :Unspecified ;
           :hasExample :ExchangeTransferBandara2020 ;
 
@@ -833,7 +833,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :TransactionReplay ;
+                          :TransactionReplay ,
                           :Unspecified ;
           :hasExample :TransactionReplayBandara2020 ;
 
@@ -846,7 +846,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :VirtualMachineEmulation ;
+                          :VirtualMachineEmulation ,
                           :Unspecified ;
           :hasExample :VirtualMachineEmulationBandara2020 ;
 
@@ -859,7 +859,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :SmartContractTranslation ;
+                          :SmartContractTranslation ,
                           :Unspecified ;
           :hasExample :SmartContractTranslationBandara2020 ;
 
@@ -872,7 +872,7 @@
                           :SmartContractEnabledBlockchains ,
                           :BigData ,
                           :Canonical ,
-                          :BlockchainSecurityPatternForBigDataEcosystems ;
+                          :BlockchainSecurityPatternForBigDataEcosystems ,
                           :Unspecified ;
           :hasExample :BlockchainSecurityPatternForBigDataEcosystemsMoreno2019 ;
 
@@ -885,7 +885,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :EventLog ;
+                          :EventLog ,
                           :Solidity ;
           :hasExample :EventLogMarchesi2020 ;
 
@@ -898,7 +898,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :LimitStorage ;
+                          :LimitStorage ,
                           :Solidity ;
           :hasExample :LimitStorageMarchesi2020 ;
 
@@ -911,7 +911,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :PackingVariables ;
+                          :PackingVariables ,
                           :Solidity ;
           :hasExample :PackingVariablesMarchesi2020 ;
 
@@ -924,7 +924,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :PackingBooleans ;
+                          :PackingBooleans ,
                           :Solidity ;
           :hasExample :PackingBooleansMarchesi2020 ;
 
@@ -937,7 +937,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :UintVsUint256 ;
+                          :UintVsUint256 ,
                           :Solidity ;
           :hasExample :UintVsUint256Marchesi2020 ;
 
@@ -950,7 +950,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :MappingVsArray ;
+                          :MappingVsArray ,
                           :Solidity ;
           :hasExample :MappingVsArrayMarchesi2020 ;
 
@@ -963,7 +963,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :FixedSize ;
+                          :FixedSize ,
                           :Solidity ;
           :hasExample :FixedSizeMarchesi2020 ;
 
@@ -976,7 +976,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :DefaultValue ;
+                          :DefaultValue ,
                           :Solidity ;
           :hasExample :DefaultValueMarchesi2020 ;
 
@@ -989,7 +989,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :MinimizeOnChainData ;
+                          :MinimizeOnChainData ,
                           :Solidity ;
           :hasExample :MinimizeOnChainDataMarchesi2020 ;
 
@@ -1002,7 +1002,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :ExplicitelyMarkExternalFunction ;
+                          :ExplicitelyMarkExternalFunction ,
                           :Solidity ;
           :hasExample :ExplicitelyMarkExternalFunctionMarchesi2020 ;
 
@@ -1015,7 +1015,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :LimitExternalCalls ;
+                          :LimitExternalCalls ,
                           :Solidity ;
           :hasExample :LimitExternalCallsMarchesi2020 ;
 
@@ -1028,7 +1028,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :InternalFunctionCalls ;
+                          :InternalFunctionCalls ,
                           :Solidity ;
           :hasExample :InternalFunctionCallsMarchesi2020 ;
 
@@ -1041,7 +1041,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :FewerFunctions ;
+                          :FewerFunctions ,
                           :Solidity ;
           :hasExample :FewerFunctionsMarchesi2020 ;
 
@@ -1054,7 +1054,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :UseLibraries ;
+                          :UseLibraries ,
                           :Solidity ;
           :hasExample :UseLibrariesMarchesi2020 ;
 
@@ -1067,7 +1067,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :ShortCircuit ;
+                          :ShortCircuit ,
                           :Solidity ;
           :hasExample :ShortCircuitMarchesi2020 ;
 
@@ -1080,7 +1080,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :ShortConstantStrings ;
+                          :ShortConstantStrings ,
                           :Solidity ;
           :hasExample :ShortConstantStringsMarchesi2020 ;
 
@@ -1093,7 +1093,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :LimitModifiers ;
+                          :LimitModifiers ,
                           :Solidity ;
           :hasExample :LimitModifiersMarchesi2020 ;
 
@@ -1106,7 +1106,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :AvoidRedundantOperations ;
+                          :AvoidRedundantOperations ,
                           :Solidity ;
           :hasExample :AvoidRedundantOperationsMarchesi2020 ;
 
@@ -1119,7 +1119,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :SingleLineSwap ;
+                          :SingleLineSwap ,
                           :Solidity ;
           :hasExample :SingleLineSwapMarchesi2020 ;
 
@@ -1132,7 +1132,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :WriteValues ;
+                          :WriteValues ,
                           :Solidity ;
           :hasExample :WriteValuesMarchesi2020 ;
 
@@ -1145,7 +1145,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :FreeingStorage ;
+                          :FreeingStorage ,
                           :Solidity ;
           :hasExample :FreeingStorageMarchesi2020 ;
 
@@ -1158,7 +1158,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :Optimizer ;
+                          :Optimizer ,
                           :Solidity ;
           :hasExample :OptimizerMarchesi2020 ;
 
@@ -1171,7 +1171,7 @@
                           :SmartContractEnabledBlockchains ,
                           :BPM ,
                           :Canonical ,
-                          :ConfidentialAndPseudoAnonymousContractEnforcement ;
+                          :ConfidentialAndPseudoAnonymousContractEnforcement ,
                           :Unspecified ;
           :hasExample :ConfidentialAndPseudoAnonymousContractEnforcementSix2020 ;
 
@@ -1184,7 +1184,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :SelfGeneratedTransactions ;
+                          :SelfGeneratedTransactions ,
                           :Unspecified ;
           :hasExample :SelfGeneratedTransactionsWessling2018 ;
 
@@ -1197,7 +1197,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :SelfConfirmedTransactions ;
+                          :SelfConfirmedTransactions ,
                           :Unspecified ;
           :hasExample :SelfConfirmedTransactionsWessling2018 ;
 
@@ -1210,7 +1210,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :DelegatedTransactions ;
+                          :DelegatedTransactions ,
                           :Unspecified ;
           :hasExample :DelegatedTransactionsWessling2018 ;
 
@@ -1223,7 +1223,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :DigitalRecord ;
+                          :DigitalRecord ,
                           :Unspecified ;
           :hasExample :DigitalRecordLemieux2017 ;
 
@@ -1236,7 +1236,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :MultipleBlockchains ;
+                          :MultipleBlockchains ,
                           :Unspecified ;
           :hasExample :MultipleBlockchainsSchinle2020 ;
 
@@ -1249,7 +1249,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :OnChainEncryption ;
+                          :OnChainEncryption ,
                           :Unspecified ;
           :hasExample :OnChainEncryptionSchinle2020 ;
           :hasExample :PrivacyMarchesi2020 ;
@@ -1265,7 +1265,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :HashTimestamping ;
+                          :HashTimestamping ,
                           :Unspecified ;
           :hasExample :HashTimestampingSchinle2020 ;
 
@@ -1278,7 +1278,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :PullPayment ;
+                          :PullPayment ,
                           :Unspecified ;
           :hasExample :PullPaymentWohrer2018 ;
 
@@ -1291,7 +1291,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :StateMachine ;
+                          :StateMachine ,
                           :Unspecified ;
           :hasExample :StateMachineWohrer2018 ;
 
@@ -1304,7 +1304,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :Ownership ;
+                          :Ownership ,
                           :Unspecified ;
           :hasExample :OwnershipWohrer2018 ;
 
@@ -1317,7 +1317,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :AccessRestriction ;
+                          :AccessRestriction ,
                           :Unspecified ;
           :hasExample :AccessRestrictionWohrer2018 ;
 
@@ -1330,7 +1330,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :Mortal ;
+                          :Mortal ,
                           :Solidity ;
           :hasExample :MortalWohrer2018 ;
 
@@ -1343,7 +1343,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :AutomaticDeprecation ;
+                          :AutomaticDeprecation ,
                           :Unspecified ;
           :hasExample :AutomaticDeprecationWohrer2018 ;
 
@@ -1356,7 +1356,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :Satellite ;
+                          :Satellite ,
                           :Unspecified ;
           :hasExample :SatelliteWohrer2018 ;
 
@@ -1369,7 +1369,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :SpeedBump ;
+                          :SpeedBump ,
                           :Unspecified ;
           :hasExample :SpeedBumpWohrer2020 ;
 
@@ -1382,7 +1382,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :RateLimit ;
+                          :RateLimit ,
                           :Unspecified ;
           :hasExample :RateLimitWohrer2020 ;
 
@@ -1395,7 +1395,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :CheckEffectInteraction ;
+                          :CheckEffectInteraction ,
                           :Solidity ;
           :hasExample :CheckEffectInteractionMarchesi2020 ;
           :hasExample :ChecksEffectsInteractionWohrer2020 ;
@@ -1410,7 +1410,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :GuardCheck ;
+                          :GuardCheck ,
                           :Solidity ;
           :hasExample :GuardCheckMarchesi2020 ;
 
@@ -1423,7 +1423,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :TimeConstraint ;
+                          :TimeConstraint ,
                           :Solidity ;
           :hasExample :TimeConstraintBartoletti2017 ;
 
@@ -1436,7 +1436,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :Termination ;
+                          :Termination ,
                           :Solidity ;
           :hasExample :TerminationBartoletti2017 ;
 
@@ -1449,7 +1449,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :Math ;
+                          :Math ,
                           :Solidity ;
           :hasExample :MathBartoletti2017 ;
 
@@ -1462,7 +1462,7 @@
                           :Ethereum ,
                           :General ,
                           :Canonical ,
-                          :PublisherSubscriber ;
+                          :PublisherSubscriber ,
                           :Solidity ;
           :hasExample :PublisherSubscriberMarchesi2020 ;
 
@@ -1475,7 +1475,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :Tokenisation ;
+                          :Tokenisation ,
                           :Unspecified ;
           :hasExample :TokenisationXu2018 ;
           :hasExample :TokenizedLemieux2017 ;
@@ -1490,7 +1490,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :XConfirmation ;
+                          :XConfirmation ,
                           :Unspecified ;
           :hasExample :XConfirmationXu2018 ;
 
@@ -1503,7 +1503,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :ContractRegistry ;
+                          :ContractRegistry ,
                           :Unspecified ;
           :hasExample :ContractRegistryXu2018 ;
           :hasExample :ContractRegisterWohrer2018 ;
@@ -1517,7 +1517,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :ChallengeResponse ;
+                          :ChallengeResponse ,
                           :Unspecified ;
           :hasExample :ChallengeResponseEberhardt2017 ;
 
@@ -1530,7 +1530,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :OffChainSignatures ;
+                          :OffChainSignatures ,
                           :Unspecified ;
           :hasExample :OffChainSignaturesEberhardt2017 ;
 
@@ -1543,7 +1543,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :DelegatedComputation ;
+                          :DelegatedComputation ,
                           :Unspecified ;
           :hasExample :DelegatedComputationEberhardt2017 ;
 
@@ -1556,7 +1556,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :LowContractFootprint ;
+                          :LowContractFootprint ,
                           :Unspecified ;
           :hasExample :LowContractFootprintEberhardt2017 ;
 
@@ -1569,7 +1569,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :PullBasedInboundOracle ;
+                          :PullBasedInboundOracle ,
                           :Unspecified ;
           :hasExample :PullBasedInboundOracleMühlberger2020 ;
 
@@ -1582,7 +1582,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :PushBasedInboundOracle ;
+                          :PushBasedInboundOracle ,
                           :Unspecified ;
           :hasExample :PushBasedInboundOracleMühlberger2020 ;
 
@@ -1595,7 +1595,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :PullBasedOutboundOracle ;
+                          :PullBasedOutboundOracle ,
                           :Unspecified ;
           :hasExample :PullBasedOutboundOracleMühlberger2020 ;
 
@@ -1608,7 +1608,7 @@
                           :AllBlockchains ,
                           :General ,
                           :Canonical ,
-                          :PushBasedOutboundOracle ;
+                          :PushBasedOutboundOracle ,
                           :Unspecified ;
           :hasExample :PushBasedOutboundOracleMühlberger2020 ;
 
@@ -1621,7 +1621,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :ContractComposer ;
+                          :ContractComposer ,
                           :Unspecified ;
           :hasExample :ContractComposerLiu2018 ;
 
@@ -1634,7 +1634,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :ContractDecorator ;
+                          :ContractDecorator ,
                           :Unspecified ;
           :hasExample :ContractDecoratorLiu2018 ;
 
@@ -1647,7 +1647,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :ContractMediator ;
+                          :ContractMediator ,
                           :Unspecified ;
           :hasExample :ContractMediatorLiu2018 ;
 
@@ -1660,7 +1660,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :ContractObserver ;
+                          :ContractObserver ,
                           :Unspecified ;
           :hasExample :ContractObserverLiu2018 ;
 
@@ -1673,7 +1673,7 @@
                           :SmartContractEnabledBlockchains ,
                           :General ,
                           :Canonical ,
-                          :HashSecret ;
+                          :HashSecret ,
                           :Unspecified ;
           :hasExample :HashSecretLiu2018 ;
 
