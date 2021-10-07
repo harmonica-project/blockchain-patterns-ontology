@@ -51,7 +51,7 @@ def parseToRelation(name):
 
 # generate the links between example patterns. 5 different links exists, they are listed in the array below for easy detection in the dict
 def get_links_between_patterns(paper_patterns, paper_pattern, example_mapping, papers):
-  link_types = ["From pattern", "Related to", "Variant Of", "Requires", "Benefits from"]
+  link_types = ["From pattern", "Related to", "Variant of", "Requires", "Benefits from"]
   relation_template = loadTemplate('relation')
   relations_str = ''
 

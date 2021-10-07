@@ -114,6 +114,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
+          :variantOf :OracleBartoletti2017 ;
           :requires :AuthorizationWorley2019 ;
 
           :hasCanonical :JudgeCanonical ;
@@ -127,6 +128,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
+          :variantOf :OracleBartoletti2017 ;
           :requires :AuthorizationWorley2019 ;
 
           :hasCanonical :TickerTapeCanonical ;
@@ -140,6 +142,7 @@
                    :PaperBased ,
                    :General ,
                    :SmartContractEnabledBlockchains ;
+          :variantOf :OracleBartoletti2017 ;
           :benefitsFrom :BlockchainBasedReputationSystemMüller2020 ;
 
           :hasCanonical :VoteCanonical ;
@@ -951,6 +954,7 @@
                    :IdentityManagement ,
                    :SmartContractEnabledBlockchains ;
           :relatedTo :DelegateListLiu2020 ;
+          :variantOf :MultipleAuthorizationXu2018 ;
           :benefitsFrom :IdentifierRegistryLiu2020 ;
           :benefitsFrom :MutexWohrer2018 ;
 
@@ -980,6 +984,7 @@
                    :PaperBased ,
                    :IdentityManagement ,
                    :SmartContractEnabledBlockchains ;
+          :variantOf :OneOffAccessLiu2020 ;
           :benefitsFrom :SelectiveContentGenerationLiu2020 ;
 
           :hasCanonical :TimeConstrainedAccessCanonical ;
@@ -993,6 +998,7 @@
                    :PaperBased ,
                    :IdentityManagement ,
                    :SmartContractEnabledBlockchains ;
+          :variantOf :TimeConstrainedAccessLiu2020 ;
           :benefitsFrom :SelectiveContentGenerationLiu2020 ;
 
           :hasCanonical :OneOffAccessCanonical ;
@@ -1172,6 +1178,7 @@
                    :PaperBased ,
                    :BigData ,
                    :SmartContractEnabledBlockchains ;
+          :variantOf :Unknown ;
           :requires :Unknown ;
           :benefitsFrom :Unknown ;
 
@@ -1476,6 +1483,7 @@
                    :PaperBased ,
                    :BPM ,
                    :SmartContractEnabledBlockchains ;
+          :variantOf :LegalAndSmartContractPairXu2018 ;
 
           :hasCanonical :ConfidentialAndPseudoAnonymousContractEnforcementCanonical ;
           :ContextAndProblem "During past years, the different industries have been impacted by new and disruptive technologies. One of such technologies is smart contracts. One objective of the smart contracts is to translate legal contracts as code or help the legal contract by augmenting some of its clauses into machine-readable functions. The emergence of blockchain technologies has led to the creation of blockchain-based smart contracts, that has benefited from blockchain characteristics. When stored on-chain, data becomes tamper-resistant. Additionally, the utilization of smart contracts isn’t always possible for stakeholders due to concerns about the irreversibility of smart contracts in certain blockchain technologies. For example, creating GDPR compliant blockchains for storing personal data systems is still an open topic. Although not all smart contracts might deal with personal data, there are concerns over the leakage of organizations’ confidential data or their identities, even if data are encrypted. "^^rdfs:Literal ;
@@ -2090,6 +2098,7 @@
                    :PaperBased ,
                    :General ,
                    :Ethereum ;
+          :variantOf :AuthorizationBartoletti2017 ;
 
           :hasCanonical :OwnershipCanonical ;
           :ContextAndProblem ""^^rdfs:Literal ;
