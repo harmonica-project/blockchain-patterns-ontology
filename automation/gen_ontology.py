@@ -84,6 +84,16 @@ def loadTemplate(item):
   with open('./templates/' + item + '.txt', 'r') as file:
     return file.read()
 
+def get_application_examples(p):
+  relation_template = loadTemplate('example')
+  if 'Application examples' in p:
+    for example in p['Application examples'].split("• "):
+      if len(example):
+        print(example)
+    return ""
+  else:
+    return ''
+
 # create the mappings between canonical names and example patterns names and vice versa
 def createExempleToCanonicalMappings(canonical_patterns):
   canonical_mapping = {}
@@ -196,6 +206,7 @@ def run():
       author=getFirstAuthor(paper['author']),
       year=paper['year'],
       links=get_links_between_patterns(paper_patterns, p, example_mapping, papers),
+      examples=get_application_examples(p),
       language=parseToURI(p['Language'])
     )
   

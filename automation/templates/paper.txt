@@ -9,5 +9,6 @@ $links
           :hasCanonical :${refClass}Canonical ;
           :ContextAndProblem "$context"^^rdfs:Literal ;
           :Solution "$solution"^^rdfs:Literal ;
+$examples
           rdfs:label "$name" .
 
