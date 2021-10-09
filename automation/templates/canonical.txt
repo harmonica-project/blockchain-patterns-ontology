@@ -1,11 +1,11 @@
 ###  http://www.semanticweb.org/$owner/ontologies/2021/8/patterns#${uri}Canonical
 :${uri}Canonical rdf:type owl:NamedIndividual ,
-                          :$technology ,
+                          :$blockchain ,
                           :$domain ,
                           :Canonical ,
                           :$refClass ,
                           :$language ;
-$examples
+$samples
                  :ContextAndProblem "$context"^^rdfs:Literal ;
                  :Solution "$solution"^^rdfs:Literal ;
                  rdfs:label "$name" .
