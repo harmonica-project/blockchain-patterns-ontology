@@ -5,11 +5,11 @@
                           :Canonical ,
                           :TransparentEventLog ,
                           :Unspecified ;
-          :hasSample :TransparentEventLogMüller2020 ;
+:hasSample :TransparentEventLogMüller2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Transparent Event Log" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Transparent Event Log" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainBpEngineCanonical
 :BlockchainBpEngineCanonical rdf:type owl:NamedIndividual ,
@@ -18,11 +18,11 @@
                           :Canonical ,
                           :BlockchainBpEngine ,
                           :Unspecified ;
-          :hasSample :BlockchainBpEngineMüller2020 ;
+:hasSample :BlockchainBpEngineMüller2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Blockchain BP Engine" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Blockchain BP Engine" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractActivitiesCanonical
 :SmartContractActivitiesCanonical rdf:type owl:NamedIndividual ,
@@ -31,11 +31,11 @@
                           :Canonical ,
                           :SmartContractActivities ,
                           :Unspecified ;
-          :hasSample :SmartContractActivitiesMüller2020 ;
+:hasSample :SmartContractActivitiesMüller2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Smart Contract Activities" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Smart Contract Activities" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainBasedReputationSystemCanonical
 :BlockchainBasedReputationSystemCanonical rdf:type owl:NamedIndividual ,
@@ -44,11 +44,11 @@
                           :Canonical ,
                           :BlockchainBasedReputationSystem ,
                           :Unspecified ;
-          :hasSample :BlockchainBasedReputationSystemMüller2020 ;
+:hasSample :BlockchainBasedReputationSystemMüller2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Blockchain-based reputation system" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Blockchain-based reputation system" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DecentralizeBusinessProcessCanonical
 :DecentralizeBusinessProcessCanonical rdf:type owl:NamedIndividual ,
@@ -57,11 +57,11 @@
                           :Canonical ,
                           :DecentralizeBusinessProcess ,
                           :Unspecified ;
-          :hasSample :DecentralizeBusinessProcessMüller2020 ;
+:hasSample :DecentralizeBusinessProcessMüller2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Decentralize business process" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Decentralize business process" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#KeyValueStoreCanonical
 :KeyValueStoreCanonical rdf:type owl:NamedIndividual ,
@@ -70,11 +70,11 @@
                           :Canonical ,
                           :KeyValueStore ,
                           :Unspecified ;
-          :hasSample :KeyValueStoreWorley2019 ;
+:hasSample :KeyValueStoreWorley2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Key-value store" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Key-value store" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AddressMappingCanonical
 :AddressMappingCanonical rdf:type owl:NamedIndividual ,
@@ -83,11 +83,11 @@
                           :Canonical ,
                           :AddressMapping ,
                           :Unspecified ;
-          :hasSample :AddressMappingWorley2019 ;
+:hasSample :AddressMappingWorley2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Address mapping" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Address mapping" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AuthorizationCanonical
 :AuthorizationCanonical rdf:type owl:NamedIndividual ,
@@ -96,11 +96,11 @@
                           :Canonical ,
                           :Authorization ,
                           :Unspecified ;
-          :hasSample :AuthorizationWorley2019 ;
+:hasSample :AuthorizationWorley2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Authorization" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Authorization" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#JudgeCanonical
 :JudgeCanonical rdf:type owl:NamedIndividual ,
@@ -109,11 +109,11 @@
                           :Canonical ,
                           :Judge ,
                           :Unspecified ;
-          :hasSample :JudgeWorley2019 ;
+:hasSample :JudgeWorley2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Judge" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Judge" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TickerTapeCanonical
 :TickerTapeCanonical rdf:type owl:NamedIndividual ,
@@ -122,11 +122,11 @@
                           :Canonical ,
                           :TickerTape ,
                           :Unspecified ;
-          :hasSample :TickerTapeWorley2019 ;
+:hasSample :TickerTapeWorley2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Ticker Tape" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Ticker Tape" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#VoteCanonical
 :VoteCanonical rdf:type owl:NamedIndividual ,
@@ -135,11 +135,11 @@
                           :Canonical ,
                           :Vote ,
                           :Unspecified ;
-          :hasSample :VoteWorley2019 ;
+:hasSample :VoteWorley2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Vote" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Vote" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlocklistCanonical
 :BlocklistCanonical rdf:type owl:NamedIndividual ,
@@ -148,11 +148,11 @@
                           :Canonical ,
                           :Blocklist ,
                           :Unspecified ;
-          :hasSample :BlocklistWorley2019 ;
+:hasSample :BlocklistWorley2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Blocklist" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Blocklist" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AnnouncementCanonical
 :AnnouncementCanonical rdf:type owl:NamedIndividual ,
@@ -161,11 +161,11 @@
                           :Canonical ,
                           :Announcement ,
                           :Unspecified ;
-          :hasSample :AnnouncementWorley2019 ;
+:hasSample :AnnouncementWorley2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Announcement" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Announcement" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BulletinBoardCanonical
 :BulletinBoardCanonical rdf:type owl:NamedIndividual ,
@@ -174,11 +174,11 @@
                           :Canonical ,
                           :BulletinBoard ,
                           :Unspecified ;
-          :hasSample :BulletinBoardWorley2019 ;
+:hasSample :BulletinBoardWorley2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Bulletin Board" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Bulletin Board" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MigrationCanonical
 :MigrationCanonical rdf:type owl:NamedIndividual ,
@@ -187,11 +187,11 @@
                           :Canonical ,
                           :Migration ,
                           :Unspecified ;
-          :hasSample :MigrationWorley2019 ;
+:hasSample :MigrationWorley2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Migration" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Migration" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InterFamilyCommunicationCanonical
 :InterFamilyCommunicationCanonical rdf:type owl:NamedIndividual ,
@@ -200,11 +200,11 @@
                           :Canonical ,
                           :InterFamilyCommunication ,
                           :Unspecified ;
-          :hasSample :InterFamilyCommunicationOwens2019 ;
+:hasSample :InterFamilyCommunicationOwens2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Inter-family communication" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Inter-family communication" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LockingCanonical
 :LockingCanonical rdf:type owl:NamedIndividual ,
@@ -213,11 +213,11 @@
                           :Canonical ,
                           :Locking ,
                           :Solidity ;
-          :hasSample :LockingMavridou2018 ;
+:hasSample :LockingMavridou2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Locking" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Locking" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransitionCounterCanonical
 :TransitionCounterCanonical rdf:type owl:NamedIndividual ,
@@ -226,11 +226,11 @@
                           :Canonical ,
                           :TransitionCounter ,
                           :Solidity ;
-          :hasSample :TransitionCounterMavridou2018 ;
+:hasSample :TransitionCounterMavridou2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Transition Counter" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Transition Counter" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AutomaticTimedTransitionsCanonical
 :AutomaticTimedTransitionsCanonical rdf:type owl:NamedIndividual ,
@@ -239,11 +239,11 @@
                           :Canonical ,
                           :AutomaticTimedTransitions ,
                           :Solidity ;
-          :hasSample :AutomaticTimedTransitionsMavridou2018 ;
+:hasSample :AutomaticTimedTransitionsMavridou2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Automatic Timed Transitions" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Automatic Timed Transitions" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#RandomnessCanonical
 :RandomnessCanonical rdf:type owl:NamedIndividual ,
@@ -252,11 +252,11 @@
                           :Canonical ,
                           :Randomness ,
                           :Solidity ;
-          :hasSample :RandomnessBartoletti2017 ;
+:hasSample :RandomnessBartoletti2017 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Randomness" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Randomness" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PollCanonical
 :PollCanonical rdf:type owl:NamedIndividual ,
@@ -265,11 +265,11 @@
                           :Canonical ,
                           :Poll ,
                           :Solidity ;
-          :hasSample :PollBartoletti2017 ;
+:hasSample :PollBartoletti2017 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Poll" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Poll" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ForkCheckCanonical
 :ForkCheckCanonical rdf:type owl:NamedIndividual ,
@@ -278,11 +278,11 @@
                           :Canonical ,
                           :ForkCheck ,
                           :Solidity ;
-          :hasSample :ForkCheckBartoletti2017 ;
+:hasSample :ForkCheckBartoletti2017 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Fork check" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Fork check" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SecureEtherTransferCanonical
 :SecureEtherTransferCanonical rdf:type owl:NamedIndividual ,
@@ -291,11 +291,11 @@
                           :Canonical ,
                           :SecureEtherTransfer ,
                           :Solidity ;
-          :hasSample :SecureEtherTransferRajasekar2020 ;
+:hasSample :SecureEtherTransferRajasekar2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Secure Ether Transfer" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Secure Ether Transfer" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OracleCanonical
 :OracleCanonical rdf:type owl:NamedIndividual ,
@@ -304,12 +304,12 @@
                           :Canonical ,
                           :Oracle ,
                           :Unspecified ;
-          :hasSample :OracleBartoletti2017 ;
-          :hasSample :OracleDataProviderWohrer2018 ;
+:hasSample :OracleBartoletti2017 ;
+:hasSample :OracleDataProviderWohrer2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Oracle" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Oracle" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateChannelCanonical
 :StateChannelCanonical rdf:type owl:NamedIndividual ,
@@ -318,11 +318,11 @@
                           :Canonical ,
                           :StateChannel ,
                           :Unspecified ;
-          :hasSample :StateChannelRajasekar2020 ;
+:hasSample :StateChannelRajasekar2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "State Channel" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "State Channel" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainContractRegistryCanonical
 :OffChainContractRegistryCanonical rdf:type owl:NamedIndividual ,
@@ -331,11 +331,11 @@
                           :Canonical ,
                           :OffChainContractRegistry ,
                           :Unspecified ;
-          :hasSample :OffChainContractRegistryRajasekar2020 ;
+:hasSample :OffChainContractRegistryRajasekar2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "(Off-chain) Contract Registry" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "(Off-chain) Contract Registry" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DataContractCanonical
 :DataContractCanonical rdf:type owl:NamedIndividual ,
@@ -344,13 +344,13 @@
                           :Canonical ,
                           :DataContract ,
                           :Unspecified ;
-          :hasSample :DataContractRajasekar2020 ;
-          :hasSample :DataSegregationWohrer2018 ;
-          :hasSample :EternalStorageDataContractMarchesi2020 ;
+:hasSample :DataContractRajasekar2020 ;
+:hasSample :DataSegregationWohrer2018 ;
+:hasSample :EternalStorageDataContractMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Data Contract" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Data Contract" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EmbeddedPermissionCanonical
 :EmbeddedPermissionCanonical rdf:type owl:NamedIndividual ,
@@ -359,13 +359,13 @@
                           :Canonical ,
                           :EmbeddedPermission ,
                           :Unspecified ;
-          :hasSample :EmbeddedPermissionRajasekar2020 ;
-          :hasSample :AccessControlMavridou2018 ;
-          :hasSample :AuthorizationWorley2019 ;
+:hasSample :EmbeddedPermissionRajasekar2020 ;
+:hasSample :AccessControlMavridou2018 ;
+:hasSample :AuthorizationWorley2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Embedded Permission" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Embedded Permission" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FactoryContractCanonical
 :FactoryContractCanonical rdf:type owl:NamedIndividual ,
@@ -374,14 +374,14 @@
                           :Canonical ,
                           :FactoryContract ,
                           :Unspecified ;
-          :hasSample :FactoryContractRajasekar2020 ;
-          :hasSample :ReusabilityMarchesi2020 ;
-          :hasSample :ContractFactoryLiu2018 ;
-          :hasSample :AbstractFactoryMarchesi2020 ;
+:hasSample :FactoryContractRajasekar2020 ;
+:hasSample :ReusabilityMarchesi2020 ;
+:hasSample :ContractFactoryLiu2018 ;
+:hasSample :AbstractFactoryMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Factory Contract" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Factory Contract" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EmergencyStopCanonical
 :EmergencyStopCanonical rdf:type owl:NamedIndividual ,
@@ -390,11 +390,11 @@
                           :Canonical ,
                           :EmergencyStop ,
                           :Unspecified ;
-          :hasSample :EmergencyStopRajasekar2020 ;
+:hasSample :EmergencyStopRajasekar2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Emergency Stop" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Emergency Stop" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MutexCanonical
 :MutexCanonical rdf:type owl:NamedIndividual ,
@@ -403,11 +403,11 @@
                           :Canonical ,
                           :Mutex ,
                           :Unspecified ;
-          :hasSample :MutexRajasekar2020 ;
+:hasSample :MutexRajasekar2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Mutex" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Mutex" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractBalanceLimitCanonical
 :ContractBalanceLimitCanonical rdf:type owl:NamedIndividual ,
@@ -416,12 +416,12 @@
                           :Canonical ,
                           :ContractBalanceLimit ,
                           :Unspecified ;
-          :hasSample :ContractBalanceLimitRajasekar2020 ;
-          :hasSample :BalanceLimitWohrer2020 ;
+:hasSample :ContractBalanceLimitRajasekar2020 ;
+:hasSample :BalanceLimitWohrer2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Contract Balance Limit" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Contract Balance Limit" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ReverseOracleCanonical
 :ReverseOracleCanonical rdf:type owl:NamedIndividual ,
@@ -430,13 +430,13 @@
                           :Canonical ,
                           :ReverseOracle ,
                           :Unspecified ;
-          :hasSample :ReverseOracleXu2018 ;
-          :hasSample :ReverseVerifierRajasekar2020 ;
-          :hasSample :AntiOracleWorley2019 ;
+:hasSample :ReverseOracleXu2018 ;
+:hasSample :ReverseVerifierRajasekar2020 ;
+:hasSample :AntiOracleWorley2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Reverse Oracle" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Reverse Oracle" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IncentiveExecutionCanonical
 :IncentiveExecutionCanonical rdf:type owl:NamedIndividual ,
@@ -445,11 +445,11 @@
                           :Canonical ,
                           :IncentiveExecution ,
                           :Unspecified ;
-          :hasSample :IncentiveExecutionRajasekar2020 ;
+:hasSample :IncentiveExecutionRajasekar2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Incentive Execution" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Incentive Execution" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CommitAndRevealCanonical
 :CommitAndRevealCanonical rdf:type owl:NamedIndividual ,
@@ -458,11 +458,11 @@
                           :Canonical ,
                           :CommitAndReveal ,
                           :Unspecified ;
-          :hasSample :CommitAndRevealRajasekar2020 ;
+:hasSample :CommitAndRevealRajasekar2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Commit and Reveal" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Commit and Reveal" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ProxyContractCanonical
 :ProxyContractCanonical rdf:type owl:NamedIndividual ,
@@ -471,15 +471,15 @@
                           :Canonical ,
                           :ProxyContract ,
                           :Unspecified ;
-          :hasSample :ProxyContractRajasekar2020 ;
-          :hasSample :ProxyMarchesi2020 ;
-          :hasSample :ProxyDelegateDecoratorMarchesi2020 ;
-          :hasSample :ContractRelayWohrer2018 ;
-          :hasSample :ContractFacadeLiu2018 ;
+:hasSample :ProxyContractRajasekar2020 ;
+:hasSample :ProxyMarchesi2020 ;
+:hasSample :ProxyDelegateDecoratorMarchesi2020 ;
+:hasSample :ContractRelayWohrer2018 ;
+:hasSample :ContractFacadeLiu2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Proxy Contract" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Proxy Contract" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DynamicBindingCanonical
 :DynamicBindingCanonical rdf:type owl:NamedIndividual ,
@@ -488,11 +488,11 @@
                           :Canonical ,
                           :DynamicBinding ,
                           :Unspecified ;
-          :hasSample :DynamicBindingRajasekar2020 ;
+:hasSample :DynamicBindingRajasekar2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Dynamic Binding" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Dynamic Binding" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FlyweightCanonical
 :FlyweightCanonical rdf:type owl:NamedIndividual ,
@@ -501,11 +501,11 @@
                           :Canonical ,
                           :Flyweight ,
                           :Unspecified ;
-          :hasSample :FlyweightRajasekar2020 ;
+:hasSample :FlyweightRajasekar2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Flyweight" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Flyweight" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TightVariablePackingCanonical
 :TightVariablePackingCanonical rdf:type owl:NamedIndividual ,
@@ -514,11 +514,11 @@
                           :Canonical ,
                           :TightVariablePacking ,
                           :Unspecified ;
-          :hasSample :TightVariablePackingRajasekar2020 ;
+:hasSample :TightVariablePackingRajasekar2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Tight Variable Packing" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Tight Variable Packing" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LegalAndSmartContractPairCanonical
 :LegalAndSmartContractPairCanonical rdf:type owl:NamedIndividual ,
@@ -527,11 +527,11 @@
                           :Canonical ,
                           :LegalAndSmartContractPair ,
                           :Unspecified ;
-          :hasSample :LegalAndSmartContractPairXu2018 ;
+:hasSample :LegalAndSmartContractPairXu2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Legal and smart-contract pair" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Legal and smart-contract pair" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainDataStorageCanonical
 :OffChainDataStorageCanonical rdf:type owl:NamedIndividual ,
@@ -540,18 +540,18 @@
                           :Canonical ,
                           :OffChainDataStorage ,
                           :Unspecified ;
-          :hasSample :OffChainDataStorageXu2018 ;
-          :hasSample :HashStorageMüller2020 ;
-          :hasSample :OffChainDatastoreRajasekar2020 ;
-          :hasSample :HashIntegrityLu2019 ;
-          :hasSample :MirrorLemieux2017 ;
-          :hasSample :ContentAddressableStorageEberhardt2017 ;
-          :hasSample :AnchoringToBlockchainLiu2020 ;
-          :hasSample :OnChainAndOffChainLu2019 ;
+:hasSample :OffChainDataStorageXu2018 ;
+:hasSample :HashStorageMüller2020 ;
+:hasSample :OffChainDatastoreRajasekar2020 ;
+:hasSample :HashIntegrityLu2019 ;
+:hasSample :MirrorLemieux2017 ;
+:hasSample :ContentAddressableStorageEberhardt2017 ;
+:hasSample :AnchoringToBlockchainLiu2020 ;
+:hasSample :OnChainAndOffChainLu2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Off-chain data storage" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Off-chain data storage" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleAuthorizationCanonical
 :MultipleAuthorizationCanonical rdf:type owl:NamedIndividual ,
@@ -560,13 +560,13 @@
                           :Canonical ,
                           :MultipleAuthorization ,
                           :Unspecified ;
-          :hasSample :MultipleAuthorizationXu2018 ;
-          :hasSample :MultipleAuthoritiesLu2019 ;
-          :hasSample :MultiSignatureLiu2018 ;
+:hasSample :MultipleAuthorizationXu2018 ;
+:hasSample :MultipleAuthoritiesLu2019 ;
+:hasSample :MultiSignatureLiu2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Multiple authorization" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Multiple authorization" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainSecretEnabledDynamicAuthenticationCanonical
 :OffChainSecretEnabledDynamicAuthenticationCanonical rdf:type owl:NamedIndividual ,
@@ -575,11 +575,11 @@
                           :Canonical ,
                           :OffChainSecretEnabledDynamicAuthentication ,
                           :Unspecified ;
-          :hasSample :OffChainSecretEnabledDynamicAuthenticationXu2018 ;
+:hasSample :OffChainSecretEnabledDynamicAuthenticationXu2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Off-chain secret enabled dynamic authentication" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Off-chain secret enabled dynamic authentication" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MasterSubKeyCanonical
 :MasterSubKeyCanonical rdf:type owl:NamedIndividual ,
@@ -588,11 +588,11 @@
                           :Canonical ,
                           :MasterSubKey ,
                           :Unspecified ;
-          :hasSample :MasterSubKeyLiu2020 ;
+:hasSample :MasterSubKeyLiu2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Master & Sub Key" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Master & Sub Key" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HotColdWalletStorageCanonical
 :HotColdWalletStorageCanonical rdf:type owl:NamedIndividual ,
@@ -601,11 +601,11 @@
                           :Canonical ,
                           :HotColdWalletStorage ,
                           :Unspecified ;
-          :hasSample :HotColdWalletStorageLiu2020 ;
+:hasSample :HotColdWalletStorageLiu2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Hot & Cold Wallet Storage" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Hot & Cold Wallet Storage" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#KeyShardingCanonical
 :KeyShardingCanonical rdf:type owl:NamedIndividual ,
@@ -614,11 +614,11 @@
                           :Canonical ,
                           :KeySharding ,
                           :Unspecified ;
-          :hasSample :KeyShardingLiu2020 ;
+:hasSample :KeyShardingLiu2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Key Sharding" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Key Sharding" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IdentifierRegistryCanonical
 :IdentifierRegistryCanonical rdf:type owl:NamedIndividual ,
@@ -627,11 +627,11 @@
                           :Canonical ,
                           :IdentifierRegistry ,
                           :Unspecified ;
-          :hasSample :IdentifierRegistryLiu2020 ;
+:hasSample :IdentifierRegistryLiu2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Identifier Registry" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Identifier Registry" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleRegistrationCanonical
 :MultipleRegistrationCanonical rdf:type owl:NamedIndividual ,
@@ -640,11 +640,11 @@
                           :Canonical ,
                           :MultipleRegistration ,
                           :Unspecified ;
-          :hasSample :MultipleRegistrationLiu2020 ;
+:hasSample :MultipleRegistrationLiu2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Multiple Registration" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Multiple Registration" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BoundWithSocialMediaCanonical
 :BoundWithSocialMediaCanonical rdf:type owl:NamedIndividual ,
@@ -653,11 +653,11 @@
                           :Canonical ,
                           :BoundWithSocialMedia ,
                           :Unspecified ;
-          :hasSample :BoundWithSocialMediaLiu2020 ;
+:hasSample :BoundWithSocialMediaLiu2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Bound with Social Media" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Bound with Social Media" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DualResolutionCanonical
 :DualResolutionCanonical rdf:type owl:NamedIndividual ,
@@ -666,11 +666,11 @@
                           :Canonical ,
                           :DualResolution ,
                           :Unspecified ;
-          :hasSample :DualResolutionLiu2020 ;
+:hasSample :DualResolutionLiu2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Dual Resolution" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Dual Resolution" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegateListCanonical
 :DelegateListCanonical rdf:type owl:NamedIndividual ,
@@ -679,11 +679,11 @@
                           :Canonical ,
                           :DelegateList ,
                           :Unspecified ;
-          :hasSample :DelegateListLiu2020 ;
+:hasSample :DelegateListLiu2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Delegate List" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Delegate List" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelectiveContentGenerationCanonical
 :SelectiveContentGenerationCanonical rdf:type owl:NamedIndividual ,
@@ -692,11 +692,11 @@
                           :Canonical ,
                           :SelectiveContentGeneration ,
                           :Unspecified ;
-          :hasSample :SelectiveContentGenerationLiu2020 ;
+:hasSample :SelectiveContentGenerationLiu2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Selective Content Generation" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Selective Content Generation" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TimeConstrainedAccessCanonical
 :TimeConstrainedAccessCanonical rdf:type owl:NamedIndividual ,
@@ -705,11 +705,11 @@
                           :Canonical ,
                           :TimeConstrainedAccess ,
                           :Unspecified ;
-          :hasSample :TimeConstrainedAccessLiu2020 ;
+:hasSample :TimeConstrainedAccessLiu2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Time-Constrained Access" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Time-Constrained Access" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OneOffAccessCanonical
 :OneOffAccessCanonical rdf:type owl:NamedIndividual ,
@@ -718,11 +718,11 @@
                           :Canonical ,
                           :OneOffAccess ,
                           :Unspecified ;
-          :hasSample :OneOffAccessLiu2020 ;
+:hasSample :OneOffAccessLiu2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "One-Off Access" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "One-Off Access" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SnapshottingCanonical
 :SnapshottingCanonical rdf:type owl:NamedIndividual ,
@@ -731,11 +731,11 @@
                           :Canonical ,
                           :Snapshotting ,
                           :Unspecified ;
-          :hasSample :SnapshottingBandara2020 ;
+:hasSample :SnapshottingBandara2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Snapshotting" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Snapshotting" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateAggregationCanonical
 :StateAggregationCanonical rdf:type owl:NamedIndividual ,
@@ -744,11 +744,11 @@
                           :Canonical ,
                           :StateAggregation ,
                           :Unspecified ;
-          :hasSample :StateAggregationBandara2020 ;
+:hasSample :StateAggregationBandara2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "State Aggregation" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "State Aggregation" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TokenBurningCanonical
 :TokenBurningCanonical rdf:type owl:NamedIndividual ,
@@ -757,11 +757,11 @@
                           :Canonical ,
                           :TokenBurning ,
                           :Unspecified ;
-          :hasSample :TokenBurningBandara2020 ;
+:hasSample :TokenBurningBandara2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Token burning" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Token burning" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#NodeSyncCanonical
 :NodeSyncCanonical rdf:type owl:NamedIndividual ,
@@ -770,11 +770,11 @@
                           :Canonical ,
                           :NodeSync ,
                           :Unspecified ;
-          :hasSample :NodeSyncBandara2020 ;
+:hasSample :NodeSyncBandara2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Node Sync" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Node Sync" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EstablishGenesisCanonical
 :EstablishGenesisCanonical rdf:type owl:NamedIndividual ,
@@ -783,11 +783,11 @@
                           :Canonical ,
                           :EstablishGenesis ,
                           :Unspecified ;
-          :hasSample :EstablishGenesisBandara2020 ;
+:hasSample :EstablishGenesisBandara2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Establish Genesis" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Establish Genesis" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HardForkCanonical
 :HardForkCanonical rdf:type owl:NamedIndividual ,
@@ -796,11 +796,11 @@
                           :Canonical ,
                           :HardFork ,
                           :Unspecified ;
-          :hasSample :HardForkBandara2020 ;
+:hasSample :HardForkBandara2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Hard Fork" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Hard Fork" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateInitializationCanonical
 :StateInitializationCanonical rdf:type owl:NamedIndividual ,
@@ -809,11 +809,11 @@
                           :Canonical ,
                           :StateInitialization ,
                           :Unspecified ;
-          :hasSample :StateInitializationBandara2020 ;
+:hasSample :StateInitializationBandara2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "State Initialization" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "State Initialization" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ExchangeTransferCanonical
 :ExchangeTransferCanonical rdf:type owl:NamedIndividual ,
@@ -822,11 +822,11 @@
                           :Canonical ,
                           :ExchangeTransfer ,
                           :Unspecified ;
-          :hasSample :ExchangeTransferBandara2020 ;
+:hasSample :ExchangeTransferBandara2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Exchange Transfer" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Exchange Transfer" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransactionReplayCanonical
 :TransactionReplayCanonical rdf:type owl:NamedIndividual ,
@@ -835,11 +835,11 @@
                           :Canonical ,
                           :TransactionReplay ,
                           :Unspecified ;
-          :hasSample :TransactionReplayBandara2020 ;
+:hasSample :TransactionReplayBandara2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Transaction Replay" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Transaction Replay" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#VirtualMachineEmulationCanonical
 :VirtualMachineEmulationCanonical rdf:type owl:NamedIndividual ,
@@ -848,11 +848,11 @@
                           :Canonical ,
                           :VirtualMachineEmulation ,
                           :Unspecified ;
-          :hasSample :VirtualMachineEmulationBandara2020 ;
+:hasSample :VirtualMachineEmulationBandara2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Virtual Machine Emulation" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Virtual Machine Emulation" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractTranslationCanonical
 :SmartContractTranslationCanonical rdf:type owl:NamedIndividual ,
@@ -861,11 +861,11 @@
                           :Canonical ,
                           :SmartContractTranslation ,
                           :Unspecified ;
-          :hasSample :SmartContractTranslationBandara2020 ;
+:hasSample :SmartContractTranslationBandara2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Smart Contract Translation" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Smart Contract Translation" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainSecurityPatternForBigDataEcosystemsCanonical
 :BlockchainSecurityPatternForBigDataEcosystemsCanonical rdf:type owl:NamedIndividual ,
@@ -874,11 +874,11 @@
                           :Canonical ,
                           :BlockchainSecurityPatternForBigDataEcosystems ,
                           :Unspecified ;
-          :hasSample :BlockchainSecurityPatternForBigDataEcosystemsMoreno2019 ;
+:hasSample :BlockchainSecurityPatternForBigDataEcosystemsMoreno2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Blockchain Security Pattern for Big Data Ecosystems" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Blockchain Security Pattern for Big Data Ecosystems" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EventLogCanonical
 :EventLogCanonical rdf:type owl:NamedIndividual ,
@@ -887,11 +887,11 @@
                           :Canonical ,
                           :EventLog ,
                           :Solidity ;
-          :hasSample :EventLogMarchesi2020 ;
+:hasSample :EventLogMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Event log" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Event log" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitStorageCanonical
 :LimitStorageCanonical rdf:type owl:NamedIndividual ,
@@ -900,11 +900,11 @@
                           :Canonical ,
                           :LimitStorage ,
                           :Solidity ;
-          :hasSample :LimitStorageMarchesi2020 ;
+:hasSample :LimitStorageMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Limit storage" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Limit storage" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PackingVariablesCanonical
 :PackingVariablesCanonical rdf:type owl:NamedIndividual ,
@@ -913,11 +913,11 @@
                           :Canonical ,
                           :PackingVariables ,
                           :Solidity ;
-          :hasSample :PackingVariablesMarchesi2020 ;
+:hasSample :PackingVariablesMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Packing variables" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Packing variables" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PackingBooleansCanonical
 :PackingBooleansCanonical rdf:type owl:NamedIndividual ,
@@ -926,11 +926,11 @@
                           :Canonical ,
                           :PackingBooleans ,
                           :Solidity ;
-          :hasSample :PackingBooleansMarchesi2020 ;
+:hasSample :PackingBooleansMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Packing booleans" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Packing booleans" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#UintVsUint256Canonical
 :UintVsUint256Canonical rdf:type owl:NamedIndividual ,
@@ -939,11 +939,11 @@
                           :Canonical ,
                           :UintVsUint256 ,
                           :Solidity ;
-          :hasSample :UintVsUint256Marchesi2020 ;
+:hasSample :UintVsUint256Marchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Uint* vs Uint256" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Uint* vs Uint256" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MappingVsArrayCanonical
 :MappingVsArrayCanonical rdf:type owl:NamedIndividual ,
@@ -952,11 +952,11 @@
                           :Canonical ,
                           :MappingVsArray ,
                           :Solidity ;
-          :hasSample :MappingVsArrayMarchesi2020 ;
+:hasSample :MappingVsArrayMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Mapping vs Array" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Mapping vs Array" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FixedSizeCanonical
 :FixedSizeCanonical rdf:type owl:NamedIndividual ,
@@ -965,11 +965,11 @@
                           :Canonical ,
                           :FixedSize ,
                           :Solidity ;
-          :hasSample :FixedSizeMarchesi2020 ;
+:hasSample :FixedSizeMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Fixed size" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Fixed size" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DefaultValueCanonical
 :DefaultValueCanonical rdf:type owl:NamedIndividual ,
@@ -978,11 +978,11 @@
                           :Canonical ,
                           :DefaultValue ,
                           :Solidity ;
-          :hasSample :DefaultValueMarchesi2020 ;
+:hasSample :DefaultValueMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Default value" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Default value" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MinimizeOnChainDataCanonical
 :MinimizeOnChainDataCanonical rdf:type owl:NamedIndividual ,
@@ -991,11 +991,11 @@
                           :Canonical ,
                           :MinimizeOnChainData ,
                           :Solidity ;
-          :hasSample :MinimizeOnChainDataMarchesi2020 ;
+:hasSample :MinimizeOnChainDataMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Minimize on-chain data" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Minimize on-chain data" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ExplicitelyMarkExternalFunctionCanonical
 :ExplicitelyMarkExternalFunctionCanonical rdf:type owl:NamedIndividual ,
@@ -1004,11 +1004,11 @@
                           :Canonical ,
                           :ExplicitelyMarkExternalFunction ,
                           :Solidity ;
-          :hasSample :ExplicitelyMarkExternalFunctionMarchesi2020 ;
+:hasSample :ExplicitelyMarkExternalFunctionMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Explicitely mark external function" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Explicitely mark external function" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitExternalCallsCanonical
 :LimitExternalCallsCanonical rdf:type owl:NamedIndividual ,
@@ -1017,11 +1017,11 @@
                           :Canonical ,
                           :LimitExternalCalls ,
                           :Solidity ;
-          :hasSample :LimitExternalCallsMarchesi2020 ;
+:hasSample :LimitExternalCallsMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Limit external calls" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Limit external calls" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InternalFunctionCallsCanonical
 :InternalFunctionCallsCanonical rdf:type owl:NamedIndividual ,
@@ -1030,11 +1030,11 @@
                           :Canonical ,
                           :InternalFunctionCalls ,
                           :Solidity ;
-          :hasSample :InternalFunctionCallsMarchesi2020 ;
+:hasSample :InternalFunctionCallsMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Internal function calls" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Internal function calls" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FewerFunctionsCanonical
 :FewerFunctionsCanonical rdf:type owl:NamedIndividual ,
@@ -1043,11 +1043,11 @@
                           :Canonical ,
                           :FewerFunctions ,
                           :Solidity ;
-          :hasSample :FewerFunctionsMarchesi2020 ;
+:hasSample :FewerFunctionsMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Fewer functions" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Fewer functions" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#UseLibrariesCanonical
 :UseLibrariesCanonical rdf:type owl:NamedIndividual ,
@@ -1056,11 +1056,11 @@
                           :Canonical ,
                           :UseLibraries ,
                           :Solidity ;
-          :hasSample :UseLibrariesMarchesi2020 ;
+:hasSample :UseLibrariesMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Use libraries" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Use libraries" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ShortCircuitCanonical
 :ShortCircuitCanonical rdf:type owl:NamedIndividual ,
@@ -1069,11 +1069,11 @@
                           :Canonical ,
                           :ShortCircuit ,
                           :Solidity ;
-          :hasSample :ShortCircuitMarchesi2020 ;
+:hasSample :ShortCircuitMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Short circuit" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Short circuit" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ShortConstantStringsCanonical
 :ShortConstantStringsCanonical rdf:type owl:NamedIndividual ,
@@ -1082,11 +1082,11 @@
                           :Canonical ,
                           :ShortConstantStrings ,
                           :Solidity ;
-          :hasSample :ShortConstantStringsMarchesi2020 ;
+:hasSample :ShortConstantStringsMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Short constant strings" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Short constant strings" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitModifiersCanonical
 :LimitModifiersCanonical rdf:type owl:NamedIndividual ,
@@ -1095,11 +1095,11 @@
                           :Canonical ,
                           :LimitModifiers ,
                           :Solidity ;
-          :hasSample :LimitModifiersMarchesi2020 ;
+:hasSample :LimitModifiersMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Limit modifiers" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Limit modifiers" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AvoidRedundantOperationsCanonical
 :AvoidRedundantOperationsCanonical rdf:type owl:NamedIndividual ,
@@ -1108,11 +1108,11 @@
                           :Canonical ,
                           :AvoidRedundantOperations ,
                           :Solidity ;
-          :hasSample :AvoidRedundantOperationsMarchesi2020 ;
+:hasSample :AvoidRedundantOperationsMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Avoid redundant operations" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Avoid redundant operations" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SingleLineSwapCanonical
 :SingleLineSwapCanonical rdf:type owl:NamedIndividual ,
@@ -1121,11 +1121,11 @@
                           :Canonical ,
                           :SingleLineSwap ,
                           :Solidity ;
-          :hasSample :SingleLineSwapMarchesi2020 ;
+:hasSample :SingleLineSwapMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Single-line swap" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Single-line swap" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#WriteValuesCanonical
 :WriteValuesCanonical rdf:type owl:NamedIndividual ,
@@ -1134,11 +1134,11 @@
                           :Canonical ,
                           :WriteValues ,
                           :Solidity ;
-          :hasSample :WriteValuesMarchesi2020 ;
+:hasSample :WriteValuesMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Write values" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Write values" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FreeingStorageCanonical
 :FreeingStorageCanonical rdf:type owl:NamedIndividual ,
@@ -1147,11 +1147,11 @@
                           :Canonical ,
                           :FreeingStorage ,
                           :Solidity ;
-          :hasSample :FreeingStorageMarchesi2020 ;
+:hasSample :FreeingStorageMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Freeing storage" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Freeing storage" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OptimizerCanonical
 :OptimizerCanonical rdf:type owl:NamedIndividual ,
@@ -1160,11 +1160,11 @@
                           :Canonical ,
                           :Optimizer ,
                           :Solidity ;
-          :hasSample :OptimizerMarchesi2020 ;
+:hasSample :OptimizerMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Optimizer" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Optimizer" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ConfidentialAndPseudoAnonymousContractEnforcementCanonical
 :ConfidentialAndPseudoAnonymousContractEnforcementCanonical rdf:type owl:NamedIndividual ,
@@ -1173,11 +1173,11 @@
                           :Canonical ,
                           :ConfidentialAndPseudoAnonymousContractEnforcement ,
                           :Unspecified ;
-          :hasSample :ConfidentialAndPseudoAnonymousContractEnforcementSix2020 ;
+:hasSample :ConfidentialAndPseudoAnonymousContractEnforcementSix2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Confidential and pseudo-anonymous contract enforcement" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Confidential and pseudo-anonymous contract enforcement" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelfGeneratedTransactionsCanonical
 :SelfGeneratedTransactionsCanonical rdf:type owl:NamedIndividual ,
@@ -1186,11 +1186,11 @@
                           :Canonical ,
                           :SelfGeneratedTransactions ,
                           :Unspecified ;
-          :hasSample :SelfGeneratedTransactionsWessling2018 ;
+:hasSample :SelfGeneratedTransactionsWessling2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Self-Generated Transactions" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Self-Generated Transactions" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelfConfirmedTransactionsCanonical
 :SelfConfirmedTransactionsCanonical rdf:type owl:NamedIndividual ,
@@ -1199,11 +1199,11 @@
                           :Canonical ,
                           :SelfConfirmedTransactions ,
                           :Unspecified ;
-          :hasSample :SelfConfirmedTransactionsWessling2018 ;
+:hasSample :SelfConfirmedTransactionsWessling2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Self-Confirmed Transactions" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Self-Confirmed Transactions" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegatedTransactionsCanonical
 :DelegatedTransactionsCanonical rdf:type owl:NamedIndividual ,
@@ -1212,11 +1212,11 @@
                           :Canonical ,
                           :DelegatedTransactions ,
                           :Unspecified ;
-          :hasSample :DelegatedTransactionsWessling2018 ;
+:hasSample :DelegatedTransactionsWessling2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Delegated Transactions" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Delegated Transactions" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DigitalRecordCanonical
 :DigitalRecordCanonical rdf:type owl:NamedIndividual ,
@@ -1225,11 +1225,11 @@
                           :Canonical ,
                           :DigitalRecord ,
                           :Unspecified ;
-          :hasSample :DigitalRecordLemieux2017 ;
+:hasSample :DigitalRecordLemieux2017 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Digital Record" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Digital Record" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleBlockchainsCanonical
 :MultipleBlockchainsCanonical rdf:type owl:NamedIndividual ,
@@ -1238,11 +1238,11 @@
                           :Canonical ,
                           :MultipleBlockchains ,
                           :Unspecified ;
-          :hasSample :MultipleBlockchainsSchinle2020 ;
+:hasSample :MultipleBlockchainsSchinle2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Multiple Blockchains" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Multiple Blockchains" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainEncryptionCanonical
 :OnChainEncryptionCanonical rdf:type owl:NamedIndividual ,
@@ -1251,14 +1251,14 @@
                           :Canonical ,
                           :OnChainEncryption ,
                           :Unspecified ;
-          :hasSample :OnChainEncryptionSchinle2020 ;
-          :hasSample :PrivacyMarchesi2020 ;
-          :hasSample :DataEncryptionLu2019 ;
-          :hasSample :EncryptingOnChainDataXu2018 ;
+:hasSample :OnChainEncryptionSchinle2020 ;
+:hasSample :PrivacyMarchesi2020 ;
+:hasSample :DataEncryptionLu2019 ;
+:hasSample :EncryptingOnChainDataXu2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "On-chain encryption" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "On-chain encryption" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HashTimestampingCanonical
 :HashTimestampingCanonical rdf:type owl:NamedIndividual ,
@@ -1267,11 +1267,11 @@
                           :Canonical ,
                           :HashTimestamping ,
                           :Unspecified ;
-          :hasSample :HashTimestampingSchinle2020 ;
+:hasSample :HashTimestampingSchinle2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Hash timestamping" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Hash timestamping" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullPaymentCanonical
 :PullPaymentCanonical rdf:type owl:NamedIndividual ,
@@ -1280,11 +1280,11 @@
                           :Canonical ,
                           :PullPayment ,
                           :Unspecified ;
-          :hasSample :PullPaymentWohrer2018 ;
+:hasSample :PullPaymentWohrer2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Pull payment" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Pull payment" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateMachineCanonical
 :StateMachineCanonical rdf:type owl:NamedIndividual ,
@@ -1293,11 +1293,11 @@
                           :Canonical ,
                           :StateMachine ,
                           :Unspecified ;
-          :hasSample :StateMachineWohrer2018 ;
+:hasSample :StateMachineWohrer2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "State machine" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "State machine" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OwnershipCanonical
 :OwnershipCanonical rdf:type owl:NamedIndividual ,
@@ -1306,11 +1306,11 @@
                           :Canonical ,
                           :Ownership ,
                           :Unspecified ;
-          :hasSample :OwnershipWohrer2018 ;
+:hasSample :OwnershipWohrer2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Ownership" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Ownership" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AccessRestrictionCanonical
 :AccessRestrictionCanonical rdf:type owl:NamedIndividual ,
@@ -1319,11 +1319,11 @@
                           :Canonical ,
                           :AccessRestriction ,
                           :Unspecified ;
-          :hasSample :AccessRestrictionWohrer2018 ;
+:hasSample :AccessRestrictionWohrer2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Access Restriction" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Access Restriction" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MortalCanonical
 :MortalCanonical rdf:type owl:NamedIndividual ,
@@ -1332,11 +1332,11 @@
                           :Canonical ,
                           :Mortal ,
                           :Solidity ;
-          :hasSample :MortalWohrer2018 ;
+:hasSample :MortalWohrer2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Mortal" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Mortal" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AutomaticDeprecationCanonical
 :AutomaticDeprecationCanonical rdf:type owl:NamedIndividual ,
@@ -1345,11 +1345,11 @@
                           :Canonical ,
                           :AutomaticDeprecation ,
                           :Unspecified ;
-          :hasSample :AutomaticDeprecationWohrer2018 ;
+:hasSample :AutomaticDeprecationWohrer2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Automatic Deprecation" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Automatic Deprecation" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SatelliteCanonical
 :SatelliteCanonical rdf:type owl:NamedIndividual ,
@@ -1358,11 +1358,11 @@
                           :Canonical ,
                           :Satellite ,
                           :Unspecified ;
-          :hasSample :SatelliteWohrer2018 ;
+:hasSample :SatelliteWohrer2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Satellite" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Satellite" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SpeedBumpCanonical
 :SpeedBumpCanonical rdf:type owl:NamedIndividual ,
@@ -1371,11 +1371,11 @@
                           :Canonical ,
                           :SpeedBump ,
                           :Unspecified ;
-          :hasSample :SpeedBumpWohrer2020 ;
+:hasSample :SpeedBumpWohrer2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Speed Bump" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Speed Bump" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#RateLimitCanonical
 :RateLimitCanonical rdf:type owl:NamedIndividual ,
@@ -1384,11 +1384,11 @@
                           :Canonical ,
                           :RateLimit ,
                           :Unspecified ;
-          :hasSample :RateLimitWohrer2020 ;
+:hasSample :RateLimitWohrer2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Rate Limit" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Rate Limit" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CheckEffectInteractionCanonical
 :CheckEffectInteractionCanonical rdf:type owl:NamedIndividual ,
@@ -1397,13 +1397,13 @@
                           :Canonical ,
                           :CheckEffectInteraction ,
                           :Solidity ;
-          :hasSample :CheckEffectInteractionMarchesi2020 ;
-          :hasSample :ChecksEffectsInteractionWohrer2020 ;
-          :hasSample :ChecksEffectInteractionsRajasekar2020 ;
+:hasSample :CheckEffectInteractionMarchesi2020 ;
+:hasSample :ChecksEffectsInteractionWohrer2020 ;
+:hasSample :ChecksEffectInteractionsRajasekar2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Check Effect Interaction" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Check Effect Interaction" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#GuardCheckCanonical
 :GuardCheckCanonical rdf:type owl:NamedIndividual ,
@@ -1412,11 +1412,11 @@
                           :Canonical ,
                           :GuardCheck ,
                           :Solidity ;
-          :hasSample :GuardCheckMarchesi2020 ;
+:hasSample :GuardCheckMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Guard Check" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Guard Check" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TimeConstraintCanonical
 :TimeConstraintCanonical rdf:type owl:NamedIndividual ,
@@ -1425,11 +1425,11 @@
                           :Canonical ,
                           :TimeConstraint ,
                           :Solidity ;
-          :hasSample :TimeConstraintBartoletti2017 ;
+:hasSample :TimeConstraintBartoletti2017 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Time Constraint" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Time Constraint" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TerminationCanonical
 :TerminationCanonical rdf:type owl:NamedIndividual ,
@@ -1438,11 +1438,11 @@
                           :Canonical ,
                           :Termination ,
                           :Solidity ;
-          :hasSample :TerminationBartoletti2017 ;
+:hasSample :TerminationBartoletti2017 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Termination" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Termination" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MathCanonical
 :MathCanonical rdf:type owl:NamedIndividual ,
@@ -1451,11 +1451,11 @@
                           :Canonical ,
                           :Math ,
                           :Solidity ;
-          :hasSample :MathBartoletti2017 ;
+:hasSample :MathBartoletti2017 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Math" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Math" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PublisherSubscriberCanonical
 :PublisherSubscriberCanonical rdf:type owl:NamedIndividual ,
@@ -1464,11 +1464,11 @@
                           :Canonical ,
                           :PublisherSubscriber ,
                           :Solidity ;
-          :hasSample :PublisherSubscriberMarchesi2020 ;
+:hasSample :PublisherSubscriberMarchesi2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Publisher-Subscriber" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Publisher-Subscriber" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TokenisationCanonical
 :TokenisationCanonical rdf:type owl:NamedIndividual ,
@@ -1477,13 +1477,13 @@
                           :Canonical ,
                           :Tokenisation ,
                           :Unspecified ;
-          :hasSample :TokenisationXu2018 ;
-          :hasSample :TokenizedLemieux2017 ;
-          :hasSample :TokenWorley2019 ;
+:hasSample :TokenisationXu2018 ;
+:hasSample :TokenizedLemieux2017 ;
+:hasSample :TokenWorley2019 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Tokenisation" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Tokenisation" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#XConfirmationCanonical
 :XConfirmationCanonical rdf:type owl:NamedIndividual ,
@@ -1492,11 +1492,11 @@
                           :Canonical ,
                           :XConfirmation ,
                           :Unspecified ;
-          :hasSample :XConfirmationXu2018 ;
+:hasSample :XConfirmationXu2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "X-confirmation" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "X-confirmation" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractRegistryCanonical
 :ContractRegistryCanonical rdf:type owl:NamedIndividual ,
@@ -1505,12 +1505,12 @@
                           :Canonical ,
                           :ContractRegistry ,
                           :Unspecified ;
-          :hasSample :ContractRegistryXu2018 ;
-          :hasSample :ContractRegisterWohrer2018 ;
+:hasSample :ContractRegistryXu2018 ;
+:hasSample :ContractRegisterWohrer2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Contract Registry" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Contract Registry" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ChallengeResponseCanonical
 :ChallengeResponseCanonical rdf:type owl:NamedIndividual ,
@@ -1519,11 +1519,11 @@
                           :Canonical ,
                           :ChallengeResponse ,
                           :Unspecified ;
-          :hasSample :ChallengeResponseEberhardt2017 ;
+:hasSample :ChallengeResponseEberhardt2017 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Challenge Response" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Challenge Response" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainSignaturesCanonical
 :OffChainSignaturesCanonical rdf:type owl:NamedIndividual ,
@@ -1532,11 +1532,11 @@
                           :Canonical ,
                           :OffChainSignatures ,
                           :Unspecified ;
-          :hasSample :OffChainSignaturesEberhardt2017 ;
+:hasSample :OffChainSignaturesEberhardt2017 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Off-chain Signatures" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Off-chain Signatures" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegatedComputationCanonical
 :DelegatedComputationCanonical rdf:type owl:NamedIndividual ,
@@ -1545,11 +1545,11 @@
                           :Canonical ,
                           :DelegatedComputation ,
                           :Unspecified ;
-          :hasSample :DelegatedComputationEberhardt2017 ;
+:hasSample :DelegatedComputationEberhardt2017 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Delegated Computation" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Delegated Computation" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LowContractFootprintCanonical
 :LowContractFootprintCanonical rdf:type owl:NamedIndividual ,
@@ -1558,11 +1558,11 @@
                           :Canonical ,
                           :LowContractFootprint ,
                           :Unspecified ;
-          :hasSample :LowContractFootprintEberhardt2017 ;
+:hasSample :LowContractFootprintEberhardt2017 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Low Contract Footprint" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Low Contract Footprint" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullBasedInboundOracleCanonical
 :PullBasedInboundOracleCanonical rdf:type owl:NamedIndividual ,
@@ -1571,11 +1571,11 @@
                           :Canonical ,
                           :PullBasedInboundOracle ,
                           :Unspecified ;
-          :hasSample :PullBasedInboundOracleMühlberger2020 ;
+:hasSample :PullBasedInboundOracleMühlberger2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Pull-based inbound oracle" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Pull-based inbound oracle" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PushBasedInboundOracleCanonical
 :PushBasedInboundOracleCanonical rdf:type owl:NamedIndividual ,
@@ -1584,11 +1584,11 @@
                           :Canonical ,
                           :PushBasedInboundOracle ,
                           :Unspecified ;
-          :hasSample :PushBasedInboundOracleMühlberger2020 ;
+:hasSample :PushBasedInboundOracleMühlberger2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Push-based inbound oracle" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Push-based inbound oracle" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullBasedOutboundOracleCanonical
 :PullBasedOutboundOracleCanonical rdf:type owl:NamedIndividual ,
@@ -1597,11 +1597,11 @@
                           :Canonical ,
                           :PullBasedOutboundOracle ,
                           :Unspecified ;
-          :hasSample :PullBasedOutboundOracleMühlberger2020 ;
+:hasSample :PullBasedOutboundOracleMühlberger2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Pull-based outbound oracle" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Pull-based outbound oracle" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PushBasedOutboundOracleCanonical
 :PushBasedOutboundOracleCanonical rdf:type owl:NamedIndividual ,
@@ -1610,11 +1610,11 @@
                           :Canonical ,
                           :PushBasedOutboundOracle ,
                           :Unspecified ;
-          :hasSample :PushBasedOutboundOracleMühlberger2020 ;
+:hasSample :PushBasedOutboundOracleMühlberger2020 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Push-based outbound oracle" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Push-based outbound oracle" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractComposerCanonical
 :ContractComposerCanonical rdf:type owl:NamedIndividual ,
@@ -1623,11 +1623,11 @@
                           :Canonical ,
                           :ContractComposer ,
                           :Unspecified ;
-          :hasSample :ContractComposerLiu2018 ;
+:hasSample :ContractComposerLiu2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Contract Composer" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Contract Composer" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractDecoratorCanonical
 :ContractDecoratorCanonical rdf:type owl:NamedIndividual ,
@@ -1636,11 +1636,11 @@
                           :Canonical ,
                           :ContractDecorator ,
                           :Unspecified ;
-          :hasSample :ContractDecoratorLiu2018 ;
+:hasSample :ContractDecoratorLiu2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Contract Decorator" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Contract Decorator" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractMediatorCanonical
 :ContractMediatorCanonical rdf:type owl:NamedIndividual ,
@@ -1649,11 +1649,11 @@
                           :Canonical ,
                           :ContractMediator ,
                           :Unspecified ;
-          :hasSample :ContractMediatorLiu2018 ;
+:hasSample :ContractMediatorLiu2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Contract Mediator" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Contract Mediator" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractObserverCanonical
 :ContractObserverCanonical rdf:type owl:NamedIndividual ,
@@ -1662,11 +1662,11 @@
                           :Canonical ,
                           :ContractObserver ,
                           :Unspecified ;
-          :hasSample :ContractObserverLiu2018 ;
+:hasSample :ContractObserverLiu2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Contract Observer" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Contract Observer" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HashSecretCanonical
 :HashSecretCanonical rdf:type owl:NamedIndividual ,
@@ -1675,9 +1675,9 @@
                           :Canonical ,
                           :HashSecret ,
                           :Unspecified ;
-          :hasSample :HashSecretLiu2018 ;
+:hasSample :HashSecretLiu2018 ;
 
-                 :ContextAndProblem ""^^rdfs:Literal ;
-                 :Solution ""^^rdfs:Literal ;
-                 rdfs:label "Hash Secret" .
+:ContextAndProblem ""^^rdfs:Literal ;
+:Solution ""^^rdfs:Literal ;
+rdfs:label "Hash Secret" .
 

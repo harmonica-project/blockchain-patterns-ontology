@@ -1,14 +1,15 @@
-###  http://www.semanticweb.org/$owner/ontologies/2021/8/patterns#${uri}${author}${year}
-:${uri}${author}${year} rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/$owner/ontologies/2021/8/patterns#${uri}${author}${year}${title_word}
+:${uri}${author}${year}${title_word} rdf:type owl:NamedIndividual ,
                    :$refClass ,
                    :Sample ,
                    :$domain ,
                    :$blockchain ,
                    :$language ;
+
 $links
-          :hasCanonical :${refClass}Canonical ;
-          :ContextAndProblem "$context"^^rdfs:Literal ;
-          :Solution "$solution"^^rdfs:Literal ;
+:hasCanonical :${refClass}Canonical ;
+:ContextAndProblem "$context"^^rdfs:Literal ;
+:Solution "$solution"^^rdfs:Literal ;
 $examples
-          rdfs:label "$name" .
+rdfs:label "$name" .
 

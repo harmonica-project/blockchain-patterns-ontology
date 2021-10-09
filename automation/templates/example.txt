@@ -1,1 +1,1 @@
-          :ApplicationExample "$example"^^rdfs:Literal ;
+:ApplicationExample "$example"^^rdfs:Literal ;

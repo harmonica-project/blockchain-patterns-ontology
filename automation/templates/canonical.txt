@@ -6,7 +6,7 @@
                           :$refClass ,
                           :$language ;
 $samples
-                 :ContextAndProblem "$context"^^rdfs:Literal ;
-                 :Solution "$solution"^^rdfs:Literal ;
-                 rdfs:label "$name" .
+:ContextAndProblem "$context"^^rdfs:Literal ;
+:Solution "$solution"^^rdfs:Literal ;
+rdfs:label "$name" .
 

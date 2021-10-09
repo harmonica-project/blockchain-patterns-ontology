@@ -118,6 +118,47 @@ def parse_to_ontology_literal_if_exists(item, key):
   else:
     return ""
 
+def get_paper_properties(paper):
+  property_template = load_template('property')
+  properties = (
+    Template(property_template).substitute(property="Authors", value='"{}"^^rdfs:Literal'.format(paper['author'])) +
+    Template(property_template).substitute(property="Year", value='"{}"^^rdfs:Literal'.format(paper['year'])) +
+    Template(property_template).substitute(property="Title", value='"{}"^^rdfs:Literal'.format(paper['Title']))
+  )
+
+  # improve by iterating on paper properties instead of that, but the paper spread sheet must be cleaned a bit
+  # another improval: use an ontology for papers like a bibtex based ontology (don't know if it exists)
+  if "DOI" in paper:
+    properties += Template(property_template).substitute(property="DOI", value='"{}"^^rdfs:Literal'.format(paper['DOI']))
+  if "journal" in paper:
+    properties += Template(property_template).substitute(property="Journal", value='"{}"^^rdfs:Literal'.format(paper['journal']))
+  if "pages" in paper:
+    properties += Template(property_template).substitute(property="Pages", value='"{}"^^rdfs:Literal'.format(paper['pages']))
+  if "volume" in paper:
+    properties += Template(property_template).substitute(property="Volume", value='"{}"^^rdfs:Literal'.format(paper['volume']))
+  if "type" in paper:
+    properties += Template(property_template).substitute(property="DocumentType", value='"{}"^^rdfs:Literal'.format(paper['type']))
+
+  return properties
+
+def generate_papers(papers_list):
+  paper_template = load_template('paper')
+  papers = ""
+  for paper in papers_list:
+    if (paper['Rejected after reading'] == "No"):
+      papers += Template(paper_template).substitute(
+        author=get_first_author(paper['author']), 
+        year=paper['year'], 
+        title=paper['Title'],
+        title_word=get_first_word_title(paper['Title']),
+        properties=get_paper_properties(paper), 
+        owner="nicolas"
+      )
+  return papers
+
+def get_first_word_title(title):
+  return re.sub(r'[\W_]+', '', title.split(' ')[0])
+
 # generate_samples() returns the samples found in papers
 def generate_samples(sample_patterns, example_mapping, papers):
   samples = ""
@@ -140,6 +181,7 @@ def generate_samples(sample_patterns, example_mapping, papers):
       solution=parse_to_ontology_literal_if_exists(p, 'Solution'),
       author=get_first_author(paper['author']),
       year=paper['year'],
+      title_word=get_first_word_title(paper['Title']),
       links=get_links_between_patterns(sample_patterns, p, example_mapping, papers),
       examples=get_application_examples(p),
       language=parse_to_URI(p['Language'])
@@ -210,20 +252,24 @@ def run():
   # and the other one maps an example name to its canonical
   canonical_mapping, example_mapping = create_exemple_to_canonical_mappings(canonical_patterns)
 
-  classes, canonicals = generate_classes_and_canonicals(canonical_patterns, sample_patterns, canonical_mapping, papers)
-  samples = generate_samples(sample_patterns, example_mapping, papers)
-  
+  classes_ttl, canonicals_ttl = generate_classes_and_canonicals(canonical_patterns, sample_patterns, canonical_mapping, papers)
+  samples_ttl = generate_samples(sample_patterns, example_mapping, papers)
+  papers_ttl = generate_papers(papers)
+
   # write classes, canonicals and samples in three distinct files, can be merged into a complete ontology
   with open("./results/classes.ttl", "w") as text_file_classes:
-    text_file_classes.write(classes)
+    text_file_classes.write(classes_ttl)
 
   with open("./results/canonicals.ttl", "w") as text_file_canonicals:
-    text_file_canonicals.write(canonicals)
+    text_file_canonicals.write(canonicals_ttl)
 
   with open("./results/samples.ttl", "w") as text_file_samples:
-    text_file_samples.write(samples)
+    text_file_samples.write(samples_ttl)
+
+  with open("./results/papers.ttl", "w") as text_file_papers:
+    text_file_papers.write(papers_ttl)
 
   with open("../ontologies/result.ttl", "w") as text_file_ontology:
-    text_file_ontology.write(ontology_structure + classes + canonicals + samples)
+    text_file_ontology.write(ontology_structure + classes_ttl + canonicals_ttl + samples_ttl + papers_ttl)
 
 run()

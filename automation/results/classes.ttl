@@ -1,635 +1,762 @@
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransparentEventLog
 :TransparentEventLog rdf:type owl:Class ;
-                       rdfs:subClassOf :StoragePattern ;
-                       rdfs:label "Transparent Event Log"@en .
+
+rdfs:subClassOf :StoragePattern ;
+rdfs:label "Transparent Event Log"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainBpEngine
 :BlockchainBpEngine rdf:type owl:Class ;
-                       rdfs:subClassOf :BPMPattern ;
-                       rdfs:label "Blockchain BP Engine"@en .
+
+rdfs:subClassOf :BPMPattern ;
+rdfs:label "Blockchain BP Engine"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractActivities
 :SmartContractActivities rdf:type owl:Class ;
-                       rdfs:subClassOf :BPMPattern ;
-                       rdfs:label "Smart Contract Activities"@en .
+
+rdfs:subClassOf :BPMPattern ;
+rdfs:label "Smart Contract Activities"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainBasedReputationSystem
 :BlockchainBasedReputationSystem rdf:type owl:Class ;
-                       rdfs:subClassOf :MultiDomainFeaturePattern ;
-                       rdfs:label "Blockchain-based reputation system"@en .
+
+rdfs:subClassOf :MultiDomainFeaturePattern ;
+rdfs:label "Blockchain-based reputation system"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DecentralizeBusinessProcess
 :DecentralizeBusinessProcess rdf:type owl:Class ;
-                       rdfs:subClassOf :BPMPattern ;
-                       rdfs:label "Decentralize business process"@en .
+
+rdfs:subClassOf :BPMPattern ;
+rdfs:label "Decentralize business process"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#KeyValueStore
 :KeyValueStore rdf:type owl:Class ;
-                       rdfs:subClassOf :StoragePattern ;
-                       rdfs:label "Key-value store"@en .
+
+rdfs:subClassOf :StoragePattern ;
+rdfs:label "Key-value store"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AddressMapping
 :AddressMapping rdf:type owl:Class ;
-                       rdfs:subClassOf :StoragePattern ;
-                       rdfs:label "Address mapping"@en .
+
+rdfs:subClassOf :StoragePattern ;
+rdfs:label "Address mapping"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Authorization
 :Authorization rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractAccessControlPattern ;
-                       rdfs:label "Authorization"@en .
+
+rdfs:subClassOf :ContractAccessControlPattern ;
+rdfs:label "Authorization"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Judge
 :Judge rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractAccessControlPattern ;
-                       rdfs:label "Judge"@en .
+
+rdfs:subClassOf :ContractAccessControlPattern ;
+rdfs:label "Judge"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TickerTape
 :TickerTape rdf:type owl:Class ;
-                       rdfs:subClassOf :DataExchangePattern ;
-                       rdfs:label "Ticker Tape"@en .
+
+rdfs:subClassOf :DataExchangePattern ;
+rdfs:label "Ticker Tape"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Vote
 :Vote rdf:type owl:Class ;
-                       rdfs:subClassOf :MultiDomainFeaturePattern ;
-                       rdfs:label "Vote"@en .
+
+rdfs:subClassOf :MultiDomainFeaturePattern ;
+rdfs:label "Vote"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Blocklist
 :Blocklist rdf:type owl:Class ;
-                       rdfs:subClassOf :MultiDomainFeaturePattern ;
-                       rdfs:label "Blocklist"@en .
+
+rdfs:subClassOf :MultiDomainFeaturePattern ;
+rdfs:label "Blocklist"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Announcement
 :Announcement rdf:type owl:Class ;
-                       rdfs:subClassOf :MultiDomainFeaturePattern ;
-                       rdfs:label "Announcement"@en .
+
+rdfs:subClassOf :MultiDomainFeaturePattern ;
+rdfs:label "Announcement"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BulletinBoard
 :BulletinBoard rdf:type owl:Class ;
-                       rdfs:subClassOf :MultiDomainFeaturePattern ;
-                       rdfs:label "Bulletin Board"@en .
+
+rdfs:subClassOf :MultiDomainFeaturePattern ;
+rdfs:label "Bulletin Board"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Migration
 :Migration rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractManagementPattern ;
-                       rdfs:label "Migration"@en .
+
+rdfs:subClassOf :ContractManagementPattern ;
+rdfs:label "Migration"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InterFamilyCommunication
 :InterFamilyCommunication rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractManagementPattern ;
-                       rdfs:label "Inter-family communication"@en .
+
+rdfs:subClassOf :ContractManagementPattern ;
+rdfs:label "Inter-family communication"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Locking
 :Locking rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Locking"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Locking"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransitionCounter
 :TransitionCounter rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Transition Counter"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Transition Counter"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AutomaticTimedTransitions
 :AutomaticTimedTransitions rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Automatic Timed Transitions"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Automatic Timed Transitions"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Randomness
 :Randomness rdf:type owl:Class ;
-                       rdfs:subClassOf :MultiDomainFeaturePattern ;
-                       rdfs:label "Randomness"@en .
+
+rdfs:subClassOf :MultiDomainFeaturePattern ;
+rdfs:label "Randomness"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Poll
 :Poll rdf:type owl:Class ;
-                       rdfs:subClassOf :MultiDomainFeaturePattern ;
-                       rdfs:label "Poll"@en .
+
+rdfs:subClassOf :MultiDomainFeaturePattern ;
+rdfs:label "Poll"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ForkCheck
 :ForkCheck rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Fork check"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Fork check"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SecureEtherTransfer
 :SecureEtherTransfer rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Secure Ether Transfer"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Secure Ether Transfer"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Oracle
 :Oracle rdf:type owl:Class ;
-                       rdfs:subClassOf :DataExchangePattern ;
-                       rdfs:label "Oracle"@en .
+
+rdfs:subClassOf :DataExchangePattern ;
+rdfs:label "Oracle"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateChannel
 :StateChannel rdf:type owl:Class ;
-                       rdfs:subClassOf :OffChainStoragePattern ;
-                       rdfs:label "State Channel"@en .
+
+rdfs:subClassOf :OffChainStoragePattern ;
+rdfs:label "State Channel"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainContractRegistry
 :OffChainContractRegistry rdf:type owl:Class ;
-                       rdfs:subClassOf :OffChainStoragePattern ;
-                       rdfs:label "(Off-chain) Contract Registry"@en .
+
+rdfs:subClassOf :OffChainStoragePattern ;
+rdfs:label "(Off-chain) Contract Registry"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DataContract
 :DataContract rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractManagementPattern ;
-                       rdfs:label "Data Contract"@en .
+
+rdfs:subClassOf :ContractManagementPattern ;
+rdfs:label "Data Contract"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EmbeddedPermission
 :EmbeddedPermission rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractAccessControlPattern ;
-                       rdfs:label "Embedded Permission"@en .
+
+rdfs:subClassOf :ContractAccessControlPattern ;
+rdfs:label "Embedded Permission"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FactoryContract
 :FactoryContract rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractManagementPattern ;
-                       rdfs:label "Factory Contract"@en .
+
+rdfs:subClassOf :ContractManagementPattern ;
+rdfs:label "Factory Contract"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EmergencyStop
 :EmergencyStop rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Emergency Stop"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Emergency Stop"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Mutex
 :Mutex rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Mutex"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Mutex"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractBalanceLimit
 :ContractBalanceLimit rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Contract Balance Limit"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Contract Balance Limit"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ReverseOracle
 :ReverseOracle rdf:type owl:Class ;
-                       rdfs:subClassOf :DataExchangePattern ;
-                       rdfs:label "Reverse Oracle"@en .
+
+rdfs:subClassOf :DataExchangePattern ;
+rdfs:label "Reverse Oracle"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IncentiveExecution
 :IncentiveExecution rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Incentive Execution"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Incentive Execution"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CommitAndReveal
 :CommitAndReveal rdf:type owl:Class ;
-                       rdfs:subClassOf :EncryptionPattern ;
-                       rdfs:label "Commit and Reveal"@en .
+
+rdfs:subClassOf :EncryptionPattern ;
+rdfs:label "Commit and Reveal"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ProxyContract
 :ProxyContract rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractManagementPattern ;
-                       rdfs:label "Proxy Contract"@en .
+
+rdfs:subClassOf :ContractManagementPattern ;
+rdfs:label "Proxy Contract"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DynamicBinding
 :DynamicBinding rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractAccessControlPattern ;
-                       rdfs:label "Dynamic Binding"@en .
+
+rdfs:subClassOf :ContractAccessControlPattern ;
+rdfs:label "Dynamic Binding"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Flyweight
 :Flyweight rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractManagementPattern ;
-                       rdfs:label "Flyweight"@en .
+
+rdfs:subClassOf :ContractManagementPattern ;
+rdfs:label "Flyweight"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TightVariablePacking
 :TightVariablePacking rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Tight Variable Packing"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Tight Variable Packing"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LegalAndSmartContractPair
 :LegalAndSmartContractPair rdf:type owl:Class ;
-                       rdfs:subClassOf :OffChainStoragePattern ;
-                       rdfs:label "Legal and smart-contract pair"@en .
+
+rdfs:subClassOf :OffChainStoragePattern ;
+rdfs:label "Legal and smart-contract pair"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainDataStorage
 :OffChainDataStorage rdf:type owl:Class ;
-                       rdfs:subClassOf :OffChainStoragePattern ;
-                       rdfs:label "Off-chain data storage"@en .
+
+rdfs:subClassOf :OffChainStoragePattern ;
+rdfs:label "Off-chain data storage"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleAuthorization
 :MultipleAuthorization rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractAccessControlPattern ;
-                       rdfs:label "Multiple authorization"@en .
+
+rdfs:subClassOf :ContractAccessControlPattern ;
+rdfs:label "Multiple authorization"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainSecretEnabledDynamicAuthentication
 :OffChainSecretEnabledDynamicAuthentication rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractAccessControlPattern ;
-                       rdfs:label "Off-chain secret enabled dynamic authentication"@en .
+
+rdfs:subClassOf :ContractAccessControlPattern ;
+rdfs:label "Off-chain secret enabled dynamic authentication"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MasterSubKey
 :MasterSubKey rdf:type owl:Class ;
-                       rdfs:subClassOf :WalletAndKeysPattern ;
-                       rdfs:label "Master & Sub Key"@en .
+
+rdfs:subClassOf :WalletAndKeysPattern ;
+rdfs:label "Master & Sub Key"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HotColdWalletStorage
 :HotColdWalletStorage rdf:type owl:Class ;
-                       rdfs:subClassOf :WalletAndKeysPattern ;
-                       rdfs:label "Hot & Cold Wallet Storage"@en .
+
+rdfs:subClassOf :WalletAndKeysPattern ;
+rdfs:label "Hot & Cold Wallet Storage"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#KeySharding
 :KeySharding rdf:type owl:Class ;
-                       rdfs:subClassOf :WalletAndKeysPattern ;
-                       rdfs:label "Key Sharding"@en .
+
+rdfs:subClassOf :WalletAndKeysPattern ;
+rdfs:label "Key Sharding"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IdentifierRegistry
 :IdentifierRegistry rdf:type owl:Class ;
-                       rdfs:subClassOf :DecentralizedIdentityPattern ;
-                       rdfs:label "Identifier Registry"@en .
+
+rdfs:subClassOf :DecentralizedIdentityPattern ;
+rdfs:label "Identifier Registry"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleRegistration
 :MultipleRegistration rdf:type owl:Class ;
-                       rdfs:subClassOf :DecentralizedIdentityPattern ;
-                       rdfs:label "Multiple Registration"@en .
+
+rdfs:subClassOf :DecentralizedIdentityPattern ;
+rdfs:label "Multiple Registration"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BoundWithSocialMedia
 :BoundWithSocialMedia rdf:type owl:Class ;
-                       rdfs:subClassOf :DecentralizedIdentityPattern ;
-                       rdfs:label "Bound with Social Media"@en .
+
+rdfs:subClassOf :DecentralizedIdentityPattern ;
+rdfs:label "Bound with Social Media"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DualResolution
 :DualResolution rdf:type owl:Class ;
-                       rdfs:subClassOf :DecentralizedIdentityPattern ;
-                       rdfs:label "Dual Resolution"@en .
+
+rdfs:subClassOf :DecentralizedIdentityPattern ;
+rdfs:label "Dual Resolution"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegateList
 :DelegateList rdf:type owl:Class ;
-                       rdfs:subClassOf :DecentralizedIdentityPattern ;
-                       rdfs:label "Delegate List"@en .
+
+rdfs:subClassOf :DecentralizedIdentityPattern ;
+rdfs:label "Delegate List"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelectiveContentGeneration
 :SelectiveContentGeneration rdf:type owl:Class ;
-                       rdfs:subClassOf :MultiDomainFeaturePattern ;
-                       rdfs:label "Selective Content Generation"@en .
+
+rdfs:subClassOf :MultiDomainFeaturePattern ;
+rdfs:label "Selective Content Generation"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TimeConstrainedAccess
 :TimeConstrainedAccess rdf:type owl:Class ;
-                       rdfs:subClassOf :MultiDomainFeaturePattern ;
-                       rdfs:label "Time-Constrained Access"@en .
+
+rdfs:subClassOf :MultiDomainFeaturePattern ;
+rdfs:label "Time-Constrained Access"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OneOffAccess
 :OneOffAccess rdf:type owl:Class ;
-                       rdfs:subClassOf :MultiDomainFeaturePattern ;
-                       rdfs:label "One-Off Access"@en .
+
+rdfs:subClassOf :MultiDomainFeaturePattern ;
+rdfs:label "One-Off Access"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Snapshotting
 :Snapshotting rdf:type owl:Class ;
-                       rdfs:subClassOf :MigrationPattern ;
-                       rdfs:label "Snapshotting"@en .
+
+rdfs:subClassOf :MigrationPattern ;
+rdfs:label "Snapshotting"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateAggregation
 :StateAggregation rdf:type owl:Class ;
-                       rdfs:subClassOf :MigrationPattern ;
-                       rdfs:label "State Aggregation"@en .
+
+rdfs:subClassOf :MigrationPattern ;
+rdfs:label "State Aggregation"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TokenBurning
 :TokenBurning rdf:type owl:Class ;
-                       rdfs:subClassOf :MigrationPattern ;
-                       rdfs:label "Token burning"@en .
+
+rdfs:subClassOf :MigrationPattern ;
+rdfs:label "Token burning"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#NodeSync
 :NodeSync rdf:type owl:Class ;
-                       rdfs:subClassOf :MigrationPattern ;
-                       rdfs:label "Node Sync"@en .
+
+rdfs:subClassOf :MigrationPattern ;
+rdfs:label "Node Sync"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EstablishGenesis
 :EstablishGenesis rdf:type owl:Class ;
-                       rdfs:subClassOf :MigrationPattern ;
-                       rdfs:label "Establish Genesis"@en .
+
+rdfs:subClassOf :MigrationPattern ;
+rdfs:label "Establish Genesis"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HardFork
 :HardFork rdf:type owl:Class ;
-                       rdfs:subClassOf :MigrationPattern ;
-                       rdfs:label "Hard Fork"@en .
+
+rdfs:subClassOf :MigrationPattern ;
+rdfs:label "Hard Fork"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateInitialization
 :StateInitialization rdf:type owl:Class ;
-                       rdfs:subClassOf :MigrationPattern ;
-                       rdfs:label "State Initialization"@en .
+
+rdfs:subClassOf :MigrationPattern ;
+rdfs:label "State Initialization"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ExchangeTransfer
 :ExchangeTransfer rdf:type owl:Class ;
-                       rdfs:subClassOf :MigrationPattern ;
-                       rdfs:label "Exchange Transfer"@en .
+
+rdfs:subClassOf :MigrationPattern ;
+rdfs:label "Exchange Transfer"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransactionReplay
 :TransactionReplay rdf:type owl:Class ;
-                       rdfs:subClassOf :MigrationPattern ;
-                       rdfs:label "Transaction Replay"@en .
+
+rdfs:subClassOf :MigrationPattern ;
+rdfs:label "Transaction Replay"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#VirtualMachineEmulation
 :VirtualMachineEmulation rdf:type owl:Class ;
-                       rdfs:subClassOf :MigrationPattern ;
-                       rdfs:label "Virtual Machine Emulation"@en .
+
+rdfs:subClassOf :MigrationPattern ;
+rdfs:label "Virtual Machine Emulation"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractTranslation
 :SmartContractTranslation rdf:type owl:Class ;
-                       rdfs:subClassOf :MigrationPattern ;
-                       rdfs:label "Smart Contract Translation"@en .
+
+rdfs:subClassOf :MigrationPattern ;
+rdfs:label "Smart Contract Translation"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainSecurityPatternForBigDataEcosystems
 :BlockchainSecurityPatternForBigDataEcosystems rdf:type owl:Class ;
-                       rdfs:subClassOf :BigDataPattern ;
-                       rdfs:label "Blockchain Security Pattern for Big Data Ecosystems"@en .
+
+rdfs:subClassOf :BigDataPattern ;
+rdfs:label "Blockchain Security Pattern for Big Data Ecosystems"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EventLog
 :EventLog rdf:type owl:Class ;
-                       rdfs:subClassOf :StoragePattern ;
-                       rdfs:label "Event log"@en .
+
+rdfs:subClassOf :StoragePattern ;
+rdfs:label "Event log"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitStorage
 :LimitStorage rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Limit storage"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Limit storage"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PackingVariables
 :PackingVariables rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Packing variables"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Packing variables"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PackingBooleans
 :PackingBooleans rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Packing booleans"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Packing booleans"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#UintVsUint256
 :UintVsUint256 rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Uint* vs Uint256"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Uint* vs Uint256"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MappingVsArray
 :MappingVsArray rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Mapping vs Array"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Mapping vs Array"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FixedSize
 :FixedSize rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Fixed size"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Fixed size"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DefaultValue
 :DefaultValue rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Default value"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Default value"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MinimizeOnChainData
 :MinimizeOnChainData rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Minimize on-chain data"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Minimize on-chain data"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ExplicitelyMarkExternalFunction
 :ExplicitelyMarkExternalFunction rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Explicitely mark external function"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Explicitely mark external function"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitExternalCalls
 :LimitExternalCalls rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Limit external calls"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Limit external calls"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InternalFunctionCalls
 :InternalFunctionCalls rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Internal function calls"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Internal function calls"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FewerFunctions
 :FewerFunctions rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Fewer functions"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Fewer functions"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#UseLibraries
 :UseLibraries rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Use libraries"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Use libraries"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ShortCircuit
 :ShortCircuit rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Short circuit"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Short circuit"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ShortConstantStrings
 :ShortConstantStrings rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Short constant strings"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Short constant strings"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitModifiers
 :LimitModifiers rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Limit modifiers"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Limit modifiers"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AvoidRedundantOperations
 :AvoidRedundantOperations rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Avoid redundant operations"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Avoid redundant operations"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SingleLineSwap
 :SingleLineSwap rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Single-line swap"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Single-line swap"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#WriteValues
 :WriteValues rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Write values"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Write values"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FreeingStorage
 :FreeingStorage rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Freeing storage"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Freeing storage"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Optimizer
 :Optimizer rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Optimizer"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Optimizer"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ConfidentialAndPseudoAnonymousContractEnforcement
 :ConfidentialAndPseudoAnonymousContractEnforcement rdf:type owl:Class ;
-                       rdfs:subClassOf :OffChainStoragePattern ;
-                       rdfs:label "Confidential and pseudo-anonymous contract enforcement"@en .
+
+rdfs:subClassOf :OffChainStoragePattern ;
+rdfs:label "Confidential and pseudo-anonymous contract enforcement"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelfGeneratedTransactions
 :SelfGeneratedTransactions rdf:type owl:Class ;
-                       rdfs:subClassOf :ArchitecturalPattern ;
-                       rdfs:label "Self-Generated Transactions"@en .
+
+rdfs:subClassOf :ArchitecturalPattern ;
+rdfs:label "Self-Generated Transactions"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelfConfirmedTransactions
 :SelfConfirmedTransactions rdf:type owl:Class ;
-                       rdfs:subClassOf :ArchitecturalPattern ;
-                       rdfs:label "Self-Confirmed Transactions"@en .
+
+rdfs:subClassOf :ArchitecturalPattern ;
+rdfs:label "Self-Confirmed Transactions"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegatedTransactions
 :DelegatedTransactions rdf:type owl:Class ;
-                       rdfs:subClassOf :ArchitecturalPattern ;
-                       rdfs:label "Delegated Transactions"@en .
+
+rdfs:subClassOf :ArchitecturalPattern ;
+rdfs:label "Delegated Transactions"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DigitalRecord
 :DigitalRecord rdf:type owl:Class ;
-                       rdfs:subClassOf :MultiDomainFeaturePattern ;
-                       rdfs:label "Digital Record"@en .
+
+rdfs:subClassOf :MultiDomainFeaturePattern ;
+rdfs:label "Digital Record"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleBlockchains
 :MultipleBlockchains rdf:type owl:Class ;
-                       rdfs:subClassOf :ArchitecturalPattern ;
-                       rdfs:label "Multiple Blockchains"@en .
+
+rdfs:subClassOf :ArchitecturalPattern ;
+rdfs:label "Multiple Blockchains"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainEncryption
 :OnChainEncryption rdf:type owl:Class ;
-                       rdfs:subClassOf :EncryptionPattern ;
-                       rdfs:label "On-chain encryption"@en .
+
+rdfs:subClassOf :EncryptionPattern ;
+rdfs:label "On-chain encryption"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HashTimestamping
 :HashTimestamping rdf:type owl:Class ;
-                       rdfs:subClassOf :OffChainStoragePattern ;
-                       rdfs:label "Hash timestamping"@en .
+
+rdfs:subClassOf :OffChainStoragePattern ;
+rdfs:label "Hash timestamping"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullPayment
 :PullPayment rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Pull payment"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Pull payment"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateMachine
 :StateMachine rdf:type owl:Class ;
-                       rdfs:subClassOf :MultiDomainFeaturePattern ;
-                       rdfs:label "State machine"@en .
+
+rdfs:subClassOf :MultiDomainFeaturePattern ;
+rdfs:label "State machine"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Ownership
 :Ownership rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractAccessControlPattern ;
-                       rdfs:label "Ownership"@en .
+
+rdfs:subClassOf :ContractAccessControlPattern ;
+rdfs:label "Ownership"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AccessRestriction
 :AccessRestriction rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractAccessControlPattern ;
-                       rdfs:label "Access Restriction"@en .
+
+rdfs:subClassOf :ContractAccessControlPattern ;
+rdfs:label "Access Restriction"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Mortal
 :Mortal rdf:type owl:Class ;
-                       rdfs:subClassOf :Idiom ;
-                       rdfs:label "Mortal"@en .
+
+rdfs:subClassOf :Idiom ;
+rdfs:label "Mortal"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AutomaticDeprecation
 :AutomaticDeprecation rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Automatic Deprecation"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Automatic Deprecation"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Satellite
 :Satellite rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractManagementPattern ;
-                       rdfs:label "Satellite"@en .
+
+rdfs:subClassOf :ContractManagementPattern ;
+rdfs:label "Satellite"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SpeedBump
 :SpeedBump rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Speed Bump"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Speed Bump"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#RateLimit
 :RateLimit rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Rate Limit"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Rate Limit"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CheckEffectInteraction
 :CheckEffectInteraction rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Check Effect Interaction"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Check Effect Interaction"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#GuardCheck
 :GuardCheck rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Guard Check"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Guard Check"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TimeConstraint
 :TimeConstraint rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Time Constraint"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Time Constraint"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Termination
 :Termination rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Termination"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Termination"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Math
 :Math rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractSecurityPattern ;
-                       rdfs:label "Math"@en .
+
+rdfs:subClassOf :ContractSecurityPattern ;
+rdfs:label "Math"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PublisherSubscriber
 :PublisherSubscriber rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Publisher-Subscriber"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Publisher-Subscriber"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Tokenisation
 :Tokenisation rdf:type owl:Class ;
-                       rdfs:subClassOf :StoragePattern ;
-                       rdfs:label "Tokenisation"@en .
+
+rdfs:subClassOf :StoragePattern ;
+rdfs:label "Tokenisation"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#XConfirmation
 :XConfirmation rdf:type owl:Class ;
-                       rdfs:subClassOf :TransactionsPattern ;
-                       rdfs:label "X-confirmation"@en .
+
+rdfs:subClassOf :TransactionsPattern ;
+rdfs:label "X-confirmation"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractRegistry
 :ContractRegistry rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractManagementPattern ;
-                       rdfs:label "Contract Registry"@en .
+
+rdfs:subClassOf :ContractManagementPattern ;
+rdfs:label "Contract Registry"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ChallengeResponse
 :ChallengeResponse rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Challenge Response"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Challenge Response"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainSignatures
 :OffChainSignatures rdf:type owl:Class ;
-                       rdfs:subClassOf :OffChainStoragePattern ;
-                       rdfs:label "Off-chain Signatures"@en .
+
+rdfs:subClassOf :OffChainStoragePattern ;
+rdfs:label "Off-chain Signatures"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegatedComputation
 :DelegatedComputation rdf:type owl:Class ;
-                       rdfs:subClassOf :OffChainStoragePattern ;
-                       rdfs:label "Delegated Computation"@en .
+
+rdfs:subClassOf :OffChainStoragePattern ;
+rdfs:label "Delegated Computation"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LowContractFootprint
 :LowContractFootprint rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractEfficiencyPattern ;
-                       rdfs:label "Low Contract Footprint"@en .
+
+rdfs:subClassOf :ContractEfficiencyPattern ;
+rdfs:label "Low Contract Footprint"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullBasedInboundOracle
 :PullBasedInboundOracle rdf:type owl:Class ;
-                       rdfs:subClassOf :DataExchangePattern ;
-                       rdfs:label "Pull-based inbound oracle"@en .
+
+rdfs:subClassOf :DataExchangePattern ;
+rdfs:label "Pull-based inbound oracle"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PushBasedInboundOracle
 :PushBasedInboundOracle rdf:type owl:Class ;
-                       rdfs:subClassOf :DataExchangePattern ;
-                       rdfs:label "Push-based inbound oracle"@en .
+
+rdfs:subClassOf :DataExchangePattern ;
+rdfs:label "Push-based inbound oracle"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullBasedOutboundOracle
 :PullBasedOutboundOracle rdf:type owl:Class ;
-                       rdfs:subClassOf :DataExchangePattern ;
-                       rdfs:label "Pull-based outbound oracle"@en .
+
+rdfs:subClassOf :DataExchangePattern ;
+rdfs:label "Pull-based outbound oracle"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PushBasedOutboundOracle
 :PushBasedOutboundOracle rdf:type owl:Class ;
-                       rdfs:subClassOf :DataExchangePattern ;
-                       rdfs:label "Push-based outbound oracle"@en .
+
+rdfs:subClassOf :DataExchangePattern ;
+rdfs:label "Push-based outbound oracle"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractComposer
 :ContractComposer rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractManagementPattern ;
-                       rdfs:label "Contract Composer"@en .
+
+rdfs:subClassOf :ContractManagementPattern ;
+rdfs:label "Contract Composer"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractDecorator
 :ContractDecorator rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractManagementPattern ;
-                       rdfs:label "Contract Decorator"@en .
+
+rdfs:subClassOf :ContractManagementPattern ;
+rdfs:label "Contract Decorator"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractMediator
 :ContractMediator rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractManagementPattern ;
-                       rdfs:label "Contract Mediator"@en .
+
+rdfs:subClassOf :ContractManagementPattern ;
+rdfs:label "Contract Mediator"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractObserver
 :ContractObserver rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractManagementPattern ;
-                       rdfs:label "Contract Observer"@en .
+
+rdfs:subClassOf :ContractManagementPattern ;
+rdfs:label "Contract Observer"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HashSecret
 :HashSecret rdf:type owl:Class ;
-                       rdfs:subClassOf :ContractAccessControlPattern ;
-                       rdfs:label "Hash Secret"@en .
+
+rdfs:subClassOf :ContractAccessControlPattern ;
+rdfs:label "Hash Secret"@en .
 

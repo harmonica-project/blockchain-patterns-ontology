@@ -1,5 +1,6 @@
 ###  http://www.semanticweb.org/$owner/ontologies/2021/8/patterns#$uri
 :$uri rdf:type owl:Class ;
-                       rdfs:subClassOf :$category ;
-                       rdfs:label "$name"@en .
+
+rdfs:subClassOf :$category ;
+rdfs:label "$name"@en .
 

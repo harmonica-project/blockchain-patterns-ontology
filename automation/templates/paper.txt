@@ -1,0 +1,7 @@
+###  http://www.semanticweb.org/$owner/ontologies/2021/8/patterns#${author}${year}${title_word}
+:${author}${year}${title_word} rdf:type owl:NamedIndividual ,
+                          :Paper ;
+
+$properties
+rdfs:label "$title" .
+
