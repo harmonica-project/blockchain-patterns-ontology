@@ -118,25 +118,42 @@ def parse_to_ontology_literal_if_exists(item, key):
   else:
     return ""
 
-# run() entry point of the script
-# get templates and SLR data, iterate on canonicals then on examples to generate the classes + canonicals and examples
-def run():
-  papers, sample_patterns, canonical_patterns = load_SLR_data()
+# generate_samples() returns the samples found in papers
+def generate_samples(sample_patterns, example_mapping, papers):
+  samples = ""
+  sample_template = load_template('sample')
+  
+  # iterate on sample_patterns/examples to generate "sample patterns" individuals
+  for p in sample_patterns:
+    # get associated paper from pattern paper id
+    paper = get_sample_pattern_from_id(papers, p['Paper'])
+
+    # generate pattern individuals, connected to their canonicals and their classes
+    samples += Template(sample_template).substitute(
+      owner="nicolas", 
+      uri=parse_to_URI(p['Name']), 
+      name=p['Name'], 
+      blockchain=parse_to_URI(p['Target']), 
+      domain=parse_to_URI(p['Applicability domain']), 
+      refClass=example_mapping[parse_to_URI(p['Name'])], 
+      context=parse_to_ontology_literal_if_exists(p, 'Context & Problem'), 
+      solution=parse_to_ontology_literal_if_exists(p, 'Solution'),
+      author=get_first_author(paper['author']),
+      year=paper['year'],
+      links=get_links_between_patterns(sample_patterns, p, example_mapping, papers),
+      examples=get_application_examples(p),
+      language=parse_to_URI(p['Language'])
+    )
+
+  return samples
+
+# generate_classes_and_canonicals() returns two strings: one for all classes associated to the patterns, another for all canonical patterns attached to those classes
+def generate_classes_and_canonicals(canonical_patterns, sample_patterns, canonical_mapping, papers):
   classes = ''
   canonicals = ''
-  samples = ''
-
-  with open('../ontologies/structure.ttl', 'r') as file:
-    ontology_structure = file.read()
-
-  # this script use Template to generate Turtle files for the ontology
   class_template = load_template('class')
   canonical_template = load_template('canonical')
-  sample_template = load_template('sample')
   relation_template = load_template('relation')
-  # a double mapping is returned by this function: one maps a canonical name into an array of possible alternative names
-  # and the other one maps an example name to its canonical
-  canonical_mapping, example_mapping = create_exemple_to_canonical_mappings(canonical_patterns)
 
   for p in canonical_patterns:
     canonical_samples = ''
@@ -179,37 +196,22 @@ def run():
       language=parse_to_URI(p['Language (generalized)'])
     )
 
-  # iterate on sample_patterns/examples to generate "sample patterns" individuals
-  for p in sample_patterns:
-    # get associated paper from pattern paper id
-    paper = get_sample_pattern_from_id(papers, p['Paper'])
-    patternType = parse_to_URI(p['Type (determined)'])
+  return classes, canonicals
 
-    # links individual to its class
-    if patternType == "ArchitecturalPattern" or patternType == "Idiom":
-      patternCategory = patternType
-    else:
-      if "Subsubcategory" in p:
-        patternCategory = parse_to_URI(p['Subsubcategory'])
-      else:
-        patternCategory = parse_to_URI(p['Subcategory'])
+# run() entry point of the script
+# get templates and SLR data, iterate on canonicals then on examples to generate the classes + canonicals and examples
+def run():
+  papers, sample_patterns, canonical_patterns = load_SLR_data()
 
-    # generate pattern individuals, connected to their canonicals and their classes
-    samples += Template(sample_template).substitute(
-      owner="nicolas", 
-      uri=parse_to_URI(p['Name']), 
-      name=p['Name'], 
-      blockchain=parse_to_URI(p['Target']), 
-      domain=parse_to_URI(p['Applicability domain']), 
-      refClass=example_mapping[parse_to_URI(p['Name'])], 
-      context=parse_to_ontology_literal_if_exists(p, 'Context & Problem'), 
-      solution=parse_to_ontology_literal_if_exists(p, 'Solution'),
-      author=get_first_author(paper['author']),
-      year=paper['year'],
-      links=get_links_between_patterns(sample_patterns, p, example_mapping, papers),
-      examples=get_application_examples(p),
-      language=parse_to_URI(p['Language'])
-    )
+  with open('../ontologies/structure.ttl', 'r') as file:
+    ontology_structure = file.read()
+
+  # a double mapping is returned by this function: one maps a canonical name into an array of possible alternative names
+  # and the other one maps an example name to its canonical
+  canonical_mapping, example_mapping = create_exemple_to_canonical_mappings(canonical_patterns)
+
+  classes, canonicals = generate_classes_and_canonicals(canonical_patterns, sample_patterns, canonical_mapping, papers)
+  samples = generate_samples(sample_patterns, example_mapping, papers)
   
   # write classes, canonicals and samples in three distinct files, can be merged into a complete ontology
   with open("./results/classes.ttl", "w") as text_file_classes:
