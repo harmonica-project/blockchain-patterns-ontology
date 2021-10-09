@@ -85,12 +85,13 @@ def loadTemplate(item):
     return file.read()
 
 def get_application_examples(p):
-  relation_template = loadTemplate('example')
+  examples = ""
+  example_template = loadTemplate('example')
   if 'Application examples' in p:
     for example in p['Application examples'].split("• "):
       if len(example):
-        print(example)
-    return ""
+        examples += Template(example_template).substitute(example=example)
+    return examples
   else:
     return ''
 

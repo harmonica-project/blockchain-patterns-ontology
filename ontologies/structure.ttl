@@ -75,6 +75,12 @@ owl:topObjectProperty rdfs:domain :Pattern ;
           rdfs:range rdfs:Literal ;
           rdfs:label "Solution" .
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ApplicationExample
+:ApplicationExample rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Pattern ;
+          rdfs:range rdfs:Literal ;
+          rdfs:label "Application example" .
+
 
 #################################################################
 #    Classes
