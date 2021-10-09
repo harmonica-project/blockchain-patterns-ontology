@@ -8,6 +8,7 @@
 
 $links
 :hasCanonical :${refClass}Canonical ;
+:hasPaper :${author}${year}${title_word} ;
 :ContextAndProblem "$context"^^rdfs:Literal ;
 :Solution "$solution"^^rdfs:Literal ;
 $examples

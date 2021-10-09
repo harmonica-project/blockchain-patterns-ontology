@@ -25,11 +25,12 @@ def get_sample_pattern_from_id(sample_patterns, paper_id):
       return p
   return False
 
-def get_sample_pattern_from_URI(sample_patterns, paper_uri):
+def get_sample_patterns_from_URI(sample_patterns, paper_uri):
+  compatible_patterns = []
   for p in sample_patterns:
     if parse_to_URI(p['Name']) == paper_uri:
-      return p
-  return False
+      compatible_patterns.append(p)
+  return compatible_patterns
 
 # receives an Author field, return the first author name
 def get_first_author(authors):
@@ -63,7 +64,7 @@ def get_links_between_patterns(sample_patterns, sample_pattern, example_mapping,
         if r.isdigit():
           relation_paper = get_sample_pattern_from_id(sample_patterns, r)
           paper = get_paper_from_id(papers, relation_paper['Paper'])
-          relation_paper_name = parse_to_URI(relation_paper['Name']) + get_first_author(paper['author']) + paper['year']
+          relation_paper_name = parse_to_URI(relation_paper['Name']) + get_first_author(paper['author']) + paper['year'] + get_first_word_title(paper['Title'])
         else:
           if parse_to_URI(r) in example_mapping:
             relation_paper_name = example_mapping[parse_to_URI(r)] + "Canonical"
@@ -220,9 +221,10 @@ def generate_classes_and_canonicals(canonical_patterns, sample_patterns, canonic
     # generates the relations (in Turtle) between a canonical individual and its samples
     if parse_to_URI(p['Name']) in canonical_mapping:
       for ex in canonical_mapping[parse_to_URI(p['Name'])]:
-        sample_pattern = get_sample_pattern_from_URI(sample_patterns, ex)
-        paper = get_paper_from_id(papers, sample_pattern['Paper'])
-        canonical_samples += Template(relation_template).substitute(relation="hasSample", value=(ex + get_first_author(paper['author']) + paper['year']))
+        compatible_patterns = get_sample_patterns_from_URI(sample_patterns, ex)
+        for compatible_pattern in compatible_patterns:
+          paper = get_paper_from_id(papers, compatible_pattern['Paper'])
+          canonical_samples += Template(relation_template).substitute(relation="canonicalHasSample", value=(ex + get_first_author(paper['author']) + paper['year'] + get_first_word_title(paper['Title'])))
 
     # generate canonical individuals, linked to their related classes
     canonicals += Template(canonical_template).substitute(

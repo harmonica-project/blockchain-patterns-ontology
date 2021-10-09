@@ -5,7 +5,7 @@
                           :Canonical ,
                           :TransparentEventLog ,
                           :Unspecified ;
-:hasSample :TransparentEventLogMüller2020 ;
+:canonicalHasSample :TransparentEventLogMüller2020Silver ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -18,7 +18,7 @@ rdfs:label "Transparent Event Log" .
                           :Canonical ,
                           :BlockchainBpEngine ,
                           :Unspecified ;
-:hasSample :BlockchainBpEngineMüller2020 ;
+:canonicalHasSample :BlockchainBpEngineMüller2020Silver ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -31,7 +31,7 @@ rdfs:label "Blockchain BP Engine" .
                           :Canonical ,
                           :SmartContractActivities ,
                           :Unspecified ;
-:hasSample :SmartContractActivitiesMüller2020 ;
+:canonicalHasSample :SmartContractActivitiesMüller2020Silver ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -44,7 +44,7 @@ rdfs:label "Smart Contract Activities" .
                           :Canonical ,
                           :BlockchainBasedReputationSystem ,
                           :Unspecified ;
-:hasSample :BlockchainBasedReputationSystemMüller2020 ;
+:canonicalHasSample :BlockchainBasedReputationSystemMüller2020Silver ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -57,7 +57,7 @@ rdfs:label "Blockchain-based reputation system" .
                           :Canonical ,
                           :DecentralizeBusinessProcess ,
                           :Unspecified ;
-:hasSample :DecentralizeBusinessProcessMüller2020 ;
+:canonicalHasSample :DecentralizeBusinessProcessMüller2020Silver ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -70,7 +70,7 @@ rdfs:label "Decentralize business process" .
                           :Canonical ,
                           :KeyValueStore ,
                           :Unspecified ;
-:hasSample :KeyValueStoreWorley2019 ;
+:canonicalHasSample :KeyValueStoreWorley2019Opportunities ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -83,7 +83,7 @@ rdfs:label "Key-value store" .
                           :Canonical ,
                           :AddressMapping ,
                           :Unspecified ;
-:hasSample :AddressMappingWorley2019 ;
+:canonicalHasSample :AddressMappingWorley2019Opportunities ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -96,7 +96,9 @@ rdfs:label "Address mapping" .
                           :Canonical ,
                           :Authorization ,
                           :Unspecified ;
-:hasSample :AuthorizationWorley2019 ;
+:canonicalHasSample :AuthorizationWorley2019Opportunities ;
+:canonicalHasSample :AuthorizationBartoletti2017An ;
+:canonicalHasSample :AuthorizationMarchesi2020Security ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -109,7 +111,7 @@ rdfs:label "Authorization" .
                           :Canonical ,
                           :Judge ,
                           :Unspecified ;
-:hasSample :JudgeWorley2019 ;
+:canonicalHasSample :JudgeWorley2019Opportunities ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -122,7 +124,7 @@ rdfs:label "Judge" .
                           :Canonical ,
                           :TickerTape ,
                           :Unspecified ;
-:hasSample :TickerTapeWorley2019 ;
+:canonicalHasSample :TickerTapeWorley2019Opportunities ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -135,7 +137,7 @@ rdfs:label "Ticker Tape" .
                           :Canonical ,
                           :Vote ,
                           :Unspecified ;
-:hasSample :VoteWorley2019 ;
+:canonicalHasSample :VoteWorley2019Opportunities ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -148,7 +150,7 @@ rdfs:label "Vote" .
                           :Canonical ,
                           :Blocklist ,
                           :Unspecified ;
-:hasSample :BlocklistWorley2019 ;
+:canonicalHasSample :BlocklistWorley2019Opportunities ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -161,7 +163,7 @@ rdfs:label "Blocklist" .
                           :Canonical ,
                           :Announcement ,
                           :Unspecified ;
-:hasSample :AnnouncementWorley2019 ;
+:canonicalHasSample :AnnouncementWorley2019Opportunities ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -174,7 +176,7 @@ rdfs:label "Announcement" .
                           :Canonical ,
                           :BulletinBoard ,
                           :Unspecified ;
-:hasSample :BulletinBoardWorley2019 ;
+:canonicalHasSample :BulletinBoardWorley2019Opportunities ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -187,7 +189,7 @@ rdfs:label "Bulletin Board" .
                           :Canonical ,
                           :Migration ,
                           :Unspecified ;
-:hasSample :MigrationWorley2019 ;
+:canonicalHasSample :MigrationWorley2019Opportunities ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -200,7 +202,7 @@ rdfs:label "Migration" .
                           :Canonical ,
                           :InterFamilyCommunication ,
                           :Unspecified ;
-:hasSample :InterFamilyCommunicationOwens2019 ;
+:canonicalHasSample :InterFamilyCommunicationOwens2019Interfamily ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -213,7 +215,7 @@ rdfs:label "Inter-family communication" .
                           :Canonical ,
                           :Locking ,
                           :Solidity ;
-:hasSample :LockingMavridou2018 ;
+:canonicalHasSample :LockingMavridou2018Designing ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -226,7 +228,7 @@ rdfs:label "Locking" .
                           :Canonical ,
                           :TransitionCounter ,
                           :Solidity ;
-:hasSample :TransitionCounterMavridou2018 ;
+:canonicalHasSample :TransitionCounterMavridou2018Designing ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -239,7 +241,7 @@ rdfs:label "Transition Counter" .
                           :Canonical ,
                           :AutomaticTimedTransitions ,
                           :Solidity ;
-:hasSample :AutomaticTimedTransitionsMavridou2018 ;
+:canonicalHasSample :AutomaticTimedTransitionsMavridou2018Designing ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -252,7 +254,7 @@ rdfs:label "Automatic Timed Transitions" .
                           :Canonical ,
                           :Randomness ,
                           :Solidity ;
-:hasSample :RandomnessBartoletti2017 ;
+:canonicalHasSample :RandomnessBartoletti2017An ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -265,7 +267,7 @@ rdfs:label "Randomness" .
                           :Canonical ,
                           :Poll ,
                           :Solidity ;
-:hasSample :PollBartoletti2017 ;
+:canonicalHasSample :PollBartoletti2017An ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -278,7 +280,7 @@ rdfs:label "Poll" .
                           :Canonical ,
                           :ForkCheck ,
                           :Solidity ;
-:hasSample :ForkCheckBartoletti2017 ;
+:canonicalHasSample :ForkCheckBartoletti2017An ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -291,7 +293,7 @@ rdfs:label "Fork check" .
                           :Canonical ,
                           :SecureEtherTransfer ,
                           :Solidity ;
-:hasSample :SecureEtherTransferRajasekar2020 ;
+:canonicalHasSample :SecureEtherTransferRajasekar2020Emerging ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -304,8 +306,12 @@ rdfs:label "Secure Ether Transfer" .
                           :Canonical ,
                           :Oracle ,
                           :Unspecified ;
-:hasSample :OracleBartoletti2017 ;
-:hasSample :OracleDataProviderWohrer2018 ;
+:canonicalHasSample :OracleBartoletti2017An ;
+:canonicalHasSample :OracleRajasekar2020Emerging ;
+:canonicalHasSample :OracleXu2018A ;
+:canonicalHasSample :OracleMarchesi2020Security ;
+:canonicalHasSample :OracleDataProviderWohrer2018Design ;
+:canonicalHasSample :OracleDataProviderWohrer2020From ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -318,7 +324,8 @@ rdfs:label "Oracle" .
                           :Canonical ,
                           :StateChannel ,
                           :Unspecified ;
-:hasSample :StateChannelRajasekar2020 ;
+:canonicalHasSample :StateChannelRajasekar2020Emerging ;
+:canonicalHasSample :StateChannelXu2018A ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -331,7 +338,7 @@ rdfs:label "State Channel" .
                           :Canonical ,
                           :OffChainContractRegistry ,
                           :Unspecified ;
-:hasSample :OffChainContractRegistryRajasekar2020 ;
+:canonicalHasSample :OffChainContractRegistryRajasekar2020Emerging ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -344,9 +351,12 @@ rdfs:label "(Off-chain) Contract Registry" .
                           :Canonical ,
                           :DataContract ,
                           :Unspecified ;
-:hasSample :DataContractRajasekar2020 ;
-:hasSample :DataSegregationWohrer2018 ;
-:hasSample :EternalStorageDataContractMarchesi2020 ;
+:canonicalHasSample :DataContractRajasekar2020Emerging ;
+:canonicalHasSample :DataContractXu2018A ;
+:canonicalHasSample :DataContractMarchesi2020Design ;
+:canonicalHasSample :DataSegregationWohrer2018Design ;
+:canonicalHasSample :DataSegregationWohrer2020From ;
+:canonicalHasSample :EternalStorageDataContractMarchesi2020Security ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -359,9 +369,13 @@ rdfs:label "Data Contract" .
                           :Canonical ,
                           :EmbeddedPermission ,
                           :Unspecified ;
-:hasSample :EmbeddedPermissionRajasekar2020 ;
-:hasSample :AccessControlMavridou2018 ;
-:hasSample :AuthorizationWorley2019 ;
+:canonicalHasSample :EmbeddedPermissionRajasekar2020Emerging ;
+:canonicalHasSample :EmbeddedPermissionXu2018A ;
+:canonicalHasSample :EmbeddedPermissionLu2019Design ;
+:canonicalHasSample :AccessControlMavridou2018Designing ;
+:canonicalHasSample :AuthorizationWorley2019Opportunities ;
+:canonicalHasSample :AuthorizationBartoletti2017An ;
+:canonicalHasSample :AuthorizationMarchesi2020Security ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -374,10 +388,13 @@ rdfs:label "Embedded Permission" .
                           :Canonical ,
                           :FactoryContract ,
                           :Unspecified ;
-:hasSample :FactoryContractRajasekar2020 ;
-:hasSample :ReusabilityMarchesi2020 ;
-:hasSample :ContractFactoryLiu2018 ;
-:hasSample :AbstractFactoryMarchesi2020 ;
+:canonicalHasSample :FactoryContractRajasekar2020Emerging ;
+:canonicalHasSample :FactoryContractXu2018A ;
+:canonicalHasSample :ReusabilityMarchesi2020Security ;
+:canonicalHasSample :ContractFactoryLiu2018Applying ;
+:canonicalHasSample :AbstractFactoryMarchesi2020Security ;
+:canonicalHasSample :AbstractFactoryZhang2017Applying ;
+:canonicalHasSample :AbstractFactoryRaj2018Blockchain ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -390,7 +407,9 @@ rdfs:label "Factory Contract" .
                           :Canonical ,
                           :EmergencyStop ,
                           :Unspecified ;
-:hasSample :EmergencyStopRajasekar2020 ;
+:canonicalHasSample :EmergencyStopRajasekar2020Emerging ;
+:canonicalHasSample :EmergencyStopWohrer2020From ;
+:canonicalHasSample :EmergencyStopWohrer2018Smart ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -403,7 +422,10 @@ rdfs:label "Emergency Stop" .
                           :Canonical ,
                           :Mutex ,
                           :Unspecified ;
-:hasSample :MutexRajasekar2020 ;
+:canonicalHasSample :MutexRajasekar2020Emerging ;
+:canonicalHasSample :MutexWohrer2020From ;
+:canonicalHasSample :MutexMarchesi2020Security ;
+:canonicalHasSample :MutexWohrer2018Smart ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -416,8 +438,10 @@ rdfs:label "Mutex" .
                           :Canonical ,
                           :ContractBalanceLimit ,
                           :Unspecified ;
-:hasSample :ContractBalanceLimitRajasekar2020 ;
-:hasSample :BalanceLimitWohrer2020 ;
+:canonicalHasSample :ContractBalanceLimitRajasekar2020Emerging ;
+:canonicalHasSample :BalanceLimitWohrer2020From ;
+:canonicalHasSample :BalanceLimitMarchesi2020Security ;
+:canonicalHasSample :BalanceLimitWohrer2018Smart ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -430,9 +454,10 @@ rdfs:label "Contract Balance Limit" .
                           :Canonical ,
                           :ReverseOracle ,
                           :Unspecified ;
-:hasSample :ReverseOracleXu2018 ;
-:hasSample :ReverseVerifierRajasekar2020 ;
-:hasSample :AntiOracleWorley2019 ;
+:canonicalHasSample :ReverseOracleXu2018A ;
+:canonicalHasSample :ReverseOracleMarchesi2020Security ;
+:canonicalHasSample :ReverseVerifierRajasekar2020Emerging ;
+:canonicalHasSample :AntiOracleWorley2019Opportunities ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -445,7 +470,8 @@ rdfs:label "Reverse Oracle" .
                           :Canonical ,
                           :IncentiveExecution ,
                           :Unspecified ;
-:hasSample :IncentiveExecutionRajasekar2020 ;
+:canonicalHasSample :IncentiveExecutionRajasekar2020Emerging ;
+:canonicalHasSample :IncentiveExecutionXu2018A ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -458,7 +484,9 @@ rdfs:label "Incentive Execution" .
                           :Canonical ,
                           :CommitAndReveal ,
                           :Unspecified ;
-:hasSample :CommitAndRevealRajasekar2020 ;
+:canonicalHasSample :CommitAndRevealRajasekar2020Emerging ;
+:canonicalHasSample :CommitAndRevealWohrer2018Design ;
+:canonicalHasSample :CommitAndRevealWohrer2020From ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -471,11 +499,14 @@ rdfs:label "Commit and Reveal" .
                           :Canonical ,
                           :ProxyContract ,
                           :Unspecified ;
-:hasSample :ProxyContractRajasekar2020 ;
-:hasSample :ProxyMarchesi2020 ;
-:hasSample :ProxyDelegateDecoratorMarchesi2020 ;
-:hasSample :ContractRelayWohrer2018 ;
-:hasSample :ContractFacadeLiu2018 ;
+:canonicalHasSample :ProxyContractRajasekar2020Emerging ;
+:canonicalHasSample :ProxyMarchesi2020Design ;
+:canonicalHasSample :ProxyZhang2017Applying ;
+:canonicalHasSample :ProxyRaj2018Blockchain ;
+:canonicalHasSample :ProxyDelegateDecoratorMarchesi2020Security ;
+:canonicalHasSample :ContractRelayWohrer2018Design ;
+:canonicalHasSample :ContractRelayWohrer2020From ;
+:canonicalHasSample :ContractFacadeLiu2018Applying ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -488,7 +519,8 @@ rdfs:label "Proxy Contract" .
                           :Canonical ,
                           :DynamicBinding ,
                           :Unspecified ;
-:hasSample :DynamicBindingRajasekar2020 ;
+:canonicalHasSample :DynamicBindingRajasekar2020Emerging ;
+:canonicalHasSample :DynamicBindingLu2019Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -501,7 +533,9 @@ rdfs:label "Dynamic Binding" .
                           :Canonical ,
                           :Flyweight ,
                           :Unspecified ;
-:hasSample :FlyweightRajasekar2020 ;
+:canonicalHasSample :FlyweightRajasekar2020Emerging ;
+:canonicalHasSample :FlyweightZhang2017Applying ;
+:canonicalHasSample :FlyweightRaj2018Blockchain ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -514,7 +548,7 @@ rdfs:label "Flyweight" .
                           :Canonical ,
                           :TightVariablePacking ,
                           :Unspecified ;
-:hasSample :TightVariablePackingRajasekar2020 ;
+:canonicalHasSample :TightVariablePackingRajasekar2020Emerging ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -527,7 +561,7 @@ rdfs:label "Tight Variable Packing" .
                           :Canonical ,
                           :LegalAndSmartContractPair ,
                           :Unspecified ;
-:hasSample :LegalAndSmartContractPairXu2018 ;
+:canonicalHasSample :LegalAndSmartContractPairXu2018A ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -540,14 +574,14 @@ rdfs:label "Legal and smart-contract pair" .
                           :Canonical ,
                           :OffChainDataStorage ,
                           :Unspecified ;
-:hasSample :OffChainDataStorageXu2018 ;
-:hasSample :HashStorageMüller2020 ;
-:hasSample :OffChainDatastoreRajasekar2020 ;
-:hasSample :HashIntegrityLu2019 ;
-:hasSample :MirrorLemieux2017 ;
-:hasSample :ContentAddressableStorageEberhardt2017 ;
-:hasSample :AnchoringToBlockchainLiu2020 ;
-:hasSample :OnChainAndOffChainLu2019 ;
+:canonicalHasSample :OffChainDataStorageXu2018A ;
+:canonicalHasSample :HashStorageMüller2020Silver ;
+:canonicalHasSample :OffChainDatastoreRajasekar2020Emerging ;
+:canonicalHasSample :HashIntegrityLu2019Design ;
+:canonicalHasSample :MirrorLemieux2017A ;
+:canonicalHasSample :ContentAddressableStorageEberhardt2017On ;
+:canonicalHasSample :AnchoringToBlockchainLiu2020Design ;
+:canonicalHasSample :OnChainAndOffChainLu2019Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -560,9 +594,9 @@ rdfs:label "Off-chain data storage" .
                           :Canonical ,
                           :MultipleAuthorization ,
                           :Unspecified ;
-:hasSample :MultipleAuthorizationXu2018 ;
-:hasSample :MultipleAuthoritiesLu2019 ;
-:hasSample :MultiSignatureLiu2018 ;
+:canonicalHasSample :MultipleAuthorizationXu2018A ;
+:canonicalHasSample :MultipleAuthoritiesLu2019Design ;
+:canonicalHasSample :MultiSignatureLiu2018Applying ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -575,7 +609,7 @@ rdfs:label "Multiple authorization" .
                           :Canonical ,
                           :OffChainSecretEnabledDynamicAuthentication ,
                           :Unspecified ;
-:hasSample :OffChainSecretEnabledDynamicAuthenticationXu2018 ;
+:canonicalHasSample :OffChainSecretEnabledDynamicAuthenticationXu2018A ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -588,7 +622,7 @@ rdfs:label "Off-chain secret enabled dynamic authentication" .
                           :Canonical ,
                           :MasterSubKey ,
                           :Unspecified ;
-:hasSample :MasterSubKeyLiu2020 ;
+:canonicalHasSample :MasterSubKeyLiu2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -601,7 +635,7 @@ rdfs:label "Master & Sub Key" .
                           :Canonical ,
                           :HotColdWalletStorage ,
                           :Unspecified ;
-:hasSample :HotColdWalletStorageLiu2020 ;
+:canonicalHasSample :HotColdWalletStorageLiu2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -614,7 +648,7 @@ rdfs:label "Hot & Cold Wallet Storage" .
                           :Canonical ,
                           :KeySharding ,
                           :Unspecified ;
-:hasSample :KeyShardingLiu2020 ;
+:canonicalHasSample :KeyShardingLiu2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -627,7 +661,7 @@ rdfs:label "Key Sharding" .
                           :Canonical ,
                           :IdentifierRegistry ,
                           :Unspecified ;
-:hasSample :IdentifierRegistryLiu2020 ;
+:canonicalHasSample :IdentifierRegistryLiu2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -640,7 +674,7 @@ rdfs:label "Identifier Registry" .
                           :Canonical ,
                           :MultipleRegistration ,
                           :Unspecified ;
-:hasSample :MultipleRegistrationLiu2020 ;
+:canonicalHasSample :MultipleRegistrationLiu2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -653,7 +687,7 @@ rdfs:label "Multiple Registration" .
                           :Canonical ,
                           :BoundWithSocialMedia ,
                           :Unspecified ;
-:hasSample :BoundWithSocialMediaLiu2020 ;
+:canonicalHasSample :BoundWithSocialMediaLiu2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -666,7 +700,7 @@ rdfs:label "Bound with Social Media" .
                           :Canonical ,
                           :DualResolution ,
                           :Unspecified ;
-:hasSample :DualResolutionLiu2020 ;
+:canonicalHasSample :DualResolutionLiu2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -679,7 +713,7 @@ rdfs:label "Dual Resolution" .
                           :Canonical ,
                           :DelegateList ,
                           :Unspecified ;
-:hasSample :DelegateListLiu2020 ;
+:canonicalHasSample :DelegateListLiu2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -692,7 +726,7 @@ rdfs:label "Delegate List" .
                           :Canonical ,
                           :SelectiveContentGeneration ,
                           :Unspecified ;
-:hasSample :SelectiveContentGenerationLiu2020 ;
+:canonicalHasSample :SelectiveContentGenerationLiu2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -705,7 +739,7 @@ rdfs:label "Selective Content Generation" .
                           :Canonical ,
                           :TimeConstrainedAccess ,
                           :Unspecified ;
-:hasSample :TimeConstrainedAccessLiu2020 ;
+:canonicalHasSample :TimeConstrainedAccessLiu2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -718,7 +752,7 @@ rdfs:label "Time-Constrained Access" .
                           :Canonical ,
                           :OneOffAccess ,
                           :Unspecified ;
-:hasSample :OneOffAccessLiu2020 ;
+:canonicalHasSample :OneOffAccessLiu2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -731,7 +765,7 @@ rdfs:label "One-Off Access" .
                           :Canonical ,
                           :Snapshotting ,
                           :Unspecified ;
-:hasSample :SnapshottingBandara2020 ;
+:canonicalHasSample :SnapshottingBandara2020Patterns ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -744,7 +778,7 @@ rdfs:label "Snapshotting" .
                           :Canonical ,
                           :StateAggregation ,
                           :Unspecified ;
-:hasSample :StateAggregationBandara2020 ;
+:canonicalHasSample :StateAggregationBandara2020Patterns ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -757,7 +791,7 @@ rdfs:label "State Aggregation" .
                           :Canonical ,
                           :TokenBurning ,
                           :Unspecified ;
-:hasSample :TokenBurningBandara2020 ;
+:canonicalHasSample :TokenBurningBandara2020Patterns ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -770,7 +804,7 @@ rdfs:label "Token burning" .
                           :Canonical ,
                           :NodeSync ,
                           :Unspecified ;
-:hasSample :NodeSyncBandara2020 ;
+:canonicalHasSample :NodeSyncBandara2020Patterns ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -783,7 +817,7 @@ rdfs:label "Node Sync" .
                           :Canonical ,
                           :EstablishGenesis ,
                           :Unspecified ;
-:hasSample :EstablishGenesisBandara2020 ;
+:canonicalHasSample :EstablishGenesisBandara2020Patterns ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -796,7 +830,7 @@ rdfs:label "Establish Genesis" .
                           :Canonical ,
                           :HardFork ,
                           :Unspecified ;
-:hasSample :HardForkBandara2020 ;
+:canonicalHasSample :HardForkBandara2020Patterns ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -809,7 +843,7 @@ rdfs:label "Hard Fork" .
                           :Canonical ,
                           :StateInitialization ,
                           :Unspecified ;
-:hasSample :StateInitializationBandara2020 ;
+:canonicalHasSample :StateInitializationBandara2020Patterns ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -822,7 +856,7 @@ rdfs:label "State Initialization" .
                           :Canonical ,
                           :ExchangeTransfer ,
                           :Unspecified ;
-:hasSample :ExchangeTransferBandara2020 ;
+:canonicalHasSample :ExchangeTransferBandara2020Patterns ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -835,7 +869,7 @@ rdfs:label "Exchange Transfer" .
                           :Canonical ,
                           :TransactionReplay ,
                           :Unspecified ;
-:hasSample :TransactionReplayBandara2020 ;
+:canonicalHasSample :TransactionReplayBandara2020Patterns ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -848,7 +882,7 @@ rdfs:label "Transaction Replay" .
                           :Canonical ,
                           :VirtualMachineEmulation ,
                           :Unspecified ;
-:hasSample :VirtualMachineEmulationBandara2020 ;
+:canonicalHasSample :VirtualMachineEmulationBandara2020Patterns ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -861,7 +895,7 @@ rdfs:label "Virtual Machine Emulation" .
                           :Canonical ,
                           :SmartContractTranslation ,
                           :Unspecified ;
-:hasSample :SmartContractTranslationBandara2020 ;
+:canonicalHasSample :SmartContractTranslationBandara2020Patterns ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -874,7 +908,7 @@ rdfs:label "Smart Contract Translation" .
                           :Canonical ,
                           :BlockchainSecurityPatternForBigDataEcosystems ,
                           :Unspecified ;
-:hasSample :BlockchainSecurityPatternForBigDataEcosystemsMoreno2019 ;
+:canonicalHasSample :BlockchainSecurityPatternForBigDataEcosystemsMoreno2019BlockBD ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -887,7 +921,7 @@ rdfs:label "Blockchain Security Pattern for Big Data Ecosystems" .
                           :Canonical ,
                           :EventLog ,
                           :Solidity ;
-:hasSample :EventLogMarchesi2020 ;
+:canonicalHasSample :EventLogMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -900,7 +934,7 @@ rdfs:label "Event log" .
                           :Canonical ,
                           :LimitStorage ,
                           :Solidity ;
-:hasSample :LimitStorageMarchesi2020 ;
+:canonicalHasSample :LimitStorageMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -913,7 +947,7 @@ rdfs:label "Limit storage" .
                           :Canonical ,
                           :PackingVariables ,
                           :Solidity ;
-:hasSample :PackingVariablesMarchesi2020 ;
+:canonicalHasSample :PackingVariablesMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -926,7 +960,7 @@ rdfs:label "Packing variables" .
                           :Canonical ,
                           :PackingBooleans ,
                           :Solidity ;
-:hasSample :PackingBooleansMarchesi2020 ;
+:canonicalHasSample :PackingBooleansMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -939,7 +973,7 @@ rdfs:label "Packing booleans" .
                           :Canonical ,
                           :UintVsUint256 ,
                           :Solidity ;
-:hasSample :UintVsUint256Marchesi2020 ;
+:canonicalHasSample :UintVsUint256Marchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -952,7 +986,7 @@ rdfs:label "Uint* vs Uint256" .
                           :Canonical ,
                           :MappingVsArray ,
                           :Solidity ;
-:hasSample :MappingVsArrayMarchesi2020 ;
+:canonicalHasSample :MappingVsArrayMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -965,7 +999,7 @@ rdfs:label "Mapping vs Array" .
                           :Canonical ,
                           :FixedSize ,
                           :Solidity ;
-:hasSample :FixedSizeMarchesi2020 ;
+:canonicalHasSample :FixedSizeMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -978,7 +1012,7 @@ rdfs:label "Fixed size" .
                           :Canonical ,
                           :DefaultValue ,
                           :Solidity ;
-:hasSample :DefaultValueMarchesi2020 ;
+:canonicalHasSample :DefaultValueMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -991,7 +1025,7 @@ rdfs:label "Default value" .
                           :Canonical ,
                           :MinimizeOnChainData ,
                           :Solidity ;
-:hasSample :MinimizeOnChainDataMarchesi2020 ;
+:canonicalHasSample :MinimizeOnChainDataMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1004,7 +1038,7 @@ rdfs:label "Minimize on-chain data" .
                           :Canonical ,
                           :ExplicitelyMarkExternalFunction ,
                           :Solidity ;
-:hasSample :ExplicitelyMarkExternalFunctionMarchesi2020 ;
+:canonicalHasSample :ExplicitelyMarkExternalFunctionMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1017,7 +1051,7 @@ rdfs:label "Explicitely mark external function" .
                           :Canonical ,
                           :LimitExternalCalls ,
                           :Solidity ;
-:hasSample :LimitExternalCallsMarchesi2020 ;
+:canonicalHasSample :LimitExternalCallsMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1030,7 +1064,7 @@ rdfs:label "Limit external calls" .
                           :Canonical ,
                           :InternalFunctionCalls ,
                           :Solidity ;
-:hasSample :InternalFunctionCallsMarchesi2020 ;
+:canonicalHasSample :InternalFunctionCallsMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1043,7 +1077,7 @@ rdfs:label "Internal function calls" .
                           :Canonical ,
                           :FewerFunctions ,
                           :Solidity ;
-:hasSample :FewerFunctionsMarchesi2020 ;
+:canonicalHasSample :FewerFunctionsMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1056,7 +1090,7 @@ rdfs:label "Fewer functions" .
                           :Canonical ,
                           :UseLibraries ,
                           :Solidity ;
-:hasSample :UseLibrariesMarchesi2020 ;
+:canonicalHasSample :UseLibrariesMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1069,7 +1103,7 @@ rdfs:label "Use libraries" .
                           :Canonical ,
                           :ShortCircuit ,
                           :Solidity ;
-:hasSample :ShortCircuitMarchesi2020 ;
+:canonicalHasSample :ShortCircuitMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1082,7 +1116,7 @@ rdfs:label "Short circuit" .
                           :Canonical ,
                           :ShortConstantStrings ,
                           :Solidity ;
-:hasSample :ShortConstantStringsMarchesi2020 ;
+:canonicalHasSample :ShortConstantStringsMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1095,7 +1129,7 @@ rdfs:label "Short constant strings" .
                           :Canonical ,
                           :LimitModifiers ,
                           :Solidity ;
-:hasSample :LimitModifiersMarchesi2020 ;
+:canonicalHasSample :LimitModifiersMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1108,7 +1142,7 @@ rdfs:label "Limit modifiers" .
                           :Canonical ,
                           :AvoidRedundantOperations ,
                           :Solidity ;
-:hasSample :AvoidRedundantOperationsMarchesi2020 ;
+:canonicalHasSample :AvoidRedundantOperationsMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1121,7 +1155,7 @@ rdfs:label "Avoid redundant operations" .
                           :Canonical ,
                           :SingleLineSwap ,
                           :Solidity ;
-:hasSample :SingleLineSwapMarchesi2020 ;
+:canonicalHasSample :SingleLineSwapMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1134,7 +1168,7 @@ rdfs:label "Single-line swap" .
                           :Canonical ,
                           :WriteValues ,
                           :Solidity ;
-:hasSample :WriteValuesMarchesi2020 ;
+:canonicalHasSample :WriteValuesMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1147,7 +1181,7 @@ rdfs:label "Write values" .
                           :Canonical ,
                           :FreeingStorage ,
                           :Solidity ;
-:hasSample :FreeingStorageMarchesi2020 ;
+:canonicalHasSample :FreeingStorageMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1160,7 +1194,7 @@ rdfs:label "Freeing storage" .
                           :Canonical ,
                           :Optimizer ,
                           :Solidity ;
-:hasSample :OptimizerMarchesi2020 ;
+:canonicalHasSample :OptimizerMarchesi2020Design ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1173,7 +1207,7 @@ rdfs:label "Optimizer" .
                           :Canonical ,
                           :ConfidentialAndPseudoAnonymousContractEnforcement ,
                           :Unspecified ;
-:hasSample :ConfidentialAndPseudoAnonymousContractEnforcementSix2020 ;
+:canonicalHasSample :ConfidentialAndPseudoAnonymousContractEnforcementSix2020A ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1186,7 +1220,7 @@ rdfs:label "Confidential and pseudo-anonymous contract enforcement" .
                           :Canonical ,
                           :SelfGeneratedTransactions ,
                           :Unspecified ;
-:hasSample :SelfGeneratedTransactionsWessling2018 ;
+:canonicalHasSample :SelfGeneratedTransactionsWessling2018Engineering ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1199,7 +1233,7 @@ rdfs:label "Self-Generated Transactions" .
                           :Canonical ,
                           :SelfConfirmedTransactions ,
                           :Unspecified ;
-:hasSample :SelfConfirmedTransactionsWessling2018 ;
+:canonicalHasSample :SelfConfirmedTransactionsWessling2018Engineering ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1212,7 +1246,7 @@ rdfs:label "Self-Confirmed Transactions" .
                           :Canonical ,
                           :DelegatedTransactions ,
                           :Unspecified ;
-:hasSample :DelegatedTransactionsWessling2018 ;
+:canonicalHasSample :DelegatedTransactionsWessling2018Engineering ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1225,7 +1259,7 @@ rdfs:label "Delegated Transactions" .
                           :Canonical ,
                           :DigitalRecord ,
                           :Unspecified ;
-:hasSample :DigitalRecordLemieux2017 ;
+:canonicalHasSample :DigitalRecordLemieux2017A ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1238,7 +1272,7 @@ rdfs:label "Digital Record" .
                           :Canonical ,
                           :MultipleBlockchains ,
                           :Unspecified ;
-:hasSample :MultipleBlockchainsSchinle2020 ;
+:canonicalHasSample :MultipleBlockchainsSchinle2020How ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1251,10 +1285,10 @@ rdfs:label "Multiple Blockchains" .
                           :Canonical ,
                           :OnChainEncryption ,
                           :Unspecified ;
-:hasSample :OnChainEncryptionSchinle2020 ;
-:hasSample :PrivacyMarchesi2020 ;
-:hasSample :DataEncryptionLu2019 ;
-:hasSample :EncryptingOnChainDataXu2018 ;
+:canonicalHasSample :OnChainEncryptionSchinle2020How ;
+:canonicalHasSample :PrivacyMarchesi2020Security ;
+:canonicalHasSample :DataEncryptionLu2019Design ;
+:canonicalHasSample :EncryptingOnChainDataXu2018A ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1267,7 +1301,7 @@ rdfs:label "On-chain encryption" .
                           :Canonical ,
                           :HashTimestamping ,
                           :Unspecified ;
-:hasSample :HashTimestampingSchinle2020 ;
+:canonicalHasSample :HashTimestampingSchinle2020How ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1280,7 +1314,8 @@ rdfs:label "Hash timestamping" .
                           :Canonical ,
                           :PullPayment ,
                           :Unspecified ;
-:hasSample :PullPaymentWohrer2018 ;
+:canonicalHasSample :PullPaymentWohrer2018Design ;
+:canonicalHasSample :PullPaymentWohrer2020From ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1293,7 +1328,8 @@ rdfs:label "Pull payment" .
                           :Canonical ,
                           :StateMachine ,
                           :Unspecified ;
-:hasSample :StateMachineWohrer2018 ;
+:canonicalHasSample :StateMachineWohrer2018Design ;
+:canonicalHasSample :StateMachineWohrer2020From ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1306,7 +1342,9 @@ rdfs:label "State machine" .
                           :Canonical ,
                           :Ownership ,
                           :Unspecified ;
-:hasSample :OwnershipWohrer2018 ;
+:canonicalHasSample :OwnershipWohrer2018Design ;
+:canonicalHasSample :OwnershipWohrer2020From ;
+:canonicalHasSample :OwnershipMarchesi2020Security ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1319,7 +1357,8 @@ rdfs:label "Ownership" .
                           :Canonical ,
                           :AccessRestriction ,
                           :Unspecified ;
-:hasSample :AccessRestrictionWohrer2018 ;
+:canonicalHasSample :AccessRestrictionWohrer2018Design ;
+:canonicalHasSample :AccessRestrictionWohrer2020From ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1332,7 +1371,8 @@ rdfs:label "Access Restriction" .
                           :Canonical ,
                           :Mortal ,
                           :Solidity ;
-:hasSample :MortalWohrer2018 ;
+:canonicalHasSample :MortalWohrer2018Design ;
+:canonicalHasSample :MortalWohrer2020From ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1345,7 +1385,8 @@ rdfs:label "Mortal" .
                           :Canonical ,
                           :AutomaticDeprecation ,
                           :Unspecified ;
-:hasSample :AutomaticDeprecationWohrer2018 ;
+:canonicalHasSample :AutomaticDeprecationWohrer2018Design ;
+:canonicalHasSample :AutomaticDeprecationWohrer2020From ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1358,7 +1399,8 @@ rdfs:label "Automatic Deprecation" .
                           :Canonical ,
                           :Satellite ,
                           :Unspecified ;
-:hasSample :SatelliteWohrer2018 ;
+:canonicalHasSample :SatelliteWohrer2018Design ;
+:canonicalHasSample :SatelliteWohrer2020From ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1371,7 +1413,9 @@ rdfs:label "Satellite" .
                           :Canonical ,
                           :SpeedBump ,
                           :Unspecified ;
-:hasSample :SpeedBumpWohrer2020 ;
+:canonicalHasSample :SpeedBumpWohrer2020From ;
+:canonicalHasSample :SpeedBumpMarchesi2020Security ;
+:canonicalHasSample :SpeedBumpWohrer2018Smart ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1384,7 +1428,9 @@ rdfs:label "Speed Bump" .
                           :Canonical ,
                           :RateLimit ,
                           :Unspecified ;
-:hasSample :RateLimitWohrer2020 ;
+:canonicalHasSample :RateLimitWohrer2020From ;
+:canonicalHasSample :RateLimitMarchesi2020Security ;
+:canonicalHasSample :RateLimitWohrer2018Smart ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1397,9 +1443,10 @@ rdfs:label "Rate Limit" .
                           :Canonical ,
                           :CheckEffectInteraction ,
                           :Solidity ;
-:hasSample :CheckEffectInteractionMarchesi2020 ;
-:hasSample :ChecksEffectsInteractionWohrer2020 ;
-:hasSample :ChecksEffectInteractionsRajasekar2020 ;
+:canonicalHasSample :CheckEffectInteractionMarchesi2020Security ;
+:canonicalHasSample :ChecksEffectsInteractionWohrer2020From ;
+:canonicalHasSample :ChecksEffectsInteractionWohrer2018Smart ;
+:canonicalHasSample :ChecksEffectInteractionsRajasekar2020Emerging ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1412,7 +1459,7 @@ rdfs:label "Check Effect Interaction" .
                           :Canonical ,
                           :GuardCheck ,
                           :Solidity ;
-:hasSample :GuardCheckMarchesi2020 ;
+:canonicalHasSample :GuardCheckMarchesi2020Security ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1425,7 +1472,8 @@ rdfs:label "Guard Check" .
                           :Canonical ,
                           :TimeConstraint ,
                           :Solidity ;
-:hasSample :TimeConstraintBartoletti2017 ;
+:canonicalHasSample :TimeConstraintBartoletti2017An ;
+:canonicalHasSample :TimeConstraintMarchesi2020Security ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1438,7 +1486,8 @@ rdfs:label "Time Constraint" .
                           :Canonical ,
                           :Termination ,
                           :Solidity ;
-:hasSample :TerminationBartoletti2017 ;
+:canonicalHasSample :TerminationBartoletti2017An ;
+:canonicalHasSample :TerminationMarchesi2020Security ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1451,7 +1500,8 @@ rdfs:label "Termination" .
                           :Canonical ,
                           :Math ,
                           :Solidity ;
-:hasSample :MathBartoletti2017 ;
+:canonicalHasSample :MathBartoletti2017An ;
+:canonicalHasSample :MathMarchesi2020Security ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1464,7 +1514,9 @@ rdfs:label "Math" .
                           :Canonical ,
                           :PublisherSubscriber ,
                           :Solidity ;
-:hasSample :PublisherSubscriberMarchesi2020 ;
+:canonicalHasSample :PublisherSubscriberMarchesi2020Security ;
+:canonicalHasSample :PublisherSubscriberZhang2017Applying ;
+:canonicalHasSample :PublisherSubscriberRaj2018Blockchain ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1477,9 +1529,11 @@ rdfs:label "Publisher-Subscriber" .
                           :Canonical ,
                           :Tokenisation ,
                           :Unspecified ;
-:hasSample :TokenisationXu2018 ;
-:hasSample :TokenizedLemieux2017 ;
-:hasSample :TokenWorley2019 ;
+:canonicalHasSample :TokenisationXu2018A ;
+:canonicalHasSample :TokenisationMarchesi2020Security ;
+:canonicalHasSample :TokenizedLemieux2017A ;
+:canonicalHasSample :TokenWorley2019Opportunities ;
+:canonicalHasSample :TokenBartoletti2017An ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1492,7 +1546,8 @@ rdfs:label "Tokenisation" .
                           :Canonical ,
                           :XConfirmation ,
                           :Unspecified ;
-:hasSample :XConfirmationXu2018 ;
+:canonicalHasSample :XConfirmationXu2018A ;
+:canonicalHasSample :XConfirmationMarchesi2020Security ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1505,8 +1560,10 @@ rdfs:label "X-confirmation" .
                           :Canonical ,
                           :ContractRegistry ,
                           :Unspecified ;
-:hasSample :ContractRegistryXu2018 ;
-:hasSample :ContractRegisterWohrer2018 ;
+:canonicalHasSample :ContractRegistryXu2018A ;
+:canonicalHasSample :ContractRegistryMarchesi2020Security ;
+:canonicalHasSample :ContractRegisterWohrer2018Design ;
+:canonicalHasSample :ContractRegisterWohrer2020From ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1519,7 +1576,7 @@ rdfs:label "Contract Registry" .
                           :Canonical ,
                           :ChallengeResponse ,
                           :Unspecified ;
-:hasSample :ChallengeResponseEberhardt2017 ;
+:canonicalHasSample :ChallengeResponseEberhardt2017On ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1532,7 +1589,7 @@ rdfs:label "Challenge Response" .
                           :Canonical ,
                           :OffChainSignatures ,
                           :Unspecified ;
-:hasSample :OffChainSignaturesEberhardt2017 ;
+:canonicalHasSample :OffChainSignaturesEberhardt2017On ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1545,7 +1602,7 @@ rdfs:label "Off-chain Signatures" .
                           :Canonical ,
                           :DelegatedComputation ,
                           :Unspecified ;
-:hasSample :DelegatedComputationEberhardt2017 ;
+:canonicalHasSample :DelegatedComputationEberhardt2017On ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1558,7 +1615,7 @@ rdfs:label "Delegated Computation" .
                           :Canonical ,
                           :LowContractFootprint ,
                           :Unspecified ;
-:hasSample :LowContractFootprintEberhardt2017 ;
+:canonicalHasSample :LowContractFootprintEberhardt2017On ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1571,7 +1628,7 @@ rdfs:label "Low Contract Footprint" .
                           :Canonical ,
                           :PullBasedInboundOracle ,
                           :Unspecified ;
-:hasSample :PullBasedInboundOracleMühlberger2020 ;
+:canonicalHasSample :PullBasedInboundOracleMühlberger2020Foundational ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1584,7 +1641,7 @@ rdfs:label "Pull-based inbound oracle" .
                           :Canonical ,
                           :PushBasedInboundOracle ,
                           :Unspecified ;
-:hasSample :PushBasedInboundOracleMühlberger2020 ;
+:canonicalHasSample :PushBasedInboundOracleMühlberger2020Foundational ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1597,7 +1654,7 @@ rdfs:label "Push-based inbound oracle" .
                           :Canonical ,
                           :PullBasedOutboundOracle ,
                           :Unspecified ;
-:hasSample :PullBasedOutboundOracleMühlberger2020 ;
+:canonicalHasSample :PullBasedOutboundOracleMühlberger2020Foundational ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1610,7 +1667,7 @@ rdfs:label "Pull-based outbound oracle" .
                           :Canonical ,
                           :PushBasedOutboundOracle ,
                           :Unspecified ;
-:hasSample :PushBasedOutboundOracleMühlberger2020 ;
+:canonicalHasSample :PushBasedOutboundOracleMühlberger2020Foundational ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1623,7 +1680,7 @@ rdfs:label "Push-based outbound oracle" .
                           :Canonical ,
                           :ContractComposer ,
                           :Unspecified ;
-:hasSample :ContractComposerLiu2018 ;
+:canonicalHasSample :ContractComposerLiu2018Applying ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1636,7 +1693,7 @@ rdfs:label "Contract Composer" .
                           :Canonical ,
                           :ContractDecorator ,
                           :Unspecified ;
-:hasSample :ContractDecoratorLiu2018 ;
+:canonicalHasSample :ContractDecoratorLiu2018Applying ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1649,7 +1706,7 @@ rdfs:label "Contract Decorator" .
                           :Canonical ,
                           :ContractMediator ,
                           :Unspecified ;
-:hasSample :ContractMediatorLiu2018 ;
+:canonicalHasSample :ContractMediatorLiu2018Applying ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1662,7 +1719,7 @@ rdfs:label "Contract Mediator" .
                           :Canonical ,
                           :ContractObserver ,
                           :Unspecified ;
-:hasSample :ContractObserverLiu2018 ;
+:canonicalHasSample :ContractObserverLiu2018Applying ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
@@ -1675,7 +1732,7 @@ rdfs:label "Contract Observer" .
                           :Canonical ,
                           :HashSecret ,
                           :Unspecified ;
-:hasSample :HashSecretLiu2018 ;
+:canonicalHasSample :HashSecretLiu2018Applying ;
 
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution ""^^rdfs:Literal ;
