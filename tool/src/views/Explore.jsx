@@ -30,7 +30,7 @@ const useStyles = makeStyles(() => ({
 
 export default function Explore() {
     const classes = useStyles();
-    const [categories, setCategories] = useState({})
+    const [ontologyClasses, setOntologyClasses] = useState([])
     const [selected, setSelected] = useState({})
     const [patterns, setPatterns] = useState([])
 
@@ -42,29 +42,23 @@ export default function Explore() {
     }, [selected]);
 
     useEffect(() => {
-        getSubclasses('owl:Thing')
-        .then(resClasses => {
-            // simplifying notation
-            resClasses = resClasses['owl:Thing']['childrens']
-            let subclasses = []
-            Object.keys(resClasses).forEach(key => {
-            subclasses.push(getSubclasses(resClasses[key].subject.value))
-            })
-            Promise.all(subclasses)
-            .then(resSubclass => {
-                resSubclass.forEach(res => {
-                let key = Object.keys(res)[0]
-                resClasses[key] = {
-                    ...resClasses[key],
-                    "childrens": res[key].childrens
+        const getInitialSubclasses = async () => {
+            let resClasses = await getSubclasses('owl:Thing');
+            let newOntologyClasses = {...resClasses};
+            for (let resClassKey in newOntologyClasses) {
+                newOntologyClasses[resClassKey]['initial'] = true;
+                newOntologyClasses[resClassKey]['childrens'] = [];
+                let resSubclasses = await getSubclasses(resClassKey)
+                for (let resSubclassKey in resSubclasses) {
+                    newOntologyClasses[resSubclassKey] = resSubclasses[resSubclassKey]
+                    newOntologyClasses[resSubclassKey]['parent'] = resClassKey;
+                    newOntologyClasses[resClassKey]['childrens'].push(resSubclassKey);
                 }
-                })
+            }
+            setOntologyClasses(newOntologyClasses);
+        };
 
-                // temporary, must be not hardcoded
-                delete resClasses['onto:Paper']
-                setCategories(resClasses);
-            }) 
-        })
+        getInitialSubclasses();
     }, [])
 
     const displayPatterns = () => {
@@ -90,7 +84,7 @@ export default function Explore() {
     };
 
     const displaySelectedClasses = () => {
-        if (!patterns.length) {
+        if (Object.keys(selected).length === 0) {
             return (
                 <Typography variant="h6" className={classes.bigMarginTopClass}>
                     No classes selected yet.
@@ -105,7 +99,7 @@ export default function Explore() {
                             <ClearIcon className={classes.deleteIcon} onClick={() => deleteClassFromSelection(key)} />
                         </ListItemIcon>
                         <ListItemText
-                            primary={`${selected[key].label.value} (Parent: ${selected[key].parent.label.value})`}
+                            primary={`${ontologyClasses[key].label.value}`}
                         />
                     </ListItem>
                     ))}
@@ -113,11 +107,25 @@ export default function Explore() {
             )
         }
     };
-
+    
     const handleChangeSelect = (e) => {
+        getSubclasses(e.target.value)
+            .then(result => {
+                let newOntologyClasses = {...ontologyClasses}
+                Object.keys(result).forEach(resKey => {
+                    newOntologyClasses = {...newOntologyClasses, [resKey]: {
+                        ...result[resKey],
+                        parent: e.target.value
+                    }}
+                })
+                newOntologyClasses[e.target.value]['childrens'] = Object.keys(result)
+                setOntologyClasses(newOntologyClasses);
+            })
+    
+        
         setSelected({
-        ...selected,
-        [e.target.value.subject.value]: e.target.value
+            ...selected,
+            [e.target.value]: ontologyClasses[e.target.value].label.value
         })
     };
 
@@ -129,32 +137,32 @@ export default function Explore() {
 
     return (
         <ContentContainer>
-        <HealthCheck className={classes.healthCheck} variant="overline" component="div" />
-        <Grid container spacing={2} className={classes.smallMarginTopClass}>
-            <Grid item md={5} xs={12}>
-            <Grid item className={classes.marginBottomClass} md={12}>
-                <Paper className={classes.section}>
-                    <Typography className={classes.marginBottomClass} variant="h6">Class selection</Typography>
-                    <Divider />
-                    <ClassTabs categories={categories} handleChangeSelect={handleChangeSelect} selected={selected} />
-                </Paper>
+            <HealthCheck className={classes.healthCheck} variant="overline" component="div" />
+            <Grid container spacing={2} className={classes.smallMarginTopClass}>
+                <Grid item md={5} xs={12}>
+                <Grid item className={classes.marginBottomClass} md={12}>
+                    <Paper className={classes.section}>
+                        <Typography className={classes.marginBottomClass} variant="h6">Class selection</Typography>
+                        <Divider />
+                        <ClassTabs ontologyClasses={ontologyClasses} handleChangeSelect={handleChangeSelect} selected={selected} />
+                    </Paper>
+                </Grid>
+                <Grid item md={12}>
+                    <Paper className={classes.section}>
+                        <Typography className={classes.marginBottomClass} variant="h6">Selected classes</Typography>
+                        <Divider />
+                        {displaySelectedClasses()}
+                    </Paper>
+                </Grid>
+                </Grid>
+                <Grid item md={7} xs={12}>
+                    <Paper className={classes.section}>
+                        <Typography className={classes.marginBottomClass} variant="h6">Corresponding patterns</Typography>
+                        <Divider />
+                        {displayPatterns()}
+                    </Paper>
+                </Grid>
             </Grid>
-            <Grid item md={12}>
-                <Paper className={classes.section}>
-                    <Typography className={classes.marginBottomClass} variant="h6">Selected classes</Typography>
-                    <Divider />
-                    {displaySelectedClasses()}
-                </Paper>
-            </Grid>
-            </Grid>
-            <Grid item md={7} xs={12}>
-                <Paper className={classes.section}>
-                    <Typography className={classes.marginBottomClass} variant="h6">Corresponding patterns</Typography>
-                    <Divider />
-                    {displayPatterns()}
-                </Paper>
-            </Grid>
-        </Grid>
         </ContentContainer>
     );
 }

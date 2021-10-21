@@ -36,7 +36,7 @@ export default function HealthCheck(props) {
             {displayHealthCheck()}
             &nbsp;&nbsp;
             <Typography {...props}>
-                Apache Fuseki connection
+                {isUp ? "Connected": "Disconnected"} - Apache Fuseki
             </Typography>
         </div>
     );
