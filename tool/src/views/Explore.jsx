@@ -1,31 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon } from '@mui/material';
+import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
 import { getSubclasses, getPatterns } from '../requests/fuseki';
 import ClassTabs from '../components/ClassTabs';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 const useStyles = makeStyles(() => ({
-  section: {
-    padding: '20px'
-  },
-  healthCheck: {
-    fontSize: '120%',
-  },
-  marginBottomClass: {
-    marginBottom: '20px'
-  },
-  deleteIcon: {
-    cursor: "pointer"
-  },
-  smallMarginTopClass: {
-      marginTop: "5px"
-  },
-  bigMarginTopClass: {
-    marginTop: "20px"
-},
+    section: {
+        padding: '20px'
+    },
+    healthCheck: {
+        fontSize: '120%',
+    },
+    marginBottomClass: {
+        marginBottom: '20px'
+    },
+    smallMarginTopClass: {
+        marginTop: '5px'
+    },
+    bigMarginTopClass: {
+        marginTop: '20px'
+    },
+    classTitleContainer: {
+        width: '100%',
+        textAlign: 'center',
+        height: '50px',
+    },
+    classTitle: {
+        float: 'left'
+    },
+    classTitleBtn: {
+        float: 'right',
+        display: 'inline-block',
+        height: '32px'
+    }
 }));
 
 export default function Explore() {
@@ -41,23 +52,23 @@ export default function Explore() {
             })
     }, [selected]);
 
-    useEffect(() => {
-        const getInitialSubclasses = async () => {
-            let resClasses = await getSubclasses('owl:Thing');
-            let newOntologyClasses = {...resClasses};
-            for (let resClassKey in newOntologyClasses) {
-                newOntologyClasses[resClassKey]['initial'] = true;
-                newOntologyClasses[resClassKey]['childrens'] = [];
-                let resSubclasses = await getSubclasses(resClassKey)
-                for (let resSubclassKey in resSubclasses) {
-                    newOntologyClasses[resSubclassKey] = resSubclasses[resSubclassKey]
-                    newOntologyClasses[resSubclassKey]['parent'] = resClassKey;
-                    newOntologyClasses[resClassKey]['childrens'].push(resSubclassKey);
-                }
+    const getInitialSubclasses = async () => {
+        let resClasses = await getSubclasses('owl:Thing');
+        let newOntologyClasses = {...resClasses};
+        for (let resClassKey in newOntologyClasses) {
+            newOntologyClasses[resClassKey]['initial'] = true;
+            newOntologyClasses[resClassKey]['childrens'] = [];
+            let resSubclasses = await getSubclasses(resClassKey)
+            for (let resSubclassKey in resSubclasses) {
+                newOntologyClasses[resSubclassKey] = resSubclasses[resSubclassKey]
+                newOntologyClasses[resSubclassKey]['parent'] = resClassKey;
+                newOntologyClasses[resClassKey]['childrens'].push(resSubclassKey);
             }
-            setOntologyClasses(newOntologyClasses);
-        };
+        }
+        setOntologyClasses(newOntologyClasses);
+    };
 
+    useEffect(() => {
         getInitialSubclasses();
     }, [])
 
@@ -96,7 +107,11 @@ export default function Explore() {
                     {Object.keys(selected).map(key => (
                     <ListItem>
                         <ListItemIcon>
-                            <ClearIcon className={classes.deleteIcon} onClick={() => deleteClassFromSelection(key)} />
+                            <Tooltip title="Delete class filter">
+                                <IconButton onClick={() => deleteClassFromSelection(key)}>
+                                    <ClearIcon/>
+                                </IconButton>
+                            </Tooltip>
                         </ListItemIcon>
                         <ListItemText
                             primary={`${ontologyClasses[key].label.value}`}
@@ -107,7 +122,12 @@ export default function Explore() {
             )
         }
     };
-    
+
+    const resetSelection = () => {
+        setSelected([]);
+        getInitialSubclasses();
+    };
+
     const handleChangeSelect = (e) => {
         getSubclasses(e.target.value)
             .then(result => {
@@ -142,7 +162,16 @@ export default function Explore() {
                 <Grid item md={5} xs={12}>
                 <Grid item className={classes.marginBottomClass} md={12}>
                     <Paper className={classes.section}>
-                        <Typography className={classes.marginBottomClass} variant="h6">Class selection</Typography>
+                        <div className={classes.classTitleContainer}>
+                            <Typography className={classes.classTitle} variant="h6">Class selection</Typography>
+                            <div className={classes.classTitleBtn}>
+                                <Tooltip title="Reset filters">
+                                    <IconButton onClick={resetSelection}>
+                                        <RefreshIcon/> 
+                                    </IconButton>
+                                </Tooltip>
+                            </div>
+                        </div>
                         <Divider />
                         <ClassTabs ontologyClasses={ontologyClasses} handleChangeSelect={handleChangeSelect} selected={selected} />
                     </Paper>
