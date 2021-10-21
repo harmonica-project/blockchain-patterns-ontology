@@ -125,6 +125,7 @@ export default function Explore() {
 
     const resetSelection = () => {
         setSelected([]);
+        setOntologyClasses({})
         getInitialSubclasses();
     };
 
