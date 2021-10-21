@@ -197,6 +197,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Blockchain
 :Blockchain rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ;
             rdfs:label "Blockchain"@en .
 
 
@@ -256,6 +257,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Domain
 :Domain rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ;
         rdfs:label "Domain"@en .
 
 
