@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip } from '@mui/material';
+import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip, Card } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
@@ -36,6 +36,17 @@ const useStyles = makeStyles(() => ({
         float: 'right',
         display: 'inline-block',
         height: '32px'
+    },
+    patternItem: {
+        padding: '10px'
+    },
+    patternCard: {
+        padding: '10px',
+        height: '80%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center'
     }
 }));
 
@@ -72,6 +83,21 @@ export default function Explore() {
         getInitialSubclasses();
     }, [])
 
+    const getPattern = (pattern) => {
+        console.log(pattern)
+        let text = pattern.label.value;
+        if (!pattern['hasCanonical']) text += ' (canonical)';
+        else text += ` (from: ${(pattern['hasPaper'].value.split(':'))[1]})`;
+
+        return (
+            <Card className={classes.patternCard}>
+                <Typography>
+                    {text}
+                </Typography>
+            </Card>
+            );
+    };
+
     const displayPatterns = () => {
         if (!patterns.length) {
             return (
@@ -81,15 +107,13 @@ export default function Explore() {
             )
         } else {
             return (
-                <List dense>
+                <Grid container>
                     {patterns.map(pattern => (
-                    <ListItem>
-                        <ListItemText
-                            primary={pattern.entity.value}
-                        />
-                    </ListItem>
+                        <Grid item xs={3} className={classes.patternItem}>
+                            {getPattern(pattern)}
+                        </Grid>
                     ))}
-                </List>
+                </Grid>
             )
         }
     };
@@ -188,7 +212,6 @@ export default function Explore() {
                 <Grid item md={7} xs={12}>
                     <Paper className={classes.section}>
                         <Typography className={classes.marginBottomClass} variant="h6">Corresponding patterns</Typography>
-                        <Divider />
                         {displayPatterns()}
                     </Paper>
                 </Grid>
