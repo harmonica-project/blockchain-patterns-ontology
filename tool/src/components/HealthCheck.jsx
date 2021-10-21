@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { health_check } from '../../requests/fuseki';
+import { healthCheck } from '../requests/fuseki';
 import { makeStyles } from '@mui/styles';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -19,7 +19,7 @@ export default function HealthCheck(props) {
     const [isUp, setIsUp] = useState(false)
 
     const checkHealthCheck = async () => {
-        setIsUp(await health_check())
+        setIsUp(await healthCheck())
     }
 
     const displayHealthCheck = () => {

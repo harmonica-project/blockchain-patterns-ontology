@@ -1,8 +1,8 @@
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Home from './views/Home/Home';
-import Recommendation from './views/Recommendation/Recommendation';
-import Explore from './views/Explore/Explore';
+import Navbar from './components/Navbar';
+import Home from './views/Home';
+import Recommendation from './views/Recommendation';
+import Explore from './views/Explore';
 
 import {
   BrowserRouter as Router,
