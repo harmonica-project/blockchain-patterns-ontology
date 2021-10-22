@@ -174,9 +174,26 @@ export default function Explore() {
         })
     };
 
+    const getChildrensToDelete = (classname) => {
+        let newChildrens = [classname];
+
+        if (ontologyClasses[classname]['childrens'] && ontologyClasses[classname]['childrens'].length) {
+            for (let i in ontologyClasses[classname]['childrens']) {
+                let childrens = getChildrensToDelete(ontologyClasses[classname]['childrens'][i]);
+                newChildrens = [...newChildrens, ...childrens];
+            }
+        }
+
+        return newChildrens;
+    };
+
     const deleteClassFromSelection = (classname) => {
         const newSelected = {...selected};
-        delete newSelected[classname];
+        // we cannot delete directly the class, we also need to delete its childrens as they cannot be selected anymore
+        const childrens = getChildrensToDelete(classname);
+        for (let i in childrens) {
+            delete newSelected[childrens[i]];
+        }
         setSelected(newSelected);
     }
 
