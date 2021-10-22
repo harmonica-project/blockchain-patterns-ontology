@@ -63,34 +63,44 @@ export const getSubclasses = async (className) => {
 
 export const getPatterns = async (filterClasses) => {
     filterClasses = Object.keys(filterClasses);
+    const alpha = Array.from(Array(26)).map((e, i) => i + 65);
+    const alphabet = alpha.map((x) => String.fromCharCode(x)).slice(1);
 
-    const additionalClassTemplate = (additionalClass) => {
-        return `{ ?entity rdf:type ${additionalClass} }`
+    const additionalClassTemplate = (additionalClass, additionalIdentifier) => {
+        return `?${additionalIdentifier} rdfs:subClassOf* ${additionalClass}.`
     };
 
-    const queryTemplate = (firstClass, additionalClasses) => {
+    const additionalIdentifierTemplate = (additionalIdentifier) => {
+        return `, ?${additionalIdentifier}`
+    };
+
+    const queryTemplate = (firstClass, additionalIdentifiers = "", additionalClasses = "") => {
         return `SELECT DISTINCT ?entity ?label ?hasPaper ?hasCanonical
                     WHERE {
-                        { ?entity rdf:type ${firstClass} }.
+                        ?A rdfs:subClassOf* ${firstClass}.
                         ${additionalClasses}
-                        OPTIONAL { ?entity rdfs:label ?label }
-                        OPTIONAL { ?entity onto:hasPaper ?hasPaper }
-                        OPTIONAL { ?entity onto:hasCanonical ?hasCanonical }
+                        ?individual a ?A ${additionalIdentifiers} .
+                        OPTIONAL { ?individual rdfs:label ?label }
+                        OPTIONAL { ?individual onto:hasPaper ?hasPaper }
+                        OPTIONAL { ?individual onto:hasCanonical ?hasCanonical }
                     }
                 `
     }
     
     let query = "";
     if (filterClasses.length === 0) {
-        query = queryTemplate("onto:Pattern", '')
+        query = queryTemplate("onto:Pattern")
     } else if (filterClasses.length === 1) {
-        query = queryTemplate(filterClasses[0], '')
+        query = queryTemplate(filterClasses[0])
     } else {
         let additionalClasses = "";
-        filterClasses.slice(1).forEach(filterClass => {
-            additionalClasses += additionalClassTemplate(filterClass);
+        let additionalIdentifiers = "";
+
+        filterClasses.slice(1).forEach((filterClass, i) => {
+            additionalClasses += additionalClassTemplate(filterClass, alphabet[i]);
+            additionalIdentifiers += additionalIdentifierTemplate(alphabet[i]);
         })
-        query = queryTemplate(filterClasses[0], additionalClasses);
+        query = queryTemplate(filterClasses[0], additionalIdentifiers, additionalClasses);
     }
 
     try {
