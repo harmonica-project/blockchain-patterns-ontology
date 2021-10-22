@@ -28,9 +28,15 @@ export const healthCheck = async () => {
         }
         LIMIT 1
     `
-    let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
-    if (response.status === 200) return true;
-    return false;
+
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) return true;
+        return false;
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return false;
+    }
 }
 
 export const getSubclasses = async (className) => {
@@ -43,11 +49,16 @@ export const getSubclasses = async (className) => {
             }
         }
     `
-    let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
-    if (response.status === 200) {
-        return convertResultToMapping(parseResults(await response.json()));
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            return convertResultToMapping(parseResults(await response.json()));
+        }
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
     }
-    return [];
 }
 
 export const getPatterns = async (filterClasses) => {
@@ -82,9 +93,14 @@ export const getPatterns = async (filterClasses) => {
         query = queryTemplate(filterClasses[0], additionalClasses);
     }
 
-    let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
-    if (response.status === 200) {
-        return parseResults(await response.json());
-    };
-    return [];
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            return parseResults(await response.json());
+        };
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
+    }
 }
