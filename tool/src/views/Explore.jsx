@@ -7,6 +7,8 @@ import HealthCheck from '../components/HealthCheck';
 import { getSubclasses, getPatterns } from '../requests/fuseki';
 import ClassTabs from '../components/ClassTabs';
 import RefreshIcon from '@mui/icons-material/Refresh';
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import AttachFileIcon from '@mui/icons-material/AttachFile';
 
 const useStyles = makeStyles(() => ({
     section: {
@@ -87,15 +89,14 @@ export default function Explore() {
         let text = `${pattern.label.value} (from: ${(pattern['hasPaper'].value.split(':'))[1]})`;
 
         return (
-            <Card className={classes.patternCard}>
-                <Typography>
-                    {text}
-                </Typography>
-            </Card>
+            <Typography>
+                {text}
+            </Typography>
             );
     };
 
     const displayPatterns = () => {
+        console.log(patterns)
         if (!patterns.length) {
             return (
                 <Typography variant="h6" className={classes.bigMarginTopClass}>
@@ -106,8 +107,26 @@ export default function Explore() {
             return (
                 <Grid container>
                     {patterns.map(pattern => (
-                        <Grid item xs={3} className={classes.patternItem}>
-                            {getPattern(pattern)}
+                        <Grid item xs={4} className={classes.patternItem}>
+                            <Card className={classes.patternCard}>
+                                <Grid container>
+                                    <Grid item xs={9}>
+                                        <Typography>
+                                            {pattern.label.value}
+                                        </Typography>
+                                        <Typography variant="overline">
+                                            {(pattern['hasPaper'].value.split(':'))[1]}
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item xs={3}>
+                                        <Tooltip title="Add pattern to my list">
+                                            <IconButton>
+                                                <PlaylistAddIcon fontSize="large" />
+                                            </IconButton>
+                                        </Tooltip>
+                                    </Grid>
+                                </Grid>
+                            </Card>
                         </Grid>
                     ))}
                 </Grid>
@@ -217,7 +236,7 @@ export default function Explore() {
                 </Grid>
                 <Grid item md={7} xs={12}>
                     <Paper className={classes.section}>
-                        <Typography className={classes.marginBottomClass} variant="h6">Corresponding patterns</Typography>
+                        <Typography className={classes.marginBottomClass} variant="h6">Corresponding patterns proposed by papers</Typography>
                         {displayPatterns()}
                     </Paper>
                 </Grid>
