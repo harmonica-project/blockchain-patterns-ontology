@@ -19,15 +19,15 @@ def get_paper_from_id(papers, paper_id):
       return p
   return False
 
-def get_sample_pattern_from_id(sample_patterns, paper_id):
-  for p in sample_patterns:
+def get_pattern_proposal_from_id(pattern_proposals, paper_id):
+  for p in pattern_proposals:
     if p['ID'] == paper_id:
       return p
   return False
 
-def get_sample_patterns_from_URI(sample_patterns, paper_uri):
+def get_pattern_proposals_from_URI(pattern_proposals, paper_uri):
   compatible_patterns = []
-  for p in sample_patterns:
+  for p in pattern_proposals:
     if parse_to_URI(p['Name']) == paper_uri:
       compatible_patterns.append(p)
   return compatible_patterns
@@ -50,19 +50,19 @@ def parse_to_relation(name):
   name = ''.join(nameArray)
   return name
 
-# generate the links between example patterns. 5 different links exists, they are listed in the array below for easy detection in the dict
-def get_links_between_patterns(sample_patterns, sample_pattern, example_mapping, papers):
+# generate the links between proposals. 5 different links exists, they are listed in the array below for easy detection in the dict
+def get_links_between_patterns(pattern_proposals, pattern_proposal, example_mapping, papers):
   link_types = ["From pattern", "Related to", "Variant of", "Requires", "Benefits from"]
   relation_template = load_template('relation')
   relations_str = ''
 
   for key in link_types:
-    if key in sample_pattern:
-      relations = re.split(', ', sample_pattern[key])
+    if key in pattern_proposal:
+      relations = re.split(', ', pattern_proposal[key])
       relation_type = parse_to_relation(key)
       for r in relations:
         if r.isdigit():
-          relation_paper = get_sample_pattern_from_id(sample_patterns, r)
+          relation_paper = get_pattern_proposal_from_id(pattern_proposals, r)
           paper = get_paper_from_id(papers, relation_paper['Paper'])
           relation_paper_name = parse_to_URI(relation_paper['Name']) + get_first_author(paper['author']) + paper['year'] + get_first_word_title(paper['Title'])
         else:
@@ -74,7 +74,7 @@ def get_links_between_patterns(sample_patterns, sample_pattern, example_mapping,
 
   return relations_str
 
-# load the SLR data as a dict, returns three different dicts: papers, examples, and canonicals
+# load the SLR data as a dict, returns three different dicts: papers, proposals, and classes
 def load_SLR_data():
   with open('patterns_data.json', 'r') as file:
     data = json.load(file)
@@ -87,30 +87,26 @@ def load_template(item):
 
 def get_application_examples(p):
   examples = ""
-  sample_template = load_template('example')
+  proposal_template = load_template('example')
   if 'Application examples' in p:
     for example in p['Application examples'].split("• "):
       if len(example):
-        examples += Template(sample_template).substitute(example=example)
+        examples += Template(proposal_template).substitute(example=example)
     return examples
   else:
     return ''
 
-# create the mappings between canonical names and example patterns names and vice versa
-def create_exemple_to_canonical_mappings(canonical_patterns):
-  canonical_mapping = {}
-  example_mapping = {}
+# create the mappings between proposal alternative names and classes
+def create_proposal_to_class_mapping(pattern_classes):
+  proposal_mapping = {}
 
-  for c in canonical_patterns:
+  for c in pattern_classes:
     if 'Alternative names' in c:
-      canonical_mapping[parse_to_URI(c['Name'])] = [parse_to_URI(c['Name'])] + [parse_to_URI(an) for an in c['Alternative names'].split(', ')]
       for an in c['Alternative names'].split(', '):
-        example_mapping[parse_to_URI(an)] = parse_to_URI(c['Name'])
-    else:
-      canonical_mapping[parse_to_URI(c['Name'])] = [parse_to_URI(c['Name'])]
-    example_mapping[parse_to_URI(c['Name'])] = parse_to_URI(c['Name'])
+        proposal_mapping[parse_to_URI(an)] = parse_to_URI(c['Name'])
+    proposal_mapping[parse_to_URI(c['Name'])] = parse_to_URI(c['Name'])
 
-  return canonical_mapping, example_mapping
+  return proposal_mapping
 
 # used to parse context/solution fields of pattern objects into litterals that can be attached to individuals
 def parse_to_ontology_literal_if_exists(item, key):
@@ -160,46 +156,42 @@ def generate_papers(papers_list):
 def get_first_word_title(title):
   return re.sub(r'[\W_]+', '', title.split(' ')[0])
 
-# generate_samples() returns the samples found in papers
-def generate_samples(sample_patterns, example_mapping, papers):
-  samples = ""
-  sample_template = load_template('sample')
+# generate_proposals() returns the proposals found in papers
+def generate_proposals(pattern_proposals, proposal_mapping, papers):
+  proposals = ""
+  proposal_template = load_template('proposal')
   
-  # iterate on sample_patterns/examples to generate "sample patterns" individuals
-  for p in sample_patterns:
+  # iterate on pattern proposals to generate "proposal patterns" individuals
+  for p in pattern_proposals:
     # get associated paper from pattern paper id
-    paper = get_sample_pattern_from_id(papers, p['Paper'])
+    paper = get_pattern_proposal_from_id(papers, p['Paper'])
 
-    # generate pattern individuals, connected to their canonicals and their classes
-    samples += Template(sample_template).substitute(
+    # generate pattern individuals, connected to their classes
+    proposals += Template(proposal_template).substitute(
       owner="nicolas", 
       uri=parse_to_URI(p['Name']), 
       name=p['Name'], 
       blockchain=parse_to_URI(p['Target']), 
       domain=parse_to_URI(p['Applicability domain']), 
-      refClass=example_mapping[parse_to_URI(p['Name'])], 
+      refClass=proposal_mapping[parse_to_URI(p['Name'])], 
       context=parse_to_ontology_literal_if_exists(p, 'Context & Problem'), 
       solution=parse_to_ontology_literal_if_exists(p, 'Solution'),
       author=get_first_author(paper['author']),
       year=paper['year'],
       title_word=get_first_word_title(paper['Title']),
-      links=get_links_between_patterns(sample_patterns, p, example_mapping, papers),
+      links=get_links_between_patterns(pattern_proposals, p, proposal_mapping, papers),
       examples=get_application_examples(p),
       language=parse_to_URI(p['Language'])
     )
 
-  return samples
+  return proposals
 
-# generate_classes_and_canonicals() returns two strings: one for all classes associated to the patterns, another for all canonical patterns attached to those classes
-def generate_classes_and_canonicals(canonical_patterns, sample_patterns, canonical_mapping, papers):
+# generate_classes() returns all pattern classes
+def generate_classes(pattern_classes):
   classes = ''
-  canonicals = ''
   class_template = load_template('class')
-  canonical_template = load_template('canonical')
-  relation_template = load_template('relation')
 
-  for p in canonical_patterns:
-    canonical_samples = ''
+  for p in pattern_classes:
     patternType = parse_to_URI(p['Type (determined)'])
     # links individual to its class
     if patternType == "ArchitecturalPattern" or patternType == "Idiom":
@@ -218,60 +210,35 @@ def generate_classes_and_canonicals(canonical_patterns, sample_patterns, canonic
       category=patternCategory
     )
 
-    # generates the relations (in Turtle) between a canonical individual and its samples
-    if parse_to_URI(p['Name']) in canonical_mapping:
-      for ex in canonical_mapping[parse_to_URI(p['Name'])]:
-        compatible_patterns = get_sample_patterns_from_URI(sample_patterns, ex)
-        for compatible_pattern in compatible_patterns:
-          paper = get_paper_from_id(papers, compatible_pattern['Paper'])
-          canonical_samples += Template(relation_template).substitute(relation="canonicalHasSample", value=(ex + get_first_author(paper['author']) + paper['year'] + get_first_word_title(paper['Title'])))
-
-    # generate canonical individuals, linked to their related classes
-    canonicals += Template(canonical_template).substitute(
-      owner="nicolas", 
-      uri=parse_to_URI(p['Name']), 
-      name=p['Name'], 
-      blockchain=parse_to_URI(p['Target (generalized)']), 
-      domain=parse_to_URI(p['Applicability domain (generalized)']), 
-      refClass=parse_to_URI(p['Name']), 
-      samples=canonical_samples, 
-      context='', 
-      solution='',
-      language=parse_to_URI(p['Language (generalized)'])
-    )
-
-  return classes, canonicals
+  return classes
 
 # run() entry point of the script
 # get templates and SLR data, iterate on canonicals then on examples to generate the classes + canonicals and examples
 def run():
-  papers, sample_patterns, canonical_patterns = load_SLR_data()
+  papers, pattern_proposals, pattern_classes = load_SLR_data()
 
   with open('../ontologies/structure.ttl', 'r') as file:
     ontology_structure = file.read()
 
   # a double mapping is returned by this function: one maps a canonical name into an array of possible alternative names
   # and the other one maps an example name to its canonical
-  canonical_mapping, example_mapping = create_exemple_to_canonical_mappings(canonical_patterns)
+  proposal_mapping = create_proposal_to_class_mapping(pattern_classes)
 
-  classes_ttl, canonicals_ttl = generate_classes_and_canonicals(canonical_patterns, sample_patterns, canonical_mapping, papers)
-  samples_ttl = generate_samples(sample_patterns, example_mapping, papers)
+  classes_ttl = generate_classes(pattern_classes)
+  proposals_ttl = generate_proposals(pattern_proposals, proposal_mapping, papers)
   papers_ttl = generate_papers(papers)
 
-  # write classes, canonicals and samples in three distinct files, can be merged into a complete ontology
+  # write classes, papers and proposals in three distinct files, can be merged into a complete ontology
   with open("./results/classes.ttl", "w") as text_file_classes:
     text_file_classes.write(classes_ttl)
 
-  with open("./results/canonicals.ttl", "w") as text_file_canonicals:
-    text_file_canonicals.write(canonicals_ttl)
-
-  with open("./results/samples.ttl", "w") as text_file_samples:
-    text_file_samples.write(samples_ttl)
+  with open("./results/proposals.ttl", "w") as text_file_proposals:
+    text_file_proposals.write(proposals_ttl)
 
   with open("./results/papers.ttl", "w") as text_file_papers:
     text_file_papers.write(papers_ttl)
 
   with open("../ontologies/result.ttl", "w") as text_file_ontology:
-    text_file_ontology.write(ontology_structure + classes_ttl + canonicals_ttl + samples_ttl + papers_ttl)
+    text_file_ontology.write(ontology_structure + classes_ttl + proposals_ttl + papers_ttl)
 
 run()

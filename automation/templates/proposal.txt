@@ -1,13 +1,11 @@
 ###  http://www.semanticweb.org/$owner/ontologies/2021/8/patterns#${uri}${author}${year}${title_word}
 :${uri}${author}${year}${title_word} rdf:type owl:NamedIndividual ,
                    :$refClass ,
-                   :Sample ,
+                   :Proposal ,
                    :$domain ,
                    :$blockchain ,
                    :$language ;
 
-$links
-:hasCanonical :${refClass}Canonical ;
 :hasPaper :${author}${year}${title_word} ;
 :ContextAndProblem "$context"^^rdfs:Literal ;
 :Solution "$solution"^^rdfs:Literal ;
