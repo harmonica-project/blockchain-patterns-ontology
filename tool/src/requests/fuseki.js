@@ -75,14 +75,13 @@ export const getPatterns = async (filterClasses) => {
     };
 
     const queryTemplate = (firstClass, additionalIdentifiers = "", additionalClasses = "") => {
-        return `SELECT DISTINCT ?entity ?label ?hasPaper ?hasCanonical
+        return `SELECT DISTINCT ?entity ?label ?hasPaper
                     WHERE {
                         ?A rdfs:subClassOf* ${firstClass}.
                         ${additionalClasses}
                         ?individual a ?A ${additionalIdentifiers} .
                         OPTIONAL { ?individual rdfs:label ?label }
                         OPTIONAL { ?individual onto:hasPaper ?hasPaper }
-                        OPTIONAL { ?individual onto:hasCanonical ?hasCanonical }
                     }
                 `
     }

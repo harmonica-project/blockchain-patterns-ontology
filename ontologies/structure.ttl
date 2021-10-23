@@ -12,6 +12,13 @@
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#addressProblem
+:addressProblem rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Pattern ;
+                rdfs:range :Problem .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#benefitsFrom
 :benefitsFrom rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
@@ -141,10 +148,26 @@ owl:topObjectProperty rdfs:domain :Pattern ;
                 rdfs:label "All blockchains"@en .
 
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ArchitecturalDesignOrganization
+:ArchitecturalDesignOrganization rdf:type owl:Class ;
+                                 rdfs:subClassOf :Problem ;
+                                 rdfs:label "Architectural design organization"@en .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ArchitecturalPattern
 :ArchitecturalPattern rdf:type owl:Class ;
-                      rdfs:subClassOf :Pattern ;
+                      rdfs:subClassOf :Pattern ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :addressProblem ;
+                                        owl:someValuesFrom :ArchitecturalDesignOrganization
+                                      ] ;
                       rdfs:label "Architectural pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AssetManagement
+:AssetManagement rdf:type owl:Class ;
+                 rdfs:subClassOf :InteractingWithBlockchain ;
+                 rdfs:label "Asset management"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BPM
@@ -153,9 +176,19 @@ owl:topObjectProperty rdfs:domain :Pattern ;
      rdfs:label "BPM"@en .
 
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BPMFeatureApplication
+:BPMFeatureApplication rdf:type owl:Class ;
+                       rdfs:subClassOf :DomainOrientedApplicationDesign ;
+                       rdfs:label "BPM feature application"@en .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BPMPattern
 :BPMPattern rdf:type owl:Class ;
-            rdfs:subClassOf :DomainBasedPattern ;
+            rdfs:subClassOf :DomainBasedPattern ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :addressProblem ;
+                              owl:someValuesFrom :BPMFeatureApplication
+                            ] ;
             rdfs:label "BPM pattern"@en .
 
 
@@ -165,9 +198,19 @@ owl:topObjectProperty rdfs:domain :Pattern ;
          rdfs:label "Big data"@en .
 
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BigDataFeatureApplication
+:BigDataFeatureApplication rdf:type owl:Class ;
+                           rdfs:subClassOf :DomainOrientedApplicationDesign ;
+                           rdfs:label "Big data feature application"@en .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BigDataPattern
 :BigDataPattern rdf:type owl:Class ;
-                rdfs:subClassOf :DomainBasedPattern ;
+                rdfs:subClassOf :DomainBasedPattern ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :addressProblem ;
+                                  owl:someValuesFrom :BigDataFeatureApplication
+                                ] ;
                 rdfs:label "Big data pattern"@en .
 
 
@@ -177,52 +220,115 @@ owl:topObjectProperty rdfs:domain :Pattern ;
             rdfs:label "Blockchain"@en .
 
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainEnhancedOffChainStorage
+:BlockchainEnhancedOffChainStorage rdf:type owl:Class ;
+                                   rdfs:subClassOf :InteractingWithBlockchain ;
+                                   rdfs:label "Blockchain-enhanced off-chain storage"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainTransactionHandling
+:BlockchainTransactionHandling rdf:type owl:Class ;
+                               rdfs:subClassOf :InteractingWithBlockchain ;
+                               rdfs:label "Blockchain transaction handling"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BuildOnChainApplication
+:BuildOnChainApplication rdf:type owl:Class ;
+                         rdfs:subClassOf :DesignPatternApplication ;
+                         owl:disjointWith :InteractingWithBlockchain ;
+                         rdfs:label "Build on-chain application"@en .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractAccessControlPattern
 :ContractAccessControlPattern rdf:type owl:Class ;
-                              rdfs:subClassOf :SmartContractPattern ;
+                              rdfs:subClassOf :SmartContractPattern ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :addressProblem ;
+                                                owl:someValuesFrom :EnableSmartContractAccessControl
+                                              ] ;
                               rdfs:label "Contract access-control pattern"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractEfficiencyPattern
 :ContractEfficiencyPattern rdf:type owl:Class ;
-                           rdfs:subClassOf :SmartContractPattern ;
+                           rdfs:subClassOf :SmartContractPattern ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :addressProblem ;
+                                             owl:someValuesFrom :SmartContractEfficiency
+                                           ] ;
                            rdfs:label "Contract efficiency pattern"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractManagementPattern
 :ContractManagementPattern rdf:type owl:Class ;
-                           rdfs:subClassOf :SmartContractPattern ;
+                           rdfs:subClassOf :SmartContractPattern ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :addressProblem ;
+                                             owl:someValuesFrom :SmartContractManagement
+                                           ] ;
                            rdfs:label "Contract management pattern"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractSecurityPattern
 :ContractSecurityPattern rdf:type owl:Class ;
-                         rdfs:subClassOf :SmartContractPattern ;
+                         rdfs:subClassOf :SmartContractPattern ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :addressProblem ;
+                                           owl:someValuesFrom :SmartContractSecurity
+                                         ] ;
                          rdfs:label "Contract security pattern"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DataExchangePattern
 :DataExchangePattern rdf:type owl:Class ;
-                     rdfs:subClassOf :OnOffChainInteractionPattern ;
+                     rdfs:subClassOf :OnOffChainInteractionPattern ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :addressProblem ;
+                                       owl:someValuesFrom :OnOffChainDataExchange
+                                     ] ;
                      rdfs:label "Data exchange pattern"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DataManagementPattern
 :DataManagementPattern rdf:type owl:Class ;
-                       rdfs:subClassOf :OnChainPattern ;
+                       rdfs:subClassOf :OnChainPattern ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :addressProblem ;
+                                         owl:someValuesFrom :ManageOnChainData
+                                       ] ;
                        rdfs:label "Data management pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DecentralizedIdentityFeatureApplication
+:DecentralizedIdentityFeatureApplication rdf:type owl:Class ;
+                                         rdfs:subClassOf :DomainOrientedApplicationDesign ;
+                                         rdfs:label "Decentralized identity feature application"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DecentralizedIdentityPattern
 :DecentralizedIdentityPattern rdf:type owl:Class ;
-                              rdfs:subClassOf :DomainBasedPattern ;
+                              rdfs:subClassOf :DomainBasedPattern ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :addressProblem ;
+                                                owl:someValuesFrom :DecentralizedIdentityFeatureApplication
+                                              ] ;
                               rdfs:label "Decentralized identity pattern"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DesignPattern
 :DesignPattern rdf:type owl:Class ;
-               rdfs:subClassOf :Pattern ;
+               rdfs:subClassOf :Pattern ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :addressProblem ;
+                                 owl:someValuesFrom :DesignPatternApplication
+                               ] ;
                rdfs:label "Design pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DesignPatternApplication
+:DesignPatternApplication rdf:type owl:Class ;
+                          rdfs:subClassOf :Problem ;
+                          rdfs:label "Design pattern application"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Domain
@@ -233,13 +339,33 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DomainBasedPattern
 :DomainBasedPattern rdf:type owl:Class ;
-                    rdfs:subClassOf :OnChainPattern ;
+                    rdfs:subClassOf :OnChainPattern ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :addressProblem ;
+                                      owl:someValuesFrom :DomainOrientedApplicationDesign
+                                    ] ;
                     rdfs:label "Domain-based pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DomainOrientedApplicationDesign
+:DomainOrientedApplicationDesign rdf:type owl:Class ;
+                                 rdfs:subClassOf :BuildOnChainApplication ;
+                                 rdfs:label "Domain-oriented application design"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EnableSmartContractAccessControl
+:EnableSmartContractAccessControl rdf:type owl:Class ;
+                                  rdfs:subClassOf :SmartContractUsage ;
+                                  rdfs:label "Enable smart contract access control"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EncryptionPattern
 :EncryptionPattern rdf:type owl:Class ;
-                   rdfs:subClassOf :DataManagementPattern ;
+                   rdfs:subClassOf :DataManagementPattern ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :addressProblem ;
+                                     owl:someValuesFrom :OnChainDataEncryption
+                                   ] ;
                    rdfs:label "Encryption pattern"@en .
 
 
@@ -276,8 +402,18 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Idiom
 :Idiom rdf:type owl:Class ;
-       rdfs:subClassOf :Pattern ;
+       rdfs:subClassOf :Pattern ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :addressProblem ;
+                         owl:someValuesFrom :LanguageIdiomApplication
+                       ] ;
        rdfs:label "Idiom"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InteractingWithBlockchain
+:InteractingWithBlockchain rdf:type owl:Class ;
+                           rdfs:subClassOf :DesignPatternApplication ;
+                           rdfs:label "Interacting with blockchain"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Language
@@ -286,33 +422,95 @@ owl:topObjectProperty rdfs:domain :Pattern ;
           rdfs:label "Language"@en .
 
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LanguageIdiomApplication
+:LanguageIdiomApplication rdf:type owl:Class ;
+                          rdfs:subClassOf :Problem ;
+                          rdfs:label "Language idiom application"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ManageOnChainData
+:ManageOnChainData rdf:type owl:Class ;
+                   rdfs:subClassOf :BuildOnChainApplication ;
+                   rdfs:label "Manage on-chain data"@en .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MigrationPattern
 :MigrationPattern rdf:type owl:Class ;
-                  rdfs:subClassOf :DataManagementPattern ;
+                  rdfs:subClassOf :DataManagementPattern ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :addressProblem ;
+                                    owl:someValuesFrom :OnChainDataMigration
+                                  ] ;
                   rdfs:label "Migration pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultiDomainFeatureApplication
+:MultiDomainFeatureApplication rdf:type owl:Class ;
+                               rdfs:subClassOf :DomainOrientedApplicationDesign ;
+                               rdfs:label "Multi-domain feature application"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultiDomainFeaturePattern
 :MultiDomainFeaturePattern rdf:type owl:Class ;
-                           rdfs:subClassOf :DomainBasedPattern ;
+                           rdfs:subClassOf :DomainBasedPattern ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :addressProblem ;
+                                             owl:someValuesFrom :MultiDomainFeatureApplication
+                                           ] ;
                            rdfs:label "Multi-domain feature pattern"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainStoragePattern
 :OffChainStoragePattern rdf:type owl:Class ;
-                        rdfs:subClassOf :OnOffChainInteractionPattern ;
+                        rdfs:subClassOf :OnOffChainInteractionPattern ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :addressProblem ;
+                                          owl:someValuesFrom :BlockchainEnhancedOffChainStorage
+                                        ] ;
                         rdfs:label "Off-chain storage pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainDataEncryption
+:OnChainDataEncryption rdf:type owl:Class ;
+                       rdfs:subClassOf :ManageOnChainData ;
+                       rdfs:label "On-chain data encryption"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainDataMigration
+:OnChainDataMigration rdf:type owl:Class ;
+                      rdfs:subClassOf :ManageOnChainData ;
+                      rdfs:label "On-chain data migration"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainPattern
 :OnChainPattern rdf:type owl:Class ;
-                rdfs:subClassOf :DesignPattern ;
+                rdfs:subClassOf :DesignPattern ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :addressProblem ;
+                                  owl:someValuesFrom :BuildOnChainApplication
+                                ] ;
                 rdfs:label "On-chain pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainStorage
+:OnChainStorage rdf:type owl:Class ;
+                rdfs:subClassOf :ManageOnChainData ;
+                rdfs:label "On-chain storage"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnOffChainDataExchange
+:OnOffChainDataExchange rdf:type owl:Class ;
+                        rdfs:subClassOf :InteractingWithBlockchain ;
+                        rdfs:label "On/off-chain data exchange"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnOffChainInteractionPattern
 :OnOffChainInteractionPattern rdf:type owl:Class ;
-                              rdfs:subClassOf :DesignPattern ;
+                              rdfs:subClassOf :DesignPattern ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :addressProblem ;
+                                                owl:someValuesFrom :InteractingWithBlockchain
+                                              ] ;
                               rdfs:label "On/off-chain interaction pattern"@en .
 
 
@@ -328,10 +526,22 @@ owl:topObjectProperty rdfs:domain :Pattern ;
          rdfs:label "Pattern"@en .
 
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Problem
+:Problem rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ;
+         rdfs:label "Problem"@en .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Proposal
 :Proposal rdf:type owl:Class ;
           rdfs:subClassOf owl:Thing ;
           rdfs:label "Proposal"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractEfficiency
+:SmartContractEfficiency rdf:type owl:Class ;
+                         rdfs:subClassOf :SmartContractUsage ;
+                         rdfs:label "Smart contract efficiency"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractEnabledBlockchains
@@ -340,10 +550,32 @@ owl:topObjectProperty rdfs:domain :Pattern ;
                                  rdfs:label "Smart-contract enabled blockchains"@en .
 
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractManagement
+:SmartContractManagement rdf:type owl:Class ;
+                         rdfs:subClassOf :SmartContractUsage ;
+                         rdfs:label "Smart contract management"@en .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractPattern
 :SmartContractPattern rdf:type owl:Class ;
-                      rdfs:subClassOf :OnChainPattern ;
+                      rdfs:subClassOf :OnChainPattern ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :addressProblem ;
+                                        owl:someValuesFrom :SmartContractUsage
+                                      ] ;
                       rdfs:label "Smart-contract pattern"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractSecurity
+:SmartContractSecurity rdf:type owl:Class ;
+                       rdfs:subClassOf :SmartContractUsage ;
+                       rdfs:label "Smart contract security"@en .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractUsage
+:SmartContractUsage rdf:type owl:Class ;
+                    rdfs:subClassOf :BuildOnChainApplication ;
+                    rdfs:label "Smart contract usage"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Solidity
@@ -366,13 +598,21 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StoragePattern
 :StoragePattern rdf:type owl:Class ;
-                rdfs:subClassOf :DataManagementPattern ;
+                rdfs:subClassOf :DataManagementPattern ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :addressProblem ;
+                                  owl:someValuesFrom :OnChainStorage
+                                ] ;
                 rdfs:label "Storage pattern"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransactionsPattern
 :TransactionsPattern rdf:type owl:Class ;
-                     rdfs:subClassOf :OnOffChainInteractionPattern ;
+                     rdfs:subClassOf :OnOffChainInteractionPattern ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :addressProblem ;
+                                       owl:someValuesFrom :BlockchainTransactionHandling
+                                     ] ;
                      rdfs:label "Transactions pattern"@en .
 
 
@@ -384,8 +624,67 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#WalletAndKeysPattern
 :WalletAndKeysPattern rdf:type owl:Class ;
-                      rdfs:subClassOf :OnOffChainInteractionPattern ;
+                      rdfs:subClassOf :OnOffChainInteractionPattern ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :addressProblem ;
+                                        owl:someValuesFrom :AssetManagement
+                                      ] ;
                       rdfs:label "Wallet and keys pattern"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ArchitecturalDesignOrganization
+                :DesignPatternApplication
+                :LanguageIdiomApplication
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AssetManagement
+                :BlockchainEnhancedOffChainStorage
+                :BlockchainTransactionHandling
+                :OnOffChainDataExchange
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BPMFeatureApplication
+                :BigDataFeatureApplication
+                :DecentralizedIdentityFeatureApplication
+                :MultiDomainFeatureApplication
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :DomainOrientedApplicationDesign
+                :ManageOnChainData
+                :SmartContractUsage
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :EnableSmartContractAccessControl
+                :SmartContractEfficiency
+                :SmartContractManagement
+                :SmartContractSecurity
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :OnChainDataEncryption
+                :OnChainDataMigration
+                :OnChainStorage
+              )
+] .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

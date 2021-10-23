@@ -84,10 +84,7 @@ export default function Explore() {
     }, [])
 
     const getPattern = (pattern) => {
-        console.log(pattern)
-        let text = pattern.label.value;
-        if (!pattern['hasCanonical']) text += ' (canonical)';
-        else text += ` (from: ${(pattern['hasPaper'].value.split(':'))[1]})`;
+        let text = `${pattern.label.value} (from: ${(pattern['hasPaper'].value.split(':'))[1]})`;
 
         return (
             <Card className={classes.patternCard}>
