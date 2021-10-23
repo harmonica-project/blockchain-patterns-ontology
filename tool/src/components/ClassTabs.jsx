@@ -35,7 +35,7 @@ function a11yProps(index, key) {
   };
 }
 
-export default function ClassTabs({ontologyClasses, handleChangeSelect, selected}) {
+export default function ClassTabs({ontologyClasses, handleChangeSelect, selectorStates, setSelectorStates}) {
     const [value, setValue] = React.useState(0);
 
     const handleChangeTab = (event, newValue) => {
@@ -53,16 +53,11 @@ export default function ClassTabs({ontologyClasses, handleChangeSelect, selected
     }
 
     const isOptionSelected = (ontologyClass) => {
-        let childrens = ontologyClasses[ontologyClass]['childrens'];
-        for (let i in childrens) {
-            let children = childrens[i];
-            for (let selectKey in selected) {
-              // if one of the childrens of the selector is already selected
-              if (selectKey === children) return [true, ontologyClasses[children].subject.value];
-            }
-        }
-
-        return [false, null];
+      if (selectorStates[ontologyClass] && selectorStates[ontologyClass] !== "prompt") {
+        return [true, selectorStates[ontologyClass]];
+      } else {
+        return [false];
+      }
     };
 
     const areChildrensDefined = (ontologyClass) => {
@@ -88,11 +83,11 @@ export default function ClassTabs({ontologyClasses, handleChangeSelect, selected
                         labelId={`${ontologyClass}-select-label`}
                         id={`${ontologyClass}-select`}
                         label={ontologyClasses[ontologyClass].label.value}
-                        onChange={handleChangeSelect}
-                        defaultValue={isAlreadySelected ? selectedClass : "undefined"}
+                        onChange={(e) => handleChangeSelect(e, ontologyClass)}
+                        value={selectorStates[ontologyClass] || "prompt"}
                         disabled={isAlreadySelected}
                     >
-                        <MenuItem value={"undefined"} key="default" disabled>Select a subclass ...</MenuItem>
+                        <MenuItem value={"prompt"} key="default" disabled>Select a subclass ...</MenuItem>
                         {ontologyClasses[ontologyClass]['childrens'].map((childrenClass, i) => {
                             return <MenuItem value={ontologyClasses[childrenClass].subject.value} key={`${ontologyClasses[childrenClass].subject.value}-${i}`}>{ontologyClasses[childrenClass].label.value}</MenuItem>    
                         })}

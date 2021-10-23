@@ -61,8 +61,25 @@ export const getSubclasses = async (className) => {
     }
 }
 
+const filterParents = (filterClasses) => {
+    let keyClasses = Object.keys(filterClasses);
+
+    for (let i in keyClasses) {
+        let key = keyClasses[i]
+        console.log(key, filterClasses[key], filterClasses[filterClasses[key]])
+        if (filterClasses[filterClasses[key]]) {
+            delete filterClasses[key];
+        }
+    }
+
+    return filterClasses;
+}
+
 export const getPatterns = async (filterClasses) => {
-    filterClasses = Object.keys(filterClasses);
+    let newFilterClasses = filterParents({...filterClasses});
+    let query = "";
+
+    console.log(newFilterClasses);
     const alpha = Array.from(Array(26)).map((e, i) => i + 65);
     const alphabet = alpha.map((x) => String.fromCharCode(x)).slice(1);
 
@@ -74,10 +91,10 @@ export const getPatterns = async (filterClasses) => {
         return `, ?${additionalIdentifier}`
     };
 
-    const queryTemplate = (firstClass, additionalIdentifiers = "", additionalClasses = "") => {
+    const queryTemplate = (additionalIdentifiers = "", additionalClasses = "") => {
         return `SELECT DISTINCT ?entity ?label ?hasPaper
                     WHERE {
-                        ?A rdfs:subClassOf* ${firstClass}.
+                        ?A rdfs:subClassOf* onto:Pattern.
                         ${additionalClasses}
                         ?individual a ?A ${additionalIdentifiers} .
                         OPTIONAL { ?individual rdfs:label ?label }
@@ -86,20 +103,17 @@ export const getPatterns = async (filterClasses) => {
                 `
     }
     
-    let query = "";
-    if (filterClasses.length === 0) {
-        query = queryTemplate("onto:Pattern")
-    } else if (filterClasses.length === 1) {
-        query = queryTemplate(filterClasses[0])
+    if (Object.keys(newFilterClasses).length === 0) {
+        query = queryTemplate()
     } else {
         let additionalClasses = "";
         let additionalIdentifiers = "";
 
-        filterClasses.slice(1).forEach((filterClass, i) => {
-            additionalClasses += additionalClassTemplate(filterClass, alphabet[i]);
+        Object.keys(newFilterClasses).forEach((key, i) => {
+            additionalClasses += additionalClassTemplate(newFilterClasses[key], alphabet[i]);
             additionalIdentifiers += additionalIdentifierTemplate(alphabet[i]);
         })
-        query = queryTemplate(filterClasses[0], additionalIdentifiers, additionalClasses);
+        query = queryTemplate(additionalIdentifiers, additionalClasses);
     }
 
     try {

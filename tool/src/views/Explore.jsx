@@ -53,15 +53,15 @@ const useStyles = makeStyles(() => ({
 export default function Explore() {
     const classes = useStyles();
     const [ontologyClasses, setOntologyClasses] = useState([])
-    const [selected, setSelected] = useState({})
     const [patterns, setPatterns] = useState([])
+    const [selectorStates, setSelectorStates] = useState({});
 
     useEffect(() => {
-        getPatterns(selected)
+        getPatterns(selectorStates)
             .then((results) => {
                 setPatterns(results)
             })
-    }, [selected]);
+    }, [selectorStates]);
 
     const getInitialSubclasses = async () => {
         let resClasses = await getSubclasses('owl:Thing');
@@ -116,7 +116,7 @@ export default function Explore() {
     };
 
     const displaySelectedClasses = () => {
-        if (Object.keys(selected).length === 0) {
+        if (Object.keys(selectorStates).length === 0) {
             return (
                 <Typography variant="h6" className={classes.bigMarginTopClass}>
                     No classes selected yet.
@@ -125,32 +125,41 @@ export default function Explore() {
         } else {
             return (
                 <List>
-                    {Object.keys(selected).map(key => (
-                    <ListItem>
-                        <ListItemIcon>
-                            <Tooltip title="Delete class filter">
-                                <IconButton onClick={() => deleteClassFromSelection(key)}>
-                                    <ClearIcon/>
-                                </IconButton>
-                            </Tooltip>
-                        </ListItemIcon>
-                        <ListItemText
-                            primary={`${ontologyClasses[key].label.value}`}
-                        />
-                    </ListItem>
-                    ))}
+                    {Object.keys(selectorStates).map(key => {
+                        if (selectorStates[key] !== "prompt") {
+                            return (
+                                <ListItem>
+                                    <ListItemIcon>
+                                        <Tooltip title="Delete class filter">
+                                            <IconButton onClick={() => deleteClassFromSelection(selectorStates[key])}>
+                                                <ClearIcon/>
+                                            </IconButton>
+                                        </Tooltip>
+                                    </ListItemIcon>
+                                    <ListItemText
+                                        primary={`${selectorStates[key]}`}
+                                    />
+                                </ListItem>
+                            )
+                        }
+                    })}
                 </List>
             )
         }
     };
 
     const resetSelection = () => {
-        setSelected([]);
+        setSelectorStates({});
         setOntologyClasses({})
         getInitialSubclasses();
     };
 
-    const handleChangeSelect = (e) => {
+    const handleChangeSelect = (e, parentClass) => {
+        setSelectorStates({
+            ...selectorStates,
+            [parentClass]: e.target.value
+        });
+
         getSubclasses(e.target.value)
             .then(result => {
                 let newOntologyClasses = {...ontologyClasses}
@@ -163,35 +172,20 @@ export default function Explore() {
                 newOntologyClasses[e.target.value]['childrens'] = Object.keys(result)
                 setOntologyClasses(newOntologyClasses);
             })
-    
-        
-        setSelected({
-            ...selected,
-            [e.target.value]: ontologyClasses[e.target.value].label.value
-        })
-    };
-
-    const getChildrensToDelete = (classname) => {
-        let newChildrens = [classname];
-
-        if (ontologyClasses[classname]['childrens'] && ontologyClasses[classname]['childrens'].length) {
-            for (let i in ontologyClasses[classname]['childrens']) {
-                let childrens = getChildrensToDelete(ontologyClasses[classname]['childrens'][i]);
-                newChildrens = [...newChildrens, ...childrens];
-            }
-        }
-
-        return newChildrens;
     };
 
     const deleteClassFromSelection = (classname) => {
-        const newSelected = {...selected};
+        const newSelectorStates = {...selectorStates}
+        newSelectorStates[ontologyClasses[classname].parent] = "prompt";
+
         // we cannot delete directly the class, we also need to delete its childrens as they cannot be selected anymore
-        const childrens = getChildrensToDelete(classname);
-        for (let i in childrens) {
-            delete newSelected[childrens[i]];
+        while (newSelectorStates[classname]) {
+            let newClassname = newSelectorStates[classname];
+            delete newSelectorStates[classname];
+            classname = newClassname
         }
-        setSelected(newSelected);
+        
+        setSelectorStates(newSelectorStates);
     }
 
     return (
@@ -212,7 +206,7 @@ export default function Explore() {
                             </div>
                         </div>
                         <Divider />
-                        <ClassTabs ontologyClasses={ontologyClasses} handleChangeSelect={handleChangeSelect} selected={selected} />
+                        <ClassTabs ontologyClasses={ontologyClasses} handleChangeSelect={handleChangeSelect} selectorStates={selectorStates} setSelectorStates={setSelectorStates} />
                     </Paper>
                 </Grid>
                 <Grid item md={12}>
