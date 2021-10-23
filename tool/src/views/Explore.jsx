@@ -150,8 +150,6 @@ export default function Explore() {
 
     const resetSelection = () => {
         setSelectorStates({});
-        setOntologyClasses({})
-        getInitialSubclasses();
     };
 
     const handleChangeSelect = (e, parentClass) => {
