@@ -75,7 +75,7 @@ const filterParents = (filterClasses) => {
     return filterClasses;
 }
 
-export const getPatterns = async (filterClasses) => {
+export const getPatterns = async (filterClasses = {}) => {
     let newFilterClasses = filterParents({...filterClasses});
     let query = "";
 
@@ -92,13 +92,15 @@ export const getPatterns = async (filterClasses) => {
     };
 
     const queryTemplate = (additionalIdentifiers = "", additionalClasses = "") => {
-        return `SELECT DISTINCT ?entity ?label ?hasPaper
+        return `SELECT DISTINCT ?entity ?label ?paper ?context ?solution
                     WHERE {
                         ?A rdfs:subClassOf* onto:Pattern.
                         ${additionalClasses}
                         ?individual a ?A ${additionalIdentifiers} .
-                        OPTIONAL { ?individual rdfs:label ?label }
-                        OPTIONAL { ?individual onto:hasPaper ?hasPaper }
+                        ?individual rdfs:label ?label .
+                        ?individual onto:hasPaper ?paper .
+                        ?individual onto:ContextAndProblem ?context .
+                        ?individual onto:Solution ?solution
                     }
                 `
     }

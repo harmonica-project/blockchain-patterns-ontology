@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip, Card } from '@mui/material';
+import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip, Card, Link } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
@@ -8,7 +8,7 @@ import { getSubclasses, getPatterns } from '../requests/fuseki';
 import ClassTabs from '../components/ClassTabs';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
-import AttachFileIcon from '@mui/icons-material/AttachFile';
+import PatternModal from '../modals/PatternModal';
 
 const useStyles = makeStyles(() => ({
     section: {
@@ -57,6 +57,8 @@ export default function Explore() {
     const [ontologyClasses, setOntologyClasses] = useState([])
     const [patterns, setPatterns] = useState([])
     const [selectorStates, setSelectorStates] = useState({});
+    const [modalStates, setModalStates] = useState({ "pattern": false });
+    const [currentPattern, setCurrentPattern] = useState({});
 
     useEffect(() => {
         getPatterns(selectorStates)
@@ -95,6 +97,12 @@ export default function Explore() {
             );
     };
 
+    const handlePatternClick = (pattern) => {
+        setCurrentPattern(pattern);
+        setModalStates({
+            "pattern": true
+        })
+    }
     const displayPatterns = () => {
         console.log(patterns)
         if (!patterns.length) {
@@ -110,15 +118,17 @@ export default function Explore() {
                         <Grid item xs={4} className={classes.patternItem}>
                             <Card className={classes.patternCard}>
                                 <Grid container>
-                                    <Grid item xs={9}>
+                                    <Grid item md={9} sm={12}>
                                         <Typography>
-                                            {pattern.label.value}
+                                            <Link style={{cursor: 'pointer'}} onClick={() => handlePatternClick(pattern)}>
+                                                {pattern.label.value}
+                                            </Link>
                                         </Typography>
                                         <Typography variant="overline">
-                                            {(pattern['hasPaper'].value.split(':'))[1]}
+                                            {(pattern['paper'].value.split(':'))[1]}
                                         </Typography>
                                     </Grid>
-                                    <Grid item xs={3}>
+                                    <Grid item md={3} sm={12}>
                                         <Tooltip title="Add pattern to my list">
                                             <IconButton>
                                                 <PlaylistAddIcon fontSize="large" />
@@ -241,6 +251,7 @@ export default function Explore() {
                     </Paper>
                 </Grid>
             </Grid>
+            <PatternModal open={modalStates['pattern']} setOpen={(newOpen) => setModalStates({ ...modalStates, 'pattern': newOpen})} pattern={currentPattern} />
         </ContentContainer>
     );
 }
