@@ -16,7 +16,8 @@ export default function ButtonAppBar() {
           </Typography>
           <Button component={NavLink} to={'/'} color="inherit">Home</Button>
           <Button component={NavLink} to={'/explore'} color="inherit">Explore</Button>
-          <Button component={NavLink} to={'recommendation'} color="inherit">Get recommendation</Button>
+          <Button component={NavLink} to={'/recommendation'} color="inherit">Get recommendation</Button>
+          <Button component={NavLink} to={'/patterns'} color="inherit">My patterns</Button>
         </Toolbar>
       </AppBar>
     </Box>

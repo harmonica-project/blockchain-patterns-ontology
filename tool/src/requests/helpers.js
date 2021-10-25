@@ -44,19 +44,13 @@ export const parseResults = ({results}) => {
     }
 }
 
-// unused
-/*export const parseURI = (uri) => {
-    let prefixes = [
-        {"prefix": "rdf:", "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"},
-        {"prefix": "rdfs:", "uri": "http://www.w3.org/2000/01/rdf-schema#"},
-        {"prefix": "owl:", "uri": "http://www.w3.org/2002/07/owl#"},
-        {"prefix": "xsd:", "uri": "http://www.w3.org/2001/XMLSchema#"},
-        {"prefix": "onto:","uri": "http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#"},
-    ];
+export const getLocalStoragePatterns = () => {
+    const newSelectedPatterns = {};
+    const localStorageKeys = Object.keys(localStorage);
 
-    prefixes.forEach(prefix => {
-        uri = uri.replaceAll(prefix['uri'], prefix['prefix'])
-    })
+    for (let i in localStorageKeys) {
+        newSelectedPatterns[localStorageKeys[i]] = JSON.parse(localStorage.getItem(localStorageKeys[i]));
+    }
 
-    return uri;
-}*/
+    return newSelectedPatterns;
+};

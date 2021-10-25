@@ -9,6 +9,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Patterns from './views/Patterns';
 
 export default function App() {
   return (
@@ -24,6 +25,9 @@ export default function App() {
           </Route>
           <Route path="/explore">
             <Explore />
+          </Route>
+          <Route path="/patterns">
+            <Patterns />
           </Route>
           <Route path="/">
             <Home />

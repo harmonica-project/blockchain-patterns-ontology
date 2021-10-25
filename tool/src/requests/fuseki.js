@@ -64,24 +64,16 @@ export const getSubclasses = async (className) => {
 export const getPatterns = async (filterClasses = {}) => {
     let query = "";
 
-    console.log(filterClasses);
-    const alpha = Array.from(Array(26)).map((e, i) => i + 65);
-    const alphabet = alpha.map((x) => String.fromCharCode(x)).slice(1);
-
-    const additionalClassTemplate = (additionalClass, additionalIdentifier) => {
-        return `?${additionalIdentifier} rdfs:subClassOf* ${additionalClass}.`
+    const additionalClassTemplate = (additionalClass) => {
+        return `?classuri rdfs:subClassOf* ${additionalClass}.`
     };
 
-    const additionalIdentifierTemplate = (additionalIdentifier) => {
-        return `, ?${additionalIdentifier}`
-    };
-
-    const queryTemplate = (additionalIdentifiers = "", additionalClasses = "") => {
-        return `SELECT DISTINCT ?entity ?label ?paper ?context ?solution
+    const queryTemplate = (additionalClasses = "") => {
+        return `SELECT DISTINCT ?classuri ?individual ?entity ?label ?paper ?context ?solution
                     WHERE {
-                        ?A rdfs:subClassOf* onto:Pattern.
+                        ?classuri rdfs:subClassOf* onto:Pattern.
                         ${additionalClasses}
-                        ?individual a ?A ${additionalIdentifiers} .
+                        ?individual a ?classuri .
                         ?individual rdfs:label ?label .
                         ?individual onto:hasPaper ?paper .
                         ?individual onto:ContextAndProblem ?context .
@@ -94,13 +86,11 @@ export const getPatterns = async (filterClasses = {}) => {
         query = queryTemplate()
     } else {
         let additionalClasses = "";
-        let additionalIdentifiers = "";
 
         Object.keys(filterClasses).forEach((key, i) => {
-            additionalClasses += additionalClassTemplate(filterClasses[key], alphabet[i]);
-            additionalIdentifiers += additionalIdentifierTemplate(alphabet[i]);
+            additionalClasses += additionalClassTemplate(filterClasses[key]);
         })
-        query = queryTemplate(additionalIdentifiers, additionalClasses);
+        query = queryTemplate(additionalClasses);
     }
 
     try {
