@@ -60,8 +60,22 @@ export default function Explore() {
     const [modalStates, setModalStates] = useState({ "pattern": false });
     const [currentPattern, setCurrentPattern] = useState({});
 
+    const filterParents = (filterClasses) => {
+        let keyClasses = Object.keys(filterClasses);
+    
+        for (let i in keyClasses) {
+            let key = keyClasses[i]
+            console.log(key, filterClasses[key], filterClasses[filterClasses[key]])
+            if (filterClasses[filterClasses[key]]) {
+                delete filterClasses[key];
+            }
+        }
+    
+        return filterClasses;
+    }
+
     useEffect(() => {
-        getPatterns(selectorStates)
+        getPatterns(filterParents({...selectorStates}))
             .then((results) => {
                 setPatterns(results)
             })
@@ -87,24 +101,18 @@ export default function Explore() {
         getInitialSubclasses();
     }, [])
 
-    const getPattern = (pattern) => {
-        let text = `${pattern.label.value} (from: ${(pattern['hasPaper'].value.split(':'))[1]})`;
-
-        return (
-            <Typography>
-                {text}
-            </Typography>
-            );
-    };
-
     const handlePatternClick = (pattern) => {
         setCurrentPattern(pattern);
         setModalStates({
             "pattern": true
         })
     }
+
+    const doStuff = (pattern) => {
+        console.log(pattern)
+    };
+
     const displayPatterns = () => {
-        console.log(patterns)
         if (!patterns.length) {
             return (
                 <Typography variant="h6" className={classes.bigMarginTopClass}>
@@ -131,7 +139,7 @@ export default function Explore() {
                                     <Grid item md={3} sm={12}>
                                         <Tooltip title="Add pattern to my list">
                                             <IconButton>
-                                                <PlaylistAddIcon fontSize="large" />
+                                                <PlaylistAddIcon fontSize="large" onClick={() => doStuff(pattern)} />
                                             </IconButton>
                                         </Tooltip>
                                     </Grid>
@@ -142,6 +150,11 @@ export default function Explore() {
                 </Grid>
             )
         }
+    };
+
+    const getPatternLabelSafe = (key) => {
+        if (ontologyClasses[key]["label"] && ontologyClasses[key]["label"]["value"]) return ontologyClasses[key]["label"]["value"];
+        return false;
     };
 
     const displaySelectedClasses = () => {
@@ -166,7 +179,7 @@ export default function Explore() {
                                         </Tooltip>
                                     </ListItemIcon>
                                     <ListItemText
-                                        primary={`${selectorStates[key]}`}
+                                        primary={getPatternLabelSafe(key) || selectorStates[key]}
                                     />
                                 </ListItem>
                             )

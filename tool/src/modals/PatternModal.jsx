@@ -19,7 +19,12 @@ const style = {
 
 export default function PatternModal({open, setOpen, pattern}) {
   const handleClose = () => setOpen(false);
-  console.log(pattern)
+  
+  const getPropertySafe = (prop) => {
+    if (pattern[prop] && pattern[prop]['value']) return pattern[prop]['value'];
+    return false;
+  };
+
   return (
     <div>
       <Modal
@@ -30,27 +35,27 @@ export default function PatternModal({open, setOpen, pattern}) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h1">
-            {pattern.label.value}
+            {getPropertySafe('label')}
           </Typography>
           <Typography id="modal-modal-title" variant="overline">
-            Source - {pattern.paper.value}
+            Source - {getPropertySafe('paper')}
           </Typography>
           <Divider/>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography id="modal-pattern-context-title" sx={{ mt: 2 }}>
             <b>
               Context and problem
             </b>
           </Typography>
-          <Typography id="modal-modal-description">
-            {pattern.context.value || "No text provided."}
+          <Typography id="modal-pattern-context-text">
+            {getPropertySafe('context') || "No text provided."}
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography id="modal-pattern-solution-title" sx={{ mt: 2 }}>
             <b>
               Proposed solution
             </b>
           </Typography>
-          <Typography id="modal-modal-description">
-            {pattern.solution.value || "No text provided."}
+          <Typography id="modal-pattern-solution-text">
+            {getPropertySafe('solution') || "No text provided."}
           </Typography>
         </Box>
       </Modal>

@@ -61,25 +61,10 @@ export const getSubclasses = async (className) => {
     }
 }
 
-const filterParents = (filterClasses) => {
-    let keyClasses = Object.keys(filterClasses);
-
-    for (let i in keyClasses) {
-        let key = keyClasses[i]
-        console.log(key, filterClasses[key], filterClasses[filterClasses[key]])
-        if (filterClasses[filterClasses[key]]) {
-            delete filterClasses[key];
-        }
-    }
-
-    return filterClasses;
-}
-
 export const getPatterns = async (filterClasses = {}) => {
-    let newFilterClasses = filterParents({...filterClasses});
     let query = "";
 
-    console.log(newFilterClasses);
+    console.log(filterClasses);
     const alpha = Array.from(Array(26)).map((e, i) => i + 65);
     const alphabet = alpha.map((x) => String.fromCharCode(x)).slice(1);
 
@@ -105,14 +90,14 @@ export const getPatterns = async (filterClasses = {}) => {
                 `
     }
     
-    if (Object.keys(newFilterClasses).length === 0) {
+    if (Object.keys(filterClasses).length === 0) {
         query = queryTemplate()
     } else {
         let additionalClasses = "";
         let additionalIdentifiers = "";
 
-        Object.keys(newFilterClasses).forEach((key, i) => {
-            additionalClasses += additionalClassTemplate(newFilterClasses[key], alphabet[i]);
+        Object.keys(filterClasses).forEach((key, i) => {
+            additionalClasses += additionalClassTemplate(filterClasses[key], alphabet[i]);
             additionalIdentifiers += additionalIdentifierTemplate(alphabet[i]);
         })
         query = queryTemplate(additionalIdentifiers, additionalClasses);
