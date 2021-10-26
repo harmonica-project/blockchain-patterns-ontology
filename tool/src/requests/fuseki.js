@@ -61,6 +61,51 @@ export const getSubclasses = async (className) => {
     }
 }
 
+const createPatternClassesTree = (classes) => {
+    let orderedClasses = {};
+
+    classes.forEach(classpair => {
+        if (!orderedClasses[classpair.parent.value]) {
+            orderedClasses[classpair.parent.value] = {
+                childrens: [classpair.child.value],
+                parent: ""
+            }
+        } else {
+            orderedClasses[classpair.parent.value].childrens.push(classpair.child.value);
+        }
+
+        if (!orderedClasses[classpair.child.value]) orderedClasses[classpair.child.value] = {
+            childrens: [],
+            parent: classpair.parent.value
+        };
+    });
+
+    console.log(orderedClasses);
+};
+
+export const getPatternClasses = async () => {
+    let query = `
+        SELECT ?parent ?child
+
+        WHERE {
+            ?parent rdfs:subClassOf* onto:Pattern.
+            ?child rdfs:subClassOf ?parent
+        }
+    `
+
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            let results = parseResults(await response.json());
+            createPatternClassesTree(results)
+        };
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
+    }
+};
+
 export const getPatterns = async (filterClasses = {}) => {
     let query = "";
 

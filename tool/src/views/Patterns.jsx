@@ -6,6 +6,7 @@ import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
 import { useSnackbar } from 'notistack';
 import { getLocalStoragePatterns } from '../requests/helpers';
+import { getPatternClasses } from '../requests/fuseki';
 
 const useStyles = makeStyles(() => ({
     healthCheck: {
@@ -43,6 +44,7 @@ export default function Patterns() {
 
     useEffect(() => {
         setSelectedPatterns(getLocalStoragePatterns())
+        orderPatternsByCat()
     }, [])
     
     const Input = styled('input')({
@@ -77,6 +79,16 @@ export default function Patterns() {
     const patternInLocalstorage = (pattern) => {
         return (pattern && pattern['individual'] && selectedPatterns[pattern.individual.value]);
     };
+
+    const orderPatternsByCat = () => {
+        getPatternClasses()
+        const orderedPatterns = {}
+        Object.keys(selectedPatterns).forEach(key => {
+            orderedPatterns[selectedPatterns[key].classuri.value] = selectedPatterns[key];
+        })
+
+        // console.log(orderedPatterns)
+    }
 
     const importFromJSON = e => {
         e.preventDefault()
