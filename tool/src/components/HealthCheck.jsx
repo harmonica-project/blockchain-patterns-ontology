@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { healthCheck } from '../requests/fuseki';
+import { healthCheck } from '../libs/fuseki';
 import { makeStyles } from '@mui/styles';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';

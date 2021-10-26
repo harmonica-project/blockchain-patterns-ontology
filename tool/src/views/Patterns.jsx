@@ -5,8 +5,8 @@ import { styled } from '@mui/material/styles';
 import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
 import { useSnackbar } from 'notistack';
-import { getLocalStoragePatterns } from '../requests/helpers';
-import { getPatternClasses } from '../requests/fuseki';
+import { getLocalStoragePatterns } from '../libs/helpers';
+import { getPatternClasses } from '../libs/fuseki';
 
 const useStyles = makeStyles(() => ({
     healthCheck: {
@@ -43,7 +43,9 @@ export default function Patterns() {
     }
 
     useEffect(() => {
-        setSelectedPatterns(getLocalStoragePatterns())
+        let patterns = getLocalStoragePatterns();
+        if (patterns) setSelectedPatterns(patterns);
+        else enqueueSnackbar('Error while retrieving patterns.')
         orderPatternsByCat()
     }, [])
     
@@ -64,19 +66,19 @@ export default function Patterns() {
     };
 
     const deleteFromLocalstorage = (pattern) => {
-        localStorage.removeItem(pattern.individual.value);
         let newSelectedPatterns = {...selectedPatterns};
         delete newSelectedPatterns[pattern.individual.value];
         setSelectedPatterns(newSelectedPatterns);
+        localStorage.setItem('patterns', JSON.stringify(newSelectedPatterns));
         enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
     };
 
     const deleteAllLocalstorage = () => {
-        localStorage.clear();
+        localStorage.setItem('patterns', {});
         setSelectedPatterns({});
     };
 
-    const patternInLocalstorage = (pattern) => {
+    const patternInLocalState = (pattern) => {
         return (pattern && pattern['individual'] && selectedPatterns[pattern.individual.value]);
     };
 

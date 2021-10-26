@@ -1,4 +1,4 @@
-import { parseResults, convertResultToMapping } from '../requests/helpers';
+import { parseResults, convertResultToMapping } from './helpers';
 
 const FUSEKI_URL = "http://localhost:3030/result/query"
 const PREFIXES = `

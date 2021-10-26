@@ -45,12 +45,9 @@ export const parseResults = ({results}) => {
 }
 
 export const getLocalStoragePatterns = () => {
-    const newSelectedPatterns = {};
-    const localStorageKeys = Object.keys(localStorage);
-
-    for (let i in localStorageKeys) {
-        newSelectedPatterns[localStorageKeys[i]] = JSON.parse(localStorage.getItem(localStorageKeys[i]));
+    try {
+        return JSON.parse(localStorage.getItem('patterns'));
+    } catch {
+        return false;
     }
-
-    return newSelectedPatterns;
 };

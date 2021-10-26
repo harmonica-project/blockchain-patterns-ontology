@@ -4,14 +4,14 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
-import { getSubclasses, getPatterns } from '../requests/fuseki';
+import { getSubclasses, getPatterns } from '../libs/fuseki';
 import ClassTabs from '../components/ClassTabs';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import PatternModal from '../modals/PatternModal';
 import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import { useSnackbar } from 'notistack';
-import { getLocalStoragePatterns } from '../requests/helpers';
+import { getLocalStoragePatterns } from '../libs/helpers';
 
 const useStyles = makeStyles(() => ({
     section: {
@@ -104,7 +104,9 @@ export default function Explore() {
 
     useEffect(() => {
         getInitialSubclasses();
-        setSelectedPatterns(getLocalStoragePatterns())
+        let patterns = getLocalStoragePatterns();
+        if (patterns) setSelectedPatterns(patterns);
+        else enqueueSnackbar('Error while retrieving patterns.')
     }, [])
 
     const handlePatternClick = (pattern) => {
@@ -115,7 +117,16 @@ export default function Explore() {
     }
 
     const storeInLocalstorage = (pattern) => {
-        localStorage.setItem(pattern.individual.value, JSON.stringify(pattern));
+        let storedPatterns = localStorage.getItem('patterns');
+        if (!storedPatterns) {
+            localStorage.setItem('patterns', JSON.stringify({[pattern.individual.value]: pattern}));
+        } else {
+            localStorage.setItem('patterns', JSON.stringify({
+                ...JSON.parse(storedPatterns),
+                [pattern.individual.value]: pattern
+            }));
+        }
+
         setSelectedPatterns({
             ...selectedPatterns,
             [pattern.individual.value]: pattern
@@ -124,14 +135,14 @@ export default function Explore() {
     };
 
     const deleteFromLocalstorage = (pattern) => {
-        localStorage.removeItem(pattern.individual.value);
         let newSelectedPatterns = {...selectedPatterns};
         delete newSelectedPatterns[pattern.individual.value];
         setSelectedPatterns(newSelectedPatterns);
+        localStorage.setItem('patterns', JSON.stringify(newSelectedPatterns));
         enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
     };
 
-    const patternInLocalstorage = (pattern) => {
+    const patternInLocalState = (pattern) => {
         return (pattern && pattern['individual'] && selectedPatterns[pattern.individual.value]);
     };
 
@@ -160,7 +171,7 @@ export default function Explore() {
                                         </Typography>
                                     </Grid>
                                     <Grid item md={3} sm={12}>
-                                            {patternInLocalstorage(pattern) 
+                                            {patternInLocalState(pattern) 
                                                 ? 
                                                     (
                                                         <Tooltip title={"Delete pattern from my list"}>
