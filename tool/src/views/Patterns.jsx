@@ -26,6 +26,8 @@ const useStyles = makeStyles(() => ({
 export default function Patterns() {
     const classes = useStyles();
     const [selectedPatterns, setSelectedPatterns] = useState({});
+    const [patternClassTree, setPatternClassTree] = useState({});
+
     const { enqueueSnackbar } = useSnackbar();
 
     const filterParents = (filterClasses) => {
@@ -46,7 +48,10 @@ export default function Patterns() {
         let patterns = getLocalStoragePatterns();
         if (patterns) setSelectedPatterns(patterns);
         else enqueueSnackbar('Error while retrieving patterns.')
-        orderPatternsByCat()
+        getPatternClasses()
+            .then(classes => {
+                setPatternClassTree(classes);
+            })
     }, [])
     
     const Input = styled('input')({
@@ -74,7 +79,7 @@ export default function Patterns() {
     };
 
     const deleteAllLocalstorage = () => {
-        localStorage.setItem('patterns', {});
+        localStorage.setItem('patterns', JSON.stringify({}));
         setSelectedPatterns({});
     };
 
@@ -100,9 +105,7 @@ export default function Patterns() {
             const text = (e.target.result)
             // must verify later that json provided is correct
             const jsonPatterns = JSON.parse(text);
-            Object.keys(jsonPatterns).forEach(key => {
-                localStorage.setItem(key, JSON.stringify(jsonPatterns[key]));
-            });
+            localStorage.setItem('patterns', JSON.stringify(jsonPatterns));
             setSelectedPatterns(jsonPatterns)
         };
         reader.readAsText(e.target.files[0])
