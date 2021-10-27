@@ -43,13 +43,13 @@
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#relatedTo
 :relatedTo rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf owl:topObjectProperty .
+           rdfs:subPropertyOf owl:topObjectProperty ;
            rdfs:domain :Pattern ;
            rdfs:range :Pattern .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#relatedTo
 :createdFrom rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf owl:topObjectProperty .
+           rdfs:subPropertyOf owl:topObjectProperty ;
            rdfs:domain :Pattern ;
            rdfs:range :Pattern .
 
