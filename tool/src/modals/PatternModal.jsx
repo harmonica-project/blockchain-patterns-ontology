@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { Divider } from '@mui/material';
+import { Divider, Button } from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -16,9 +16,12 @@ const style = {
   p: 4,
 };
 
-export default function PatternModal({open, setOpen, pattern}) {
+export default function PatternModal({open, setOpen, pattern, selectedPatterns, handlePatternModalAction}) {
   const handleClose = () => setOpen(false);
-  
+  const patternInLocalState = (pattern) => {
+    return (pattern && pattern['individual'] && selectedPatterns[pattern.individual.value]);
+  };
+
   const getPropertySafe = (prop) => {
     if (pattern[prop] && pattern[prop]['value']) return pattern[prop]['value'];
     return false;
@@ -56,6 +59,28 @@ export default function PatternModal({open, setOpen, pattern}) {
           <Typography id="modal-pattern-solution-text">
             {getPropertySafe('solution') || "No text provided."}
           </Typography>
+          <Box style={{marginTop: '20px'}}>
+            {patternInLocalState(pattern) 
+                  ? 
+                      (
+                        <Button 
+                          variant="contained"
+                          onClick={() => handlePatternModalAction('remove', pattern)}
+                        >
+                          Remove from my list
+                        </Button>
+                      )
+                  : 
+                      (
+                        <Button 
+                          variant="contained"
+                          onClick={() => handlePatternModalAction('add', pattern)}
+                        >
+                          Add to my list
+                        </Button>
+                      )
+              } 
+          </Box>
         </Box>
       </Modal>
     </div>

@@ -4,7 +4,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
-import { getSubclasses, getPatterns } from '../libs/fuseki';
+import { getSubclasses, getPatterns, getPatternRelations } from '../libs/fuseki';
 import ClassTabs from '../components/ClassTabs';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PatternModal from '../modals/PatternModal';
@@ -58,7 +58,6 @@ export default function Explore() {
     
         for (let i in keyClasses) {
             let key = keyClasses[i]
-            console.log(key, filterClasses[key], filterClasses[filterClasses[key]])
             if (filterClasses[filterClasses[key]]) {
                 delete filterClasses[key];
             }
@@ -107,6 +106,19 @@ export default function Explore() {
         })
     }
 
+    const handlePatternModalAction = (action, pattern) => {
+        switch (action) {
+            case 'add':
+                storeInLocalstorage(pattern);
+                break;
+            case 'delete':
+                deleteFromLocalstorage(pattern);
+                break;
+            default:
+                console.error('No handler for this action.');
+        }
+    }
+
     const storeInLocalstorage = (pattern) => {
         let storedPatterns = localStorage.getItem('patterns');
         if (!storedPatterns) {
@@ -137,6 +149,7 @@ export default function Explore() {
         switch (action) {
             case 'patternClick':
                 handlePatternClick(pattern);
+                getPatternRelations(pattern.individual.value)
                 break;
             case 'patternDelete':
                 deleteFromLocalstorage(pattern);
@@ -165,6 +178,7 @@ export default function Explore() {
                             handlePatternAction={handlePatternAction} 
                             selectedPatterns={selectedPatterns}
                             cardSize={3}
+                            key={pattern.individual.value}
                         />
                     ))}
                 </Grid>
@@ -284,7 +298,13 @@ export default function Explore() {
                     </Paper>
                 </Grid>
             </Grid>
-            <PatternModal open={modalStates['pattern']} setOpen={(newOpen) => setModalStates({ ...modalStates, 'pattern': newOpen})} pattern={currentPattern} />
+            <PatternModal 
+                open={modalStates['pattern']} 
+                setOpen={(newOpen) => setModalStates({ ...modalStates, 'pattern': newOpen})} 
+                pattern={currentPattern} 
+                selectedPatterns={selectedPatterns}
+                handlePatternModalAction={handlePatternModalAction}
+            />
         </ContentContainer>
     );
 }

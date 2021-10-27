@@ -79,8 +79,6 @@ const createPatternClassesTree = (classes) => {
             parent: classpair.parent.value
         };
     });
-
-    console.log(orderedClasses);
 };
 
 export const getPatternClasses = async () => {
@@ -98,6 +96,47 @@ export const getPatternClasses = async () => {
         if (response.status === 200) {
             let results = parseResults(await response.json());
             createPatternClassesTree(results)
+        };
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
+    }
+};
+
+const filterLinkProperties = (properties) => {
+    let newProperties = [];
+    const desiredProperties = [
+        'onto:requires',
+        'onto:createdFrom',
+        'onto:relatedTo',
+        'onto:variantOf',
+        'onto:benefitsFrom'
+    ];
+
+    properties.forEach((property) => {
+        if (desiredProperties.includes(property.relation.value)) {
+            newProperties.push(property);
+        }
+    });
+
+    return newProperties;
+};
+
+export const getPatternRelations = async (patternURI) => {
+    let query = `
+        SELECT ?relation ?individual
+        WHERE {
+            ${patternURI} ?relation ?individual
+        }
+    `;
+
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            let results = parseResults(await response.json());
+            console.log(filterLinkProperties(results))
+            return results;
         };
         return [];
     } catch (e) {

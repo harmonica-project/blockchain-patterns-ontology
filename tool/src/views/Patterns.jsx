@@ -51,6 +51,19 @@ export default function Patterns() {
         return filterClasses;
     }
 
+    const handlePatternModalAction = (action, pattern) => {
+        switch (action) {
+            case 'add':
+                storeInLocalstorage(pattern);
+                break;
+            case 'delete':
+                deleteFromLocalstorage(pattern);
+                break;
+            default:
+                console.error('No handler for this action.');
+        }
+    }
+
     useEffect(() => {
         let patterns = getLocalStoragePatterns();
         if (patterns) setSelectedPatterns(patterns);
@@ -203,7 +216,13 @@ export default function Patterns() {
                     </Grid>
                 </Grid>
             </Paper>
-            <PatternModal open={modalStates['pattern']} setOpen={(newOpen) => setModalStates({ ...modalStates, 'pattern': newOpen})} pattern={currentPattern} />
+            <PatternModal 
+                open={modalStates['pattern']} 
+                setOpen={(newOpen) => setModalStates({ ...modalStates, 'pattern': newOpen})} 
+                pattern={currentPattern} 
+                selectedPatterns={selectedPatterns}
+                handlePatternModalAction={handlePatternModalAction}
+            />
         </ContentContainer>
     );
 }
