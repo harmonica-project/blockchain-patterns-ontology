@@ -56,7 +56,7 @@ export default function Patterns() {
             case 'add':
                 storeInLocalstorage(pattern);
                 break;
-            case 'delete':
+            case 'remove':
                 deleteFromLocalstorage(pattern);
                 break;
             default:
