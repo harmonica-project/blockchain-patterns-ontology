@@ -7,6 +7,8 @@ import HealthCheck from '../components/HealthCheck';
 import { useSnackbar } from 'notistack';
 import { getLocalStoragePatterns } from '../libs/helpers';
 import { getPatternClasses } from '../libs/fuseki';
+import PatternCard from '../components/PatternCard';
+import PatternModal from '../modals/PatternModal';
 
 const useStyles = makeStyles(() => ({
     healthCheck: {
@@ -21,12 +23,17 @@ const useStyles = makeStyles(() => ({
             marginLeft: '10px'
         }
     },
+    containerPatterns: {
+        marginTop: '20px'
+    }
 }));
 
 export default function Patterns() {
     const classes = useStyles();
     const [selectedPatterns, setSelectedPatterns] = useState({});
     const [patternClassTree, setPatternClassTree] = useState({});
+    const [currentPattern, setCurrentPattern] = useState({});
+    const [modalStates, setModalStates] = useState({ "pattern": false });
 
     const { enqueueSnackbar } = useSnackbar();
 
@@ -70,21 +77,9 @@ export default function Patterns() {
         document.body.removeChild(link);
     };
 
-    const deleteFromLocalstorage = (pattern) => {
-        let newSelectedPatterns = {...selectedPatterns};
-        delete newSelectedPatterns[pattern.individual.value];
-        setSelectedPatterns(newSelectedPatterns);
-        localStorage.setItem('patterns', JSON.stringify(newSelectedPatterns));
-        enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
-    };
-
     const deleteAllLocalstorage = () => {
         localStorage.setItem('patterns', JSON.stringify({}));
         setSelectedPatterns({});
-    };
-
-    const patternInLocalState = (pattern) => {
-        return (pattern && pattern['individual'] && selectedPatterns[pattern.individual.value]);
     };
 
     const orderPatternsByCat = () => {
@@ -110,6 +105,55 @@ export default function Patterns() {
         };
         reader.readAsText(e.target.files[0])
     }
+
+    const handlePatternClick = (pattern) => {
+        setCurrentPattern(pattern);
+        setModalStates({
+            "pattern": true
+        })
+    }
+
+    const storeInLocalstorage = (pattern) => {
+        let storedPatterns = localStorage.getItem('patterns');
+        if (!storedPatterns) {
+            localStorage.setItem('patterns', JSON.stringify({[pattern.individual.value]: pattern}));
+        } else {
+            localStorage.setItem('patterns', JSON.stringify({
+                ...JSON.parse(storedPatterns),
+                [pattern.individual.value]: pattern
+            }));
+        }
+
+        setSelectedPatterns({
+            ...selectedPatterns,
+            [pattern.individual.value]: pattern
+        })
+        enqueueSnackbar("Pattern successfully added.", { variant: 'success' });
+    };
+
+    const deleteFromLocalstorage = (pattern) => {
+        let newSelectedPatterns = {...selectedPatterns};
+        delete newSelectedPatterns[pattern.individual.value];
+        setSelectedPatterns(newSelectedPatterns);
+        localStorage.setItem('patterns', JSON.stringify(newSelectedPatterns));
+        enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
+    };
+
+    const handlePatternAction = (action, pattern) => {
+        switch (action) {
+            case 'patternClick':
+                handlePatternClick(pattern);
+                break;
+            case 'patternDelete':
+                deleteFromLocalstorage(pattern);
+                break;
+            case 'patternStore':
+                storeInLocalstorage(pattern);
+                break;
+            default:
+                console.error('No action defined for this handler.');
+        }
+    };
 
     return (
         <ContentContainer>
@@ -137,17 +181,21 @@ export default function Patterns() {
                             </Button>
                         </Grid>
                     </Grid>
-                    <Grid container>
-                        <ul>
-                            {
-                                Object.keys(selectedPatterns).map(key => (
-                                    <li key={selectedPatterns[key]['individual']['value']}>{selectedPatterns[key]['label']['value']}</li>
-                                ))
-                            }
-                        </ul>
+                    <Grid container className={classes.containerPatterns}>
+                        {
+                            Object.keys(selectedPatterns).map(key => (
+                                <PatternCard 
+                                    pattern={selectedPatterns[key]} 
+                                    selectedPatterns={selectedPatterns} 
+                                    handlePatternAction={handlePatternAction}
+                                    cardSize={3} 
+                                />
+                            ))
+                        }
                     </Grid>
                 </Grid>
             </Paper>
+            <PatternModal open={modalStates['pattern']} setOpen={(newOpen) => setModalStates({ ...modalStates, 'pattern': newOpen})} pattern={currentPattern} />
         </ContentContainer>
     );
 }

@@ -7,11 +7,10 @@ import HealthCheck from '../components/HealthCheck';
 import { getSubclasses, getPatterns } from '../libs/fuseki';
 import ClassTabs from '../components/ClassTabs';
 import RefreshIcon from '@mui/icons-material/Refresh';
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import PatternModal from '../modals/PatternModal';
-import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import { useSnackbar } from 'notistack';
 import { getLocalStoragePatterns } from '../libs/helpers';
+import PatternCard from '../components/PatternCard';
 
 const useStyles = makeStyles(() => ({
     section: {
@@ -41,17 +40,6 @@ const useStyles = makeStyles(() => ({
         float: 'right',
         display: 'inline-block',
         height: '32px'
-    },
-    patternItem: {
-        padding: '10px'
-    },
-    patternCard: {
-        padding: '10px',
-        height: '80%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center'
     }
 }));
 
@@ -106,7 +94,10 @@ export default function Explore() {
         getInitialSubclasses();
         let patterns = getLocalStoragePatterns();
         if (patterns) setSelectedPatterns(patterns);
-        else enqueueSnackbar('Error while retrieving patterns.')
+        else {
+            enqueueSnackbar('Error while retrieving patterns.');
+            localStorage.setItem('patterns', {})
+        }
     }, [])
 
     const handlePatternClick = (pattern) => {
@@ -142,8 +133,20 @@ export default function Explore() {
         enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
     };
 
-    const patternInLocalState = (pattern) => {
-        return (pattern && pattern['individual'] && selectedPatterns[pattern.individual.value]);
+    const handlePatternAction = (action, pattern) => {
+        switch (action) {
+            case 'patternClick':
+                handlePatternClick(pattern);
+                break;
+            case 'patternDelete':
+                deleteFromLocalstorage(pattern);
+                break;
+            case 'patternStore':
+                storeInLocalstorage(pattern);
+                break;
+            default:
+                console.error('No action defined for this handler.');
+        }
     };
 
     const displayPatterns = () => {
@@ -157,42 +160,12 @@ export default function Explore() {
             return (
                 <Grid container>
                     {patterns.map(pattern => (
-                        <Grid item xs={4} className={classes.patternItem} key={pattern['individual']['value']}>
-                            <Card className={classes.patternCard}>
-                                <Grid container>
-                                    <Grid item md={9} sm={12}>
-                                        <Typography>
-                                            <Link style={{cursor: 'pointer'}} onClick={() => handlePatternClick(pattern)}>
-                                                {pattern.label.value}
-                                            </Link>
-                                        </Typography>
-                                        <Typography variant="overline">
-                                            {(pattern['paper'].value.split(':'))[1]}
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item md={3} sm={12}>
-                                            {patternInLocalState(pattern) 
-                                                ? 
-                                                    (
-                                                        <Tooltip title={"Delete pattern from my list"}>
-                                                            <IconButton onClick={() => deleteFromLocalstorage(pattern)}>
-                                                                <DeleteSweepIcon fontSize="large" />
-                                                            </IconButton>
-                                                        </Tooltip>
-                                                    )
-                                                : 
-                                                    (
-                                                        <Tooltip title={"Add pattern to my list"}>
-                                                            <IconButton onClick={() => storeInLocalstorage(pattern)}>
-                                                                <PlaylistAddIcon fontSize="large" />
-                                                            </IconButton>
-                                                        </Tooltip>
-                                                    )
-                                            } 
-                                    </Grid>
-                                </Grid>
-                            </Card>
-                        </Grid>
+                        <PatternCard 
+                            pattern={pattern} 
+                            handlePatternAction={handlePatternAction} 
+                            selectedPatterns={selectedPatterns}
+                            cardSize={3}
+                        />
                     ))}
                 </Grid>
             )
