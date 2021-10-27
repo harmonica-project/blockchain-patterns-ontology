@@ -96,7 +96,7 @@ export default function Explore() {
         if (patterns) setSelectedPatterns(patterns);
         else {
             enqueueSnackbar('Error while retrieving patterns.');
-            localStorage.setItem('patterns', {})
+            localStorage.setItem('patterns', JSON.stringify({}))
         }
     }, [])
 
@@ -256,7 +256,7 @@ export default function Explore() {
                 <Grid item className={classes.marginBottomClass} md={12}>
                     <Paper className={classes.section}>
                         <div className={classes.classTitleContainer}>
-                            <Typography className={classes.classTitle} variant="h6">Class selection</Typography>
+                            <Typography className={classes.classTitle} variant="h5">Class selection</Typography>
                             <div className={classes.classTitleBtn}>
                                 <Tooltip title="Reset filters">
                                     <IconButton onClick={resetSelection}>
@@ -271,7 +271,7 @@ export default function Explore() {
                 </Grid>
                 <Grid item md={12}>
                     <Paper className={classes.section}>
-                        <Typography className={classes.marginBottomClass} variant="h6">Selected classes</Typography>
+                        <Typography className={classes.marginBottomClass} variant="h5">Selected classes</Typography>
                         <Divider />
                         {displaySelectedClasses()}
                     </Paper>
@@ -279,7 +279,7 @@ export default function Explore() {
                 </Grid>
                 <Grid item md={7} xs={12}>
                     <Paper className={classes.section}>
-                        <Typography className={classes.marginBottomClass} variant="h6">Corresponding patterns proposed by papers</Typography>
+                        <Typography className={classes.marginBottomClass} variant="h5">Corresponding patterns proposed by papers</Typography>
                         {displayPatterns()}
                     </Paper>
                 </Grid>

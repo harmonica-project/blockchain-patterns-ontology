@@ -162,7 +162,7 @@ export default function Patterns() {
                 <Grid container>
                     <Grid container>
                         <Grid item xs={4}>
-                            <Typography variant="h6" >
+                            <Typography variant="h5" >
                                 My patterns
                             </Typography>
                         </Grid>
@@ -183,14 +183,22 @@ export default function Patterns() {
                     </Grid>
                     <Grid container className={classes.containerPatterns}>
                         {
-                            Object.keys(selectedPatterns).map(key => (
-                                <PatternCard 
-                                    pattern={selectedPatterns[key]} 
-                                    selectedPatterns={selectedPatterns} 
-                                    handlePatternAction={handlePatternAction}
-                                    cardSize={3} 
-                                />
-                            ))
+                            Object.keys(selectedPatterns).length
+                            ? (
+                                Object.keys(selectedPatterns).map(key => (
+                                    <PatternCard 
+                                        pattern={selectedPatterns[key]} 
+                                        selectedPatterns={selectedPatterns} 
+                                        handlePatternAction={handlePatternAction}
+                                        cardSize={3} 
+                                    />
+                                ))
+                            )
+                            : (
+                                <Typography variant="h6" className={classes.bigMarginTopClass}>
+                                    No patterns yet in this list. You can add some in the <i>Explore</i> or <i>Get recommendation</i> section.
+                                </Typography>
+                            )
                         }
                     </Grid>
                 </Grid>
