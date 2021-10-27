@@ -6,6 +6,7 @@
                    :AllBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Müller2020Silver ;
 :ContextAndProblem "In collaborative processes where different organizations use shared data, the integrity of this common piece of data is a crucial trust concern. When data can be altered and manipulated, this might lead to anomalies and malicious behavior. For collaborators, it is hard to verify the integrity of the data and trace its provenance. Data integrity is an uncertainty where collaborators have to rely on the organization providing data."^^rdfs:Literal ;
 :Solution "In the tamper-proof hashed data storage pattern, the collaborator who acts as the data origin hashes the file. The hash is submitted through a transaction to the blockchain. A message with the hash is sent to data consumers. At any point in time, data consumers can verify the file’s integrity by comparing the hash of the received file with the hash on the blockchain. If the hashes do not match up, data has been changed."^^rdfs:Literal ;
@@ -22,6 +23,7 @@ rdfs:label "Hash Storage" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Müller2020Silver ;
 :ContextAndProblem "Non-repudiation of event occurrences is a trust concern in collaborative business processes. During the inter-organizational collaboration, incidents like failures during an activity execution might imply following different workflows. One instance of this is the error event. Therefore, it is essential that organizations cannot deny the occurrence of an event afterward to avoid compensation claims from other stakeholders. In terms of trust-aware business processes, the organization causes a trust concern regarding the non-repudiation of event occurrences."^^rdfs:Literal ;
 :Solution "Using the blockchain as a decentralized event log means to save the occurrence of events and data related to them immutably on a shared distributed ledger, as described in [21]. Technically, this can be implemented similar to the blockchain hashed data storage trust pattern. "^^rdfs:Literal ;
@@ -37,6 +39,8 @@ rdfs:label "Transparent Event Log" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+:requires :Oracle ;
+
 :hasPaper :Müller2020Silver ;
 :ContextAndProblem "For the successful execution of an instance of a business process, it is inevitable to ensure the correct control flow between subprocesses and activities of different organizations and within the same organization. To ensure the execution of a business process according to its defining model, business process engines [22] are commonly utilized. Traditionally, such engines are centrally managed. This implies that all other collaborators have to trust that the business process engine managed by one collaborator acts as intended. From a trust-aware BPM view, this means that there is uncertainty regarding the correctness (integrity) of the process flow present."^^rdfs:Literal ;
 :Solution "Blockchain-based business processes engines, as proposed by Lopez-Pintado et al. [23], store business process models in smart contracts on a blockchain. All collaborators have access to the smart contract and can, at any point, verify the model’s correctness."^^rdfs:Literal ;
@@ -50,6 +54,8 @@ rdfs:label "Blockchain BP Engine" .
                    :BPM ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:requires :Oracle ;
 
 :hasPaper :Müller2020Silver ;
 :ContextAndProblem "In an inter-organizational process, different collaborators are responsible for certain activities. The execution of activities carried out by one organization can be seen as a “black box” for other organizations. Without any modifications, collaborators cannot verify the correct execution of the activities of other collaborators. Further, it is also not traceable to them if even the resources to execute the activity at a certain point in time are available."^^rdfs:Literal ;
@@ -65,6 +71,7 @@ rdfs:label "Smart Contract Activities" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Müller2020Silver ;
 :ContextAndProblem "Reputation systems are a well-established method that has been used from the early ages of e-commerce to symbolize the trustworthiness of online business partners. Hence, they are an approach to build confidence in a process. From a technical perspective, reputation systems store the reputation claim that a source makes regarding a specific reputation target [26]. This requires the user to trust the centralized authority not to manipulate the saved reputation data. "^^rdfs:Literal ;
 :Solution "The blockchain technology can be leveraged to implement fully decentralized reputation systems. In such decentralized systems, there is no need to trust a centralized party for the integrity of reputation statements and their aggregation since all blockchain participants have access to the data"^^rdfs:Literal ;
@@ -78,6 +85,7 @@ rdfs:label "Blockchain-based reputation system" .
                    :BPM ,
                    :AllBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Müller2020Silver ;
 :ContextAndProblem "In collaborative business processes, activities executed by one organization are usually outside of the domain of influence of other organizations. If one organization is in charge of particularly many tasks in a process, this can lead to a significant dependency on the organization. "^^rdfs:Literal ;
@@ -95,6 +103,7 @@ rdfs:label "Decentralize business process" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Worley2019Opportunities ;
 :ContextAndProblem "Many smart contracts store nontrivial amounts of data. A common use case is a contract that serves a registry, storing data in a manner that takes advantage of the blockchain’s censorship-resistant and DDoS-resistant nature.  How can this data be stored and retrieved effectively?"^^rdfs:Literal ;
 :Solution "A key-value store is well-suited to blockchain data management, where the store is dynamically resizable and provides a value given a specific key."^^rdfs:Literal ;
@@ -109,6 +118,7 @@ rdfs:label "Key-value store" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Worley2019Opportunities ;
 :ContextAndProblem "Smart contracts often interact with various users, all of whom must be tracked independently. How can relationships between the smart contract and user accounts be managed correctly?"^^rdfs:Literal ;
@@ -126,6 +136,7 @@ rdfs:label "Address mapping" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Worley2019Opportunities ;
 :ContextAndProblem "A smart contract may need to transition to a new state that isn’t defined by its internal logic because of some external event or internal flaw. Since smart contracts are immutable, how can this transition be performed?"^^rdfs:Literal ;
 :Solution "Establish a permissioning system where the contract is hard-coded to perform special actions in response to specific users. This permission may come from a single user or a vote of many, and privileges may range from setting state variables to completely destroying the contract. The exact details of the permissions and privileges must be specified at creation."^^rdfs:Literal ;
@@ -141,6 +152,9 @@ rdfs:label "Authorization" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:variantOf :OracleBartoletti2017An ;
+:requires :AuthorizationWorley2019Opportunities ;
+
 :hasPaper :Worley2019Opportunities ;
 :ContextAndProblem "Multiple parties are participating in a contract that is dependent on real-world data."^^rdfs:Literal ;
 :Solution "All parties identify a third-party actor that they all trust. This entity is given Authorization to update the contract with real-world state."^^rdfs:Literal ;
@@ -154,6 +168,9 @@ rdfs:label "Judge" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:variantOf :OracleBartoletti2017An ;
+:requires :AuthorizationWorley2019Opportunities ;
 
 :hasPaper :Worley2019Opportunities ;
 :ContextAndProblem "A contract must constantly supply up-to-date information about some real-world data."^^rdfs:Literal ;
@@ -169,6 +186,9 @@ rdfs:label "Ticker Tape" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:variantOf :OracleBartoletti2017An ;
+:benefitsFrom :BlockchainBasedReputationSystemMüller2020Silver ;
+
 :hasPaper :Worley2019Opportunities ;
 :ContextAndProblem "A contract must supply data that cannot rely on a single source. A large number of data sources are present and must be decided between."^^rdfs:Literal ;
 :Solution "Allow the input sources to vote on the correct answer. And, provide disincentives for voting incorrectly, as determined by the eventual consensus."^^rdfs:Literal ;
@@ -182,6 +202,7 @@ rdfs:label "Vote" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Worley2019Opportunities ;
 :ContextAndProblem "Information from different sources on the blockchain must be accessed off-chain."^^rdfs:Literal ;
@@ -197,6 +218,7 @@ rdfs:label "Anti-Oracle" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Worley2019Opportunities ;
 :ContextAndProblem "A contract needs to record a set of entities that will be disallowed access to some asset off-chain"^^rdfs:Literal ;
 :Solution "Define a contract that stores a Bloom filter coefficient set. Off-chain clients may download the coefficients to calculate with the Bloom filter"^^rdfs:Literal ;
@@ -210,6 +232,8 @@ rdfs:label "Blocklist" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:requires :AuthorizationWorley2019Opportunities ;
 
 :hasPaper :Worley2019Opportunities ;
 :ContextAndProblem "Information from different sources on the blockchain must be accessed by entities on-chain."^^rdfs:Literal ;
@@ -225,6 +249,9 @@ rdfs:label "Announcement" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:benefitsFrom :JudgeWorley2019Opportunities ;
+:benefitsFrom :VoteWorley2019Opportunities ;
+
 :hasPaper :Worley2019Opportunities ;
 :ContextAndProblem "A contract must supply irregular updates on real-world data, from multiple sources."^^rdfs:Literal ;
 :Solution "Create a Bulletin Board contract, where requests for data can be posted and answered by users. Define a decision process for acceptance of the answers, perhaps using the Vote or Judge patterns, and expose the answer data."^^rdfs:Literal ;
@@ -239,6 +266,8 @@ rdfs:label "Bulletin Board" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:requires :AddressMappingWorley2019Opportunities ;
+
 :hasPaper :Worley2019Opportunities ;
 :ContextAndProblem "A contract needs a flexible unit of accounting for access to a certain resource."^^rdfs:Literal ;
 :Solution "Define a token, or contract-based cryptocurrency. Use the Address Mapping pattern to associate each Ethereum address with a balance and provide functions for transfer of balance between users."^^rdfs:Literal ;
@@ -252,6 +281,7 @@ rdfs:label "Token" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Worley2019Opportunities ;
 :ContextAndProblem "A contract has a defined lifespan, passing through multiple stages related to its development or obsolescence."^^rdfs:Literal ;
@@ -268,6 +298,7 @@ rdfs:label "Migration" .
                    :HyperledgerSawtooth ,
                    :Unspecified ;
 
+
 :hasPaper :Owens2019Interfamily ;
 :ContextAndProblem "In a smart contract environment, a desirable property is to have the capability for smart contracts to call other smart contracts. Ideally, this functionality should be as easy as having the ability to do a function call within another function in any programming language. Nevertheless, in a blockchain, the execution environment involves some form of cryptography, and it is challenging to pass along these cryptographic guarantees along smart contract calls without passing along more context. In Sawtooth, there is an additional challenge because the platform is language agnostic and transaction families can be written in different programming languages on the same blockchain deployment."^^rdfs:Literal ;
 :Solution "In this article, we have introduced a design pattern – called Inter-Family Communication – that provides a design solution to enable smart contracts to communicate with one another, even in the case where the smart contracts are written in different programming languages. "^^rdfs:Literal ;
@@ -281,6 +312,7 @@ rdfs:label "Inter-family communication" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Mavridou2018Designing ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -297,6 +329,7 @@ rdfs:label "Locking" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Mavridou2018Designing ;
 :ContextAndProblem "The state and the values of the variables stored in an Ethereum contract may be unpredictable. When a user invokes a function (i.e. transition in an FSM), she cannot be sure that the contract does not change in some way before the function is actually executed. This issue has been referred to as “transaction-ordering dependence” [6] and “unpredictable state” [13], and it can lead to various security issues. Furthermore, it is rather difficult to prevent since multiple users may invoke functions at the same time, and these function invocations might be executed in any order."^^rdfs:Literal ;
 :Solution "We provide a plugin that can prevent unpredictable-state vulnerabilities by enforcing a strict ordering on function executions. The plugin expects a transition number in every function as a parameter (i.e., as a transition input variable) and ensures that the number is incremented by one for each function execution. As a result, when a user invokes a function with the next transition number in sequence, she can be sure that the function is executed before any other state changes can take place (or that the function is not executed)."^^rdfs:Literal ;
@@ -311,6 +344,7 @@ rdfs:label "Transition Counter" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Mavridou2018Designing ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -327,6 +361,7 @@ rdfs:label "Automatic Timed Transitions" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Mavridou2018Designing ;
 :ContextAndProblem "In many contracts, access to certain transitions (i.e., functions) needs to be controlled and restricted."^^rdfs:Literal ;
 :Solution "For example, any user can participate in a typical blind auction by submitting a bid, but only the creator should be able to cancel the auction. To facilitate the enforcement of such constraints, we provide a plugin that 1) manages a list of administrators at runtime (identified by their addresses) and 2) enables developers to forbid non-administrators from accessing certain functions. "^^rdfs:Literal ;
@@ -341,6 +376,7 @@ rdfs:label "Access Control" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Bartoletti2017An ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -357,6 +393,7 @@ rdfs:label "Token" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Bartoletti2017An ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -375,6 +412,7 @@ rdfs:label "Authorization" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Bartoletti2017An ;
 :ContextAndProblem "Some contracts may need to acquire data from outside the blockchain, e.g. from a website, to determine the winner of a bet. The Ethereum language does not allow contracts to query external sites: otherwise, the determinism of computations would be broken, as different nodes could receive different results for the same query"^^rdfs:Literal ;
 :Solution "Oracles are the interface between contracts and the outside.Technically, they are just contracts, and as such their state can be updated by sending them transactions. In practice, instead of querying an external service, a contract queries an oracle; and when the external service needs to update its data, it sends a suitable transaction to the oracle."^^rdfs:Literal ;
@@ -389,6 +427,8 @@ rdfs:label "Oracle" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
+:requires :Oracle ;
 
 :hasPaper :Bartoletti2017An ;
 :ContextAndProblem "Dealing with randomness is not a trivial task in Ethereum. Since contract execution must be deterministic, all the nodes must obtain the same value when asking for a random number: this struggles with the randomness requirements wished."^^rdfs:Literal ;
@@ -406,6 +446,9 @@ rdfs:label "Randomness" .
                    :Ethereum ,
                    :Solidity ;
 
+:benefitsFrom :Tokenisation ;
+:benefitsFrom :AddressMapping ;
+
 :hasPaper :Bartoletti2017An ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Polls allows users to vote on some question. Often this is a side feature in a more complex scenario. For instance, in the Dice game, when a certain state is reached, the owner issues a poll to decide whether an emergency withdrawal is needed. To determine who can vote and to keep track of the votes, polls can use tokens, or they can check the voters’ addresses."^^rdfs:Literal ;
@@ -420,6 +463,7 @@ rdfs:label "Poll" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Bartoletti2017An ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -437,6 +481,7 @@ rdfs:label "Time Constraint" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Bartoletti2017An ;
 :ContextAndProblem "Since the blockchain is immutable, a contract cannot be deleted when its use has come to an end. Hence, developers must forethink a way to disable it, so that it is still present but unresponsive."^^rdfs:Literal ;
 :Solution "This can be done manually, by inserting ad-hoc code in the contract, or automatically, calling selfdestruct or suicide."^^rdfs:Literal ;
@@ -451,6 +496,7 @@ rdfs:label "Termination" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Bartoletti2017An ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -467,6 +513,7 @@ rdfs:label "Math" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Bartoletti2017An ;
 :ContextAndProblem "The Ethereum blockchain has been forked four times, starting from July 20th, 2016, when a fork was performed to contrast the effect of the DAO attack [4]."^^rdfs:Literal ;
 :Solution "To know whether or not the fork took place, some contracts inspect the final balance of the DAO. Other contracts use this check to detect whether they are running on the main chain or on the fork, performing different actions in the two cases."^^rdfs:Literal ;
@@ -482,6 +529,8 @@ rdfs:label "Fork check" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :ChecksEffectsInteractionWohrer2018Smart ;
+
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "If the ”interactions” occur before the ”effects” are recorded and the invoked contract makes a callback to the original one, the system state can be exploited."^^rdfs:Literal ;
 :Solution "The contract first checks whether the necessary conditions are met, then makes necessary changes to the contract state (effects) and finally passes control to another contract (interactions)"^^rdfs:Literal ;
@@ -495,6 +544,8 @@ rdfs:label "Checks-Effect-Interactions" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
+:createdFrom :ChecksEffectsInteractionWohrer2018Smart ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "Since the low-level function will forward all remaining gas to the invoked contract, using it allows further invocations to be made, provided the gas sent in the original call is sufficiently larger than the required minimum."^^rdfs:Literal ;
@@ -510,6 +561,11 @@ rdfs:label "Secure Ether Transfer" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :OracleXu2018A ;
+:createdFrom :OracleDataProviderWohrer2018Design ;
+:createdFrom :PublisherSubscriberRaj2018Blockchain ;
+:relatedTo :ReverseVerifierRajasekar2020Emerging ;
+
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "A contract or blockchain-based application may sometimes need to access information from the external world."^^rdfs:Literal ;
 :Solution "The oracle pattern uses a third-party verifier to verify that information stored off-chain is valid, before it can be relayed to the blockchain."^^rdfs:Literal ;
@@ -524,6 +580,8 @@ rdfs:label "Oracle" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+:createdFrom :OnChainAndOffChainLu2019Design ;
+
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "Since the blockchain is a distributed store of data, many nodes in the network must store the entire blockchain, which becomes infeasible if too much data is stored in every block."^^rdfs:Literal ;
 :Solution "If the raw data to be stored on the blockchain takes too much memory, calculate a hash for the entire raw data and store this on the blockchain instead."^^rdfs:Literal ;
@@ -537,6 +595,8 @@ rdfs:label "Off-chain Datastore" .
                    :General ,
                    :AllBlockchains ,
                    :Unspecified ;
+
+:createdFrom :StateChannelXu2018A ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "As mentioned, storing large amounts of data on the blockchain is not sustainable for scalability and sometimes cost issues. In the case of micro-transactions, the amount being transacted is significantly lesser than the processing fees and will take up as much space as any other transaction on the chain."^^rdfs:Literal ;
@@ -554,6 +614,10 @@ rdfs:label "State Channel" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :ContractRegistryXu2018A ;
+:createdFrom :ContractRegisterWohrer2018Design ;
+:relatedTo :ProxyContractRajasekar2020Emerging ;
+
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "Code on a smart contract may need to be modified or updated to deal with bugs and changing requirements."^^rdfs:Literal ;
 :Solution "Every contract and its address are stored off-chain as key-value pairs. This mapping is mutable since it is off-chain, which means that the address of a contract can be updated in the registry. Since calls to any contract will now go through the registry, this leaves all dependencies intact. "^^rdfs:Literal ;
@@ -567,6 +631,9 @@ rdfs:label "(Off-chain) Contract Registry" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :DataContractXu2018A ;
+:createdFrom :DataSegregationWohrer2018Design ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "If a contract stores its data within itself, modifying the contract using the registry or proxy pattern will mean rewriting all of the data to the updated version as well. Since the outdated contracts still remain on the blockchain, and are only indirectly replaced by the updated versions, the data will be stored redundantly with every new version of the contract (Volland, 2018). Conversely, storing the data on a data contract would reduce redundant data storage."^^rdfs:Literal ;
@@ -582,6 +649,9 @@ rdfs:label "Data Contract" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :EmbeddedPermissionXu2018A ;
+:createdFrom :EmbeddedPermissionLu2019Design ;
+
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "A good example of a critical or sensitive function is self destruct() in Solidity2. The absence of embedded permission to execute this particular function was leveraged in the Parity Wallet hack."^^rdfs:Literal ;
 :Solution "Contracts must have an embedded permission field for certain critical functions, which allows only authorized users to run them. This is comparable to an end-user not having access to all the back-end code."^^rdfs:Literal ;
@@ -595,6 +665,9 @@ rdfs:label "Embedded Permission" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :FactoryContractXu2018A ;
+:createdFrom :AbstractFactoryRaj2018Blockchain ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "Using a factory contract helps make a DApp’s code modular and reduces the amount of updates required when new functionality is added to the DApp. It also ensures that certain design principles are consistent throughout the application."^^rdfs:Literal ;
@@ -610,6 +683,8 @@ rdfs:label "Factory Contract" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :EmergencyStopWohrer2018Smart ;
+
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "If a contract is executing malicious functions recursively or for several iterations, without the ability to interrupt, the malicious function can run indefinitely and the nodes can do nothing till execution completes."^^rdfs:Literal ;
 :Solution "Include the ability for an authorized party to stop the execution of a contract."^^rdfs:Literal ;
@@ -623,6 +698,8 @@ rdfs:label "Emergency Stop" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :MutexWohrer2018Smart ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "Having a recursive call (or a callback) that modifies the state of the parent, before it has finished its execution, can cause serious issues as described several times above."^^rdfs:Literal ;
@@ -638,6 +715,8 @@ rdfs:label "Mutex" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :BalanceLimitWohrer2018Smart ;
+
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "Having a contract with too much capital reduces the target area for a potential attack to take place."^^rdfs:Literal ;
 :Solution "This pattern states that a contract should not hold any more funds than a predefined balance-limit. It must reject any further transactions made to it except for forced payments."^^rdfs:Literal ;
@@ -651,6 +730,9 @@ rdfs:label "Contract Balance Limit" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :ReverseOracleXu2018A ;
+:relatedTo :OracleRajasekar2020Emerging ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "It is common to have application data in a traditional database and store only a hash on the blockchain. One shortcoming of this is that we cannot prevent tampering of data in the database."^^rdfs:Literal ;
@@ -666,6 +748,8 @@ rdfs:label "Reverse Verifier" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :IncentiveExecutionXu2018A ;
+
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "Some functions perform tasks like cleaning up expired records, making dividend payouts and destroying deprecated contracts. These utility functions also require gas to be executed, and the payout is usually not enough to offset the execution cost. "^^rdfs:Literal ;
 :Solution "Make seldom-run utility functions piggyback onto contracts that execute more often."^^rdfs:Literal ;
@@ -679,6 +763,8 @@ rdfs:label "Incentive Execution" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :CommitAndRevealWohrer2018Design ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem "If a contract’s internal state is visible to the network, it is possible for a malicious user to take advantage, and invoke the contract with deliberately selected variables that change the state to one they desire."^^rdfs:Literal ;
@@ -694,6 +780,9 @@ rdfs:label "Commit and Reveal" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :ContractRelayWohrer2018Design ;
+:relatedTo :OffChainContractRegistryRajasekar2020Emerging ;
+
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Create a proxy for each contract, which will accept, and then forward the parameters to the current version of the contract."^^rdfs:Literal ;
@@ -707,6 +796,8 @@ rdfs:label "Proxy Contract" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :DynamicBindingLu2019Design ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -722,6 +813,9 @@ rdfs:label "Dynamic Binding" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :FlyweightRaj2018Blockchain ;
+:relatedTo :DataContractRajasekar2020Emerging ;
+
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Inspired in part by the data contract design pattern, the flyweight contract stores data that is shared by a group of clients in one common place."^^rdfs:Literal ;
@@ -736,6 +830,8 @@ rdfs:label "Flyweight" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :Unknown ;
+
 :hasPaper :Rajasekar2020Emerging ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Store static variables in smart contracts as the smallest possible data type that they can fit in. For example don’t store a value as an int if it could be stored as a byte."^^rdfs:Literal ;
@@ -749,6 +845,9 @@ rdfs:label "Tight Variable Packing" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:relatedTo :ReverseOracleXu2018A ;
+:requires :Unknown ;
 
 :hasPaper :Xu2018A ;
 :ContextAndProblem "From the software architecture perspective, blockchain can be viewed as a component or connector within a large software system [19]. In the case the blockchain is used as a distributed database for more general purposes other than financial services, the applications built on blockchain might need to interact with other external systems. Thus, the validation of transactions on blockchain might depend on states of external systems. The execution environment of a blockchain is self-contained. It can only access information present in the data and transactions on the blockchain. Smart contracts running on blockchain are pure functions by design. The state of external systems are not directly accessible to smart contracts. Yet, function calls in smart contracts sometimes need to access state of the external world. How can function calls in smart contracts be enabled to access the state of the external world from within smart contracts?"^^rdfs:Literal ;
@@ -767,6 +866,8 @@ rdfs:label "Oracle" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:relatedTo :OracleXu2018A ;
+
 :hasPaper :Xu2018A ;
 :ContextAndProblem "In a software system, where blockchain is one of the components, the off-chain components might need to use the data stored on the blockchain and the smart contracts running on the blockchain to check certain conditions. Some domains use very large and mature (or even legacy) systems, which comply with existing standards. For such domains, an non-intrusive approach is desired to leverage the existing complex systems with blockchain without changing the core of the existing systems."^^rdfs:Literal ;
 :Solution "The unique ID ofthe transactions or blocks on blockchain is a piece of data that can be easily integrated into the existing systems. Validation of the data can be implemented by smart contracts running on blockchain. An off-chain component is required to query the blockchain through using the ID of the data."^^rdfs:Literal ;
@@ -782,6 +883,7 @@ rdfs:label "Reverse oracle" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Xu2018A ;
 :ContextAndProblem "The legal industry is becoming digitized, for example, using digital signatures has become a valid way to sign legal agreements. The Ricardian contract [8] was developed in the mid 1990s to interpret legal contracts digitally without losing the value of the legal prose. Digital legal agreements need to be executed and enforced. An independent trustworthy execution platform trusted by all the involved participants is needed to execute the digital legal agreement. How to bind a legal agreement to the corresponding smart contract on a trusted execution environment to ensure a 1-to-1 mapping?"^^rdfs:Literal ;
@@ -802,6 +904,8 @@ rdfs:label "Legal and smart-contract pair" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:relatedTo :OffChainDataStorageXu2018A ;
+
 :hasPaper :Xu2018A ;
 :ContextAndProblem "For some applications on blockchain, there might be commercially critical data that should be only accessible to the involved participants. An example would be a special discount price offered by a service provider to a subset of its users. Such information should not be accessible to the other users who do not get the discount. The lack of data privacy is one of the main limitations of blockchain. All the information on blockchain is publicly available to the participants of the blockchain. There is no privileged user within the blockchain network, no matter the blockchain is public, consortium or private. On a public blockchain, new participants can join the blockchain network freely and access all the information recorded on blockchain. Any confidential data on public blockchain is exposed to the public."^^rdfs:Literal ;
 :Solution "To preserve the privacy ofthe involved participants, symmetric or asymmetric encryption can be used to encrypt data before inserting the data into blockchain. One possible design for sharing encrypted data among multiple participants is as follows. First, one of the involved participants creates a secret key for encrypting data and distributes it during an initial key exchange. When one of the participants needs to add a new data item to the blockchain, they first symmetrically encrypt it using the secret key. Only the participants allowed to access the transaction have the secret key and can decrypt the information."^^rdfs:Literal ;
@@ -821,6 +925,7 @@ rdfs:label "Encrypting on-chain data" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Xu2018A ;
 :ContextAndProblem "The concept of tokenisation has emerged centuries ago with the first currency systems. Tokenisation is a means to reduce risk in handling high value financial instruments by replacing them with equivalents, for example, the tokens used in casino. Tokens can represent a wide range of goods which are transferable and fungible, like shares, or tickets. Tokens representing assets should be the authoritative source of the corresponding assets."^^rdfs:Literal ;
 :Solution "Tokenisation is a process starting from an asset (e.g., money) is locked under a custody (e.g., a bank), and gets represented in the cryptographic world through a token. The ownership of the digital token matches the ownership of the corresponding asset. The reverse process can take place by which the user redeems the token to recover the value which is sitting within the bank. A token on blockchain is the authoritative source of the physical asset. By using smart contracts, some conditions can be implemented and associated with the ownership transfer."^^rdfs:Literal ;
@@ -837,6 +942,8 @@ rdfs:label "Tokenisation" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:relatedTo :ProxyZhang2017Applying ;
+
 :hasPaper :Xu2018A ;
 :ContextAndProblem "Some applications consider using the blockchain to guarantee the integrity of large amounts of data. The blockchain, due to its full replication across all participants of the blockchain network, has limited storage capacity. Storing large amounts of data within a transaction may be impossible due to the limited size of the blocks of the blockchain (for example, Ethereum has a block gas limit to determine the number, computational complexity, and data size ofthe transactions included in the block). Data cannot take advantage of the immutability or integrity guarantees without being stored on the blockchain. How to store data of arbitrary size and take advantage of the immutability and integrity guarantees provided by the blockchain?"^^rdfs:Literal ;
 :Solution "The blockchain can be used as a general-purpose replicated database, as transactions logged in the blockchain can include arbitrary data on some blockchain platforms. For data of big size (essentially data that is bigger than its hash value), rather than storing the raw data directly on blockchain, a representation of the data with smaller size can be stored on blockchain with other small sized metadata about the data (e.g., a URI pointing to it). The solution is to store a hash value (also called digest) of the raw data on chain. The value is generated by a hash function which maps data of arbitrary size to data of fixed size. Hash function is a one-way function which is easy to compute, but hard to invert given the output of a random input. If even one bit of the data changes, its corresponding hash value would change as well. The hash value is used for ensuring the integrity of the raw data stored off-chain, and the transaction on blockchain that includes the hash value guarantees the integrity of the hash value as well as the original raw data from which the hash was derived."^^rdfs:Literal ;
@@ -852,6 +959,8 @@ rdfs:label "Off-chain data storage" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:relatedTo :OffChainSignaturesEberhardt2017On ;
 
 :hasPaper :Xu2018A ;
 :ContextAndProblem "Micro-payments are payments that can be as small as a few cents, e.g., payment of a very small amount of money to a WiFi hot-spot for every 10 kilobytes of data usage. Blockchain has potential to be used for such financial transactions with tiny monetary value. The question is if it is necessary and cost effective to store all the micro-payment transactions on blockchain. The decentralized design of blockchain has limited performance. Transactions can take several minutes or even one hour (for Bitcoin blockchain) to be committed on the blockchain [17]. Due to the long commit time and high transaction fees on a public blockchain (where fees are largely independent of the transacted amount), it is often infeasible to store every micro-payment transaction on the blockchain network. "^^rdfs:Literal ;
@@ -872,6 +981,8 @@ rdfs:label "State channel" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:benefitsFrom :OffChainSecretEnabledDynamicAuthenticationXu2018A ;
+
 :hasPaper :Xu2018A ;
 :ContextAndProblem "In blockchain-based applications, activities might need to be authorized by multiple blockchain addresses. For example, a monetary transaction may require authorization from multiple blockchain addresses. The actual addresses that authorize an activity might not be able to be decided due to the availability of the authorities."^^rdfs:Literal ;
 :Solution "It would enable more dynamism if the set of blockchain addresses for authorization are not decided before the corresponding transaction being submited into the blockchain network, or the corresponding smart contract being deployed on blockchain. On the Bitcoin blockchain, a multi-signature mechanism can be used to require more than one private key to authorize a Bitcoin transaction. In Ethereum, smart contract can mimic multi-signature mechanism. More flexibly, an M-of-N multi-signature can be used to define that M out of N private keys are required to authorize the transaction. M is the threshold of authorization. This on-chain mechanism enables more flexible binding of authorities."^^rdfs:Literal ;
@@ -887,6 +998,8 @@ rdfs:label "Multiple authorization" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:benefitsFrom :MultipleAuthorizationXu2018A ;
 
 :hasPaper :Xu2018A ;
 :ContextAndProblem "In blockchain-based applications, some activities need to be authorized by one or more participants that are unknown when a first transaction is submitted to blockchain. Sometimes, the authority who can authorize a given activity is unknown when the corresponding smart contract is deployed, or the corresponding transaction is submitted to the blockchain. Blockchain uses digital signature for authentication and transaction authorization. Blockchain does not support dynamic binding with an address of a participant which is not defined in the respective transaction or smart contract. All accounts that can authorize a second transaction have to be defined in the first transaction before that transaction is added to the blockchain."^^rdfs:Literal ;
@@ -904,6 +1017,7 @@ rdfs:label "Off-chain secret enabled dynamic authentication" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Xu2018A ;
 :ContextAndProblem "Immutability of a blockchain using Proof-of-work (Nakamoto) consensus is probabilistic immutability. There is always a chance that the most recent few blocks are replaced by a competing chain fork. At the time a fork occurs, there is usually no certainty as to which branch will be permanently kept in the blockchain and which branches will be discarded. The transactions that were included in the branches being discarded eventually go back to the transaction pool and being added into a later block."^^rdfs:Literal ;
 :Solution "From the application perspective, one security strategy is to wait for a certain number (X) of blocks to be generated after the transaction is included into one block. After X blocks, the transaction is taken to be committed and thus perceived as immutable [17]. The value of X can be decided by the developers of the blockchain-based applications."^^rdfs:Literal ;
@@ -919,6 +1033,9 @@ rdfs:label "X-confirmation" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:benefitsFrom :EmbeddedPermissionXu2018A ;
+:benefitsFrom :DataContractXu2018A ;
 
 :hasPaper :Xu2018A ;
 :ContextAndProblem "As any software application, blockchain-based applications need to be upgraded to new versions. To do so, the on-chain functions defined in smart contracts need to be updated to fix bugs as well as to fulfil new requirements. Smart contracts deployed on blockchain cannot be upgraded because the code of the smart contracts as a type of data, stored on blockchain is immutable."^^rdfs:Literal ;
@@ -936,6 +1053,10 @@ rdfs:label "Contract registry" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:benefitsFrom :AuthorizationWorley2019Opportunities ;
+:benefitsFrom :MultipleAuthorizationXu2018A ;
+:benefitsFrom :OffChainSecretEnabledDynamicAuthenticationXu2018A ;
+
 :hasPaper :Xu2018A ;
 :ContextAndProblem "All the smart contracts running on blockchain can be accessed and called by all the blockchain participants and other smart contracts by default, because there are no privileged users and, in the case of public blockchain, every participant can join the network to access all the information and code stored and running on blockchain. A smart contract by default has no owner, meaning that once deployed the author of the smart contract has no special privilege on the smart contract. A permission-less function can be triggered by unauthorized users accidentally. Such a permissionless function becomes vulnerability ofblockchain-based application."^^rdfs:Literal ;
 :Solution "Adding permission control to every smart contract function to check permissions for every caller that triggers the functions defined in the smart contract based on the blockchain addresses of the caller. This can be done by checking the authorization of the caller before executing the logic of the function: unauthorized calls are rejected and the execution of the function terminated before reaching the core logic of the function."^^rdfs:Literal ;
@@ -952,6 +1073,8 @@ rdfs:label "Embedded permission" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:benefitsFrom :ContractRegistryXu2018A ;
+
 :hasPaper :Xu2018A ;
 :ContextAndProblem "The need to upgrade a blockchain-based application over time is ultimately necessary, so as the smart contracts used by the application. In general, logic and data change at different times and with different frequencies. There are different ways to store a data on blockchain, as discussed in Hash Integrity pattern (Section 5.3).Problem: Storing data on blockchain is expensive and there is a limitation on the amount ofdata and amount ofcomputation a transaction can contain. In the context of upgrading smart contracts, the upgrading transactions might contain a large data storage for copying the data from the old version of the smart contract to the new version of the smart contract. Porting data to a new version might even require multiple transactions, e.g. when the block gas limit on Ethereum prevents an overly complex data migration transaction. "^^rdfs:Literal ;
 :Solution "To avoid moving data during upgrades ofsmart contracts, the data store is isolated from the rest of the code. In the context of blockchain, data could be separately stored in different smart contracts to enable isolation. Depending on the circumstances of the application, how large of a data store it needs and whether the data structure is expected to change often, the data store could use a strict definition or a loosely typed flat store. The more generic and flexible data structure can be used by all the other logic smart contracts and is unlikely to require changes. One example of a generic data structure is a mapping to store SHA3 key and value pairs."^^rdfs:Literal ;
@@ -967,6 +1090,8 @@ rdfs:label "Data contract" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:benefitsFrom :ContractRegistryXu2018A ;
 
 :hasPaper :Xu2018A ;
 :ContextAndProblem "Applications based on blockchain might need to use multiple instances of a standard contract with customization. Each contract instance is created by instantiating a contract template. For example, in a business process management system, each of the business process instances might be represented by a smart contract being generated from a contract template representing the business process model [18]. The template can be stored off-chain in a code repository, or on-chain, within its own smart contract. Keeping the contract template off-chain cannot guarantee consistency between different smart contract instances created from the same template because the source code of the template can be independently modified."^^rdfs:Literal ;
@@ -985,6 +1110,7 @@ rdfs:label "Factory contract" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Xu2018A ;
 :ContextAndProblem "Smart contracts are event-driven programs, which cannot execute autonomously. All the functions defined in a smart contract need to be triggered either by a transaction from external account or another smart contract to execute. Other than the functions that provide regular services to users, some functions need to run asynchronously from regular user interaction, for example, to clean up the expired records, or make dividend payouts etc. Such functions usually involve a time, after which the function should start. Users of a smart contract have no direct benefit from calling the accessorial functions. If a public blockchain is used, executing these functions causes extra monetary cost. Some accessorial functions are expensive to execute."^^rdfs:Literal ;
 :Solution "Reward the caller of a function defined in a smart contract for invoking the execution, for example, sending back a percentage of payout to the caller to reimburse the (gas) execution cost."^^rdfs:Literal ;
@@ -1000,6 +1126,9 @@ rdfs:label "Incentive execution" .
                    :IdentityManagement ,
                    :AllBlockchains ,
                    :Unspecified ;
+
+:requires :HotColdWalletStorageLiu2020Design ;
+:benefitsFrom :KeyShardingLiu2020Design ;
 
 :hasPaper :Liu2020Design ;
 :ContextAndProblem "Public key cryptography and digital signatures are used to identify accounts and authorise transactions submitted to a blockchain. Using a single key for all transactions has serious privacy implication for an identity owner since transactions can be correlated to expose all the identities an entity holds."^^rdfs:Literal ;
@@ -1018,6 +1147,8 @@ rdfs:label "Master & Sub Key" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+:benefitsFrom :DelegateListLiu2020Design ;
+
 :hasPaper :Liu2020Design ;
 :ContextAndProblem "As a blockchain network participant, one entity can rely on so-called “wallets” to manage its accounts and interact with blockchain. An entity’s wallet may suffer malicious attacks, leading to key theft. The attacker can send transactions under that entity’s name to blockchain using a compromised key."^^rdfs:Literal ;
 :Solution "Users can choose to store keys in two types of wallets, namely hot wallet and cold wallet. Hot wallet refers to the blockchain gateways that are connected to Internet. Through a hot wallet, a user is able to directly conduct specific operations (e.g. generation) to its accounts and related decentralised identifiers stored on-chain. Cold wallet refers to key storage that is off-line, keeping the accounts from being hacked. A cold wallet can be any device disconnected from the internet or even a paper recording an entity’s keys. When the keys stored in a cold wallet are required for signing transactions, the user needs to connect the cold wallet device to a computer and copy-paste the key in the relevant field. A user can combine these two wallets: storing accounts that are frequently used in a hot wallet while using a cold wallet to keep those that are not used often."^^rdfs:Literal ;
@@ -1035,6 +1166,9 @@ rdfs:label "Hot & Cold Wallet Storage" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+:relatedTo :DelegateListLiu2020Design ;
+:requires :HotColdWalletStorageLiu2020Design ;
+
 :hasPaper :Liu2020Design ;
 :ContextAndProblem "In self-sovereign identity, a participant may have multiple keys, for instance, signing key for transaction authorisation, public/private key pair for encryption/decryption, etc. Consequently, key management is significant to the users, especially credential issuers and holders. A user may lose or forget his/her secret keys under some circumstances, e.g. the device containing the keys is lost or broken. Losing the keys denotes that the owner could lose control over its blockchain accounts in self-sovereign identity and the related identities."^^rdfs:Literal ;
 :Solution "To protect the security of a secret key, one can spilt that key into several pieces as its requirement, and define a regrouping threshold. The key pieces can be kept in any way the user prefers, e.g., wrote on a paper and locked in a safe box, given to family and friends, etc. When a key is lost, the user needs to regain enough key pieces (more than the preset regrouping threshold), and these pieces can help rebuild the complete key. "^^rdfs:Literal ;
@@ -1050,6 +1184,11 @@ rdfs:label "Key Sharding" .
                    :IdentityManagement ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:relatedTo :ContentAddressableStorageEberhardt2017On ;
+:relatedTo :FlyweightZhang2017Applying ;
+:requires :MasterSubKeyLiu2020Design ;
+:benefitsFrom :DelegateListLiu2020Design ;
 
 :hasPaper :Liu2020Design ;
 :ContextAndProblem "Identity is defined as sets of attributes related to an entity. In software applications, identity attribute data needs to be accessed for a specific purpose. An identifier is a globally unique persistent series of digits and/or characters that is used to uniquely identify an entity (e.g. human, organisation, device) within one domain and can be used to retrieve the storage location of the identity attribute data. A Decentralised Identifier (DID) is a new type of identifier which is designed for cryptographically verifiable self-sovereign identity. In traditional centralised software systems, mappings between an identifier and the identity data storage location is maintained by a centralised single authority which may become a potential single point of failure. "^^rdfs:Literal ;
@@ -1068,6 +1207,9 @@ rdfs:label "Identifier Registry" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:requires :IdentifierRegistryLiu2020Design ;
+:requires :MasterSubKeyLiu2020Design ;
+
 :hasPaper :Liu2020Design ;
 :ContextAndProblem "An identifier is used to uniquely identify an entity and to retrieve the identity attribute data. Sending all transactions using a single identifier has serious privacy implication for an entity since these transactions can be correlated to expose all the identities this entity holds."^^rdfs:Literal ;
 :Solution "Each entity can establish a unique identifier for every relationship (i.e. every identity) they have, which allows keeping interactions with one entity entirely separate from any other entity. For example, the relationship a person builds with a hospital is completely separate to the one that is established with a university. Neither the hospital nor the university could proactively use the identifiers to correlate this person’s activities."^^rdfs:Literal ;
@@ -1085,6 +1227,8 @@ rdfs:label "Multiple Registration" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:requires :IdentifierRegistryLiu2020Design ;
+
 :hasPaper :Liu2020Design ;
 :ContextAndProblem "Social media profiles can be considered as one of the most important assets, which are critical to achieve more exposure on the internet, attract more attention, or improve online reputation. The trustworthiness of a social media profile can be improved by verifying the account using traditional identity issued by some central authority. On the other hand, blockchain provides a decentralised infrastructure for self-sovereign identity, where entities are in control over their own identities. In addition to verification by some certain people or central authorities, a user can link his/her social media profile (e.g. Twitter) to his/her identity registered on blockchain to improve the trustworthiness of both social media profile and blockchain-based identity. The problem here is how to bind a social media profile with the corresponding blockchain-based identity to ensure mapping."^^rdfs:Literal ;
 :Solution "An entity can create an attribute of social media in the identifier document. Signing the attribute with the blockchain signing key creates a claim that the blockchainbased identity controls the social media account. The attribute also contains a URL which links to a social media post stating that the social media account also controls this particular blockchain identity. Thus, a two-way link is established for connecting the blockchain identity with the social media profile. The two directional binding makes sure that that the social media profile and blockchain-based identity have a 1-to-1 mapping."^^rdfs:Literal ;
@@ -1100,6 +1244,8 @@ rdfs:label "Bound with Social Media" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:requires :IdentifierRegistryLiu2020Design ;
+
 :hasPaper :Liu2020Design ;
 :ContextAndProblem "In self-sovereign identity, entities interact with each other. When two or more entities want to establish interactions (e.g., for business purposes), each entity first needs to determine the target entity’s basic information and ways of communicating before going further."^^rdfs:Literal ;
 :Solution "A DDO contains verification methods (i.e. public keys) and service endpoints (e.g., messaging service details) which can be utilised by an entity to establish interactions with the corresponding DID owner. Before any formal activity between two entities in a relationship, they should first mutually resolve each other’s DID and obtain the interaction information stored in DDO. Such a process is considered as “Dual Resolution” and it forms the first step for any entity to establish an interoperation with its target entity."^^rdfs:Literal ;
@@ -1113,6 +1259,11 @@ rdfs:label "Dual Resolution" .
                    :IdentityManagement ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:relatedTo :DelegateListLiu2020Design ;
+:variantOf :MultipleAuthorizationXu2018A ;
+:benefitsFrom :IdentifierRegistryLiu2020Design ;
+:benefitsFrom :MutexWohrer2018Smart ;
 
 :hasPaper :Liu2020Design ;
 :ContextAndProblem "Each identity has a key pair to authenticate the transactions initiated by the user by means of digital signatures. A master-key may be compromised/stolen by malicious hackers. A compromised master-key results in the loss of ownership over all sub-keys and corresponding identifiers. The hacker may utilise the identifiers to further steal the entity’s identity data."^^rdfs:Literal ;
@@ -1130,6 +1281,10 @@ rdfs:label "Delegate List" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:requires :AnchoringToBlockchainLiu2020Design ;
+:benefitsFrom :TimeConstrainedAccessLiu2020Design ;
+:benefitsFrom :OneOffAccessLiu2020Design ;
+
 :hasPaper :Liu2020Design ;
 :ContextAndProblem "A verifier requires certain information to prove a holder’s identity, thus, a holder only needs to share a credential with necessary data to the verifer. If issuers publish general credentials to holders, a verifier can learn all identity data involved when only some particular attributes are needed. For instance, if a person shows his/her ID to identify the age, his/her address is presented either. This may cause data leak as extra information is provided."^^rdfs:Literal ;
 :Solution "Selective Content Generation allows issuers to decide what identity attributes are contained in a credential. An issued credential needs to satisfy the target verifier’s specific requirements of holder’s identity, without revealing extra data."^^rdfs:Literal ;
@@ -1145,6 +1300,9 @@ rdfs:label "Selective Content Generation" .
                    :IdentityManagement ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:variantOf :OneOffAccessLiu2020Design ;
+:benefitsFrom :SelectiveContentGenerationLiu2020Design ;
 
 :hasPaper :Liu2020Design ;
 :ContextAndProblem "Usually an identification process lasts for a certain time period. After proving the identity of an entity, the presented credential has accomplished its mission and should not be accessed again. After receiving a credential, a verifier then has the ability to access, read, and verify certain identity data of the holder. If the credential is long-term or even permanently effective, the verifier then can verify the credential after current identification process, which means that it can still access and check the holder’s identity data when there is not a legitimate permission for proving the identity, resulting identity data leak."^^rdfs:Literal ;
@@ -1162,6 +1320,9 @@ rdfs:label "Time-Constrained Access" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:variantOf :TimeConstrainedAccessLiu2020Design ;
+:benefitsFrom :SelectiveContentGenerationLiu2020Design ;
+
 :hasPaper :Liu2020Design ;
 :ContextAndProblem "A verifier does not require a long-term effective credential but only needs to check the identity of a holder once for a specific purpose. Sometimes an identification process does not require a strict verification procedure, but only needs to check the identity for once. For instance, travelling by train/airplane or going to a theme park only asks for checking credentials before entering. If a holder presents a long-term effective link redirecting to the credential content, a malicious verifier may access the holder’s data illegally after identification process. This can be considered as an extreme version of Time-Constrained Access."^^rdfs:Literal ;
 :Solution "A holder is able to generate an identifiable link, which redirects to a one-off page presenting the credential content. One-off links can be shared with verifiers on some special occasions. After being visited once, the link becomes invalid that no one can use it to access the credential content."^^rdfs:Literal ;
@@ -1177,6 +1338,9 @@ rdfs:label "One-Off Access" .
                    :IdentityManagement ,
                    :AllBlockchains ,
                    :Unspecified ;
+
+:relatedTo :LowContractFootprintEberhardt2017On ;
+:relatedTo :OffChainDataStorageXu2018A ;
 
 :hasPaper :Liu2020Design ;
 :ContextAndProblem "Blockchain’s nature configurations may limit its performance when facing a large number of transactions. Blockchain can ensure data integrity via storing data on-chain, but it costs real money to process the transaction in many public blockchain networks. In addition, according to the nature consensus mechanism, blockchain generates a block in a fixed period (i.e. block interval), which only includes a restricted number of transactions due to the block size. Consequently, blockchain’s performance may be restricted when users frequently initiate transactions."^^rdfs:Literal ;
@@ -1194,6 +1358,10 @@ rdfs:label "Anchoring to Blockchain" .
                    :General ,
                    :AllBlockchains ,
                    :Unspecified ;
+
+:requires :EstablishGenesisBandara2020Patterns ;
+:requires :HardForkBandara2020Patterns ;
+:requires :StateInitializationBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :ContextAndProblem "The latest states and transactions of all accounts and smart contracts of the concert application need to be migrated to the target blockchain. Source blockchain is currently active; hence, the global state continues to change as new transactions arrive. The state to be migrated is already aggregated on the source blockchain.How to get a complete account of states, smart contracts, and transactions on the source blockchain before migration?"^^rdfs:Literal ;
@@ -1215,6 +1383,9 @@ rdfs:label "Snapshotting" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+:requires :OffChainDataStorageXu2018A ;
+:benefitsFrom :SnapshottingBandara2020Patterns ;
+
 :hasPaper :Bandara2020Patterns ;
 :ContextAndProblem "Concert application has a large number of accounts and states. Extracting all states from the source blockchain and recreating them on the target blockchain is both costly and time-consuming. The list of states to be migrated is given in the snapshot or ID database. How to extract and recreate a large number of states while minimizing the time and cost?"^^rdfs:Literal ;
 :Solution "Transfer all ConcertCoins to a single account, such that only the closing balance needs to be migrated. Fig. 5 shows the sequence of activities required to perform such an aggregation of state. To aggregate blockchain native assets, first, create a new account on the source blockchain. To aggregate states embedded in smart contracts, deploy a new Smart Contract (SC). Both cases will produce a new address (aggregateAddress). Then get the users’ consent to transfer their states by signing a transaction with the current state as payload and aggregateAddress as the recipient. Next, submit the signed transaction to the source blockchain. Finally, trigger the aggregate function at the aggregateAddress."^^rdfs:Literal ;
@@ -1233,6 +1404,8 @@ rdfs:label "State Aggregation" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:benefitsFrom :SnapshottingBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :ContextAndProblem "Because the source blockchain used by the nonprofit is public, it is not decommissioned after the migration. Therefore, any state and smart contracts left in the source blockchain could be misused (e.g., double spending). The list of states and smart contracts to be migrated is given in the snapshot or ID database. How to prevent the misuse of states and smart contracts after migration?"^^rdfs:Literal ;
@@ -1257,6 +1430,9 @@ rdfs:label "Token Burning" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+:benefitsFrom :SnapshottingBandara2020Patterns ;
+:benefitsFrom :StateAggregationBandara2020Patterns ;
+
 :hasPaper :Bandara2020Patterns ;
 :ContextAndProblem "The nonprofit wants to add new nodes or swap nodes to change the physical location, improve performance, or create multiple instances of the source blockchain. A snapshot of the source blockchain is available. How to clone a blockchain node?"^^rdfs:Literal ;
 :Solution "First, install the source blockchain platform’s client software (or an updated version that is backward compatible) on the new node. Also, configure the new node to connect to other members of the source blockchain. Second, enable the sync tool on the node to copy various data structures representing the global state, smart contracts, transactions, and blocks from other blockchain nodes. Next, the node should rebuild and validate all the transactions from the genesis to verify the global state. Any errors, such as failed data transfer, need to be resolved by requesting further data. Finally, reconfigure the node to accept new transactions."^^rdfs:Literal ;
@@ -1272,6 +1448,9 @@ rdfs:label "Node Sync" .
                    :General ,
                    :AllBlockchains ,
                    :Unspecified ;
+
+:benefitsFrom :SnapshottingBandara2020Patterns ;
+:benefitsFrom :StateAggregationBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :ContextAndProblem "Concert application has a large number of states, and all of them need to be recreated on the target blockchain. The nonprofit has decided to spin up a new blockchain instance as the target and use ConcertCoin as the native asset. The list of accounts and states to be migrated is given in the snapshot. After the snapshot, states are marked as unusable using token burning. Relevant smart contracts are also redeployed. How to load states to the target blockchain?"^^rdfs:Literal ;
@@ -1291,6 +1470,9 @@ rdfs:label "Establish Genesis" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+:benefitsFrom :SnapshottingBandara2020Patterns ;
+:benefitsFrom :StateAggregationBandara2020Patterns ;
+
 :hasPaper :Bandara2020Patterns ;
 :ContextAndProblem "Concert application has a large number of states, and all of them need to be recreated on the target blockchain. The nonprofit has chosen an existing private or consortium blockchain as the target. The list of accounts and states to be migrated is given in the snapshot. After the snapshot, states are marked as unusable using token burning. How to load states to the target blockchain?"^^rdfs:Literal ;
 :Solution "Use the states from the snapshot to change the global state on the target blockchain. If a user cannot use an existing private key to access the state migrated to the target blockchain, follow the first two steps to create a new account and update the snapshot file similar to the establish genesis pattern. Next, update the blockchain client software on all nodes of the target blockchain to include the snapshot file at a set block number (blockNo). Once the blockNo is reached, all blockchain nodes should append the states from the snapshot file into the ledger to update the global state. Due to the arbitrary addition of new states, blocks produced before and after the software update will be incompatible. Such a change in blockchain state transition rules is referred to as a hard fork [59]. Similar to the establish genesis pattern, update the ID database and add a PoE entry to reflect new account IDs."^^rdfs:Literal ;
@@ -1307,6 +1489,9 @@ rdfs:label "Hard Fork" .
                    :General ,
                    :AllBlockchains ,
                    :Unspecified ;
+
+:benefitsFrom :SnapshottingBandara2020Patterns ;
+:benefitsFrom :StateAggregationBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :ContextAndProblem "Concert application has a large number of states and smart contracts, and all of them need to be recreated on the target blockchain. The nonprofit has chosen an existing public blockchain as the target. The list of accounts, smart contracts, and states to be migrated is given in the snapshot or ID database. After the snapshot, states are marked as unusable using token burning. How to load states to the target blockchain?"^^rdfs:Literal ;
@@ -1333,6 +1518,9 @@ rdfs:label "State Initialization" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+:benefitsFrom :SnapshottingBandara2020Patterns ;
+:benefitsFrom :StateAggregationBandara2020Patterns ;
+
 :hasPaper :Bandara2020Patterns ;
 :ContextAndProblem "Concert application has a large number of states, and all of them need to be recreated on the target blockchain. The nonprofit has chosen an existing public blockchain as the target and ConcertCoins are to be converted to its native assets. The list of states to be migrated can be found from the ID database. How to load states to the target blockchain?"^^rdfs:Literal ;
 :Solution "Use a cryptocurrency/token exchange to transfer the states. If a user cannot use an existing private key to access the state migrated to the target blockchain, follow the first step to create a new account similar to the establish genesis pattern. Then get the user to sign a transaction with both the state and new account ID (i.e., accID) on the target blockchain as the payload. Set the address of the exchange (excAddress) as the recipient. Then submit the signed transaction to transfer the state to exchange’s account on the source blockchain. This is similar to a sell order in financial markets. Once the exchange confirms that the state is transferred to its account, it will look for a matching buy order. Once a match is made, the exchange will transfer the state to the accID using its account in the target blockchain. Similar to the establish genesis pattern, finally update the ID database to reflect new account IDs."^^rdfs:Literal ;
@@ -1355,6 +1543,9 @@ rdfs:label "Exchange Transfer" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+:benefitsFrom :SnapshottingBandara2020Patterns ;
+:benefitsFrom :StateAggregationBandara2020Patterns ;
+
 :hasPaper :Bandara2020Patterns ;
 :ContextAndProblem "Concert application has a large number of accounts, states, transactions, and smart contracts. All of which need to be recreated on the target blockchain while preserving the history of state changes. The initial state is already recreated on the target blockchain. List of transactions to be replayed can be found from the snapshot. How to recreate both the states and history on the target blockchain?"^^rdfs:Literal ;
 :Solution "Replay transactions from the source blockchain. When replaying transactions on the target blockchain, their causal relationships must be preserved, e.g., the order of transactions send/received by an account may need to be preserved to maintain consistency of a state. Therefore, first group related transactions in the snapshot file. If abstraction is acceptable, also aggregate the transactions in a group such that the final state is consistent. Third, concurrently replay each independent group of transactions on the target blockchain, while sequentially replaying all transactions within a group to preserve causal relationships. When the private keys or signature format of the source and target blockchains are different, transactions need to be signed again before replaying on the target blockchain. Address of the recipient also needs to be updated when the same addresses cannot be used across the blockchains. Then submit the signed transaction to the target blockchain. The transaction ID (txID) is likely to vary across blockchain instances, and also depends on nonce, sender and receiver addresses, and transaction fees. Hence, use the second last step to update the mapping between old and new txIDs on the ID database on the BAL. Finally, add a PoE entry to reflect new transactions IDs. If translations are aggregated, also include the snapshot file as a PoE entry, as it is not included in the target blockchain’s history."^^rdfs:Literal ;
@@ -1369,6 +1560,8 @@ rdfs:label "Transaction Replay" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:benefitsFrom :SnapshottingBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :ContextAndProblem "Concert application uses a set of smart contracts and embedded states which need to be usable on the target blockchain. The target blockchain platform could run/emulate the Virtual Machine (VM) used to execute smart contracts. The list of smart contracts and their states to be migrated is given in the snapshot. After the snapshot, smart contracts are marked as unusable using token burning. How to run smart contracts written for one blockchain platform on another?"^^rdfs:Literal ;
@@ -1386,6 +1579,8 @@ rdfs:label "Virtual Machine Emulation" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:benefitsFrom :SnapshottingBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :ContextAndProblem "Concert application uses a set of smart contracts and associated states which need to be usable on the target blockchain. The smart contract language of the target blockchain is not interoperable. The list of smart contracts and their states to be migrated is given in the snapshot. How to run smart contracts written for one blockchain platform on another?"^^rdfs:Literal ;
@@ -1406,6 +1601,10 @@ rdfs:label "Smart Contract Translation" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:variantOf :Unknown ;
+:requires :Unknown ;
+:benefitsFrom :Unknown ;
+
 :hasPaper :Moreno2019BlockBD ;
 :ContextAndProblem "Usually Data lakes are chaotic; they are a store where all the data of a company is accumulated without any kind of structure or rules to use it. For that reason, some people have started to call it Data swamps [12]. This problem can lead to a decrease of the value of the data. The Blockchain security pattern for Big Data Ecosystem tries to improve the traceability and integrity of the data stored in this kind of systems. In a nutshell, this security pattern will help in the implementation of a security solution to tackle a vulnerability of a Big Data ecosystem: huge amount of data can lead to a loss of control of the data and the operations that are performed on them, which can cause a loss of confidence in them."^^rdfs:Literal ;
 :Solution "The solution is based on the incorporation of a Blockchain layer that uses the same nodes utilized by the Big Data ecosystems. This layer will act as distributed ledger system that registers all the operations performed over the data stored. In the following subsection, our solution is explained in more detail. The Blockchain security pattern for Big Data ecosystems uses the elements of the SRA as a way to facilitate its implementation in a real scenario. More specifically, this pattern tries to improve the security of the Collector (in the BDAP component) which is implemented by the elements of the BDFP component."^^rdfs:Literal ;
@@ -1421,6 +1620,8 @@ rdfs:label "Blockchain Security Pattern for Big Data Ecosystems" .
                    :Ethereum ,
                    :Solidity ;
 
+:benefitsFrom :DataContractMarchesi2020Design ;
+
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "SCs are immutable. If a SC must be changed due to a bug or a needed extension, you must deploy a new contract, and also update all SCs making direct calls to the old SC, thus deploying also new versions of these. This can be very expensive."^^rdfs:Literal ;
 :Solution "Use Proxy delegate pattern. Proxy patterns are a set of SCs working together to facilitate upgrading of SCs, despite their intrinsic immutability. A Proxy holds the addresses of referred SCs, in its state variables, which can be changed. In this way, only the references to the new SC must be updated."^^rdfs:Literal ;
@@ -1434,6 +1635,7 @@ rdfs:label "Proxy" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "When a SC holding a significant amount of data must be updated, also all its data must be copied to the newly deployed SC, consuming a lot of gas."^^rdfs:Literal ;
@@ -1449,6 +1651,7 @@ rdfs:label "Data contract" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "Often events maintain important information about the system, which must be later used by the external system interacting with the blockchain. Storing this information in the blockchain can be very expensive, if the number of events is high."^^rdfs:Literal ;
 :Solution "If past events data are needed by the external system, but not by SCs, let the external system directly access the Event Log in the blockchain. Note that this Log is not accessible by SCs, and that if the event happened far in time, the time to retrieve it may be long."^^rdfs:Literal ;
@@ -1462,6 +1665,7 @@ rdfs:label "Event log" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "Storage is by far the most expensive kind of memory, so its usage should be minimized."^^rdfs:Literal ;
@@ -1477,6 +1681,7 @@ rdfs:label "Limit storage" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "In Ethereum, the minimum unit of memory is a slot of 256 bits. You pay for an integer number of slots even if they are not full."^^rdfs:Literal ;
 :Solution "Pack the variables. When declaring storage variables, the packable ones, with the same data type, should be declared consecutively. In this way, the packing is done automatically by the Solidity compiler. (Note that this pattern does not work for Memory and Calldata memories, whose variables cannot be packed.)"^^rdfs:Literal ;
@@ -1490,6 +1695,7 @@ rdfs:label "Packing variables" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "In Solidity, Boolean variables are stored as uint8 (unsigned integer of 8 bits). However, only 1 bit would be enough to store them. If you need up to 32 Booleans together, you can just follow the Packing Variables pattern. If you need more, you will use more slots than actually needed."^^rdfs:Literal ;
@@ -1505,6 +1711,8 @@ rdfs:label "Packing booleans" .
                    :Ethereum ,
                    :Solidity ;
 
+:relatedTo :UintVsUint256Marchesi2020Design ;
+
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "The EVM run on 256 bits at a time, thus using an uint* (unsigned integers smaller than 256 bits), it will first be converted to uint256 and it costs extra gas."^^rdfs:Literal ;
 :Solution "Use unsigned integers smaller or equal than 128 bits when packing more variables in one slot (see Variables Packing pattern). If not, it is better to use uint256 variables."^^rdfs:Literal ;
@@ -1518,6 +1726,7 @@ rdfs:label "Uint* vs Uint256" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "Solidity provides only two data types to represents list of data: arrays and maps. Mappings are cheaper, while arrays are packable and iterable."^^rdfs:Literal ;
@@ -1533,6 +1742,7 @@ rdfs:label "Mapping vs Array" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "In Solidity, any fixed size variable is cheaper than variable size."^^rdfs:Literal ;
 :Solution "Whenever it is possible to set an upper bound on the size of an array, use a fixed size array instead of a dynamic one."^^rdfs:Literal ;
@@ -1546,6 +1756,7 @@ rdfs:label "Fixed size" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "It is good software engineering practice to initialize all variables when they are created. However, this costs gas in Ethereum."^^rdfs:Literal ;
@@ -1561,6 +1772,7 @@ rdfs:label "Default value" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "The gas costs of Storage are very high, and much higher than the cost of Memory."^^rdfs:Literal ;
 :Solution "Minimize on-chain data. The less data you put on-chain in Storage variables, the less your gas costs. Store on-chain only critical data for the SC and keep all possible data off-chain."^^rdfs:Literal ;
@@ -1574,6 +1786,7 @@ rdfs:label "Minimize on-chain data" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "The input parameters of public functions are copied to memory automatically, and this costs gas."^^rdfs:Literal ;
@@ -1589,6 +1802,7 @@ rdfs:label "Explicitely mark external function" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "Every call to an external SC is rather expensive, and even potentially unsafe."^^rdfs:Literal ;
 :Solution "Limit external calls. In Solidity, differently from other programming languages, it is better to call a single, multi-purpose function with many parameters and get back the requested results, rather than making different calls for each data."^^rdfs:Literal ;
@@ -1602,6 +1816,7 @@ rdfs:label "Limit external calls" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "Calling public functions is more expensive than calling internal functions, because in the former case all the parameters are copied into Memory."^^rdfs:Literal ;
@@ -1617,6 +1832,7 @@ rdfs:label "Internal function calls" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "Implementing a function in an Ethereum SC costs gas."^^rdfs:Literal ;
 :Solution "In general, keep in mind that implementing a SC with many small functions is expensive. However, having too big functions complicates the testing and potentially compromises the security. So, try to have fewer functions, but not too few, balancing the function number with their complexity."^^rdfs:Literal ;
@@ -1630,6 +1846,7 @@ rdfs:label "Fewer functions" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "If a SC tends to perform all its tasks by its own code, it will grow and be very expensive."^^rdfs:Literal ;
@@ -1645,6 +1862,7 @@ rdfs:label "Use libraries" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "Every single operation costs gas."^^rdfs:Literal ;
 :Solution "When using the logical operators, order the expressions to reduce the probability of evaluating the second expression. Remember that in the logical disjunction (OR, ||), if the first expression resolves to true, the second one will not be executed; or that in the logical disjunction (AND, &&), if the first expression is evaluated as false, the next one will not be evaluated."^^rdfs:Literal ;
@@ -1658,6 +1876,7 @@ rdfs:label "Short circuit" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "Storing strings is costly."^^rdfs:Literal ;
@@ -1673,6 +1892,7 @@ rdfs:label "Short constant strings" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "The code of modifiers is inlined inside the modified function, thus adding up size and costing gas."^^rdfs:Literal ;
 :Solution "Limit the modifiers. Internal functions are not inlined, but called as separate functions. They are slightly more expensive at run time, but save a lot of redundant bytecode in deployment, if used more than once."^^rdfs:Literal ;
@@ -1686,6 +1906,7 @@ rdfs:label "Limit modifiers" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "Every single operation costs gas."^^rdfs:Literal ;
@@ -1701,6 +1922,7 @@ rdfs:label "Avoid redundant operations" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "Each assignment and defining variables costs gas."^^rdfs:Literal ;
 :Solution "Solidity allows to swap the values of two variables in one instruction. So, instead of the classical swap using an auxiliary variable, use: (a, b) = (b, a)"^^rdfs:Literal ;
@@ -1714,6 +1936,7 @@ rdfs:label "Single-line swap" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "Every single operation costs gas."^^rdfs:Literal ;
@@ -1729,6 +1952,7 @@ rdfs:label "Write values" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "Sometimes, Storage variables are not longer used. Is there a way to take advantage of this?"^^rdfs:Literal ;
 :Solution "To help keeping the size of the blockchain smaller, you get a gas refund every time you free the Storage. Therefore, it is convenient to delete the variables on the Storage, using the keyword delete, as soon as they are no longer necessary."^^rdfs:Literal ;
@@ -1742,6 +1966,7 @@ rdfs:label "Freeing storage" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Marchesi2020Design ;
 :ContextAndProblem "Optimizing Solidity code to save gas in exhaustive way is difficult."^^rdfs:Literal ;
@@ -1757,6 +1982,8 @@ rdfs:label "Optimizer" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:variantOf :LegalAndSmartContractPairXu2018A ;
+
 :hasPaper :Six2020A ;
 :ContextAndProblem "During past years, the different industries have been impacted by new and disruptive technologies. One of such technologies is smart contracts. One objective of the smart contracts is to translate legal contracts as code or help the legal contract by augmenting some of its clauses into machine-readable functions. The emergence of blockchain technologies has led to the creation of blockchain-based smart contracts, that has benefited from blockchain characteristics. When stored on-chain, data becomes tamper-resistant. Additionally, the utilization of smart contracts isn’t always possible for stakeholders due to concerns about the irreversibility of smart contracts in certain blockchain technologies. For example, creating GDPR compliant blockchains for storing personal data systems is still an open topic. Although not all smart contracts might deal with personal data, there are concerns over the leakage of organizations’ confidential data or their identities, even if data are encrypted. "^^rdfs:Literal ;
 :Solution "This pattern allows the execution of automatable legal contract clauses, where its execution states are stored in an on-chain smart-contract and the logic needed to enforce it wraps it off-chain. An engine completes this pattern by running a business process that corresponds to the legal contract."^^rdfs:Literal ;
@@ -1770,6 +1997,7 @@ rdfs:label "Confidential and pseudo-anonymous contract enforcement" .
                    :General ,
                    :AllBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Wessling2018Engineering ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -1788,6 +2016,7 @@ rdfs:label "Self-Generated Transactions" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Wessling2018Engineering ;
 :ContextAndProblem "Manually generating transactions can be hard or is not always feasible, especially when it is necessary to query the current state of the blockchain or to gather additional data, e.g., like the marketplace of CryptoKitties. This requires a certain trust in the DApp provider as transactions are generated but the implication of their execution is not always completely transparent (e.g., the geneScience contract of CryptoKitties without published source code or ABI)."^^rdfs:Literal ;
 :Solution "Transactions are not generated by the user but are triggered by the DApp website, presented to the user for further verification and then manually sent to the blockchain node. Thus, this pattern offers a trade-off between convenience and trust that is required in the DApp website providing the transaction details."^^rdfs:Literal ;
@@ -1803,6 +2032,7 @@ rdfs:label "Self-Confirmed Transactions" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Wessling2018Engineering ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "DApp provider offers a website the users can interact with, not requiring a cryptobrowser or MetaMask plugin. The website communicates with the DApp backend logic via REST calls and encapsulates all blockchain-specific actions. This means the backend is responsible for interacting with the blockchain and is sending transactions on behalf of the user, who is not able to validate them."^^rdfs:Literal ;
@@ -1816,6 +2046,7 @@ rdfs:label "Delegated Transactions" .
                    :General ,
                    :AllBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Lemieux2017A ;
 :ContextAndProblem "Many current and proposed applications of blockchain technology aim to address recordkeeping challenges, such as more efficient and secure processing of land title transfers, greater patient control over their sensitive health information, and more efficient recording of financial payments and settlements. All of the blockchain systems offer a new form of records generation use, storage and/or control."^^rdfs:Literal ;
@@ -1832,6 +2063,7 @@ rdfs:label "Mirror" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Lemieux2017A ;
 :ContextAndProblem "Many current and proposed applications of blockchain technology aim to address recordkeeping challenges, such as more efficient and secure processing of land title transfers, greater patient control over their sensitive health information, and more efficient recording of financial payments and settlements. All of the blockchain systems offer a new form of records generation use, storage and/or control."^^rdfs:Literal ;
 :Solution "Records are no longer just mirrored on chain, they are actively created on chain in the form of “smart contracts”. This marks a more fundamental departure from the traditional form of digital records creation and storage in centralized databases or cloud-based platforms. Typically, these smart contracts encode procedures that execute among a multi-stakeholder network as part of a work process flow. In these “digital records” systems, execution of the smart code results in an update to the distributed database of records, or ledger, implementing state change once the smart contract has completed."^^rdfs:Literal ;
@@ -1846,6 +2078,7 @@ rdfs:label "Digital Record" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Lemieux2017A ;
 :ContextAndProblem "Many current and proposed applications of blockchain technology aim to address recordkeeping challenges, such as more efficient and secure processing of land title transfers, greater patient control over their sensitive health information, and more efficient recording of financial payments and settlements. All of the blockchain systems offer a new form of records generation use, storage and/or control."^^rdfs:Literal ;
 :Solution "With this type of system, not only are records captured on chain, but assets are represented and captured on chain. These assets can represent anything of value – currency, as in the original use case for the blockchain – Bitcoin land, fine wine, food, diamonds, artworks, etc. Readers may ask whether these assets are records. "^^rdfs:Literal ;
@@ -1859,6 +2092,7 @@ rdfs:label "Tokenized" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Wohrer2018Design ;
 :ContextAndProblem "A common task when coding smart contracts is to transfer funds. Unfortunately, there are several circumstances under which a transfer can fail. This is due to the fact that the implementation to send funds involves an external call, which basically hands over control to the called contract. Therefore, security considerations regarding external calls and re-entrancy attacks have to be considered. A re-entrancy attack describes the scenario where the called contract calls back the current contract, before the first invocation of the function containing the call, was finished. This can lead to an unwanted execution behaviour of functions."^^rdfs:Literal ;
@@ -1875,6 +2109,7 @@ rdfs:label "Pull payment" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Wohrer2018Design ;
 :ContextAndProblem "A state machine models the behaviour of a system based on its history and current inputs. Developers use this construct to break complex problems into simple states and state transitions. These are then used to represent and control the execution flow of a program."^^rdfs:Literal ;
 :Solution "State machines can also be applied in smart contracts. Many usage scenarios require a contract to have different behavioural stages, in which different functions can be called. When interacting with such a contract, a function call might end the current stage and initiate a change into a consecutive stage."^^rdfs:Literal ;
@@ -1889,6 +2124,7 @@ rdfs:label "State machine" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Wohrer2018Design ;
 :ContextAndProblem "A characteristic of blockchains is, that it is not possible to restrict anyone from reading contents of a transaction or transaction’s state. This transparency leads to problems, especially when contract participants compete with each other. All data and every transaction is publicly visible on the blockchain, but an application scenario requires that contract interactions, specifically submitted parameter values, are treated confidentially."^^rdfs:Literal ;
@@ -1905,6 +2141,7 @@ rdfs:label "Commit and reveal" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Wohrer2018Design ;
 :ContextAndProblem "Ethereum contracts run within their own ecosystem, where they communicate with each other, but external data can only enter the system through outside interaction via a transaction (by passing data to a method). This is a drawback, because many contract use cases depend on external knowledge outside the blockchain (e.g. price feeds). "^^rdfs:Literal ;
 :Solution "A solution to this problem is to utilize oracles with a connection to the outside world. The oracle service acts as a data carrier, where the interaction between an oracle service and a smart contract is asynchronous. First, a transaction invokes a function of a smart contract that contains an instruction to send a request to an oracle. Then, according to the parameters of such a request, the oracle will fetch a result and return it by executing a callback function placed in the primary contract."^^rdfs:Literal ;
@@ -1919,6 +2156,7 @@ rdfs:label "Oracle (Data Provider)" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Wohrer2018Design ;
 :ContextAndProblem "By default any party can call a contract method, but it must be ensured that sensitive contract methods can only be executed by the owner of a contract."^^rdfs:Literal ;
@@ -1935,6 +2173,7 @@ rdfs:label "Ownership" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Wohrer2018Design ;
 :ContextAndProblem "By default a contract method is executed without any preconditions being checked, but it is desired that the execution is only allowed if certain requirements are met."^^rdfs:Literal ;
 :Solution "Since there is no built in mechanism to control executionprivileges, a common pattern is to restrict function execution. It is often required that functions should only be executed based on the presence of certain prerequisites. These can refer to different categories, such as temporal conditions, caller and transaction info, or other requirements that need to be checked prior a function execution. Listing"^^rdfs:Literal ;
@@ -1949,6 +2188,7 @@ rdfs:label "Access Restriction" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Wohrer2018Design ;
 :ContextAndProblem "A contract is defined by its creator, but the execution, and subsequently the services it offers are provided by the Ethereum network itself. Thus, a contract will exist and be executable as long as the whole network exists, and will only disappear if it was programmed to self destruct."^^rdfs:Literal ;
@@ -1965,6 +2205,7 @@ rdfs:label "Mortal" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Wohrer2018Design ;
 :ContextAndProblem "A usage scenario requires a temporal constraint defining a point in time when functions become deprecated."^^rdfs:Literal ;
 :Solution "Define an expiration time and apply modifiers in function definitions to disable function execution if the expiration date has been reached."^^rdfs:Literal ;
@@ -1979,6 +2220,7 @@ rdfs:label "Automatic Deprecation" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Wohrer2018Design ;
 :ContextAndProblem "Contract data and its logic are usually kept in the same contract, leading to a closely entangled coupling. Once a contract is replaced by a newer version, the former contract data must be migrated to the new contract version."^^rdfs:Literal ;
@@ -1995,6 +2237,7 @@ rdfs:label "Data Segregation" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Wohrer2018Design ;
 :ContextAndProblem "Contracts are immutable. Changing contract functionality requires the deployment of a new contract."^^rdfs:Literal ;
 :Solution "The satellite pattern allows to modify and replace contract functionality. This is achieved through the creation of separate satellite contracts that encapsulate certain contract functionality. The addresses of these satellite contracts are stored in a base contract. This contract can then can call out to the satellite contracts when it needs to reference certain functionalities, by using the stored address pointers. If this pattern is properly implemented, modifying functionality is as simple as creating new satellite contracts and changing the corresponding satellite addresses."^^rdfs:Literal ;
@@ -2009,6 +2252,7 @@ rdfs:label "Satellite" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Wohrer2018Design ;
 :ContextAndProblem "Contract participants must be referred to the latest contract version."^^rdfs:Literal ;
@@ -2025,6 +2269,7 @@ rdfs:label "Contract register" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Wohrer2018Design ;
 :ContextAndProblem "Contract participants must be referred to the latest contract version."^^rdfs:Literal ;
 :Solution "A relay is another approach to handle the update process of a contract. The relay pattern provides a method to update a contract to a newer version while keeping the old contract address. This is achieved by using a kind of proxy contract that forwards calls and data to the latest version of the contract."^^rdfs:Literal ;
@@ -2040,6 +2285,7 @@ rdfs:label "Contract Relay" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Schinle2020How ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "For each product a separate Blockchain is set up between the respective supply chain organizations. All product data is stored in the Blockchain and shared between the participating organizations. No competitor can access any data by himself. This architecture comes with the properties of a standard permissioned Blockchain system with the additional effort of setting up separate Blockchain systems per product."^^rdfs:Literal ;
@@ -2054,6 +2300,8 @@ rdfs:label "Multiple Blockchains" .
                    :General ,
                    :AllBlockchains ,
                    :Unspecified ;
+
+:createdFrom :EncryptingOnChainDataXu2018A ;
 
 :hasPaper :Schinle2020How ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2071,6 +2319,7 @@ rdfs:label "On-chain encryption" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Schinle2020How ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "A Blockchain connects all members of different supply chains. For each product a distributed and decentralized off-chain database is created which contains all relevant product information. Each data point is linked in the Blockchain with it’s hash value. This ensures that the organizations in possession of the data can confirm that it is not tampered. "^^rdfs:Literal ;
@@ -2086,6 +2335,8 @@ rdfs:label "Hash timestamping" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :PullPaymentWohrer2018Design ;
+
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "As a send operation can fail, let the receiver withdraw the payment."^^rdfs:Literal ;
@@ -2099,6 +2350,8 @@ rdfs:label "Pull payment" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :StateMachineWohrer2018Design ;
 
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2114,6 +2367,8 @@ rdfs:label "State machine" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :CommitAndRevealWohrer2018Design ;
+
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "As blockchain data is public, a commitment scheme ensures confidentiality of contract interactions."^^rdfs:Literal ;
@@ -2127,6 +2382,8 @@ rdfs:label "Commit and reveal" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :OracleDataProviderWohrer2018Design ;
 
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2142,6 +2399,8 @@ rdfs:label "Oracle (Data Provider)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :OwnershipWohrer2018Design ;
+
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "As anyone can call a contract method, restrict the execution to the contract owner’s address."^^rdfs:Literal ;
@@ -2155,6 +2414,8 @@ rdfs:label "Ownership" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :AccessRestrictionWohrer2018Design ;
 
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2170,6 +2431,8 @@ rdfs:label "Access Restriction" .
                    :Ethereum ,
                    :Solidity ;
 
+:createdFrom :MortalWohrer2018Design ;
+
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Since deployed contracts do not expire, self-destruction with a preliminary authorization check is used."^^rdfs:Literal ;
@@ -2183,6 +2446,8 @@ rdfs:label "Mortal" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :AutomaticDeprecationWohrer2018Design ;
 
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2198,6 +2463,8 @@ rdfs:label "Automatic Deprecation" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :DataSegregationWohrer2018Design ;
+
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "As data and logic usually reside in the same contract, avoid data migration on updates by decoupling."^^rdfs:Literal ;
@@ -2211,6 +2478,8 @@ rdfs:label "Data Segregation" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :SatelliteWohrer2018Design ;
 
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2226,6 +2495,8 @@ rdfs:label "Satellite" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :ContractRegisterWohrer2018Design ;
+
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "When the latest contract version is unknown, participants pro-actively query a register."^^rdfs:Literal ;
@@ -2239,6 +2510,8 @@ rdfs:label "Contract register" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :ContractRelayWohrer2018Design ;
 
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2254,6 +2527,8 @@ rdfs:label "Contract Relay" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :ChecksEffectsInteractionWohrer2018Smart ;
+
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "As calls to other contracts hand over control, avoid security issues by a functional code order."^^rdfs:Literal ;
@@ -2267,6 +2542,8 @@ rdfs:label "Checks-Effects-Interaction" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :EmergencyStopWohrer2018Smart ;
 
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2282,6 +2559,8 @@ rdfs:label "Emergency Stop" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :SpeedBumpWohrer2018Smart ;
+
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "When task execution by a huge number of users is unwanted, prolong completion for counter measures."^^rdfs:Literal ;
@@ -2295,6 +2574,8 @@ rdfs:label "Speed Bump" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :RateLimitWohrer2018Smart ;
 
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2310,6 +2591,8 @@ rdfs:label "Rate Limit" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:createdFrom :MutexWohrer2018Smart ;
+
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "As re-entrancy attacks can manipulate contract state, a mutex hinders external calls from re-entering."^^rdfs:Literal ;
@@ -2323,6 +2606,8 @@ rdfs:label "Mutex" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:createdFrom :BalanceLimitWohrer2018Smart ;
 
 :hasPaper :Wohrer2020From ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2338,6 +2623,7 @@ rdfs:label "Balance Limit" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Lu2019Design ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "To address the issues of blockchain storage capability limitation and data privacy, an on-chain and off-chain service is proposed to store the critical data which is required to be immutable on-chain while keep all the data off-chain to enhance the data reading efficiency."^^rdfs:Literal ;
@@ -2351,6 +2637,7 @@ rdfs:label "On-chain and off-chain" .
                    :General ,
                    :AllBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Lu2019Design ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2366,6 +2653,7 @@ rdfs:label "Data Encryption" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Lu2019Design ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "The hash integrity service focuses on how to use blockchain to ensure the integrity of large amounts of data. Hashing is applied to guarantee the integrity of arbitrarily large datasets which may not fit directly on the blockchain. The servicestores the hash of the raw data on blockchain to achieve data integrity of the raw data for the participants of the blockchain network that lack trust for each other. The integrity of the raw data can be checked using the on-chain hash value."^^rdfs:Literal ;
@@ -2379,6 +2667,7 @@ rdfs:label "Hash integrity" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Lu2019Design ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2394,6 +2683,7 @@ rdfs:label "Multiple Authorities" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Lu2019Design ;
 :ContextAndProblem "In blockchain applications, some activities need to be approved by one or more participants who are unknown when a first transaction is submitted to blockchain. The authority who can authorise to a given activity is unknown when the corresponding smart contract is deployed, or the corresponding transaction is submitted to the blockchain."^^rdfs:Literal ;
 :Solution "The dynamic binding service supports dynamic association with an address of a participant which is not defined in the respective transaction or smart contract. An off-chain secret is used to enable a dynamic authorisa-tion when the participant approving a transaction is unknown beforehand. Users need to provide an off-chain secret and select the corresponding function in the smart contract. The service modifies the function code by adding hash secret code and generates the updated smart contract. There is no need for a special protocol to exchange the secret. The secret can be exchanged in any ways off-chain."^^rdfs:Literal ;
@@ -2407,6 +2697,7 @@ rdfs:label "Dynamic Binding" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Lu2019Design ;
 :ContextAndProblem "All the smart contracts running on blockchain can be accessed and called by all the participants and other smart contracts by default. A smart contract by default has no owner, which means that the author of the smart contract has no special privilege on the smart contract once the smart contract is deployed."^^rdfs:Literal ;
@@ -2422,6 +2713,8 @@ rdfs:label "Embedded permission" .
                    :Ethereum ,
                    :Solidity ;
 
+:createdFrom :ChecksEffectsInteractionWohrer2018Smart ;
+
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "When performing a function in a SC: first, check all the preconditions, then apply the effects to the contract's state, and finally interact with other contracts. Never alter this sequence."^^rdfs:Literal ;
@@ -2435,6 +2728,12 @@ rdfs:label "Check Effect Interaction" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
+:createdFrom :Unknown ;
+:createdFrom :Unknown ;
+:createdFrom :ProxyZhang2017Applying ;
+:createdFrom :ContractFacadeLiu2018Applying ;
+:createdFrom :ProxyMarchesi2020Design ;
 
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2450,6 +2749,8 @@ rdfs:label "Proxy Delegate / Decorator" .
                    :Ethereum ,
                    :Solidity ;
 
+:createdFrom :AuthorizationBartoletti2017An ;
+
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem "Since SCs are publicly accessible to all blockchain participants, it is critical to restrict authorizations to perform specific tasks. Specifically, for each contract method, developers must specify the subset of participants who can call it. Contracts usually define at least one contract owner, which is the only entity authorised to call critical methods."^^rdfs:Literal ;
 :Solution "Restrict the execution of critical methods to specific users. This is accomplished using mappings of addresses, and is typically checked using modifiers."^^rdfs:Literal ;
@@ -2463,6 +2764,8 @@ rdfs:label "Authorization" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
+:variantOf :AuthorizationBartoletti2017An ;
 
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2478,6 +2781,9 @@ rdfs:label "Ownership" .
                    :Ethereum ,
                    :Solidity ;
 
+:createdFrom :OracleBartoletti2017An ;
+:createdFrom :OracleXu2018A ;
+
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem "A smart contract is by nature isolated, and cannot acquire information directly. This is due to the fact that network nodes must agree on the state of transactions. To accomplish this, nodes should evaluate only static data. On the contrary, the outside world, for instance a website API, could provide different responses to the same query performed by different network nodes, breaking blockchain consensus."^^rdfs:Literal ;
 :Solution "An oracle is a SC providing data from outside the blockchain, which are in turn fed to the oracle by a trusted source. Here the security risk lies in how actually the source can be trusted."^^rdfs:Literal ;
@@ -2491,6 +2797,8 @@ rdfs:label "Oracle" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
+:createdFrom :ReverseOracleXu2018A ;
 
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2506,6 +2814,9 @@ rdfs:label "Reverse Oracle" .
                    :Ethereum ,
                    :Solidity ;
 
+:createdFrom :RateLimitWohrer2018Smart ;
+:benefitsFrom :TimeConstraintMarchesi2020Security ;
+
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Regulate how often a task can be executed within a period of time, to limit the number of messages sent to a SC, and thus its computational load."^^rdfs:Literal ;
@@ -2519,6 +2830,8 @@ rdfs:label "Rate Limit" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
+:createdFrom :BalanceLimitWohrer2018Smart ;
 
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2534,6 +2847,8 @@ rdfs:label "Balance Limit" .
                    :Ethereum ,
                    :Solidity ;
 
+:createdFrom :Unknown ;
+
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Ensure that all requirements on a SC state and on function inputs are met."^^rdfs:Literal ;
@@ -2547,6 +2862,8 @@ rdfs:label "Guard Check" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
+:createdFrom :TimeConstraintBartoletti2017An ;
 
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem "Different blockchain nodes could process transactions at different timestamps, due to network latency or further causes. Consequently, part of the network could consider an action as executed beyond the time constraint, and the corresponding transaction could be rejected by the whole network."^^rdfs:Literal ;
@@ -2562,6 +2879,9 @@ rdfs:label "Time Constraint" .
                    :Ethereum ,
                    :Solidity ;
 
+:createdFrom :TerminationBartoletti2017An ;
+:benefitsFrom :OwnershipMarchesi2020Security ;
+
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Used when the life of a SC has come to an end. This can be done by inserting ad-hoc code in the contract, or calling the selfdestruct function. Usually, only the contract owner is authorized to terminate a contract."^^rdfs:Literal ;
@@ -2575,6 +2895,8 @@ rdfs:label "Termination" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
+:createdFrom :MathBartoletti2017An ;
 
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2590,6 +2912,8 @@ rdfs:label "Math" .
                    :Ethereum ,
                    :Solidity ;
 
+:createdFrom :EncryptingOnChainDataXu2018A ;
+
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Encrypt on-chain critical data improving confidentiality and meeting legal requirements, such as the European GDPR."^^rdfs:Literal ;
@@ -2603,6 +2927,8 @@ rdfs:label "Privacy" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
+:createdFrom :FactoryContractXu2018A ;
 
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2618,6 +2944,8 @@ rdfs:label "Reusability" .
                    :Ethereum ,
                    :Solidity ;
 
+:createdFrom :MutexWohrer2018Smart ;
+
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "A mutex is a mechanism to restrict concurrent access to a resource. Utilize it to hinder an external call from re-entering its caller function again."^^rdfs:Literal ;
@@ -2631,6 +2959,9 @@ rdfs:label "Mutex" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
+:createdFrom :SpeedBumpWohrer2018Smart ;
+:benefitsFrom :TimeConstraintMarchesi2020Security ;
 
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2646,6 +2977,8 @@ rdfs:label "Speed Bump" .
                    :Ethereum ,
                    :Solidity ;
 
+:createdFrom :PublisherSubscriberZhang2017Applying ;
+
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem "When a module needs to receive some messages from other software modules (e.g. a smart contract), developers should implement a messaging infrastructure that allows each module to be easily notified when a new message is generated."^^rdfs:Literal ;
 :Solution "When a state change must trigger a computation in a different object, implement a messaging infrastructure where the contracts that produce messages (called publishers) can generate messages and the other contracts (called subscribers) receive them. The pattern, also known as Observer, reduces the overhead of constant information filtering."^^rdfs:Literal ;
@@ -2659,6 +2992,8 @@ rdfs:label "Publisher-Subscriber" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
+:createdFrom :TokenisationXu2018A ;
 
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem "The Ethereum ecosystem provides standards to handle several types of tokens, such as the ERC20 and ERC721."^^rdfs:Literal ;
@@ -2674,6 +3009,8 @@ rdfs:label "Tokenisation" .
                    :Ethereum ,
                    :Solidity ;
 
+:createdFrom :XConfirmationXu2018A ;
+
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "In order to ensure that a transaction is confirmed (i.e. there is a low probability that a fork happens), wait for new blocks to be added to the blockchain. The amount of blocks depends on the adopted blockchain."^^rdfs:Literal ;
@@ -2687,6 +3024,8 @@ rdfs:label "X-confirmation" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
+:createdFrom :ContractRegistryXu2018A ;
 
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2702,6 +3041,8 @@ rdfs:label "Contract Registry" .
                    :Ethereum ,
                    :Solidity ;
 
+:createdFrom :DataContractXu2018A ;
+
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Contract data and logic should be stored into separate contracts. In this way, when the logic need to be updated (by using a new smart contract), there is no need to migrate old data."^^rdfs:Literal ;
@@ -2716,6 +3057,10 @@ rdfs:label "Eternal storage / Data Contract" .
                    :Ethereum ,
                    :Solidity ;
 
+:createdFrom :AbstractFactoryZhang2017Applying ;
+:createdFrom :ContractFactoryLiu2018Applying ;
+:createdFrom :FactoryContractXu2018A ;
+
 :hasPaper :Marchesi2020Security ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Sometimes, systems need to work with groups of related contracts, for instance with contracts which represent various level user account. In order to keep the system independent from the different contracts, define an abstract contract for creating all the related contracts."^^rdfs:Literal ;
@@ -2729,6 +3074,7 @@ rdfs:label "Abstract factory" .
                    :Healthcare ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Zhang2017Applying ;
 :ContextAndProblem "Smart contracts allow code to be executed on the blockchain by the EVM. The incorruptibility property of blockchain ensures that interfaces (e.g. methods and properties) of already instantiated contracts cannot be modified or upgraded. Each new version of a smart contract has to be created as a new contract object on the blockchain and distributed among all the network nodes to be executed on demand. Therefore, it is important to design a contract class to modularize code and minimize changes to its interface over time."^^rdfs:Literal ;
@@ -2746,6 +3092,7 @@ rdfs:label "Abstract factory" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Zhang2017Applying ;
 :ContextAndProblem "In order to achieve blockchain’s transparency and immutability properties, all of the data and transaction records are maintained in the blockchain by replicating and distributing to every node in the network. It is important to limit the amount of data stored in the blockchain to avoid high cost of data storage and unattended data when it is no longer needed."^^rdfs:Literal ;
 :Solution "In order to achieve blockchain’s transparency and immutability properties, all of the data andtransaction records are maintained in the blockchain by replicating and distributing to every node in the network. It is important to limit the amount of data stored in the blockchain to avoid high cost of data storage and unattended data when it is no longer needed."^^rdfs:Literal ;
@@ -2760,6 +3107,8 @@ rdfs:label "Flyweight" .
                    :Healthcare ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:benefitsFrom :Unknown ;
 
 :hasPaper :Zhang2017Applying ;
 :ContextAndProblem "A fundamental aspect of a blockchain is that all data stored in the blockchain is public, immutable, and verifiable. For financial transactions that are focused on proving that transfer of an asset occurred, these properties are critical. However, when the goal is to store data in the blockchain, it is important to understand how these properties will impact the use case."^^rdfs:Literal ;
@@ -2776,6 +3125,7 @@ rdfs:label "Proxy" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Zhang2017Applying ;
 :ContextAndProblem "The Ethereum blockchain maintains a public record of contract creations and operation executions along with regular cryptocurrency transactions. The availability of information makes blockchain a more autonomous approach to improve the coordination of patient care across different teams (e.g. physicians, pharmacists, insurance agents, etc) who would normally communicate through various channels with a lot of manual effort, such as through telephoning or faxing. Although, from a continually growing list of records, directly capturing any specific health-related topic of occurred events would require a lot of transaction receipt lookups and topic filtering, which requires non-trivial computation and may result in delayed responses."^^rdfs:Literal ;
 :Solution "The Publisher-Subscriber pattern can assist in broadcasting the information only to care providers that subscribe to events relating to this patient. It solves the issue of constant information filtering by actively monitoring patient activities and sending notifications to the patient’s care team as the activities take place. To avoid computation overhead on the blockchain, the actual processing of patient activities data can be done off-chain by a back-end server. When receiving the events of interest, the subscribers can then pass the heavy computation tasks to the server."^^rdfs:Literal ;
@@ -2791,6 +3141,7 @@ rdfs:label "Publisher-Subscriber" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Wohrer2018Smart ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Follow a recommended functional code order, in which calls to external contracts are always the last step, to reduce the attack surface of a contract being manipulated by its own externally called contracts."^^rdfs:Literal ;
@@ -2804,6 +3155,7 @@ rdfs:label "Checks-Effects-Interaction" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Wohrer2018Smart ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2819,6 +3171,7 @@ rdfs:label "Emergency Stop" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Wohrer2018Smart ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Prolong the completion of sensitive tasks to take steps against fraudulent activities. "^^rdfs:Literal ;
@@ -2832,6 +3185,7 @@ rdfs:label "Speed Bump" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Wohrer2018Smart ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2847,6 +3201,7 @@ rdfs:label "Rate Limit" .
                    :Ethereum ,
                    :Solidity ;
 
+
 :hasPaper :Wohrer2018Smart ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Utilize a mutex to hinder an external call from re-entering its caller function again. "^^rdfs:Literal ;
@@ -2860,6 +3215,7 @@ rdfs:label "Mutex" .
                    :General ,
                    :Ethereum ,
                    :Solidity ;
+
 
 :hasPaper :Wohrer2018Smart ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2875,6 +3231,7 @@ rdfs:label "Balance Limit" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Eberhardt2017On ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Instead of checking whether a state is final or not in a smart contract on a blockchain, the same check is performed off-chain on the client side. A client can notify a smart contract when a final state has been reached. Other clients can prove claims wrong by providing a valid state transition. Using this pattern, the computation never has to be performed on-chain"^^rdfs:Literal ;
@@ -2888,6 +3245,7 @@ rdfs:label "Challenge Response" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Eberhardt2017On ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2903,6 +3261,7 @@ rdfs:label "Off-chain Signatures" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Eberhardt2017On ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Store the data off-chain in a content-addressable storage system and store the reference in the smart contract. Clients using the smart contract can retrieve the reference and based on that retrieve the data. Then, they can verify the data’s correctness by recomputing its address from itself and comparing it to the reference stored in the smart contract."^^rdfs:Literal ;
@@ -2916,6 +3275,7 @@ rdfs:label "Content-Addressable Storage" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Eberhardt2017On ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2931,6 +3291,7 @@ rdfs:label "Delegated Computation" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Eberhardt2017On ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "To optimize fees, contracts should be designed in a way that minimizes the number and size of on-chain transactions. The following two techniques can be used to reduce the footprint. – Do not check conditions on-chain after a state change. Let nodes perform the condition check locally and trigger an on-chain check in case of success. – Optimize for writes, not reads. Reading from a smart contracts is a local off-chain operation and does not require an on-chain transaction. Minimize writes and store information free of redundancy. Compute derived data locally during reads."^^rdfs:Literal ;
@@ -2944,6 +3305,7 @@ rdfs:label "Low Contract Footprint" .
                    :Healthcare ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Raj2018Blockchain ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2959,6 +3321,8 @@ rdfs:label "Abstract factory" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:requires :AbstractFactoryRaj2018Blockchain ;
+
 :hasPaper :Raj2018Blockchain ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Combining the FLYWEIGHT pattern with a factory object can help minimize data storage in the Blockchain. In particular, the factory can establish a registry model that stores shared data between a set of entities in a common contract, i.e., the registry, while externalizing varying data to be stored in entity-specific contracts. The registry can also maintain references (i.e., addresses) to entity-specific contracts and return a combined extrinsic and intrinsic (common) data set upon request. "^^rdfs:Literal ;
@@ -2972,6 +3336,8 @@ rdfs:label "Flyweight" .
                    :Healthcare ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:requires :Oracle ;
 
 :hasPaper :Raj2018Blockchain ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -2987,6 +3353,7 @@ rdfs:label "Proxy" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Raj2018Blockchain ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Incorporating a notification service using the PUBLISHER-SUBSCRIBER pattern can facilitate scalable information filtering. In this design, health activities are only broadcast to providers who subscribe to events relating to their patients. It alleviates the tedious filtering process of determining which care provider should be notified about what patient activities as large volumes of transactions take place."^^rdfs:Literal ;
@@ -3000,6 +3367,7 @@ rdfs:label "Publisher-Subscriber" .
                    :General ,
                    :AllBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Mühlberger2020Foundational ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -3015,6 +3383,7 @@ rdfs:label "Pull-based inbound oracle" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Mühlberger2020Foundational ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "A push-based inbound oracle allows off-chain information to be propagated to the blockchain by monitoring off-chain state changes and forwarding them to the blockchain."^^rdfs:Literal ;
@@ -3028,6 +3397,7 @@ rdfs:label "Push-based inbound oracle" .
                    :General ,
                    :AllBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Mühlberger2020Foundational ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -3043,6 +3413,7 @@ rdfs:label "Pull-based outbound oracle" .
                    :AllBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Mühlberger2020Foundational ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "A push-based outbound oracle monitors the blockchain for relevant changes to subsequently trigger or perform activities outside the blockchain."^^rdfs:Literal ;
@@ -3056,6 +3427,8 @@ rdfs:label "Push-based outbound oracle" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:relatedTo :ContractComposerLiu2018Applying ;
 
 :hasPaper :Liu2018Applying ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -3071,6 +3444,8 @@ rdfs:label "Contract Factory" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:relatedTo :ContractFactoryLiu2018Applying ;
+
 :hasPaper :Liu2018Applying ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "In a blockchain-based application, the combination of services or objects is inevitable. Consequently, how to effectively control such a combination becomes a challenge to developers, especially under the condition that each service or object is represented in the form of smart contract. Compared with Contract Factory, Contract Composer focuses on the complex structure of a contract instance, as it can construct a complicated target through multiple small pieces."^^rdfs:Literal ;
@@ -3084,6 +3459,9 @@ rdfs:label "Contract Composer" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
+:benefitsFrom :ContractComposerLiu2018Applying ;
+:benefitsFrom :ContractDecoratorLiu2018Applying ;
 
 :hasPaper :Liu2018Applying ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -3099,6 +3477,11 @@ rdfs:label "Contract Decorator" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:benefitsFrom :ContractComposerLiu2018Applying ;
+:benefitsFrom :ContractDecoratorLiu2018Applying ;
+:benefitsFrom :ContractMediatorLiu2018Applying ;
+:benefitsFrom :ContractObserverLiu2018Applying ;
+
 :hasPaper :Liu2018Applying ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "Managing smart contracts may be a burdensome work as there are massive contracts having similar features in a blockchain-based system. Contract Facade pattern can relieve such pressure via providing a simple interface by coping with contract addresses. Such an interface is also in the form of smart contract, for developers to call the functions of similar contracts."^^rdfs:Literal ;
@@ -3112,6 +3495,7 @@ rdfs:label "Contract Facade" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Liu2018Applying ;
 :ContextAndProblem ""^^rdfs:Literal ;
@@ -3127,6 +3511,8 @@ rdfs:label "Contract Mediator" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+:benefitsFrom :ContractDecoratorLiu2018Applying ;
+
 :hasPaper :Liu2018Applying ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "When a smart contract is modified due to the changing requirements in industry, all the related contracts need to be informed and updated automatically. Contract Observer pattern can deal with such problem to achieve interoperability and updatability among the contracts via an observer instance. An instance of Contract Observer needs to define the objects and information involved, once there are any changes, it should notify all the objects to update information."^^rdfs:Literal ;
@@ -3141,6 +3527,7 @@ rdfs:label "Contract Observer" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
+
 :hasPaper :Liu2018Applying ;
 :ContextAndProblem ""^^rdfs:Literal ;
 :Solution "This pattern can help a user to achieve authorisation of a particular activity to unknown authorities, by generating a digital secret key known as the hash secret. When the authority is decided, it will then receive the hash secret and thus have the ability to finish further task."^^rdfs:Literal ;
@@ -3154,6 +3541,7 @@ rdfs:label "Hash Secret" .
                    :General ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
+
 
 :hasPaper :Liu2018Applying ;
 :ContextAndProblem ""^^rdfs:Literal ;

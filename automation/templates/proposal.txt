@@ -6,6 +6,7 @@
                    :$blockchain ,
                    :$language ;
 
+${links}
 :hasPaper :${author}${year}${title_word} ;
 :ContextAndProblem "$context"^^rdfs:Literal ;
 :Solution "$solution"^^rdfs:Literal ;

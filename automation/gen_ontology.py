@@ -52,7 +52,7 @@ def parse_to_relation(name):
 
 # generate the links between proposals. 5 different links exists, they are listed in the array below for easy detection in the dict
 def get_links_between_patterns(pattern_proposals, pattern_proposal, example_mapping, papers):
-  link_types = ["From pattern", "Related to", "Variant of", "Requires", "Benefits from"]
+  link_types = ["Created from", "Related to", "Variant of", "Requires", "Benefits from"]
   relation_template = load_template('relation')
   relations_str = ''
 
@@ -67,11 +67,10 @@ def get_links_between_patterns(pattern_proposals, pattern_proposal, example_mapp
           relation_paper_name = parse_to_URI(relation_paper['Name']) + get_first_author(paper['author']) + paper['year'] + get_first_word_title(paper['Title'])
         else:
           if parse_to_URI(r) in example_mapping:
-            relation_paper_name = example_mapping[parse_to_URI(r)] + "Canonical"
+            relation_paper_name = example_mapping[parse_to_URI(r)]
           else:
             relation_paper_name = "Unknown"
         relations_str += Template(relation_template).substitute(relation=relation_type, value=relation_paper_name)
-
   return relations_str
 
 # load the SLR data as a dict, returns three different dicts: papers, proposals, and classes
