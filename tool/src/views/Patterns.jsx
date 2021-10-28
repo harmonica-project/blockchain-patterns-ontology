@@ -6,7 +6,7 @@ import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
 import { useSnackbar } from 'notistack';
 import { getLocalStoragePatterns, parseToLabel } from '../libs/helpers';
-import { getPatternClasses } from '../libs/fuseki';
+import { getPatternClasses, getLinkedPatterns } from '../libs/fuseki';
 import PatternCard from '../components/PatternCard';
 import PatternModal from '../modals/PatternModal';
 import ClassChipSelector from '../components/ClassChipSelector';
@@ -136,10 +136,16 @@ export default function Patterns() {
     }
 
     const handlePatternClick = (pattern) => {
-        setCurrentPattern(pattern);
-        setModalStates({
-            "pattern": true
-        })
+        getLinkedPatterns(pattern.individual.value)
+            .then(links => {
+                setCurrentPattern({
+                    ...pattern,
+                    'linkedPatterns': links
+                });
+                setModalStates({
+                    "pattern": true
+                })
+            })
     }
 
     const storeInLocalstorage = (pattern) => {

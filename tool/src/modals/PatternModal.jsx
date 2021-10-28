@@ -18,7 +18,7 @@ const containerStyle = {
 
 export default function PatternModal({open, setOpen, pattern, selectedPatterns, handlePatternModalAction}) {
   const handleClose = () => setOpen(false);
-  const areLinks = (pattern['linkedPatterns'].length ? true : false);
+  const areLinks = (pattern['linkedPatterns'] && pattern['linkedPatterns']['length'] ? true : false);
   const patternInLocalState = (pattern) => {
     return (pattern && pattern['individual'] && selectedPatterns[pattern.individual.value]);
   };
