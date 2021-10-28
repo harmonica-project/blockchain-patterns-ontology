@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
   },
   patternCard: {
       padding: '10px',
-      height: '80%',
+      height: '90%',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -56,7 +56,7 @@ export default function PatternCard({
   };
 
   return (
-    <Grid item xs={cardSize} className={classes.patternItem} key={pattern['individual']['value']}>
+    <Grid item sm={cardSize} xs={12} className={classes.patternItem} key={pattern['individual']['value']}>
         <Card className={classes.patternCard}>
             <Grid container>
                 <Grid item md={disableButtons ? 12 : 9} sm={12}>

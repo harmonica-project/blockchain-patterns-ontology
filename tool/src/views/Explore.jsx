@@ -177,7 +177,7 @@ export default function Explore() {
                             pattern={pattern} 
                             handlePatternAction={handlePatternAction} 
                             selectedPatterns={selectedPatterns}
-                            cardSize={3}
+                            cardSize={4}
                             key={pattern.individual.value}
                             disableChips={true}
                         />
@@ -267,32 +267,32 @@ export default function Explore() {
         <ContentContainer>
             <HealthCheck className={classes.healthCheck} variant="overline" component="div" />
             <Grid container spacing={2} className={classes.smallMarginTopClass}>
-                <Grid item md={5} xs={12}>
-                <Grid item className={classes.marginBottomClass} md={12}>
-                    <Paper className={classes.section}>
-                        <div className={classes.classTitleContainer}>
-                            <Typography className={classes.classTitle} variant="h5">Class selection</Typography>
-                            <div className={classes.classTitleBtn}>
-                                <Tooltip title="Reset filters">
-                                    <IconButton onClick={resetSelection}>
-                                        <RefreshIcon/> 
-                                    </IconButton>
-                                </Tooltip>
+                <Grid item md={4} xs={12}>
+                    <Grid item className={classes.marginBottomClass} md={12}>
+                        <Paper className={classes.section}>
+                            <div className={classes.classTitleContainer}>
+                                <Typography className={classes.classTitle} variant="h5">Class selection</Typography>
+                                <div className={classes.classTitleBtn}>
+                                    <Tooltip title="Reset filters">
+                                        <IconButton onClick={resetSelection}>
+                                            <RefreshIcon/> 
+                                        </IconButton>
+                                    </Tooltip>
+                                </div>
                             </div>
-                        </div>
-                        <Divider />
-                        <ClassTabs ontologyClasses={ontologyClasses} handleChangeSelect={handleChangeSelect} selectorStates={selectorStates} setSelectorStates={setSelectorStates} />
-                    </Paper>
+                            <Divider />
+                            <ClassTabs ontologyClasses={ontologyClasses} handleChangeSelect={handleChangeSelect} selectorStates={selectorStates} setSelectorStates={setSelectorStates} />
+                        </Paper>
+                    </Grid>
+                    <Grid item md={12}>
+                        <Paper className={classes.section}>
+                            <Typography className={classes.marginBottomClass} variant="h5">Selected classes</Typography>
+                            <Divider />
+                            {displaySelectedClasses()}
+                        </Paper>
+                    </Grid>
                 </Grid>
-                <Grid item md={12}>
-                    <Paper className={classes.section}>
-                        <Typography className={classes.marginBottomClass} variant="h5">Selected classes</Typography>
-                        <Divider />
-                        {displaySelectedClasses()}
-                    </Paper>
-                </Grid>
-                </Grid>
-                <Grid item md={7} xs={12}>
+                <Grid item md={8} xs={12}>
                     <Paper className={classes.section}>
                         <Typography className={classes.marginBottomClass} variant="h5">Corresponding patterns proposed by papers</Typography>
                         {displayPatterns()}

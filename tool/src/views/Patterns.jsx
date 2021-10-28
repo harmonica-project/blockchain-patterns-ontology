@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, Paper, Typography, Button } from '@mui/material';
+import { Grid, Paper, Typography, Button, Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { styled } from '@mui/material/styles';
 import ContentContainer from '../layouts/ContentContainer';
@@ -9,13 +9,15 @@ import { getLocalStoragePatterns, parseToLabel } from '../libs/helpers';
 import { getPatternClasses } from '../libs/fuseki';
 import PatternCard from '../components/PatternCard';
 import PatternModal from '../modals/PatternModal';
+import ClassChipSelector from '../components/ClassChipSelector';
 
 const useStyles = makeStyles(() => ({
     healthCheck: {
         fontSize: '120%',
     },
-    content: {
-        padding: '20px'
+    paperContent: {
+        padding: '20px',
+        margin: '5px'
     },
     controlBtns: {
         textAlign: "right",
@@ -23,9 +25,9 @@ const useStyles = makeStyles(() => ({
             marginLeft: '10px'
         }
     },
-    containerPatterns: {
+    marginTop: {
         marginTop: '20px'
-    }
+    },
 }));
 
 export default function Patterns() {
@@ -34,6 +36,7 @@ export default function Patterns() {
     const [patternClassTree, setPatternClassTree] = useState({});
     const [currentPattern, setCurrentPattern] = useState({});
     const [modalStates, setModalStates] = useState({ "pattern": false });
+    const [classFilter, setClassFilter] = useState([]);
 
     const { enqueueSnackbar } = useSnackbar();
 
@@ -56,6 +59,24 @@ export default function Patterns() {
             })
     }, [])
     
+    const getAllClassesFromTrees = () => {
+        let classes = [];
+        let foundClasses = {};
+
+        Object.keys(selectedPatterns).forEach(key => {
+            if (selectedPatterns[key]['classtree']) {
+                selectedPatterns[key]['classtree'].forEach(singleClass => {
+                    if (!foundClasses[singleClass]) {
+                        classes.push(singleClass);
+                        foundClasses[singleClass] = true;
+                    }
+                })
+            }
+        });
+
+        return classes;
+    };
+
     const getPatternsWithCat = (classTree) => {
         let patterns = getLocalStoragePatterns();
         if (patterns) setSelectedPatterns(addCatsToPatterns(patterns, classTree));
@@ -163,56 +184,98 @@ export default function Patterns() {
         }
     };
 
+    const genDisplayedPatterns = (patterns) => {
+        if (!classFilter.length) return patterns;
+
+        const displayedPatterns = {};
+
+        Object.keys(patterns).forEach(key => {
+            let pattern = patterns[key];
+            if (pattern && pattern['classtree']) {
+                let isIncluded = true;
+
+                for (let i in classFilter) {
+                    if (!pattern['classtree'].includes(classFilter[i])) {
+                        isIncluded = false;
+                        break;
+                    }
+                };
+
+                if (isIncluded) displayedPatterns[key] = pattern;
+            }
+        });
+
+        return displayedPatterns;
+    };
+
     return (
         <ContentContainer>
             <HealthCheck className={classes.healthCheck} variant="overline" component="div" />
-            <Paper className={classes.content}>
-                <Grid container>
-                    <Grid container>
-                        <Grid item xs={4}>
-                            <Typography variant="h5" >
-                                My patterns
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={8} className={classes.controlBtns}>
-                            <label htmlFor="import-pattern-input">
-                                <Input accept="*.json" id="import-pattern-input" type="file" onChange={importFromJSON} />
-                                <Button variant="contained" component="span">
-                                    Import
+            <Grid container>
+                <Grid item sm={3} xs={12}>
+                    <Paper className={classes.paperContent}>
+                        <Typography variant="h5" >
+                            Filters
+                        </Typography>
+                        <Grid container className={classes.marginTop}>
+                            <Grid item xs={12}>
+                                <ClassChipSelector
+                                    classes={getAllClassesFromTrees(selectedPatterns)}
+                                    classFilter={classFilter}
+                                    setClassFilter={setClassFilter}
+                                />
+                            </Grid>
+                            <Grid item xs={6} style={{marginTop: '10px', paddingRight: '5px'}}>
+                                <label htmlFor="import-pattern-input">
+                                    <Input accept="*.json" id="import-pattern-input" type="file" onChange={importFromJSON} />
+                                    <Button fullWidth variant="contained" component="span">
+                                        Import
+                                    </Button>
+                                </label>
+                            </Grid>
+                            <Grid item xs={6} style={{marginTop: '10px', paddingLeft: '5px'}}>
+                                <Button fullWidth variant="contained" onClick={exportToJSON}>
+                                    Export
                                 </Button>
-                            </label>
-                            <Button variant="contained" onClick={exportToJSON}>
-                                Export
-                            </Button>
-                            <Button variant="contained" color="error" onClick={() => deleteAllLocalstorage()}>
-                                Delete all patterns
-                            </Button>
+                            </Grid>
+                            <Grid item xs={12} style={{marginTop: '10px'}}>
+                                <Button variant="contained" color="error" fullWidth onClick={() => deleteAllLocalstorage()}>
+                                    Delete all patterns
+                                </Button>
+                            </Grid>
                         </Grid>
-                    </Grid>
-                    <Grid container className={classes.containerPatterns}>
-                        {
-                            Object.keys(selectedPatterns).length
-                            ? (
-                                Object.keys(selectedPatterns).map(key => (
-                                    <PatternCard 
-                                        pattern={selectedPatterns[key]} 
-                                        selectedPatterns={selectedPatterns} 
-                                        handlePatternAction={handlePatternAction}
-                                        cardSize={3} 
-                                        disableButtons={true}
-                                        key={key}
-                                    />
-                                ))
-                            )
-                            : (
-                                <Typography variant="h6" className={classes.bigMarginTopClass}>
-                                    No patterns yet in this list. You can add some in the <i>Explore</i> or <i>Get recommendation</i> section.
-                                </Typography>
-                            )
-                        }
-                    </Grid>
+                    </Paper>
                 </Grid>
-            </Paper>
+                <Grid item sm={12} sm={9}>
+                    <Paper className={classes.paperContent}>
+                        <Typography variant="h5" >
+                            My patterns
+                        </Typography>
+                        <Grid container className={classes.marginTop}>
+                            {
+                                Object.keys(selectedPatterns).length
+                                ? (
+                                    Object.keys(genDisplayedPatterns(selectedPatterns)).map(key => (
+                                        <PatternCard 
+                                            pattern={selectedPatterns[key]} 
+                                            selectedPatterns={selectedPatterns} 
+                                            handlePatternAction={handlePatternAction}
+                                            cardSize={4} 
+                                            disableButtons={true}
+                                            key={key}
+                                        />
+                                    ))
+                                )
+                                : (
+                                    <Typography variant="h6" className={classes.bigMarginTopClass}>
+                                        No patterns yet in this list.
+                                    </Typography>
+                                )
+                            }
+                        </Grid>
+                    </Paper>
+                </Grid>
+            </Grid>
             <PatternModal 
                 open={modalStates['pattern']} 
                 setOpen={(newOpen) => setModalStates({ ...modalStates, 'pattern': newOpen})} 
