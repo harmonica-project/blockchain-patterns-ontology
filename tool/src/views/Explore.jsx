@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip, Card, Link } from '@mui/material';
+import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
@@ -179,6 +179,7 @@ export default function Explore() {
                             selectedPatterns={selectedPatterns}
                             cardSize={3}
                             key={pattern.individual.value}
+                            disableChips={true}
                         />
                     ))}
                 </Grid>

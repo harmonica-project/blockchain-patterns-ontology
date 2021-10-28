@@ -79,6 +79,8 @@ const createPatternClassesTree = (classes) => {
             parent: classpair.parent.value
         };
     });
+
+    return orderedClasses;
 };
 
 export const getPatternClasses = async () => {
@@ -94,8 +96,7 @@ export const getPatternClasses = async () => {
     try {
         let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
         if (response.status === 200) {
-            let results = parseResults(await response.json());
-            createPatternClassesTree(results)
+            return createPatternClassesTree(parseResults(await response.json()));
         };
         return [];
     } catch (e) {

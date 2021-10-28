@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
 import { useSnackbar } from 'notistack';
-import { getLocalStoragePatterns } from '../libs/helpers';
+import { getLocalStoragePatterns, parseToLabel } from '../libs/helpers';
 import { getPatternClasses } from '../libs/fuseki';
 import PatternCard from '../components/PatternCard';
 import PatternModal from '../modals/PatternModal';
@@ -37,27 +37,11 @@ export default function Patterns() {
 
     const { enqueueSnackbar } = useSnackbar();
 
-    const filterParents = (filterClasses) => {
-        let keyClasses = Object.keys(filterClasses);
-    
-        for (let i in keyClasses) {
-            let key = keyClasses[i]
-            console.log(key, filterClasses[key], filterClasses[filterClasses[key]])
-            if (filterClasses[filterClasses[key]]) {
-                delete filterClasses[key];
-            }
-        }
-    
-        return filterClasses;
-    }
-
     const handlePatternModalAction = (action, pattern) => {
         switch (action) {
-            case 'add':
-                storeInLocalstorage(pattern);
-                break;
             case 'remove':
                 deleteFromLocalstorage(pattern);
+                setModalStates({ ...modalStates, 'pattern': false});
                 break;
             default:
                 console.error('No handler for this action.');
@@ -65,15 +49,19 @@ export default function Patterns() {
     }
 
     useEffect(() => {
-        let patterns = getLocalStoragePatterns();
-        if (patterns) setSelectedPatterns(patterns);
-        else enqueueSnackbar('Error while retrieving patterns.')
         getPatternClasses()
             .then(classes => {
                 setPatternClassTree(classes);
+                getPatternsWithCat(classes);
             })
     }, [])
     
+    const getPatternsWithCat = (classTree) => {
+        let patterns = getLocalStoragePatterns();
+        if (patterns) setSelectedPatterns(addCatsToPatterns(patterns, classTree));
+        else enqueueSnackbar('Error while retrieving patterns.');
+    };
+
     const Input = styled('input')({
         display: 'none',
     });
@@ -95,14 +83,21 @@ export default function Patterns() {
         setSelectedPatterns({});
     };
 
-    const orderPatternsByCat = () => {
-        getPatternClasses()
-        const orderedPatterns = {}
-        Object.keys(selectedPatterns).forEach(key => {
-            orderedPatterns[selectedPatterns[key].classuri.value] = selectedPatterns[key];
-        })
+    const addCatsToPatterns = (patterns, classTree) => {
+        const patternsKeys = Object.keys(patterns);
+        patternsKeys.forEach(key => {
+            let patternClass = patterns[key].classuri.value;
+            let patternClassTree = [];
 
-        // console.log(orderedPatterns)
+            while(classTree[patternClass] && classTree[patternClass]['parent']) {
+                patternClassTree.push(parseToLabel(patternClass));
+                patternClass = classTree[patternClass]['parent'];
+            }
+
+            patterns[key]['classtree'] = patternClassTree;
+        });
+
+        return patterns;
     }
 
     const importFromJSON = e => {
@@ -204,6 +199,8 @@ export default function Patterns() {
                                         selectedPatterns={selectedPatterns} 
                                         handlePatternAction={handlePatternAction}
                                         cardSize={3} 
+                                        disableButtons={true}
+                                        key={key}
                                     />
                                 ))
                             )

@@ -51,3 +51,13 @@ export const getLocalStoragePatterns = () => {
         return false;
     }
 };
+
+export const parseToLabel = (uri) => {
+   try {
+    const splitUri = uri.split(':')[1];
+    if (splitUri.length > 1) return splitUri[0].toUpperCase() + splitUri.slice(1).replace(/([A-Z])/g, ' $1').trim();
+    else return splitUri[0].toUpperCase();
+   } catch {
+       return uri;
+   }
+}
