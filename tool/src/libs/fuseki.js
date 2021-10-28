@@ -124,7 +124,32 @@ const filterLinkProperties = (properties) => {
     return newProperties;
 };
 
-export const getPatternRelations = async (patternURI) => {
+export const getPattern = async (patternURI) => {
+    let query = `
+        SELECT DISTINCT ?label ?paper ?context ?solution ?classname
+        WHERE {
+            ${patternURI} rdfs:label ?label .
+            ${patternURI} onto:hasPaper ?paper .
+            ${patternURI} onto:ContextAndProblem ?context .
+            ${patternURI} onto:Solution ?solution .
+            ${patternURI} a ?classname .
+            ?classname rdfs:subClassOf* onto:Pattern
+        }
+    `;
+
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            return parseResults(await response.json());
+        };
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
+    }
+};
+
+export const getLinkedPatterns = async (patternURI) => {
     let query = `
         SELECT ?relation ?individual
         WHERE {
@@ -135,8 +160,12 @@ export const getPatternRelations = async (patternURI) => {
     try {
         let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
         if (response.status === 200) {
-            let results = parseResults(await response.json());
-            console.log(filterLinkProperties(results))
+            let results = filterLinkProperties(parseResults(await response.json()));
+
+            for (let i in results) {
+                results[i]['pattern'] = (await getPattern(results[i].individual.value))[0];
+            }
+
             return results;
         };
         return [];

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, Paper, Typography, Button, Box } from '@mui/material';
+import { Grid, Paper, Typography, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { styled } from '@mui/material/styles';
 import ContentContainer from '../layouts/ContentContainer';
@@ -246,7 +246,7 @@ export default function Patterns() {
                         </Grid>
                     </Paper>
                 </Grid>
-                <Grid item sm={12} sm={9}>
+                <Grid item xs={12} sm={9}>
                     <Paper className={classes.paperContent}>
                         <Typography variant="h5" >
                             My patterns

@@ -4,7 +4,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
-import { getSubclasses, getPatterns, getPatternRelations } from '../libs/fuseki';
+import { getSubclasses, getPatterns, getLinkedPatterns } from '../libs/fuseki';
 import ClassTabs from '../components/ClassTabs';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PatternModal from '../modals/PatternModal';
@@ -100,10 +100,16 @@ export default function Explore() {
     }, [])
 
     const handlePatternClick = (pattern) => {
-        setCurrentPattern(pattern);
-        setModalStates({
-            "pattern": true
-        })
+        getLinkedPatterns(pattern.individual.value)
+            .then(links => {
+                setCurrentPattern({
+                    ...pattern,
+                    'linkedPatterns': links
+                });
+                setModalStates({
+                    "pattern": true
+                })
+            })
     }
 
     const handlePatternModalAction = (action, pattern) => {
@@ -149,7 +155,6 @@ export default function Explore() {
         switch (action) {
             case 'patternClick':
                 handlePatternClick(pattern);
-                getPatternRelations(pattern.individual.value)
                 break;
             case 'patternDelete':
                 deleteFromLocalstorage(pattern);
