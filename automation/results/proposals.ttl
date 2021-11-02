@@ -2001,7 +2001,7 @@ rdfs:label "Confidential and pseudo-anonymous contract enforcement" .
 
 :hasPaper :Wessling2018Engineering ;
 :ContextAndProblem ""^^rdfs:Literal ;
-:Solution "For directly interacting with an EDCC (Executable Distributed Code Contract) it is necessarythat the interface description (Application Binary Interface, ABI) of the EDCC is publicly available. Furthermore, for understanding the specific actions carried out by a contract, the source code should be published as well. DApps structured with this pattern have the security advantage that the users keep their private keys on their device and are able to generate, sign and send transactions on their own."^^rdfs:Literal ;
+:Solution "For directly interacting with an EDCC (Executable Distributed Code Contract) it is necessary that the interface description (Application Binary Interface, ABI) of the EDCC is publicly available. Furthermore, for understanding the specific actions carried out by a contract, the source code should be published as well. DApps structured with this pattern have the security advantage that the users keep their private keys on their device and are able to generate, sign and send transactions on their own."^^rdfs:Literal ;
 :ApplicationExample "EtherDelta. Etherdelta. (Accessed 2018-03-15). [Online]. Available: https://etherdelta.com"^^rdfs:Literal ;
 :ApplicationExample "Aurora Labs S.A. Idex – decentralized ethereum asset exchange. (Accessed 2018-03-15). [Online]. Available: https://idex.market"^^rdfs:Literal ;
 :ApplicationExample "Ethorse. (Accessed 2018-03-15). [Online]. Available: https://ethorse.com"^^rdfs:Literal ;

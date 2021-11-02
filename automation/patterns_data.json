@@ -2554,7 +2554,7 @@
             "ID": "116",
             "Name": "Self-Generated Transactions",
             "Paper": "24",
-            "Solution": "For directly interacting with an EDCC (Executable Distributed Code Contract) it is necessarythat the interface description (Application Binary Interface, ABI) of the EDCC is publicly available. Furthermore, for understanding the specific actions carried out by a contract, the source code should be published as well. DApps structured with this pattern have the security advantage that the users keep their private keys on their device and are able to generate, sign and send transactions on their own.",
+            "Solution": "For directly interacting with an EDCC (Executable Distributed Code Contract) it is necessary that the interface description (Application Binary Interface, ABI) of the EDCC is publicly available. Furthermore, for understanding the specific actions carried out by a contract, the source code should be published as well. DApps structured with this pattern have the security advantage that the users keep their private keys on their device and are able to generate, sign and send transactions on their own.",
             "Application examples": "• EtherDelta. Etherdelta. (Accessed 2018-03-15). [Online]. Available: https://etherdelta.com• Aurora Labs S.A. Idex – decentralized ethereum asset exchange. (Accessed 2018-03-15). [Online]. Available: https://idex.market• Ethorse. (Accessed 2018-03-15). [Online]. Available: https://ethorse.com",
             "Benefits": "Security",
             "Drawbacks/Liabilities": "Low user experience, Technical knowledge required",
