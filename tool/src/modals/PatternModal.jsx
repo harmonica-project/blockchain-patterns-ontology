@@ -37,12 +37,12 @@ export default function PatternModal({open, setOpen, pattern, selectedPatterns, 
         return `Required: it must be used with the ${getPropertySafe('label')} pattern.`;
 
       case 'onto:createdFrom':
-        return `The ${getPropertySafe('label')} is directly inspired from this pattern.`;
+        return `${getPropertySafe('label')} is directly inspired from this pattern.`;
 
       case 'onto:benefitsTo':
         return `Using this pattern along the ${getPropertySafe('label')} pattern is beneficial.`;      
 
-      case 'relatedTo':
+      case 'onto:relatedTo':
         return `This pattern is related to the ${getPropertySafe('label')} pattern.`;  
 
       default:

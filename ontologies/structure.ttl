@@ -22,8 +22,15 @@
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#benefitsFrom
 :benefitsFrom rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
-              rdfs:domain :Pattern ;
-              rdfs:range :Pattern .
+              rdfs:domain :Proposal ;
+              rdfs:range :Proposal .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#createdFrom
+:createdFrom rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Proposal ;
+             rdfs:range :Proposal .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasPaper
@@ -44,27 +51,22 @@
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#relatedTo
 :relatedTo rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
-           rdfs:domain :Pattern ;
-           rdfs:range :Pattern .
+           rdfs:domain :Proposal ;
+           rdfs:range :Proposal .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#relatedTo
-:createdFrom rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf owl:topObjectProperty ;
-           rdfs:domain :Pattern ;
-           rdfs:range :Pattern .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#requires
 :requires rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf owl:topObjectProperty ;
-          rdfs:domain :Pattern ;
-          rdfs:range :Pattern .
+          rdfs:domain :Proposal ;
+          rdfs:range :Proposal .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#variantOf
 :variantOf rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
-           rdfs:domain :Pattern ;
-           rdfs:range :Pattern .
+           rdfs:domain :Proposal ;
+           rdfs:range :Proposal .
 
 
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
@@ -78,6 +80,8 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ApplicationExample
 :ApplicationExample rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :Proposal ;
                     rdfs:range rdfs:Literal ;
                     rdfs:label "Application example" .
 
@@ -85,12 +89,14 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Authors
 :Authors rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Paper ;
          rdfs:range rdfs:Literal .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContextAndProblem
 :ContextAndProblem rdf:type owl:DatatypeProperty ;
-                   rdfs:domain :Pattern ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :Proposal ;
                    rdfs:range rdfs:Literal ;
                    rdfs:label "Context and problem" .
 
@@ -98,30 +104,35 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DOI
 :DOI rdf:type owl:DatatypeProperty ;
      rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Paper ;
      rdfs:range rdfs:Literal .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DocumentType
 :DocumentType rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Paper ;
               rdfs:range rdfs:Literal .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Journal
 :Journal rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Paper ;
          rdfs:range rdfs:Literal .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Pages
 :Pages rdf:type owl:DatatypeProperty ;
        rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Paper ;
        rdfs:range rdfs:Literal .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Solution
 :Solution rdf:type owl:DatatypeProperty ;
-          rdfs:domain :Pattern ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Proposal ;
           rdfs:range rdfs:Literal ;
           rdfs:label "Solution" .
 
@@ -129,18 +140,21 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Title
 :Title rdf:type owl:DatatypeProperty ;
        rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Paper ;
        rdfs:range rdfs:Literal .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Volume
 :Volume rdf:type owl:DatatypeProperty ;
         rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :Paper ;
         rdfs:range rdfs:Literal .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Year
 :Year rdf:type owl:DatatypeProperty ;
       rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Paper ;
       rdfs:range rdfs:Literal .
 
 
