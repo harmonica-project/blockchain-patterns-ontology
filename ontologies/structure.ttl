@@ -9,14 +9,28 @@
 <http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns> rdf:type owl:Ontology .
 
 #################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#problemDescription
+:problemDescription rdf:type owl:AnnotationProperty .
+
+
+#################################################################
 #    Object Properties
 #################################################################
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#addressProblem
 :addressProblem rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :addressedBy ;
                 rdfs:domain :Pattern ;
                 rdfs:range :Problem .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#addressedBy
+:addressedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#benefitsFrom
@@ -172,6 +186,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ArchitecturalDesignOrganization
 :ArchitecturalDesignOrganization rdf:type owl:Class ;
                                  rdfs:subClassOf :Problem ;
+                                 :problemDescription "I want to use a commonly recurring architectural style in my application"^^rdfs:Literal ;
                                  rdfs:label "Architectural design organization"@en .
 
 
@@ -188,6 +203,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AssetManagement
 :AssetManagement rdf:type owl:Class ;
                  rdfs:subClassOf :InteractingWithBlockchain ;
+                 :problemDescription "I want to safely manage my cryptographic wallets and keys"^^rdfs:Literal ;
                  rdfs:label "Asset management"@en .
 
 
@@ -200,6 +216,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BPMFeatureApplication
 :BPMFeatureApplication rdf:type owl:Class ;
                        rdfs:subClassOf :DomainOrientedApplicationDesign ;
+                       :problemDescription "I want my blockchain application to handle BPM features"^^rdfs:Literal ;
                        rdfs:label "BPM feature application"@en .
 
 
@@ -222,6 +239,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BigDataFeatureApplication
 :BigDataFeatureApplication rdf:type owl:Class ;
                            rdfs:subClassOf :DomainOrientedApplicationDesign ;
+                           :problemDescription "I want my blockchain application to handle big data features"^^rdfs:Literal ;
                            rdfs:label "Big data feature application"@en .
 
 
@@ -244,12 +262,14 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainEnhancedOffChainStorage
 :BlockchainEnhancedOffChainStorage rdf:type owl:Class ;
                                    rdfs:subClassOf :InteractingWithBlockchain ;
+                                   :problemDescription "I want to store data off-chain while taking profit from blockchain capabilities to trace and attest off-chain data"^^rdfs:Literal ;
                                    rdfs:label "Blockchain-enhanced off-chain storage"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainTransactionHandling
 :BlockchainTransactionHandling rdf:type owl:Class ;
                                rdfs:subClassOf :InteractingWithBlockchain ;
+                               :problemDescription "I want to safely handle transactional aspects between off-chain components and the blockchain"^^rdfs:Literal ;
                                rdfs:label "Blockchain transaction handling"@en .
 
 
@@ -257,6 +277,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 :BuildOnChainApplication rdf:type owl:Class ;
                          rdfs:subClassOf :DesignPatternApplication ;
                          owl:disjointWith :InteractingWithBlockchain ;
+                         :problemDescription "I want to leverage blockchain in my application"^^rdfs:Literal ;
                          rdfs:label "Build on-chain application"@en .
 
 
@@ -323,6 +344,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DecentralizedIdentityFeatureApplication
 :DecentralizedIdentityFeatureApplication rdf:type owl:Class ;
                                          rdfs:subClassOf :DomainOrientedApplicationDesign ;
+                                         :problemDescription "I want my blockchain application to handle decentralized identity features"^^rdfs:Literal ;
                                          rdfs:label "Decentralized identity feature application"@en .
 
 
@@ -349,6 +371,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DesignPatternApplication
 :DesignPatternApplication rdf:type owl:Class ;
                           rdfs:subClassOf :Problem ;
+                          :problemDescription "I want to use commonly used design constructs and features in my application"^^rdfs:Literal ;
                           rdfs:label "Design pattern application"@en .
 
 
@@ -371,12 +394,14 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DomainOrientedApplicationDesign
 :DomainOrientedApplicationDesign rdf:type owl:Class ;
                                  rdfs:subClassOf :BuildOnChainApplication ;
+                                 :problemDescription "I want my blockchain application to handle features that serve the purpose of a specific domain"^^rdfs:Literal ;
                                  rdfs:label "Domain-oriented application design"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EnableSmartContractAccessControl
 :EnableSmartContractAccessControl rdf:type owl:Class ;
                                   rdfs:subClassOf :SmartContractUsage ;
+                                  :problemDescription "I want to enable access control and permissions measures when requesting my smart-contracts"^^rdfs:Literal ;
                                   rdfs:label "Enable smart contract access control"@en .
 
 
@@ -434,6 +459,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InteractingWithBlockchain
 :InteractingWithBlockchain rdf:type owl:Class ;
                            rdfs:subClassOf :DesignPatternApplication ;
+                           :problemDescription "I want to enable communication between my application and a blockchain"^^rdfs:Literal ;
                            rdfs:label "Interacting with blockchain"@en .
 
 
@@ -446,12 +472,14 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LanguageIdiomApplication
 :LanguageIdiomApplication rdf:type owl:Class ;
                           rdfs:subClassOf :Problem ;
+                          :problemDescription "I want to use language idioms in my application"^^rdfs:Literal ;
                           rdfs:label "Language idiom application"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ManageOnChainData
 :ManageOnChainData rdf:type owl:Class ;
                    rdfs:subClassOf :BuildOnChainApplication ;
+                   :problemDescription "I want to store and manage on-chain data in any format (encrypted or clear)"^^rdfs:Literal ;
                    rdfs:label "Manage on-chain data"@en .
 
 
@@ -468,6 +496,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultiDomainFeatureApplication
 :MultiDomainFeatureApplication rdf:type owl:Class ;
                                rdfs:subClassOf :DomainOrientedApplicationDesign ;
+                               :problemDescription "I want to reuse multi-domain on-chain features in my blockchain application"^^rdfs:Literal ;
                                rdfs:label "Multi-domain feature application"@en .
 
 
@@ -494,12 +523,14 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainDataEncryption
 :OnChainDataEncryption rdf:type owl:Class ;
                        rdfs:subClassOf :ManageOnChainData ;
+                       :problemDescription "I want to encrypt my on-chain data"^^rdfs:Literal ;
                        rdfs:label "On-chain data encryption"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainDataMigration
 :OnChainDataMigration rdf:type owl:Class ;
                       rdfs:subClassOf :ManageOnChainData ;
+                      :problemDescription "I want to migrate my on-chain data from a storage (blockchain and/or smart-contract) to another"^^rdfs:Literal ;
                       rdfs:label "On-chain data migration"@en .
 
 
@@ -516,12 +547,14 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainStorage
 :OnChainStorage rdf:type owl:Class ;
                 rdfs:subClassOf :ManageOnChainData ;
+                :problemDescription "I want to use the best practices to store on-chain data in my blockchain application"^^rdfs:Literal ;
                 rdfs:label "On-chain storage"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnOffChainDataExchange
 :OnOffChainDataExchange rdf:type owl:Class ;
                         rdfs:subClassOf :InteractingWithBlockchain ;
+                        :problemDescription "I want to push up-to-date data on-chain or pull data and events from on-chain smart-contracts"^^rdfs:Literal ;
                         rdfs:label "On/off-chain data exchange"@en .
 
 
@@ -562,6 +595,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractEfficiency
 :SmartContractEfficiency rdf:type owl:Class ;
                          rdfs:subClassOf :SmartContractUsage ;
+                         :problemDescription "I want to improve the efficiency of my blockchain application by optimizing the costs of deploying and executing smart-contracts"^^rdfs:Literal ;
                          rdfs:label "Smart contract efficiency"@en .
 
 
@@ -574,6 +608,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractManagement
 :SmartContractManagement rdf:type owl:Class ;
                          rdfs:subClassOf :SmartContractUsage ;
+                         :problemDescription "I want to organize and manage my suite of deployed smart-contracts on-chain"^^rdfs:Literal ;
                          rdfs:label "Smart contract management"@en .
 
 
@@ -590,12 +625,14 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractSecurity
 :SmartContractSecurity rdf:type owl:Class ;
                        rdfs:subClassOf :SmartContractUsage ;
+                       :problemDescription "I want to improve the security of my smart contract against vulnerabilities and abuses"^^rdfs:Literal ;
                        rdfs:label "Smart contract security"@en .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractUsage
 :SmartContractUsage rdf:type owl:Class ;
                     rdfs:subClassOf :BuildOnChainApplication ;
+                    :problemDescription "I want to use smart-contracts in the design of my blockchain application"^^rdfs:Literal ;
                     rdfs:label "Smart contract usage"@en .
 
 
