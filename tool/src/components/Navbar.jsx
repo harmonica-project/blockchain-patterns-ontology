@@ -12,7 +12,7 @@ export default function ButtonAppBar() {
               Blockchain-based pattern ontology
             </Typography>
           </Grid>
-          <Grid container style={{justifyContent: 'end', flexShrink: '1'}}>
+          <Grid container style={{justifyContent: 'flex-end', flexShrink: '1'}}>
             <Grid item>
               <Button component={NavLink} to={'/'} color="inherit">Home</Button>
             </Grid>
