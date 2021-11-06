@@ -51,6 +51,7 @@ export default function Explore() {
     const [modalStates, setModalStates] = useState({ "pattern": false });
     const [currentPattern, setCurrentPattern] = useState({});
     const [selectedPatterns, setSelectedPatterns] = useState({});
+    const [nbPatterns, setNbPatterns] = useState(0)
     const { enqueueSnackbar } = useSnackbar();
 
     const filterParents = (filterClasses) => {
@@ -70,6 +71,11 @@ export default function Explore() {
         getPatterns(filterParents({...selectorStates}))
             .then((results) => {
                 setPatterns(results)
+            })
+
+        getPatterns()
+            .then((results) => {
+                setNbPatterns(results.length)
             })
     }, [selectorStates]);
 
@@ -168,13 +174,7 @@ export default function Explore() {
     };
 
     const displayPatterns = () => {
-        if (!patterns.length) {
-            return (
-                <Typography variant="h6" className={classes.bigMarginTopClass}>
-                    No patterns found for this query.
-                </Typography>
-            )
-        } else {
+        if (patterns.length) {
             return (
                 <Grid container>
                     {patterns.map(pattern => (
@@ -189,7 +189,7 @@ export default function Explore() {
                     ))}
                 </Grid>
             )
-        }
+        } else return <div/>;
     };
 
     const getPatternLabelSafe = (key) => {
@@ -299,7 +299,9 @@ export default function Explore() {
                 </Grid>
                 <Grid item md={8} xs={12}>
                     <Paper className={classes.section}>
-                        <Typography className={classes.marginBottomClass} variant="h5">Corresponding patterns proposed by papers</Typography>
+                        <Typography className={classes.marginBottomClass} variant="h5">
+                            {patterns.length ? `${patterns.length}/${nbPatterns}` : 'No'} corresponding patterns for this selection
+                        </Typography>
                         {displayPatterns()}
                     </Paper>
                 </Grid>
