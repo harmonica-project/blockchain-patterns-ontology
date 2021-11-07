@@ -35,7 +35,7 @@ function a11yProps(index, key) {
   };
 }
 
-export default function ClassTabs({ontologyClasses, handleChangeSelect, selectorStates, setSelectorStates}) {
+export default function ClassTabs({ontologyClasses, handleChangeSelect, selectorStates}) {
     const [value, setValue] = React.useState(0);
 
     const handleChangeTab = (event, newValue) => {
@@ -101,8 +101,9 @@ export default function ClassTabs({ontologyClasses, handleChangeSelect, selector
         }
     }
 
-    let initialClassesKeys = Object.keys(getInitialClasses());
-
+    // removing Problem from explorer for now
+    let initialClassesKeys = Object.keys(getInitialClasses()).filter(key => key !== 'onto:Problem');
+    
     return (
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
