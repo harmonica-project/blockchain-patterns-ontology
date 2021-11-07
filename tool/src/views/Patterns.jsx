@@ -107,7 +107,7 @@ export default function Patterns() {
     const addCatsToPatterns = (patterns, classTree) => {
         const patternsKeys = Object.keys(patterns);
         patternsKeys.forEach(key => {
-            let patternClass = patterns[key].classuri.value;
+            let patternClass = patterns[key].patternclass.value;
             let patternClassTree = [];
 
             while(classTree[patternClass] && classTree[patternClass]['parent']) {
@@ -255,7 +255,7 @@ export default function Patterns() {
                 <Grid item xs={12} sm={9}>
                     <Paper className={classes.paperContent}>
                         <Typography variant="h5" >
-                            My patterns
+                            {Object.keys(selectedPatterns).length ? Object.keys(selectedPatterns).length : "No"} patterns in my list
                         </Typography>
                         <Grid container className={classes.marginTop}>
                             {
@@ -274,7 +274,8 @@ export default function Patterns() {
                                 )
                                 : (
                                     <Typography variant="h6" className={classes.bigMarginTopClass}>
-                                        No patterns yet in this list.
+                                        You can select some patterns in the Explore section.
+                                        They will then be displayed in this section.
                                     </Typography>
                                 )
                             }

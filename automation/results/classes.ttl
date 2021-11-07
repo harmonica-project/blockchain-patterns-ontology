@@ -94,24 +94,6 @@ rdfs:label "Migration"@en .
 rdfs:subClassOf :ContractManagementPattern ;
 rdfs:label "Inter-family communication"@en .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Locking
-:Locking rdf:type owl:Class ;
-
-rdfs:subClassOf :ContractSecurityPattern ;
-rdfs:label "Locking"@en .
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransitionCounter
-:TransitionCounter rdf:type owl:Class ;
-
-rdfs:subClassOf :ContractSecurityPattern ;
-rdfs:label "Transition Counter"@en .
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AutomaticTimedTransitions
-:AutomaticTimedTransitions rdf:type owl:Class ;
-
-rdfs:subClassOf :ContractEfficiencyPattern ;
-rdfs:label "Automatic Timed Transitions"@en .
-
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Randomness
 :Randomness rdf:type owl:Class ;
 
@@ -556,23 +538,11 @@ rdfs:label "Delegated Transactions"@en .
 rdfs:subClassOf :MultiDomainFeaturePattern ;
 rdfs:label "Digital Record"@en .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleBlockchains
-:MultipleBlockchains rdf:type owl:Class ;
-
-rdfs:subClassOf :ArchitecturalPattern ;
-rdfs:label "Multiple Blockchains"@en .
-
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainEncryption
 :OnChainEncryption rdf:type owl:Class ;
 
 rdfs:subClassOf :EncryptionPattern ;
 rdfs:label "On-chain encryption"@en .
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HashTimestamping
-:HashTimestamping rdf:type owl:Class ;
-
-rdfs:subClassOf :OffChainStoragePattern ;
-rdfs:label "Hash timestamping"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullPayment
 :PullPayment rdf:type owl:Class ;
@@ -633,12 +603,6 @@ rdfs:label "Rate Limit"@en .
 
 rdfs:subClassOf :ContractSecurityPattern ;
 rdfs:label "Check Effect Interaction"@en .
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#GuardCheck
-:GuardCheck rdf:type owl:Class ;
-
-rdfs:subClassOf :ContractSecurityPattern ;
-rdfs:label "Guard Check"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TimeConstraint
 :TimeConstraint rdf:type owl:Class ;

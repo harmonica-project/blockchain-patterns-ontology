@@ -39,14 +39,13 @@ export const healthCheck = async () => {
     }
 }
 
-export const getSubclasses = async (className) => {
+export const getSubclasses = async (className, isProblem = false) => {
     const query = `
         SELECT ?subject ?label
         WHERE {
-            ?subject rdfs:subClassOf ${className}
-            OPTIONAL {
-                ?subject rdfs:label ?label
-            }
+            ?subject rdfs:subClassOf ${className}.
+            ?subject rdfs:label ?label.
+            ${isProblem ? "?subject onto:problemDescription ?description" : ""}
         }
     `
     try {
@@ -177,23 +176,63 @@ export const getLinkedPatterns = async (patternURI) => {
 
 export const getPatterns = async (filterClasses = {}) => {
     let query = "";
+    let letters = [...Array(26)].map((x,i)=>String.fromCharCode(i + 97));
 
-    const additionalClassTemplate = (additionalClass) => {
-        return `?classuri rdfs:subClassOf* ${additionalClass}.`
-    };
-
-    const queryTemplate = (additionalClasses = "") => {
-        return `SELECT DISTINCT ?classuri ?individual ?entity ?label ?paper ?context ?solution
+    const queryTemplate = (classes) => {
+        return `SELECT DISTINCT ?patternclass ?individual ?label ?paper ?context ?solution
                     WHERE {
-                        ?classuri rdfs:subClassOf* onto:Pattern.
-                        ${additionalClasses}
-                        ?individual a ?classuri .
+                        ?patternclass rdfs:subClassOf* onto:Pattern.
+                        ${classes.map((c, i) => `?${letters[i]} rdfs:subClassOf* ${c}.`).join('\n')}
+                        ?individual a ${classes.map((c, i) => `?${letters[i]}`).join()}.
+                        ?individual a ?patternclass.
                         ?individual rdfs:label ?label .
                         ?individual onto:hasPaper ?paper .
                         ?individual onto:ContextAndProblem ?context .
                         ?individual onto:Solution ?solution
                     }
                 `
+    }
+    
+    const filters = 
+        [...Object.keys(filterClasses)]
+            .map(key => filterClasses[key])
+            .filter(val => val != 'prompt');
+
+    query = queryTemplate(filters.length ? filters : ["onto:Pattern"])
+
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            return parseResults(await response.json());
+        };
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
+    }
+}
+
+/*
+export const getPatternsByProblem = async (filterProblems = {}) => {
+    let query = "";
+
+    const additionalClassTemplate = (additionalClass) => {
+        return `?classuri rdfs:subClassOf* ${additionalClass}.`
+    };
+
+    const queryTemplate = (additionalClasses = "") => {
+        return `
+            select ?individual ?category where {
+                ?category rdfs:subClassOf* 
+                        [ 
+                        rdf:type owl:Restriction ;
+                        owl:onProperty onto:addressProblem ;
+                        owl:someValuesFrom ?p
+                        ].
+                    FILTER (?p IN (onto:OnOffChainDataExchange, onto:BigDataFeatureApplication) ).
+                    ?individual a ?category
+            }
+        `
     }
     
     if (Object.keys(filterClasses).length === 0) {
@@ -217,4 +256,4 @@ export const getPatterns = async (filterClasses = {}) => {
         console.error('Failed to fetch: ' + e);
         return [];
     }
-}
+}*/

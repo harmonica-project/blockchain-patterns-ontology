@@ -40,20 +40,6 @@ rdfs:label "Opportunities, challenges, and future extensions for smart-contract 
 
 rdfs:label "Inter-family communication in hyperledger sawtooth and its application to a crypto-asset framework" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Mavridou2018Designing
-:Mavridou2018Designing rdf:type owl:NamedIndividual ,
-                          :Paper ;
-
-:Authors "Mavridou, Anastasia and Laszka, Aron"^^rdfs:Literal ;
-:Year "2018"^^rdfs:Literal ;
-:Title "Designing Secure Ethereum Smart Contracts: A Finite State Machine Based Approach"^^rdfs:Literal ;
-:DOI "10.1007/978-3-662-58387-6_28"^^rdfs:Literal ;
-:Journal "Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)"^^rdfs:Literal ;
-:Pages "523--540"^^rdfs:Literal ;
-:Volume "10957 LNCS"^^rdfs:Literal ;
-
-rdfs:label "Designing Secure Ethereum Smart Contracts: A Finite State Machine Based Approach" .
-
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Bartoletti2017An
 :Bartoletti2017An rdf:type owl:NamedIndividual ,
                           :Paper ;
@@ -175,68 +161,17 @@ rdfs:label "Engineering Software Architectures of Blockchain-Oriented Applicatio
 
 rdfs:label "A typology of blockchain recordkeeping solutions and some reflections on their implications for the future of archival preservation" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Wohrer2018Design
-:Wohrer2018Design rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Wöhrer2018Design
+:Wöhrer2018Design rdf:type owl:NamedIndividual ,
                           :Paper ;
 
-:Authors "Wohrer, Maximilian and Zdun, Uwe"^^rdfs:Literal ;
+:Authors "Wöhrer, Maximilian and Zdun, Uwe"^^rdfs:Literal ;
 :Year "2018"^^rdfs:Literal ;
 :Title "Design Patterns for Smart Contracts in the Ethereum Ecosystem"^^rdfs:Literal ;
 :DOI "10.1109/Cybermatics_2018.2018.00255"^^rdfs:Literal ;
 :Pages "1513--1520"^^rdfs:Literal ;
 
 rdfs:label "Design Patterns for Smart Contracts in the Ethereum Ecosystem" .
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Lu2019Design
-:Lu2019Design rdf:type owl:NamedIndividual ,
-                          :Paper ;
-
-:Authors "Lu, Qinghua and Xu, Xiwei and Liu, Yue and Zhang, Weishan"^^rdfs:Literal ;
-:Year "2019"^^rdfs:Literal ;
-:Title "Design pattern as a service for blockchain applications"^^rdfs:Literal ;
-:DOI "10.1109/ICDMW.2018.00025"^^rdfs:Literal ;
-:Pages "128--135"^^rdfs:Literal ;
-:Volume "2018-November"^^rdfs:Literal ;
-
-rdfs:label "Design pattern as a service for blockchain applications" .
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Schinle2020How
-:Schinle2020How rdf:type owl:NamedIndividual ,
-                          :Paper ;
-
-:Authors "Schinle, Markus and Erler, Christina and Vetter, Adrian Rudolf and Stork, Wilhelm"^^rdfs:Literal ;
-:Year "2020"^^rdfs:Literal ;
-:Title "How to Disclose Selective Information from Permissioned DLT-Based Traceability Systems?"^^rdfs:Literal ;
-:DOI "10.1109/DAPPS49028.2020.00020"^^rdfs:Literal ;
-:Pages "153--158"^^rdfs:Literal ;
-
-rdfs:label "How to Disclose Selective Information from Permissioned DLT-Based Traceability Systems?" .
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Wohrer2020From
-:Wohrer2020From rdf:type owl:NamedIndividual ,
-                          :Paper ;
-
-:Authors "Wohrer, Maximilian and Zdun, Uwe"^^rdfs:Literal ;
-:Year "2020"^^rdfs:Literal ;
-:Title "From Domain-Specific Language to Code: Smart Contracts and the Application of Design Patterns"^^rdfs:Literal ;
-:DOI "10.1109/MS.2020.2993470"^^rdfs:Literal ;
-:Journal "IEEE Software"^^rdfs:Literal ;
-:Pages "37--42"^^rdfs:Literal ;
-:Volume "37"^^rdfs:Literal ;
-
-rdfs:label "From Domain-Specific Language to Code: Smart Contracts and the Application of Design Patterns" .
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Marchesi2020Security
-:Marchesi2020Security rdf:type owl:NamedIndividual ,
-                          :Paper ;
-
-:Authors "Marchesi, Lodovica and Marchesi, Michele, and Pompianu, Livio and Tonelli, Roberto"^^rdfs:Literal ;
-:Year "2020"^^rdfs:Literal ;
-:Title "Security checklists for ethereum smart contract development: patterns and best practices"^^rdfs:Literal ;
-:DOI "https://arxiv.org/abs/2008.04761"^^rdfs:Literal ;
-:Journal "arXiv.org"^^rdfs:Literal ;
-
-rdfs:label "Security checklists for ethereum smart contract development: patterns and best practices" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Zhang2017Applying
 :Zhang2017Applying rdf:type owl:NamedIndividual ,
