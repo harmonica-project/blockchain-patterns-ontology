@@ -39,13 +39,12 @@ export const healthCheck = async () => {
     }
 }
 
-export const getSubclasses = async (className, isProblem = false) => {
+export const getSubclasses = async (className) => {
     const query = `
         SELECT ?subject ?label
         WHERE {
             ?subject rdfs:subClassOf ${className}.
             ?subject rdfs:label ?label.
-            ${isProblem ? "?subject onto:problemDescription ?description" : ""}
         }
     `
     try {
@@ -67,7 +66,9 @@ const createPatternClassesTree = (classes) => {
         if (!orderedClasses[classpair.parent.value]) {
             orderedClasses[classpair.parent.value] = {
                 childrens: [classpair.child.value],
-                parent: ""
+                parent: "",
+                description: classpair.description.value,
+                label: classpair.label.value
             }
         } else {
             orderedClasses[classpair.parent.value].childrens.push(classpair.child.value);
@@ -75,20 +76,25 @@ const createPatternClassesTree = (classes) => {
 
         if (!orderedClasses[classpair.child.value]) orderedClasses[classpair.child.value] = {
             childrens: [],
-            parent: classpair.parent.value
+            parent: classpair.parent.value,
+            description: classpair.description.value,
+            label: classpair.label.value
         };
     });
 
     return orderedClasses;
 };
 
-export const getPatternClasses = async () => {
+export const getClassTree = async (classname) => {
+    // ${isProblem ? "?subject onto:problemDescription ?description" : ""}
     let query = `
-        SELECT ?parent ?child
+        SELECT ?parent ?child ?description ?label
 
         WHERE {
-            ?parent rdfs:subClassOf* onto:Pattern.
-            ?child rdfs:subClassOf ?parent
+            ?parent rdfs:subClassOf* ${classname}.
+            ?child rdfs:subClassOf ?parent.
+            ?child onto:problemDescription ?description.
+            ?child rdfs:label ?label
         }
     `
 
@@ -196,7 +202,7 @@ export const getPatterns = async (filterClasses = {}) => {
     const filters = 
         [...Object.keys(filterClasses)]
             .map(key => filterClasses[key])
-            .filter(val => val != 'prompt');
+            .filter(val => val !== 'prompt');
 
     query = queryTemplate(filters.length ? filters : ["onto:Pattern"])
 

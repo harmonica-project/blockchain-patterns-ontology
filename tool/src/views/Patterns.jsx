@@ -6,7 +6,7 @@ import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
 import { useSnackbar } from 'notistack';
 import { getLocalStoragePatterns, parseToLabel } from '../libs/helpers';
-import { getPatternClasses, getLinkedPatterns } from '../libs/fuseki';
+import { getClassTree, getLinkedPatterns } from '../libs/fuseki';
 import PatternCard from '../components/PatternCard';
 import PatternModal from '../modals/PatternModal';
 import ClassChipSelector from '../components/ClassChipSelector';
@@ -52,7 +52,7 @@ export default function Patterns() {
     }
 
     useEffect(() => {
-        getPatternClasses()
+        getClassTree("onto:Pattern")
             .then(classes => {
                 setPatternClassTree(classes);
                 getPatternsWithCat(classes);
