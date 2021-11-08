@@ -12,9 +12,12 @@ import QuestionsStepper from './QuestionsStepper';
 
 const useStyles = makeStyles(() => ({
     title: {
-      marginBottom: '10px',
       textAlign: 'center'
     },
+    breadcrumb: {
+        marginBottom: '15px',
+        textAlign: 'center'
+      },
     divider: {
         marginTop: '20px',
         marginBottom: '20px'
@@ -48,6 +51,17 @@ function LinearProgressWithLabel(props) {
 export default function Questions({quizz, handleAnswer}) {
     const classes = useStyles();
 
+    const getProblemBreadcrumb = (question) => {
+        const breadcrumb = [];
+
+        while (question !== "onto:Problem") {
+          breadcrumb.push(quizz.list[question].label);
+          question = quizz.list[question].parent;
+        }
+    
+        return breadcrumb.reverse().join(' > ');
+    };
+
     const getCurrentTopQuestion = (question) => {
         if (quizz.list[question].parent === 'onto:Problem') return question;
         else return getCurrentTopQuestion(quizz.list[question].parent);
@@ -66,6 +80,9 @@ export default function Questions({quizz, handleAnswer}) {
             <Divider className={classes.divider} />
             <Typography variant="h5" component="div" className={classes.title}>
                 Question {quizz.currentStep + 1}/{Object.keys(quizz.list).length - 1}
+            </Typography>
+            <Typography variant="overline" component="div" className={classes.breadcrumb}>
+                {getProblemBreadcrumb(quizz.currentQuestion)}
             </Typography>
             <Box className={classes.questionBox}>
                 <Typography variant="body1">
