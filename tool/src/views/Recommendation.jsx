@@ -54,44 +54,86 @@ export default function Recommendation() {
     })
   }
 
-  const handleAnswer = (answer) => {
+  const setAnswerToQuestion = (question, answer) => {
     setQuizz({
       ...quizz,
       list: {
         ...quizz.list,
-        [quizz.currentQuestion]: {
-          ...quizz.list[quizz.currentQuestion],
+        [question]: {
+          ...quizz.list[question],
           answer
         }
       },
       currentStep: quizz.currentStep + 1,
-      currentQuestion: getNextQuestion(quizz.currentQuestion)
-    })
-
-    console.log(quizz)
+      currentQuestion: getNextQuestion({...quizz})
+    });
   };
 
-  const getNextQuestion = () => {
-    for (let i in quizz.topQuestions) {
-      let question = quizz.topQuestions[i];
-      console.log(quizz.list[question], quizz.currentQuestion)
-      if (!('answer' in quizz.list[question]) && question !== quizz.currentQuestion) return question;
+  const handleAnswer = (answer, skip = false) => {
+    // if the user answer no or skip to a high level question, he'll obviously answer no/skip to questions
+    // that are sub parts of the high level question so we can skip to the next question that do not have any link with it
+
+    if (skip) {
+      const newQuestions = fillSkipQuestion(quizz.currentQuestion, answer);
+      let newQuizz = { 
+        ...quizz, 
+        list: { 
+          ...quizz.list, 
+          ...newQuestions,
+          [quizz.currentQuestion]: {
+            ...quizz.list[quizz.currentQuestion],
+            answer
+          }
+        }, 
+        currentStep: quizz.currentStep + Object.keys(newQuestions).length + 1
+      };
+
+      newQuizz.currentQuestion = getNextQuestion(newQuizz);
+      setQuizz(newQuizz);
+    } else {
+      setAnswerToQuestion(quizz.currentQuestion, answer);
+    }
+  };
+
+  const fillSkipQuestion  = (question, val) => {
+    let newQuestions = {};
+
+    for (let i in quizz.list[question].childrens) {
+      let children = quizz.list[question].childrens[i];
+
+      newQuestions = {
+        ...newQuestions,
+        ...fillSkipQuestion(children, val),
+        [children]: {
+          ...quizz.list[children],
+          answer: val
+        }
+      };
+    }
+
+    return newQuestions;
+  };
+
+  const getNextQuestion = (newQuizz) => {
+    for (let i in newQuizz.topQuestions) {
+      let question = newQuizz.topQuestions[i];
+      if (!('answer' in newQuizz.list[question]) && question !== newQuizz.currentQuestion) return question;
       else {
-        let res = searchNonAnswered(question);
+        let res = searchNonAnswered(question, newQuizz);
         if (res) return res;
       }
     };
 
     // if quizz is done return currentQuestion as this is the end
-    return quizz.currentQuestion;
+    return newQuizz.currentQuestion;
   };
 
-  const searchNonAnswered = (question) => {
-    for (let i in quizz.list[question].childrens) {
-      let children = quizz.list[question].childrens[i];
-      if (!('answer' in quizz.list[children]) && children !== quizz.currentQuestion) return children;
+  const searchNonAnswered = (question, newQuizz) => {
+    for (let i in newQuizz.list[question].childrens) {
+      let children = newQuizz.list[question].childrens[i];
+      if (!('answer' in newQuizz.list[children]) && children !== newQuizz.currentQuestion) return children;
       else {
-        let res = searchNonAnswered(children);
+        let res = searchNonAnswered(children, newQuizz);
         if (res) return res;
       }
     }
@@ -123,6 +165,7 @@ export default function Recommendation() {
   }
 
   const handleStepDisplay = () => {
+    console.log(quizz.currentStep, Object.keys(quizz.list).length - 1)
     if (quizz.currentStep < 0) {
       return getHomeDisplay();
     } else {
