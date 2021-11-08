@@ -53,14 +53,51 @@ export default function Recommendation() {
       currentQuestion: quizz.topQuestions[0]
     })
   }
-  const handleAnswer = (data) => {
-    console.log('answered', data);
+
+  const handleAnswer = (answer) => {
     setQuizz({
       ...quizz,
+      list: {
+        ...quizz.list,
+        [quizz.currentQuestion]: {
+          ...quizz.list[quizz.currentQuestion],
+          answer
+        }
+      },
       currentStep: quizz.currentStep + 1,
-      currentQuestion: 'onto:InteractingWithBlockchain'
+      currentQuestion: getNextQuestion(quizz.currentQuestion)
     })
+
+    console.log(quizz)
   };
+
+  const getNextQuestion = () => {
+    for (let i in quizz.topQuestions) {
+      let question = quizz.topQuestions[i];
+      console.log(quizz.list[question], quizz.currentQuestion)
+      if (!('answer' in quizz.list[question]) && question !== quizz.currentQuestion) return question;
+      else {
+        let res = searchNonAnswered(question);
+        if (res) return res;
+      }
+    };
+
+    // if quizz is done return currentQuestion as this is the end
+    return quizz.currentQuestion;
+  };
+
+  const searchNonAnswered = (question) => {
+    for (let i in quizz.list[question].childrens) {
+      let children = quizz.list[question].childrens[i];
+      if (!('answer' in quizz.list[children]) && children !== quizz.currentQuestion) return children;
+      else {
+        let res = searchNonAnswered(children);
+        if (res) return res;
+      }
+    }
+
+    return false;
+  }
 
   const getQuestionDisplay = () => {
     return (
@@ -86,15 +123,14 @@ export default function Recommendation() {
   }
 
   const handleStepDisplay = () => {
-    switch (quizz.currentStep) {
-      case -1:
-        return getHomeDisplay();
-
-      case 0:
+    if (quizz.currentStep < 0) {
+      return getHomeDisplay();
+    } else {
+      if (quizz.currentStep < Object.keys(quizz.list).length - 1) {
         return getQuestionDisplay();
-        
-      default:
-        return getHomeDisplay();
+      } else {
+        return <span>Finished!</span>
+      }
     }
   }
 

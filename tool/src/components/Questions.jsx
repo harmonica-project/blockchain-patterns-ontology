@@ -65,20 +65,20 @@ export default function Questions({quizz, handleAnswer}) {
             <QuestionsStepper steps={getSteps()} />
             <Divider className={classes.divider} />
             <Typography variant="h5" component="div" className={classes.title}>
-                Question #{quizz.currentStep + 1}
+                Question {quizz.currentStep + 1}/{Object.keys(quizz.list).length - 1}
             </Typography>
             <Box className={classes.questionBox}>
                 <Typography variant="body1">
                     {quizz.list[quizz.currentQuestion].description}
                 </Typography>
                 <Stack spacing={2} direction="row" className={classes.questionButtonBox}>
-                    <Button variant="contained" color="success">
+                    <Button variant="contained" color="success" onClick={() => handleAnswer(1)}>
                         Yes
                     </Button>
-                    <Button variant="contained" color="error">
+                    <Button variant="contained" color="error" onClick={() => handleAnswer(-1)}>
                         No
                     </Button>
-                    <Button variant="contained" color="info">
+                    <Button variant="contained" color="info" onClick={() => handleAnswer(0)}>
                         Skip
                     </Button>
                 </Stack>
