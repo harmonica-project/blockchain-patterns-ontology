@@ -79,7 +79,7 @@ export default function Questions({quizz, handleAnswer}) {
             <QuestionsStepper steps={getSteps()} />
             <Divider className={classes.divider} />
             <Typography variant="h5" component="div" className={classes.title}>
-                Question {quizz.currentStep + 1}/{Object.keys(quizz.list).length - 1}
+                Question {quizz.currentStep}/{Object.keys(quizz.list).length - 1}
             </Typography>
             <Typography variant="overline" component="div" className={classes.breadcrumb}>
                 {getProblemBreadcrumb(quizz.currentQuestion)}

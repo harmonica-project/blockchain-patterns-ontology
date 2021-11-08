@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Container, Paper, Button } from '@mui/material';
 import ContentContainer from '../layouts/ContentContainer';
-import { getClassTree } from '../libs/fuseki';
+import { getClassTree, getPatternsByProblem } from '../libs/fuseki';
 import { makeStyles } from '@mui/styles';
 import Questions from '../components/Questions';
 
@@ -17,12 +17,14 @@ const useStyles = makeStyles(() => ({
 
 export default function Recommendation() {
   const classes = useStyles();
+  const [quizzState, setQuizzState] = useState(0);
   const [quizz, setQuizz] = useState({
     list: {},
     topQuestions: [], 
     currentQuestion: '',
-    currentStep: -1
+    currentStep: 1
   });
+  const [patterns, setPatterns] = useState({});
 
   const getTopQuestions = (questionsList) => {
     const topQuestions = [];
@@ -46,12 +48,29 @@ export default function Recommendation() {
       })
   }, [])
 
+  const getRecommendedPatterns = async () => {
+    const wantedProblems = {};
+
+    Object.keys(quizz.list).forEach(key => {
+      if (quizz.list[key].answer === 1 && quizz.list[key].childrens.length === 0) wantedProblems[key] = quizz.list[key];
+    });
+    
+    getPatternsByProblem(wantedProblems)
+      .then(patterns => setPatterns(patterns))
+  };
+
+  useEffect(() => {
+    if (quizzState === 2) {
+      getRecommendedPatterns();
+    }
+  }, [quizzState]);
+
   const startQuizz = () => {
     setQuizz({
       ...quizz,
-      currentStep: 0,
       currentQuestion: quizz.topQuestions[0]
-    })
+    });
+    setQuizzState(1);
   }
 
   const setAnswerToQuestion = (question, answer) => {
@@ -92,6 +111,10 @@ export default function Recommendation() {
       setQuizz(newQuizz);
     } else {
       setAnswerToQuestion(quizz.currentQuestion, answer);
+    }
+
+    if (quizz.currentStep === Object.keys(quizz.list).length - 1) {
+      setQuizzState(2);
     }
   };
 
@@ -164,16 +187,26 @@ export default function Recommendation() {
     )
   }
 
+  const getRecommendedPatternsDisplay = () => {
+    return (
+      <ul>
+        {Object.keys(patterns).map(key => (
+          <li>{patterns[key].individual.value}</li>
+        ))}
+      </ul>
+    )
+  };
+
   const handleStepDisplay = () => {
-    console.log(quizz.currentStep, Object.keys(quizz.list).length - 1)
-    if (quizz.currentStep < 0) {
-      return getHomeDisplay();
-    } else {
-      if (quizz.currentStep < Object.keys(quizz.list).length - 1) {
+    switch(quizzState) {
+      case 0:
+        return getHomeDisplay();
+      case 1:
         return getQuestionDisplay();
-      } else {
-        return <span>Finished!</span>
-      }
+      case 2:
+        return getRecommendedPatternsDisplay();
+      default:
+        return getHomeDisplay();
     }
   }
 

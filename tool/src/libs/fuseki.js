@@ -218,48 +218,35 @@ export const getPatterns = async (filterClasses = {}) => {
     }
 }
 
-/*
 export const getPatternsByProblem = async (filterProblems = {}) => {
-    let query = "";
-
-    const additionalClassTemplate = (additionalClass) => {
-        return `?classuri rdfs:subClassOf* ${additionalClass}.`
-    };
-
-    const queryTemplate = (additionalClasses = "") => {
+    const queryTemplate = () => {
         return `
-            select ?individual ?category where {
+            select distinct ?individual ?category where {
                 ?category rdfs:subClassOf* 
                         [ 
                         rdf:type owl:Restriction ;
                         owl:onProperty onto:addressProblem ;
                         owl:someValuesFrom ?p
                         ].
-                    FILTER (?p IN (onto:OnOffChainDataExchange, onto:BigDataFeatureApplication) ).
+                    FILTER (?p IN (${Object.keys(filterProblems).join(',')}) ).
                     ?individual a ?category
             }
         `
     }
     
-    if (Object.keys(filterClasses).length === 0) {
-        query = queryTemplate()
+    if (Object.keys(filterProblems).length > 0) {
+        try {
+            let query = queryTemplate()
+            let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+            if (response.status === 200) {
+                return parseResults(await response.json());
+            };
+            return [];
+        } catch (e) {
+            console.error('Failed to fetch: ' + e);
+            return [];
+        }
     } else {
-        let additionalClasses = "";
-
-        Object.keys(filterClasses).forEach((key, i) => {
-            additionalClasses += additionalClassTemplate(filterClasses[key]);
-        })
-        query = queryTemplate(additionalClasses);
+        return {};
     }
-
-    try {
-        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
-        if (response.status === 200) {
-            return parseResults(await response.json());
-        };
-        return [];
-    } catch (e) {
-        console.error('Failed to fetch: ' + e);
-        return [];
-    }
-}*/
+}
