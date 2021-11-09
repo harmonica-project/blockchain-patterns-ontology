@@ -1,6 +1,6 @@
 import { parseResults, convertResultToMapping } from './helpers';
 
-const FUSEKI_URL = "http://20.39.235.98:3030/result/query"
+const FUSEKI_URL = "https://bc-ontology-experiment-fuseki.francecentral.cloudapp.azure.com:8888/result/query"
 const PREFIXES = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
