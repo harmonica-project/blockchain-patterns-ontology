@@ -29,7 +29,7 @@ export default function Recommendation() {
   const getTopQuestions = (questionsList) => {
     const topQuestions = [];
 
-    Object.keys(questionsList).map(key => {
+    Object.keys(questionsList).forEach(key => {
       if (questionsList[key].parent === 'onto:Problem') 
         topQuestions.push(key);
     });

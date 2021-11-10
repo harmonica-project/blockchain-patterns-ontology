@@ -87,7 +87,7 @@ export default function ClassTabs({ontologyClasses, handleChangeSelect, selector
                         value={selectorStates[ontologyClass] || "prompt"}
                         disabled={isAlreadySelected}
                     >
-                        <MenuItem value={"prompt"} key="default" disabled>Select a subclass ...</MenuItem>
+                        <MenuItem value={"prompt"} key="default" disabled>Filter by ...</MenuItem>
                         {ontologyClasses[ontologyClass]['childrens'].map((childrenClass, i) => {
                             return <MenuItem value={ontologyClasses[childrenClass].subject.value} key={`${ontologyClasses[childrenClass].subject.value}-${i}`}>{ontologyClasses[childrenClass].label.value}</MenuItem>    
                         })}

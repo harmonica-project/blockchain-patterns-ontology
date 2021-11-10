@@ -59,7 +59,7 @@ export const getSubclasses = async (className) => {
     }
 }
 
-const createPatternClassesTree = (classes) => {
+const createClassesTree = (classes) => {
     let orderedClasses = {};
 
     classes.forEach(classpair => {
@@ -67,7 +67,6 @@ const createPatternClassesTree = (classes) => {
             orderedClasses[classpair.parent.value] = {
                 childrens: [classpair.child.value],
                 parent: "",
-                description: classpair.description.value,
                 label: classpair.label.value
             }
         } else {
@@ -77,9 +76,12 @@ const createPatternClassesTree = (classes) => {
         if (!orderedClasses[classpair.child.value]) orderedClasses[classpair.child.value] = {
             childrens: [],
             parent: classpair.parent.value,
-            description: classpair.description.value,
             label: classpair.label.value
         };
+
+        if (classpair.description) {
+            orderedClasses[classpair.child.value] = {...orderedClasses[classpair.child.value], description: classpair.description.value};
+        }
     });
 
     return orderedClasses;
@@ -93,15 +95,17 @@ export const getClassTree = async (classname) => {
         WHERE {
             ?parent rdfs:subClassOf* ${classname}.
             ?child rdfs:subClassOf ?parent.
-            ?child onto:problemDescription ?description.
-            ?child rdfs:label ?label
+            ?child rdfs:label ?label.
+            OPTIONAL {
+                ?child onto:problemDescription ?description.
+            }
         }
     `
 
     try {
         let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
         if (response.status === 200) {
-            return createPatternClassesTree(parseResults(await response.json()));
+            return createClassesTree(parseResults(await response.json()));
         };
         return [];
     } catch (e) {

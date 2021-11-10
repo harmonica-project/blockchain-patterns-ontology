@@ -282,7 +282,7 @@ export default function Explore() {
                     <Grid item className={classes.marginBottomClass} md={12}>
                         <Paper className={classes.section}>
                             <div className={classes.classTitleContainer}>
-                                <Typography className={classes.classTitle} variant="h5">Class selection</Typography>
+                                <Typography className={classes.classTitle} variant="h5">Filters selection</Typography>
                                 <div className={classes.classTitleBtn}>
                                     <Tooltip title="Reset filters">
                                         <IconButton onClick={resetSelection}>
@@ -297,7 +297,7 @@ export default function Explore() {
                     </Grid>
                     <Grid item md={12}>
                         <Paper className={classes.section}>
-                            <Typography className={classes.marginBottomClass} variant="h5">Selected classes</Typography>
+                            <Typography className={classes.marginBottomClass} variant="h5">Selected filters</Typography>
                             <Divider />
                             {displaySelectedClasses()}
                         </Paper>
@@ -306,7 +306,11 @@ export default function Explore() {
                 <Grid item md={8} xs={12}>
                     <Paper className={classes.section}>
                         <Typography className={classes.marginBottomClass} variant="h5">
-                            {patterns.length ? `${patterns.length}/${nbPatterns}` : 'No'} corresponding patterns for this selection
+                            {
+                                open 
+                                ? "Loading patterns ..."
+                                : (patterns.length ? `${patterns.length}/${nbPatterns}` : "No") + " corresponding patterns for this selection"
+                            }
                         </Typography>
                         {displayPatterns()}
                     </Paper>
