@@ -126,7 +126,20 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 :DocumentType rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf owl:topDataProperty ;
               rdfs:domain :Paper ;
-              rdfs:range rdfs:Literal .
+              rdfs:range rdfs:Literal ;
+              rdfs:label "Document type" .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Identifier
+:Identifier rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:label "Identifier" .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IdentifierType
+:IdentifierType rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:label "Identifier type" .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Journal

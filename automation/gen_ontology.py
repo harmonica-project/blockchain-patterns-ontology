@@ -124,8 +124,10 @@ def get_paper_properties(paper):
 
   # improve by iterating on paper properties instead of that, but the paper spread sheet must be cleaned a bit
   # another improval: use an ontology for papers like a bibtex based ontology (don't know if it exists)
-  if "DOI" in paper:
-    properties += Template(property_template).substitute(property="DOI", value='"{}"^^rdfs:Literal'.format(paper['DOI']))
+  if "Identifier" in paper:
+    properties += Template(property_template).substitute(property="Identifier", value='"{}"^^rdfs:Literal'.format(paper['Identifier']))
+  if "Identifier type" in paper:
+    properties += Template(property_template).substitute(property="IdentifierType", value='"{}"^^rdfs:Literal'.format(paper['Identifier type']))
   if "journal" in paper:
     properties += Template(property_template).substitute(property="Journal", value='"{}"^^rdfs:Literal'.format(paper['journal']))
   if "pages" in paper:
