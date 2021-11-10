@@ -30,6 +30,10 @@ export default function Home() {
             for the design of blockchain applications. You can either have a look on existing patterns for specific categories, or get recommendations using user stories
             to guide you in this process.
           </Typography>
+          <br/>
+          <Typography variant="body2" gutterBottom>
+            Lastest ontology modification: November 7, 2021.
+          </Typography>
         </Paper>
       </Container>
     </ContentContainer>
