@@ -189,7 +189,7 @@ export const getPatterns = async (filterClasses = {}) => {
     let letters = [...Array(26)].map((x,i)=>String.fromCharCode(i + 97));
 
     const queryTemplate = (classes) => {
-        return `SELECT DISTINCT ?patternclass ?individual ?label ?paper ?context ?solution
+        return `SELECT DISTINCT ?patternclass ?individual ?label ?paper ?context ?solution ?identifier ?identifiertype ?title
                     WHERE {
                         ?patternclass rdfs:subClassOf* onto:Pattern.
                         ${classes.map((c, i) => `?${letters[i]} rdfs:subClassOf* ${c}.`).join('\n')}
@@ -198,7 +198,10 @@ export const getPatterns = async (filterClasses = {}) => {
                         ?individual rdfs:label ?label .
                         ?individual onto:hasPaper ?paper .
                         ?individual onto:ContextAndProblem ?context .
-                        ?individual onto:Solution ?solution
+                        ?individual onto:Solution ?solution.
+                        ?paper onto:Title ?title.
+                        ?paper onto:Identifier ?identifier.
+                        ?paper onto:IdentifierType ?identifiertype
                     }
                 `
     }

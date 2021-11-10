@@ -58,15 +58,12 @@ export default function PatternCard({
   return (
     <Grid item sm={cardSize} xs={12} className={classes.patternItem} key={pattern['individual']['value']}>
         <Card className={classes.patternCard}>
-            <Grid container>
-                <Grid item md={disableButtons ? 12 : 9} sm={12}>
+            <Grid container justifyContent="center">
+                <Grid item md={disableButtons ? 12 : 9} sm={12} alignItems="center" display="flex" justifyContent="center">
                     <Typography>
                         <Link style={{cursor: 'pointer'}} onClick={() => handlePatternAction('patternClick', pattern)}>
                             {pattern.label.value}
                         </Link>
-                    </Typography>
-                    <Typography variant="overline">
-                        {(pattern['paper'].value.split(':'))[1]}
                     </Typography>
                 </Grid>
                 { disableButtons || (

@@ -188,7 +188,7 @@ export default function Explore() {
                             pattern={pattern} 
                             handlePatternAction={handlePatternAction} 
                             selectedPatterns={selectedPatterns}
-                            cardSize={4}
+                            cardSize={3}
                             key={pattern.individual.value}
                             disableChips={true}
                         />
