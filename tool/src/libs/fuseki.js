@@ -114,25 +114,6 @@ export const getClassTree = async (classname) => {
     }
 };
 
-const filterLinkProperties = (properties) => {
-    let newProperties = [];
-    const desiredProperties = [
-        'onto:requires',
-        'onto:createdFrom',
-        'onto:relatedTo',
-        'onto:variantOf',
-        'onto:benefitsFrom'
-    ];
-
-    properties.forEach((property) => {
-        if (desiredProperties.includes(property.relation.value)) {
-            newProperties.push(property);
-        }
-    });
-
-    return newProperties;
-};
-
 export const getPattern = async (patternURI) => {
     let query = `
         SELECT DISTINCT ?label ?paper ?context ?solution ?classname
@@ -162,14 +143,21 @@ export const getLinkedPatterns = async (patternURI) => {
     let query = `
         SELECT ?relation ?individual
         WHERE {
-            ${patternURI} ?relation ?individual
+            ${patternURI} ?relation ?individual.
+            FILTER (?relation IN (
+                onto:requires,
+                onto:createdFrom,
+                onto:relatedTo,
+                onto:variantOf,
+                onto:benefitsFrom
+            ) ).
         }
     `;
 
     try {
         let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
         if (response.status === 200) {
-            let results = filterLinkProperties(parseResults(await response.json()));
+            let results = parseResults(await response.json());
 
             for (let i in results) {
                 results[i]['pattern'] = (await getPattern(results[i].individual.value))[0];
