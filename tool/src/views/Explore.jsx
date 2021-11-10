@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip } from '@mui/material';
+import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip, Pagination } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
@@ -21,13 +21,17 @@ const useStyles = makeStyles(() => ({
         fontSize: '120%',
     },
     marginBottomClass: {
-        marginBottom: '20px'
+        marginBottom: '25px'
     },
     smallMarginTopClass: {
         marginTop: '5px'
     },
     bigMarginTopClass: {
-        marginTop: '20px'
+        marginTop: '25px'
+    },
+    patternSpacing: {
+        marginTop: '25px',
+        marginBottom: '30px'
     },
     classTitleContainer: {
         width: '100%',
@@ -53,7 +57,11 @@ export default function Explore() {
     const [currentPattern, setCurrentPattern] = useState({});
     const [open, setOpen] = useState(false);
     const [selectedPatterns, setSelectedPatterns] = useState({});
-    const [nbPatterns, setNbPatterns] = useState(0)
+    const [nbPatterns, setNbPatterns] = useState(0);
+    const [pagination, setPagination] = useState({
+       interval: 20,
+       page: 1 
+    });
     const { enqueueSnackbar } = useSnackbar();
 
     const filterParents = (filterClasses) => {
@@ -182,16 +190,18 @@ export default function Explore() {
     const displayPatterns = () => {
         if (patterns.length) {
             return (
-                <Grid container>
-                    {patterns.map(pattern => (
-                        <PatternCard 
-                            pattern={pattern} 
-                            handlePatternAction={handlePatternAction} 
-                            selectedPatterns={selectedPatterns}
-                            cardSize={3}
-                            key={pattern.individual.value}
-                            disableChips={true}
-                        />
+                <Grid container className={classes.patternSpacing}>
+                    {patterns
+                        .slice((pagination.page - 1) * pagination.interval, pagination.page * pagination.interval)
+                        .map(pattern => (
+                            <PatternCard 
+                                pattern={pattern} 
+                                handlePatternAction={handlePatternAction} 
+                                selectedPatterns={selectedPatterns}
+                                cardSize={3}
+                                key={pattern.individual.value}
+                                disableChips={true}
+                            />
                     ))}
                 </Grid>
             )
@@ -305,7 +315,7 @@ export default function Explore() {
                 </Grid>
                 <Grid item md={8} xs={12}>
                     <Paper className={classes.section}>
-                        <Typography className={classes.marginBottomClass} variant="h5">
+                        <Typography variant="h5">
                             {
                                 open 
                                 ? "Loading patterns ..."
@@ -313,6 +323,12 @@ export default function Explore() {
                             }
                         </Typography>
                         {displayPatterns()}
+                        <Pagination 
+                            count={Math.ceil(patterns.length / pagination.interval)} 
+                            size="large"
+                            onChange={(e, page) => setPagination({...pagination, page})}
+                            style={{display: (patterns.length ? 'block' : 'none')}}
+                        />
                     </Paper>
                 </Grid>
             </Grid>
@@ -323,7 +339,7 @@ export default function Explore() {
                 selectedPatterns={selectedPatterns}
                 handlePatternModalAction={handlePatternModalAction}
             />
-            <LoadingOverlay open={open} />
+            <LoadingOverlay open={open}/>
         </ContentContainer>
     );
 }
