@@ -92,11 +92,11 @@ export default function Questions({quizz, handleAnswer}) {
                     <Button variant="contained" color="success" onClick={() => handleAnswer(1)}>
                         Yes
                     </Button>
+                    <Button variant="contained" color="info" onClick={() => handleAnswer(0)}>
+                        I don't know
+                    </Button>
                     <Button variant="contained" color="error" onClick={() => handleAnswer(-1, true)}>
                         No
-                    </Button>
-                    <Button variant="contained" color="info" onClick={() => handleAnswer(0, true)}>
-                        Skip
                     </Button>
                 </Stack>
             </Box>
