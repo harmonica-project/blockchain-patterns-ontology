@@ -10,6 +10,7 @@ import { getClassTree, getLinkedPatterns } from '../libs/fuseki';
 import PatternCard from '../components/PatternCard';
 import PatternModal from '../modals/PatternModal';
 import ClassChipSelector from '../components/ClassChipSelector';
+import LoadingOverlay from '../components/LoadingOverlay';
 
 const useStyles = makeStyles(() => ({
     healthCheck: {
@@ -37,7 +38,7 @@ export default function Patterns() {
     const [currentPattern, setCurrentPattern] = useState({});
     const [modalStates, setModalStates] = useState({ "pattern": false });
     const [classFilter, setClassFilter] = useState([]);
-
+    const [open, setOpen] = useState(false);
     const { enqueueSnackbar } = useSnackbar();
 
     const handlePatternModalAction = (action, pattern) => {
@@ -52,13 +53,15 @@ export default function Patterns() {
     }
 
     useEffect(() => {
+        setOpen(true);
         getClassTree("onto:Pattern")
             .then(classes => {
                 setPatternClassTree(classes);
                 getPatternsWithCat(classes);
             })
-    }, [])
-    
+            .finally(() => setOpen(false));
+    }, []);
+
     const getAllClassesFromTrees = () => {
         let classes = [];
         let foundClasses = {};
@@ -290,6 +293,7 @@ export default function Patterns() {
                 selectedPatterns={selectedPatterns}
                 handlePatternModalAction={handlePatternModalAction}
             />
+            <LoadingOverlay open={open} />
         </ContentContainer>
     );
 }

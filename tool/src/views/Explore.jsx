@@ -11,6 +11,7 @@ import PatternModal from '../modals/PatternModal';
 import { useSnackbar } from 'notistack';
 import { getLocalStoragePatterns } from '../libs/helpers';
 import PatternCard from '../components/PatternCard';
+import LoadingOverlay from '../components/LoadingOverlay';
 
 const useStyles = makeStyles(() => ({
     section: {
@@ -50,6 +51,7 @@ export default function Explore() {
     const [selectorStates, setSelectorStates] = useState({});
     const [modalStates, setModalStates] = useState({ "pattern": false });
     const [currentPattern, setCurrentPattern] = useState({});
+    const [open, setOpen] = useState(false);
     const [selectedPatterns, setSelectedPatterns] = useState({});
     const [nbPatterns, setNbPatterns] = useState(0)
     const { enqueueSnackbar } = useSnackbar();
@@ -68,15 +70,19 @@ export default function Explore() {
     }
 
     useEffect(() => {
+        setOpen(true);
+
+        // not a big deal if loading is finished before displaying the number of patterns
+        getPatterns()
+        .then((results) => {
+            setNbPatterns(results.length)
+        })
+
         getPatterns(filterParents({...selectorStates}))
             .then((results) => {
-                setPatterns(results)
+                setPatterns(results);
             })
-
-        getPatterns()
-            .then((results) => {
-                setNbPatterns(results.length)
-            })
+            .finally(() => setOpen(false));
     }, [selectorStates]);
 
     const getInitialSubclasses = async () => {
@@ -313,6 +319,7 @@ export default function Explore() {
                 selectedPatterns={selectedPatterns}
                 handlePatternModalAction={handlePatternModalAction}
             />
+            <LoadingOverlay open={open} />
         </ContentContainer>
     );
 }
