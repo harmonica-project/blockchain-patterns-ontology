@@ -12,6 +12,9 @@ const useStyles = makeStyles(() => ({
   },
   title: {
     marginBottom: '10px'
+  },
+  homeBlock: {
+    textAlign: "center"
   }
 }));
 
@@ -174,16 +177,19 @@ export default function Recommendation() {
   }
   const getHomeDisplay = () => {
     return (
-      <>
+      <div className={classes.homeBlock}>
         <Typography variant="h5" component="div" className={classes.title}>
           Get recommendation
         </Typography>
         <Typography variant="body1" gutterBottom>
-          <p>In this subsection, you can obtain precise recommendation of patterns after answering some questions on design problems. When you are ready, you can click on the button below to start.</p>
-          <p><i>Note: please avoid to refresh the page, as there is no local saving for the moment.</i></p>
+          In this subsection, you can obtain precise recommendation of patterns after answering some questions on design problems. When you are ready, you can click on the button below to start.
         </Typography>
+        <Typography variant="body1" gutterBottom>
+          <i>Note: please avoid to refresh the page, as there is no local saving for the moment.</i>
+        </Typography>
+        <br/>
         <Button variant="contained" onClick={startQuizz}>Start</Button>
-      </>
+      </div>
     )
   }
 
