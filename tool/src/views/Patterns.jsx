@@ -41,18 +41,7 @@ export default function Patterns() {
     const [open, setOpen] = useState(false);
     const { enqueueSnackbar } = useSnackbar();
 
-    const handlePatternModalAction = (action, pattern) => {
-        switch (action) {
-            case 'remove':
-                deleteFromLocalstorage(pattern);
-                setModalStates({ ...modalStates, 'pattern': false});
-                break;
-            default:
-                console.error('No handler for this action.');
-        }
-    }
-
-    useEffect(() => {
+    const getStoredPatterns = () => {
         setOpen(true);
         getClassTree("onto:Pattern")
             .then(classes => {
@@ -60,6 +49,10 @@ export default function Patterns() {
                 getPatternsWithCat(classes);
             })
             .finally(() => setOpen(false));
+    };
+
+    useEffect(() => {
+        getStoredPatterns();
     }, []);
 
     const getAllClassesFromTrees = () => {
@@ -187,6 +180,7 @@ export default function Patterns() {
                 break;
             case 'patternStore':
                 storeInLocalstorage(pattern);
+                getStoredPatterns();
                 break;
             default:
                 console.error('No action defined for this handler.');
@@ -291,7 +285,7 @@ export default function Patterns() {
                 setOpen={(newOpen) => setModalStates({ ...modalStates, 'pattern': newOpen})} 
                 pattern={currentPattern} 
                 selectedPatterns={selectedPatterns}
-                handlePatternModalAction={handlePatternModalAction}
+                handlePatternModalAction={handlePatternAction}
             />
             <LoadingOverlay open={open} />
         </ContentContainer>
