@@ -204,7 +204,7 @@ export default function Explore() {
         if (Object.keys(selectorStates).length === 0) {
             return (
                 <Typography variant="h6" className={classes.bigMarginTopClass}>
-                    No classes selected yet.
+                    No filters selected yet.
                 </Typography>
             )
         } else {
