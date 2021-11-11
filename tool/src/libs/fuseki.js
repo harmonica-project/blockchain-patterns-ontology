@@ -141,7 +141,7 @@ export const getPattern = async (patternURI) => {
 
 export const getLinkedPatterns = async (patternURI) => {
     let query = `
-        SELECT ?relation ?individual
+        SELECT ?relation ?individual ?patternclass ?label ?paper ?context ?solution ?title ?identifier ?identifiertype
         WHERE {
             ${patternURI} ?relation ?individual.
             FILTER (?relation IN (
@@ -151,19 +151,22 @@ export const getLinkedPatterns = async (patternURI) => {
                 onto:variantOf,
                 onto:benefitsFrom
             ) ).
+            ?individual a ?patternclass.
+            ?patternclass rdfs:subClassOf* onto:Pattern.
+            ?individual rdfs:label ?label .
+            ?individual onto:hasPaper ?paper .
+            ?individual onto:ContextAndProblem ?context .
+            ?individual onto:Solution ?solution.
+            ?paper onto:Title ?title.
+            ?paper onto:Identifier ?identifier.
+            ?paper onto:IdentifierType ?identifiertype
         }
     `;
 
     try {
         let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
         if (response.status === 200) {
-            let results = parseResults(await response.json());
-
-            for (let i in results) {
-                results[i]['pattern'] = (await getPattern(results[i].individual.value))[0];
-            }
-
-            return results;
+            return parseResults(await response.json());
         };
         return [];
     } catch (e) {

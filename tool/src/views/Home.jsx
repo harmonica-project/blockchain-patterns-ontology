@@ -25,7 +25,7 @@ export default function Home() {
           <Typography variant="h2" component="div">
             Welcome!
           </Typography>
-          <Typography variant="body1" gutterBottom>
+          <Typography variant="body1" align="justify" gutterBottom>
             Through this tool, you will be able to explore our <i>Blockchain-based pattern ontology</i>, an ontology for the recommendation of blockchain-based patterns
             for the design of blockchain applications. You can either have a look on existing patterns for specific categories, or get recommendations using user stories
             to guide you in this process.

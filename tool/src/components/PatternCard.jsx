@@ -26,9 +26,10 @@ export default function PatternCard({
     pattern, 
     selectedPatterns, 
     handlePatternAction, 
-    cardSize, 
+    cardSize = 4, 
     disableButtons, 
-    disableChips
+    disableChips,
+    patternSubtext
 }) {
   const classes = useStyles();
   const patternInLocalState = (pattern) => {
@@ -64,6 +65,11 @@ export default function PatternCard({
                         <Link style={{cursor: 'pointer'}} onClick={() => handlePatternAction('patternClick', pattern)}>
                             {pattern.label.value}
                         </Link>
+                        {patternSubtext && 
+                            <Typography variant="body2" component={'p'}>
+                                {patternSubtext}
+                            </Typography>
+                        }
                     </Typography>
                 </Grid>
                 { disableButtons || (

@@ -132,19 +132,6 @@ export default function Explore() {
             })
     }
 
-    const handlePatternModalAction = (action, pattern) => {
-        switch (action) {
-            case 'add':
-                storeInLocalstorage(pattern);
-                break;
-            case 'remove':
-                deleteFromLocalstorage(pattern);
-                break;
-            default:
-                console.error('No handler for this action.');
-        }
-    }
-
     const storeInLocalstorage = (pattern) => {
         let storedPatterns = localStorage.getItem('patterns');
         if (!storedPatterns) {
@@ -337,7 +324,7 @@ export default function Explore() {
                 setOpen={(newOpen) => setModalStates({ ...modalStates, 'pattern': newOpen})} 
                 pattern={currentPattern} 
                 selectedPatterns={selectedPatterns}
-                handlePatternModalAction={handlePatternModalAction}
+                handlePatternModalAction={handlePatternAction}
             />
             <LoadingOverlay open={open}/>
         </ContentContainer>

@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Divider, Button, Grid, List, ListItem, ListItemText, Card } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import PatternCard from '../components/PatternCard';
 
 const useStyles = makeStyles(() => ({
   containerStyle: {
@@ -20,6 +21,10 @@ const useStyles = makeStyles(() => ({
   },
   paperInfo: {
     lineHeight: '1'
+  },
+  dividerMargin: {
+    marginBottom: '20px',
+    marginTop: '20px'
   }
 }));
 
@@ -80,38 +85,26 @@ export default function PatternModal({open, setOpen, pattern, selectedPatterns, 
         aria-describedby="pattern-modal-description"
       >
         <Grid container className={classes.containerStyle}>
-          <Grid item md={areLinks ? 8 : 12} sm={12} style={{paddingRight: '40px'}}>
-            <Typography id="pattern-modal-title" variant="h6" component="h1">
-              {getPropertySafe('label')}
-            </Typography>
-            <Typography variant="overline" component="div">
-              <p className={classes.paperInfo}>Paper: {getPropertySafe('title')}</p>
-              <p className={classes.paperInfo}>Source: {getSource()}</p>
-            </Typography>
-            <Divider/>
-            <Typography sx={{ mt: 2 }}>
-              <b>
-                Context and problem
-              </b>
-            </Typography>
-            <Typography>
-              {getPropertySafe('context') || "No text provided."}
-            </Typography>
-            <Typography sx={{ mt: 2 }}>
-              <b>
-                Proposed solution
-              </b>
-            </Typography>
-            <Typography>
-              {getPropertySafe('solution') || "No text provided."}
-            </Typography>
-            <Box style={{marginTop: '20px'}}>
-              {patternInLocalState(pattern) 
+          <Grid item xs={12} display="flex">
+            <Box display="flex" flexGrow="1">
+              <Box>
+                <Typography id="pattern-modal-title" variant="h6" component="h1">
+                  {getPropertySafe('label')}
+                </Typography>
+                <Typography variant="overline" component="div">
+                  <p className={classes.paperInfo}>Paper: {getPropertySafe('title')}</p>
+                  <p className={classes.paperInfo}>Source: {getSource()}</p>
+                </Typography>
+              </Box>
+            </Box>
+            <Box display="flex">
+              <Box>
+                {patternInLocalState(pattern) 
                     ? 
                         (
                           <Button 
                             variant="contained"
-                            onClick={() => handlePatternModalAction('remove', pattern)}
+                            onClick={() => handlePatternModalAction('patternDelete', pattern)}
                           >
                             Remove from my list
                           </Button>
@@ -120,35 +113,57 @@ export default function PatternModal({open, setOpen, pattern, selectedPatterns, 
                         (
                           <Button 
                             variant="contained"
-                            onClick={() => handlePatternModalAction('add', pattern)}
+                            onClick={() => handlePatternModalAction('patternStore', pattern)}
                           >
                             Add to my list
                           </Button>
                         )
                 } 
+              </Box>
             </Box>
+          </Grid>
+          <Grid item xs={12} >
+            <Divider/>
+            <Typography sx={{ mt: 2 }}>
+              <b>
+                Context and problem
+              </b>
+            </Typography>
+            <Typography align="justify">
+              {getPropertySafe('context') || "No text provided."}
+            </Typography>
+            <Typography sx={{ mt: 2 }}>
+              <b>
+                Proposed solution
+              </b>
+            </Typography>
+            <Typography align="justify">
+              {getPropertySafe('solution') || "No text provided."}
+            </Typography>
+
           </Grid>
           {
             areLinks
             && (
-              <Grid item md={4} sm={12}>
-                <Card style={{ padding: '20px' }}>
-                  <Typography id="modal-modal-title" variant="h6" component="h1">
-                    Linked patterns
-                  </Typography>
-                  <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                    {
-                      pattern['linkedPatterns'].map(linkedPattern => (
-                        <ListItem alignItems="flex-start" key={linkedPattern.individual.value}>
-                          <ListItemText
-                            primary={linkedPattern.pattern.label.value}
-                            secondary={getRelationLabel(linkedPattern.relation.value)}
-                          />
-                        </ListItem>
-                      ))
-                    }
-                  </List>
-                </Card>
+              <Grid item xs={12}>
+                <Divider className={classes.dividerMargin} />
+                <Typography id="modal-modal-title" variant="h6" component="h1">
+                  Linked patterns
+                </Typography>
+                <Grid container>
+                  {
+                    pattern['linkedPatterns'].map(linkedPattern => (
+                      <PatternCard 
+                        pattern={linkedPattern}
+                        selectedPatterns={selectedPatterns}
+                        handlePatternAction={handlePatternModalAction}
+                        patternSubtext={getRelationLabel(linkedPattern.relation.value)}
+                        cardSize={4}
+                        disableChips
+                      />
+                    ))
+                  }
+                </Grid>
               </Grid>
             )
           }
