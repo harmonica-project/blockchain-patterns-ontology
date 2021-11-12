@@ -28,8 +28,14 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-export default function PatternModal({open, setOpen, pattern, selectedPatterns, handlePatternModalAction}) {
-  const handleClose = () => setOpen(false);
+export default function PatternModal({modalStates, setModalStates, selectedPatterns, handlePatternModalAction}) {
+  const pattern = modalStates.pattern;
+  const handleClose = () => {
+    setModalStates({
+      ...modalStates,
+      open: false
+    })
+  };
   const classes = useStyles();
   const areLinks = (pattern['linkedPatterns'] && pattern['linkedPatterns']['length'] ? true : false);
   const patternInLocalState = (pattern) => {
@@ -79,7 +85,7 @@ export default function PatternModal({open, setOpen, pattern, selectedPatterns, 
   return (
     <div>
       <Modal
-        open={open}
+        open={modalStates.open}
         onClose={handleClose}
         aria-labelledby="pattern-modal-title"
         aria-describedby="pattern-modal-description"

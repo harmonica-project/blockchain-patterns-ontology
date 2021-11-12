@@ -44,14 +44,6 @@ export const parseResults = ({results}) => {
     }
 }
 
-export const getLocalStoragePatterns = () => {
-    try {
-        return JSON.parse(localStorage.getItem('patterns'));
-    } catch {
-        return false;
-    }
-};
-
 export const parseToLabel = (uri) => {
    try {
     const splitUri = uri.split(':')[1];

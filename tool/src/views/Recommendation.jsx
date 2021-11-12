@@ -1,9 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Container, Paper, Button } from '@mui/material';
+import { Typography, Container, Paper, Button, Grid } from '@mui/material';
 import ContentContainer from '../layouts/ContentContainer';
-import { getClassTree, getPatternsByProblem } from '../libs/fuseki';
+import { 
+  getClassTree, 
+  getPatternsByProblem,
+  getLinkedPatterns
+ } from '../libs/fuseki';
 import { makeStyles } from '@mui/styles';
+import { useSnackbar } from 'notistack';
 import Questions from '../components/Questions';
+import PatternCard from '../components/PatternCard';
+import LoadingOverlay from '../components/LoadingOverlay';
+import PatternModal from '../modals/PatternModal';
+import { parseToLabel } from '../libs/helpers';
+import { 
+  getLocalstoragePatterns,
+  setPatternsInLocalstorage,
+  storePatternInLocalstorage
+ } from '../libs/localstorage';
 
 const useStyles = makeStyles(() => ({
   paper: {
@@ -20,6 +34,10 @@ const useStyles = makeStyles(() => ({
 
 export default function Recommendation() {
   const classes = useStyles();
+  const { enqueueSnackbar } = useSnackbar();
+  const [open, setOpen] = useState(false);
+  const [modalStates, setModalStates] = useState({ "pattern": {}, open: false });
+  const [selectedPatterns, setSelectedPatterns] = useState({});
   const [quizzState, setQuizzState] = useState(0);
   const [quizz, setQuizz] = useState({
     list: {},
@@ -48,8 +66,59 @@ export default function Recommendation() {
           list: subclasses,
           topQuestions: getTopQuestions(subclasses),
         });
-      })
+      });
+
+    getStoredPatterns();
   }, [])
+
+  const addCatsToPatterns = (patterns, classTree) => {
+    const patternsKeys = Object.keys(patterns);
+    patternsKeys.forEach(key => {
+        let patternClass = patterns[key].patternclass.value;
+        let patternClassTree = [];
+
+        while(classTree[patternClass] && classTree[patternClass]['parent']) {
+            patternClassTree.push(parseToLabel(patternClass));
+            patternClass = classTree[patternClass]['parent'];
+        }
+
+        patterns[key]['classtree'] = patternClassTree;
+    });
+
+    return patterns;
+  }
+
+  const handlePatternAction = (action, pattern) => {
+    switch (action) {
+        case 'patternClick':
+            handlePatternClick(pattern);
+            break;
+        case 'patternDelete':
+            deleteLocalPattern(pattern);
+            break;
+        case 'patternStore':
+            storeLocalPattern(pattern);
+            getStoredPatterns();
+            break;
+        default:
+            console.error('No action defined for this handler.');
+    }
+};
+
+  const getStoredPatterns = () => {
+    setOpen(true);
+    getClassTree("onto:Pattern")
+        .then(classes => {
+            getPatternsWithCat(classes);
+        })
+        .finally(() => setOpen(false));
+  };
+
+  const getPatternsWithCat = (classTree) => {
+    let patterns = getLocalstoragePatterns();
+    if (patterns) setSelectedPatterns(addCatsToPatterns(patterns, classTree));
+    else enqueueSnackbar('Error while retrieving patterns.');
+  };
 
   const getRecommendedPatterns = async () => {
     const wantedProblems = {};
@@ -193,13 +262,50 @@ export default function Recommendation() {
     )
   }
 
+  const deleteLocalPattern = (pattern) => {
+    let newSelectedPatterns = {...selectedPatterns};
+    delete newSelectedPatterns[pattern.individual.value];
+    setSelectedPatterns(newSelectedPatterns);
+    setPatternsInLocalstorage(newSelectedPatterns);
+    enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
+  };
+
+  const storeLocalPattern = (pattern) => {
+      storePatternInLocalstorage(pattern);
+
+      setSelectedPatterns({
+          ...selectedPatterns,
+          [pattern.individual.value]: pattern
+      })
+      enqueueSnackbar("Pattern successfully added.", { variant: 'success' });
+  };
+
+  const handlePatternClick = (pattern) => {
+    getLinkedPatterns(pattern.individual.value)
+        .then(links => {
+            setModalStates({
+                open: true,
+                pattern: {
+                  ...pattern,
+                  linkedPatterns: links
+                }
+            })
+        })
+}
+
   const getRecommendedPatternsDisplay = () => {
     return (
-      <ul>
-        {Object.keys(patterns).map(key => (
-          <li>{patterns[key].individual.value}</li>
-        ))}
-      </ul>
+      <>
+        <Typography className={classes.classTitle} variant="h5">Recommended patterns</Typography>
+        <Grid container>
+          {Object.keys(patterns).map(key => 
+            <PatternCard 
+              pattern={patterns[key]}
+              selectedPatterns={selectedPatterns}
+              handlePatternAction={handlePatternAction}
+            />)}
+        </Grid>
+      </>
     )
   };
 
@@ -223,6 +329,13 @@ export default function Recommendation() {
           {handleStepDisplay()}
         </Paper>
       </Container>
+      <LoadingOverlay open={open} />
+      <PatternModal 
+        modalStates={modalStates}
+        setModalStates={setModalStates}
+        selectedPatterns={selectedPatterns}
+        handlePatternModalAction={handlePatternAction}
+      />
     </ContentContainer>
   );
 }

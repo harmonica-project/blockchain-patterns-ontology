@@ -9,7 +9,11 @@ import ClassTabs from '../components/ClassTabs';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PatternModal from '../modals/PatternModal';
 import { useSnackbar } from 'notistack';
-import { getLocalStoragePatterns } from '../libs/helpers';
+import { 
+    getLocalstoragePatterns, 
+    setPatternsInLocalstorage, 
+    storePatternInLocalstorage 
+} from '../libs/localstorage';
 import PatternCard from '../components/PatternCard';
 import LoadingOverlay from '../components/LoadingOverlay';
 
@@ -53,8 +57,7 @@ export default function Explore() {
     const [ontologyClasses, setOntologyClasses] = useState([])
     const [patterns, setPatterns] = useState([])
     const [selectorStates, setSelectorStates] = useState({});
-    const [modalStates, setModalStates] = useState({ "pattern": false });
-    const [currentPattern, setCurrentPattern] = useState({});
+    const [modalStates, setModalStates] = useState({ "pattern": {}, open: false });
     const [open, setOpen] = useState(false);
     const [selectedPatterns, setSelectedPatterns] = useState({});
     const [nbPatterns, setNbPatterns] = useState(0);
@@ -111,37 +114,29 @@ export default function Explore() {
 
     useEffect(() => {
         getInitialSubclasses();
-        let patterns = getLocalStoragePatterns();
+        let patterns = getLocalstoragePatterns();
         if (patterns) setSelectedPatterns(patterns);
         else {
             enqueueSnackbar('Error while retrieving patterns.');
-            localStorage.setItem('patterns', JSON.stringify({}))
+            setPatternsInLocalstorage({});
         }
     }, [])
 
     const handlePatternClick = (pattern) => {
         getLinkedPatterns(pattern.individual.value)
             .then(links => {
-                setCurrentPattern({
-                    ...pattern,
-                    'linkedPatterns': links
-                });
                 setModalStates({
-                    "pattern": true
+                    open: true,
+                    pattern: {
+                      ...pattern,
+                      linkedPatterns: links
+                    }
                 })
             })
     }
 
-    const storeInLocalstorage = (pattern) => {
-        let storedPatterns = localStorage.getItem('patterns');
-        if (!storedPatterns) {
-            localStorage.setItem('patterns', JSON.stringify({[pattern.individual.value]: pattern}));
-        } else {
-            localStorage.setItem('patterns', JSON.stringify({
-                ...JSON.parse(storedPatterns),
-                [pattern.individual.value]: pattern
-            }));
-        }
+    const storeLocalPattern = (pattern) => {
+        storePatternInLocalstorage(pattern);
 
         setSelectedPatterns({
             ...selectedPatterns,
@@ -150,11 +145,11 @@ export default function Explore() {
         enqueueSnackbar("Pattern successfully added.", { variant: 'success' });
     };
 
-    const deleteFromLocalstorage = (pattern) => {
+    const deleteLocalPattern = (pattern) => {
         let newSelectedPatterns = {...selectedPatterns};
         delete newSelectedPatterns[pattern.individual.value];
         setSelectedPatterns(newSelectedPatterns);
-        localStorage.setItem('patterns', JSON.stringify(newSelectedPatterns));
+        setPatternsInLocalstorage(newSelectedPatterns);
         enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
     };
 
@@ -164,10 +159,10 @@ export default function Explore() {
                 handlePatternClick(pattern);
                 break;
             case 'patternDelete':
-                deleteFromLocalstorage(pattern);
+                deleteLocalPattern(pattern);
                 break;
             case 'patternStore':
-                storeInLocalstorage(pattern);
+                storeLocalPattern(pattern);
                 break;
             default:
                 console.error('No action defined for this handler.');
@@ -320,9 +315,8 @@ export default function Explore() {
                 </Grid>
             </Grid>
             <PatternModal 
-                open={modalStates['pattern']} 
-                setOpen={(newOpen) => setModalStates({ ...modalStates, 'pattern': newOpen})} 
-                pattern={currentPattern} 
+                modalStates={modalStates}
+                setModalStates={setModalStates}
                 selectedPatterns={selectedPatterns}
                 handlePatternModalAction={handlePatternAction}
             />

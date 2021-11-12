@@ -219,15 +219,23 @@ export const getPatterns = async (filterClasses = {}) => {
 export const getPatternsByProblem = async (filterProblems = {}) => {
     const queryTemplate = () => {
         return `
-            select distinct ?individual ?category where {
-                ?category rdfs:subClassOf* 
+            select distinct ?individual ?patternclass ?label ?paper ?context ?solution ?title ?identifier ?identifiertype where {
+                    ?patternclass rdfs:subClassOf* 
                         [ 
                         rdf:type owl:Restriction ;
                         owl:onProperty onto:addressProblem ;
                         owl:someValuesFrom ?p
                         ].
                     FILTER (?p IN (${Object.keys(filterProblems).join(',')}) ).
-                    ?individual a ?category
+                    ?patternclass rdfs:subClassOf* onto:Pattern.
+                    ?individual a ?patternclass.
+                    ?individual rdfs:label ?label .
+                    ?individual onto:hasPaper ?paper .
+                    ?individual onto:ContextAndProblem ?context .
+                    ?individual onto:Solution ?solution.
+                    ?paper onto:Title ?title.
+                    ?paper onto:Identifier ?identifier.
+                    ?paper onto:IdentifierType ?identifiertype
             }
         `
     }
