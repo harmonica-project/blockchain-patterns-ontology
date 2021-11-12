@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Container, Paper, Button, Grid } from '@mui/material';
+import { Typography, Container, Paper, Button, Grid, Pagination } from '@mui/material';
 import ContentContainer from '../layouts/ContentContainer';
 import { 
   getClassTree, 
@@ -18,6 +18,7 @@ import {
   setPatternsInLocalstorage,
   storePatternInLocalstorage
  } from '../libs/localstorage';
+import RationaleDialog from '../components/RationaleDialog';
 
 const useStyles = makeStyles(() => ({
   paper: {
@@ -25,17 +26,31 @@ const useStyles = makeStyles(() => ({
     marginTop: "20px"
   },
   title: {
-    marginBottom: '10px'
+    marginBottom: '20px'
   },
   homeBlock: {
     textAlign: "center"
+  },
+  patternSpacing: {
+    marginTop: '20px',
+    marginBottom: '30px'
+  },
+  displayRankingInfoLink: {
+    color: 'dodgerblue',
+    textDecoration: 'underline dodgerblue',
+    cursor: 'pointer',
+    "&:hover": {
+      color: 'mediumblue',
+      textDecoration: 'underline mediumblue',
+    }
   }
 }));
 
 export default function Recommendation() {
   const classes = useStyles();
   const { enqueueSnackbar } = useSnackbar();
-  const [open, setOpen] = useState(false);
+  const [loadingOpen, setLoadingOpen] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
   const [modalStates, setModalStates] = useState({ "pattern": {}, open: false });
   const [selectedPatterns, setSelectedPatterns] = useState({});
   const [quizzState, setQuizzState] = useState(0);
@@ -44,6 +59,10 @@ export default function Recommendation() {
     topQuestions: [], 
     currentQuestion: '',
     currentStep: 1
+  });
+  const [pagination, setPagination] = useState({
+    interval: 18,
+    page: 1 
   });
   const [patterns, setPatterns] = useState({});
 
@@ -103,15 +122,15 @@ export default function Recommendation() {
         default:
             console.error('No action defined for this handler.');
     }
-};
+  };
 
   const getStoredPatterns = () => {
-    setOpen(true);
+    setLoadingOpen(true);
     getClassTree("onto:Pattern")
         .then(classes => {
             getPatternsWithCat(classes);
         })
-        .finally(() => setOpen(false));
+        .finally(() => setLoadingOpen(false));
   };
 
   const getPatternsWithCat = (classTree) => {
@@ -120,11 +139,29 @@ export default function Recommendation() {
     else enqueueSnackbar('Error while retrieving patterns.');
   };
 
+  const calculatePatternScore = (key) => {
+    const getBranchSize = (key) => {
+      if (key !== 'onto:Problem') return 1 + getBranchSize(quizz.list[key]['parent']);
+      return 0;
+    };
+
+    const getBranchPoints = (key) => {
+      let answer = (key !== "onto:Problem" ? quizz.list[key].answer : 0);
+      if (quizz.list[key]['parent']) return answer + getBranchPoints(quizz.list[key].parent);
+      else return answer;
+    }
+
+    return (getBranchPoints(key)/getBranchSize(key));
+  }
+
   const getRecommendedPatterns = async () => {
     const wantedProblems = {};
 
     Object.keys(quizz.list).forEach(key => {
-      if (quizz.list[key].answer === 1 && quizz.list[key].childrens.length === 0) wantedProblems[key] = quizz.list[key];
+      if (quizz.list[key].childrens.length === 0 && quizz.list[key]['answer'] >= 0) {
+        quizz.list[key]['score'] = calculatePatternScore(key);
+        wantedProblems[key] = quizz.list[key];
+      }
     });
     
     getPatternsByProblem(wantedProblems)
@@ -291,20 +328,54 @@ export default function Recommendation() {
                 }
             })
         })
-}
+  };
 
+  const sortPatterns = (fKey, sKey) => {
+    return patterns[sKey]['score'] - patterns[fKey]['score'];
+  };
+
+  const displayRankingInfo = () => {
+    console.log('clicked')
+    setDialogOpen(true);
+  };
+
+  const displayPatternGrid = () => {
+    if (Object.keys(patterns).length) {
+      return (
+        <Grid container className={classes.patternSpacing}>
+          {Object.keys(patterns)
+            .sort(sortPatterns)
+            .slice((pagination.page - 1) * pagination.interval, pagination.page * pagination.interval)
+            .map(key => 
+              <PatternCard 
+                pattern={patterns[key]}
+                selectedPatterns={selectedPatterns}
+                handlePatternAction={handlePatternAction}
+                patternSubtext={`Score: ${patterns[key].score.toFixed(2)}`}
+                bgcolor={`rgba(${255 * (1 - patterns[key].score)}, 200, ${255 * (1 - patterns[key].score)}, 0.6)`}
+              />)
+            }
+        </Grid>
+      )
+    } else {
+      return <div />
+    }
+  }
   const getRecommendedPatternsDisplay = () => {
     return (
       <>
-        <Typography className={classes.classTitle} variant="h5">Recommended patterns</Typography>
-        <Grid container>
-          {Object.keys(patterns).map(key => 
-            <PatternCard 
-              pattern={patterns[key]}
-              selectedPatterns={selectedPatterns}
-              handlePatternAction={handlePatternAction}
-            />)}
-        </Grid>
+        <Typography variant="h5">Recommended patterns</Typography>
+        <Typography variant="body1">
+          Please find below the recommended patterns in your case. 
+          If you want more information on rankings, <span className={classes.displayRankingInfoLink} onClick={displayRankingInfo}>click me</span> to display a rationale.
+        </Typography>
+        {displayPatternGrid()}
+        <Pagination 
+          count={Math.ceil(Object.keys(patterns).length / pagination.interval)} 
+          size="large"
+          onChange={(e, page) => setPagination({...pagination, page})}
+          style={{display: (Object.keys(patterns).length ? 'block' : 'none')}}
+        />
       </>
     )
   };
@@ -329,13 +400,14 @@ export default function Recommendation() {
           {handleStepDisplay()}
         </Paper>
       </Container>
-      <LoadingOverlay open={open} />
+      <LoadingOverlay open={loadingOpen} />
       <PatternModal 
         modalStates={modalStates}
         setModalStates={setModalStates}
         selectedPatterns={selectedPatterns}
         handlePatternModalAction={handlePatternAction}
       />
+      <RationaleDialog open={dialogOpen} setOpen={setDialogOpen} />
     </ContentContainer>
   );
 }

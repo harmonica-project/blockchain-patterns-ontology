@@ -29,7 +29,8 @@ export default function PatternCard({
     cardSize = 4, 
     disableButtons, 
     disableChips,
-    patternSubtext
+    patternSubtext,
+    bgcolor = '#fff'
 }) {
   const classes = useStyles();
   const patternInLocalState = (pattern) => {
@@ -58,7 +59,7 @@ export default function PatternCard({
 
   return (
     <Grid item sm={cardSize} xs={12} className={classes.patternItem} key={pattern['individual']['value']}>
-        <Card className={classes.patternCard}>
+        <Card className={classes.patternCard} style={{backgroundColor: bgcolor}}>
             <Grid container justifyContent="center">
                 <Grid item md={disableButtons ? 12 : 9} sm={12} alignItems="center" display="flex" justifyContent="center">
                     <Typography>

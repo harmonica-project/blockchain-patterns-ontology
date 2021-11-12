@@ -216,17 +216,24 @@ export const getPatterns = async (filterClasses = {}) => {
     }
 }
 
+const addScoreToPatterns = (patterns, filterProblems) => {
+    return patterns.map(pattern => ({
+        ...pattern,
+        score: filterProblems[pattern.problem.value].score
+    }));
+};
+
 export const getPatternsByProblem = async (filterProblems = {}) => {
     const queryTemplate = () => {
         return `
-            select distinct ?individual ?patternclass ?label ?paper ?context ?solution ?title ?identifier ?identifiertype where {
+            select distinct ?problem ?individual ?patternclass ?label ?paper ?context ?solution ?title ?identifier ?identifiertype where {
                     ?patternclass rdfs:subClassOf* 
                         [ 
                         rdf:type owl:Restriction ;
                         owl:onProperty onto:addressProblem ;
-                        owl:someValuesFrom ?p
+                        owl:someValuesFrom ?problem
                         ].
-                    FILTER (?p IN (${Object.keys(filterProblems).join(',')}) ).
+                    FILTER (?problem IN (${Object.keys(filterProblems).join(',')}) ).
                     ?patternclass rdfs:subClassOf* onto:Pattern.
                     ?individual a ?patternclass.
                     ?individual rdfs:label ?label .
@@ -245,7 +252,7 @@ export const getPatternsByProblem = async (filterProblems = {}) => {
             let query = queryTemplate()
             let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
             if (response.status === 200) {
-                return parseResults(await response.json());
+                return addScoreToPatterns(parseResults(await response.json()), filterProblems);
             };
             return [];
         } catch (e) {
