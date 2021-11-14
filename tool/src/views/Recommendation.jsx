@@ -376,7 +376,6 @@ export default function Recommendation() {
   };
 
   const displayRankingInfo = () => {
-    console.log('clicked')
     setRationaleOpen(true);
   };
 
@@ -393,7 +392,6 @@ export default function Recommendation() {
   };
 
   const displayPatternGrid = () => {
-    console.log(patterns)
     return (
       <Grid container className={classes.patternSpacing}>
         {getFilteredPatterns()
