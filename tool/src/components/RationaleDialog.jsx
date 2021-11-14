@@ -60,13 +60,24 @@ export default function RationaleDialog({open, setOpen}) {
         </BootstrapDialogTitle>
         <DialogContent dividers>
             <Typography variant="body1" gutterBottom>
-                The rationale behind the score is the following: by answering questions on your goals, each problem has been assigned a score of -1 (No), 0 (Not sure), or 1(Yes).
-                As problems are forming a tree (for instance, the design pattern problem is split in two problems), it is possible to get a score summing the score of all problems on a branch and normalizing it (longer branches do not have a higher score).
+                In this tool, each question you answered is mapped to a specific problem. 
+                Those problems form a tree, where each problem may have a parent (subsuming the child problem), and some children. 
+                By answering those questions, each linked problem has been assigned a score of -1 (No), 0 (Not sure), or 1(Yes). 
+                As problems are forming a tree, it is possible to get a score summing the score of all problems on a branch and normalizing it (longer branches should have a higher score than shorter branches). 
             </Typography>
             <Typography variant="body1" gutterBottom>
-                Also, patterns are attached to branch leaves, they are assigned that normalized score and ranked between 1 (all problems on the branch of the pattern has been given a score of 1) to 0 (same rationale).
-                When a problem is assigned a score of -1, all the branch is discarded.
-                A dynamic rationale system on this score is currently in development, and will be displayed along patterns when ready.
+                Another notable aspect is that each problem is closely related to the blockchain pattern taxonomy. 
+                Thus, the leaves of the problem tree are the same than the leaves of the taxonomy, and where patterns are grouped under those leaves, they can also be mapped to a leaf problem. 
+                Therefore, a pattern are assigned the score from its respective branch. 
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+                This score ranges from 0 to 1. 
+                For the sake of understandability, this interval has been sliced into 5 sub intervals and assigned a label, as follows:
+                [0, 0.2] Not recommended, [0.2, 0.4] Slightly recommended, [0.4, 0.6] Recommended, [0.6,0.8] Highly recommended, [0.8, 1] Extremely recommended.
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+                A dynamic rationale system on this score is currently in development, and will be displayed along patterns when ready. 
+                Also, recommendations will be more precise in the future with the addition of domain, language, and blockchain in the selection.
             </Typography>
         </DialogContent>
       </BootstrapDialog>

@@ -20,6 +20,14 @@ import {
  } from '../libs/localstorage';
 import RationaleDialog from '../components/RationaleDialog';
 
+const scoreLabels = [
+  'Not recommended',
+  'Slightly recommended',
+  'Recommended',
+  'Highly recommended',
+  'Extremely recommended'
+];
+
 const useStyles = makeStyles(() => ({
   paper: {
     padding: "20px",
@@ -339,6 +347,10 @@ export default function Recommendation() {
     setDialogOpen(true);
   };
 
+  const getLabelFromScore = (score) => {
+    return scoreLabels[Math.floor(score*4)];
+  };
+
   const displayPatternGrid = () => {
     if (Object.keys(patterns).length) {
       return (
@@ -351,7 +363,7 @@ export default function Recommendation() {
                 pattern={patterns[key]}
                 selectedPatterns={selectedPatterns}
                 handlePatternAction={handlePatternAction}
-                patternSubtext={`Score: ${patterns[key].score.toFixed(2)}`}
+                patternSubtext={getLabelFromScore(patterns[key].score)}
                 bgcolor={`rgba(${255 * (1 - patterns[key].score)}, 200, ${255 * (1 - patterns[key].score)}, 0.6)`}
               />)
             }

@@ -128,7 +128,7 @@ export default function PatternModal({modalStates, setModalStates, selectedPatte
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} >
+          <Grid item xs={12}>
             <Divider/>
             <Typography sx={{ mt: 2 }}>
               <b>
