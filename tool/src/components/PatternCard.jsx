@@ -29,7 +29,7 @@ export default function PatternCard({
     cardSize = 4, 
     disableButtons, 
     disableChips,
-    patternSubtext,
+    patternSubtext = [],
     bgcolor = '#fff'
 }) {
   const classes = useStyles();
@@ -66,10 +66,11 @@ export default function PatternCard({
                         <Link style={{cursor: 'pointer'}} onClick={() => handlePatternAction('patternClick', pattern)}>
                             {pattern.label.value}
                         </Link>
-                        {patternSubtext && 
-                            <Typography variant="body2" component={'p'}>
-                                {patternSubtext}
+                        {patternSubtext.map(item => (
+                            <Typography variant={item.variant} component={'p'}>
+                                {item.text}
                             </Typography>
+                        ))
                         }
                     </Typography>
                 </Grid>

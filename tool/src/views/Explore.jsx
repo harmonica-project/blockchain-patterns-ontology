@@ -14,6 +14,9 @@ import {
     setPatternsInLocalstorage, 
     storePatternInLocalstorage 
 } from '../libs/localstorage';
+import {
+    parseToLabel
+} from '../libs/helpers';
 import PatternCard from '../components/PatternCard';
 import LoadingOverlay from '../components/LoadingOverlay';
 
@@ -206,6 +209,10 @@ export default function Explore() {
                                 cardSize={3}
                                 key={pattern.individual.value}
                                 disableChips={true}
+                                patternSubtext={[{
+                                    text: parseToLabel(pattern.paper.value),
+                                    variant: 'body2'
+                                }]}
                             />
                     ))}
                 </Grid>

@@ -393,6 +393,7 @@ export default function Recommendation() {
   };
 
   const displayPatternGrid = () => {
+    console.log(patterns)
     return (
       <Grid container className={classes.patternSpacing}>
         {getFilteredPatterns()
@@ -403,7 +404,15 @@ export default function Recommendation() {
               pattern={patterns[key]}
               selectedPatterns={selectedPatterns}
               handlePatternAction={handlePatternAction}
-              patternSubtext={getLabelFromScore(patterns[key].score)}
+              patternSubtext={[{
+                text: parseToLabel(patterns[key].paper.value),
+                variant: 'body2'
+              }, 
+              {
+                text: getLabelFromScore(patterns[key].score),
+                variant: 'subtitle2'
+              }
+              ]}
               bgcolor={`rgba(${255 * (1 - patterns[key].score)}, 200, ${255 * (1 - patterns[key].score)}, 0.6)`}
             />)
           }
