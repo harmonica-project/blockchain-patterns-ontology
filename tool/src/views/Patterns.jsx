@@ -12,7 +12,7 @@ import {
     setPatternsFromJSON,
     deleteAllLocalstoragePatterns
 } from '../libs/localstorage';
-import { parseToLabel } from '../libs/helpers';
+import { parseToLabel, exportToJSON } from '../libs/helpers';
 import { getClassTree, getLinkedPatterns } from '../libs/fuseki';
 import PatternCard from '../components/PatternCard';
 import PatternModal from '../modals/PatternModal';
@@ -86,18 +86,6 @@ export default function Patterns() {
     const Input = styled('input')({
         display: 'none',
     });
-
-    const exportToJSON = async () => {
-        const json = JSON.stringify({...selectedPatterns});
-        const blob = new Blob([json],{type:'application/json'});
-        const href = await URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = href;
-        link.download = "patterns.json";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
 
     const addCatsToPatterns = (patterns, classTree) => {
         const patternsKeys = Object.keys(patterns);
@@ -221,7 +209,7 @@ export default function Patterns() {
                                 </label>
                             </Grid>
                             <Grid item xs={6} style={{marginTop: '10px', paddingLeft: '5px'}}>
-                                <Button fullWidth variant="contained" onClick={exportToJSON}>
+                                <Button fullWidth variant="contained" onClick={exportToJSON.bind(this, {...selectedPatterns}, 'patterns.json')}>
                                     Export
                                 </Button>
                             </Grid>

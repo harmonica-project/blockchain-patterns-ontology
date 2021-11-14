@@ -53,3 +53,15 @@ export const parseToLabel = (uri) => {
        return uri;
    }
 }
+
+export const exportToJSON = async (content, filename) => {
+    const json = JSON.stringify(content);
+    const blob = new Blob([json],{type:'application/json'});
+    const href = await URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = href;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};

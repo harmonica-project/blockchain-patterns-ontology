@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Container, Paper, Button, Grid, Pagination } from '@mui/material';
+import { Typography, Container, Paper, Button, Grid, Pagination, TextField } from '@mui/material';
 import ContentContainer from '../layouts/ContentContainer';
 import { 
   getClassTree, 
@@ -12,7 +12,7 @@ import Questions from '../components/Questions';
 import PatternCard from '../components/PatternCard';
 import LoadingOverlay from '../components/LoadingOverlay';
 import PatternModal from '../modals/PatternModal';
-import { parseToLabel } from '../libs/helpers';
+import { exportToJSON, parseToLabel } from '../libs/helpers';
 import { 
   getLocalstoragePatterns,
   setPatternsInLocalstorage,
@@ -50,6 +50,15 @@ const useStyles = makeStyles(() => ({
       color: 'mediumblue',
       textDecoration: 'underline mediumblue',
     }
+  },
+  exportBtn: {
+    marginLeft: '10px',
+    marginRight: '10px',
+    display: 'flex',
+  },
+  optionBtnContainer: {
+    display: 'flex',
+    justifyContent: 'center'
   }
 }));
 
@@ -61,6 +70,7 @@ export default function Recommendation() {
   const [modalStates, setModalStates] = useState({ "pattern": {}, open: false });
   const [selectedPatterns, setSelectedPatterns] = useState({});
   const [quizzState, setQuizzState] = useState(0);
+  const [search, setSearch] = useState('');
   const [quizz, setQuizz] = useState({
     list: {},
     topQuestions: [], 
@@ -68,11 +78,10 @@ export default function Recommendation() {
     currentStep: 1,
     history: []
   });
-  const [pagination, setPagination] = useState({
-    interval: 18,
-    page: 1 
-  });
+  const [page, setPage] = useState(1);
   const [patterns, setPatterns] = useState({});
+
+  const INTERVAL = 18;
 
   const getTopQuestions = (questionsList) => {
     const topQuestions = [];
@@ -97,6 +106,10 @@ export default function Recommendation() {
 
     getStoredPatterns();
   }, [])
+
+  useEffect(() => {
+    setPage(1);
+  }, [search]);
 
   const addCatsToPatterns = (patterns, classTree) => {
     const patternsKeys = Object.keys(patterns);
@@ -371,27 +384,31 @@ export default function Recommendation() {
     return scoreLabels[Math.floor(score*4)];
   };
 
+  const getFilteredPatterns = () => {
+    return Object.keys(patterns)
+      .filter(
+        key => patterns[key].label.value
+        .toLowerCase()
+        .includes(search.toLowerCase()));
+  };
+
   const displayPatternGrid = () => {
-    if (Object.keys(patterns).length) {
-      return (
-        <Grid container className={classes.patternSpacing}>
-          {Object.keys(patterns)
-            .sort(sortPatterns)
-            .slice((pagination.page - 1) * pagination.interval, pagination.page * pagination.interval)
-            .map(key => 
-              <PatternCard 
-                pattern={patterns[key]}
-                selectedPatterns={selectedPatterns}
-                handlePatternAction={handlePatternAction}
-                patternSubtext={getLabelFromScore(patterns[key].score)}
-                bgcolor={`rgba(${255 * (1 - patterns[key].score)}, 200, ${255 * (1 - patterns[key].score)}, 0.6)`}
-              />)
-            }
-        </Grid>
-      )
-    } else {
-      return <div />
-    }
+    return (
+      <Grid container className={classes.patternSpacing}>
+        {getFilteredPatterns()
+          .sort(sortPatterns)
+          .slice((page - 1) * INTERVAL, page * INTERVAL)
+          .map(key => 
+            <PatternCard 
+              pattern={patterns[key]}
+              selectedPatterns={selectedPatterns}
+              handlePatternAction={handlePatternAction}
+              patternSubtext={getLabelFromScore(patterns[key].score)}
+              bgcolor={`rgba(${255 * (1 - patterns[key].score)}, 200, ${255 * (1 - patterns[key].score)}, 0.6)`}
+            />)
+          }
+      </Grid>
+    )
   }
   const getRecommendedPatternsDisplay = () => {
     return (
@@ -401,12 +418,37 @@ export default function Recommendation() {
           Please find below the recommended patterns in your case. 
           If you want more information on rankings, <span className={classes.displayRankingInfoLink} onClick={displayRankingInfo}>click me</span> to display a rationale.
         </Typography>
+        <br/>
+        <Grid container>
+          <Grid item sm={10} xs={12}>
+            <TextField
+              id="searchbar-textfield"
+              label="Search a specific pattern ..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Type the pattern name"
+              fullWidth
+            />
+          </Grid>
+          <Grid item sm={2} xs={12} className={classes.optionBtnContainer}>
+            <Button 
+              variant="contained" 
+              color="primary" 
+              fullWidth 
+              className={classes.exportBtn}
+              onClick={exportToJSON.bind(this, {...quizz}, 'recommendations.json')}
+            >
+                Export
+            </Button>
+          </Grid>
+        </Grid>
         {displayPatternGrid()}
         <Pagination 
-          count={Math.ceil(Object.keys(patterns).length / pagination.interval)} 
+          count={Math.ceil(getFilteredPatterns().length / INTERVAL)} 
           size="large"
-          onChange={(e, page) => setPagination({...pagination, page})}
+          onChange={(e, page) => setPage(page)}
           style={{display: (Object.keys(patterns).length ? 'block' : 'none')}}
+          page={page}
         />
       </>
     )
@@ -419,7 +461,15 @@ export default function Recommendation() {
       case 1:
         return getQuestionDisplay();
       case 2:
-        return getRecommendedPatternsDisplay();
+        if (Object.keys(patterns).length)
+          return getRecommendedPatternsDisplay();
+        else
+          return (
+            <> 
+              <Typography variant="h5">No patterns were found for your answers.</Typography>
+            </>
+            // add reset here
+          );
       default:
         return getHomeDisplay();
     }

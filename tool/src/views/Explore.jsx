@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip, Pagination } from '@mui/material';
+import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip, Pagination, TextField } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
@@ -61,11 +61,13 @@ export default function Explore() {
     const [open, setOpen] = useState(false);
     const [selectedPatterns, setSelectedPatterns] = useState({});
     const [nbPatterns, setNbPatterns] = useState(0);
-    const [pagination, setPagination] = useState({
-       interval: 20,
-       page: 1 
-    });
+    const [page, setPage] = useState(1);
+    const [search, setSearch] = useState('');
+
     const { enqueueSnackbar } = useSnackbar();
+
+    // pagination interval
+    const INTERVAL = 20;
 
     const filterParents = (filterClasses) => {
         let keyClasses = Object.keys(filterClasses);
@@ -95,6 +97,10 @@ export default function Explore() {
             })
             .finally(() => setOpen(false));
     }, [selectorStates]);
+
+    useEffect(() => {
+        setPage(1);
+    }, [search, selectorStates]);
 
     const getInitialSubclasses = async () => {
         let resClasses = await getSubclasses('owl:Thing');
@@ -169,12 +175,29 @@ export default function Explore() {
         }
     };
 
+    const getFilteredPatterns = () => {
+        return patterns
+            .filter(
+                p => p.label.value
+                    .toLowerCase()
+                    .includes(search.toLowerCase()));
+    };
+
     const displayPatterns = () => {
         if (patterns.length) {
             return (
                 <Grid container className={classes.patternSpacing}>
-                    {patterns
-                        .slice((pagination.page - 1) * pagination.interval, pagination.page * pagination.interval)
+                    <TextField
+                        id="searchbar-textfield"
+                        label="Search a specific pattern ..."
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        placeholder="Type the pattern name"
+                        fullWidth
+                    />
+                    <br/>
+                    {getFilteredPatterns()
+                        .slice((page - 1) * INTERVAL, page * INTERVAL)
                         .map(pattern => (
                             <PatternCard 
                                 pattern={pattern} 
@@ -266,6 +289,9 @@ export default function Explore() {
         setSelectorStates(newSelectorStates);
     }
 
+    const handlePageChange = (e, page) => {
+        setPage(page);
+    }
     return (
         <ContentContainer>
             <HealthCheck className={classes.healthCheck} variant="overline" component="div" />
@@ -306,10 +332,11 @@ export default function Explore() {
                         </Typography>
                         {displayPatterns()}
                         <Pagination 
-                            count={Math.ceil(patterns.length / pagination.interval)} 
+                            count={Math.ceil(getFilteredPatterns().length / INTERVAL)} 
                             size="large"
-                            onChange={(e, page) => setPagination({...pagination, page})}
+                            onChange={handlePageChange}
                             style={{display: (patterns.length ? 'block' : 'none')}}
+                            page={page}
                         />
                     </Paper>
                 </Grid>
