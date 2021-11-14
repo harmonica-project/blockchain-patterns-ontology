@@ -18,7 +18,7 @@ import {
   setPatternsInLocalstorage,
   storePatternInLocalstorage
  } from '../libs/localstorage';
-import RationaleDialog from '../components/RationaleDialog';
+import RationaleDialog from '../modals/RationaleDialog';
 
 const scoreLabels = [
   'Not recommended',
