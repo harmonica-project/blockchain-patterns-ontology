@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Box,
     LinearProgress,
@@ -9,6 +9,7 @@ import {
 import { makeStyles } from '@mui/styles';
 import Stack from '@mui/material/Stack';
 import QuestionsStepper from './QuestionsStepper';
+import HistoryDialog from '../modals/HistoryDialog';
 
 const useStyles = makeStyles(() => ({
     title: {
@@ -50,6 +51,7 @@ function LinearProgressWithLabel(props) {
 
 export default function Questions({quizz, handleAnswer}) {
     const classes = useStyles();
+    const [historyOpen, setHistoryOpen] = useState(false);
 
     const getProblemBreadcrumb = (question) => {
         const breadcrumb = [];
@@ -98,9 +100,13 @@ export default function Questions({quizz, handleAnswer}) {
                     <Button variant="contained" color="error" onClick={() => handleAnswer(-1, true)}>
                         No
                     </Button>
+                    <Button variant="string" onClick={() => setHistoryOpen(true)}>
+                        History
+                    </Button>
                 </Stack>
             </Box>
             <LinearProgressWithLabel value={quizz.currentStep * 100 / Object.keys(quizz.list).length} />
+            <HistoryDialog open={historyOpen} setOpen={setHistoryOpen} history={quizz.history} />
         </Box>
     )
 }

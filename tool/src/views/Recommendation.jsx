@@ -19,7 +19,6 @@ import {
   storePatternInLocalstorage
  } from '../libs/localstorage';
 import RationaleDialog from '../modals/RationaleDialog';
-
 const scoreLabels = [
   'Not recommended',
   'Slightly recommended',
@@ -58,7 +57,7 @@ export default function Recommendation() {
   const classes = useStyles();
   const { enqueueSnackbar } = useSnackbar();
   const [loadingOpen, setLoadingOpen] = useState(false);
-  const [dialogOpen, setDialogOpen] = useState(false);
+  const [rationaleOpen, setRationaleOpen] = useState(false);
   const [modalStates, setModalStates] = useState({ "pattern": {}, open: false });
   const [selectedPatterns, setSelectedPatterns] = useState({});
   const [quizzState, setQuizzState] = useState(0);
@@ -66,7 +65,8 @@ export default function Recommendation() {
     list: {},
     topQuestions: [], 
     currentQuestion: '',
-    currentStep: 1
+    currentStep: 1,
+    history: []
   });
   const [pagination, setPagination] = useState({
     interval: 18,
@@ -201,7 +201,14 @@ export default function Recommendation() {
         }
       },
       currentStep: quizz.currentStep + 1,
-      currentQuestion: getNextQuestion({...quizz})
+      currentQuestion: getNextQuestion({...quizz}),
+      history: [
+        ...quizz.history,
+        {
+          question: quizz.list[question].label,
+          answer,
+          prefilled: false
+        }]
     });
   };
 
@@ -221,7 +228,20 @@ export default function Recommendation() {
             answer
           }
         }, 
-        currentStep: quizz.currentStep + Object.keys(newQuestions).length + 1
+        currentStep: quizz.currentStep + Object.keys(newQuestions).length + 1,
+        history: [
+          ...quizz.history,
+          ...Object.keys(newQuestions).map(key => ({
+            question: quizz.list[key].label,
+            answer,
+            prefilled: true
+          })),
+          {
+            question: quizz.list[quizz.currentQuestion].label,
+            answer,
+            prefilled: false
+          }
+        ]
       };
 
       newQuizz.currentQuestion = getNextQuestion(newQuizz);
@@ -344,7 +364,7 @@ export default function Recommendation() {
 
   const displayRankingInfo = () => {
     console.log('clicked')
-    setDialogOpen(true);
+    setRationaleOpen(true);
   };
 
   const getLabelFromScore = (score) => {
@@ -419,7 +439,7 @@ export default function Recommendation() {
         selectedPatterns={selectedPatterns}
         handlePatternModalAction={handlePatternAction}
       />
-      <RationaleDialog open={dialogOpen} setOpen={setDialogOpen} />
+      <RationaleDialog open={rationaleOpen} setOpen={setRationaleOpen} />
     </ContentContainer>
   );
 }
