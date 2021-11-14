@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { Divider, Button, Grid, List, ListItem, ListItemText, Card } from '@mui/material';
+import { Divider, Button, Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import PatternCard from '../components/PatternCard';
 

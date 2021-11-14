@@ -6,7 +6,6 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import Typography from '@mui/material/Typography';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -55,6 +54,8 @@ export default function HistoryDialog({open, setOpen, history}) {
                 return 'Don\'t know';
             case 1:
                 return 'Yes';
+            default:
+                return 'Unknown';
         }
     };
 
