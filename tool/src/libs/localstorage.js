@@ -1,6 +1,12 @@
 export const getLocalstoragePatterns = () => {
     try {
-        return JSON.parse(localStorage.getItem('patterns'));
+        const localPatterns = localStorage.getItem('patterns');
+        if (localPatterns) {
+            return JSON.parse(localPatterns);
+        } else {
+            setPatternsInLocalstorage({});
+            return {};
+        }
     } catch {
         return false;
     }

@@ -157,7 +157,10 @@ export default function Recommendation() {
   const getPatternsWithCat = (classTree) => {
     let patterns = getLocalstoragePatterns();
     if (patterns) setSelectedPatterns(addCatsToPatterns(patterns, classTree));
-    else enqueueSnackbar('Error while retrieving patterns.');
+    else {
+      enqueueSnackbar('Error while retrieving patterns.');
+      setPatternsInLocalstorage({});
+    }
   };
 
   const calculatePatternScore = (key) => {
