@@ -66,11 +66,12 @@ export default function PatternCard({
                         <Link style={{cursor: 'pointer'}} onClick={() => handlePatternAction('patternClick', pattern)}>
                             {pattern.label.value}
                         </Link>
-                        {patternSubtext.map(item => (
-                            <Typography variant={item.variant} component={'p'}>
-                                {item.text}
-                            </Typography>
-                        ))
+                        {
+                            patternSubtext.map(item => (
+                                <Typography variant={item.variant} component={'p'}>
+                                    {item.text}
+                                </Typography>
+                            ))
                         }
                     </Typography>
                 </Grid>

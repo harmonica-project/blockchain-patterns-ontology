@@ -163,7 +163,10 @@ export default function PatternModal({modalStates, setModalStates, selectedPatte
                         pattern={linkedPattern}
                         selectedPatterns={selectedPatterns}
                         handlePatternAction={handlePatternModalAction}
-                        patternSubtext={getRelationLabel(linkedPattern.relation.value)}
+                        patternSubtext={[{
+                          text: getRelationLabel(linkedPattern.relation.value),
+                          variant: 'body2'
+                        }]}
                         cardSize={4}
                         disableChips
                       />
