@@ -60,7 +60,7 @@ export default function Explore() {
     const [ontologyClasses, setOntologyClasses] = useState([])
     const [patterns, setPatterns] = useState([])
     const [selectorStates, setSelectorStates] = useState({});
-    const [modalStates, setModalStates] = useState({ "pattern": {}, open: false });
+    const [modalStates, setModalStates] = useState({ "pattern": {}, open: false, selectedTab: 0 });
     const [open, setOpen] = useState(false);
     const [selectedPatterns, setSelectedPatterns] = useState({});
     const [nbPatterns, setNbPatterns] = useState(0);
@@ -91,7 +91,7 @@ export default function Explore() {
         // not a big deal if loading is finished before displaying the number of patterns
         getPatterns()
         .then((results) => {
-            setNbPatterns(results.length)
+            setNbPatterns(Object.keys(results).length)
         })
 
         getPatterns(filterParents({...selectorStates}))
@@ -131,63 +131,80 @@ export default function Explore() {
         }
     }, [])
 
-    const handlePatternClick = (pattern) => {
-        getLinkedPatterns(pattern.individual.value)
-            .then(links => {
-                setModalStates({
-                    open: true,
-                    pattern: {
-                      ...pattern,
-                      linkedPatterns: links
-                    }
-                })
-            })
+    const handlePatternClick = async (pattern, selectedTab = 0) => {
+        for (let i in pattern.individuals) {
+            let linkedPatterns = await getLinkedPatterns(pattern.individuals[i].individual);
+            pattern.individuals[i] = {
+               ...pattern.individuals[i],
+               linkedPatterns
+            }
+        }
+
+        setModalStates({
+            open: true,
+            selectedTab,
+            pattern
+        })
     }
 
-    const storeLocalPattern = (pattern) => {
-        storePatternInLocalstorage(pattern);
+    const handleIndividualClick = (individual) => {
+        Object.keys(patterns).forEach(key => {
+            const pattern = patterns[key];
+            pattern.individuals.forEach((pIndividual, i) => {
+                if (individual.individual === pIndividual.individual) {
+                    handlePatternClick(pattern, i);
+                }
+            }) 
+        })
+    };
+
+    const storeLocalPattern = (individual) => {
+        storePatternInLocalstorage(individual);
 
         setSelectedPatterns({
             ...selectedPatterns,
-            [pattern.individual.value]: pattern
+            [individual.individual]: individual
         })
         enqueueSnackbar("Pattern successfully added.", { variant: 'success' });
     };
 
-    const deleteLocalPattern = (pattern) => {
+    const deleteLocalPattern = (individual) => {
         let newSelectedPatterns = {...selectedPatterns};
-        delete newSelectedPatterns[pattern.individual.value];
+        delete newSelectedPatterns[individual.individual];
         setSelectedPatterns(newSelectedPatterns);
         setPatternsInLocalstorage(newSelectedPatterns);
         enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
     };
 
-    const handlePatternAction = (action, pattern) => {
+    const handlePatternAction = (action, individual) => {
         switch (action) {
+            case 'linkedPatternClick':
+                handleIndividualClick(individual);
+                break;
             case 'patternClick':
-                handlePatternClick(pattern);
+                handlePatternClick(individual);
                 break;
             case 'patternDelete':
-                deleteLocalPattern(pattern);
+                deleteLocalPattern(individual);
                 break;
             case 'patternStore':
-                storeLocalPattern(pattern);
+                storeLocalPattern(individual);
                 break;
             default:
                 console.error('No action defined for this handler.');
         }
     };
 
-    const getFilteredPatterns = () => {
-        return patterns
+    const getFilteredPatternsKeys = () => {
+        return Object.keys(patterns)
             .filter(
-                p => p.label.value
+                key => patterns[key].label
                     .toLowerCase()
                     .includes(search.toLowerCase()));
     };
 
     const displayPatterns = () => {
-        if (patterns.length) {
+        if (Object.keys(patterns).length) {
             return (
                 <Grid container className={classes.patternSpacing}>
                     <TextField
@@ -199,18 +216,17 @@ export default function Explore() {
                         fullWidth
                     />
                     <br/>
-                    {getFilteredPatterns()
+                    {getFilteredPatternsKeys()
                         .slice((page - 1) * INTERVAL, page * INTERVAL)
-                        .map(pattern => (
+                        .map(key => (
                             <PatternCard 
-                                pattern={pattern} 
-                                handlePatternAction={handlePatternAction} 
-                                selectedPatterns={selectedPatterns}
+                                pattern={patterns[key]} 
+                                handlePatternAction={handlePatternAction}
                                 cardSize={3}
-                                key={pattern.individual.value}
+                                key={key}
                                 disableChips={true}
                                 patternSubtext={[{
-                                    text: parseToLabel(pattern.paper.value),
+                                    text: parseToLabel(`${patterns[key].individuals.length} proposal${patterns[key].individuals.length > 1 ? 's' : ''}`),
                                     variant: 'body2'
                                 }]}
                             />
@@ -334,15 +350,15 @@ export default function Explore() {
                             {
                                 open 
                                 ? "Loading patterns ..."
-                                : (patterns.length ? `${patterns.length}/${nbPatterns}` : "No") + " corresponding patterns for this selection"
+                                : (Object.keys(patterns).length ? `${Object.keys(patterns).length}/${nbPatterns}` : "No") + " corresponding patterns for this selection"
                             }
                         </Typography>
                         {displayPatterns()}
                         <Pagination 
-                            count={Math.ceil(getFilteredPatterns().length / INTERVAL)} 
+                            count={Math.ceil(getFilteredPatternsKeys().length / INTERVAL)} 
                             size="large"
                             onChange={handlePageChange}
-                            style={{display: (patterns.length ? 'block' : 'none')}}
+                            style={{display: (Object.keys(patterns).length ? 'block' : 'none')}}
                             page={page}
                         />
                     </Paper>

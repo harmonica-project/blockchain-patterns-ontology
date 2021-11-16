@@ -12,14 +12,14 @@ export const getLocalstoragePatterns = () => {
     }
 };
 
-export const storePatternInLocalstorage = (pattern) => {
+export const storePatternInLocalstorage = (individual) => {
     let storedPatterns = localStorage.getItem('patterns');
     if (!storedPatterns) {
-        localStorage.setItem('patterns', JSON.stringify({[pattern.individual.value]: pattern}));
+        localStorage.setItem('patterns', JSON.stringify({[individual.individual]: individual}));
     } else {
         localStorage.setItem('patterns', JSON.stringify({
             ...JSON.parse(storedPatterns),
-            [pattern.individual.value]: pattern
+            [individual.individual]: individual
         }));
     }
 }
@@ -29,14 +29,14 @@ export const setPatternsInLocalstorage = (patterns) => {
 }
 
 export const setPatternsFromJSON = async e => {
-    e.preventDefault()
-    var jsonPatterns = {}
-    const reader = new FileReader()
+    e.preventDefault();
+    var jsonPatterns = {};
+    const reader = new FileReader();
 
     await new Promise(resolve => {
         reader.onload = (e) => { 
             localStorage.clear();
-            const text = (e.target.result)
+            const text = (e.target.result);
             // must verify later that json provided is correct
             jsonPatterns = JSON.parse(text);
             localStorage.setItem('patterns', JSON.stringify(jsonPatterns));

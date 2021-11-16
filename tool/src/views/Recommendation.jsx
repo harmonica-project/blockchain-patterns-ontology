@@ -4,7 +4,8 @@ import ContentContainer from '../layouts/ContentContainer';
 import { 
   getClassTree, 
   getPatternsByProblem,
-  getLinkedPatterns
+  getLinkedPatterns,
+  getPatterns
  } from '../libs/fuseki';
 import { makeStyles } from '@mui/styles';
 import { useSnackbar } from 'notistack';
@@ -80,6 +81,7 @@ export default function Recommendation() {
   });
   const [page, setPage] = useState(1);
   const [patterns, setPatterns] = useState({});
+  const [chosenPatterns, setChosenPatterns] = useState({});
 
   const INTERVAL = 18;
 
@@ -105,16 +107,27 @@ export default function Recommendation() {
       });
 
     getStoredPatterns();
+
+    getPatterns()
+      .then((results) => {
+          setPatterns(results);
+      })
   }, [])
 
   useEffect(() => {
     setPage(1);
   }, [search]);
 
+  useEffect(() => {
+    if (quizzState === 2) {
+      getRecommendedPatterns();
+    }
+  }, [quizzState]);
+
   const addCatsToPatterns = (patterns, classTree) => {
     const patternsKeys = Object.keys(patterns);
     patternsKeys.forEach(key => {
-        let patternClass = patterns[key].patternclass.value;
+        let patternClass = patterns[key].pattern;
         let patternClassTree = [];
 
         while(classTree[patternClass] && classTree[patternClass]['parent']) {
@@ -128,8 +141,22 @@ export default function Recommendation() {
     return patterns;
   }
 
+  const handleIndividualClick = (individual) => {
+    Object.keys(patterns).forEach(key => {
+        const pattern = patterns[key];
+        pattern.individuals.forEach((pIndividual, i) => {
+            if (individual.individual === pIndividual.individual) {
+                handlePatternClick(pattern, i);
+            }
+        }) 
+    })
+  };
+
   const handlePatternAction = (action, pattern) => {
     switch (action) {
+        case 'linkedPatternClick':
+            handleIndividualClick(pattern);
+            break;
         case 'patternClick':
             handlePatternClick(pattern);
             break;
@@ -189,14 +216,8 @@ export default function Recommendation() {
     });
     
     getPatternsByProblem(wantedProblems)
-      .then(patterns => setPatterns(patterns))
+      .then(patterns => setChosenPatterns(patterns))
   };
-
-  useEffect(() => {
-    if (quizzState === 2) {
-      getRecommendedPatterns();
-    }
-  }, [quizzState]);
 
   const startQuizz = () => {
     setQuizz({
@@ -361,21 +382,24 @@ export default function Recommendation() {
       enqueueSnackbar("Pattern successfully added.", { variant: 'success' });
   };
 
-  const handlePatternClick = (pattern) => {
-    getLinkedPatterns(pattern.individual.value)
-        .then(links => {
-            setModalStates({
-                open: true,
-                pattern: {
-                  ...pattern,
-                  linkedPatterns: links
-                }
-            })
-        })
-  };
+  const handlePatternClick = async (pattern, selectedTab = 0) => {
+    for (let i in pattern.individuals) {
+        let linkedPatterns = await getLinkedPatterns(pattern.individuals[i].individual);
+        pattern.individuals[i] = {
+           ...pattern.individuals[i],
+           linkedPatterns
+        }
+    }
+
+    setModalStates({
+        open: true,
+        selectedTab,
+        pattern
+    })
+  }
 
   const sortPatterns = (fKey, sKey) => {
-    return patterns[sKey]['score'] - patterns[fKey]['score'];
+    return chosenPatterns[sKey]['score'] - chosenPatterns[fKey]['score'];
   };
 
   const displayRankingInfo = () => {
@@ -386,10 +410,10 @@ export default function Recommendation() {
     return scoreLabels[Math.floor(score*4)];
   };
 
-  const getFilteredPatterns = () => {
-    return Object.keys(patterns)
+  const getFilteredChosenPatterns = () => {
+    return Object.keys(chosenPatterns)
       .filter(
-        key => patterns[key].label.value
+        key => chosenPatterns[key].label
         .toLowerCase()
         .includes(search.toLowerCase()));
   };
@@ -397,24 +421,22 @@ export default function Recommendation() {
   const displayPatternGrid = () => {
     return (
       <Grid container className={classes.patternSpacing}>
-        {getFilteredPatterns()
+        {getFilteredChosenPatterns()
           .sort(sortPatterns)
           .slice((page - 1) * INTERVAL, page * INTERVAL)
           .map(key => 
             <PatternCard 
-              pattern={patterns[key]}
+              pattern={chosenPatterns[key]}
               selectedPatterns={selectedPatterns}
               handlePatternAction={handlePatternAction}
-              patternSubtext={[{
-                text: parseToLabel(patterns[key].paper.value),
-                variant: 'body2'
-              }, 
-              {
-                text: getLabelFromScore(patterns[key].score),
-                variant: 'subtitle2'
-              }
+              patternSubtext={[
+                {
+                  text: getLabelFromScore(chosenPatterns[key].score),
+                  variant: 'subtitle2'
+                }
               ]}
-              bgcolor={`rgba(${255 * (1 - patterns[key].score)}, 200, ${255 * (1 - patterns[key].score)}, 0.6)`}
+              bgcolor={`rgba(${255 * (1 - chosenPatterns[key].score)}, 200, ${255 * (1 - chosenPatterns[key].score)}, 0.6)`}
+              isIndividual
             />)
           }
       </Grid>
@@ -454,7 +476,7 @@ export default function Recommendation() {
         </Grid>
         {displayPatternGrid()}
         <Pagination 
-          count={Math.ceil(getFilteredPatterns().length / INTERVAL)} 
+          count={Math.ceil(getFilteredChosenPatterns().length / INTERVAL)} 
           size="large"
           onChange={(e, page) => setPage(page)}
           style={{display: (Object.keys(patterns).length ? 'block' : 'none')}}

@@ -1,8 +1,6 @@
 import React from 'react';
-import { Grid, Typography, IconButton, Tooltip, Card, Link, Chip } from '@mui/material';
+import { Grid, Typography, Card, Link, Chip } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
-import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 
 const useStyles = makeStyles(() => ({
   patternItem: {
@@ -23,19 +21,17 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function PatternCard({
-    pattern, 
-    selectedPatterns, 
+    pattern,
+    key,
     handlePatternAction, 
     cardSize = 4, 
-    disableButtons, 
     disableChips,
+    disableLinks,
     patternSubtext = [],
-    bgcolor = '#fff'
+    bgcolor = '#fff',
+    isIndividual
 }) {
   const classes = useStyles();
-  const patternInLocalState = (pattern) => {
-    return (pattern && pattern['individual'] && selectedPatterns[pattern.individual.value]);
-  };
 
   const getClassChips = (pattern) => {
     if (pattern['classtree']) {
@@ -57,15 +53,32 @@ export default function PatternCard({
     }
   };
 
+  const genTitle = () => {
+    if (disableLinks) {
+        return (
+            <span>
+                {pattern.label + (isIndividual ? ` (${pattern.paper.paper.replace('onto:','')})` : '')}
+            </span>
+        )
+    } else {
+        return (
+            <Link 
+                style={{cursor: 'pointer'}} 
+                onClick={() => handlePatternAction((isIndividual ? 'linkedPatternClick' : 'patternClick'), pattern)}
+            >
+                {pattern.label + (isIndividual ? ` (${pattern.paper.paper.replace('onto:','')})` : '')}
+            </Link>
+        )
+    }
+  };
+
   return (
-    <Grid item sm={cardSize} xs={12} className={classes.patternItem} key={pattern['individual']['value']}>
+    <Grid item sm={cardSize} xs={12} className={classes.patternItem} key={key}>
         <Card className={classes.patternCard} style={{backgroundColor: bgcolor}}>
             <Grid container justifyContent="center">
-                <Grid item md={disableButtons ? 12 : 9} sm={12} alignItems="center" display="flex" justifyContent="center">
+                <Grid item sm={12} alignItems="center" display="flex" justifyContent="center">
                     <Typography>
-                        <Link style={{cursor: 'pointer'}} onClick={() => handlePatternAction('patternClick', pattern)}>
-                            {pattern.label.value}
-                        </Link>
+                        { genTitle() }
                         {
                             patternSubtext.map(item => (
                                 <Typography variant={item.variant} component={'p'}>
@@ -75,28 +88,6 @@ export default function PatternCard({
                         }
                     </Typography>
                 </Grid>
-                { disableButtons || (
-                    <Grid item md={3} sm={12}>
-                        {patternInLocalState(pattern) 
-                            ? 
-                                (
-                                    <Tooltip title={"Delete pattern from my list"}>
-                                        <IconButton onClick={() => handlePatternAction('patternDelete', pattern)}>
-                                            <DeleteSweepIcon fontSize="large" />
-                                        </IconButton>
-                                    </Tooltip>
-                                )
-                            : 
-                                (
-                                    <Tooltip title={"Add pattern to my list"}>
-                                        <IconButton onClick={() => handlePatternAction('patternStore', pattern)}>
-                                            <PlaylistAddIcon fontSize="large" />
-                                        </IconButton>
-                                    </Tooltip>
-                                )
-                        } 
-                    </Grid>
-                )}
                 {disableChips || getClassChips(pattern)}
             </Grid>
         </Card>

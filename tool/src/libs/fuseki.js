@@ -141,7 +141,7 @@ export const getPattern = async (patternURI) => {
 
 export const getLinkedPatterns = async (patternURI) => {
     let query = `
-        SELECT ?relation ?individual ?patternclass ?label ?paper ?context ?solution ?title ?identifier ?identifiertype
+        SELECT ?relation ?individual ?pattern ?iLabel ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
         WHERE {
             ${patternURI} ?relation ?individual.
             FILTER (?relation IN (
@@ -151,22 +151,23 @@ export const getLinkedPatterns = async (patternURI) => {
                 onto:variantOf,
                 onto:benefitsFrom
             ) ).
-            ?individual a ?patternclass.
-            ?patternclass rdfs:subClassOf* onto:Pattern.
-            ?individual rdfs:label ?label .
+            ?individual a ?pattern.
+            ?pattern rdfs:subClassOf* onto:Pattern.
+            ?individual rdfs:label ?iLabel .
             ?individual onto:hasPaper ?paper .
             ?individual onto:ContextAndProblem ?context .
             ?individual onto:Solution ?solution.
             ?paper onto:Title ?title.
             ?paper onto:Identifier ?identifier.
-            ?paper onto:IdentifierType ?identifiertype
+            ?paper onto:IdentifierType ?identifiertype.
+            ?paper onto:Authors ?authors
         }
     `;
 
     try {
         let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
         if (response.status === 200) {
-            return parseResults(await response.json());
+            return parseResults(await response.json()).map(r => ({ ...parseIndividual(r), relation: r.relation }));
         };
         return [];
     } catch (e) {
@@ -175,24 +176,66 @@ export const getLinkedPatterns = async (patternURI) => {
     }
 };
 
+const parseIndividual = (result) => {
+    return {
+        individual: result.individual.value,
+        pattern: result.pattern.value,
+        context: result.context.value,
+        solution: result.solution.value,
+        label: result.iLabel.value,
+        paper: {
+            paper: result.paper.value,
+            title: result.title.value,
+            identifier: result.identifier.value,
+            identifiertype: result.identifiertype.value,
+            authors: result.authors.value
+        }
+    }
+}
+const groupPatterns = (results) => {
+    const groupedPatterns = {};
+
+    results.forEach(r => {
+        if (groupedPatterns[r.pattern.value]) {
+            groupedPatterns[r.pattern.value] = {
+                ...groupedPatterns[r.pattern.value],
+                individuals: [
+                    ...groupedPatterns[r.pattern.value].individuals,
+                    parseIndividual(r)
+                ]
+            }
+        } else {
+            groupedPatterns[r.pattern.value] = {
+                pattern: r.pattern.value,
+                label: r.pLabel.value,
+                individuals: [parseIndividual(r)]
+            }
+        }
+    });
+
+    return groupedPatterns;
+};
+
 export const getPatterns = async (filterClasses = {}) => {
     let query = "";
     let letters = [...Array(26)].map((x,i)=>String.fromCharCode(i + 97));
 
     const queryTemplate = (classes) => {
-        return `SELECT DISTINCT ?patternclass ?individual ?label ?paper ?context ?solution ?identifier ?identifiertype ?title
+        return `SELECT ?pattern ?pLabel ?individual ?iLabel ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
                     WHERE {
-                        ?patternclass rdfs:subClassOf* onto:Pattern.
+                        ?pattern rdfs:subClassOf* onto:Pattern.
                         ${classes.map((c, i) => `?${letters[i]} rdfs:subClassOf* ${c}.`).join('\n')}
                         ?individual a ${classes.map((c, i) => `?${letters[i]}`).join()}.
-                        ?individual a ?patternclass.
-                        ?individual rdfs:label ?label .
+                        ?individual a ?pattern.
+                        ?pattern rdfs:label ?pLabel.
+                        ?individual rdfs:label ?iLabel .
                         ?individual onto:hasPaper ?paper .
                         ?individual onto:ContextAndProblem ?context .
                         ?individual onto:Solution ?solution.
                         ?paper onto:Title ?title.
                         ?paper onto:Identifier ?identifier.
-                        ?paper onto:IdentifierType ?identifiertype
+                        ?paper onto:IdentifierType ?identifiertype.
+                        ?paper onto:Authors ?authors
                     }
                 `
     }
@@ -207,7 +250,7 @@ export const getPatterns = async (filterClasses = {}) => {
     try {
         let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
         if (response.status === 200) {
-            return parseResults(await response.json());
+            return groupPatterns(parseResults(await response.json()));
         };
         return [];
     } catch (e) {
@@ -217,42 +260,49 @@ export const getPatterns = async (filterClasses = {}) => {
 }
 
 const addScoreToPatterns = (patterns, filterProblems) => {
-    return patterns.map(pattern => ({
+    patterns.forEach(p => console.log('test', filterProblems[p.problem.value]))
+    const newPatterns = patterns.map(pattern => ({
         ...pattern,
         score: filterProblems[pattern.problem.value].score
     }));
+    return newPatterns;
 };
 
 export const getPatternsByProblem = async (filterProblems = {}) => {
     const queryTemplate = () => {
         return `
-            select distinct ?problem ?individual ?patternclass ?label ?paper ?context ?solution ?title ?identifier ?identifiertype where {
-                    ?patternclass rdfs:subClassOf* 
+            select distinct ?problem ?individual ?pattern ?pLabel ?iLabel ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors where {
+                    ?pattern rdfs:subClassOf* 
                         [ 
                         rdf:type owl:Restriction ;
                         owl:onProperty onto:addressProblem ;
                         owl:someValuesFrom ?problem
                         ].
                     FILTER (?problem IN (${Object.keys(filterProblems).join(',')}) ).
-                    ?patternclass rdfs:subClassOf* onto:Pattern.
-                    ?individual a ?patternclass.
-                    ?individual rdfs:label ?label .
+                    ?pattern rdfs:subClassOf* onto:Pattern.
+                    ?individual a ?pattern.
+                    ?pattern rdfs:label ?pLabel.
+                    ?individual rdfs:label ?iLabel .
                     ?individual onto:hasPaper ?paper .
                     ?individual onto:ContextAndProblem ?context .
                     ?individual onto:Solution ?solution.
                     ?paper onto:Title ?title.
                     ?paper onto:Identifier ?identifier.
-                    ?paper onto:IdentifierType ?identifiertype
+                    ?paper onto:IdentifierType ?identifiertype.
+                    ?paper onto:Authors ?authors
             }
         `
     }
-    
+
     if (Object.keys(filterProblems).length > 0) {
         try {
             let query = queryTemplate()
             let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
             if (response.status === 200) {
-                return addScoreToPatterns(parseResults(await response.json()), filterProblems);
+                const results = parseResults(await response.json());
+                const scored = addScoreToPatterns(results, filterProblems);
+                const mapped = scored.map(r => ({ ...parseIndividual(r), score: r.score }));
+                return mapped;
             };
             return [];
         } catch (e) {

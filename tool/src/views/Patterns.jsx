@@ -12,8 +12,8 @@ import {
     setPatternsFromJSON,
     deleteAllLocalstoragePatterns
 } from '../libs/localstorage';
-import { parseToLabel, exportToJSON } from '../libs/helpers';
-import { getClassTree, getLinkedPatterns } from '../libs/fuseki';
+import { parseToLabel, exportToJSON, getSource } from '../libs/helpers';
+import { getClassTree, getLinkedPatterns, getPatterns } from '../libs/fuseki';
 import PatternCard from '../components/PatternCard';
 import PatternModal from '../modals/PatternModal';
 import ClassChipSelector from '../components/ClassChipSelector';
@@ -44,6 +44,7 @@ export default function Patterns() {
     const [modalStates, setModalStates] = useState({ "pattern": {}, open: false });
     const [classFilter, setClassFilter] = useState([]);
     const [open, setOpen] = useState(false);
+    const [patterns, setPatterns] = useState([])
     const { enqueueSnackbar } = useSnackbar();
 
     const getStoredPatterns = () => {
@@ -57,6 +58,12 @@ export default function Patterns() {
 
     useEffect(() => {
         getStoredPatterns();
+    
+        getPatterns()
+            .then((results) => {
+                setPatterns(results);
+            })
+            .finally(() => setOpen(false));
     }, []);
 
     const getAllClassesFromTrees = () => {
@@ -91,9 +98,10 @@ export default function Patterns() {
     });
 
     const addCatsToPatterns = (patterns, classTree) => {
+        console.log(patterns, classTree)
         const patternsKeys = Object.keys(patterns);
         patternsKeys.forEach(key => {
-            let patternClass = patterns[key].patternclass.value;
+            let patternClass = patterns[key].pattern;
             let patternClassTree = [];
 
             while(classTree[patternClass] && classTree[patternClass]['parent']) {
@@ -107,18 +115,32 @@ export default function Patterns() {
         return patterns;
     }
 
-    const handlePatternClick = (pattern) => {
-        getLinkedPatterns(pattern.individual.value)
-            .then(links => {
-                setModalStates({
-                    open: true,
-                    pattern: {
-                      ...pattern,
-                      linkedPatterns: links
-                    }
-                })
-            })
+    const handlePatternClick = async (pattern, selectedTab = 0) => {
+        for (let i in pattern.individuals) {
+            let linkedPatterns = await getLinkedPatterns(pattern.individuals[i].individual);
+            pattern.individuals[i] = {
+               ...pattern.individuals[i],
+               linkedPatterns
+            }
+        }
+
+        setModalStates({
+            open: true,
+            selectedTab,
+            pattern
+        })
     }
+
+    const handleIndividualClick = (individual) => {
+        Object.keys(patterns).forEach(key => {
+            const pattern = patterns[key];
+            pattern.individuals.forEach((pIndividual, i) => {
+                if (individual.individual === pIndividual.individual) {
+                    handlePatternClick(pattern, i);
+                }
+            }) 
+        })
+    };
 
     const storeLocalPattern = (pattern) => {
         storePatternInLocalstorage(pattern);
@@ -140,6 +162,9 @@ export default function Patterns() {
 
     const handlePatternAction = (action, pattern) => {
         switch (action) {
+            case 'linkedPatternClick':
+                handleIndividualClick(pattern);
+                break;
             case 'patternClick':
                 handlePatternClick(pattern);
                 break;
@@ -235,7 +260,7 @@ export default function Patterns() {
                 <Grid item xs={12} sm={9}>
                     <Paper className={classes.paperContent}>
                         <Typography variant="h5" >
-                            {Object.keys(selectedPatterns).length ? Object.keys(selectedPatterns).length : "No"} patterns in my list
+                            {Object.keys(selectedPatterns).length ? Object.keys(selectedPatterns).length : "No"} proposed pattern{Object.keys(selectedPatterns).length > 1 ? 's' : ''} in my list
                         </Typography>
                         <Grid container className={classes.marginTop}>
                             {
@@ -249,6 +274,7 @@ export default function Patterns() {
                                             cardSize={4} 
                                             disableButtons={true}
                                             key={key}
+                                            isIndividual
                                         />
                                     ))
                                 )
