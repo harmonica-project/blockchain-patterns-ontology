@@ -4,7 +4,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
-import { getSubclasses, getPatterns, getLinkedPatterns } from '../libs/fuseki';
+import { getSubclasses, getPatterns, getLinkedPatterns, getClassTree } from '../libs/fuseki';
 import ClassTabs from '../components/ClassTabs';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PatternModal from '../modals/PatternModal';
@@ -57,13 +57,12 @@ const useStyles = makeStyles(() => ({
 
 export default function Explore() {
     const classes = useStyles();
-    const [ontologyClasses, setOntologyClasses] = useState([])
+    const [classTree, setClassTree] = useState({});
     const [patterns, setPatterns] = useState([])
     const [selectorStates, setSelectorStates] = useState({});
     const [modalStates, setModalStates] = useState({ "pattern": {}, open: false, selectedTab: 0 });
     const [open, setOpen] = useState(false);
     const [selectedPatterns, setSelectedPatterns] = useState({});
-    const [nbPatterns, setNbPatterns] = useState(0);
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState('');
 
@@ -87,42 +86,23 @@ export default function Explore() {
 
     useEffect(() => {
         setOpen(true);
-
-        // not a big deal if loading is finished before displaying the number of patterns
-        getPatterns()
-        .then((results) => {
-            setNbPatterns(Object.keys(results).length)
-        })
-
         getPatterns(filterParents({...selectorStates}))
             .then((results) => {
                 setPatterns(results);
             })
             .finally(() => setOpen(false));
-    }, [selectorStates]);
+
+        getClassTree('owl:Thing')
+            .then((results) => {
+                setClassTree(results);
+            })
+    }, []);
 
     useEffect(() => {
         setPage(1);
     }, [search, selectorStates]);
 
-    const getInitialSubclasses = async () => {
-        let resClasses = await getSubclasses('owl:Thing');
-        let newOntologyClasses = {...resClasses};
-        for (let resClassKey in newOntologyClasses) {
-            newOntologyClasses[resClassKey]['initial'] = true;
-            newOntologyClasses[resClassKey]['childrens'] = [];
-            let resSubclasses = await getSubclasses(resClassKey)
-            for (let resSubclassKey in resSubclasses) {
-                newOntologyClasses[resSubclassKey] = resSubclasses[resSubclassKey]
-                newOntologyClasses[resSubclassKey]['parent'] = resClassKey;
-                newOntologyClasses[resClassKey]['childrens'].push(resSubclassKey);
-            }
-        }
-        setOntologyClasses(newOntologyClasses);
-    };
-
     useEffect(() => {
-        getInitialSubclasses();
         let patterns = getLocalstoragePatterns();
         if (patterns) setSelectedPatterns(patterns);
         else {
@@ -195,16 +175,54 @@ export default function Explore() {
         }
     };
 
-    const getFilteredPatternsKeys = () => {
-        return Object.keys(patterns)
-            .filter(
-                key => patterns[key].label
-                    .toLowerCase()
-                    .includes(search.toLowerCase()));
+    const selectorStatesToArray = () => {
+        let selectors = {...selectorStates};
+
+        Object.keys(selectors).forEach(key => {
+            if (selectors[selectors[key]]) delete selectors[key];
+        });
+
+        return Object.keys(selectors).map(key => selectors[key]);
+    };
+
+    const selectorInIndividual = (selector, individual) => {
+        if (individual.classes.includes(selector)) return true;
+        else {
+            if (classTree[selector].childrens.length) {
+                for (let i in classTree[selector].childrens) {
+                    if (selectorInIndividual(classTree[selector].childrens[i], individual)) return true;
+                }
+
+                return false;
+            }
+        }
+    };
+
+    const shapeToPattern = (key) => {
+        let newIndividuals = JSON.parse(JSON.stringify(patterns[key].individuals)) ;
+
+        patterns[key].individuals.forEach((individual, i) => {
+            selectorStatesToArray().forEach(selector => {
+                if (!selectorInIndividual(selector, individual)) newIndividuals[i].discarded = true;
+            })
+        });
+
+        return {
+            ...patterns[key],
+            individuals: newIndividuals.filter(individual => !individual.discarded)
+        };
+    };
+
+    const getFilteredPatterns = () => {
+        return Object.keys({...patterns})
+            .filter(key => patterns[key].label.toLowerCase().includes(search.toLowerCase()))
+            .map(shapeToPattern)
+            .filter(pattern => pattern.individuals.length)
     };
 
     const displayPatterns = () => {
         if (Object.keys(patterns).length) {
+            console.log(getFilteredPatterns(), selectorStates)
             return (
                 <Grid container className={classes.patternSpacing}>
                     <TextField
@@ -216,17 +234,17 @@ export default function Explore() {
                         fullWidth
                     />
                     <br/>
-                    {getFilteredPatternsKeys()
+                    {getFilteredPatterns()
                         .slice((page - 1) * INTERVAL, page * INTERVAL)
-                        .map(key => (
+                        .map(pattern => (
                             <PatternCard 
-                                pattern={patterns[key]} 
+                                pattern={pattern} 
                                 handlePatternAction={handlePatternAction}
                                 cardSize={3}
-                                key={key}
+                                key={pattern.pattern}
                                 disableChips={true}
                                 patternSubtext={[{
-                                    text: parseToLabel(`${patterns[key].individuals.length} proposal${patterns[key].individuals.length > 1 ? 's' : ''}`),
+                                    text: parseToLabel(`${pattern.individuals.length} proposal${pattern.individuals.length > 1 ? 's' : ''}`),
                                     variant: 'body2'
                                 }]}
                             />
@@ -234,11 +252,6 @@ export default function Explore() {
                 </Grid>
             )
         } else return <div/>;
-    };
-
-    const getPatternLabelSafe = (key) => {
-        if (ontologyClasses[key]["label"] && ontologyClasses[key]["label"]["value"]) return ontologyClasses[key]["label"]["value"];
-        return false;
     };
 
     const displaySelectedClasses = () => {
@@ -263,7 +276,7 @@ export default function Explore() {
                                         </Tooltip>
                                     </ListItemIcon>
                                     <ListItemText
-                                        primary={getPatternLabelSafe(key) || selectorStates[key]}
+                                        primary={classTree[selectorStates[key]].label}
                                     />
                                 </ListItem>
                             )
@@ -283,24 +296,12 @@ export default function Explore() {
             ...selectorStates,
             [parentClass]: e.target.value
         });
-
-        getSubclasses(e.target.value)
-            .then(result => {
-                let newOntologyClasses = {...ontologyClasses}
-                Object.keys(result).forEach(resKey => {
-                    newOntologyClasses = {...newOntologyClasses, [resKey]: {
-                        ...result[resKey],
-                        parent: e.target.value
-                    }}
-                })
-                newOntologyClasses[e.target.value]['childrens'] = Object.keys(result)
-                setOntologyClasses(newOntologyClasses);
-            })
     };
 
     const deleteClassFromSelection = (classname) => {
-        const newSelectorStates = {...selectorStates}
-        newSelectorStates[ontologyClasses[classname].parent] = "prompt";
+        const newSelectorStates = {...selectorStates};
+        const parent = Object.keys(selectorStates).find(key => selectorStates[key] === classname);
+        delete newSelectorStates[parent];
 
         // we cannot delete directly the class, we also need to delete its childrens as they cannot be selected anymore
         while (newSelectorStates[classname]) {
@@ -333,7 +334,7 @@ export default function Explore() {
                                 </div>
                             </div>
                             <Divider />
-                            <ClassTabs ontologyClasses={ontologyClasses} handleChangeSelect={handleChangeSelect} selectorStates={selectorStates} setSelectorStates={setSelectorStates} />
+                            <ClassTabs classTree={classTree} handleChangeSelect={handleChangeSelect} selectorStates={selectorStates} setSelectorStates={setSelectorStates} />
                         </Paper>
                     </Grid>
                     <Grid item md={12}>
@@ -350,12 +351,12 @@ export default function Explore() {
                             {
                                 open 
                                 ? "Loading patterns ..."
-                                : (Object.keys(patterns).length ? `${Object.keys(patterns).length}/${nbPatterns}` : "No") + " corresponding patterns for this selection"
+                                : (getFilteredPatterns().length ? `${getFilteredPatterns().length}/${Object.keys(patterns).length}` : "No") + " corresponding patterns for this selection"
                             }
                         </Typography>
                         {displayPatterns()}
                         <Pagination 
-                            count={Math.ceil(getFilteredPatternsKeys().length / INTERVAL)} 
+                            count={Math.ceil(getFilteredPatterns().length / INTERVAL)} 
                             size="large"
                             onChange={handlePageChange}
                             style={{display: (Object.keys(patterns).length ? 'block' : 'none')}}

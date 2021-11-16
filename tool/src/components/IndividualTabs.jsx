@@ -77,7 +77,7 @@ export default function IndividualTabs({individuals, handlePatternModalAction, s
     };
 
     const getRelationLabel = (individual) => {
-        switch(individual.relation) {
+        switch(individual.relation.value) {
           case 'onto:variantOf':
             return `A ${individual.label} pattern variant.`;
     
@@ -98,12 +98,11 @@ export default function IndividualTabs({individuals, handlePatternModalAction, s
         }
     };
 
-    console.log(individuals)
     return (
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Typography variant="body1" className={classes.marginBottomClass} gutterBottom>
-                    This pattern has been proposed {individuals.length > 1 ? individuals.length + ' times' : 'once'} in our corpus of papers.
+                    {individuals.length} proposal{individuals.length > 1 ? 's' : ''} ha{individuals.length > 1 ? 've' : 's'} been found in our corpus of papers based on your filter selection.
                 </Typography>
                 <Divider />
                 <Tabs value={selectedTab} onChange={handleChange} aria-label="Individuals tabs" centered>

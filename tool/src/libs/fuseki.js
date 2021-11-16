@@ -192,6 +192,21 @@ const parseIndividual = (result) => {
         }
     }
 }
+
+const checkAndInsertIndividual = (result, individuals) => {
+    const index = individuals.findIndex(i => i.individual === result.individual.value);
+    if (index !== -1) {
+        individuals[index].classes.push(result.parent.value);
+    } else {
+        individuals.push({
+            ...parseIndividual(result),
+            classes: [result.parent.value]
+        })
+    }
+    
+    return individuals;
+};
+
 const groupPatterns = (results) => {
     const groupedPatterns = {};
 
@@ -199,16 +214,16 @@ const groupPatterns = (results) => {
         if (groupedPatterns[r.pattern.value]) {
             groupedPatterns[r.pattern.value] = {
                 ...groupedPatterns[r.pattern.value],
-                individuals: [
-                    ...groupedPatterns[r.pattern.value].individuals,
-                    parseIndividual(r)
-                ]
+                individuals: checkAndInsertIndividual(r, groupedPatterns[r.pattern.value].individuals)
             }
         } else {
             groupedPatterns[r.pattern.value] = {
                 pattern: r.pattern.value,
                 label: r.pLabel.value,
-                individuals: [parseIndividual(r)]
+                individuals: [{
+                    ...parseIndividual(r),
+                    classes: [r.parent.value]
+                }]
             }
         }
     });
@@ -216,41 +231,31 @@ const groupPatterns = (results) => {
     return groupedPatterns;
 };
 
-export const getPatterns = async (filterClasses = {}) => {
-    let query = "";
-    let letters = [...Array(26)].map((x,i)=>String.fromCharCode(i + 97));
-
-    const queryTemplate = (classes) => {
-        return `SELECT ?pattern ?pLabel ?individual ?iLabel ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
-                    WHERE {
-                        ?pattern rdfs:subClassOf* onto:Pattern.
-                        ${classes.map((c, i) => `?${letters[i]} rdfs:subClassOf* ${c}.`).join('\n')}
-                        ?individual a ${classes.map((c, i) => `?${letters[i]}`).join()}.
-                        ?individual a ?pattern.
-                        ?pattern rdfs:label ?pLabel.
-                        ?individual rdfs:label ?iLabel .
-                        ?individual onto:hasPaper ?paper .
-                        ?individual onto:ContextAndProblem ?context .
-                        ?individual onto:Solution ?solution.
-                        ?paper onto:Title ?title.
-                        ?paper onto:Identifier ?identifier.
-                        ?paper onto:IdentifierType ?identifiertype.
-                        ?paper onto:Authors ?authors
-                    }
-                `
-    }
-    
-    const filters = 
-        [...Object.keys(filterClasses)]
-            .map(key => filterClasses[key])
-            .filter(val => val !== 'prompt');
-
-    query = queryTemplate(filters.length ? filters : ["onto:Pattern"])
+export const getPatterns = async () => {
+    const query = `
+        SELECT ?parent ?pattern ?pLabel ?individual ?iLabel ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
+            WHERE {
+                ?individual a ?parent.
+                ?pattern rdfs:subClassOf* onto:Pattern.
+                ?individual a ?pattern.
+                ?pattern rdfs:label ?pLabel.
+                ?individual rdfs:label ?iLabel .
+                ?individual onto:hasPaper ?paper .
+                ?individual onto:ContextAndProblem ?context .
+                ?individual onto:Solution ?solution.
+                ?paper onto:Title ?title.
+                ?paper onto:Identifier ?identifier.
+                ?paper onto:IdentifierType ?identifiertype.
+                ?paper onto:Authors ?authors
+            }
+        `
 
     try {
         let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
         if (response.status === 200) {
-            return groupPatterns(parseResults(await response.json()));
+            const results = parseResults(await response.json());
+            const grouped = groupPatterns(results);
+            return grouped;
         };
         return [];
     } catch (e) {
@@ -260,7 +265,6 @@ export const getPatterns = async (filterClasses = {}) => {
 }
 
 const addScoreToPatterns = (patterns, filterProblems) => {
-    patterns.forEach(p => console.log('test', filterProblems[p.problem.value]))
     const newPatterns = patterns.map(pattern => ({
         ...pattern,
         score: filterProblems[pattern.problem.value].score

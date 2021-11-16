@@ -35,7 +35,7 @@ function a11yProps(index, key) {
   };
 }
 
-export default function ClassTabs({ontologyClasses, handleChangeSelect, selectorStates}) {
+export default function ClassTabs({classTree, handleChangeSelect, selectorStates}) {
     const [value, setValue] = React.useState(0);
 
     const handleChangeTab = (event, newValue) => {
@@ -43,17 +43,18 @@ export default function ClassTabs({ontologyClasses, handleChangeSelect, selector
     };
 
     const getInitialClasses = () => {
-      let initialClasses = {};
-
-      for (let ontologyClassKey in ontologyClasses) {
-        if (ontologyClasses[ontologyClassKey]['initial'] && ontologyClasses[ontologyClassKey]['childrens'].length) initialClasses[ontologyClassKey] = ontologyClasses[ontologyClassKey];
+      if (classTree['owl:Thing']) {
+        // filtering unwanted filters
+        return classTree['owl:Thing']
+          .childrens
+          .filter(key => !['onto:Problem', 'onto:Paper', 'onto:Proposal'].includes(key))
+      } else {
+        return [];
       }
-
-      return initialClasses;
     }
 
     const isOptionSelected = (ontologyClass) => {
-      if (selectorStates[ontologyClass] && selectorStates[ontologyClass] !== "prompt") {
+      if (selectorStates[ontologyClass]) {
         return [true, selectorStates[ontologyClass]];
       } else {
         return [false];
@@ -61,10 +62,10 @@ export default function ClassTabs({ontologyClasses, handleChangeSelect, selector
     };
 
     const areChildrensDefined = (ontologyClass) => {
-      if (ontologyClasses[ontologyClass] && ontologyClasses[ontologyClass]['childrens'] && ontologyClasses[ontologyClass]['childrens'].length) {
-        let childrens = ontologyClasses[ontologyClass]['childrens'];
+      if (classTree[ontologyClass] && classTree[ontologyClass]['childrens'] && classTree[ontologyClass]['childrens'].length) {
+        let childrens = classTree[ontologyClass]['childrens'];
         for (let i in childrens) {
-          if (!ontologyClasses[childrens[i]]) return false;
+          if (!classTree[childrens[i]]) return false;
         }
         return true;
       } else {
@@ -78,18 +79,18 @@ export default function ClassTabs({ontologyClasses, handleChangeSelect, selector
             return (
               <>
                 <FormControl fullWidth style={{marginTop: '20px'}}>
-                    <InputLabel id={`${ontologyClass}-select-label`}>{ontologyClasses[ontologyClass].label.value}</InputLabel>
+                    <InputLabel id={`${ontologyClass}-select-label`}>{classTree[ontologyClass].label}</InputLabel>
                     <Select
                         labelId={`${ontologyClass}-select-label`}
                         id={`${ontologyClass}-select`}
-                        label={ontologyClasses[ontologyClass].label.value}
+                        label={classTree[ontologyClass].label}
                         onChange={(e) => handleChangeSelect(e, ontologyClass)}
                         value={selectorStates[ontologyClass] || "prompt"}
                         disabled={isAlreadySelected}
                     >
                         <MenuItem value={"prompt"} key="default" disabled>Filter by ...</MenuItem>
-                        {ontologyClasses[ontologyClass]['childrens'].map((childrenClass, i) => {
-                            return <MenuItem value={ontologyClasses[childrenClass].subject.value} key={`${ontologyClasses[childrenClass].subject.value}-${i}`}>{ontologyClasses[childrenClass].label.value}</MenuItem>    
+                        {classTree[ontologyClass]['childrens'].map((childrenClass, i) => {
+                            return <MenuItem value={childrenClass} key={`${childrenClass}-${i}`}>{classTree[childrenClass].label}</MenuItem>    
                         })}
                     </Select>
                 </FormControl>
@@ -100,20 +101,17 @@ export default function ClassTabs({ontologyClasses, handleChangeSelect, selector
           return <div/>
         }
     }
-
-    // removing Problem from explorer for now
-    let initialClassesKeys = Object.keys(getInitialClasses()).filter(key => key !== 'onto:Problem');
     
     return (
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChangeTab} aria-label="Classes as tabs" scrollButtons="auto" variant="scrollable">
-                    {initialClassesKeys.map((initialClassKey, i) => (
-                        <Tab label={ontologyClasses[initialClassKey].label.value} key={initialClassKey} {...a11yProps(i, ontologyClasses[initialClassKey].label.value)} />
+                    {getInitialClasses().map((initialClassKey, i) => (
+                        <Tab label={classTree[initialClassKey].label} key={initialClassKey} {...a11yProps(i, classTree[initialClassKey].label)} />
                     ))}
                 </Tabs>
             </Box>
-            {initialClassesKeys.map((initialClassKey, i) => (
+            {getInitialClasses().map((initialClassKey, i) => (
               <TabPanel value={value} index={i} key={initialClassKey}>
                 {getSelectsWithChildrens(initialClassKey)}
               </TabPanel>
