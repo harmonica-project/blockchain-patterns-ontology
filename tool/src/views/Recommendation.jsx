@@ -20,6 +20,7 @@ import {
   storePatternInLocalstorage
  } from '../libs/localstorage';
 import RationaleDialog from '../modals/RationaleDialog';
+
 const scoreLabels = [
   'Not recommended',
   'Slightly recommended',
@@ -432,10 +433,10 @@ export default function Recommendation() {
               patternSubtext={[
                 {
                   text: getLabelFromScore(chosenPatterns[key].score),
-                  variant: 'subtitle2'
+                  variant: 'overline'
                 }
               ]}
-              bgcolor={`rgba(${255 * (1 - chosenPatterns[key].score)}, 200, ${255 * (1 - chosenPatterns[key].score)}, 0.6)`}
+              color={`rgba(${255 * (1 - chosenPatterns[key].score)}, 200, ${255 * (1 - chosenPatterns[key].score)}, 0.6)`}
               isIndividual
             />)
           }

@@ -4,7 +4,8 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(() => ({
   patternItem: {
-      padding: '10px'
+      padding: '10px',
+      marginTop: '10px'
   },
   patternCard: {
       padding: '10px',
@@ -28,7 +29,7 @@ export default function PatternCard({
     disableChips,
     disableLinks,
     patternSubtext = [],
-    bgcolor = '#fff',
+    color = '',
     isIndividual
 }) {
   const classes = useStyles();
@@ -72,9 +73,20 @@ export default function PatternCard({
     }
   };
 
+  const genBorder = (color) => {
+      if (color) {
+        return {
+            borderTop: `6px solid ${color}`,
+            borderLeft: `1px solid ${color}`,
+            borderRight: `1px solid ${color}`,
+            borderBottom: `1px solid ${color}`,
+            boxShadow: ''
+        }
+      }
+  }
   return (
     <Grid item sm={cardSize} xs={12} className={classes.patternItem} key={key}>
-        <Card className={classes.patternCard} style={{backgroundColor: bgcolor}}>
+        <Card className={classes.patternCard} style={genBorder(color)}>
             <Grid container justifyContent="center">
                 <Grid item sm={12} alignItems="center" display="flex" justifyContent="center">
                     <Typography>
