@@ -32,7 +32,7 @@ export default function Home() {
           </Typography>
           <br/>
           <Typography variant="body2" gutterBottom>
-            Lastest ontology modification: November 10, 2021.
+            Latest ontology modification: November 10, 2021.
           </Typography>
         </Paper>
       </Container>
