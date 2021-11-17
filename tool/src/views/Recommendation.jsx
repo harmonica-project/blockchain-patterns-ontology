@@ -21,12 +21,27 @@ import {
  } from '../libs/localstorage';
 import RationaleDialog from '../modals/RationaleDialog';
 
-const scoreLabels = [
-  'Not recommended',
-  'Slightly recommended',
-  'Recommended',
-  'Highly recommended',
-  'Extremely recommended'
+const scoreDisplay = [
+  {
+    label: 'Not recommended',
+    color: '#ec644f'
+  },
+  {
+    label: 'Slightly recommended',
+    color: '#f3a64d'
+  },
+  {
+    label: 'Recommended',
+    color: '#e1c73a'
+  },
+  {
+    label: 'Highly recommended',
+    color: '#9ecd34'
+  },
+  {
+    label: 'Extremely recommended',
+    color: '#5baf2a'
+  }
 ];
 
 const useStyles = makeStyles(() => ({
@@ -407,8 +422,8 @@ export default function Recommendation() {
     setRationaleOpen(true);
   };
 
-  const getLabelFromScore = (score) => {
-    return scoreLabels[Math.floor(score*4)];
+  const getScoreDisplay = (score) => {
+    return scoreDisplay[Math.floor(score*4)];
   };
 
   const getFilteredChosenPatterns = () => {
@@ -432,11 +447,11 @@ export default function Recommendation() {
               handlePatternAction={handlePatternAction}
               patternSubtext={[
                 {
-                  text: getLabelFromScore(chosenPatterns[key].score),
+                  text: getScoreDisplay(chosenPatterns[key].score).label,
                   variant: 'overline'
                 }
               ]}
-              color={`rgba(${255 * (1 - chosenPatterns[key].score)}, 200, ${255 * (1 - chosenPatterns[key].score)}, 0.6)`}
+              color={getScoreDisplay(chosenPatterns[key].score).color}
               isIndividual
             />)
           }
