@@ -386,7 +386,7 @@ export default function Recommendation({ setNbPatterns }) {
 
   const deleteLocalPattern = (pattern) => {
     let newSelectedPatterns = {...selectedPatterns};
-    delete newSelectedPatterns[pattern.individual.value];
+    delete newSelectedPatterns[pattern.individual];
     setSelectedPatterns(newSelectedPatterns);
     setPatternsInLocalstorage(newSelectedPatterns);
     enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });

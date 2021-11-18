@@ -59,7 +59,7 @@ export default function Patterns({ setNbPatterns }) {
     useEffect(() => {
         setNbPatterns(Object.keys(selectedPatterns).length);
     }, [selectedPatterns]);
-    
+
     useEffect(() => {
         getStoredPatterns();
     
@@ -157,8 +157,9 @@ export default function Patterns({ setNbPatterns }) {
     };
 
     const deleteLocalPattern = (pattern) => {
+        console.log(pattern)
         let newSelectedPatterns = {...selectedPatterns};
-        delete newSelectedPatterns[pattern.individual.value];
+        delete newSelectedPatterns[pattern.individual];
         setSelectedPatterns(newSelectedPatterns);
         setPatternsInLocalstorage(newSelectedPatterns);
         enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
