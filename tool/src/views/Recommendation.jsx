@@ -79,7 +79,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-export default function Recommendation() {
+export default function Recommendation({ setNbPatterns }) {
   const classes = useStyles();
   const { enqueueSnackbar } = useSnackbar();
   const [loadingOpen, setLoadingOpen] = useState(false);
@@ -133,6 +133,10 @@ export default function Recommendation() {
   useEffect(() => {
     setPage(1);
   }, [search]);
+
+  useEffect(() => {
+    setNbPatterns(Object.keys(selectedPatterns).length);
+  }, [selectedPatterns]);
 
   useEffect(() => {
     if (quizzState === 2) {

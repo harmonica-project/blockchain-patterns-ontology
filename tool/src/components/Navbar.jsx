@@ -1,8 +1,20 @@
 import * as React from 'react';
-import { Grid, Box, Toolbar, Typography, Button, AppBar } from '@mui/material';
+import { Grid, Box, Toolbar, Typography, Button, AppBar, Badge } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import { NavLink } from 'react-router-dom';
 
-export default function ButtonAppBar() {
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    right: -6,
+    top: 0,
+    border: `2px solid #1976d2`,
+    padding: '0 6px',
+    backgroundColor: '#00148f',
+    color: 'white'
+  },
+}));
+
+export default function Navbar({nbPatterns}) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -23,7 +35,11 @@ export default function ButtonAppBar() {
               <Button component={NavLink} to={'/recommendation'} color="inherit">Get recommendation</Button>
             </Grid>
             <Grid item>
-              <Button component={NavLink} to={'/patterns'} color="inherit">My patterns</Button>
+              <Button component={NavLink} to={'/patterns'} color="inherit">
+                <StyledBadge badgeContent={nbPatterns}>
+                  My patterns
+                </StyledBadge>
+              </Button>
             </Grid>
           </Grid>
         </Toolbar>

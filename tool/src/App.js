@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './views/Home';
@@ -12,22 +13,24 @@ import {
 import Patterns from './views/Patterns';
 
 export default function App() {
+  const [nbPatterns, setNbPatterns] = useState(0);
+
   return (
     <Router>
       <div>
-        <Navbar/>
+        <Navbar nbPatterns={nbPatterns} />
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/recommendation">
-            <Recommendation />
+            <Recommendation setNbPatterns={setNbPatterns} />
           </Route>
           <Route path="/explore">
-            <Explore />
+            <Explore setNbPatterns={setNbPatterns} />
           </Route>
           <Route path="/patterns">
-            <Patterns />
+            <Patterns setNbPatterns={setNbPatterns} />
           </Route>
           <Route path="/">
             <Home />

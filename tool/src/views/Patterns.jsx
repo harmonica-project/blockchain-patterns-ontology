@@ -38,7 +38,7 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-export default function Patterns() {
+export default function Patterns({ setNbPatterns }) {
     const classes = useStyles();
     const [selectedPatterns, setSelectedPatterns] = useState({});
     const [modalStates, setModalStates] = useState({ "pattern": {}, open: false });
@@ -56,6 +56,10 @@ export default function Patterns() {
             .finally(() => setOpen(false));
     };
 
+    useEffect(() => {
+        setNbPatterns(Object.keys(selectedPatterns).length);
+    }, [selectedPatterns]);
+    
     useEffect(() => {
         getStoredPatterns();
     

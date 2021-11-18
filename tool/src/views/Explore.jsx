@@ -4,7 +4,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
-import { getSubclasses, getPatterns, getLinkedPatterns, getClassTree } from '../libs/fuseki';
+import { getPatterns, getLinkedPatterns, getClassTree } from '../libs/fuseki';
 import ClassTabs from '../components/ClassTabs';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PatternModal from '../modals/PatternModal';
@@ -55,7 +55,7 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
-export default function Explore() {
+export default function Explore({ setNbPatterns }) {
     const classes = useStyles();
     const [classTree, setClassTree] = useState({});
     const [patterns, setPatterns] = useState([])
@@ -101,6 +101,10 @@ export default function Explore() {
     useEffect(() => {
         setPage(1);
     }, [search, selectorStates]);
+
+    useEffect(() => {
+        setNbPatterns(Object.keys(selectedPatterns).length);
+    }, [selectedPatterns]);
 
     useEffect(() => {
         let patterns = getLocalstoragePatterns();
