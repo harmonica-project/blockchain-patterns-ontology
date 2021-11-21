@@ -12,7 +12,7 @@ import {
     setPatternsFromJSON,
     deleteAllLocalstoragePatterns
 } from '../libs/localstorage';
-import { parseToLabel, exportToJSON, getSource } from '../libs/helpers';
+import { parseToLabel, exportToJSON } from '../libs/helpers';
 import { getClassTree, getLinkedPatterns, getPatterns } from '../libs/fuseki';
 import PatternCard from '../components/PatternCard';
 import PatternModal from '../modals/PatternModal';
@@ -37,6 +37,10 @@ const useStyles = makeStyles(() => ({
         marginTop: '20px'
     },
 }));
+
+const Input = styled('input')({
+    display: 'none',
+});
 
 export default function Patterns({ setNbPatterns }) {
     const classes = useStyles();
@@ -96,10 +100,6 @@ export default function Patterns({ setNbPatterns }) {
             setPatternsInLocalstorage({});
         }
     };
-
-    const Input = styled('input')({
-        display: 'none',
-    });
 
     const addCatsToPatterns = (patterns, classTree) => {
         console.log(patterns, classTree)
@@ -209,6 +209,12 @@ export default function Patterns({ setNbPatterns }) {
         return displayedPatterns;
     };
 
+    const importJSONPatterns = async (e) => {
+        e.preventDefault();
+        const newPatterns = await setPatternsFromJSON(e.target.files[0]);
+        setSelectedPatterns(newPatterns);
+    };
+
     return (
         <ContentContainer>
             <HealthCheck className={classes.healthCheck} variant="overline" component="div" />
@@ -232,10 +238,7 @@ export default function Patterns({ setNbPatterns }) {
                                         accept="*.json" 
                                         id="import-pattern-input" 
                                         type="file" 
-                                        onChange={async e => {
-                                            const newSelectedPatterns = await setPatternsFromJSON(e);
-                                            setSelectedPatterns(newSelectedPatterns);
-                                        }} />
+                                        onChange={importJSONPatterns} />
                                     <Button fullWidth variant="contained" component="span">
                                         Import
                                     </Button>

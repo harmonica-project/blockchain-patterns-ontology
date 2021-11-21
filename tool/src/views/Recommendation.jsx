@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Container, Paper, Button, Grid, Pagination, TextField } from '@mui/material';
+import { Typography, Container, Paper, Button, Grid, Pagination, TextField, Stack } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import ContentContainer from '../layouts/ContentContainer';
 import { 
   getClassTree, 
@@ -17,7 +18,9 @@ import { exportToJSON, parseToLabel } from '../libs/helpers';
 import { 
   getLocalstoragePatterns,
   setPatternsInLocalstorage,
-  storePatternInLocalstorage
+  storePatternInLocalstorage,
+  setPatternsFromJSON,
+  getJSONFileContent
  } from '../libs/localstorage';
 import RationaleDialog from '../modals/RationaleDialog';
 
@@ -43,6 +46,10 @@ const scoreDisplay = [
     color: '#5baf2a'
   }
 ];
+
+const Input = styled('input')({
+  display: 'none',
+});
 
 const useStyles = makeStyles(() => ({
   paper: {
@@ -366,6 +373,14 @@ export default function Recommendation({ setNbPatterns }) {
       />
     )
   }
+
+  const resumeRecommendationFromFile = async (e) => {
+    const file = e.target.files[0];
+    const newQuizz = await getJSONFileContent(file);
+    setQuizz(newQuizz);
+    setQuizzState(2);
+  };
+
   const getHomeDisplay = () => {
     return (
       <div className={classes.homeBlock}>
@@ -379,7 +394,23 @@ export default function Recommendation({ setNbPatterns }) {
           <i>Note: please avoid to refresh the page, as there is no local saving for the moment.</i>
         </Typography>
         <br/>
-        <Button variant="contained" onClick={startQuizz}>Start</Button>
+        <Stack direction="row" spacing={2} justifyContent="center">
+          <div>
+            <Button variant="contained" onClick={startQuizz}>Start</Button>
+          </div>
+          <div>
+            <label htmlFor="import-recommendation-input">
+              <Input 
+                  accept="*.json" 
+                  id="import-recommendation-input" 
+                  type="file" 
+                  onChange={resumeRecommendationFromFile} />
+              <Button variant="contained" component="span">
+                  Import last results
+              </Button>
+            </label>
+          </div>
+        </Stack>
       </div>
     )
   }

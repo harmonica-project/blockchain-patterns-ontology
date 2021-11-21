@@ -28,24 +28,27 @@ export const setPatternsInLocalstorage = (patterns) => {
     localStorage.setItem('patterns', JSON.stringify(patterns));
 }
 
-export const setPatternsFromJSON = async e => {
-    e.preventDefault();
-    var jsonPatterns = {};
+export const getJSONFileContent = async file => {
+    var jsonContent = {};
     const reader = new FileReader();
 
     await new Promise(resolve => {
         reader.onload = (e) => { 
             localStorage.clear();
-            const text = (e.target.result);
             // must verify later that json provided is correct
-            jsonPatterns = JSON.parse(text);
-            localStorage.setItem('patterns', JSON.stringify(jsonPatterns));
+            jsonContent = JSON.parse(e.target.result);
             resolve(true);
         };
 
-        reader.readAsText(e.target.files[0]);
+        reader.readAsText(file);
     });
     
+    return jsonContent;
+}
+
+export const setPatternsFromJSON = async filename => {
+    const jsonPatterns = await getJSONFileContent(filename);
+    localStorage.setItem('patterns', JSON.stringify(jsonPatterns));
     return jsonPatterns;
 }
 
