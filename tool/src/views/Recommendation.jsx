@@ -16,10 +16,9 @@ import LoadingOverlay from '../components/LoadingOverlay';
 import PatternModal from '../modals/PatternModal';
 import { exportToJSON, parseToLabel } from '../libs/helpers';
 import { 
-  getLocalstoragePatterns,
-  setPatternsInLocalstorage,
+  getFromLocalstorage,
+  setInLocalstorage,
   storePatternInLocalstorage,
-  setPatternsFromJSON,
   getJSONFileContent
  } from '../libs/localstorage';
 import RationaleDialog from '../modals/RationaleDialog';
@@ -209,11 +208,11 @@ export default function Recommendation({ setNbPatterns }) {
   };
 
   const getPatternsWithCat = (classTree) => {
-    let patterns = getLocalstoragePatterns();
+    let patterns = getFromLocalstorage('patterns');
     if (patterns) setSelectedPatterns(addCatsToPatterns(patterns, classTree));
     else {
       enqueueSnackbar('Error while retrieving patterns.');
-      setPatternsInLocalstorage({});
+      setInLocalstorage('patterns', {});
     }
   };
 
@@ -255,7 +254,7 @@ export default function Recommendation({ setNbPatterns }) {
   }
 
   const setAnswerToQuestion = (question, answer) => {
-    setQuizz({
+    const newQuizz = {
       ...quizz,
       list: {
         ...quizz.list,
@@ -273,16 +272,21 @@ export default function Recommendation({ setNbPatterns }) {
           answer,
           prefilled: false
         }]
-    });
+    };
+
+    setQuizz(newQuizz);
+    return newQuizz;
   };
 
   const handleAnswer = (answer, skip = false) => {
     // if the user answer no or skip to a high level question, he'll obviously answer no/skip to questions
     // that are sub parts of the high level question so we can skip to the next question that do not have any link with it
+    let newQuizzState = 1;
+    let newQuizz = {};
 
     if (skip) {
       const newQuestions = fillSkipQuestion(quizz.currentQuestion, answer);
-      let newQuizz = { 
+      newQuizz = { 
         ...quizz, 
         list: { 
           ...quizz.list, 
@@ -311,12 +315,15 @@ export default function Recommendation({ setNbPatterns }) {
       newQuizz.currentQuestion = getNextQuestion(newQuizz);
       setQuizz(newQuizz);
     } else {
-      setAnswerToQuestion(quizz.currentQuestion, answer);
+      newQuizz = setAnswerToQuestion(quizz.currentQuestion, answer);
     }
 
     if (quizz.currentStep === Object.keys(quizz.list).length - 1) {
-      setQuizzState(2);
+      newQuizzState = 2;
+      setQuizzState(newQuizzState);
     }
+
+    saveCurrentQuizz(newQuizz, newQuizzState);
   };
 
   const fillSkipQuestion  = (question, val) => {
@@ -381,6 +388,25 @@ export default function Recommendation({ setNbPatterns }) {
     setQuizzState(2);
   };
 
+  const saveCurrentQuizz = (newQuizz, newQuizzState) => {
+    setInLocalstorage('recommendation', {
+      quizzState: newQuizzState,
+      quizz: newQuizz
+    })
+  };
+
+  const checkForResume = () => {
+    const recommendation = getFromLocalstorage('recommendation');
+    if (!recommendation || !recommendation.quizz) return false;
+    return true;
+  };
+
+  const resumeQuizz = () => {
+    const recommendation = getFromLocalstorage('recommendation');
+    setQuizz(recommendation.quizz);
+    setQuizzState(recommendation.quizzState);
+  };
+
   const getHomeDisplay = () => {
     return (
       <div className={classes.homeBlock}>
@@ -410,6 +436,9 @@ export default function Recommendation({ setNbPatterns }) {
               </Button>
             </label>
           </div>
+          <div hidden={!checkForResume()}>
+            <Button variant="contained" onClick={resumeQuizz}>Resume</Button>
+          </div>
         </Stack>
       </div>
     )
@@ -419,7 +448,7 @@ export default function Recommendation({ setNbPatterns }) {
     let newSelectedPatterns = {...selectedPatterns};
     delete newSelectedPatterns[pattern.individual];
     setSelectedPatterns(newSelectedPatterns);
-    setPatternsInLocalstorage(newSelectedPatterns);
+    setInLocalstorage('patterns', newSelectedPatterns);
     enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
   };
 

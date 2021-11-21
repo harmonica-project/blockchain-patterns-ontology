@@ -10,8 +10,8 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import PatternModal from '../modals/PatternModal';
 import { useSnackbar } from 'notistack';
 import { 
-    getLocalstoragePatterns, 
-    setPatternsInLocalstorage, 
+    getFromLocalstorage, 
+    setInLocalstorage, 
     storePatternInLocalstorage 
 } from '../libs/localstorage';
 import {
@@ -107,11 +107,11 @@ export default function Explore({ setNbPatterns }) {
     }, [selectedPatterns]);
 
     useEffect(() => {
-        let patterns = getLocalstoragePatterns();
+        let patterns = getFromLocalstorage('patterns');
         if (patterns) setSelectedPatterns(patterns);
         else {
             enqueueSnackbar('Error while retrieving patterns.');
-            setPatternsInLocalstorage({});
+            setInLocalstorage('patterns', {});
         }
     }, [])
 
@@ -156,7 +156,7 @@ export default function Explore({ setNbPatterns }) {
         let newSelectedPatterns = {...selectedPatterns};
         delete newSelectedPatterns[individual.individual];
         setSelectedPatterns(newSelectedPatterns);
-        setPatternsInLocalstorage(newSelectedPatterns);
+        setInLocalstorage('patterns', newSelectedPatterns);
         enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
     };
 
@@ -226,7 +226,6 @@ export default function Explore({ setNbPatterns }) {
 
     const displayPatterns = () => {
         if (Object.keys(patterns).length) {
-            console.log(getFilteredPatterns(), selectorStates)
             return (
                 <Grid container className={classes.patternSpacing}>
                     <TextField

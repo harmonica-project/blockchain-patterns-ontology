@@ -1,10 +1,10 @@
-export const getLocalstoragePatterns = () => {
+export const getFromLocalstorage = (key) => {
     try {
-        const localPatterns = localStorage.getItem('patterns');
-        if (localPatterns) {
-            return JSON.parse(localPatterns);
+        const value = localStorage.getItem(key);
+        if (value) {
+            return JSON.parse(value);
         } else {
-            setPatternsInLocalstorage({});
+            setInLocalstorage('patterns', {});
             return {};
         }
     } catch {
@@ -24,8 +24,8 @@ export const storePatternInLocalstorage = (individual) => {
     }
 }
 
-export const setPatternsInLocalstorage = (patterns) => {
-    localStorage.setItem('patterns', JSON.stringify(patterns));
+export const setInLocalstorage = (key, value) => {
+    localStorage.setItem(key, JSON.stringify(value));
 }
 
 export const getJSONFileContent = async file => {

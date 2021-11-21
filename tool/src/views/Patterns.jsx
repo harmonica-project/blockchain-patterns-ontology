@@ -6,9 +6,9 @@ import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
 import { useSnackbar } from 'notistack';
 import { 
-    getLocalstoragePatterns, 
+    getFromLocalstorage, 
     storePatternInLocalstorage, 
-    setPatternsInLocalstorage, 
+    setInLocalstorage, 
     setPatternsFromJSON,
     deleteAllLocalstoragePatterns
 } from '../libs/localstorage';
@@ -93,16 +93,15 @@ export default function Patterns({ setNbPatterns }) {
     };
 
     const getPatternsWithCat = (classTree) => {
-        let patterns = getLocalstoragePatterns();
+        let patterns = getFromLocalstorage('patterns');
         if (patterns) setSelectedPatterns(addCatsToPatterns(patterns, classTree));
         else {
             enqueueSnackbar('Error while retrieving patterns.');
-            setPatternsInLocalstorage({});
+            setInLocalstorage('patterns', {});
         }
     };
 
     const addCatsToPatterns = (patterns, classTree) => {
-        console.log(patterns, classTree)
         const patternsKeys = Object.keys(patterns);
         patternsKeys.forEach(key => {
             let patternClass = patterns[key].pattern;
@@ -157,11 +156,10 @@ export default function Patterns({ setNbPatterns }) {
     };
 
     const deleteLocalPattern = (pattern) => {
-        console.log(pattern)
         let newSelectedPatterns = {...selectedPatterns};
         delete newSelectedPatterns[pattern.individual];
         setSelectedPatterns(newSelectedPatterns);
-        setPatternsInLocalstorage(newSelectedPatterns);
+        setInLocalstorage('patterns', newSelectedPatterns);
         enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
     };
 
