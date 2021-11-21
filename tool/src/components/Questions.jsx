@@ -4,12 +4,15 @@ import {
     LinearProgress,
     Typography,
     Button,
-    Divider
+    Divider,
+    Stack,
+    IconButton,
+    Tooltip
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import Stack from '@mui/material/Stack';
 import QuestionsStepper from './QuestionsStepper';
 import HistoryDialog from '../modals/HistoryDialog';
+import HistoryIcon from '@mui/icons-material/History';
 
 const useStyles = makeStyles(() => ({
     title: {
@@ -36,7 +39,7 @@ const useStyles = makeStyles(() => ({
 
 function LinearProgressWithLabel(props) {
     return (
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', flexGrow:'1' }}>
         <Box sx={{ width: '100%', mr: 1 }}>
           <LinearProgress variant="determinate" {...props} />
         </Box>
@@ -100,12 +103,23 @@ export default function Questions({quizz, handleAnswer}) {
                     <Button variant="contained" color="error" onClick={() => handleAnswer(-1, true)}>
                         No
                     </Button>
-                    <Button variant="string" onClick={() => setHistoryOpen(true)}>
-                        History
-                    </Button>
                 </Stack>
             </Box>
-            <LinearProgressWithLabel value={quizz.currentStep * 100 / Object.keys(quizz.list).length} />
+            <Box display="flex">
+                <Box>
+                <Tooltip title="Display history">
+                    <IconButton 
+                        size="large" 
+                        style={{color: '#2d3032', marginRight: '15px'}} 
+                        aria-label="Display history" 
+                        onClick={() => setHistoryOpen(true)}
+                    >
+                        <HistoryIcon fontSize="inherit" />
+                    </IconButton>
+                </Tooltip>
+                </Box>
+                <LinearProgressWithLabel value={quizz.currentStep * 100 / Object.keys(quizz.list).length} />
+            </Box>
             <HistoryDialog open={historyOpen} setOpen={setHistoryOpen} history={quizz.history} />
         </Box>
     )

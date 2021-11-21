@@ -70,13 +70,19 @@ export default function HistoryDialog({open, setOpen, history}) {
                 History
                 </BootstrapDialogTitle>
                 <DialogContent dividers>
-                    <ul>
+                  {
+                    history.length
+                    ?
+                      <ul>
                         {history.map(item => (
                             <li>
                                 {item.question}: {parseAnswer(item.answer)} {item.prefilled ? '(Prefilled)': ''}
                             </li>
                         ))}
-                    </ul>
+                      </ul>
+                    : 
+                      <div>No question answered yet.</div>
+                  }
                 </DialogContent>
             </BootstrapDialog>
         </div>

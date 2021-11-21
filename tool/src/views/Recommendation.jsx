@@ -422,9 +422,6 @@ export default function Recommendation({ setNbPatterns }) {
         <br/>
         <Stack direction="row" spacing={2} justifyContent="center">
           <div>
-            <Button variant="contained" onClick={startQuizz}>Start</Button>
-          </div>
-          <div>
             <label htmlFor="import-recommendation-input">
               <Input 
                   accept="*.json" 
@@ -432,9 +429,12 @@ export default function Recommendation({ setNbPatterns }) {
                   type="file" 
                   onChange={resumeRecommendationFromFile} />
               <Button variant="contained" component="span">
-                  Import last results
+                  Import
               </Button>
             </label>
+          </div>
+          <div>
+            <Button variant="contained" size="large" onClick={startQuizz}>Start</Button>
           </div>
           <div hidden={!checkForResume()}>
             <Button variant="contained" onClick={resumeQuizz}>Resume</Button>
