@@ -573,7 +573,7 @@ export default function Recommendation({ setNbPatterns }) {
       case 1:
         return getQuestionDisplay();
       case 2:
-        if (Object.keys(patterns).length)
+        if (getFilteredChosenPatterns().length)
           return getRecommendedPatternsDisplay();
         else
           return (
