@@ -33,11 +33,11 @@ Another resource can be mentioned, that is the blockchain pattern collection. A 
 
 ### Tool setup
 
-To set up the tool, make sure you have the following package installed:
+To setup the tool on your own machine, make sure you have the following package installed:
 
 - Node.js (current version: v10.19)
 - npm (current version: v6.14.4)
-- [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) (current version: v4.2, please follow the description on the website to install the tool AND enable Fuseki to be launched as a command by moving it to your $PATH)
+- [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) (current version: v4.2, please follow the documentation on the website to install the tool AND enable Fuseki to be launched as a command by moving it to your $PATH!)
 
 To start, you'll have to setup your Apache Jena Fuseki to serve the ontology as a database. Go into the [ontologies](https://github.com/harmonica-project/blockchain-patterns-ontology/tree/main/ontologies) folder, and execute the following command:
 
