@@ -18,6 +18,19 @@ Finally, this repository contains a Python script capable of converting the Exce
 
 To start, you can read our paper introducing in detail the ontology (coming soon), the method employed to create it, the tool, and a survey performed to validate the tool usability. You can also [check additional resources](#resources) below, that were not included in the paper. You will also found in [setup](#setup) some documentation to start the tool on your own machine and, if you want, regenerate the ontology using the Excel sheet.
 
+## Ontology description and visualisation
+
+This ontology is written in Turtle and uses the OWL concepts. You can open it in [Protégé](https://protege.stanford.edu/). If you want to learn about the ontology in depth, feel free to explore it or read the paper. Nevertheless, this section will give you some indications on its construction. The following image will give you a glance of the ontology conceptual model:
+
+![Conceptual model](./documents/conceptual-model.png)
+
+The central element of this model is the Proposal. 
+A Proposal is a Pattern proposed by multiple Sources (for this first iteration, a Source = an academic paper). Each Proposal proposes a Pattern, represented by the Pattern class. Thus, a Pattern is the combination of one or multiple Proposals.
+
+In general, a pattern is described by a pattern form (eg. [GoF format](https://hillside.net/index.php/gang-of-four-template)). In this model, a Pattern as well as Proposals are described by a Pattern form, that have the attributes of its respective chosen pattern form.
+
+Each pattern address one or more Design problems, presented as a taxonomy of problems (see below for more information). Also, each Proposal is linked to a specific Blockchain, Domain, and Language. This is the context of the Proposal.
+
 ## Resources
 
 This repository hosts documents that were not included in our paper due to inherent size limit of the publication. Those documents have been placed in the [documents](https://github.com/harmonica-project/blockchain-patterns-ontology/tree/main/documents) directory. The list of documents is the following:
@@ -55,3 +68,24 @@ npm start
 ```
 
 If everything went fine, you should be able to open the tool on [localhost:3000](localhost:3000) and start using it. You can make sure that you are connected to Fuseki by checking the server status on home page: it should display connected. If you have an issue, please let us know by opening an issue on GitHub.
+
+### Ontology generation
+
+If you want, you can also regenerate the ontology by yourself. As this is an ad-hoc tool, the process is not that simple; the following section will try to give some information to do that. 
+
+A Python script is used in this process: [gen_ontology.py](https://github.com/harmonica-project/blockchain-patterns-ontology/blob/main/automation/gen_ontology.py). You can execute the script by running the following command (no package is required):
+
+```
+python3 gen_ontology.py
+```
+
+It will convert the patterns_data.json file into the ontology in the ontology folder. The problem is the generation of that file, which is not that easy. 
+
+To do that, follows this ad-hoc process:
+
+1. Download the Excel spreadsheet in [this repository](https://github.com/harmonica-project/blockchain-patterns-collection). Modify it as you want by making sure to respect the file organization (patterns from papers and patterns created from the fusion of all of them, papers, pattern links ...).
+2. Rename the "Raw pattern collection" sheet in "Paper patterns", and the "RQ2" sheet in "Canonical patterns". Delete the "Summary", "RQ3", and "RQ4" sheets.
+3. Use a XLSX to JSON parser, such as [this website](https://beautifytools.com/excel-to-json-converter.php). 
+
+The resulting file can be used by the Python script to generate the ontology.
+
