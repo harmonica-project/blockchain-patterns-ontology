@@ -40,12 +40,6 @@ rdfs:label "Key-value store"@en .
 rdfs:subClassOf :StoragePattern ;
 rdfs:label "Address mapping"@en .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Authorization
-:Authorization rdf:type owl:Class ;
-
-rdfs:subClassOf :ContractAccessControlPattern ;
-rdfs:label "Authorization"@en .
-
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Judge
 :Judge rdf:type owl:Class ;
 
@@ -538,11 +532,11 @@ rdfs:label "Delegated Transactions"@en .
 rdfs:subClassOf :MultiDomainFeaturePattern ;
 rdfs:label "Digital Record"@en .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OnChainEncryption
-:OnChainEncryption rdf:type owl:Class ;
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EncryptingOnChainData
+:EncryptingOnChainData rdf:type owl:Class ;
 
 rdfs:subClassOf :EncryptionPattern ;
-rdfs:label "On-chain encryption"@en .
+rdfs:label "Encrypting on-chain data"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullPayment
 :PullPayment rdf:type owl:Class ;
@@ -598,11 +592,11 @@ rdfs:label "Speed Bump"@en .
 rdfs:subClassOf :ContractSecurityPattern ;
 rdfs:label "Rate Limit"@en .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CheckEffectInteraction
-:CheckEffectInteraction rdf:type owl:Class ;
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ChecksEffectInteractions
+:ChecksEffectInteractions rdf:type owl:Class ;
 
 rdfs:subClassOf :ContractSecurityPattern ;
-rdfs:label "Check Effect Interaction"@en .
+rdfs:label "Checks-Effect-Interactions"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TimeConstraint
 :TimeConstraint rdf:type owl:Class ;

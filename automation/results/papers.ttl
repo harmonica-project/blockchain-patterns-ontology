@@ -240,18 +240,18 @@ rdfs:label "On or off the blockchain? Insights on off-chaining computation and d
 
 rdfs:label "Applying design patterns in smart contracts" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Raj2018Blockchain
-:Raj2018Blockchain rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Zhang2018Chapter
+:Zhang2018Chapter rdf:type owl:NamedIndividual ,
                           :Paper ;
 
-:Authors "Raj, Pethuru and Deka, Ganesh Chandra"^^rdfs:Literal ;
+:Authors "Zhang, Peng and White, Jules and Schmidt, Douglas C. and Lenz, Gunther"^^rdfs:Literal ;
 :Year "2018"^^rdfs:Literal ;
-:Title "Blockchain Technology Use Cases in Healthcare"^^rdfs:Literal ;
+:Title "Chapter One - Blockchain Technology Use Cases in Healthcare"^^rdfs:Literal ;
 :Identifier "10.1016/bs.adcom.2018.03.006"^^rdfs:Literal ;
 :IdentifierType "DOI"^^rdfs:Literal ;
-:Journal "Blockchain Technology: Platforms, Tools and Use Cases"^^rdfs:Literal ;
+:Journal "Advances in computers"^^rdfs:Literal ;
 
-rdfs:label "Blockchain Technology Use Cases in Healthcare" .
+rdfs:label "Chapter One - Blockchain Technology Use Cases in Healthcare" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Mühlberger2020Foundational
 :Mühlberger2020Foundational rdf:type owl:NamedIndividual ,
