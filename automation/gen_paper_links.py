@@ -1,8 +1,11 @@
+#!/usr/bin/env python3
+
+
 import json
 import requests
 import networkx as nx
 import matplotlib.pyplot as plt
-
+import itertools
 G = nx.DiGraph()
 
 
@@ -37,9 +40,13 @@ for identifier, data in list(papers.items()):
                     print(
                         f"New paper {ref} and cites {papers[edge_identifier]['doi']}")
 
-with open("citation_triples.csv","w+") as f:
-    for line in list(itertools.chain(*[[" cites ".join([G.nodes[citer]["doi"],G.nodes[citee]["doi"]]) for citee in G[citer]] for citer in G.nodes])):
+with open("citation_triples.ttl","w+") as f:
+    for line in list(itertools.chain(*[[f":Id{citer} :references :Id{citee}." for citee in G[citer]] for citer in G.nodes])):
+        f.write(line+"\n")
+    for line in list(itertools.chain(*[[f":Id{doi} rdf:type :doi." for doi in G.nodes]])):
+        f.write(line+"\n")
+    for line in list(itertools.chain(*[[f":Id{doi} rdfs:label \"{G.nodes[doi]['doi']}\"^^rdfs:Literal." for doi in G.nodes]])):
         f.write(line+"\n")
 
-print("results written in citation_triples.csv")
+print("results written in citation_triples.ttl")
 
