@@ -46,6 +46,11 @@
              rdfs:domain :Proposal ;
              rdfs:range :Proposal .
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#references
+:references rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Identifier ;
+             rdfs:range :Identifier .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasPaper
 :hasPaper rdf:type owl:ObjectProperty ;
@@ -61,6 +66,11 @@
              rdfs:domain :Paper ;
              rdfs:range :Proposal .
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasIdentifier
+:hasIdentifier rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Paper ;
+             rdfs:range :Identifier .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#relatedTo
 :relatedTo rdf:type owl:ObjectProperty ;
@@ -468,6 +478,10 @@ owl:topObjectProperty rdfs:domain :Pattern ;
                        ] ;
        rdfs:label "Idiom"@en .
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Identifier
+:Identifier rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ;
+         rdfs:label "Identifier"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InteractingWithBlockchain
 :InteractingWithBlockchain rdf:type owl:Class ;
