@@ -7,6 +7,8 @@ capital_word_list = [
   "BPM"
 ]
 
+UPDATE_CITATIONS = False
+
 def capitalizeURI(word):
   if word not in capital_word_list:
      return word.capitalize()
@@ -31,10 +33,6 @@ def get_pattern_proposals_from_URI(pattern_proposals, paper_uri):
     if parse_to_URI(p['Name']) == paper_uri:
       compatible_patterns.append(p)
   return compatible_patterns
-
-# receives an Author field, return the first author name
-def get_first_author(authors):
-  return re.split(', ', authors)[0]
 
 # parse to ontology URI (first letter in caps, no special character)
 def parse_to_URI(name):
@@ -64,7 +62,7 @@ def get_links_between_patterns(pattern_proposals, pattern_proposal, example_mapp
         if r.isdigit():
           relation_paper = get_pattern_proposal_from_id(pattern_proposals, r)
           paper = get_paper_from_id(papers, relation_paper['Paper'])
-          relation_paper_name = parse_to_URI(relation_paper['Name']) + get_first_author(paper['author']) + paper['year'] + get_first_word_title(paper['Title'])
+          relation_paper_name = parse_to_URI(relation_paper['Name']) + paper['ID']
         else:
           if parse_to_URI(r) in example_mapping:
             relation_paper_name = example_mapping[parse_to_URI(r)]
@@ -145,17 +143,12 @@ def generate_papers(papers_list):
   for paper in papers_list:
     if (paper['Rejected after reading'] == "No"):
       papers += Template(paper_template).substitute(
-        author=get_first_author(paper['author']), 
-        year=paper['year'], 
+        paperId=paper['ID'],
         title=paper['Title'],
-        title_word=get_first_word_title(paper['Title']),
         properties=get_paper_properties(paper), 
         owner="nicolas"
       )
   return papers
-
-def get_first_word_title(title):
-  return re.sub(r'[\W_]+', '', title.split(' ')[0])
 
 # generate_proposals() returns the proposals found in papers
 def generate_proposals(pattern_proposals, proposal_mapping, papers):
@@ -177,9 +170,7 @@ def generate_proposals(pattern_proposals, proposal_mapping, papers):
       refClass=proposal_mapping[parse_to_URI(p['Name'])], 
       context=parse_to_ontology_literal_if_exists(p, 'Context & Problem'), 
       solution=parse_to_ontology_literal_if_exists(p, 'Solution'),
-      author=get_first_author(paper['author']),
-      year=paper['year'],
-      title_word=get_first_word_title(paper['Title']),
+      paperId=paper['ID'],
       links=get_links_between_patterns(pattern_proposals, p, proposal_mapping, papers),
       examples=get_application_examples(p),
       language=parse_to_URI(p['Language'])
@@ -229,6 +220,13 @@ def run():
   proposals_ttl = generate_proposals(pattern_proposals, proposal_mapping, papers)
   papers_ttl = generate_papers(papers)
 
+  if (UPDATE_CITATIONS):
+    print("Not managed by this script yet.")
+    citations_ttl = ""
+  else:
+    with open("./results/citation_triples.ttl", "r") as text_file_citations:
+      citations_ttl = text_file_citations.read()
+
   # write classes, papers and proposals in three distinct files, can be merged into a complete ontology
   with open("./results/classes.ttl", "w") as text_file_classes:
     text_file_classes.write(classes_ttl)
@@ -240,6 +238,6 @@ def run():
     text_file_papers.write(papers_ttl)
 
   with open("../ontologies/result.ttl", "w") as text_file_ontology:
-    text_file_ontology.write(ontology_structure + classes_ttl + proposals_ttl + papers_ttl)
+    text_file_ontology.write(ontology_structure + classes_ttl + proposals_ttl + papers_ttl + citations_ttl)
 
 run()

@@ -40,12 +40,12 @@ for identifier, data in list(papers.items()):
                     print(
                         f"New paper {ref} and cites {papers[edge_identifier]['doi']}")
 
-with open("citation_triples.ttl","w+") as f:
-    for line in list(itertools.chain(*[[f":Id{citer} :references :Id{citee}." for citee in G[citer]] for citer in G.nodes])):
+with open("./results/citation_triples.ttl","w+") as f:
+    for line in list(itertools.chain(*[[f":Identifier{citer} :references :Identifier{citee}." for citee in G[citer]] for citer in G.nodes])):
         f.write(line+"\n")
-    for line in list(itertools.chain(*[[f":Id{doi} rdf:type :doi." for doi in G.nodes]])):
+    for line in list(itertools.chain(*[[f":Identifier{doi} rdf:type :Identifier." for doi in G.nodes]])):
         f.write(line+"\n")
-    for line in list(itertools.chain(*[[f":Id{doi} rdfs:label \"{G.nodes[doi]['doi']}\"^^rdfs:Literal." for doi in G.nodes]])):
+    for line in list(itertools.chain(*[[f":Identifier{doi} rdfs:label \"{G.nodes[doi]['doi']}\"^^rdfs:Literal." for doi in G.nodes]])):
         f.write(line+"\n")
 
 print("results written in citation_triples.ttl")
