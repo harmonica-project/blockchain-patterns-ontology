@@ -4,6 +4,7 @@
 import json
 import requests
 import networkx as nx
+from networkx.drawing.nx_agraph import write_dot
 import matplotlib.pyplot as plt
 import itertools
 G = nx.DiGraph()
@@ -47,6 +48,9 @@ with open("./results/citation_triples.ttl","w+") as f:
         f.write(line+"\n")
     for line in list(itertools.chain(*[[f":Identifier{doi} rdfs:label \"{G.nodes[doi]['doi']}\"^^rdfs:Literal." for doi in G.nodes]])):
         f.write(line+"\n")
+        
+write_dot(G,"./results/citation_triples.dot")
 
-print("results written in citation_triples.ttl")
+print("results written in ./results/citation_triples.ttl")
+print("dependency graph written in ./results/citation_graph.dot")
 
