@@ -1,4 +1,4 @@
-import json
+import requests
 import re
 from string import Template
 
@@ -19,15 +19,15 @@ def get_paper_from_id(papers, paper_id):
       return p
   return False
 
-def get_pattern_proposal_from_id(pattern_proposals, paper_id):
-  for p in pattern_proposals:
+def get_proposal_from_id(proposals, paper_id):
+  for p in proposals:
     if p['ID'] == paper_id:
       return p
   return False
 
-def get_pattern_proposals_from_URI(pattern_proposals, paper_uri):
+def get_proposals_from_URI(proposals, paper_uri):
   compatible_patterns = []
-  for p in pattern_proposals:
+  for p in proposals:
     if parse_to_URI(p['Name']) == paper_uri:
       compatible_patterns.append(p)
   return compatible_patterns
@@ -50,34 +50,70 @@ def parse_to_relation(name):
   name = ''.join(nameArray)
   return name
 
+def get_proposal_URI(proposal, papers):
+  paper = get_paper_from_id(papers, proposal['Paper'])
+  return parse_to_URI(proposal['Name']) + get_first_author(paper['author']) + paper['year'] + get_first_word_title(paper['Title'])
+
+def get_paper_URI(paper):
+  return get_first_author(paper['author']) + paper['year'] + get_first_word_title(paper['Title'])
+  
 # generate the links between proposals. 5 different links exists, they are listed in the array below for easy detection in the dict
-def get_links_between_patterns(pattern_proposals, pattern_proposal, example_mapping, papers):
+def get_links_between_proposals(proposals, example_mapping, papers):
+  relations = {}
   link_types = ["Created from", "Related to", "Variant of", "Requires", "Benefits from"]
   relation_template = load_template('relation')
-  relations_str = ''
 
-  for key in link_types:
-    if key in pattern_proposal:
-      relations = re.split(', ', pattern_proposal[key])
-      relation_type = parse_to_relation(key)
-      for r in relations:
-        if r.isdigit():
-          relation_paper = get_pattern_proposal_from_id(pattern_proposals, r)
-          paper = get_paper_from_id(papers, relation_paper['Paper'])
-          relation_paper_name = parse_to_URI(relation_paper['Name']) + get_first_author(paper['author']) + paper['year'] + get_first_word_title(paper['Title'])
-        else:
-          if parse_to_URI(r) in example_mapping:
-            relation_paper_name = example_mapping[parse_to_URI(r)]
+  for proposal in proposals:
+    proposal_uri = get_proposal_URI(proposal, papers)
+
+    for key in link_types:
+      if key in proposal:
+        proposal_relations = re.split(', ', proposal[key])
+        relation_type = parse_to_relation(key)
+        
+        for r in proposal_relations:
+          if r.isdigit():
+            target = get_proposal_from_id(proposals, r)
+            target_uri = get_proposal_URI(target, papers)
           else:
-            relation_paper_name = "Unknown"
-        relations_str += Template(relation_template).substitute(relation=relation_type, value=relation_paper_name)
-  return relations_str
+            if parse_to_URI(r) in example_mapping:
+              target_uri = example_mapping[parse_to_URI(r)]
+            else:
+              target_uri = "Unknown"
+
+          if (proposal_uri not in relations):
+            relations[proposal_uri] = []
+
+          relations[proposal_uri].append({
+            'target': target_uri,
+            'relation': relation_type
+          })
+  return relations
+
+# generate the links between proposals. 5 different links exists, they are listed in the array below for easy detection in the dict
+def get_proposal_links_parsed(proposal_uri, proposals_links):
+  if proposal_uri in proposals_links:
+    relation_template = load_template('relation')
+    relations_str = ''
+
+    for link in proposals_links[proposal_uri]:
+      relations_str += Template(relation_template).substitute(
+        relation=link['relation'],
+        value=link['target']
+      )
+    return relations_str
+  else:
+    return ''
 
 # load the SLR data as a dict, returns three different dicts: papers, proposals, and classes
 def load_SLR_data():
-  with open('patterns_data.json', 'r') as file:
-    data = json.load(file)
-    return data['Papers'], data['Paper patterns'], data['Canonical patterns']
+  r = requests.get('https://raw.githubusercontent.com/harmonica-project/blockchain-patterns-collection/main/collection.json')
+  if (r.status_code == 200):
+    content = r.json()
+    return content['Papers'], content['Proposals'], content['Patterns']
+  else:
+    print('Cannot retrieve the JSON pattern file from GitHub.')
+    quit()
 
 # load an ontology template
 def load_template(item):
@@ -90,7 +126,7 @@ def get_application_examples(p):
   if 'Application examples' in p:
     for example in p['Application examples'].split("• "):
       if len(example):
-        examples += Template(proposal_template).substitute(example=example)
+        examples += Template(proposal_template).substitute(example=example.replace("\n", ""))
     return examples
   else:
     return ''
@@ -110,7 +146,7 @@ def create_proposal_to_class_mapping(pattern_classes):
 # used to parse context/solution fields of pattern objects into litterals that can be attached to individuals
 def parse_to_ontology_literal_if_exists(item, key):
   if key in item:
-    return item[key].replace('"', '')
+    return item[key].replace('"', '').replace("\n", "")
   else:
     return ""
 
@@ -143,49 +179,49 @@ def generate_papers(papers_list):
   paper_template = load_template('paper')
   papers = ""
   for paper in papers_list:
-    if (paper['Rejected after reading'] == "No"):
-      papers += Template(paper_template).substitute(
-        author=get_first_author(paper['author']), 
-        year=paper['year'], 
-        title=paper['Title'],
-        title_word=get_first_word_title(paper['Title']),
-        properties=get_paper_properties(paper), 
-        owner="nicolas"
-      )
+    papers += Template(paper_template).substitute(
+      author=get_first_author(paper['author']), 
+      year=paper['year'], 
+      title=paper['Title'],
+      title_word=get_first_word_title(paper['Title']),
+      properties=get_paper_properties(paper), 
+      owner="nicolas"
+    )
   return papers
 
 def get_first_word_title(title):
   return re.sub(r'[\W_]+', '', title.split(' ')[0])
 
-# generate_proposals() returns the proposals found in papers
-def generate_proposals(pattern_proposals, proposal_mapping, papers):
-  proposals = ""
+# generate_individuals() returns the proposals found in papers
+def generate_individuals(proposals, proposal_mapping, proposals_links, papers):
+  proposals_str = ""
   proposal_template = load_template('proposal')
-  
+  variants = {}
+
   # iterate on pattern proposals to generate "proposal patterns" individuals
-  for p in pattern_proposals:
+  for p in proposals:
     # get associated paper from pattern paper id
-    paper = get_pattern_proposal_from_id(papers, p['Paper'])
+    paper = get_proposal_from_id(papers, p['Paper'])
+    proposal_uri = get_proposal_URI(p, papers)
+    paper_uri = get_paper_URI(paper)
 
     # generate pattern individuals, connected to their classes
-    proposals += Template(proposal_template).substitute(
+    proposals_str += Template(proposal_template).substitute(
       owner="nicolas", 
-      uri=parse_to_URI(p['Name']), 
+      proposal_uri=proposal_uri,
+      paper_uri=paper_uri,
       name=p['Name'], 
       blockchain=parse_to_URI(p['Target']), 
       domain=parse_to_URI(p['Applicability domain']), 
       refClass=proposal_mapping[parse_to_URI(p['Name'])], 
       context=parse_to_ontology_literal_if_exists(p, 'Context & Problem'), 
       solution=parse_to_ontology_literal_if_exists(p, 'Solution'),
-      author=get_first_author(paper['author']),
-      year=paper['year'],
-      title_word=get_first_word_title(paper['Title']),
-      links=get_links_between_patterns(pattern_proposals, p, proposal_mapping, papers),
+      links=get_proposal_links_parsed(proposal_uri, proposals_links),
       examples=get_application_examples(p),
       language=parse_to_URI(p['Language'])
     )
 
-  return proposals
+  return proposals_str
 
 # generate_classes() returns all pattern classes
 def generate_classes(pattern_classes):
@@ -216,7 +252,7 @@ def generate_classes(pattern_classes):
 # run() entry point of the script
 # get templates and SLR data, iterate on canonicals then on examples to generate the classes + canonicals and examples
 def run():
-  papers, pattern_proposals, pattern_classes = load_SLR_data()
+  papers, proposals, pattern_classes = load_SLR_data()
 
   with open('../ontologies/structure.ttl', 'r') as file:
     ontology_structure = file.read()
@@ -224,9 +260,10 @@ def run():
   # a double mapping is returned by this function: one maps a canonical name into an array of possible alternative names
   # and the other one maps an example name to its canonical
   proposal_mapping = create_proposal_to_class_mapping(pattern_classes)
-
+  proposals_links = get_links_between_proposals(proposals, proposal_mapping, papers)
+  
   classes_ttl = generate_classes(pattern_classes)
-  proposals_ttl = generate_proposals(pattern_proposals, proposal_mapping, papers)
+  proposals_ttl = generate_individuals(proposals, proposal_mapping, proposals_links, papers)
   papers_ttl = generate_papers(papers)
 
   # write classes, papers and proposals in three distinct files, can be merged into a complete ontology
