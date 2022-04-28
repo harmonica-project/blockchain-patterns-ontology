@@ -146,7 +146,7 @@ rdfs:label "Authorization" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#JudgeWorley2019Opportunities
 :JudgeWorley2019Opportunities rdf:type owl:NamedIndividual ,
-                   :Judge ,
+                   :Oracle ,
                    :Proposal ,
                    :General ,
                    :SmartContractEnabledBlockchains ,
@@ -163,7 +163,7 @@ rdfs:label "Judge" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TickerTapeWorley2019Opportunities
 :TickerTapeWorley2019Opportunities rdf:type owl:NamedIndividual ,
-                   :TickerTape ,
+                   :Oracle ,
                    :Proposal ,
                    :General ,
                    :SmartContractEnabledBlockchains ,
@@ -180,7 +180,7 @@ rdfs:label "Ticker Tape" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#VoteWorley2019Opportunities
 :VoteWorley2019Opportunities rdf:type owl:NamedIndividual ,
-                   :Vote ,
+                   :Oracle ,
                    :Proposal ,
                    :General ,
                    :SmartContractEnabledBlockchains ,
@@ -1190,13 +1190,13 @@ rdfs:label "Dual Resolution" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegateListLiu2020Design
 :DelegateListLiu2020Design rdf:type owl:NamedIndividual ,
-                   :DelegateList ,
+                   :MultipleAuthorization ,
                    :Proposal ,
                    :IdentityManagement ,
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedTo :DelegateListLiu2020Design ;
+:relatedTo :IdentifierRegistryLiu2020Design ;
 :variantOf :MultipleAuthorizationXu2018A ;
 :benefitsFrom :IdentifierRegistryLiu2020Design ;
 :benefitsFrom :MutexWohrer2018Smart ;
@@ -1250,7 +1250,7 @@ rdfs:label "Time-Constrained Access" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OneOffAccessLiu2020Design
 :OneOffAccessLiu2020Design rdf:type owl:NamedIndividual ,
-                   :OneOffAccess ,
+                   :TimeConstrainedAccess ,
                    :Proposal ,
                    :IdentityManagement ,
                    :SmartContractEnabledBlockchains ,
@@ -1912,7 +1912,7 @@ rdfs:label "Optimizer" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ConfidentialAndPseudoAnonymousContractEnforcementSix2020A
 :ConfidentialAndPseudoAnonymousContractEnforcementSix2020A rdf:type owl:NamedIndividual ,
-                   :ConfidentialAndPseudoAnonymousContractEnforcement ,
+                   :LegalAndSmartContractPair ,
                    :Proposal ,
                    :BPM ,
                    :SmartContractEnabledBlockchains ,

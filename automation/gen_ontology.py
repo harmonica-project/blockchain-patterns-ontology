@@ -61,7 +61,6 @@ def get_paper_URI(paper):
 def get_links_between_proposals(proposals, example_mapping, papers):
   relations = {}
   link_types = ["Created from", "Related to", "Variant of", "Requires", "Benefits from"]
-  relation_template = load_template('relation')
 
   for proposal in proposals:
     proposal_uri = get_proposal_URI(proposal, papers)
@@ -193,7 +192,7 @@ def get_first_word_title(title):
   return re.sub(r'[\W_]+', '', title.split(' ')[0])
 
 # generate_individuals() returns the proposals found in papers
-def generate_individuals(proposals, proposal_mapping, proposals_links, papers):
+def generate_individuals(proposals, proposal_mapping, proposals_links, papers, variants_mapping):
   proposals_str = ""
   proposal_template = load_template('proposal')
   variants = {}
@@ -205,6 +204,11 @@ def generate_individuals(proposals, proposal_mapping, proposals_links, papers):
     proposal_uri = get_proposal_URI(p, papers)
     paper_uri = get_paper_URI(paper)
 
+    if (proposal_uri in variants_mapping):
+      refPattern = variants_mapping[proposal_uri]
+    else:
+      refPattern = proposal_mapping[parse_to_URI(p['Name'])]
+
     # generate pattern individuals, connected to their classes
     proposals_str += Template(proposal_template).substitute(
       owner="nicolas", 
@@ -213,7 +217,7 @@ def generate_individuals(proposals, proposal_mapping, proposals_links, papers):
       name=p['Name'], 
       blockchain=parse_to_URI(p['Target']), 
       domain=parse_to_URI(p['Applicability domain']), 
-      refClass=proposal_mapping[parse_to_URI(p['Name'])], 
+      refClass=refPattern, 
       context=parse_to_ontology_literal_if_exists(p, 'Context & Problem'), 
       solution=parse_to_ontology_literal_if_exists(p, 'Solution'),
       links=get_proposal_links_parsed(proposal_uri, proposals_links),
@@ -223,8 +227,26 @@ def generate_individuals(proposals, proposal_mapping, proposals_links, papers):
 
   return proposals_str
 
-# generate_classes() returns all pattern classes
-def generate_classes(pattern_classes):
+# generate_patterns() returns all pattern classes
+def generate_variants(pattern_classes, proposals, papers):
+  variants = ''
+  variants_mapping = {}
+  relation_template = load_template('relation')
+  variant_template = load_template('variant')
+
+  for p in pattern_classes:
+    if ('Variant' in p):
+      for p_id in p['Variant'].split(', '):
+        proposal = get_proposal_from_id(proposals, p_id)
+        proposal_uri = get_proposal_URI(proposal, papers)
+        variants_mapping[proposal_uri] = parse_to_URI(p['Name'])
+
+        #print(proposal)
+
+  return variants, variants_mapping
+
+# generate_patterns() returns all pattern classes
+def generate_patterns(pattern_classes):
   classes = ''
   class_template = load_template('class')
 
@@ -262,13 +284,14 @@ def run():
   proposal_mapping = create_proposal_to_class_mapping(pattern_classes)
   proposals_links = get_links_between_proposals(proposals, proposal_mapping, papers)
   
-  classes_ttl = generate_classes(pattern_classes)
-  proposals_ttl = generate_individuals(proposals, proposal_mapping, proposals_links, papers)
+  patterns_ttl = generate_patterns(pattern_classes)
+  variants_ttl, variants_mapping = generate_variants(pattern_classes, proposals, papers)
+  proposals_ttl = generate_individuals(proposals, proposal_mapping, proposals_links, papers, variants_mapping)
   papers_ttl = generate_papers(papers)
 
   # write classes, papers and proposals in three distinct files, can be merged into a complete ontology
   with open("./results/classes.ttl", "w") as text_file_classes:
-    text_file_classes.write(classes_ttl)
+    text_file_classes.write(patterns_ttl)
 
   with open("./results/proposals.ttl", "w") as text_file_proposals:
     text_file_proposals.write(proposals_ttl)
@@ -276,7 +299,10 @@ def run():
   with open("./results/papers.ttl", "w") as text_file_papers:
     text_file_papers.write(papers_ttl)
 
+  with open("./results/variants.ttl", "w") as text_file_variants:
+    text_file_variants.write(variants_ttl)
+
   with open("../ontologies/result.ttl", "w") as text_file_ontology:
-    text_file_ontology.write(ontology_structure + classes_ttl + proposals_ttl + papers_ttl)
+    text_file_ontology.write(ontology_structure + patterns_ttl + proposals_ttl + papers_ttl + variants_ttl)
 
 run()
