@@ -1,6 +1,5 @@
 ###  http://www.semanticweb.org/$owner/ontologies/2021/8/patterns#${proposal_uri}
 :${proposal_uri} rdf:type owl:NamedIndividual ,
-                   :$refClass ,
                    :Proposal ,
                    :$domain ,
                    :$blockchain ,
@@ -8,6 +7,7 @@
 
 ${links}
 :hasPaper :${paper_uri} ;
+:hasVariant :${variant}V ;
 :ContextAndProblem "$context"^^rdfs:Literal ;
 :Solution "$solution"^^rdfs:Literal ;
 $examples

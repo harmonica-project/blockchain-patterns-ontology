@@ -1,0 +1,840 @@
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransparentEventLogV
+:TransparentEventLogV rdf:type owl:NamedIndividual ,
+                   :TransparentEventLog ,
+                   :Variant ;
+
+rdfs:label "Transparent Event Log" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainBpEngineV
+:BlockchainBpEngineV rdf:type owl:NamedIndividual ,
+                   :BlockchainBpEngine ,
+                   :Variant ;
+
+rdfs:label "Blockchain BP Engine" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractActivitiesV
+:SmartContractActivitiesV rdf:type owl:NamedIndividual ,
+                   :SmartContractActivities ,
+                   :Variant ;
+
+rdfs:label "Smart Contract Activities" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainBasedReputationSystemV
+:BlockchainBasedReputationSystemV rdf:type owl:NamedIndividual ,
+                   :BlockchainBasedReputationSystem ,
+                   :Variant ;
+
+rdfs:label "Blockchain-based reputation system" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DecentralizeBusinessProcessV
+:DecentralizeBusinessProcessV rdf:type owl:NamedIndividual ,
+                   :DecentralizeBusinessProcess ,
+                   :Variant ;
+
+rdfs:label "Decentralize business process" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#KeyValueStoreV
+:KeyValueStoreV rdf:type owl:NamedIndividual ,
+                   :KeyValueStore ,
+                   :Variant ;
+
+rdfs:label "Key-value store" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AddressMappingV
+:AddressMappingV rdf:type owl:NamedIndividual ,
+                   :AddressMapping ,
+                   :Variant ;
+
+rdfs:label "Address mapping" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlocklistV
+:BlocklistV rdf:type owl:NamedIndividual ,
+                   :Blocklist ,
+                   :Variant ;
+
+rdfs:label "Blocklist" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AnnouncementV
+:AnnouncementV rdf:type owl:NamedIndividual ,
+                   :Announcement ,
+                   :Variant ;
+
+rdfs:label "Announcement" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BulletinBoardV
+:BulletinBoardV rdf:type owl:NamedIndividual ,
+                   :BulletinBoard ,
+                   :Variant ;
+
+rdfs:label "Bulletin Board" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MigrationV
+:MigrationV rdf:type owl:NamedIndividual ,
+                   :Migration ,
+                   :Variant ;
+
+rdfs:label "Migration" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InterFamilyCommunicationV
+:InterFamilyCommunicationV rdf:type owl:NamedIndividual ,
+                   :InterFamilyCommunication ,
+                   :Variant ;
+
+rdfs:label "Inter-family communication" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#RandomnessV
+:RandomnessV rdf:type owl:NamedIndividual ,
+                   :Randomness ,
+                   :Variant ;
+
+rdfs:label "Randomness" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PollV
+:PollV rdf:type owl:NamedIndividual ,
+                   :Poll ,
+                   :Variant ;
+
+rdfs:label "Poll" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ForkCheckV
+:ForkCheckV rdf:type owl:NamedIndividual ,
+                   :ForkCheck ,
+                   :Variant ;
+
+rdfs:label "Fork check" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SecureEtherTransferV
+:SecureEtherTransferV rdf:type owl:NamedIndividual ,
+                   :SecureEtherTransfer ,
+                   :Variant ;
+
+rdfs:label "Secure Ether Transfer" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#JudgeV
+:JudgeV rdf:type owl:NamedIndividual ,
+                   :Oracle ,
+                   :Variant ;
+
+rdfs:label "Judge" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TickerTapeV
+:TickerTapeV rdf:type owl:NamedIndividual ,
+                   :Oracle ,
+                   :Variant ;
+
+rdfs:label "Ticker Tape" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#VoteV
+:VoteV rdf:type owl:NamedIndividual ,
+                   :Oracle ,
+                   :Variant ;
+
+rdfs:label "Vote" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OracleV
+:OracleV rdf:type owl:NamedIndividual ,
+                   :Oracle ,
+                   :Variant ;
+
+rdfs:label "Oracle" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateChannelV
+:StateChannelV rdf:type owl:NamedIndividual ,
+                   :StateChannel ,
+                   :Variant ;
+
+rdfs:label "State Channel" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainContractRegistryV
+:OffChainContractRegistryV rdf:type owl:NamedIndividual ,
+                   :OffChainContractRegistry ,
+                   :Variant ;
+
+rdfs:label "(Off-chain) Contract Registry" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DataContractV
+:DataContractV rdf:type owl:NamedIndividual ,
+                   :DataContract ,
+                   :Variant ;
+
+rdfs:label "Data Contract" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EmbeddedPermissionV
+:EmbeddedPermissionV rdf:type owl:NamedIndividual ,
+                   :EmbeddedPermission ,
+                   :Variant ;
+
+rdfs:label "Embedded Permission" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FactoryContractV
+:FactoryContractV rdf:type owl:NamedIndividual ,
+                   :FactoryContract ,
+                   :Variant ;
+
+rdfs:label "Factory Contract" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EmergencyStopV
+:EmergencyStopV rdf:type owl:NamedIndividual ,
+                   :EmergencyStop ,
+                   :Variant ;
+
+rdfs:label "Emergency Stop" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MutexV
+:MutexV rdf:type owl:NamedIndividual ,
+                   :Mutex ,
+                   :Variant ;
+
+rdfs:label "Mutex" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractBalanceLimitV
+:ContractBalanceLimitV rdf:type owl:NamedIndividual ,
+                   :ContractBalanceLimit ,
+                   :Variant ;
+
+rdfs:label "Contract Balance Limit" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ReverseOracleV
+:ReverseOracleV rdf:type owl:NamedIndividual ,
+                   :ReverseOracle ,
+                   :Variant ;
+
+rdfs:label "Reverse Oracle" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IncentiveExecutionV
+:IncentiveExecutionV rdf:type owl:NamedIndividual ,
+                   :IncentiveExecution ,
+                   :Variant ;
+
+rdfs:label "Incentive Execution" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#CommitAndRevealV
+:CommitAndRevealV rdf:type owl:NamedIndividual ,
+                   :CommitAndReveal ,
+                   :Variant ;
+
+rdfs:label "Commit and Reveal" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ProxyContractV
+:ProxyContractV rdf:type owl:NamedIndividual ,
+                   :ProxyContract ,
+                   :Variant ;
+
+rdfs:label "Proxy Contract" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DynamicBindingV
+:DynamicBindingV rdf:type owl:NamedIndividual ,
+                   :DynamicBinding ,
+                   :Variant ;
+
+rdfs:label "Dynamic Binding" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FlyweightV
+:FlyweightV rdf:type owl:NamedIndividual ,
+                   :Flyweight ,
+                   :Variant ;
+
+rdfs:label "Flyweight" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TightVariablePackingV
+:TightVariablePackingV rdf:type owl:NamedIndividual ,
+                   :TightVariablePacking ,
+                   :Variant ;
+
+rdfs:label "Tight Variable Packing" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ConfidentialAndPseudoAnonymousContractEnforcementV
+:ConfidentialAndPseudoAnonymousContractEnforcementV rdf:type owl:NamedIndividual ,
+                   :LegalAndSmartContractPair ,
+                   :Variant ;
+
+rdfs:label "Confidential and pseudo-anonymous contract enforcement" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LegalAndSmartContractPairV
+:LegalAndSmartContractPairV rdf:type owl:NamedIndividual ,
+                   :LegalAndSmartContractPair ,
+                   :Variant ;
+
+rdfs:label "Legal and smart-contract pair" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainDataStorageV
+:OffChainDataStorageV rdf:type owl:NamedIndividual ,
+                   :OffChainDataStorage ,
+                   :Variant ;
+
+rdfs:label "Off-chain data storage" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegateListV
+:DelegateListV rdf:type owl:NamedIndividual ,
+                   :MultipleAuthorization ,
+                   :Variant ;
+
+rdfs:label "Delegate List" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleAuthorizationV
+:MultipleAuthorizationV rdf:type owl:NamedIndividual ,
+                   :MultipleAuthorization ,
+                   :Variant ;
+
+rdfs:label "Multiple authorization" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainSecretEnabledDynamicAuthenticationV
+:OffChainSecretEnabledDynamicAuthenticationV rdf:type owl:NamedIndividual ,
+                   :OffChainSecretEnabledDynamicAuthentication ,
+                   :Variant ;
+
+rdfs:label "Off-chain secret enabled dynamic authentication" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MasterSubKeyV
+:MasterSubKeyV rdf:type owl:NamedIndividual ,
+                   :MasterSubKey ,
+                   :Variant ;
+
+rdfs:label "Master & Sub Key" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HotColdWalletStorageV
+:HotColdWalletStorageV rdf:type owl:NamedIndividual ,
+                   :HotColdWalletStorage ,
+                   :Variant ;
+
+rdfs:label "Hot & Cold Wallet Storage" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#KeyShardingV
+:KeyShardingV rdf:type owl:NamedIndividual ,
+                   :KeySharding ,
+                   :Variant ;
+
+rdfs:label "Key Sharding" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleRegistrationV
+:MultipleRegistrationV rdf:type owl:NamedIndividual ,
+                   :MultipleRegistration ,
+                   :Variant ;
+
+rdfs:label "Multiple Registration" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BoundWithSocialMediaV
+:BoundWithSocialMediaV rdf:type owl:NamedIndividual ,
+                   :BoundWithSocialMedia ,
+                   :Variant ;
+
+rdfs:label "Bound with Social Media" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DualResolutionV
+:DualResolutionV rdf:type owl:NamedIndividual ,
+                   :DualResolution ,
+                   :Variant ;
+
+rdfs:label "Dual Resolution" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IdentifierRegistryV
+:IdentifierRegistryV rdf:type owl:NamedIndividual ,
+                   :IdentifierRegistry ,
+                   :Variant ;
+
+rdfs:label "Identifier Registry" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelectiveContentGenerationV
+:SelectiveContentGenerationV rdf:type owl:NamedIndividual ,
+                   :SelectiveContentGeneration ,
+                   :Variant ;
+
+rdfs:label "Selective Content Generation" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OneOffAccessV
+:OneOffAccessV rdf:type owl:NamedIndividual ,
+                   :TimeConstrainedAccess ,
+                   :Variant ;
+
+rdfs:label "One-Off Access" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TimeConstrainedAccessV
+:TimeConstrainedAccessV rdf:type owl:NamedIndividual ,
+                   :TimeConstrainedAccess ,
+                   :Variant ;
+
+rdfs:label "Time-Constrained Access" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SnapshottingV
+:SnapshottingV rdf:type owl:NamedIndividual ,
+                   :Snapshotting ,
+                   :Variant ;
+
+rdfs:label "Snapshotting" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateAggregationV
+:StateAggregationV rdf:type owl:NamedIndividual ,
+                   :StateAggregation ,
+                   :Variant ;
+
+rdfs:label "State Aggregation" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TokenBurningV
+:TokenBurningV rdf:type owl:NamedIndividual ,
+                   :TokenBurning ,
+                   :Variant ;
+
+rdfs:label "Token burning" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#NodeSyncV
+:NodeSyncV rdf:type owl:NamedIndividual ,
+                   :NodeSync ,
+                   :Variant ;
+
+rdfs:label "Node Sync" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EstablishGenesisV
+:EstablishGenesisV rdf:type owl:NamedIndividual ,
+                   :EstablishGenesis ,
+                   :Variant ;
+
+rdfs:label "Establish Genesis" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HardForkV
+:HardForkV rdf:type owl:NamedIndividual ,
+                   :HardFork ,
+                   :Variant ;
+
+rdfs:label "Hard Fork" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateInitializationV
+:StateInitializationV rdf:type owl:NamedIndividual ,
+                   :StateInitialization ,
+                   :Variant ;
+
+rdfs:label "State Initialization" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ExchangeTransferV
+:ExchangeTransferV rdf:type owl:NamedIndividual ,
+                   :ExchangeTransfer ,
+                   :Variant ;
+
+rdfs:label "Exchange Transfer" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TransactionReplayV
+:TransactionReplayV rdf:type owl:NamedIndividual ,
+                   :TransactionReplay ,
+                   :Variant ;
+
+rdfs:label "Transaction Replay" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#VirtualMachineEmulationV
+:VirtualMachineEmulationV rdf:type owl:NamedIndividual ,
+                   :VirtualMachineEmulation ,
+                   :Variant ;
+
+rdfs:label "Virtual Machine Emulation" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SmartContractTranslationV
+:SmartContractTranslationV rdf:type owl:NamedIndividual ,
+                   :SmartContractTranslation ,
+                   :Variant ;
+
+rdfs:label "Smart Contract Translation" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#BlockchainSecurityPatternForBigDataEcosystemsV
+:BlockchainSecurityPatternForBigDataEcosystemsV rdf:type owl:NamedIndividual ,
+                   :BlockchainSecurityPatternForBigDataEcosystems ,
+                   :Variant ;
+
+rdfs:label "Blockchain Security Pattern for Big Data Ecosystems" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EventLogV
+:EventLogV rdf:type owl:NamedIndividual ,
+                   :EventLog ,
+                   :Variant ;
+
+rdfs:label "Event log" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitStorageV
+:LimitStorageV rdf:type owl:NamedIndividual ,
+                   :LimitStorage ,
+                   :Variant ;
+
+rdfs:label "Limit storage" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PackingVariablesV
+:PackingVariablesV rdf:type owl:NamedIndividual ,
+                   :PackingVariables ,
+                   :Variant ;
+
+rdfs:label "Packing variables" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PackingBooleansV
+:PackingBooleansV rdf:type owl:NamedIndividual ,
+                   :PackingBooleans ,
+                   :Variant ;
+
+rdfs:label "Packing booleans" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#UintVsUint256V
+:UintVsUint256V rdf:type owl:NamedIndividual ,
+                   :UintVsUint256 ,
+                   :Variant ;
+
+rdfs:label "Uint* vs Uint256" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MappingVsArrayV
+:MappingVsArrayV rdf:type owl:NamedIndividual ,
+                   :MappingVsArray ,
+                   :Variant ;
+
+rdfs:label "Mapping vs Array" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FixedSizeV
+:FixedSizeV rdf:type owl:NamedIndividual ,
+                   :FixedSize ,
+                   :Variant ;
+
+rdfs:label "Fixed size" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DefaultValueV
+:DefaultValueV rdf:type owl:NamedIndividual ,
+                   :DefaultValue ,
+                   :Variant ;
+
+rdfs:label "Default value" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MinimizeOnChainDataV
+:MinimizeOnChainDataV rdf:type owl:NamedIndividual ,
+                   :MinimizeOnChainData ,
+                   :Variant ;
+
+rdfs:label "Minimize on-chain data" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ExplicitelyMarkExternalFunctionV
+:ExplicitelyMarkExternalFunctionV rdf:type owl:NamedIndividual ,
+                   :ExplicitelyMarkExternalFunction ,
+                   :Variant ;
+
+rdfs:label "Explicitely mark external function" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitExternalCallsV
+:LimitExternalCallsV rdf:type owl:NamedIndividual ,
+                   :LimitExternalCalls ,
+                   :Variant ;
+
+rdfs:label "Limit external calls" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InternalFunctionCallsV
+:InternalFunctionCallsV rdf:type owl:NamedIndividual ,
+                   :InternalFunctionCalls ,
+                   :Variant ;
+
+rdfs:label "Internal function calls" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FewerFunctionsV
+:FewerFunctionsV rdf:type owl:NamedIndividual ,
+                   :FewerFunctions ,
+                   :Variant ;
+
+rdfs:label "Fewer functions" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#UseLibrariesV
+:UseLibrariesV rdf:type owl:NamedIndividual ,
+                   :UseLibraries ,
+                   :Variant ;
+
+rdfs:label "Use libraries" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ShortCircuitV
+:ShortCircuitV rdf:type owl:NamedIndividual ,
+                   :ShortCircuit ,
+                   :Variant ;
+
+rdfs:label "Short circuit" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ShortConstantStringsV
+:ShortConstantStringsV rdf:type owl:NamedIndividual ,
+                   :ShortConstantStrings ,
+                   :Variant ;
+
+rdfs:label "Short constant strings" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LimitModifiersV
+:LimitModifiersV rdf:type owl:NamedIndividual ,
+                   :LimitModifiers ,
+                   :Variant ;
+
+rdfs:label "Limit modifiers" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AvoidRedundantOperationsV
+:AvoidRedundantOperationsV rdf:type owl:NamedIndividual ,
+                   :AvoidRedundantOperations ,
+                   :Variant ;
+
+rdfs:label "Avoid redundant operations" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SingleLineSwapV
+:SingleLineSwapV rdf:type owl:NamedIndividual ,
+                   :SingleLineSwap ,
+                   :Variant ;
+
+rdfs:label "Single-line swap" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#WriteValuesV
+:WriteValuesV rdf:type owl:NamedIndividual ,
+                   :WriteValues ,
+                   :Variant ;
+
+rdfs:label "Write values" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#FreeingStorageV
+:FreeingStorageV rdf:type owl:NamedIndividual ,
+                   :FreeingStorage ,
+                   :Variant ;
+
+rdfs:label "Freeing storage" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OptimizerV
+:OptimizerV rdf:type owl:NamedIndividual ,
+                   :Optimizer ,
+                   :Variant ;
+
+rdfs:label "Optimizer" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelfGeneratedTransactionsV
+:SelfGeneratedTransactionsV rdf:type owl:NamedIndividual ,
+                   :SelfGeneratedTransactions ,
+                   :Variant ;
+
+rdfs:label "Self-Generated Transactions" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelfConfirmedTransactionsV
+:SelfConfirmedTransactionsV rdf:type owl:NamedIndividual ,
+                   :SelfConfirmedTransactions ,
+                   :Variant ;
+
+rdfs:label "Self-Confirmed Transactions" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegatedTransactionsV
+:DelegatedTransactionsV rdf:type owl:NamedIndividual ,
+                   :DelegatedTransactions ,
+                   :Variant ;
+
+rdfs:label "Delegated Transactions" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DigitalRecordV
+:DigitalRecordV rdf:type owl:NamedIndividual ,
+                   :DigitalRecord ,
+                   :Variant ;
+
+rdfs:label "Digital Record" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#EncryptingOnChainDataV
+:EncryptingOnChainDataV rdf:type owl:NamedIndividual ,
+                   :EncryptingOnChainData ,
+                   :Variant ;
+
+rdfs:label "Encrypting on-chain data" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullPaymentV
+:PullPaymentV rdf:type owl:NamedIndividual ,
+                   :PullPayment ,
+                   :Variant ;
+
+rdfs:label "Pull payment" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#StateMachineV
+:StateMachineV rdf:type owl:NamedIndividual ,
+                   :StateMachine ,
+                   :Variant ;
+
+rdfs:label "State machine" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OwnershipV
+:OwnershipV rdf:type owl:NamedIndividual ,
+                   :Ownership ,
+                   :Variant ;
+
+rdfs:label "Ownership" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AccessRestrictionV
+:AccessRestrictionV rdf:type owl:NamedIndividual ,
+                   :AccessRestriction ,
+                   :Variant ;
+
+rdfs:label "Access Restriction" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MortalV
+:MortalV rdf:type owl:NamedIndividual ,
+                   :Mortal ,
+                   :Variant ;
+
+rdfs:label "Mortal" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#AutomaticDeprecationV
+:AutomaticDeprecationV rdf:type owl:NamedIndividual ,
+                   :AutomaticDeprecation ,
+                   :Variant ;
+
+rdfs:label "Automatic Deprecation" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SatelliteV
+:SatelliteV rdf:type owl:NamedIndividual ,
+                   :Satellite ,
+                   :Variant ;
+
+rdfs:label "Satellite" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SpeedBumpV
+:SpeedBumpV rdf:type owl:NamedIndividual ,
+                   :SpeedBump ,
+                   :Variant ;
+
+rdfs:label "Speed Bump" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#RateLimitV
+:RateLimitV rdf:type owl:NamedIndividual ,
+                   :RateLimit ,
+                   :Variant ;
+
+rdfs:label "Rate Limit" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ChecksEffectInteractionsV
+:ChecksEffectInteractionsV rdf:type owl:NamedIndividual ,
+                   :ChecksEffectInteractions ,
+                   :Variant ;
+
+rdfs:label "Checks-Effect-Interactions" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TimeConstraintV
+:TimeConstraintV rdf:type owl:NamedIndividual ,
+                   :TimeConstraint ,
+                   :Variant ;
+
+rdfs:label "Time Constraint" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TerminationV
+:TerminationV rdf:type owl:NamedIndividual ,
+                   :Termination ,
+                   :Variant ;
+
+rdfs:label "Termination" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MathV
+:MathV rdf:type owl:NamedIndividual ,
+                   :Math ,
+                   :Variant ;
+
+rdfs:label "Math" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PublisherSubscriberV
+:PublisherSubscriberV rdf:type owl:NamedIndividual ,
+                   :PublisherSubscriber ,
+                   :Variant ;
+
+rdfs:label "Publisher-Subscriber" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TokenisationV
+:TokenisationV rdf:type owl:NamedIndividual ,
+                   :Tokenisation ,
+                   :Variant ;
+
+rdfs:label "Tokenisation" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#XConfirmationV
+:XConfirmationV rdf:type owl:NamedIndividual ,
+                   :XConfirmation ,
+                   :Variant ;
+
+rdfs:label "X-confirmation" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractRegistryV
+:ContractRegistryV rdf:type owl:NamedIndividual ,
+                   :ContractRegistry ,
+                   :Variant ;
+
+rdfs:label "Contract Registry" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ChallengeResponseV
+:ChallengeResponseV rdf:type owl:NamedIndividual ,
+                   :ChallengeResponse ,
+                   :Variant ;
+
+rdfs:label "Challenge Response" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OffChainSignaturesV
+:OffChainSignaturesV rdf:type owl:NamedIndividual ,
+                   :OffChainSignatures ,
+                   :Variant ;
+
+rdfs:label "Off-chain Signatures" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegatedComputationV
+:DelegatedComputationV rdf:type owl:NamedIndividual ,
+                   :DelegatedComputation ,
+                   :Variant ;
+
+rdfs:label "Delegated Computation" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#LowContractFootprintV
+:LowContractFootprintV rdf:type owl:NamedIndividual ,
+                   :LowContractFootprint ,
+                   :Variant ;
+
+rdfs:label "Low Contract Footprint" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullBasedInboundOracleV
+:PullBasedInboundOracleV rdf:type owl:NamedIndividual ,
+                   :PullBasedInboundOracle ,
+                   :Variant ;
+
+rdfs:label "Pull-based inbound oracle" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PushBasedInboundOracleV
+:PushBasedInboundOracleV rdf:type owl:NamedIndividual ,
+                   :PushBasedInboundOracle ,
+                   :Variant ;
+
+rdfs:label "Push-based inbound oracle" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PullBasedOutboundOracleV
+:PullBasedOutboundOracleV rdf:type owl:NamedIndividual ,
+                   :PullBasedOutboundOracle ,
+                   :Variant ;
+
+rdfs:label "Pull-based outbound oracle" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#PushBasedOutboundOracleV
+:PushBasedOutboundOracleV rdf:type owl:NamedIndividual ,
+                   :PushBasedOutboundOracle ,
+                   :Variant ;
+
+rdfs:label "Push-based outbound oracle" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractComposerV
+:ContractComposerV rdf:type owl:NamedIndividual ,
+                   :ContractComposer ,
+                   :Variant ;
+
+rdfs:label "Contract Composer" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractDecoratorV
+:ContractDecoratorV rdf:type owl:NamedIndividual ,
+                   :ContractDecorator ,
+                   :Variant ;
+
+rdfs:label "Contract Decorator" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractMediatorV
+:ContractMediatorV rdf:type owl:NamedIndividual ,
+                   :ContractMediator ,
+                   :Variant ;
+
+rdfs:label "Contract Mediator" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ContractObserverV
+:ContractObserverV rdf:type owl:NamedIndividual ,
+                   :ContractObserver ,
+                   :Variant ;
+
+rdfs:label "Contract Observer" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#HashSecretV
+:HashSecretV rdf:type owl:NamedIndividual ,
+                   :HashSecret ,
+                   :Variant ;
+
+rdfs:label "Hash Secret" .
+

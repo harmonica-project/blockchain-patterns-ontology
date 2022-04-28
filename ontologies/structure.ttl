@@ -12,6 +12,10 @@
 #    Annotation properties
 #################################################################
 
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#problemDescription
 :problemDescription rdf:type owl:AnnotationProperty .
 
@@ -36,21 +40,115 @@
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#benefitsFrom
 :benefitsFrom rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
-              rdfs:domain :Proposal ;
-              rdfs:range :Proposal .
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( [ owl:intersectionOf ( :Proposal
+                                                                 [ rdf:type owl:Class ;
+                                                                   owl:complementOf :Variant
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ]
+                                          [ owl:intersectionOf ( :Variant
+                                                                 [ rdf:type owl:Class ;
+                                                                   owl:complementOf :Proposal
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ]
+                                        )
+                          ] ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( [ owl:intersectionOf ( :Proposal
+                                                                [ rdf:type owl:Class ;
+                                                                  owl:complementOf :Variant
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ]
+                                         [ owl:intersectionOf ( :Variant
+                                                                [ rdf:type owl:Class ;
+                                                                  owl:complementOf :Proposal
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ]
+                                       )
+                         ] .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#benefitsFromP
+:benefitsFromP rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :benefitsFrom ;
+               rdfs:domain :Proposal ;
+               rdfs:range :Proposal ;
+               owl:propertyDisjointWith :benefitsFromV .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#benefitsFromV
+:benefitsFromV rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :benefitsFrom ;
+               rdfs:domain :Variant ;
+               rdfs:range :Variant .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#createdFrom
 :createdFrom rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
-             rdfs:domain :Proposal ;
-             rdfs:range :Proposal .
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( [ owl:intersectionOf ( :Proposal
+                                                                [ rdf:type owl:Class ;
+                                                                  owl:complementOf :Variant
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ]
+                                         [ owl:intersectionOf ( :Variant
+                                                                [ rdf:type owl:Class ;
+                                                                  owl:complementOf :Proposal
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ]
+                                       )
+                         ] ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( [ owl:intersectionOf ( :Proposal
+                                                               [ rdf:type owl:Class ;
+                                                                 owl:complementOf :Variant
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ]
+                                        [ owl:intersectionOf ( :Variant
+                                                               [ rdf:type owl:Class ;
+                                                                 owl:complementOf :Proposal
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ]
+                                      )
+                        ] .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#createdFromP
+:createdFromP rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :createdFrom ;
+              rdfs:domain :Proposal ;
+              rdfs:range :Proposal ;
+              owl:propertyDisjointWith :createdFromV .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#createdFromV
+:createdFromV rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :createdFrom ;
+              rdfs:domain :Variant ;
+              rdfs:range :Variant .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasPaper
 :hasPaper rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf owl:topObjectProperty ;
-          owl:inverseOf :hasProposal ;
+          owl:inverseOf :proposes ;
           rdfs:domain :Proposal ;
           rdfs:range :Paper .
 
@@ -58,34 +156,186 @@
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasProposal
 :hasProposal rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
-             rdfs:domain :Paper ;
+             owl:inverseOf :hasVariant ;
+             rdfs:domain :Variant ;
              rdfs:range :Proposal .
+
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasVariant
 :hasVariant rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf owl:topObjectProperty ;
-           rdfs:domain :Proposal ;
-           rdfs:range :Variant .
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Proposal ;
+            rdfs:range :Variant .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#proposes
+:proposes rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Paper ;
+          rdfs:range :Proposal .
+
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#relatedTo
 :relatedTo rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
-           rdfs:domain :Proposal ;
-           rdfs:range :Proposal .
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( [ owl:intersectionOf ( :Proposal
+                                                              [ rdf:type owl:Class ;
+                                                                owl:complementOf :Variant
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ]
+                                       [ owl:intersectionOf ( :Variant
+                                                              [ rdf:type owl:Class ;
+                                                                owl:complementOf :Proposal
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ]
+                                     )
+                       ] ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( [ owl:intersectionOf ( :Proposal
+                                                             [ rdf:type owl:Class ;
+                                                               owl:complementOf :Variant
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ]
+                                      [ owl:intersectionOf ( :Variant
+                                                             [ rdf:type owl:Class ;
+                                                               owl:complementOf :Proposal
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ]
+                                    )
+                      ] .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#relatedToP
+:relatedToP rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :relatedTo ;
+            rdfs:domain :Proposal ;
+            rdfs:range :Proposal ;
+            owl:propertyDisjointWith :relatedToV .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#relatedToV
+:relatedToV rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :relatedTo ;
+            rdfs:domain :Variant ;
+            rdfs:range :Variant .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#requires
 :requires rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf owl:topObjectProperty ;
-          rdfs:domain :Proposal ;
-          rdfs:range :Proposal .
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( [ owl:intersectionOf ( :Proposal
+                                                             [ rdf:type owl:Class ;
+                                                               owl:complementOf :Variant
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ]
+                                      [ owl:intersectionOf ( :Variant
+                                                             [ rdf:type owl:Class ;
+                                                               owl:complementOf :Proposal
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ]
+                                    )
+                      ] ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( [ owl:intersectionOf ( :Proposal
+                                                            [ rdf:type owl:Class ;
+                                                              owl:complementOf :Variant
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ]
+                                     [ owl:intersectionOf ( :Variant
+                                                            [ rdf:type owl:Class ;
+                                                              owl:complementOf :Proposal
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ]
+                                   )
+                     ] .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#requiresP
+:requiresP rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :requires ;
+           rdfs:domain :Proposal ;
+           rdfs:range :Proposal ;
+           owl:propertyDisjointWith :requiresV .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#requiresV
+:requiresV rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :requires ;
+           rdfs:domain :Variant ;
+           rdfs:range :Variant .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#variantOf
 :variantOf rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
-           rdfs:domain :Proposal ;
-           rdfs:range :Proposal .
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( [ owl:intersectionOf ( :Proposal
+                                                              [ rdf:type owl:Class ;
+                                                                owl:complementOf :Variant
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ]
+                                       [ owl:intersectionOf ( :Variant
+                                                              [ rdf:type owl:Class ;
+                                                                owl:complementOf :Proposal
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ]
+                                     )
+                       ] ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( [ owl:intersectionOf ( :Proposal
+                                                             [ rdf:type owl:Class ;
+                                                               owl:complementOf :Variant
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ]
+                                      [ owl:intersectionOf ( :Variant
+                                                             [ rdf:type owl:Class ;
+                                                               owl:complementOf :Proposal
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ]
+                                    )
+                      ] .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#variantOfP
+:variantOfP rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :variantOf ;
+            rdfs:domain :Proposal ;
+            rdfs:range :Proposal ;
+            owl:propertyDisjointWith :variantOfV .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#variantOfV
+:variantOfV rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :variantOf ;
+            rdfs:domain :Variant ;
+            rdfs:range :Variant .
+
 
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
 owl:topObjectProperty rdfs:domain :Pattern ;
@@ -696,10 +946,12 @@ owl:topObjectProperty rdfs:domain :Pattern ;
              rdfs:subClassOf :Language ;
              rdfs:label "Unspecified"@en .
 
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Variant
 :Variant rdf:type owl:Class ;
-        rdfs:subClassOf owl:Thing ;
-        rdfs:label "Variant"@en .
+         rdfs:subClassOf owl:Thing ;
+         rdfs:label "Variant"@en .
+
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#WalletAndKeysPattern
 :WalletAndKeysPattern rdf:type owl:Class ;
@@ -765,5 +1017,197 @@ owl:topObjectProperty rdfs:domain :Pattern ;
               )
 ] .
 
+
+#################################################################
+#    Rules
+#################################################################
+
+:p1 rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:p2 rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:v1 rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:v2 rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "BenefitsFromExtension"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :benefitsFrom ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :p1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :p2
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasVariant ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :p1 ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :v1
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasVariant ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :p2 ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :v2
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :benefitsFrom ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :v1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :v2
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "CreatedFromExtension"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :createdFrom ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :p1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :p2
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :variantOf ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :p1 ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :v1
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasVariant ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :p2 ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :v2
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :createdFrom ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :v1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :v2
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "RelatedToExtension"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :relatedTo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :p1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :p2
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :variantOf ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :p1 ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :v1
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasVariant ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :p2 ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :v2
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :relatedTo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :v1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :v2
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "RequiresExtension"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :requires ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :p1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :p2
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :variantOf ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :p1 ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :v1
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasVariant ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :p2 ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :v2
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :requires ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :v1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :v2
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "VariantOfExtension"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :variantOf ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :p1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :p2
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :variantOf ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :p1 ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :v1
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasVariant ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :p2 ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :v2
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :variantOf ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :v1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :v2
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

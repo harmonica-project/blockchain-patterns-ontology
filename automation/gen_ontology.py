@@ -46,13 +46,18 @@ def parse_to_URI(name):
 # parse to ontology relation (first letter in lowercase, no special character)
 def parse_to_relation(name):
   nameArray = re.split('[, \-!?:()/&*]+', name)
-  nameArray = [nameArray[0].lower()] + [capitalizeURI(nameArray[i]) for i in range(1, len(nameArray)) if i != 0]
+  nameArray = [nameArray[0].lower()] + [capitalizeURI(nameArray[i]) for i in range(1, len(nameArray)) if i != 0] + ["P"]
   name = ''.join(nameArray)
   return name
 
 def get_proposal_URI(proposal, papers):
   paper = get_paper_from_id(papers, proposal['Paper'])
   return parse_to_URI(proposal['Name']) + get_first_author(paper['author']) + paper['year'] + get_first_word_title(paper['Title'])
+
+def get_proposal_name(proposal, papers):
+  paper = get_paper_from_id(papers, proposal['Paper'])
+  return "{} ({}, {})".format(proposal['Name'], get_first_author(paper['author']), paper['year'])
+
 
 def get_paper_URI(paper):
   return get_first_author(paper['author']) + paper['year'] + get_first_word_title(paper['Title'])
@@ -206,18 +211,20 @@ def generate_individuals(proposals, proposal_mapping, proposals_links, papers, v
 
     if (proposal_uri in variants_mapping):
       refPattern = variants_mapping[proposal_uri]
+      variant = variants_mapping[proposal_uri]
     else:
       refPattern = proposal_mapping[parse_to_URI(p['Name'])]
+      variant = proposal_mapping[parse_to_URI(p['Name'])]
 
     # generate pattern individuals, connected to their classes
     proposals_str += Template(proposal_template).substitute(
       owner="nicolas", 
       proposal_uri=proposal_uri,
       paper_uri=paper_uri,
-      name=p['Name'], 
+      name=get_proposal_name(p, papers),
+      variant=variant, 
       blockchain=parse_to_URI(p['Target']), 
       domain=parse_to_URI(p['Applicability domain']), 
-      refClass=refPattern, 
       context=parse_to_ontology_literal_if_exists(p, 'Context & Problem'), 
       solution=parse_to_ontology_literal_if_exists(p, 'Solution'),
       links=get_proposal_links_parsed(proposal_uri, proposals_links),
@@ -229,9 +236,8 @@ def generate_individuals(proposals, proposal_mapping, proposals_links, papers, v
 
 # generate_patterns() returns all pattern classes
 def generate_variants(pattern_classes, proposals, papers):
-  variants = ''
+  variants_str = ''
   variants_mapping = {}
-  relation_template = load_template('relation')
   variant_template = load_template('variant')
 
   for p in pattern_classes:
@@ -241,9 +247,21 @@ def generate_variants(pattern_classes, proposals, papers):
         proposal_uri = get_proposal_URI(proposal, papers)
         variants_mapping[proposal_uri] = parse_to_URI(p['Name'])
 
-        #print(proposal)
+        variants_str += Template(variant_template).substitute(
+          owner="nicolas", 
+          uri=parse_to_URI(proposal['Name']),
+          refClass=parse_to_URI(p['Name']),
+          name=proposal['Name']
+        )
+    
+    variants_str += Template(variant_template).substitute(
+      owner="nicolas", 
+      uri=parse_to_URI(p['Name']),
+      refClass=parse_to_URI(p['Name']),
+      name=p['Name']
+    )
 
-  return variants, variants_mapping
+  return variants_str, variants_mapping
 
 # generate_patterns() returns all pattern classes
 def generate_patterns(pattern_classes):
