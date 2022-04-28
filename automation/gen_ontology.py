@@ -46,7 +46,7 @@ def parse_to_URI(name):
 # parse to ontology relation (first letter in lowercase, no special character)
 def parse_to_relation(name):
   nameArray = re.split('[, \-!?:()/&*]+', name)
-  nameArray = [nameArray[0].lower()] + [capitalizeURI(nameArray[i]) for i in range(1, len(nameArray)) if i != 0] + ["P"]
+  nameArray = [nameArray[0].lower()] + [capitalizeURI(nameArray[i]) for i in range(1, len(nameArray)) if i != 0]
   name = ''.join(nameArray)
   return name
 
@@ -196,8 +196,8 @@ def generate_papers(papers_list):
 def get_first_word_title(title):
   return re.sub(r'[\W_]+', '', title.split(' ')[0])
 
-# generate_individuals() returns the proposals found in papers
-def generate_individuals(proposals, proposal_mapping, proposals_links, papers, variants_mapping):
+# generate_proposals() returns the proposals found in papers
+def generate_proposals(proposals, proposal_mapping, proposals_links, papers, variants_mapping):
   proposals_str = ""
   proposal_template = load_template('proposal')
   variants = {}
@@ -211,7 +211,7 @@ def generate_individuals(proposals, proposal_mapping, proposals_links, papers, v
 
     if (proposal_uri in variants_mapping):
       refPattern = variants_mapping[proposal_uri]
-      variant = variants_mapping[proposal_uri]
+      variant = parse_to_URI(p['Name'])
     else:
       refPattern = proposal_mapping[parse_to_URI(p['Name'])]
       variant = proposal_mapping[parse_to_URI(p['Name'])]
@@ -304,7 +304,7 @@ def run():
   
   patterns_ttl = generate_patterns(pattern_classes)
   variants_ttl, variants_mapping = generate_variants(pattern_classes, proposals, papers)
-  proposals_ttl = generate_individuals(proposals, proposal_mapping, proposals_links, papers, variants_mapping)
+  proposals_ttl = generate_proposals(proposals, proposal_mapping, proposals_links, papers, variants_mapping)
   papers_ttl = generate_papers(papers)
 
   # write classes, papers and proposals in three distinct files, can be merged into a complete ontology

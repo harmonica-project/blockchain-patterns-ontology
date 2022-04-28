@@ -38,7 +38,7 @@ rdfs:label "Transparent Event Log (Müller, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:requiresP :Oracle ;
+:requires :Oracle ;
 
 :hasPaper :Müller2020Silver ;
 :hasVariant :BlockchainBpEngineV ;
@@ -54,7 +54,7 @@ rdfs:label "Blockchain BP Engine (Müller, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requiresP :Oracle ;
+:requires :Oracle ;
 
 :hasPaper :Müller2020Silver ;
 :hasVariant :SmartContractActivitiesV ;
@@ -151,11 +151,11 @@ rdfs:label "Authorization (Worley, 2019)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:variantOfP :OracleBartoletti2017An ;
-:requiresP :AuthorizationWorley2019Opportunities ;
+:variantOf :OracleBartoletti2017An ;
+:requires :AuthorizationWorley2019Opportunities ;
 
 :hasPaper :Worley2019Opportunities ;
-:hasVariant :OracleV ;
+:hasVariant :JudgeV ;
 :ContextAndProblem "Multiple parties are participating in a contract that is dependent on real-world data."^^rdfs:Literal ;
 :Solution "All parties identify a third-party actor that they all trust. This entity is given Authorization to update the contract with real-world state."^^rdfs:Literal ;
 
@@ -168,11 +168,11 @@ rdfs:label "Judge (Worley, 2019)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:variantOfP :OracleBartoletti2017An ;
-:requiresP :AuthorizationWorley2019Opportunities ;
+:variantOf :OracleBartoletti2017An ;
+:requires :AuthorizationWorley2019Opportunities ;
 
 :hasPaper :Worley2019Opportunities ;
-:hasVariant :OracleV ;
+:hasVariant :TickerTapeV ;
 :ContextAndProblem "A contract must constantly supply up-to-date information about some real-world data."^^rdfs:Literal ;
 :Solution "Create a contract whose only purpose is to store regularly updated data about the external world. Use the Authorization pattern to allow a trusted source to update the state periodically/regularly. This contract is a service to other contracts that use the data."^^rdfs:Literal ;
 
@@ -185,11 +185,11 @@ rdfs:label "Ticker Tape (Worley, 2019)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:variantOfP :OracleBartoletti2017An ;
-:benefitsFromP :BlockchainBasedReputationSystemMüller2020Silver ;
+:variantOf :OracleBartoletti2017An ;
+:benefitsFrom :BlockchainBasedReputationSystemMüller2020Silver ;
 
 :hasPaper :Worley2019Opportunities ;
-:hasVariant :OracleV ;
+:hasVariant :VoteV ;
 :ContextAndProblem "A contract must supply data that cannot rely on a single source. A large number of data sources are present and must be decided between."^^rdfs:Literal ;
 :Solution "Allow the input sources to vote on the correct answer. And, provide disincentives for voting incorrectly, as determined by the eventual consensus."^^rdfs:Literal ;
 
@@ -232,7 +232,7 @@ rdfs:label "Blocklist (Worley, 2019)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requiresP :AuthorizationWorley2019Opportunities ;
+:requires :AuthorizationWorley2019Opportunities ;
 
 :hasPaper :Worley2019Opportunities ;
 :hasVariant :AnnouncementV ;
@@ -248,8 +248,8 @@ rdfs:label "Announcement (Worley, 2019)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :JudgeWorley2019Opportunities ;
-:benefitsFromP :VoteWorley2019Opportunities ;
+:benefitsFrom :JudgeWorley2019Opportunities ;
+:benefitsFrom :VoteWorley2019Opportunities ;
 
 :hasPaper :Worley2019Opportunities ;
 :hasVariant :BulletinBoardV ;
@@ -265,7 +265,7 @@ rdfs:label "Bulletin Board (Worley, 2019)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requiresP :AddressMappingWorley2019Opportunities ;
+:requires :AddressMappingWorley2019Opportunities ;
 
 :hasPaper :Worley2019Opportunities ;
 :hasVariant :TokenisationV ;
@@ -363,7 +363,7 @@ rdfs:label "Oracle (Bartoletti, 2017)" .
                    :Ethereum ,
                    :Solidity ;
 
-:requiresP :Oracle ;
+:requires :Oracle ;
 
 :hasPaper :Bartoletti2017An ;
 :hasVariant :RandomnessV ;
@@ -381,8 +381,8 @@ rdfs:label "Randomness (Bartoletti, 2017)" .
                    :Ethereum ,
                    :Solidity ;
 
-:benefitsFromP :Tokenisation ;
-:benefitsFromP :AddressMapping ;
+:benefitsFrom :Tokenisation ;
+:benefitsFrom :AddressMapping ;
 
 :hasPaper :Bartoletti2017An ;
 :hasVariant :PollV ;
@@ -464,7 +464,7 @@ rdfs:label "Fork check (Bartoletti, 2017)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :ChecksEffectsInteractionWohrer2018Smart ;
+:createdFrom :ChecksEffectsInteractionWohrer2018Smart ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :ChecksEffectInteractionsV ;
@@ -480,7 +480,7 @@ rdfs:label "Checks-Effect-Interactions (Rajasekar, 2020)" .
                    :Ethereum ,
                    :Solidity ;
 
-:createdFromP :ChecksEffectsInteractionWohrer2018Smart ;
+:createdFrom :ChecksEffectsInteractionWohrer2018Smart ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :SecureEtherTransferV ;
@@ -496,10 +496,10 @@ rdfs:label "Secure Ether Transfer (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :OracleXu2018A ;
-:createdFromP :OracleDataProviderWöhrer2018Design ;
-:createdFromP :PublisherSubscriberZhang2018Chapter ;
-:relatedToP :DynamicBindingRajasekar2020Emerging ;
+:createdFrom :OracleXu2018A ;
+:createdFrom :OracleDataProviderWöhrer2018Design ;
+:createdFrom :PublisherSubscriberZhang2018Chapter ;
+:relatedTo :DynamicBindingRajasekar2020Emerging ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :OracleV ;
@@ -515,7 +515,7 @@ rdfs:label "Oracle (Rajasekar, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:createdFromP :Unknown ;
+:createdFrom :Unknown ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :OffChainDataStorageV ;
@@ -531,7 +531,7 @@ rdfs:label "Off-chain Datastore (Rajasekar, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:createdFromP :StateChannelXu2018A ;
+:createdFrom :StateChannelXu2018A ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :StateChannelV ;
@@ -549,9 +549,9 @@ rdfs:label "State Channel (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :ContractRegistryXu2018A ;
-:createdFromP :ContractRegisterWöhrer2018Design ;
-:relatedToP :ProxyContractRajasekar2020Emerging ;
+:createdFrom :ContractRegistryXu2018A ;
+:createdFrom :ContractRegisterWöhrer2018Design ;
+:relatedTo :ProxyContractRajasekar2020Emerging ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :OffChainContractRegistryV ;
@@ -567,8 +567,8 @@ rdfs:label "(Off-chain) Contract Registry (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :DataContractXu2018A ;
-:createdFromP :DataSegregationWöhrer2018Design ;
+:createdFrom :DataContractXu2018A ;
+:createdFrom :DataSegregationWöhrer2018Design ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :DataContractV ;
@@ -584,8 +584,8 @@ rdfs:label "Data Contract (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :EmbeddedPermissionXu2018A ;
-:createdFromP :Unknown ;
+:createdFrom :EmbeddedPermissionXu2018A ;
+:createdFrom :Unknown ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :EmbeddedPermissionV ;
@@ -601,8 +601,8 @@ rdfs:label "Embedded Permission (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :FactoryContractXu2018A ;
-:createdFromP :AbstractFactoryZhang2018Chapter ;
+:createdFrom :FactoryContractXu2018A ;
+:createdFrom :AbstractFactoryZhang2018Chapter ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :FactoryContractV ;
@@ -618,7 +618,7 @@ rdfs:label "Factory Contract (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :EmergencyStopWohrer2018Smart ;
+:createdFrom :EmergencyStopWohrer2018Smart ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :EmergencyStopV ;
@@ -634,7 +634,7 @@ rdfs:label "Emergency Stop (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :MutexWohrer2018Smart ;
+:createdFrom :MutexWohrer2018Smart ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :MutexV ;
@@ -650,7 +650,7 @@ rdfs:label "Mutex (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :BalanceLimitWohrer2018Smart ;
+:createdFrom :BalanceLimitWohrer2018Smart ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :ContractBalanceLimitV ;
@@ -666,8 +666,8 @@ rdfs:label "Contract Balance Limit (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :ReverseOracleXu2018A ;
-:relatedToP :OracleRajasekar2020Emerging ;
+:createdFrom :ReverseOracleXu2018A ;
+:relatedTo :OracleRajasekar2020Emerging ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :ReverseOracleV ;
@@ -683,7 +683,7 @@ rdfs:label "Reverse Verifier (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :IncentiveExecutionXu2018A ;
+:createdFrom :IncentiveExecutionXu2018A ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :IncentiveExecutionV ;
@@ -699,7 +699,7 @@ rdfs:label "Incentive Execution (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :CommitAndRevealWöhrer2018Design ;
+:createdFrom :CommitAndRevealWöhrer2018Design ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :CommitAndRevealV ;
@@ -715,8 +715,8 @@ rdfs:label "Commit and Reveal (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :ContractRelayWöhrer2018Design ;
-:relatedToP :OffChainContractRegistryRajasekar2020Emerging ;
+:createdFrom :ContractRelayWöhrer2018Design ;
+:relatedTo :OffChainContractRegistryRajasekar2020Emerging ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :ProxyContractV ;
@@ -732,7 +732,7 @@ rdfs:label "Proxy Contract (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :Unknown ;
+:createdFrom :Unknown ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :DynamicBindingV ;
@@ -748,8 +748,8 @@ rdfs:label "Dynamic Binding (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :FlyweightZhang2018Chapter ;
-:relatedToP :DataContractRajasekar2020Emerging ;
+:createdFrom :FlyweightZhang2018Chapter ;
+:relatedTo :DataContractRajasekar2020Emerging ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :FlyweightV ;
@@ -765,7 +765,7 @@ rdfs:label "Flyweight (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFromP :Unknown ;
+:createdFrom :Unknown ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :TightVariablePackingV ;
@@ -781,8 +781,8 @@ rdfs:label "Tight Variable Packing (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedToP :ReverseOracleXu2018A ;
-:requiresP :Unknown ;
+:relatedTo :ReverseOracleXu2018A ;
+:requires :Unknown ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :OracleV ;
@@ -801,7 +801,7 @@ rdfs:label "Oracle (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedToP :OracleXu2018A ;
+:relatedTo :OracleXu2018A ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :ReverseOracleV ;
@@ -839,7 +839,7 @@ rdfs:label "Legal and smart-contract pair (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedToP :OffChainDataStorageXu2018A ;
+:relatedTo :OffChainDataStorageXu2018A ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :EncryptingOnChainDataV ;
@@ -877,7 +877,7 @@ rdfs:label "Tokenisation (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedToP :ProxyZhang2017Applying ;
+:relatedTo :ProxyZhang2017Applying ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :OffChainDataStorageV ;
@@ -895,7 +895,7 @@ rdfs:label "Off-chain data storage (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedToP :OffChainSignaturesEberhardt2017On ;
+:relatedTo :OffChainSignaturesEberhardt2017On ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :StateChannelV ;
@@ -916,7 +916,7 @@ rdfs:label "State channel (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :OffChainSecretEnabledDynamicAuthenticationXu2018A ;
+:benefitsFrom :OffChainSecretEnabledDynamicAuthenticationXu2018A ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :MultipleAuthorizationV ;
@@ -934,7 +934,7 @@ rdfs:label "Multiple authorization (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :MultipleAuthorizationXu2018A ;
+:benefitsFrom :MultipleAuthorizationXu2018A ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :OffChainSecretEnabledDynamicAuthenticationV ;
@@ -969,8 +969,8 @@ rdfs:label "X-confirmation (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :EmbeddedPermissionXu2018A ;
-:benefitsFromP :DataContractXu2018A ;
+:benefitsFrom :EmbeddedPermissionXu2018A ;
+:benefitsFrom :DataContractXu2018A ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :ContractRegistryV ;
@@ -988,9 +988,9 @@ rdfs:label "Contract registry (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :AuthorizationWorley2019Opportunities ;
-:benefitsFromP :MultipleAuthorizationXu2018A ;
-:benefitsFromP :OffChainSecretEnabledDynamicAuthenticationXu2018A ;
+:benefitsFrom :AuthorizationWorley2019Opportunities ;
+:benefitsFrom :MultipleAuthorizationXu2018A ;
+:benefitsFrom :OffChainSecretEnabledDynamicAuthenticationXu2018A ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :EmbeddedPermissionV ;
@@ -1008,7 +1008,7 @@ rdfs:label "Embedded permission (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :ContractRegistryXu2018A ;
+:benefitsFrom :ContractRegistryXu2018A ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :DataContractV ;
@@ -1026,7 +1026,7 @@ rdfs:label "Data contract (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :ContractRegistryXu2018A ;
+:benefitsFrom :ContractRegistryXu2018A ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :FactoryContractV ;
@@ -1062,8 +1062,8 @@ rdfs:label "Incentive execution (Xu, 2018)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:requiresP :HotColdWalletStorageLiu2020Design ;
-:benefitsFromP :KeyShardingLiu2020Design ;
+:requires :HotColdWalletStorageLiu2020Design ;
+:benefitsFrom :KeyShardingLiu2020Design ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :MasterSubKeyV ;
@@ -1082,7 +1082,7 @@ rdfs:label "Master & Sub Key (Liu, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :DelegateListLiu2020Design ;
+:benefitsFrom :DelegateListLiu2020Design ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :HotColdWalletStorageV ;
@@ -1101,8 +1101,8 @@ rdfs:label "Hot & Cold Wallet Storage (Liu, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:relatedToP :DelegateListLiu2020Design ;
-:requiresP :HotColdWalletStorageLiu2020Design ;
+:relatedTo :DelegateListLiu2020Design ;
+:requires :HotColdWalletStorageLiu2020Design ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :KeyShardingV ;
@@ -1120,10 +1120,10 @@ rdfs:label "Key Sharding (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedToP :PushBasedOutboundOracleMühlberger2020Foundational ;
-:relatedToP :FlyweightZhang2017Applying ;
-:requiresP :MasterSubKeyLiu2020Design ;
-:benefitsFromP :DelegateListLiu2020Design ;
+:relatedTo :PushBasedOutboundOracleMühlberger2020Foundational ;
+:relatedTo :FlyweightZhang2017Applying ;
+:requires :MasterSubKeyLiu2020Design ;
+:benefitsFrom :DelegateListLiu2020Design ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :IdentifierRegistryV ;
@@ -1142,8 +1142,8 @@ rdfs:label "Identifier Registry (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requiresP :IdentifierRegistryLiu2020Design ;
-:requiresP :MasterSubKeyLiu2020Design ;
+:requires :IdentifierRegistryLiu2020Design ;
+:requires :MasterSubKeyLiu2020Design ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :MultipleRegistrationV ;
@@ -1162,7 +1162,7 @@ rdfs:label "Multiple Registration (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requiresP :IdentifierRegistryLiu2020Design ;
+:requires :IdentifierRegistryLiu2020Design ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :BoundWithSocialMediaV ;
@@ -1179,7 +1179,7 @@ rdfs:label "Bound with Social Media (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requiresP :IdentifierRegistryLiu2020Design ;
+:requires :IdentifierRegistryLiu2020Design ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :DualResolutionV ;
@@ -1195,13 +1195,13 @@ rdfs:label "Dual Resolution (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedToP :IdentifierRegistryLiu2020Design ;
-:variantOfP :MultipleAuthorizationXu2018A ;
-:benefitsFromP :IdentifierRegistryLiu2020Design ;
-:benefitsFromP :MutexWohrer2018Smart ;
+:relatedTo :IdentifierRegistryLiu2020Design ;
+:variantOf :MultipleAuthorizationXu2018A ;
+:benefitsFrom :IdentifierRegistryLiu2020Design ;
+:benefitsFrom :MutexWohrer2018Smart ;
 
 :hasPaper :Liu2020Design ;
-:hasVariant :MultipleAuthorizationV ;
+:hasVariant :DelegateListV ;
 :ContextAndProblem "Each identity has a key pair to authenticate the transactions initiated by the user by means of digital signatures. A master-key may be compromised/stolen by malicious hackers. A compromised master-key results in the loss of ownership over all sub-keys and corresponding identifiers. The hacker may utilise the identifiers to further steal the entity’s identity data."^^rdfs:Literal ;
 :Solution "Delegate List relies on a web of trust architecture. This requires an identity owner to designate its own set of trustees that the owner trusts to assist in identity ownership update when the owner asks for it. An identifier maintains a list of recovery delegates and an update threshold that can help the user recover identity. These delegates can be individuals or organisations. If key loss happens, the original identity owner needs to request for ownership update using a new key pair, and a minimum number of the trustees (e.g. 2 out of 3) must sign a new identity record transaction respectively. When there are enough confirmations (i.e. reaching the threshold) of the new key pair, the ownership of the identifier is updated and thus the identity is recovered. A timelock period can be specified to prevent an attacker who tries to compromise an identity owner’s key and immediately change the owner’s identity records, including his/her designated trustees to prevent identifier ownership recovery."^^rdfs:Literal ;
 :ApplicationExample "uPort (https://www.uport.me)"^^rdfs:Literal ;
@@ -1216,9 +1216,9 @@ rdfs:label "Delegate List (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requiresP :AnchoringToBlockchainLiu2020Design ;
-:benefitsFromP :TimeConstrainedAccessLiu2020Design ;
-:benefitsFromP :OneOffAccessLiu2020Design ;
+:requires :AnchoringToBlockchainLiu2020Design ;
+:benefitsFrom :TimeConstrainedAccessLiu2020Design ;
+:benefitsFrom :OneOffAccessLiu2020Design ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :SelectiveContentGenerationV ;
@@ -1236,8 +1236,8 @@ rdfs:label "Selective Content Generation (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:variantOfP :OneOffAccessLiu2020Design ;
-:benefitsFromP :SelectiveContentGenerationLiu2020Design ;
+:variantOf :OneOffAccessLiu2020Design ;
+:benefitsFrom :SelectiveContentGenerationLiu2020Design ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :TimeConstrainedAccessV ;
@@ -1255,11 +1255,11 @@ rdfs:label "Time-Constrained Access (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:variantOfP :TimeConstrainedAccessLiu2020Design ;
-:benefitsFromP :SelectiveContentGenerationLiu2020Design ;
+:variantOf :TimeConstrainedAccessLiu2020Design ;
+:benefitsFrom :SelectiveContentGenerationLiu2020Design ;
 
 :hasPaper :Liu2020Design ;
-:hasVariant :TimeConstrainedAccessV ;
+:hasVariant :OneOffAccessV ;
 :ContextAndProblem "A verifier does not require a long-term effective credential but only needs to check the identity of a holder once for a specific purpose. Sometimes an identification process does not require a strict verification procedure, but only needs to check the identity for once. For instance, travelling by train/airplane or going to a theme park only asks for checking credentials before entering. If a holder presents a long-term effective link redirecting to the credential content, a malicious verifier may access the holder’s data illegally after identification process. This can be considered as an extreme version of Time-Constrained Access."^^rdfs:Literal ;
 :Solution "A holder is able to generate an identifiable link, which redirects to a one-off page presenting the credential content. One-off links can be shared with verifiers on some special occasions. After being visited once, the link becomes invalid that no one can use it to access the credential content."^^rdfs:Literal ;
 :ApplicationExample "Snapchat (https://www.snapchat.com/)"^^rdfs:Literal ;
@@ -1274,8 +1274,8 @@ rdfs:label "One-Off Access (Liu, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:relatedToP :LowContractFootprintEberhardt2017On ;
-:relatedToP :OffChainDataStorageXu2018A ;
+:relatedTo :LowContractFootprintEberhardt2017On ;
+:relatedTo :OffChainDataStorageXu2018A ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :OffChainDataStorageV ;
@@ -1294,9 +1294,9 @@ rdfs:label "Anchoring to Blockchain (Liu, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:requiresP :EstablishGenesisBandara2020Patterns ;
-:requiresP :HardForkBandara2020Patterns ;
-:requiresP :StateInitializationBandara2020Patterns ;
+:requires :EstablishGenesisBandara2020Patterns ;
+:requires :HardForkBandara2020Patterns ;
+:requires :StateInitializationBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :SnapshottingV ;
@@ -1318,8 +1318,8 @@ rdfs:label "Snapshotting (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:requiresP :OffChainDataStorageXu2018A ;
-:benefitsFromP :SnapshottingBandara2020Patterns ;
+:requires :OffChainDataStorageXu2018A ;
+:benefitsFrom :SnapshottingBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :StateAggregationV ;
@@ -1340,7 +1340,7 @@ rdfs:label "State Aggregation (Bandara, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :SnapshottingBandara2020Patterns ;
+:benefitsFrom :SnapshottingBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :TokenBurningV ;
@@ -1365,8 +1365,8 @@ rdfs:label "Token Burning (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :SnapshottingBandara2020Patterns ;
-:benefitsFromP :StateAggregationBandara2020Patterns ;
+:benefitsFrom :SnapshottingBandara2020Patterns ;
+:benefitsFrom :StateAggregationBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :NodeSyncV ;
@@ -1384,8 +1384,8 @@ rdfs:label "Node Sync (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :SnapshottingBandara2020Patterns ;
-:benefitsFromP :StateAggregationBandara2020Patterns ;
+:benefitsFrom :SnapshottingBandara2020Patterns ;
+:benefitsFrom :StateAggregationBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :EstablishGenesisV ;
@@ -1405,8 +1405,8 @@ rdfs:label "Establish Genesis (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :SnapshottingBandara2020Patterns ;
-:benefitsFromP :StateAggregationBandara2020Patterns ;
+:benefitsFrom :SnapshottingBandara2020Patterns ;
+:benefitsFrom :StateAggregationBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :HardForkV ;
@@ -1425,8 +1425,8 @@ rdfs:label "Hard Fork (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :EstablishGenesisBandara2020Patterns ;
-:benefitsFromP :HardForkBandara2020Patterns ;
+:benefitsFrom :EstablishGenesisBandara2020Patterns ;
+:benefitsFrom :HardForkBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :StateInitializationV ;
@@ -1453,8 +1453,8 @@ rdfs:label "State Initialization (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :SnapshottingBandara2020Patterns ;
-:benefitsFromP :StateAggregationBandara2020Patterns ;
+:benefitsFrom :SnapshottingBandara2020Patterns ;
+:benefitsFrom :StateAggregationBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :ExchangeTransferV ;
@@ -1478,8 +1478,8 @@ rdfs:label "Exchange Transfer (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :SnapshottingBandara2020Patterns ;
-:benefitsFromP :StateAggregationBandara2020Patterns ;
+:benefitsFrom :SnapshottingBandara2020Patterns ;
+:benefitsFrom :StateAggregationBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :TransactionReplayV ;
@@ -1496,7 +1496,7 @@ rdfs:label "Transaction Replay (Bandara, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :SnapshottingBandara2020Patterns ;
+:benefitsFrom :SnapshottingBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :VirtualMachineEmulationV ;
@@ -1515,7 +1515,7 @@ rdfs:label "Virtual Machine Emulation (Bandara, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :EstablishGenesisBandara2020Patterns ;
+:benefitsFrom :EstablishGenesisBandara2020Patterns ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :SmartContractTranslationV ;
@@ -1536,9 +1536,9 @@ rdfs:label "Smart Contract Translation (Bandara, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:variantOfP :Unknown ;
-:requiresP :Unknown ;
-:benefitsFromP :Unknown ;
+:variantOf :Unknown ;
+:requires :Unknown ;
+:benefitsFrom :Unknown ;
 
 :hasPaper :Moreno2019BlockBD ;
 :hasVariant :BlockchainSecurityPatternForBigDataEcosystemsV ;
@@ -1555,7 +1555,7 @@ rdfs:label "Blockchain Security Pattern for Big Data Ecosystems (Moreno, 2019)" 
                    :Ethereum ,
                    :Solidity ;
 
-:benefitsFromP :DataContractMarchesi2020Design ;
+:benefitsFrom :DataContractMarchesi2020Design ;
 
 :hasPaper :Marchesi2020Design ;
 :hasVariant :ProxyContractV ;
@@ -1646,7 +1646,7 @@ rdfs:label "Packing booleans (Marchesi, 2020)" .
                    :Ethereum ,
                    :Solidity ;
 
-:relatedToP :UintVsUint256Marchesi2020Design ;
+:relatedTo :UintVsUint256Marchesi2020Design ;
 
 :hasPaper :Marchesi2020Design ;
 :hasVariant :UintVsUint256V ;
@@ -1917,10 +1917,10 @@ rdfs:label "Optimizer (Marchesi, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:variantOfP :LegalAndSmartContractPairXu2018A ;
+:variantOf :LegalAndSmartContractPairXu2018A ;
 
 :hasPaper :Six2020A ;
-:hasVariant :LegalAndSmartContractPairV ;
+:hasVariant :ConfidentialAndPseudoAnonymousContractEnforcementV ;
 :ContextAndProblem "During past years, the different industries have been impacted by new and disruptive technologies. One of such technologies is smart contracts. One objective of the smart contracts is to translate legal contracts as code or help the legal contract by augmenting some of its clauses into machine-readable functions. The emergence of blockchain technologies has led to the creation of blockchain-based smart contracts, that has benefited from blockchain characteristics. When stored on-chain, data becomes tamper-resistant. Additionally, the utilization of smart contracts isn’t always possible for stakeholders due to concerns about the irreversibility of smart contracts in certain blockchain technologies. For example, creating GDPR compliant blockchains for storing personal data systems is still an open topic. Although not all smart contracts might deal with personal data, there are concerns over the leakage of organizations’ confidential data or their identities, even if data are encrypted."^^rdfs:Literal ;
 :Solution "This pattern allows the execution of automatable legal contract clauses, where its execution states are stored in an on-chain smart-contract and the logic needed to enforce it wraps it off-chain. An engine completes this pattern by running a business process that corresponds to the legal contract."^^rdfs:Literal ;
 
@@ -2253,7 +2253,7 @@ rdfs:label "Flyweight (Zhang, 2017)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :Unknown ;
+:benefitsFrom :Unknown ;
 
 :hasPaper :Zhang2017Applying ;
 :hasVariant :ProxyContractV ;
@@ -2468,7 +2468,7 @@ rdfs:label "Abstract factory (Zhang, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requiresP :AbstractFactoryZhang2018Chapter ;
+:requires :AbstractFactoryZhang2018Chapter ;
 
 :hasPaper :Zhang2018Chapter ;
 :hasVariant :FlyweightV ;
@@ -2484,7 +2484,7 @@ rdfs:label "Flyweight (Zhang, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requiresP :Oracle ;
+:requires :Oracle ;
 
 :hasPaper :Zhang2018Chapter ;
 :hasVariant :ProxyContractV ;
@@ -2575,7 +2575,7 @@ rdfs:label "Push-based outbound oracle (Mühlberger, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedToP :ContractComposerLiu2018Applying ;
+:relatedTo :ContractComposerLiu2018Applying ;
 
 :hasPaper :Liu2018Applying ;
 :hasVariant :FactoryContractV ;
@@ -2591,7 +2591,7 @@ rdfs:label "Contract Factory (Liu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedToP :ContractFactoryLiu2018Applying ;
+:relatedTo :ContractFactoryLiu2018Applying ;
 
 :hasPaper :Liu2018Applying ;
 :hasVariant :ContractComposerV ;
@@ -2607,8 +2607,8 @@ rdfs:label "Contract Composer (Liu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :ContractComposerLiu2018Applying ;
-:benefitsFromP :ContractDecoratorLiu2018Applying ;
+:benefitsFrom :ContractComposerLiu2018Applying ;
+:benefitsFrom :ContractDecoratorLiu2018Applying ;
 
 :hasPaper :Liu2018Applying ;
 :hasVariant :ContractDecoratorV ;
@@ -2624,10 +2624,10 @@ rdfs:label "Contract Decorator (Liu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :ContractComposerLiu2018Applying ;
-:benefitsFromP :ContractDecoratorLiu2018Applying ;
-:benefitsFromP :ContractMediatorLiu2018Applying ;
-:benefitsFromP :ContractObserverLiu2018Applying ;
+:benefitsFrom :ContractComposerLiu2018Applying ;
+:benefitsFrom :ContractDecoratorLiu2018Applying ;
+:benefitsFrom :ContractMediatorLiu2018Applying ;
+:benefitsFrom :ContractObserverLiu2018Applying ;
 
 :hasPaper :Liu2018Applying ;
 :hasVariant :ProxyContractV ;
@@ -2658,7 +2658,7 @@ rdfs:label "Contract Mediator (Liu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFromP :ContractDecoratorLiu2018Applying ;
+:benefitsFrom :ContractDecoratorLiu2018Applying ;
 
 :hasPaper :Liu2018Applying ;
 :hasVariant :ContractObserverV ;

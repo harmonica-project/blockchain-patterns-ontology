@@ -75,22 +75,6 @@
                                        )
                          ] .
 
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#benefitsFromP
-:benefitsFromP rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf :benefitsFrom ;
-               rdfs:domain :Proposal ;
-               rdfs:range :Proposal ;
-               owl:propertyDisjointWith :benefitsFromV .
-
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#benefitsFromV
-:benefitsFromV rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf :benefitsFrom ;
-               rdfs:domain :Variant ;
-               rdfs:range :Variant .
-
-
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#createdFrom
 :createdFrom rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
@@ -128,22 +112,6 @@
                                         ]
                                       )
                         ] .
-
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#createdFromP
-:createdFromP rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :createdFrom ;
-              rdfs:domain :Proposal ;
-              rdfs:range :Proposal ;
-              owl:propertyDisjointWith :createdFromV .
-
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#createdFromV
-:createdFromV rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :createdFrom ;
-              rdfs:domain :Variant ;
-              rdfs:range :Variant .
-
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasPaper
 :hasPaper rdf:type owl:ObjectProperty ;
@@ -213,22 +181,6 @@
                                     )
                       ] .
 
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#relatedToP
-:relatedToP rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :relatedTo ;
-            rdfs:domain :Proposal ;
-            rdfs:range :Proposal ;
-            owl:propertyDisjointWith :relatedToV .
-
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#relatedToV
-:relatedToV rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :relatedTo ;
-            rdfs:domain :Variant ;
-            rdfs:range :Variant .
-
-
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#requires
 :requires rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf owl:topObjectProperty ;
@@ -267,22 +219,6 @@
                                    )
                      ] .
 
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#requiresP
-:requiresP rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf :requires ;
-           rdfs:domain :Proposal ;
-           rdfs:range :Proposal ;
-           owl:propertyDisjointWith :requiresV .
-
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#requiresV
-:requiresV rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf :requires ;
-           rdfs:domain :Variant ;
-           rdfs:range :Variant .
-
-
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#variantOf
 :variantOf rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
@@ -320,22 +256,6 @@
                                       ]
                                     )
                       ] .
-
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#variantOfP
-:variantOfP rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :variantOf ;
-            rdfs:domain :Proposal ;
-            rdfs:range :Proposal ;
-            owl:propertyDisjointWith :variantOfV .
-
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#variantOfV
-:variantOfV rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :variantOf ;
-            rdfs:domain :Variant ;
-            rdfs:range :Variant .
-
 
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
 owl:topObjectProperty rdfs:domain :Pattern ;
