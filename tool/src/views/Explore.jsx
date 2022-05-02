@@ -67,7 +67,7 @@ export default function Explore({ setNbPatterns }) {
         open: false,
         selectedTab: {
             variant: 0,
-            proposa: 0
+            proposal: -1
         }
     });
     const { enqueueSnackbar } = useSnackbar();
@@ -116,17 +116,17 @@ export default function Explore({ setNbPatterns }) {
             open: true,
             selectedTab: {
                 variant: selectedTab,
-                proposal: 0
+                proposal: -1
             },
             pattern
         })
     }
 
-    const handleIndividualClick = (individual) => {
-        Object.keys(patterns).forEach(key => {
-            const pattern = patterns[key];
-            pattern.individuals.forEach((pIndividual, i) => {
-                if (individual.individual === pIndividual.individual) {
+    const handleVariantRelationClick = (clickedVariant) => {
+        Object.keys(patterns).forEach(pKey => {
+            const pattern = patterns[pKey];
+            Object.keys(pattern.variants).forEach((vKey, i) => {
+                if (vKey === clickedVariant.variant.value) {
                     handlePatternClick(pattern, i);
                 }
             }) 
@@ -154,7 +154,7 @@ export default function Explore({ setNbPatterns }) {
     const handlePatternAction = (action, individual) => {
         switch (action) {
             case 'linkedPatternClick':
-                handleIndividualClick(individual);
+                handleVariantRelationClick(individual);
                 break;
             case 'patternClick':
                 handlePatternClick(individual);

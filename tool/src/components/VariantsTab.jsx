@@ -6,7 +6,7 @@ import { makeStyles } from '@mui/styles';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import { getVariantRelations } from '../libs/fuseki';
-import { Divider, List, ListItem, ListItemText } from '@mui/material';
+import { Link , Divider, List, ListItem, ListItemText } from '@mui/material';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
@@ -32,6 +32,9 @@ const useStyles = makeStyles(() => ({
         border: '1px solid lightgrey',
         borderRadius: '5px',
         marginBottom: '10px'
+    },
+    link: {
+        cursor: 'pointer'
     }
 }));
 
@@ -83,10 +86,14 @@ export default function VariantsTab({variants, handlePatternModalAction, selecte
         }
     }, [selectedTab]);
 
-    const handleChange = (type, i) => {
+    const handleChangeTab = (type, i) => {
         if (i === selectedTab[type]) setSelectedTab({ ...selectedTab, [type]: -1 });
         else setSelectedTab({ ...selectedTab, [type]: i });
     };
+
+    const handleLink = (newVariant) => {
+        handlePatternModalAction('linkedPatternClick', newVariant);
+    }
 
     const getPatternStats = () => {
         const nbVariants = Object.keys(variants).length;
@@ -120,41 +127,41 @@ export default function VariantsTab({variants, handlePatternModalAction, selecte
         }
     };
 
-    const getRelationLabel = (variant) => {
+    const getRelationItem = (variant) => {
         switch(variant.relation.value) {
           case 'onto:variantOf':
             return {
-                'primary': 'Variant of',
+                'primary': <Link className={classes.link} onClick={() => handleLink(variant)}>Variant of</Link>,
                 'secondary': `Variant of ${variant.variant_label.value}.`
             };
     
           case 'onto:requires':
             return {
-                'primary': 'Requires',
+                'primary': <Link className={classes.link} onClick={() => handleLink(variant)}>Requires</Link>,
                 'secondary': `Required: it must be used with the ${variant.variant_label.value} variant.`
             };
     
           case 'onto:createdFrom':
             return {
-                'primary': 'Created from',
+                'primary': <Link className={classes.link} onClick={() => handleLink(variant)}>Created from</Link>,
                 'secondary': `${variant.variant_label.value} is directly inspired from this variant.`
             };
     
           case 'onto:benefitsTo':
             return {
-                'primary': 'Benefits to',
+                'primary': <Link className={classes.link} onClick={() => handleLink(variant)}>Benefits to</Link>,
                 'secondary': `Using this variant along the ${variant.variant_label.value} variant is beneficial.`
             };      
     
           case 'onto:relatedTo':
             return {
-                'primary': 'Related to',
+                'primary': <Link className={classes.link} onClick={() => handleLink(variant)}>Related to</Link>,
                 'secondary': `This variant is related to the ${variant.variant_label.value} variant.`
             };  
-    
+
           default:
             return {
-                'primary': 'Related to',
+                'primary': <Link className={classes.link} onClick={() => handleLink(variant)}>Related to</Link>,
                 'secondary': `This variant is related to the ${variant.variant_label.value} variant.`
             }; 
         }
@@ -168,7 +175,7 @@ export default function VariantsTab({variants, handlePatternModalAction, selecte
                 </Typography>
             </Box>
             {Object.keys(variants).map((vKey, i) => (
-                <Accordion expanded={selectedTab.variant === i} key={`variant${i}-accordion`} onChange={() => handleChange('variant', i)}>
+                <Accordion expanded={selectedTab.variant === i} key={`variant${i}-accordion`} onChange={() => handleChangeTab('variant', i)}>
                     <AccordionSummary
                         aria-controls={`variant${i}-accordion-summary`}
                     >
@@ -178,38 +185,13 @@ export default function VariantsTab({variants, handlePatternModalAction, selecte
                     </AccordionSummary>
                     <AccordionDetails>
                         <Grid container spacing={2} className={classes.variantPadding}>
-                            <Grid item xs={12} sm={4}>
+                            <Grid item xs={12} sm={12}>
                                 <Typography id="relations-title" variant="h6" component="h1" className={classes.marginBottomClass}>
-                                    Linked variants (inferred)
-                                </Typography>
-                                {
-                                    variantRelations.length 
-                                    ?
-                                        <List>
-                                            {
-                                                variantRelations.map(r => (
-                                                    <ListItem className={classes.relation}>
-                                                        <ListItemText
-                                                            primary={getRelationLabel(r).primary}
-                                                            secondary={getRelationLabel(r).secondary}
-                                                        />
-                                                    </ListItem>
-                                                ))
-                                            }
-                                        </List>
-                                    : 
-                                    <Typography id="relations-title" variant="body1" component="h1">
-                                        No linked variants found.
-                                    </Typography>
-                                }
-                            </Grid> 
-                            <Grid item xs={12} sm={8}>
-                                <Typography id="relations-title" variant="h6" component="h1" className={classes.marginBottomClass}>
-                                    Proposals
+                                    {`${Object.keys(variants[vKey].proposals).length} paper${Object.keys(variants[vKey].proposals).length > 1 ? 's' : ''} proposed this pattern variant`}
                                 </Typography>
                                 {
                                     Object.keys(variants[vKey].proposals).map((pKey, j) => (
-                                        <Accordion expanded={selectedTab.proposal === j} key={`proposal${j}-accordion`} onChange={() => handleChange('proposal', j)}>
+                                        <Accordion expanded={selectedTab.proposal === j} key={`proposal${j}-accordion`} onChange={() => handleChangeTab('proposal', j)}>
                                             <AccordionSummary
                                                 aria-controls={`proposal${j}-accordion-summary`}
                                             >
@@ -247,6 +229,31 @@ export default function VariantsTab({variants, handlePatternModalAction, selecte
                                     ))
                                 }
                             </Grid>
+                            <Grid item xs={12} sm={12}>
+                                <Typography id="relations-title" variant="h6" component="h1" className={classes.marginBottomClass}>
+                                    Linked variants (inferred)
+                                </Typography>
+                                {
+                                    variantRelations.length 
+                                    ?
+                                        <List>
+                                            {
+                                                variantRelations.map(r => (
+                                                    <ListItem className={classes.relation}>
+                                                        <ListItemText
+                                                            primary={getRelationItem(r).primary}
+                                                            secondary={getRelationItem(r).secondary}
+                                                        />
+                                                    </ListItem>
+                                                ))
+                                            }
+                                        </List>
+                                    : 
+                                    <Typography id="relations-title" variant="body1" component="h1">
+                                        No linked variants found.
+                                    </Typography>
+                                }
+                            </Grid> 
                         </Grid>
                     </AccordionDetails>
                 </Accordion>
