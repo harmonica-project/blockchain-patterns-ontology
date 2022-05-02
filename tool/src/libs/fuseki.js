@@ -1,6 +1,6 @@
 import { parseResults, convertResultToMapping } from './helpers';
 
-const FUSEKI_URL = "https://sparql.nextnet.top/ontotool/query"
+const FUSEKI_URL = "http://localhost:3030/ontotool/sparql"
 const PREFIXES = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -22,11 +22,10 @@ const getOptions = (query) => {
 export const healthCheck = async () => {
     // test dummy query to check if Fuseki is live
     const query = `
-        SELECT ?s ?p ?v
+        SELECT ?l ?p
         WHERE {
-            ?s ?p ?v
+            onto:Pattern rdfs:label ?l
         }
-        LIMIT 1
     `
 
     try {
@@ -141,9 +140,9 @@ export const getPattern = async (patternURI) => {
 
 export const getLinkedPatterns = async (patternURI) => {
     let query = `
-        SELECT ?relation ?individual ?pattern ?iLabel ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
+        SELECT ?relation ?proposal ?pattern ?proposal_label ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
         WHERE {
-            ${patternURI} ?relation ?individual.
+            ${patternURI} ?relation ?proposal.
             FILTER (?relation IN (
                 onto:requires,
                 onto:createdFrom,
@@ -151,12 +150,12 @@ export const getLinkedPatterns = async (patternURI) => {
                 onto:variantOf,
                 onto:benefitsFrom
             ) ).
-            ?individual a ?pattern.
+            ?proposal a ?pattern.
             ?pattern rdfs:subClassOf* onto:Pattern.
-            ?individual rdfs:label ?iLabel .
-            ?individual onto:hasPaper ?paper .
-            ?individual onto:ContextAndProblem ?context .
-            ?individual onto:Solution ?solution.
+            ?proposal rdfs:label ?iLabel .
+            ?proposal onto:hasPaper ?paper .
+            ?proposal onto:ContextAndProblem ?context .
+            ?proposal onto:Solution ?solution.
             ?paper onto:Title ?title.
             ?paper onto:Identifier ?identifier.
             ?paper onto:IdentifierType ?identifiertype.
@@ -167,7 +166,7 @@ export const getLinkedPatterns = async (patternURI) => {
     try {
         let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
         if (response.status === 200) {
-            return parseResults(await response.json()).map(r => ({ ...parseIndividual(r), relation: r.relation }));
+            return parseResults(await response.json()).map(r => ({ ...parseProposal(r), relation: r.relation }));
         };
         return [];
     } catch (e) {
@@ -176,13 +175,13 @@ export const getLinkedPatterns = async (patternURI) => {
     }
 };
 
-const parseIndividual = (result) => {
+const parseProposal = (result) => {
     return {
-        individual: result.individual.value,
+        proposal: result.proposal.value,
         pattern: result.pattern.value,
         context: result.context.value,
         solution: result.solution.value,
-        label: result.iLabel.value,
+        label: result.proposal_label.value,
         paper: {
             paper: result.paper.value,
             title: result.title.value,
@@ -193,76 +192,55 @@ const parseIndividual = (result) => {
     }
 }
 
-const checkAndInsertIndividual = (result, individuals) => {
-    const index = individuals.findIndex(i => i.individual === result.individual.value);
-    if (index !== -1) {
-        individuals[index].classes.push(result.parent.value);
-    } else {
-        individuals.push({
-            ...parseIndividual(result),
-            classes: [result.parent.value]
-        })
-    }
-    
-    return individuals;
-};
-
-const groupPatterns = (results) => {
-    const groupedPatterns = {};
+// used to merge proposal duplicated in the request as we also want to retrieve each of their classes
+const structurePatterns = (results) => {
+    const newPatterns = {};
 
     results.forEach(r => {
-        if (groupedPatterns[r.pattern.value]) {
-            groupedPatterns[r.pattern.value] = {
-                ...groupedPatterns[r.pattern.value],
-                individuals: checkAndInsertIndividual(r, groupedPatterns[r.pattern.value].individuals)
+        if (newPatterns[r.pattern.value]) {
+            if (newPatterns[r.pattern.value].variants[r.variant.value]) {
+                if (newPatterns[r.pattern.value].variants[r.variant.value].proposals[r.proposal.value]) {
+                    newPatterns[r.pattern.value].variants[r.variant.value].proposals[r.proposal.value].classes.push(r.parent.value);
+                } else {
+                    newPatterns[r.pattern.value].variants[r.variant.value].proposals[r.proposal.value] = {
+                        ...parseProposal(r),
+                        classes: [r.parent.value, r.pattern.value]
+                    }
+                }
+            } else {
+                newPatterns[r.pattern.value].variants[r.variant.value] = {
+                    proposals: {
+                        [r.proposal.value]: {
+                            ...parseProposal(r),
+                            classes: [r.parent.value, r.pattern.value]
+                        }
+                    },
+                    label: r.variant_label.value
+                }
             }
         } else {
-            groupedPatterns[r.pattern.value] = {
+            newPatterns[r.pattern.value] = {
                 pattern: r.pattern.value,
-                label: r.pLabel.value,
-                individuals: [{
-                    ...parseIndividual(r),
-                    classes: [r.parent.value]
-                }]
+                label: r.pattern_label.value,
+                variants: {
+                    [r.variant.value]: {
+                        proposals: {
+                            [r.proposal.value]: {
+                                ...parseProposal(r),
+                                classes: [r.parent.value, r.pattern.value]
+                            }
+                        },
+                        label: r.variant_label.value
+                    }
+                }
             }
         }
     });
 
-    return groupedPatterns;
+    console.log(newPatterns)
+
+    return newPatterns;
 };
-
-export const getPatterns = async () => {
-    const query = `
-        SELECT ?parent ?pattern ?pLabel ?individual ?iLabel ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
-            WHERE {
-                ?individual a ?parent.
-                ?pattern rdfs:subClassOf* onto:Pattern.
-                ?individual a ?pattern.
-                ?pattern rdfs:label ?pLabel.
-                ?individual rdfs:label ?iLabel .
-                ?individual onto:hasPaper ?paper .
-                ?individual onto:ContextAndProblem ?context .
-                ?individual onto:Solution ?solution.
-                ?paper onto:Title ?title.
-                ?paper onto:Identifier ?identifier.
-                ?paper onto:IdentifierType ?identifiertype.
-                ?paper onto:Authors ?authors
-            }
-        `
-
-    try {
-        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
-        if (response.status === 200) {
-            const results = parseResults(await response.json());
-            const grouped = groupPatterns(results);
-            return grouped;
-        };
-        return [];
-    } catch (e) {
-        console.error('Failed to fetch: ' + e);
-        return [];
-    }
-}
 
 const addScoreToPatterns = (patterns, filterProblems) => {
     const newPatterns = patterns.map(pattern => ({
@@ -272,10 +250,57 @@ const addScoreToPatterns = (patterns, filterProblems) => {
     return newPatterns;
 };
 
+export const getPatternKnowledge = async () => {
+    const query = `
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX owl: <http://www.w3.org/2002/07/owl#>
+        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+        PREFIX onto: <http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#>
+
+        SELECT ?parent ?pattern ?variant ?proposal ?pattern_label ?variant_label ?proposal_label ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
+        WHERE {
+            ?proposal a ?parent .
+            ?proposal a onto:Proposal .
+            ?proposal onto:hasVariant ?variant .
+            ?variant a ?pattern .
+            ?pattern rdfs:subClassOf* onto:Pattern.
+            ?pattern rdfs:label ?pattern_label .
+            ?variant rdfs:label ?variant_label .
+            ?proposal rdfs:label ?proposal_label .
+            ?proposal onto:hasPaper ?paper .
+            ?proposal onto:ContextAndProblem ?context .
+            ?proposal onto:Solution ?solution.
+            ?paper onto:Title ?title.
+            ?paper onto:Identifier ?identifier.
+            ?paper onto:IdentifierType ?identifiertype.
+            ?paper onto:Authors ?authors
+        }
+    `
+    let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            const results = parseResults(await response.json());
+            const grouped = structurePatterns(results);
+            return grouped;
+        };
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            const results = parseResults(await response.json());
+            const grouped = structurePatterns(results);
+            return grouped;
+        };
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
+    }
+}
+
 export const getPatternsByProblem = async (filterProblems = {}) => {
     const queryTemplate = () => {
         return `
-            select distinct ?problem ?individual ?pattern ?pLabel ?iLabel ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors where {
+            select distinct ?problem ?proposal ?pattern ?pattern_label ?proposal_label ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors where {
                     ?pattern rdfs:subClassOf* 
                         [ 
                         rdf:type owl:Restriction ;
@@ -284,12 +309,12 @@ export const getPatternsByProblem = async (filterProblems = {}) => {
                         ].
                     FILTER (?problem IN (${Object.keys(filterProblems).join(',')}) ).
                     ?pattern rdfs:subClassOf* onto:Pattern.
-                    ?individual a ?pattern.
-                    ?pattern rdfs:label ?pLabel.
-                    ?individual rdfs:label ?iLabel .
-                    ?individual onto:hasPaper ?paper .
-                    ?individual onto:ContextAndProblem ?context .
-                    ?individual onto:Solution ?solution.
+                    ?proposal a ?pattern.
+                    ?pattern rdfs:label ?pattern_label.
+                    ?proposal rdfs:label ?proposal_label .
+                    ?proposal onto:hasPaper ?paper .
+                    ?proposal onto:ContextAndProblem ?context .
+                    ?proposal onto:Solution ?solution.
                     ?paper onto:Title ?title.
                     ?paper onto:Identifier ?identifier.
                     ?paper onto:IdentifierType ?identifiertype.
@@ -305,7 +330,7 @@ export const getPatternsByProblem = async (filterProblems = {}) => {
             if (response.status === 200) {
                 const results = parseResults(await response.json());
                 const scored = addScoreToPatterns(results, filterProblems);
-                const mapped = scored.map(r => ({ ...parseIndividual(r), score: r.score }));
+                const mapped = scored.map(r => ({ ...parseProposal(r), score: r.score }));
                 return mapped;
             };
             return [];

@@ -4,7 +4,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
-import { getPatterns, getLinkedPatterns, getClassTree } from '../libs/fuseki';
+import { getPatternKnowledge, getLinkedPatterns, getClassTree } from '../libs/fuseki';
 import ClassTabs from '../components/ClassTabs';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PatternModal from '../modals/PatternModal';
@@ -63,6 +63,7 @@ export default function Explore({ setNbPatterns }) {
     const [modalStates, setModalStates] = useState({ "pattern": {}, open: false, selectedTab: 0 });
     const [open, setOpen] = useState(false);
     const [selectedPatterns, setSelectedPatterns] = useState({});
+    const [filteredPatterns, setFilteredPatterns] = useState([]);
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState('');
 
@@ -86,7 +87,7 @@ export default function Explore({ setNbPatterns }) {
 
     useEffect(() => {
         setOpen(true);
-        getPatterns(filterParents({...selectorStates}))
+        getPatternKnowledge()
             .then((results) => {
                 setPatterns(results);
             })
@@ -99,7 +100,12 @@ export default function Explore({ setNbPatterns }) {
     }, []);
 
     useEffect(() => {
+        setFilteredPatterns(getFilteredPatterns());
+    }, [patterns]);
+
+    useEffect(() => {
         setPage(1);
+        setFilteredPatterns(getFilteredPatterns());
     }, [search, selectorStates]);
 
     useEffect(() => {
@@ -202,27 +208,51 @@ export default function Explore({ setNbPatterns }) {
         }
     };
 
-    const shapeToPattern = (key) => {
-        let newIndividuals = JSON.parse(JSON.stringify(patterns[key].individuals)) ;
-
-        patterns[key].individuals.forEach((individual, i) => {
-            selectorStatesToArray().forEach(selector => {
-                if (!selectorInIndividual(selector, individual)) newIndividuals[i].discarded = true;
-            })
+    const filterProposals = (key) => {
+        let newPattern = structuredClone(patterns[key]);
+        Object.keys(patterns[key].variants).forEach(variant => {
+            Object.keys(patterns[key].variants[variant].proposals).forEach(proposal => {
+                selectorStatesToArray().forEach(selector => {
+                    if (!selectorInIndividual(selector, patterns[key].variants[variant].proposals[proposal])) {
+                        delete newPattern.variants[variant].proposals[proposal];
+                    }
+                });
+            });
+            
+            if (!Object.keys(newPattern.variants[variant].proposals).length) {
+                delete newPattern.variants[variant];
+            }
         });
 
-        return {
-            ...patterns[key],
-            individuals: newIndividuals.filter(individual => !individual.discarded)
-        };
+        return Object.keys(newPattern.variants).length ? [newPattern] : [];
     };
 
     const getFilteredPatterns = () => {
-        return Object.keys({...patterns})
-            .filter(key => patterns[key].label.toLowerCase().includes(search.toLowerCase()))
-            .map(shapeToPattern)
-            .filter(pattern => pattern.individuals.length)
+        if (patterns) {
+            return Object.keys(patterns)
+                .filter(key => patterns[key].label.toLowerCase().includes(search.toLowerCase()))
+                .flatMap(filterProposals)
+        }
     };
+
+    const getPatternStats = (pattern) => {
+        const nbVariants = Object.keys(pattern.variants).length;
+        let nbProposals = 0;
+
+        Object.keys(pattern.variants).forEach(key => {
+            nbProposals += Object.keys(pattern.variants[key].proposals).length;
+        });
+
+        if (nbVariants) {
+            if (nbProposals) {
+                return `${nbVariants} variant${nbVariants > 1 ? 's' : ''} / ${nbProposals} proposal${nbProposals > 1 ? 's' : ''}`;
+            }
+
+            return `${nbVariants} variant${nbVariants > 1 ? 's' : ''} / No proposals.`;
+        }
+
+        return `No variants and proposals.`;
+    }
 
     const displayPatterns = () => {
         if (Object.keys(patterns).length) {
@@ -237,7 +267,7 @@ export default function Explore({ setNbPatterns }) {
                         fullWidth
                     />
                     <br/>
-                    {getFilteredPatterns()
+                    {filteredPatterns
                         .slice((page - 1) * INTERVAL, page * INTERVAL)
                         .map(pattern => (
                             <PatternCard 
@@ -247,7 +277,7 @@ export default function Explore({ setNbPatterns }) {
                                 key={pattern.pattern}
                                 disableChips={true}
                                 patternSubtext={[{
-                                    text: parseToLabel(`${pattern.individuals.length} proposal${pattern.individuals.length > 1 ? 's' : ''}`),
+                                    text: getPatternStats(pattern),
                                     variant: 'body2'
                                 }]}
                             />
@@ -354,12 +384,12 @@ export default function Explore({ setNbPatterns }) {
                             {
                                 open 
                                 ? "Loading patterns ..."
-                                : (getFilteredPatterns().length ? `${getFilteredPatterns().length}/${Object.keys(patterns).length}` : "No") + " corresponding patterns for this selection"
+                                : (filteredPatterns.length ? `${filteredPatterns.length}/${Object.keys(patterns).length}` : "No") + " corresponding patterns for this selection"
                             }
                         </Typography>
                         {displayPatterns()}
                         <Pagination 
-                            count={Math.ceil(getFilteredPatterns().length / INTERVAL)} 
+                            count={Math.ceil(filteredPatterns.length / INTERVAL)} 
                             size="large"
                             onChange={handlePageChange}
                             style={{display: (Object.keys(patterns).length ? 'block' : 'none')}}
