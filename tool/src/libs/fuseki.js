@@ -138,11 +138,11 @@ export const getPattern = async (patternURI) => {
     }
 };
 
-export const getLinkedPatterns = async (patternURI) => {
+export const getVariantRelations = async (variantURI) => {
     let query = `
-        SELECT ?relation ?proposal ?pattern ?proposal_label ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
+        SELECT ?relation ?variant ?variant_label
         WHERE {
-            ${patternURI} ?relation ?proposal.
+            ${variantURI} ?relation ?variant
             FILTER (?relation IN (
                 onto:requires,
                 onto:createdFrom,
@@ -150,23 +150,14 @@ export const getLinkedPatterns = async (patternURI) => {
                 onto:variantOf,
                 onto:benefitsFrom
             ) ).
-            ?proposal a ?pattern.
-            ?pattern rdfs:subClassOf* onto:Pattern.
-            ?proposal rdfs:label ?iLabel .
-            ?proposal onto:hasPaper ?paper .
-            ?proposal onto:ContextAndProblem ?context .
-            ?proposal onto:Solution ?solution.
-            ?paper onto:Title ?title.
-            ?paper onto:Identifier ?identifier.
-            ?paper onto:IdentifierType ?identifiertype.
-            ?paper onto:Authors ?authors
-        }
+            ?variant rdfs:label ?variant_label
+        } 
     `;
 
     try {
         let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
         if (response.status === 200) {
-            return parseResults(await response.json()).map(r => ({ ...parseProposal(r), relation: r.relation }));
+            return parseResults(await response.json());
         };
         return [];
     } catch (e) {
@@ -252,12 +243,6 @@ const addScoreToPatterns = (patterns, filterProblems) => {
 
 export const getPatternKnowledge = async () => {
     const query = `
-        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        PREFIX owl: <http://www.w3.org/2002/07/owl#>
-        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-        PREFIX onto: <http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#>
-
         SELECT ?parent ?pattern ?variant ?proposal ?pattern_label ?variant_label ?proposal_label ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
         WHERE {
             ?proposal a ?parent .

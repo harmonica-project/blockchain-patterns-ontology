@@ -4,7 +4,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
-import { getPatternKnowledge, getLinkedPatterns, getClassTree } from '../libs/fuseki';
+import { getPatternKnowledge, getClassTree } from '../libs/fuseki';
 import ClassTabs from '../components/ClassTabs';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PatternModal from '../modals/PatternModal';
@@ -14,9 +14,6 @@ import {
     setInLocalstorage, 
     storePatternInLocalstorage 
 } from '../libs/localstorage';
-import {
-    parseToLabel
-} from '../libs/helpers';
 import PatternCard from '../components/PatternCard';
 import LoadingOverlay from '../components/LoadingOverlay';
 
@@ -60,31 +57,24 @@ export default function Explore({ setNbPatterns }) {
     const [classTree, setClassTree] = useState({});
     const [patterns, setPatterns] = useState([])
     const [selectorStates, setSelectorStates] = useState({});
-    const [modalStates, setModalStates] = useState({ "pattern": {}, open: false, selectedTab: 0 });
     const [open, setOpen] = useState(false);
     const [selectedPatterns, setSelectedPatterns] = useState({});
     const [filteredPatterns, setFilteredPatterns] = useState([]);
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState('');
-
+    const [modalStates, setModalStates] = useState({ 
+        "pattern": {},
+        open: false,
+        selectedTab: {
+            variant: 0,
+            proposa: 0
+        }
+    });
     const { enqueueSnackbar } = useSnackbar();
 
     // pagination interval
     const INTERVAL = 20;
-
-    const filterParents = (filterClasses) => {
-        let keyClasses = Object.keys(filterClasses);
     
-        for (let i in keyClasses) {
-            let key = keyClasses[i]
-            if (filterClasses[filterClasses[key]]) {
-                delete filterClasses[key];
-            }
-        }
-    
-        return filterClasses;
-    }
-
     useEffect(() => {
         setOpen(true);
         getPatternKnowledge()
@@ -122,17 +112,12 @@ export default function Explore({ setNbPatterns }) {
     }, [])
 
     const handlePatternClick = async (pattern, selectedTab = 0) => {
-        for (let i in pattern.individuals) {
-            let linkedPatterns = await getLinkedPatterns(pattern.individuals[i].individual);
-            pattern.individuals[i] = {
-               ...pattern.individuals[i],
-               linkedPatterns
-            }
-        }
-
         setModalStates({
             open: true,
-            selectedTab,
+            selectedTab: {
+                variant: selectedTab,
+                proposal: 0
+            },
             pattern
         })
     }

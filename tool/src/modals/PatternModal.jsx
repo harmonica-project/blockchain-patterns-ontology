@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import IndividualTabs from '../components/IndividualTabs';
+import VariantsTab from '../components/VariantsTab';
 
 const useStyles = makeStyles(() => ({
   containerStyle: {
@@ -43,11 +43,11 @@ export default function PatternModal({modalStates, setModalStates, selectedPatte
         aria-describedby="pattern-modal-description"
       >
         <Grid container className={classes.containerStyle}>
-          <Typography id="pattern-modal-title" variant="h4" component="h1">
+          <Typography id="pattern-modal-title" variant="h3" component="h1">
             {pattern.label}
           </Typography>
-          <IndividualTabs 
-            individuals={pattern.individuals} 
+          <VariantsTab 
+            variants={pattern.variants} 
             handlePatternModalAction={handlePatternModalAction}
             selectedPatterns={selectedPatterns}
             selectedTab={selectedTab}
