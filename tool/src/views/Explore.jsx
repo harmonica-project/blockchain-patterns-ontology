@@ -133,19 +133,19 @@ export default function Explore({ setNbPatterns }) {
         })
     };
 
-    const storeLocalPattern = (individual) => {
-        storePatternInLocalstorage(individual);
+    const storeLocalPattern = (proposal) => {
+        storePatternInLocalstorage(proposal);
 
         setSelectedPatterns({
             ...selectedPatterns,
-            [individual.individual]: individual
+            [proposal.proposal]: proposal
         })
         enqueueSnackbar("Pattern successfully added.", { variant: 'success' });
     };
 
-    const deleteLocalPattern = (individual) => {
+    const deleteLocalPattern = (proposal) => {
         let newSelectedPatterns = {...selectedPatterns};
-        delete newSelectedPatterns[individual.individual];
+        delete newSelectedPatterns[proposal.proposal];
         setSelectedPatterns(newSelectedPatterns);
         setInLocalstorage('patterns', newSelectedPatterns);
         enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
@@ -180,12 +180,12 @@ export default function Explore({ setNbPatterns }) {
         return Object.keys(selectors).map(key => selectors[key]);
     };
 
-    const selectorInIndividual = (selector, individual) => {
-        if (individual.classes.includes(selector)) return true;
+    const selectorInProposal = (selector, proposal) => {
+        if (proposal.classes.includes(selector)) return true;
         else {
             if (classTree[selector].childrens.length) {
                 for (let i in classTree[selector].childrens) {
-                    if (selectorInIndividual(classTree[selector].childrens[i], individual)) return true;
+                    if (selectorInProposal(classTree[selector].childrens[i], proposal)) return true;
                 }
 
                 return false;
@@ -198,7 +198,7 @@ export default function Explore({ setNbPatterns }) {
         Object.keys(patterns[key].variants).forEach(variant => {
             Object.keys(patterns[key].variants[variant].proposals).forEach(proposal => {
                 selectorStatesToArray().forEach(selector => {
-                    if (!selectorInIndividual(selector, patterns[key].variants[variant].proposals[proposal])) {
+                    if (!selectorInProposal(selector, patterns[key].variants[variant].proposals[proposal])) {
                         delete newPattern.variants[variant].proposals[proposal];
                     }
                 });
