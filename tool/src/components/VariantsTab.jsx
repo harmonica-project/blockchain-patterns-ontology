@@ -5,8 +5,10 @@ import Grid from '@mui/material/Grid';
 import { makeStyles } from '@mui/styles';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import { getVariantRelations } from '../libs/fuseki';
-import { Link , Divider, List, ListItem, ListItemText } from '@mui/material';
+import { Link , Divider, List, ListItem, ListItemText, Button } from '@mui/material';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
@@ -35,6 +37,12 @@ const useStyles = makeStyles(() => ({
     },
     link: {
         cursor: 'pointer'
+    },
+    accordionBox: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: '100%'
     }
 }));
 
@@ -195,9 +203,42 @@ export default function VariantsTab({variants, handlePatternModalAction, selecte
                                             <AccordionSummary
                                                 aria-controls={`proposal${j}-accordion-summary`}
                                             >
-                                                <Typography id="proposal-title" variant="body1" component="h1">
-                                                    {variants[vKey].proposals[pKey].label}
-                                                </Typography>
+                                                <Box className={classes.accordionBox}>
+                                                    <Typography id="proposal-title" variant="body1" component="h1">
+                                                        {variants[vKey].proposals[pKey].label}
+                                                    </Typography>
+                                                    {
+                                                        !selectedPatterns[variants[vKey].proposals[pKey].proposal]
+                                                            ? (
+                                                                <Box>
+                                                                    <Button
+                                                                        variant="text"
+                                                                        size="small"
+                                                                        onClick={(e) => {
+                                                                            e.stopPropagation();
+                                                                            handlePatternModalAction('patternStore', variants[vKey].proposals[pKey]);
+                                                                        }}
+                                                                        startIcon={<AddIcon />}
+                                                                    >
+                                                                        Add to list
+                                                                    </Button>
+                                                                </Box>
+                                                            )
+                                                            : (
+                                                                <Button 
+                                                                    variant="text"
+                                                                    size="small"
+                                                                    onClick={(e) => {
+                                                                        e.stopPropagation();
+                                                                        handlePatternModalAction('patternDelete', variants[vKey].proposals[pKey]);
+                                                                    }}
+                                                                    startIcon={<RemoveIcon />}
+                                                                >
+                                                                    Remove from list
+                                                                </Button>
+                                                            )
+                                                    }
+                                                </Box>
                                             </AccordionSummary>
                                             <AccordionDetails>
                                                 <Typography className={classes.marginBottomClass} variant="overline" component="div">

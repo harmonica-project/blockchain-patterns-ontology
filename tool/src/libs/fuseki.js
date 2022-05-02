@@ -228,8 +228,6 @@ const structurePatterns = (results) => {
         }
     });
 
-    console.log(newPatterns)
-
     return newPatterns;
 };
 
