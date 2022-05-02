@@ -111,7 +111,7 @@ export default function VariantsTab({variants, handlePatternModalAction, selecte
             return `${nbVariants} variant${nbVariants > 1 ? 's' : ''} ha${nbVariants > 1 ? 've' : 's'} been found in our corpus of papers based on your filter selection.`;
         }
 
-        return `No variants and proposals have been found in our corpus of papers based on your filter selection..`;
+        return `No variants and proposals have been found in our corpus of papers based on your filter selection.`;
     }
 
     const getSource = (paper) => {
