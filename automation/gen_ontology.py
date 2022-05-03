@@ -320,7 +320,7 @@ def run():
   with open("./results/variants.ttl", "w") as text_file_variants:
     text_file_variants.write(variants_ttl)
 
-  with open("../ontologies/result.ttl", "w") as text_file_ontology:
+  with open("../ontologies/ontology.ttl", "w") as text_file_ontology:
     text_file_ontology.write(ontology_structure + patterns_ttl + proposals_ttl + papers_ttl + variants_ttl)
 
 run()

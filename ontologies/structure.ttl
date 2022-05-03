@@ -125,8 +125,18 @@
 :hasProposal rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
              owl:inverseOf :hasVariant ;
-             rdfs:domain :Variant ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Paper
+                                         :Variant
+                                       )
+                         ] ;
              rdfs:range :Proposal .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasIdentifier
+:hasIdentifier rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Paper ;
+             rdfs:range :Identifier .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasVariant
@@ -642,6 +652,10 @@ owl:topObjectProperty rdfs:domain :Pattern ;
                        ] ;
        rdfs:label "Idiom"@en .
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Identifier
+:Identifier rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ;
+         rdfs:label "Identifier"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InteractingWithBlockchain
 :InteractingWithBlockchain rdf:type owl:Class ;
