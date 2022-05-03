@@ -13,7 +13,7 @@ import {
     deleteAllLocalstoragePatterns
 } from '../libs/localstorage';
 import { parseToLabel, exportToJSON } from '../libs/helpers';
-import { getClassTree, getLinkedPatterns, getPatternKnowledge } from '../libs/fuseki';
+import { getClassTree, getPatternKnowledge } from '../libs/fuseki';
 import PatternCard from '../components/PatternCard';
 import PatternModal from '../modals/PatternModal';
 import ClassChipSelector from '../components/ClassChipSelector';
@@ -229,37 +229,38 @@ export default function Patterns({ setNbPatterns }) {
             <Grid container>
                 <Grid item sm={3} xs={12}>
                     <Paper className={classes.paperContent}>
-                        <Typography variant="h5" >
+                        <Typography variant="h5" style={{ marginBottom: '20px', textAlign: 'center' }} >
                             Filters
                         </Typography>
-                        <Grid container className={classes.marginTop}>
-                            <Grid item xs={12}>
-                                <ClassChipSelector
-                                    classes={getAllClassesFromTrees(selectedPatterns)}
-                                    classFilter={classFilter}
-                                    setClassFilter={setClassFilter}
-                                />
-                            </Grid>
-                            <Grid item xs={6} style={{marginTop: '10px', paddingRight: '5px'}}>
+                        <ClassChipSelector
+                            classes={getAllClassesFromTrees(selectedPatterns)}
+                            classFilter={classFilter}
+                            setClassFilter={setClassFilter}
+                        />
+                        <Typography variant="h5" style={{ marginBottom: '20px', marginTop: '20px', textAlign: 'center' }} >
+                            Options
+                        </Typography>
+                        <Grid container>
+                            <Grid item xs={6} style={{ paddingRight: '5px' }}>
                                 <label htmlFor="import-pattern-input">
                                     <Input 
                                         accept="*.json" 
                                         id="import-pattern-input" 
                                         type="file" 
                                         onChange={importJSONPatterns} />
-                                    <Button fullWidth variant="contained" component="span">
+                                    <Button fullWidth variant="outlined" component="span">
                                         Import
                                     </Button>
                                 </label>
                             </Grid>
-                            <Grid item xs={6} style={{marginTop: '10px', paddingLeft: '5px'}}>
-                                <Button fullWidth variant="contained" onClick={exportToJSON.bind(this, {...selectedPatterns}, 'patterns.json')}>
+                            <Grid item xs={6} style={{ paddingLeft: '5px'}}>
+                                <Button fullWidth variant="outlined" onClick={exportToJSON.bind(this, {...selectedPatterns}, 'patterns.json')}>
                                     Export
                                 </Button>
                             </Grid>
                             <Grid item xs={12} style={{marginTop: '10px'}}>
                                 <Button 
-                                    variant="contained" 
+                                    variant="outlined" 
                                     color="error" 
                                     fullWidth 
                                     onClick={() => {

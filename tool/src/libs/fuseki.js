@@ -38,26 +38,6 @@ export const healthCheck = async () => {
     }
 }
 
-export const getSubclasses = async (className) => {
-    const query = `
-        SELECT ?subject ?label
-        WHERE {
-            ?subject rdfs:subClassOf ${className}.
-            ?subject rdfs:label ?label.
-        }
-    `
-    try {
-        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
-        if (response.status === 200) {
-            return convertResultToMapping(parseResults(await response.json()));
-        }
-        return [];
-    } catch (e) {
-        console.error('Failed to fetch: ' + e);
-        return [];
-    }
-}
-
 const createClassesTree = (classes) => {
     let orderedClasses = {};
 
@@ -105,31 +85,6 @@ export const getClassTree = async (classname) => {
         let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
         if (response.status === 200) {
             return createClassesTree(parseResults(await response.json()));
-        };
-        return [];
-    } catch (e) {
-        console.error('Failed to fetch: ' + e);
-        return [];
-    }
-};
-
-export const getPattern = async (patternURI) => {
-    let query = `
-        SELECT DISTINCT ?label ?paper ?context ?solution ?classname
-        WHERE {
-            ${patternURI} rdfs:label ?label .
-            ${patternURI} onto:hasPaper ?paper .
-            ${patternURI} onto:ContextAndProblem ?context .
-            ${patternURI} onto:Solution ?solution .
-            ${patternURI} a ?classname .
-            ?classname rdfs:subClassOf* onto:Pattern
-        }
-    `;
-
-    try {
-        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
-        if (response.status === 200) {
-            return parseResults(await response.json());
         };
         return [];
     } catch (e) {
