@@ -5,8 +5,7 @@ import ContentContainer from '../layouts/ContentContainer';
 import { 
   getClassTree, 
   getPatternsByProblem,
-  getLinkedPatterns,
-  getPatterns
+  getPatternKnowledge
  } from '../libs/fuseki';
 import { makeStyles } from '@mui/styles';
 import { useSnackbar } from 'notistack';
@@ -130,7 +129,7 @@ export default function Recommendation({ setNbPatterns }) {
 
     getStoredPatterns();
 
-    getPatterns()
+    getPatternKnowledge()
       .then((results) => {
           setPatterns(results);
       })
@@ -428,16 +427,16 @@ export default function Recommendation({ setNbPatterns }) {
                   id="import-recommendation-input" 
                   type="file" 
                   onChange={resumeRecommendationFromFile} />
-              <Button variant="contained" component="span">
+              <Button variant="text" component="span">
                   Import
               </Button>
             </label>
           </div>
           <div>
-            <Button variant="contained" size="large" onClick={startQuizz}>Start</Button>
+            <Button variant="contained" onClick={startQuizz}>Start</Button>
           </div>
           <div hidden={!checkForResume()}>
-            <Button variant="contained" onClick={resumeQuizz}>Resume</Button>
+            <Button variant="text" onClick={resumeQuizz}>Resume</Button>
           </div>
         </Stack>
       </div>
@@ -463,6 +462,7 @@ export default function Recommendation({ setNbPatterns }) {
   };
 
   const handlePatternClick = async (pattern, selectedTab = 0) => {
+    /*
     for (let i in pattern.individuals) {
         let linkedPatterns = await getLinkedPatterns(pattern.individuals[i].individual);
         pattern.individuals[i] = {
@@ -476,6 +476,7 @@ export default function Recommendation({ setNbPatterns }) {
         selectedTab,
         pattern
     })
+    */
   }
 
   const sortPatterns = (fKey, sKey) => {

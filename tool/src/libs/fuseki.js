@@ -215,12 +215,7 @@ export const getPatternKnowledge = async () => {
             ?paper onto:Authors ?authors
         }
     `
-    let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
-        if (response.status === 200) {
-            const results = parseResults(await response.json());
-            const grouped = structurePatterns(results);
-            return grouped;
-        };
+
     try {
         let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
         if (response.status === 200) {
@@ -238,25 +233,28 @@ export const getPatternKnowledge = async () => {
 export const getPatternsByProblem = async (filterProblems = {}) => {
     const queryTemplate = () => {
         return `
-            select distinct ?problem ?proposal ?pattern ?pattern_label ?proposal_label ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors where {
-                    ?pattern rdfs:subClassOf* 
-                        [ 
-                        rdf:type owl:Restriction ;
-                        owl:onProperty onto:addressProblem ;
-                        owl:someValuesFrom ?problem
-                        ].
-                    FILTER (?problem IN (${Object.keys(filterProblems).join(',')}) ).
-                    ?pattern rdfs:subClassOf* onto:Pattern.
-                    ?proposal a ?pattern.
-                    ?pattern rdfs:label ?pattern_label.
-                    ?proposal rdfs:label ?proposal_label .
-                    ?proposal onto:hasPaper ?paper .
-                    ?proposal onto:ContextAndProblem ?context .
-                    ?proposal onto:Solution ?solution.
-                    ?paper onto:Title ?title.
-                    ?paper onto:Identifier ?identifier.
-                    ?paper onto:IdentifierType ?identifiertype.
-                    ?paper onto:Authors ?authors
+            SELECT distinct ?problem ?variant ?proposal ?pattern ?variant_label ?pattern_label ?proposal_label ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors 
+            WHERE {
+                ?pattern rdfs:subClassOf* 
+                    [ 
+                    rdf:type owl:Restriction ;
+                    owl:onProperty onto:addressProblem ;
+                    owl:someValuesFrom ?problem
+                    ].
+                FILTER (?problem IN (${Object.keys(filterProblems).join(',')}) ).
+                ?pattern rdfs:subClassOf* onto:Pattern.
+                ?proposal onto:hasVariant ?variant .
+                ?variant a ?pattern .
+                ?pattern rdfs:label ?pattern_label.
+                ?proposal rdfs:label ?proposal_label .
+                ?variant rdfs:label ?variant_label .
+                ?proposal onto:hasPaper ?paper .
+                ?proposal onto:ContextAndProblem ?context .
+                ?proposal onto:Solution ?solution.
+                ?paper onto:Title ?title.
+                ?paper onto:Identifier ?identifier.
+                ?paper onto:IdentifierType ?identifiertype.
+                ?paper onto:Authors ?authors
             }
         `
     }
