@@ -153,7 +153,7 @@ export default function Explore({ setNbPatterns }) {
 
     const handlePatternAction = (action, individual) => {
         switch (action) {
-            case 'linkedPatternClick':
+            case 'linkedVariantClick':
                 handleVariantRelationClick(individual);
                 break;
             case 'patternClick':

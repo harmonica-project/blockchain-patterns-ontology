@@ -40,9 +40,9 @@ export default function PatternCard({
             <Grid item md={12} className={classes.chipGrid}>
                 {pattern['classtree'].map(singleClass => 
                     (
-                        <Chip 
+                        <Chip
                             label={singleClass} 
-                            style={{margin: '2px'}} 
+                            style={{ margin: '2px', width: 'auto', maxWidth: '100%' }} 
                             key={singleClass}
                         />)
                     )
@@ -58,16 +58,16 @@ export default function PatternCard({
     if (disableLinks) {
         return (
             <span>
-                {pattern.label + (isIndividual ? ` (${pattern.paper.paper.replace('onto:','')})` : '')}
+                {pattern.label}
             </span>
         )
     } else {
         return (
             <Link 
                 style={{cursor: 'pointer'}} 
-                onClick={() => handlePatternAction((isIndividual ? 'linkedPatternClick' : 'patternClick'), pattern)}
+                onClick={() => handlePatternAction((isIndividual ? 'proposalClick' : 'patternClick'), pattern)}
             >
-                {pattern.label + (isIndividual ? ` (${pattern.paper.paper.replace('onto:','')})` : '')}
+                {pattern.label}
             </Link>
         )
     }

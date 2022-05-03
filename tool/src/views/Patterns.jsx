@@ -13,7 +13,7 @@ import {
     deleteAllLocalstoragePatterns
 } from '../libs/localstorage';
 import { parseToLabel, exportToJSON } from '../libs/helpers';
-import { getClassTree, getLinkedPatterns, getPatterns } from '../libs/fuseki';
+import { getClassTree, getLinkedPatterns, getPatternKnowledge } from '../libs/fuseki';
 import PatternCard from '../components/PatternCard';
 import PatternModal from '../modals/PatternModal';
 import ClassChipSelector from '../components/ClassChipSelector';
@@ -67,7 +67,7 @@ export default function Patterns({ setNbPatterns }) {
     useEffect(() => {
         getStoredPatterns();
     
-        getPatterns()
+        getPatternKnowledge()
             .then((results) => {
                 setPatterns(results);
             })
@@ -118,64 +118,74 @@ export default function Patterns({ setNbPatterns }) {
         return patterns;
     }
 
-    const handlePatternClick = async (pattern, selectedTab = 0) => {
-        for (let i in pattern.individuals) {
-            let linkedPatterns = await getLinkedPatterns(pattern.individuals[i].individual);
-            pattern.individuals[i] = {
-               ...pattern.individuals[i],
-               linkedPatterns
-            }
-        }
-
+    const handlePatternClick = async (pattern, selectedVariant = -1, selectedProposal = -1) => {
         setModalStates({
             open: true,
-            selectedTab,
+            selectedTab: {
+                variant: selectedVariant,
+                proposal: selectedProposal
+            },
             pattern
         })
     }
 
-    const handleIndividualClick = (individual) => {
-        Object.keys(patterns).forEach(key => {
-            const pattern = patterns[key];
-            pattern.individuals.forEach((pIndividual, i) => {
-                if (individual.individual === pIndividual.individual) {
+    const handleVariantRelationClick = (clickedVariant) => {
+        Object.keys(patterns).forEach(pKey => {
+            const pattern = patterns[pKey];
+            Object.keys(pattern.variants).forEach((vKey, i) => {
+                if (vKey === clickedVariant.variant.value) {
                     handlePatternClick(pattern, i);
                 }
             }) 
         })
     };
 
-    const storeLocalPattern = (pattern) => {
-        storePatternInLocalstorage(pattern);
+    const handleProposalClick = (clickedProposal) => {
+        console.log(clickedProposal)
+        Object.keys(patterns).forEach(pKey => {
+            const pattern = patterns[pKey];
+            Object.keys(pattern.variants).forEach((vKey, i) => {
+                Object.keys(pattern.variants[vKey].proposals).forEach((proposalURI, j) => {
+                    if (proposalURI === clickedProposal.proposal) {
+                        console.log(pattern)
+                        handlePatternClick(pattern, i, j);
+                    }
+                });
+            }) 
+        })
+    };
+
+    const storeLocalPattern = (proposal) => {
+        storePatternInLocalstorage(proposal);
 
         setSelectedPatterns({
             ...selectedPatterns,
-            [pattern.individual.value]: pattern
+            [proposal.proposal]: proposal
         })
         enqueueSnackbar("Pattern successfully added.", { variant: 'success' });
     };
 
-    const deleteLocalPattern = (pattern) => {
+    const deleteLocalPattern = (proposal) => {
         let newSelectedPatterns = {...selectedPatterns};
-        delete newSelectedPatterns[pattern.individual];
+        delete newSelectedPatterns[proposal.proposal];
         setSelectedPatterns(newSelectedPatterns);
         setInLocalstorage('patterns', newSelectedPatterns);
         enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
     };
 
-    const handlePatternAction = (action, pattern) => {
+    const handlePatternAction = (action, individual) => {
         switch (action) {
-            case 'linkedPatternClick':
-                handleIndividualClick(pattern);
+            case 'linkedVariantClick':
+                handleVariantRelationClick(individual);
                 break;
-            case 'patternClick':
-                handlePatternClick(pattern);
+            case 'proposalClick':
+                handleProposalClick(individual);
                 break;
             case 'patternDelete':
-                deleteLocalPattern(pattern);
+                deleteLocalPattern(individual);
                 break;
             case 'patternStore':
-                storeLocalPattern(pattern);
+                storeLocalPattern(individual);
                 getStoredPatterns();
                 break;
             default:
@@ -278,7 +288,6 @@ export default function Patterns({ setNbPatterns }) {
                                             selectedPatterns={selectedPatterns} 
                                             handlePatternAction={handlePatternAction}
                                             cardSize={4} 
-                                            disableButtons={true}
                                             key={key}
                                             isIndividual
                                         />

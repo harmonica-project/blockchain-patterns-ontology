@@ -100,7 +100,7 @@ export default function VariantsTab({variants, handlePatternModalAction, selecte
     };
 
     const handleLink = (newVariant) => {
-        handlePatternModalAction('linkedPatternClick', newVariant);
+        handlePatternModalAction('linkedVariantClick', newVariant);
     }
 
     const getPatternStats = () => {

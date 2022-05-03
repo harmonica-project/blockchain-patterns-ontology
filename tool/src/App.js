@@ -10,7 +10,8 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-//import Patterns from './views/Patterns';
+
+import Patterns from './views/Patterns';
 
 export default function App() {
   const [nbPatterns, setNbPatterns] = useState(0);
@@ -22,6 +23,9 @@ export default function App() {
         <Switch>
           <Route path="/explore">
             <Explore setNbPatterns={setNbPatterns} />
+          </Route>
+          <Route path="/patterns">
+            <Patterns setNbPatterns={setNbPatterns} />
           </Route>
           <Route path="/">
             <Home />
