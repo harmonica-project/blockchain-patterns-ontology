@@ -3,5 +3,6 @@
                           :Paper ;
 
 $properties
+:hasIdentifier :Identifier${id} ;
 rdfs:label "$title" .
 

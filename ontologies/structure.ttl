@@ -75,6 +75,7 @@
                                        )
                          ] .
 
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#createdFrom
 :createdFrom rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
@@ -113,13 +114,20 @@
                                       )
                         ] .
 
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasIdentifier
+:hasIdentifier rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               owl:inverseOf :identifies ;
+               rdfs:domain :Paper ;
+               rdfs:range :Identifier .
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasPaper
 :hasPaper rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf owl:topObjectProperty ;
           owl:inverseOf :proposes ;
           rdfs:domain :Proposal ;
           rdfs:range :Paper .
-
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasProposal
 :hasProposal rdf:type owl:ObjectProperty ;
@@ -132,12 +140,6 @@
                          ] ;
              rdfs:range :Proposal .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasIdentifier
-:hasIdentifier rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf owl:topObjectProperty ;
-             rdfs:domain :Paper ;
-             rdfs:range :Identifier .
-
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasVariant
 :hasVariant rdf:type owl:ObjectProperty ;
@@ -145,12 +147,24 @@
             rdfs:domain :Proposal ;
             rdfs:range :Variant .
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#identifies
+:identifies rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Identifier ;
+            rdfs:range :Paper .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#proposes
 :proposes rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf owl:topObjectProperty ;
           rdfs:domain :Paper ;
           rdfs:range :Proposal .
+
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#references
+:references rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Identifier ;
+            rdfs:range :Identifier .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#relatedTo
@@ -191,6 +205,7 @@
                                     )
                       ] .
 
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#requires
 :requires rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf owl:topObjectProperty ;
@@ -229,6 +244,7 @@
                                    )
                      ] .
 
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#variantOf
 :variantOf rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
@@ -266,6 +282,7 @@
                                       ]
                                     )
                       ] .
+
 
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
 owl:topObjectProperty rdfs:domain :Pattern ;
@@ -316,8 +333,7 @@ owl:topObjectProperty rdfs:domain :Pattern ;
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Identifier
 :Identifier rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf owl:topDataProperty ;
-            rdfs:label "Identifier" .
+            rdfs:subPropertyOf owl:topDataProperty .
 
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IdentifierType
@@ -637,6 +653,11 @@ owl:topObjectProperty rdfs:domain :Pattern ;
                      rdfs:label "Hyperledger Sawtooth"@en .
 
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Identifier
+:Identifier rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing .
+
+
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IdentityManagement
 :IdentityManagement rdf:type owl:Class ;
                     rdfs:subClassOf :Specific ;
@@ -652,10 +673,6 @@ owl:topObjectProperty rdfs:domain :Pattern ;
                        ] ;
        rdfs:label "Idiom"@en .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Identifier
-:Identifier rdf:type owl:Class ;
-         rdfs:subClassOf owl:Thing ;
-         rdfs:label "Identifier"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InteractingWithBlockchain
 :InteractingWithBlockchain rdf:type owl:Class ;
@@ -895,6 +912,14 @@ owl:topObjectProperty rdfs:domain :Pattern ;
                                         owl:someValuesFrom :AssetManagement
                                       ] ;
                       rdfs:label "Wallet and keys pattern"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Identifier rdfs:label "Identifier"@en ,
+                       "Identifier" .
 
 
 #################################################################

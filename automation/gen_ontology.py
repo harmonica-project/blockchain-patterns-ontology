@@ -1,6 +1,11 @@
 import requests
 import re
 from string import Template
+import json
+import networkx as nx
+from networkx.drawing.nx_agraph import write_dot
+import itertools
+G = nx.DiGraph()
 
 # used by capitalizeURI as an exclusion list, words inside will not have its letters after the first one lowercased
 capital_word_list = [
@@ -179,6 +184,48 @@ def get_paper_properties(paper):
 
   return properties
 
+def generate_citations(papers):
+  print('Generating citations, this may take a while ...')
+  citations = ''
+
+  papers = {int(paper["ID"]): {"title": paper["Title"], "doi": paper["Identifier"]}
+          for paper in papers if "Identifier" in paper}
+  max_id=max(papers.keys())
+  for identifier, data in list(papers.items()):
+      G.add_node(identifier,snowball=False,doi=data["doi"])
+      resp = requests.get(
+          f"https://scholar.miage.dev/snowball?title={data['title']}", headers={"Accept": "application/json"})
+      if resp.status_code == 200:
+          resp_json = resp.json()
+          for ref in resp_json:
+              if ref == "":
+                  continue
+              if ref not in set([paper["doi"] for _, paper in papers.items()]):
+                  max_id+=1
+                  new_identifier = max_id
+                  papers.update({new_identifier: {"doi": ref}})
+                  G.add_node(new_identifier, snowball=True,doi=ref)
+                  G.add_edge(new_identifier, identifier)
+                  print(
+                      f"New paper {ref} cites {data['doi']}")
+              else:
+                
+                  edge_identifier = [
+                      iid for iid in papers.keys() if papers[iid]["doi"] == ref][0]
+                  if identifier != edge_identifier:
+                      G.add_edge(edge_identifier,identifier)
+                      print(
+                          f"New paper {ref} and cites {papers[edge_identifier]['doi']}")
+
+  for line in list(itertools.chain(*[[f":Identifier{citer} :references :Identifier{citee}." for citee in G[citer]] for citer in G.nodes])):
+    citations += line + "\n"
+  for line in list(itertools.chain(*[[f":Identifier{doi} rdf:type :Identifier." for doi in G.nodes]])):
+    citations += line + "\n"
+  for line in list(itertools.chain(*[[f":Identifier{doi} rdfs:label \"{G.nodes[doi]['doi']}\"^^rdfs:Literal." for doi in G.nodes]])):
+    citations += line + "\n"
+
+  return citations
+
 def generate_papers(papers_list):
   paper_template = load_template('paper')
   papers = ""
@@ -189,7 +236,8 @@ def generate_papers(papers_list):
       title=paper['Title'],
       title_word=get_first_word_title(paper['Title']),
       properties=get_paper_properties(paper), 
-      owner="nicolas"
+      owner="nicolas",
+      id=paper['ID']
     )
   return papers
 
@@ -306,6 +354,7 @@ def run():
   variants_ttl, variants_mapping = generate_variants(pattern_classes, proposals, papers)
   proposals_ttl = generate_proposals(proposals, proposal_mapping, proposals_links, papers, variants_mapping)
   papers_ttl = generate_papers(papers)
+  citations_ttl = generate_citations(papers)
 
   # write classes, papers and proposals in three distinct files, can be merged into a complete ontology
   with open("./results/classes.ttl", "w") as text_file_classes:
@@ -320,7 +369,10 @@ def run():
   with open("./results/variants.ttl", "w") as text_file_variants:
     text_file_variants.write(variants_ttl)
 
+  with open("./results/citations.ttl", "w") as text_file_citations:
+    text_file_citations.write(citations_ttl)
+
   with open("../ontologies/ontology.ttl", "w") as text_file_ontology:
-    text_file_ontology.write(ontology_structure + patterns_ttl + proposals_ttl + papers_ttl + variants_ttl)
+    text_file_ontology.write(ontology_structure + patterns_ttl + proposals_ttl + papers_ttl + variants_ttl + citations_ttl)
 
 run()

@@ -11,6 +11,7 @@
 :Pages "3--18"^^rdfs:Literal ;
 :Volume "393 LNBIP"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier2 ;
 rdfs:label "Silver Bullet for All Trust Issues? Blockchain-Based Trust Patterns for Collaborative Business Processes" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Worley2019Opportunities
@@ -26,6 +27,7 @@ rdfs:label "Silver Bullet for All Trust Issues? Blockchain-Based Trust Patterns 
 :Pages "264--276"^^rdfs:Literal ;
 :Volume "339"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier5 ;
 rdfs:label "Opportunities, challenges, and future extensions for smart-contract design patterns" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Owens2019Interfamily
@@ -41,6 +43,7 @@ rdfs:label "Opportunities, challenges, and future extensions for smart-contract 
 :Pages "389--401"^^rdfs:Literal ;
 :Volume "11319 LNCS"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier6 ;
 rdfs:label "Inter-family communication in hyperledger sawtooth and its application to a crypto-asset framework" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Bartoletti2017An
@@ -56,6 +59,7 @@ rdfs:label "Inter-family communication in hyperledger sawtooth and its applicati
 :Pages "494--509"^^rdfs:Literal ;
 :Volume "10323 LNCS"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier9 ;
 rdfs:label "An Empirical analysis of smart contracts: Platforms, applications, and design patterns" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Rajasekar2020Emerging
@@ -68,6 +72,7 @@ rdfs:label "An Empirical analysis of smart contracts: Platforms, applications, a
 :Identifier "10.5220/0009892702420249"^^rdfs:Literal ;
 :IdentifierType "DOI"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier11 ;
 rdfs:label "Emerging Design Patterns for Blockchain Applications" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Xu2018A
@@ -80,6 +85,7 @@ rdfs:label "Emerging Design Patterns for Blockchain Applications" .
 :Identifier "10.1145/3282308.3282312"^^rdfs:Literal ;
 :IdentifierType "DOI"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier13 ;
 rdfs:label "A Pattern Collection for Blockchain-Based Applications" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Liu2020Design
@@ -92,6 +98,7 @@ rdfs:label "A Pattern Collection for Blockchain-Based Applications" .
 :Identifier "10.1145/3424771.3424802"^^rdfs:Literal ;
 :IdentifierType "DOI"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier14 ;
 rdfs:label "Design Patterns for Blockchain-Based Self-Sovereign Identity" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Bandara2020Patterns
@@ -104,6 +111,7 @@ rdfs:label "Design Patterns for Blockchain-Based Self-Sovereign Identity" .
 :Identifier "10.1145/3424771.3424796"^^rdfs:Literal ;
 :IdentifierType "DOI"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier15 ;
 rdfs:label "Patterns for Blockchain Data Migration" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Moreno2019BlockBD
@@ -116,6 +124,7 @@ rdfs:label "Patterns for Blockchain Data Migration" .
 :Identifier "10.1145/3361149.3361166"^^rdfs:Literal ;
 :IdentifierType "DOI"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier17 ;
 rdfs:label "BlockBD: A Security Pattern to Incorporate Blockchain in Big Data Ecosystems" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Marchesi2020Design
@@ -130,6 +139,7 @@ rdfs:label "BlockBD: A Security Pattern to Incorporate Blockchain in Big Data Ec
 :Journal "IWBOSE 2020 Proceedings of the 2020 IEEE 3rd International Workshop on Blockchain Oriented Software Engineering"^^rdfs:Literal ;
 :Pages "9--15"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier20 ;
 rdfs:label "Design Patterns for Gas Optimization in Ethereum" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Six2020A
@@ -144,6 +154,7 @@ rdfs:label "Design Patterns for Gas Optimization in Ethereum" .
 :Journal "Proceedings 2020 IEEE 19th International Conference on Trust, Security and Privacy in Computing and Communications, TrustCom 2020"^^rdfs:Literal ;
 :Pages "1965--1970"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier23 ;
 rdfs:label "A blockchain-based pattern for confidential and pseudo-anonymous contract enforcement" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Wessling2018Engineering
@@ -158,6 +169,7 @@ rdfs:label "A blockchain-based pattern for confidential and pseudo-anonymous con
 :Journal "Proceedings 2018 IEEE 15th International Conference on Software Architecture Companion, ICSA-C 2018"^^rdfs:Literal ;
 :Pages "45--46"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier24 ;
 rdfs:label "Engineering Software Architectures of Blockchain-Oriented Applications" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Lemieux2017A
@@ -173,6 +185,7 @@ rdfs:label "Engineering Software Architectures of Blockchain-Oriented Applicatio
 :Pages "2271--2278"^^rdfs:Literal ;
 :Volume "2018-January"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier25 ;
 rdfs:label "A typology of blockchain recordkeeping solutions and some reflections on their implications for the future of archival preservation" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Wöhrer2018Design
@@ -186,6 +199,7 @@ rdfs:label "A typology of blockchain recordkeeping solutions and some reflection
 :IdentifierType "DOI"^^rdfs:Literal ;
 :Pages "1513--1520"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier27 ;
 rdfs:label "Design Patterns for Smart Contracts in the Ethereum Ecosystem" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Zhang2017Applying
@@ -199,6 +213,7 @@ rdfs:label "Design Patterns for Smart Contracts in the Ethereum Ecosystem" .
 :IdentifierType "Arxiv"^^rdfs:Literal ;
 :Journal "arXiv.org"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier34 ;
 rdfs:label "Applying software patterns to address interoperability in blockchain-based healthcare apps" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Wohrer2018Smart
@@ -212,6 +227,7 @@ rdfs:label "Applying software patterns to address interoperability in blockchain
 :IdentifierType "DOI"^^rdfs:Literal ;
 :Journal "2018 International Workshop on Blockchain Oriented Software Engineering (IWBOSE)"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier35 ;
 rdfs:label "Smart contracts: security patterns in the ethereum ecosystem and solidity" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Eberhardt2017On
@@ -225,6 +241,7 @@ rdfs:label "Smart contracts: security patterns in the ethereum ecosystem and sol
 :IdentifierType "DOI"^^rdfs:Literal ;
 :Journal "Service-Oriented and Cloud Computing"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier36 ;
 rdfs:label "On or off the blockchain? Insights on off-chaining computation and data" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Liu2018Applying
@@ -238,6 +255,7 @@ rdfs:label "On or off the blockchain? Insights on off-chaining computation and d
 :IdentifierType "DOI"^^rdfs:Literal ;
 :Journal "Blockchain -- ICBC 2018"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier37 ;
 rdfs:label "Applying design patterns in smart contracts" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Zhang2018Chapter
@@ -251,6 +269,7 @@ rdfs:label "Applying design patterns in smart contracts" .
 :IdentifierType "DOI"^^rdfs:Literal ;
 :Journal "Advances in computers"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier38 ;
 rdfs:label "Chapter One - Blockchain Technology Use Cases in Healthcare" .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Mühlberger2020Foundational
@@ -264,5 +283,6 @@ rdfs:label "Chapter One - Blockchain Technology Use Cases in Healthcare" .
 :IdentifierType "DOI"^^rdfs:Literal ;
 :Journal "Business Process Management: Blockchain and Robotic Process Automation Forum"^^rdfs:Literal ;
 
+:hasIdentifier :Identifier39 ;
 rdfs:label "Foundational Oracle Patterns: Connecting Blockchain to the Off-Chain World" .
 
