@@ -360,7 +360,11 @@ export const getPatternsByProblem = async (filterProblems = {}) => {
             if (response.status === 200) {
                 const results = parseResults(await response.json());
                 const scored = addScoreToPatterns(results, filterProblems);
-                const mapped = scored.map(r => ({ ...parseProposal(r), score: r.score }));
+                const citations = await getProposalCitations();
+                const citationsDict = {};
+
+                citations.forEach(citation => citationsDict[citation.proposal.value] = parseInt(citation.citations.value));
+                const mapped = scored.map(r => ({ ...parseProposal(r), score: r.score, citations: citationsDict[r.proposal.value] ? parseInt(citationsDict[r.proposal.value]) : 0 }));
                 return mapped;
             };
             return [];

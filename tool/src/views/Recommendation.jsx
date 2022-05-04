@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Container, Paper, Button, Grid, Pagination, TextField, Stack } from '@mui/material';
+import { Typography, Container, Paper, Button, Grid, Pagination, TextField, Stack, Link } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ContentContainer from '../layouts/ContentContainer';
 import { 
@@ -488,8 +488,8 @@ export default function Recommendation({ setNbPatterns }) {
     })
   }
 
-  const sortPatterns = (fKey, sKey) => {
-    return chosenPatterns[sKey]['score'] - chosenPatterns[fKey]['score'];
+  const sortPatterns = (a, b) => {
+    return b['score'] - a['score'];
   };
 
   const displayRankingInfo = () => {
@@ -500,12 +500,20 @@ export default function Recommendation({ setNbPatterns }) {
     return scoreDisplay[Math.floor(score*4)];
   };
 
+  const getCitationScoreRatio = (citations) => {
+    const maxCitations = Math.max(...Object.keys(patterns).map(key => patterns[key].citations));
+    const proposalCitations = (citations ? Math.log(citations) : 0)
+    const ratio = proposalCitations / Math.log(maxCitations);
+    return ratio;
+  }
+
   const getFilteredChosenPatterns = () => {
     return Object.keys(chosenPatterns)
       .filter(
         key => chosenPatterns[key].label
         .toLowerCase()
-        .includes(search.toLowerCase()));
+        .includes(search.toLowerCase()))
+      .map(key => ({ ...chosenPatterns[key], score: chosenPatterns[key].score * getCitationScoreRatio(chosenPatterns[key].citations) }))
   };
 
   const displayPatternGrid = () => {
@@ -514,18 +522,22 @@ export default function Recommendation({ setNbPatterns }) {
         {getFilteredChosenPatterns()
           .sort(sortPatterns)
           .slice((page - 1) * INTERVAL, page * INTERVAL)
-          .map(key => 
+          .map(proposal => 
             <PatternCard 
-              pattern={chosenPatterns[key]}
+              pattern={proposal}
               selectedPatterns={selectedPatterns}
               handlePatternAction={handlePatternAction}
               patternSubtext={[
                 {
-                  text: getScoreDisplay(chosenPatterns[key].score).label,
+                  text: proposal.citations ? `Cited ${proposal.citations} time${proposal.citations > 1 ? 's' : ''}` : 'Not cited',
+                  variant: 'overline'
+                },
+                {
+                  text: `${getScoreDisplay(proposal.score).label} (score: ${Math.round(proposal.score * 100)}%)`,
                   variant: 'overline'
                 }
               ]}
-              color={getScoreDisplay(chosenPatterns[key].score).color}
+              color={getScoreDisplay(proposal.score).color}
               isIndividual
             />)
           }
@@ -554,7 +566,7 @@ export default function Recommendation({ setNbPatterns }) {
           </Grid>
           <Grid item sm={2} xs={12} className={classes.optionBtnContainer}>
             <Button 
-              variant="contained" 
+              variant="outlined" 
               color="primary" 
               fullWidth 
               className={classes.exportBtn}
