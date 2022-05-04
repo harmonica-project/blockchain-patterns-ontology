@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip, Pagination, TextField } from '@mui/material';
+import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip, Pagination, TextField, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
@@ -16,6 +16,18 @@ import {
 } from '../libs/localstorage';
 import PatternCard from '../components/PatternCard';
 import LoadingOverlay from '../components/LoadingOverlay';
+
+const colorRange = [
+    '#ec644f',
+    '#F0884E',
+    '#f3a64d',
+    '#E8BB41',
+    '#e1c73a',
+    '#C3CA37',
+    '#9ecd34',
+    '#79BD2F',
+    '#5baf2a'
+];
 
 const useStyles = makeStyles(() => ({
     section: {
@@ -58,6 +70,7 @@ export default function Explore({ setNbPatterns }) {
     const [patterns, setPatterns] = useState([])
     const [selectorStates, setSelectorStates] = useState({});
     const [open, setOpen] = useState(false);
+    const [orderPattern, setOrderPattern] = useState('citation-desc');
     const [selectedPatterns, setSelectedPatterns] = useState({});
     const [filteredPatterns, setFilteredPatterns] = useState([]);
     const [page, setPage] = useState(1);
@@ -80,6 +93,7 @@ export default function Explore({ setNbPatterns }) {
         getPatternKnowledge()
             .then((results) => {
                 setPatterns(results);
+                console.log(results)
             })
             .finally(() => setOpen(false));
 
@@ -96,7 +110,7 @@ export default function Explore({ setNbPatterns }) {
     useEffect(() => {
         setPage(1);
         setFilteredPatterns(getFilteredPatterns());
-    }, [search, selectorStates]);
+    }, [search, selectorStates, orderPattern]);
 
     useEffect(() => {
         setNbPatterns(Object.keys(selectedPatterns).length);
@@ -212,11 +226,37 @@ export default function Explore({ setNbPatterns }) {
         return Object.keys(newPattern.variants).length ? [newPattern] : [];
     };
 
+    const sortPatterns = (a, b) => {
+        switch (orderPattern) {
+            case 'alphabetical-asc':
+                return a.label < b.label ? -1 : 1;
+
+            case 'alphabetical-desc':
+                return a.label > b.label ? -1 : 1;
+                
+            case 'citation-asc':
+                if (a.citations < b.citations) return -1;
+                if (a.citations > b.citations) return 1;
+                return 0;
+
+            case 'citation-desc':
+                if (a.citations > b.citations) return -1;
+                if (a.citations < b.citations) return 1;
+                return 0;
+
+            default:
+                if (a.citations > b.citations) return -1;
+                if (a.citations < b.citations) return 1;
+                return 0;
+        }
+    }
+
     const getFilteredPatterns = () => {
         if (patterns) {
             return Object.keys(patterns)
                 .filter(key => patterns[key].label.toLowerCase().includes(search.toLowerCase()))
                 .flatMap(filterProposals)
+                .sort(sortPatterns)
         }
     };
 
@@ -242,35 +282,74 @@ export default function Explore({ setNbPatterns }) {
     const displayPatterns = () => {
         if (Object.keys(patterns).length) {
             return (
-                <Grid container className={classes.patternSpacing}>
-                    <TextField
-                        id="searchbar-textfield"
-                        label="Search a specific pattern ..."
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        placeholder="Type the pattern name"
-                        fullWidth
-                    />
-                    <br/>
-                    {filteredPatterns
-                        .slice((page - 1) * INTERVAL, page * INTERVAL)
-                        .map(pattern => (
-                            <PatternCard 
-                                pattern={pattern} 
-                                handlePatternAction={handlePatternAction}
-                                cardSize={3}
-                                key={pattern.pattern}
-                                disableChips={true}
-                                patternSubtext={[{
-                                    text: getPatternStats(pattern),
-                                    variant: 'body2'
-                                }]}
-                            />
-                    ))}
+                <Grid container className={classes.patternSpacing} spacing={1}>
+                    <Grid item xs={9}>
+                        <TextField
+                            id="searchbar-textfield"
+                            label="Search a specific pattern ..."
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            placeholder="Type the pattern name"
+                            fullWidth
+                        />
+                    </Grid>
+                    <Grid item xs={3} sx={{ textAlign: 'center' }}>
+                        <FormControl variant="standard" sx={{ width: '90%'}} >
+                            <InputLabel id="order-select-label">Order by</InputLabel>
+                                <Select
+                                    labelId="order-select-label"
+                                    id="order-select"
+                                    value={orderPattern}
+                                    onChange={(e) => {
+                                        console.log(e.target.value)
+                                        setOrderPattern(e.target.value);
+                                    }}
+                                    label="Order by"
+                                >
+                                <MenuItem value={'alphabetical-asc'}>A-Z (asc.)</MenuItem>
+                                <MenuItem value={'alphabetical-desc'}>A-Z (asc.)</MenuItem>
+                                <MenuItem value={'citation-asc'}>Nb. of citations (asc.)</MenuItem>
+                                <MenuItem value={'citation-desc'}>Nb. of citations (desc.)</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Grid container>
+                            {filteredPatterns
+                                .slice((page - 1) * INTERVAL, page * INTERVAL)
+                                .map(pattern => (
+                                    <PatternCard 
+                                        pattern={pattern} 
+                                        handlePatternAction={handlePatternAction}
+                                        cardSize={3}
+                                        key={pattern.pattern}
+                                        disableChips={true}
+                                        color={getPatternColor(pattern.citations)}
+                                        patternSubtext={[
+                                            {
+                                                text: pattern.citations ? `Cited ${pattern.citations} times` : 'Not cited',
+                                                variant: 'overline'
+                                            },
+                                            {
+                                                text: getPatternStats(pattern),
+                                                variant: 'body2'
+                                            }
+                                        ]}
+                                    />
+                            ))}
+                        </Grid>
+                    </Grid>
                 </Grid>
             )
         } else return <div/>;
     };
+
+    // logarithmic display of color citations (to avoid having all cards in red if one paper is cited a lot!)
+    const getPatternColor = (citations) => {
+        const maxCitations = Math.max(...Object.keys(patterns).map(key => patterns[key].citations));
+        const ratio = (colorRange.length - 1) / Math.log(maxCitations);
+        return citations ? colorRange[parseInt(Math.log(citations) * ratio)] : colorRange[0];
+    }
 
     const displaySelectedClasses = () => {
         if (Object.keys(selectorStates).length === 0) {

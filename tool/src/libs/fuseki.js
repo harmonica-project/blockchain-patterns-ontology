@@ -139,10 +139,14 @@ const parseProposal = (result) => {
 }
 
 // used to merge proposal duplicated in the request as we also want to retrieve each of their classes
-const structurePatterns = (results) => {
+const structurePatterns = (patterns, pCitations, vCitations) => {
     const newPatterns = {};
+    const pCitationsDict = {}
+    const vCitationsDict = {}
+    pCitations.forEach(citation => pCitationsDict[citation.pattern.value] = parseInt(citation.citations.value));
+    vCitations.forEach(citation => vCitationsDict[citation.variant.value] = parseInt(citation.citations.value));
 
-    results.forEach(r => {
+    patterns.forEach(r => {
         if (newPatterns[r.pattern.value]) {
             if (newPatterns[r.pattern.value].variants[r.variant.value]) {
                 if (newPatterns[r.pattern.value].variants[r.variant.value].proposals[r.proposal.value]) {
@@ -161,13 +165,15 @@ const structurePatterns = (results) => {
                             classes: [r.parent.value, r.pattern.value]
                         }
                     },
-                    label: r.variant_label.value
+                    label: r.variant_label.value,
+                    citations: vCitationsDict[r.variant.value] ?? 0,
                 }
             }
         } else {
             newPatterns[r.pattern.value] = {
                 pattern: r.pattern.value,
                 label: r.pattern_label.value,
+                citations: pCitationsDict[r.pattern.value] ?? 0,
                 variants: {
                     [r.variant.value]: {
                         proposals: {
@@ -176,7 +182,8 @@ const structurePatterns = (results) => {
                                 classes: [r.parent.value, r.pattern.value]
                             }
                         },
-                        label: r.variant_label.value
+                        label: r.variant_label.value,
+                        citations: vCitationsDict[r.variant.value] ?? 0,
                     }
                 }
             }
@@ -194,7 +201,7 @@ const addScoreToPatterns = (patterns, filterProblems) => {
     return newPatterns;
 };
 
-export const getPatternKnowledge = async () => {
+const getPatterns = async () => {
     const query = `
         SELECT ?parent ?pattern ?variant ?proposal ?pattern_label ?variant_label ?proposal_label ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
         WHERE {
@@ -219,9 +226,67 @@ export const getPatternKnowledge = async () => {
     try {
         let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
         if (response.status === 200) {
-            const results = parseResults(await response.json());
-            const grouped = structurePatterns(results);
-            return grouped;
+            return parseResults(await response.json());
+        };
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
+    }
+}
+
+export const getPatternKnowledge = async () => {
+    const patterns = await getPatterns();
+    const pCitations = await getPatternsCitations();
+    const vCitations = await getVariantsCitations();
+
+    if (patterns.length) {
+        const grouped = structurePatterns(patterns, pCitations, vCitations);
+        return grouped;
+    } else return [];
+}
+
+const getPatternsCitations = async () => {
+    let query = `
+        SELECT ?pattern (COUNT(*) as ?citations)
+        WHERE {
+            ?pattern rdfs:subClassOf* onto:Pattern .
+            ?variant a ?pattern .
+            ?variant onto:hasProposal ?proposal .
+            ?proposal onto:hasPaper ?paper .
+            ?paper onto:hasIdentifier ?identifier .
+            ?target onto:references ?identifier
+        } GROUP BY ?pattern 
+    `;
+
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            return parseResults(await response.json());
+        };
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
+    }
+}
+
+const getVariantsCitations = async () => {
+    let query = `
+        SELECT ?variant (COUNT(*) as ?citations)
+        WHERE {
+            ?variant a onto:Variant .
+            ?variant onto:hasProposal ?proposal .
+            ?proposal onto:hasPaper ?paper .
+            ?paper onto:hasIdentifier ?identifier .
+            ?target onto:references ?identifier
+        } GROUP BY ?variant 
+    `;
+
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            return parseResults(await response.json());
         };
         return [];
     } catch (e) {
