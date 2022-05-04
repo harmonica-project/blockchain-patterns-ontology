@@ -25,12 +25,13 @@ export default function PatternCard({
     pattern,
     key,
     handlePatternAction, 
+    handleButtonAction,
     cardSize = 4, 
     disableChips,
     disableLinks,
     patternSubtext = [],
     color = '',
-    isIndividual
+    isIndividual,
 }) {
   const classes = useStyles();
 
@@ -88,8 +89,15 @@ export default function PatternCard({
     <Grid item sm={cardSize} xs={12} className={classes.patternItem} key={key}>
         <Card className={classes.patternCard} style={genBorder(color)}>
             <Grid container justifyContent="center">
+                {
+                    handleButtonAction && (
+                        <Grid item xs={12} sx={{ paddingRight: '5px' }} display="flex" justifyContent="right">
+                            <Link sx={{ cursor: 'pointer' }} onClick={() => handleButtonAction(pattern)}>(?)</Link>
+                        </Grid>
+                    )
+                }
                 <Grid item sm={12} alignItems="center" display="flex" justifyContent="center">
-                    <Typography>
+                    <Typography maxWidth={handleButtonAction ? '80%' : '100%'}>
                         { genTitle() }
                         {
                             patternSubtext.map(item => (

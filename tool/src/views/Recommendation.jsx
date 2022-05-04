@@ -21,28 +21,19 @@ import {
   getJSONFileContent
  } from '../libs/localstorage';
 import RationaleDialog from '../modals/RationaleDialog';
+import ScoreDialog from '../modals/ScoreDialog';
 
 const scoreDisplay = [
-  {
-    label: 'Not recommended',
-    color: '#ec644f'
-  },
-  {
-    label: 'Slightly recommended',
-    color: '#f3a64d'
-  },
-  {
-    label: 'Recommended',
-    color: '#e1c73a'
-  },
-  {
-    label: 'Highly recommended',
-    color: '#9ecd34'
-  },
-  {
-    label: 'Extremely recommended',
-    color: '#5baf2a'
-  }
+  { label: 'Not recommended', color: '#ec644f' },
+  { label: 'Not recommended', color: '#F0884E' },
+  { label: 'Slightly recommended', color: '#f3a64d' },
+  { label: 'Slightly recommended', color: '#E8BB41' },
+  { label: 'Recommended', color: '#e1c73a' },
+  { label: 'Recommended', color: '#e1c73a' },
+  { label: 'Highly recommended', color: '#C3CA37' },
+  { label: 'Highly recommended', color: '#9ecd34' },
+  { label: 'Extremely recommended', color: '#79BD2F' },
+  { label: 'Extremely recommended', color: '#5baf2a' }
 ];
 
 const Input = styled('input')({
@@ -93,6 +84,10 @@ export default function Recommendation({ setNbPatterns }) {
   const [selectedPatterns, setSelectedPatterns] = useState({});
   const [quizzState, setQuizzState] = useState(0);
   const [search, setSearch] = useState('');
+  const [page, setPage] = useState(1);
+  const [patterns, setPatterns] = useState({});
+  const [chosenPatterns, setChosenPatterns] = useState({});
+
   const [quizz, setQuizz] = useState({
     list: {},
     topQuestions: [], 
@@ -100,9 +95,16 @@ export default function Recommendation({ setNbPatterns }) {
     currentStep: 1,
     history: []
   });
-  const [page, setPage] = useState(1);
-  const [patterns, setPatterns] = useState({});
-  const [chosenPatterns, setChosenPatterns] = useState({});
+
+  const [scoreModalStates, setScoreModalStates] = useState({
+    open: false,
+    setOpen: (isOpen) => setScoreModalStates({ ...scoreModalStates, open: isOpen}),
+    proposal: {},
+    ratio: 0,
+    questionScore: 0,
+    totalScore: 0,
+    maxCitations: 0
+  });
 
   const INTERVAL = 18;
 
@@ -497,15 +499,30 @@ export default function Recommendation({ setNbPatterns }) {
   };
 
   const getScoreDisplay = (score) => {
-    return scoreDisplay[Math.floor(score*4)];
+    return scoreDisplay[Math.floor(score*9)];
+  };
+
+  const getMaxCitations = () => {
+    let highest = 0;
+
+    Object.keys(patterns).forEach(pKey => {
+      Object.keys(patterns[pKey].variants).forEach(vKey => {
+        Object.keys(patterns[pKey].variants[vKey].proposals).forEach((prKey) => {
+          if (patterns[pKey].variants[vKey].proposals[prKey].citations > highest) {
+            highest = patterns[pKey].variants[vKey].proposals[prKey].citations;
+          }
+        })
+      })
+    });
+
+    return highest;
   };
 
   const getCitationScoreRatio = (citations) => {
-    const maxCitations = Math.max(...Object.keys(patterns).map(key => patterns[key].citations));
     const proposalCitations = (citations ? Math.log(citations) : 0)
-    const ratio = proposalCitations / Math.log(maxCitations);
+    const ratio = proposalCitations / Math.log(getMaxCitations());
     return ratio;
-  }
+  };
 
   const getFilteredChosenPatterns = () => {
     return Object.keys(chosenPatterns)
@@ -515,6 +532,18 @@ export default function Recommendation({ setNbPatterns }) {
         .includes(search.toLowerCase()))
       .map(key => ({ ...chosenPatterns[key], score: chosenPatterns[key].score * getCitationScoreRatio(chosenPatterns[key].citations) }))
   };
+
+  const handleButtonAction = (proposal) => {
+    setScoreModalStates({
+      ...scoreModalStates,
+      open: true,
+      questionScore: proposal.score / getCitationScoreRatio(proposal.citations),
+      totalScore: proposal.score,
+      ratio: getCitationScoreRatio(proposal.citations),
+      proposal,
+      maxCitations: getMaxCitations()
+    });
+  }
 
   const displayPatternGrid = () => {
     return (
@@ -527,6 +556,7 @@ export default function Recommendation({ setNbPatterns }) {
               pattern={proposal}
               selectedPatterns={selectedPatterns}
               handlePatternAction={handlePatternAction}
+              handleButtonAction={handleButtonAction}
               patternSubtext={[
                 {
                   text: proposal.citations ? `Cited ${proposal.citations} time${proposal.citations > 1 ? 's' : ''}` : 'Not cited',
@@ -624,6 +654,7 @@ export default function Recommendation({ setNbPatterns }) {
         handlePatternModalAction={handlePatternAction}
       />
       <RationaleDialog open={rationaleOpen} setOpen={setRationaleOpen} />
+      <ScoreDialog {...scoreModalStates} />
     </ContentContainer>
   );
 }
