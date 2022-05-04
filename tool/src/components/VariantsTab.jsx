@@ -188,7 +188,7 @@ export default function VariantsTab({variants, handlePatternModalAction, selecte
                         aria-controls={`variant${i}-accordion-summary`}
                     >
                         <Typography id="variant-title" variant="h5" component="h1">
-                            {variants[vKey].label}
+                            {variants[vKey].label} - {variants[vKey].citations ? `cited ${variants[vKey].citations} time${variants[vKey].citations > 1 ? 's' : ''}` : 'not cited'}
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>

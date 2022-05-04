@@ -327,7 +327,7 @@ export default function Explore({ setNbPatterns }) {
                                         color={getPatternColor(pattern.citations)}
                                         patternSubtext={[
                                             {
-                                                text: pattern.citations ? `Cited ${pattern.citations} times` : 'Not cited',
+                                                text: pattern.citations ? `Cited ${pattern.citations} time${pattern.citations > 1 ? 's' : ''}` : 'Not cited',
                                                 variant: 'overline'
                                             },
                                             {
