@@ -1,6 +1,6 @@
-import { parseResults, convertResultToMapping } from './helpers';
+import { parseResults } from './helpers';
 
-const FUSEKI_URL = "http://localhost:3030/ontotool/sparql"
+const FUSEKI_URL = "https://sparql.nextnet.top/ontotoolv2/query"
 const PREFIXES = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
