@@ -93,7 +93,6 @@ export default function Explore({ setNbPatterns }) {
         getPatternKnowledge()
             .then((results) => {
                 setPatterns(results);
-                console.log(results)
             })
             .finally(() => setOpen(false));
 

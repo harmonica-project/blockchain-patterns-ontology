@@ -139,12 +139,15 @@ const parseProposal = (result) => {
 }
 
 // used to merge proposal duplicated in the request as we also want to retrieve each of their classes
-const structurePatterns = (patterns, pCitations, vCitations) => {
+const structurePatterns = (patterns, pCitations, vCitations, prCitations) => {
     const newPatterns = {};
     const pCitationsDict = {}
     const vCitationsDict = {}
+    const prCitationsDict = {}
+
     pCitations.forEach(citation => pCitationsDict[citation.pattern.value] = parseInt(citation.citations.value));
     vCitations.forEach(citation => vCitationsDict[citation.variant.value] = parseInt(citation.citations.value));
+    prCitations.forEach(citation => prCitationsDict[citation.proposal.value] = parseInt(citation.citations.value));
 
     patterns.forEach(r => {
         if (newPatterns[r.pattern.value]) {
@@ -154,7 +157,8 @@ const structurePatterns = (patterns, pCitations, vCitations) => {
                 } else {
                     newPatterns[r.pattern.value].variants[r.variant.value].proposals[r.proposal.value] = {
                         ...parseProposal(r),
-                        classes: [r.parent.value, r.pattern.value]
+                        classes: [r.parent.value, r.pattern.value],
+                        citations: prCitationsDict[r.proposal.value] ?? 0
                     }
                 }
             } else {
@@ -162,7 +166,8 @@ const structurePatterns = (patterns, pCitations, vCitations) => {
                     proposals: {
                         [r.proposal.value]: {
                             ...parseProposal(r),
-                            classes: [r.parent.value, r.pattern.value]
+                            classes: [r.parent.value, r.pattern.value],
+                            citations: prCitationsDict[r.proposal.value] ?? 0
                         }
                     },
                     label: r.variant_label.value,
@@ -179,7 +184,8 @@ const structurePatterns = (patterns, pCitations, vCitations) => {
                         proposals: {
                             [r.proposal.value]: {
                                 ...parseProposal(r),
-                                classes: [r.parent.value, r.pattern.value]
+                                classes: [r.parent.value, r.pattern.value],
+                                citations: prCitationsDict[r.proposal.value] ?? 0
                             }
                         },
                         label: r.variant_label.value,
@@ -239,9 +245,10 @@ export const getPatternKnowledge = async () => {
     const patterns = await getPatterns();
     const pCitations = await getPatternsCitations();
     const vCitations = await getVariantsCitations();
+    const prCitations = await getProposalCitations();
 
     if (patterns.length) {
-        const grouped = structurePatterns(patterns, pCitations, vCitations);
+        const grouped = structurePatterns(patterns, pCitations, vCitations, prCitations);
         return grouped;
     } else return [];
 }
@@ -281,6 +288,28 @@ const getVariantsCitations = async () => {
             ?paper onto:hasIdentifier ?identifier .
             ?target onto:references ?identifier
         } GROUP BY ?variant 
+    `;
+
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            return parseResults(await response.json());
+        };
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
+    }
+}
+
+const getProposalCitations = async () => {
+    let query = `
+    SELECT ?proposal (COUNT(*) as ?citations)
+    WHERE {
+        ?proposal onto:hasPaper ?paper .
+        ?paper onto:hasIdentifier ?identifier .
+        ?target onto:references ?identifier
+    } GROUP BY ?proposal 
     `;
 
     try {

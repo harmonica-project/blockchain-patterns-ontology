@@ -205,7 +205,7 @@ export default function VariantsTab({variants, handlePatternModalAction, selecte
                                             >
                                                 <Box className={classes.accordionBox}>
                                                     <Typography id="proposal-title" variant="body1" component="h1">
-                                                        {variants[vKey].proposals[pKey].label}
+                                                        {variants[vKey].proposals[pKey].label} - {variants[vKey].proposals[pKey].citations ? `cited ${variants[vKey].proposals[pKey].citations} time${variants[vKey].proposals[pKey].citations > 1 ? 's' : ''}` : 'not cited'}
                                                     </Typography>
                                                     {
                                                         !selectedPatterns[variants[vKey].proposals[pKey].proposal]
