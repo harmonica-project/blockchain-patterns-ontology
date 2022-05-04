@@ -166,24 +166,40 @@ export default function Recommendation({ setNbPatterns }) {
     return patterns;
   }
 
-  const handleIndividualClick = (individual) => {
-    Object.keys(patterns).forEach(key => {
-        const pattern = patterns[key];
-        pattern.individuals.forEach((pIndividual, i) => {
-            if (individual.individual === pIndividual.individual) {
+  const handleVariantRelationClick = (clickedVariant) => {
+    Object.keys(patterns).forEach(pKey => {
+        const pattern = patterns[pKey];
+        Object.keys(pattern.variants).forEach((vKey, i) => {
+            if (vKey === clickedVariant.variant.value) {
                 handlePatternClick(pattern, i);
             }
+        }) 
+    })
+};
+
+  const handleProposalClick = (clickedProposal) => {
+    console.log(clickedProposal)
+    Object.keys(patterns).forEach(pKey => {
+        const pattern = patterns[pKey];
+        Object.keys(pattern.variants).forEach((vKey, i) => {
+            Object.keys(pattern.variants[vKey].proposals).forEach((proposalURI, j) => {
+                if (proposalURI === clickedProposal.proposal) {
+                    console.log(pattern)
+                    handlePatternClick(pattern, i, j);
+                }
+            });
         }) 
     })
   };
 
   const handlePatternAction = (action, pattern) => {
+    console.log(action, pattern)
     switch (action) {
-        case 'linkedPatternClick':
-            handleIndividualClick(pattern);
+        case 'linkedVariantClick':
+            handleVariantRelationClick(pattern);
             break;
-        case 'patternClick':
-            handlePatternClick(pattern);
+        case 'proposalClick':
+            handleProposalClick(pattern);
             break;
         case 'patternDelete':
             deleteLocalPattern(pattern);
@@ -443,40 +459,33 @@ export default function Recommendation({ setNbPatterns }) {
     )
   }
 
-  const deleteLocalPattern = (pattern) => {
-    let newSelectedPatterns = {...selectedPatterns};
-    delete newSelectedPatterns[pattern.individual];
-    setSelectedPatterns(newSelectedPatterns);
-    setInLocalstorage('patterns', newSelectedPatterns);
-    enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
+  const storeLocalPattern = (proposal) => {
+    storePatternInLocalstorage(proposal);
+
+    setSelectedPatterns({
+        ...selectedPatterns,
+        [proposal.proposal]: proposal
+    })
+    enqueueSnackbar("Pattern successfully added.", { variant: 'success' });
   };
 
-  const storeLocalPattern = (pattern) => {
-      storePatternInLocalstorage(pattern);
-
-      setSelectedPatterns({
-          ...selectedPatterns,
-          [pattern.individual.value]: pattern
-      })
-      enqueueSnackbar("Pattern successfully added.", { variant: 'success' });
+  const deleteLocalPattern = (proposal) => {
+      let newSelectedPatterns = {...selectedPatterns};
+      delete newSelectedPatterns[proposal.proposal];
+      setSelectedPatterns(newSelectedPatterns);
+      setInLocalstorage('patterns', newSelectedPatterns);
+      enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
   };
 
-  const handlePatternClick = async (pattern, selectedTab = 0) => {
-    /*
-    for (let i in pattern.individuals) {
-        let linkedPatterns = await getLinkedPatterns(pattern.individuals[i].individual);
-        pattern.individuals[i] = {
-           ...pattern.individuals[i],
-           linkedPatterns
-        }
-    }
-
+  const handlePatternClick = async (pattern, selectedVariant = -1, selectedProposal = -1) => {
     setModalStates({
         open: true,
-        selectedTab,
+        selectedTab: {
+            variant: selectedVariant,
+            proposal: selectedProposal
+        },
         pattern
     })
-    */
   }
 
   const sortPatterns = (fKey, sKey) => {
