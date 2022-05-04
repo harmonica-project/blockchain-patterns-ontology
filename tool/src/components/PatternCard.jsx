@@ -1,5 +1,6 @@
 import React from 'react';
-import { Grid, Typography, Card, Link, Chip } from '@mui/material';
+import { Grid, Typography, Card, IconButton, Chip, Link, Box } from '@mui/material';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(() => ({
@@ -91,8 +92,12 @@ export default function PatternCard({
             <Grid container justifyContent="center">
                 {
                     handleButtonAction && (
-                        <Grid item xs={12} sx={{ paddingRight: '5px' }} display="flex" justifyContent="right">
-                            <Link sx={{ cursor: 'pointer' }} onClick={() => handleButtonAction(pattern)}>(?)</Link>
+                        <Grid item xs={12} display="flex" justifyContent="right">
+                            <Box sx={{ height: 0 }} >
+                                <IconButton size="small" onClick={() => handleButtonAction(pattern)} aria-label="See score info">
+                                    <QuestionMarkIcon fontSize="small" />
+                                </IconButton>
+                            </Box>
                         </Grid>
                     )
                 }
