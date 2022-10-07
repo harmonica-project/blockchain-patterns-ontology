@@ -55,7 +55,7 @@ export const parseToLabel = (uri) => {
 }
 
 export const exportToJSON = async (content, filename) => {
-    const json = JSON.stringify(content);
+    const json = JSON.stringify(content, null, 4);
     const blob = new Blob([json],{type:'application/json'});
     const href = await URL.createObjectURL(blob);
     const link = document.createElement('a');

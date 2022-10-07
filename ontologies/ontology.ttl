@@ -140,6 +140,11 @@
                          ] ;
              rdfs:range :Proposal .
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasIdentifier
+:hasIdentifier rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Paper ;
+             rdfs:range :Identifier .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#hasVariant
 :hasVariant rdf:type owl:ObjectProperty ;
@@ -673,6 +678,10 @@ owl:topObjectProperty rdfs:domain :Pattern ;
                        ] ;
        rdfs:label "Idiom"@en .
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Identifier
+:Identifier rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ;
+         rdfs:label "Identifier"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#InteractingWithBlockchain
 :InteractingWithBlockchain rdf:type owl:Class ;
@@ -2007,8 +2016,8 @@ rdfs:label "Authorization (Worley, 2019)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:variantOf :OracleBartoletti2017An ;
-:requires :AuthorizationWorley2019Opportunities ;
+:variantOf :Oracle9 ;
+:requires :Authorization5 ;
 
 :hasPaper :Worley2019Opportunities ;
 :hasVariant :JudgeV ;
@@ -2024,8 +2033,8 @@ rdfs:label "Judge (Worley, 2019)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:variantOf :OracleBartoletti2017An ;
-:requires :AuthorizationWorley2019Opportunities ;
+:variantOf :Oracle9 ;
+:requires :Authorization5 ;
 
 :hasPaper :Worley2019Opportunities ;
 :hasVariant :TickerTapeV ;
@@ -2041,8 +2050,8 @@ rdfs:label "Ticker Tape (Worley, 2019)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:variantOf :OracleBartoletti2017An ;
-:benefitsFrom :BlockchainBasedReputationSystemMüller2020Silver ;
+:variantOf :Oracle9 ;
+:benefitsFrom :BlockchainBasedReputationSystem2 ;
 
 :hasPaper :Worley2019Opportunities ;
 :hasVariant :VoteV ;
@@ -2088,7 +2097,7 @@ rdfs:label "Blocklist (Worley, 2019)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requires :AuthorizationWorley2019Opportunities ;
+:requires :Authorization5 ;
 
 :hasPaper :Worley2019Opportunities ;
 :hasVariant :AnnouncementV ;
@@ -2104,8 +2113,8 @@ rdfs:label "Announcement (Worley, 2019)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :JudgeWorley2019Opportunities ;
-:benefitsFrom :VoteWorley2019Opportunities ;
+:benefitsFrom :Judge5 ;
+:benefitsFrom :Vote5 ;
 
 :hasPaper :Worley2019Opportunities ;
 :hasVariant :BulletinBoardV ;
@@ -2121,7 +2130,7 @@ rdfs:label "Bulletin Board (Worley, 2019)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requires :AddressMappingWorley2019Opportunities ;
+:requires :AddressMapping5 ;
 
 :hasPaper :Worley2019Opportunities ;
 :hasVariant :TokenisationV ;
@@ -2320,7 +2329,7 @@ rdfs:label "Fork check (Bartoletti, 2017)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :ChecksEffectsInteractionWohrer2018Smart ;
+:createdFrom :ChecksEffectsInteraction35 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :ChecksEffectInteractionsV ;
@@ -2336,7 +2345,7 @@ rdfs:label "Checks-Effect-Interactions (Rajasekar, 2020)" .
                    :Ethereum ,
                    :Solidity ;
 
-:createdFrom :ChecksEffectsInteractionWohrer2018Smart ;
+:createdFrom :ChecksEffectsInteraction35 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :SecureEtherTransferV ;
@@ -2352,10 +2361,10 @@ rdfs:label "Secure Ether Transfer (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :OracleXu2018A ;
-:createdFrom :OracleDataProviderWöhrer2018Design ;
-:createdFrom :PublisherSubscriberZhang2018Chapter ;
-:relatedTo :DynamicBindingRajasekar2020Emerging ;
+:createdFrom :Oracle13 ;
+:createdFrom :OracleDataProvider27 ;
+:createdFrom :PublisherSubscriber38 ;
+:relatedTo :DynamicBinding11 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :OracleV ;
@@ -2387,7 +2396,7 @@ rdfs:label "Off-chain Datastore (Rajasekar, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:createdFrom :StateChannelXu2018A ;
+:createdFrom :StateChannel13 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :StateChannelV ;
@@ -2405,9 +2414,9 @@ rdfs:label "State Channel (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :ContractRegistryXu2018A ;
-:createdFrom :ContractRegisterWöhrer2018Design ;
-:relatedTo :ProxyContractRajasekar2020Emerging ;
+:createdFrom :ContractRegistry13 ;
+:createdFrom :ContractRegister27 ;
+:relatedTo :ProxyContract11 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :OffChainContractRegistryV ;
@@ -2423,8 +2432,8 @@ rdfs:label "(Off-chain) Contract Registry (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :DataContractXu2018A ;
-:createdFrom :DataSegregationWöhrer2018Design ;
+:createdFrom :DataContract13 ;
+:createdFrom :DataSegregation27 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :DataContractV ;
@@ -2440,7 +2449,7 @@ rdfs:label "Data Contract (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :EmbeddedPermissionXu2018A ;
+:createdFrom :EmbeddedPermission13 ;
 :createdFrom :Unknown ;
 
 :hasPaper :Rajasekar2020Emerging ;
@@ -2457,8 +2466,8 @@ rdfs:label "Embedded Permission (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :FactoryContractXu2018A ;
-:createdFrom :AbstractFactoryZhang2018Chapter ;
+:createdFrom :FactoryContract13 ;
+:createdFrom :AbstractFactory38 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :FactoryContractV ;
@@ -2474,7 +2483,7 @@ rdfs:label "Factory Contract (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :EmergencyStopWohrer2018Smart ;
+:createdFrom :EmergencyStop35 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :EmergencyStopV ;
@@ -2490,7 +2499,7 @@ rdfs:label "Emergency Stop (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :MutexWohrer2018Smart ;
+:createdFrom :Mutex35 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :MutexV ;
@@ -2506,7 +2515,7 @@ rdfs:label "Mutex (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :BalanceLimitWohrer2018Smart ;
+:createdFrom :BalanceLimit35 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :ContractBalanceLimitV ;
@@ -2522,8 +2531,8 @@ rdfs:label "Contract Balance Limit (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :ReverseOracleXu2018A ;
-:relatedTo :OracleRajasekar2020Emerging ;
+:createdFrom :ReverseOracle13 ;
+:relatedTo :Oracle11 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :ReverseOracleV ;
@@ -2539,7 +2548,7 @@ rdfs:label "Reverse Verifier (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :IncentiveExecutionXu2018A ;
+:createdFrom :IncentiveExecution13 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :IncentiveExecutionV ;
@@ -2555,7 +2564,7 @@ rdfs:label "Incentive Execution (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :CommitAndRevealWöhrer2018Design ;
+:createdFrom :CommitAndReveal27 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :CommitAndRevealV ;
@@ -2571,8 +2580,8 @@ rdfs:label "Commit and Reveal (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :ContractRelayWöhrer2018Design ;
-:relatedTo :OffChainContractRegistryRajasekar2020Emerging ;
+:createdFrom :ContractRelay27 ;
+:relatedTo :OffChainContractRegistry11 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :ProxyContractV ;
@@ -2604,8 +2613,8 @@ rdfs:label "Dynamic Binding (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:createdFrom :FlyweightZhang2018Chapter ;
-:relatedTo :DataContractRajasekar2020Emerging ;
+:createdFrom :Flyweight38 ;
+:relatedTo :DataContract11 ;
 
 :hasPaper :Rajasekar2020Emerging ;
 :hasVariant :FlyweightV ;
@@ -2637,7 +2646,7 @@ rdfs:label "Tight Variable Packing (Rajasekar, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedTo :ReverseOracleXu2018A ;
+:relatedTo :ReverseOracle13 ;
 :requires :Unknown ;
 
 :hasPaper :Xu2018A ;
@@ -2657,7 +2666,7 @@ rdfs:label "Oracle (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedTo :OracleXu2018A ;
+:relatedTo :Oracle13 ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :ReverseOracleV ;
@@ -2695,7 +2704,7 @@ rdfs:label "Legal and smart-contract pair (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedTo :OffChainDataStorageXu2018A ;
+:relatedTo :OffChainDataStorage13 ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :EncryptingOnChainDataV ;
@@ -2733,7 +2742,7 @@ rdfs:label "Tokenisation (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedTo :ProxyZhang2017Applying ;
+:relatedTo :Proxy34 ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :OffChainDataStorageV ;
@@ -2751,7 +2760,7 @@ rdfs:label "Off-chain data storage (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedTo :OffChainSignaturesEberhardt2017On ;
+:relatedTo :OffChainSignatures36 ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :StateChannelV ;
@@ -2772,7 +2781,7 @@ rdfs:label "State channel (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :OffChainSecretEnabledDynamicAuthenticationXu2018A ;
+:benefitsFrom :OffChainSecretEnabledDynamicAuthentication13 ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :MultipleAuthorizationV ;
@@ -2790,7 +2799,7 @@ rdfs:label "Multiple authorization (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :MultipleAuthorizationXu2018A ;
+:benefitsFrom :MultipleAuthorization13 ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :OffChainSecretEnabledDynamicAuthenticationV ;
@@ -2825,8 +2834,8 @@ rdfs:label "X-confirmation (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :EmbeddedPermissionXu2018A ;
-:benefitsFrom :DataContractXu2018A ;
+:benefitsFrom :EmbeddedPermission13 ;
+:benefitsFrom :DataContract13 ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :ContractRegistryV ;
@@ -2844,9 +2853,9 @@ rdfs:label "Contract registry (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :AuthorizationWorley2019Opportunities ;
-:benefitsFrom :MultipleAuthorizationXu2018A ;
-:benefitsFrom :OffChainSecretEnabledDynamicAuthenticationXu2018A ;
+:benefitsFrom :Authorization5 ;
+:benefitsFrom :MultipleAuthorization13 ;
+:benefitsFrom :OffChainSecretEnabledDynamicAuthentication13 ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :EmbeddedPermissionV ;
@@ -2864,7 +2873,7 @@ rdfs:label "Embedded permission (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :ContractRegistryXu2018A ;
+:benefitsFrom :ContractRegistry13 ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :DataContractV ;
@@ -2882,7 +2891,7 @@ rdfs:label "Data contract (Xu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :ContractRegistryXu2018A ;
+:benefitsFrom :ContractRegistry13 ;
 
 :hasPaper :Xu2018A ;
 :hasVariant :FactoryContractV ;
@@ -2918,8 +2927,8 @@ rdfs:label "Incentive execution (Xu, 2018)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:requires :HotColdWalletStorageLiu2020Design ;
-:benefitsFrom :KeyShardingLiu2020Design ;
+:requires :HotColdWalletStorage14 ;
+:benefitsFrom :KeySharding14 ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :MasterSubKeyV ;
@@ -2938,7 +2947,7 @@ rdfs:label "Master & Sub Key (Liu, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :DelegateListLiu2020Design ;
+:benefitsFrom :DelegateList14 ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :HotColdWalletStorageV ;
@@ -2957,8 +2966,8 @@ rdfs:label "Hot & Cold Wallet Storage (Liu, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:relatedTo :DelegateListLiu2020Design ;
-:requires :HotColdWalletStorageLiu2020Design ;
+:relatedTo :DelegateList14 ;
+:requires :HotColdWalletStorage14 ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :KeyShardingV ;
@@ -2976,10 +2985,10 @@ rdfs:label "Key Sharding (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedTo :PushBasedOutboundOracleMühlberger2020Foundational ;
-:relatedTo :FlyweightZhang2017Applying ;
-:requires :MasterSubKeyLiu2020Design ;
-:benefitsFrom :DelegateListLiu2020Design ;
+:relatedTo :PushBasedOutboundOracle39 ;
+:relatedTo :Flyweight34 ;
+:requires :MasterSubKey14 ;
+:benefitsFrom :DelegateList14 ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :IdentifierRegistryV ;
@@ -2998,8 +3007,8 @@ rdfs:label "Identifier Registry (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requires :IdentifierRegistryLiu2020Design ;
-:requires :MasterSubKeyLiu2020Design ;
+:requires :IdentifierRegistry14 ;
+:requires :MasterSubKey14 ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :MultipleRegistrationV ;
@@ -3018,7 +3027,7 @@ rdfs:label "Multiple Registration (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requires :IdentifierRegistryLiu2020Design ;
+:requires :IdentifierRegistry14 ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :BoundWithSocialMediaV ;
@@ -3035,7 +3044,7 @@ rdfs:label "Bound with Social Media (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requires :IdentifierRegistryLiu2020Design ;
+:requires :IdentifierRegistry14 ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :DualResolutionV ;
@@ -3072,9 +3081,9 @@ rdfs:label "Delegate List (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requires :AnchoringToBlockchainLiu2020Design ;
-:benefitsFrom :TimeConstrainedAccessLiu2020Design ;
-:benefitsFrom :OneOffAccessLiu2020Design ;
+:requires :AnchoringToBlockchain14 ;
+:benefitsFrom :TimeConstrainedAccess14 ;
+:benefitsFrom :OneOffAccess14 ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :SelectiveContentGenerationV ;
@@ -3092,8 +3101,8 @@ rdfs:label "Selective Content Generation (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:variantOf :OneOffAccessLiu2020Design ;
-:benefitsFrom :SelectiveContentGenerationLiu2020Design ;
+:variantOf :OneOffAccess14 ;
+:benefitsFrom :SelectiveContentGeneration14 ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :TimeConstrainedAccessV ;
@@ -3111,8 +3120,8 @@ rdfs:label "Time-Constrained Access (Liu, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:variantOf :TimeConstrainedAccessLiu2020Design ;
-:benefitsFrom :SelectiveContentGenerationLiu2020Design ;
+:variantOf :TimeConstrainedAccess14 ;
+:benefitsFrom :SelectiveContentGeneration14 ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :OneOffAccessV ;
@@ -3130,8 +3139,8 @@ rdfs:label "One-Off Access (Liu, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:relatedTo :LowContractFootprintEberhardt2017On ;
-:relatedTo :OffChainDataStorageXu2018A ;
+:relatedTo :LowContractFootprint36 ;
+:relatedTo :OffChainDataStorage13 ;
 
 :hasPaper :Liu2020Design ;
 :hasVariant :OffChainDataStorageV ;
@@ -3150,9 +3159,9 @@ rdfs:label "Anchoring to Blockchain (Liu, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:requires :EstablishGenesisBandara2020Patterns ;
-:requires :HardForkBandara2020Patterns ;
-:requires :StateInitializationBandara2020Patterns ;
+:requires :EstablishGenesis15 ;
+:requires :HardFork15 ;
+:requires :StateInitialization15 ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :SnapshottingV ;
@@ -3174,8 +3183,8 @@ rdfs:label "Snapshotting (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:requires :OffChainDataStorageXu2018A ;
-:benefitsFrom :SnapshottingBandara2020Patterns ;
+:requires :OffChainDataStorage13 ;
+:benefitsFrom :Snapshotting15 ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :StateAggregationV ;
@@ -3196,7 +3205,7 @@ rdfs:label "State Aggregation (Bandara, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :SnapshottingBandara2020Patterns ;
+:benefitsFrom :Snapshotting15 ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :TokenBurningV ;
@@ -3221,8 +3230,8 @@ rdfs:label "Token Burning (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :SnapshottingBandara2020Patterns ;
-:benefitsFrom :StateAggregationBandara2020Patterns ;
+:benefitsFrom :Snapshotting15 ;
+:benefitsFrom :StateAggregation15 ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :NodeSyncV ;
@@ -3240,8 +3249,8 @@ rdfs:label "Node Sync (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :SnapshottingBandara2020Patterns ;
-:benefitsFrom :StateAggregationBandara2020Patterns ;
+:benefitsFrom :Snapshotting15 ;
+:benefitsFrom :StateAggregation15 ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :EstablishGenesisV ;
@@ -3261,8 +3270,8 @@ rdfs:label "Establish Genesis (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :SnapshottingBandara2020Patterns ;
-:benefitsFrom :StateAggregationBandara2020Patterns ;
+:benefitsFrom :Snapshotting15 ;
+:benefitsFrom :StateAggregation15 ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :HardForkV ;
@@ -3281,8 +3290,8 @@ rdfs:label "Hard Fork (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :EstablishGenesisBandara2020Patterns ;
-:benefitsFrom :HardForkBandara2020Patterns ;
+:benefitsFrom :EstablishGenesis15 ;
+:benefitsFrom :HardFork15 ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :StateInitializationV ;
@@ -3309,8 +3318,8 @@ rdfs:label "State Initialization (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :SnapshottingBandara2020Patterns ;
-:benefitsFrom :StateAggregationBandara2020Patterns ;
+:benefitsFrom :Snapshotting15 ;
+:benefitsFrom :StateAggregation15 ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :ExchangeTransferV ;
@@ -3334,8 +3343,8 @@ rdfs:label "Exchange Transfer (Bandara, 2020)" .
                    :AllBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :SnapshottingBandara2020Patterns ;
-:benefitsFrom :StateAggregationBandara2020Patterns ;
+:benefitsFrom :Snapshotting15 ;
+:benefitsFrom :StateAggregation15 ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :TransactionReplayV ;
@@ -3352,7 +3361,7 @@ rdfs:label "Transaction Replay (Bandara, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :SnapshottingBandara2020Patterns ;
+:benefitsFrom :Snapshotting15 ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :VirtualMachineEmulationV ;
@@ -3371,7 +3380,7 @@ rdfs:label "Virtual Machine Emulation (Bandara, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :EstablishGenesisBandara2020Patterns ;
+:benefitsFrom :EstablishGenesis15 ;
 
 :hasPaper :Bandara2020Patterns ;
 :hasVariant :SmartContractTranslationV ;
@@ -3411,7 +3420,7 @@ rdfs:label "Blockchain Security Pattern for Big Data Ecosystems (Moreno, 2019)" 
                    :Ethereum ,
                    :Solidity ;
 
-:benefitsFrom :DataContractMarchesi2020Design ;
+:benefitsFrom :DataContract20 ;
 
 :hasPaper :Marchesi2020Design ;
 :hasVariant :ProxyContractV ;
@@ -3502,7 +3511,7 @@ rdfs:label "Packing booleans (Marchesi, 2020)" .
                    :Ethereum ,
                    :Solidity ;
 
-:relatedTo :UintVsUint256Marchesi2020Design ;
+:relatedTo :UintVsUint25620 ;
 
 :hasPaper :Marchesi2020Design ;
 :hasVariant :UintVsUint256V ;
@@ -3773,7 +3782,7 @@ rdfs:label "Optimizer (Marchesi, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:variantOf :LegalAndSmartContractPairXu2018A ;
+:variantOf :LegalAndSmartContractPair13 ;
 
 :hasPaper :Six2020A ;
 :hasVariant :ConfidentialAndPseudoAnonymousContractEnforcementV ;
@@ -4324,7 +4333,7 @@ rdfs:label "Abstract factory (Zhang, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:requires :AbstractFactoryZhang2018Chapter ;
+:requires :AbstractFactory38 ;
 
 :hasPaper :Zhang2018Chapter ;
 :hasVariant :FlyweightV ;
@@ -4431,7 +4440,7 @@ rdfs:label "Push-based outbound oracle (Mühlberger, 2020)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedTo :ContractComposerLiu2018Applying ;
+:relatedTo :ContractComposer37 ;
 
 :hasPaper :Liu2018Applying ;
 :hasVariant :FactoryContractV ;
@@ -4447,7 +4456,7 @@ rdfs:label "Contract Factory (Liu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:relatedTo :ContractFactoryLiu2018Applying ;
+:relatedTo :ContractFactory37 ;
 
 :hasPaper :Liu2018Applying ;
 :hasVariant :ContractComposerV ;
@@ -4463,8 +4472,8 @@ rdfs:label "Contract Composer (Liu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :ContractComposerLiu2018Applying ;
-:benefitsFrom :ContractDecoratorLiu2018Applying ;
+:benefitsFrom :ContractComposer37 ;
+:benefitsFrom :ContractDecorator37 ;
 
 :hasPaper :Liu2018Applying ;
 :hasVariant :ContractDecoratorV ;
@@ -4480,10 +4489,10 @@ rdfs:label "Contract Decorator (Liu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :ContractComposerLiu2018Applying ;
-:benefitsFrom :ContractDecoratorLiu2018Applying ;
-:benefitsFrom :ContractMediatorLiu2018Applying ;
-:benefitsFrom :ContractObserverLiu2018Applying ;
+:benefitsFrom :ContractComposer37 ;
+:benefitsFrom :ContractDecorator37 ;
+:benefitsFrom :ContractMediator37 ;
+:benefitsFrom :ContractObserver37 ;
 
 :hasPaper :Liu2018Applying ;
 :hasVariant :ProxyContractV ;
@@ -4514,7 +4523,7 @@ rdfs:label "Contract Mediator (Liu, 2018)" .
                    :SmartContractEnabledBlockchains ,
                    :Unspecified ;
 
-:benefitsFrom :ContractDecoratorLiu2018Applying ;
+:benefitsFrom :ContractDecorator37 ;
 
 :hasPaper :Liu2018Applying ;
 :hasVariant :ContractObserverV ;
@@ -4553,8 +4562,8 @@ rdfs:label "Hash Secret (Liu, 2018)" .
 
 rdfs:label "Multi-signature (Liu, 2018)" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Müller2020Silver
-:Müller2020Silver rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper2
+:Paper2 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Müller, Marcel and Ostern, Nadine and Rosemann, Michael"^^rdfs:Literal ;
@@ -4569,8 +4578,8 @@ rdfs:label "Multi-signature (Liu, 2018)" .
 :hasIdentifier :Identifier2 ;
 rdfs:label "Silver Bullet for All Trust Issues? Blockchain-Based Trust Patterns for Collaborative Business Processes" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Worley2019Opportunities
-:Worley2019Opportunities rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper5
+:Paper5 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Worley, Carl R. and Skjellum, Anthony"^^rdfs:Literal ;
@@ -4585,8 +4594,8 @@ rdfs:label "Silver Bullet for All Trust Issues? Blockchain-Based Trust Patterns 
 :hasIdentifier :Identifier5 ;
 rdfs:label "Opportunities, challenges, and future extensions for smart-contract design patterns" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Owens2019Interfamily
-:Owens2019Interfamily rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper6
+:Paper6 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Owens, Luke and Razet, Benoit and Smith, W. Bryan and Tanner, Theodore C."^^rdfs:Literal ;
@@ -4601,8 +4610,8 @@ rdfs:label "Opportunities, challenges, and future extensions for smart-contract 
 :hasIdentifier :Identifier6 ;
 rdfs:label "Inter-family communication in hyperledger sawtooth and its application to a crypto-asset framework" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Bartoletti2017An
-:Bartoletti2017An rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper9
+:Paper9 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Bartoletti, Massimo and Pompianu, Livio"^^rdfs:Literal ;
@@ -4617,8 +4626,8 @@ rdfs:label "Inter-family communication in hyperledger sawtooth and its applicati
 :hasIdentifier :Identifier9 ;
 rdfs:label "An Empirical analysis of smart contracts: Platforms, applications, and design patterns" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Rajasekar2020Emerging
-:Rajasekar2020Emerging rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper11
+:Paper11 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Rajasekar, Vijay and Sondhi, Shiv and Saad, Sherif and Mohammed, Shady"^^rdfs:Literal ;
@@ -4630,8 +4639,8 @@ rdfs:label "An Empirical analysis of smart contracts: Platforms, applications, a
 :hasIdentifier :Identifier11 ;
 rdfs:label "Emerging Design Patterns for Blockchain Applications" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Xu2018A
-:Xu2018A rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper13
+:Paper13 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Xu, Xiwei and Pautasso, Cesare and Zhu, Liming and Lu, Qinghua and Weber, Ingo"^^rdfs:Literal ;
@@ -4643,8 +4652,8 @@ rdfs:label "Emerging Design Patterns for Blockchain Applications" .
 :hasIdentifier :Identifier13 ;
 rdfs:label "A Pattern Collection for Blockchain-Based Applications" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Liu2020Design
-:Liu2020Design rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper14
+:Paper14 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Liu, Yue and Lu, Qinghua and Paik, Hye-Young and Xu, Xiwei"^^rdfs:Literal ;
@@ -4656,8 +4665,8 @@ rdfs:label "A Pattern Collection for Blockchain-Based Applications" .
 :hasIdentifier :Identifier14 ;
 rdfs:label "Design Patterns for Blockchain-Based Self-Sovereign Identity" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Bandara2020Patterns
-:Bandara2020Patterns rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper15
+:Paper15 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Bandara, HMN Dilum and Xu, Xiwei and Weber, Ingo"^^rdfs:Literal ;
@@ -4669,8 +4678,8 @@ rdfs:label "Design Patterns for Blockchain-Based Self-Sovereign Identity" .
 :hasIdentifier :Identifier15 ;
 rdfs:label "Patterns for Blockchain Data Migration" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Moreno2019BlockBD
-:Moreno2019BlockBD rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper17
+:Paper17 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Moreno, Julio and Fernandez, Eduardo B. and Fernandez-Medina, Eduardo and Serrano, Manuel A."^^rdfs:Literal ;
@@ -4682,8 +4691,8 @@ rdfs:label "Patterns for Blockchain Data Migration" .
 :hasIdentifier :Identifier17 ;
 rdfs:label "BlockBD: A Security Pattern to Incorporate Blockchain in Big Data Ecosystems" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Marchesi2020Design
-:Marchesi2020Design rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper20
+:Paper20 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Marchesi, Lodovica and Marchesi, Michele and Destefanis, Giuseppe and Barabino, Giulio and Tigano, Danilo"^^rdfs:Literal ;
@@ -4697,8 +4706,8 @@ rdfs:label "BlockBD: A Security Pattern to Incorporate Blockchain in Big Data Ec
 :hasIdentifier :Identifier20 ;
 rdfs:label "Design Patterns for Gas Optimization in Ethereum" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Six2020A
-:Six2020A rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper23
+:Paper23 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Six, Nicolas and Ribalta, Claudia Negri and Herbaut, Nicolas and Salinesi, Camille"^^rdfs:Literal ;
@@ -4712,8 +4721,8 @@ rdfs:label "Design Patterns for Gas Optimization in Ethereum" .
 :hasIdentifier :Identifier23 ;
 rdfs:label "A blockchain-based pattern for confidential and pseudo-anonymous contract enforcement" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Wessling2018Engineering
-:Wessling2018Engineering rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper24
+:Paper24 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Wessling, Florian and Gruhn, Volker"^^rdfs:Literal ;
@@ -4727,8 +4736,8 @@ rdfs:label "A blockchain-based pattern for confidential and pseudo-anonymous con
 :hasIdentifier :Identifier24 ;
 rdfs:label "Engineering Software Architectures of Blockchain-Oriented Applications" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Lemieux2017A
-:Lemieux2017A rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper25
+:Paper25 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Lemieux, Victoria L."^^rdfs:Literal ;
@@ -4743,8 +4752,8 @@ rdfs:label "Engineering Software Architectures of Blockchain-Oriented Applicatio
 :hasIdentifier :Identifier25 ;
 rdfs:label "A typology of blockchain recordkeeping solutions and some reflections on their implications for the future of archival preservation" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Wöhrer2018Design
-:Wöhrer2018Design rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper27
+:Paper27 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Wöhrer, Maximilian and Zdun, Uwe"^^rdfs:Literal ;
@@ -4757,8 +4766,8 @@ rdfs:label "A typology of blockchain recordkeeping solutions and some reflection
 :hasIdentifier :Identifier27 ;
 rdfs:label "Design Patterns for Smart Contracts in the Ethereum Ecosystem" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Zhang2017Applying
-:Zhang2017Applying rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper34
+:Paper34 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Zhang, Peng and White, Jules and Schmidt, Douglas C. and Lenz, Gunther"^^rdfs:Literal ;
@@ -4771,8 +4780,8 @@ rdfs:label "Design Patterns for Smart Contracts in the Ethereum Ecosystem" .
 :hasIdentifier :Identifier34 ;
 rdfs:label "Applying software patterns to address interoperability in blockchain-based healthcare apps" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Wohrer2018Smart
-:Wohrer2018Smart rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper35
+:Paper35 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Wohrer, Maximilian and Zdun, Uwe"^^rdfs:Literal ;
@@ -4785,8 +4794,8 @@ rdfs:label "Applying software patterns to address interoperability in blockchain
 :hasIdentifier :Identifier35 ;
 rdfs:label "Smart contracts: security patterns in the ethereum ecosystem and solidity" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Eberhardt2017On
-:Eberhardt2017On rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper36
+:Paper36 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Eberhardt, Jacob and Tai, Stefan"^^rdfs:Literal ;
@@ -4799,8 +4808,8 @@ rdfs:label "Smart contracts: security patterns in the ethereum ecosystem and sol
 :hasIdentifier :Identifier36 ;
 rdfs:label "On or off the blockchain? Insights on off-chaining computation and data" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Liu2018Applying
-:Liu2018Applying rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper37
+:Paper37 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Liu, Yue and Lu, Qinghua and Xu, Xiwei and Zhu, Liming and Yao, Haonan"^^rdfs:Literal ;
@@ -4813,8 +4822,8 @@ rdfs:label "On or off the blockchain? Insights on off-chaining computation and d
 :hasIdentifier :Identifier37 ;
 rdfs:label "Applying design patterns in smart contracts" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Zhang2018Chapter
-:Zhang2018Chapter rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper38
+:Paper38 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Zhang, Peng and White, Jules and Schmidt, Douglas C. and Lenz, Gunther"^^rdfs:Literal ;
@@ -4827,8 +4836,8 @@ rdfs:label "Applying design patterns in smart contracts" .
 :hasIdentifier :Identifier38 ;
 rdfs:label "Chapter One - Blockchain Technology Use Cases in Healthcare" .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Mühlberger2020Foundational
-:Mühlberger2020Foundational rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper39
+:Paper39 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
 :Authors "Mühlberger, Roman and Bachhofner, Stefan and Ferrer, Eduardo Castelló and Ciccio, Claudio Di and Weber, Ingo and Wöhrer, Maximilian and Zdun, Uwe"^^rdfs:Literal ;

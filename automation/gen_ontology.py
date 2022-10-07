@@ -12,6 +12,8 @@ capital_word_list = [
   "BPM"
 ]
 
+UPDATE_CITATIONS = False
+
 def capitalizeURI(word):
   if word not in capital_word_list:
      return word.capitalize()
@@ -36,10 +38,6 @@ def get_proposals_from_URI(proposals, paper_uri):
     if parse_to_URI(p['Name']) == paper_uri:
       compatible_patterns.append(p)
   return compatible_patterns
-
-# receives an Author field, return the first author name
-def get_first_author(authors):
-  return re.split(', ', authors)[0]
 
 # parse to ontology URI (first letter in caps, no special character)
 def parse_to_URI(name):
@@ -241,9 +239,6 @@ def generate_papers(papers_list):
     )
   return papers
 
-def get_first_word_title(title):
-  return re.sub(r'[\W_]+', '', title.split(' ')[0])
-
 # generate_proposals() returns the proposals found in papers
 def generate_proposals(proposals, proposal_mapping, proposals_links, papers, variants_mapping):
   proposals_str = ""
@@ -355,6 +350,13 @@ def run():
   proposals_ttl = generate_proposals(proposals, proposal_mapping, proposals_links, papers, variants_mapping)
   papers_ttl = generate_papers(papers)
   citations_ttl = generate_citations(papers)
+
+  if (UPDATE_CITATIONS):
+    print("Not managed by this script yet.")
+    citations_ttl = ""
+  else:
+    with open("./results/citation_triples.ttl", "r") as text_file_citations:
+      citations_ttl = text_file_citations.read()
 
   # write classes, papers and proposals in three distinct files, can be merged into a complete ontology
   with open("./results/classes.ttl", "w") as text_file_classes:
