@@ -1,5 +1,6 @@
 import React from 'react';
-import { Grid, Typography, Card, Link, Chip } from '@mui/material';
+import { Grid, Typography, Card, IconButton, Chip, Link, Box } from '@mui/material';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(() => ({
@@ -25,12 +26,13 @@ export default function PatternCard({
     pattern,
     key,
     handlePatternAction, 
+    handleButtonAction,
     cardSize = 4, 
     disableChips,
     disableLinks,
     patternSubtext = [],
     color = '',
-    isIndividual
+    isIndividual,
 }) {
   const classes = useStyles();
 
@@ -40,9 +42,9 @@ export default function PatternCard({
             <Grid item md={12} className={classes.chipGrid}>
                 {pattern['classtree'].map(singleClass => 
                     (
-                        <Chip 
+                        <Chip
                             label={singleClass} 
-                            style={{margin: '2px'}} 
+                            style={{ margin: '2px', width: 'auto', maxWidth: '100%' }} 
                             key={singleClass}
                         />)
                     )
@@ -58,16 +60,16 @@ export default function PatternCard({
     if (disableLinks) {
         return (
             <span>
-                {pattern.label + (isIndividual ? ` (${pattern.paper.paper.replace('onto:','')})` : '')}
+                {pattern.label}
             </span>
         )
     } else {
         return (
             <Link 
                 style={{cursor: 'pointer'}} 
-                onClick={() => handlePatternAction((isIndividual ? 'linkedPatternClick' : 'patternClick'), pattern)}
+                onClick={() => handlePatternAction((isIndividual ? 'proposalClick' : 'patternClick'), pattern)}
             >
-                {pattern.label + (isIndividual ? ` (${pattern.paper.paper.replace('onto:','')})` : '')}
+                {pattern.label}
             </Link>
         )
     }
@@ -88,8 +90,19 @@ export default function PatternCard({
     <Grid item sm={cardSize} xs={12} className={classes.patternItem} key={key}>
         <Card className={classes.patternCard} style={genBorder(color)}>
             <Grid container justifyContent="center">
+                {
+                    handleButtonAction && (
+                        <Grid item xs={12} display="flex" justifyContent="right">
+                            <Box sx={{ height: 0 }} >
+                                <IconButton size="small" onClick={() => handleButtonAction(pattern)} aria-label="See score info">
+                                    <QuestionMarkIcon fontSize="small" />
+                                </IconButton>
+                            </Box>
+                        </Grid>
+                    )
+                }
                 <Grid item sm={12} alignItems="center" display="flex" justifyContent="center">
-                    <Typography>
+                    <Typography maxWidth={handleButtonAction ? '80%' : '100%'}>
                         { genTitle() }
                         {
                             patternSubtext.map(item => (

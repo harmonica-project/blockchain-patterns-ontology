@@ -1,13 +1,13 @@
-###  http://www.semanticweb.org/$owner/ontologies/2021/8/patterns#${uri}${paperId}
-:${uri}${paperId} rdf:type owl:NamedIndividual ,
-                   :$refClass ,
+###  http://www.semanticweb.org/$owner/ontologies/2021/8/patterns#${proposal_uri}
+:${proposal_uri} rdf:type owl:NamedIndividual ,
                    :Proposal ,
                    :$domain ,
                    :$blockchain ,
                    :$language ;
 
 ${links}
-:hasPaper :Paper${paperId} ;
+:hasPaper :${paper_uri} ;
+:hasVariant :${variant}V ;
 :ContextAndProblem "$context"^^rdfs:Literal ;
 :Solution "$solution"^^rdfs:Literal ;
 $examples

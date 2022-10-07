@@ -12,14 +12,14 @@ export const getFromLocalstorage = (key) => {
     }
 };
 
-export const storePatternInLocalstorage = (individual) => {
+export const storePatternInLocalstorage = (proposal) => {
     let storedPatterns = localStorage.getItem('patterns');
     if (!storedPatterns) {
-        localStorage.setItem('patterns', JSON.stringify({[individual.individual]: individual}));
+        localStorage.setItem('patterns', JSON.stringify({[proposal.proposal]: proposal}));
     } else {
         localStorage.setItem('patterns', JSON.stringify({
             ...JSON.parse(storedPatterns),
-            [individual.individual]: individual
+            [proposal.proposal]: proposal
         }));
     }
 }

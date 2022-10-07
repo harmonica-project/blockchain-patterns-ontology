@@ -4,13 +4,13 @@ import Navbar from './components/Navbar';
 import Home from './views/Home';
 import Recommendation from './views/Recommendation';
 import Explore from './views/Explore';
+import Patterns from './views/Patterns';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-import Patterns from './views/Patterns';
 
 export default function App() {
   const [nbPatterns, setNbPatterns] = useState(0);
@@ -19,15 +19,12 @@ export default function App() {
     <Router>
       <div>
         <Navbar nbPatterns={nbPatterns} />
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/recommendation">
-            <Recommendation setNbPatterns={setNbPatterns} />
-          </Route>
           <Route path="/explore">
             <Explore setNbPatterns={setNbPatterns} />
+          </Route>
+          <Route path="/recommendation">
+            <Recommendation setNbPatterns={setNbPatterns} />
           </Route>
           <Route path="/patterns">
             <Patterns setNbPatterns={setNbPatterns} />

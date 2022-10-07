@@ -1,0 +1,7 @@
+###  http://www.semanticweb.org/${owner}/ontologies/2021/8/patterns#${uri}V
+:${uri}V rdf:type owl:NamedIndividual ,
+                   :$refClass ,
+                   :Variant ;
+
+rdfs:label "${name}" .
+

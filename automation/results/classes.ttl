@@ -40,24 +40,6 @@ rdfs:label "Key-value store"@en .
 rdfs:subClassOf :StoragePattern ;
 rdfs:label "Address mapping"@en .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Judge
-:Judge rdf:type owl:Class ;
-
-rdfs:subClassOf :ContractAccessControlPattern ;
-rdfs:label "Judge"@en .
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#TickerTape
-:TickerTape rdf:type owl:Class ;
-
-rdfs:subClassOf :DataExchangePattern ;
-rdfs:label "Ticker Tape"@en .
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Vote
-:Vote rdf:type owl:Class ;
-
-rdfs:subClassOf :MultiDomainFeaturePattern ;
-rdfs:label "Vote"@en .
-
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Blocklist
 :Blocklist rdf:type owl:Class ;
 
@@ -250,12 +232,6 @@ rdfs:label "Hot & Cold Wallet Storage"@en .
 rdfs:subClassOf :WalletAndKeysPattern ;
 rdfs:label "Key Sharding"@en .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IdentifierRegistry
-:IdentifierRegistry rdf:type owl:Class ;
-
-rdfs:subClassOf :DecentralizedIdentityPattern ;
-rdfs:label "Identifier Registry"@en .
-
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#MultipleRegistration
 :MultipleRegistration rdf:type owl:Class ;
 
@@ -274,11 +250,11 @@ rdfs:label "Bound with Social Media"@en .
 rdfs:subClassOf :DecentralizedIdentityPattern ;
 rdfs:label "Dual Resolution"@en .
 
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#DelegateList
-:DelegateList rdf:type owl:Class ;
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#IdentifierRegistry
+:IdentifierRegistry rdf:type owl:Class ;
 
 rdfs:subClassOf :DecentralizedIdentityPattern ;
-rdfs:label "Delegate List"@en .
+rdfs:label "Identifier Registry"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelectiveContentGeneration
 :SelectiveContentGeneration rdf:type owl:Class ;
@@ -291,12 +267,6 @@ rdfs:label "Selective Content Generation"@en .
 
 rdfs:subClassOf :MultiDomainFeaturePattern ;
 rdfs:label "Time-Constrained Access"@en .
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#OneOffAccess
-:OneOffAccess rdf:type owl:Class ;
-
-rdfs:subClassOf :MultiDomainFeaturePattern ;
-rdfs:label "One-Off Access"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Snapshotting
 :Snapshotting rdf:type owl:Class ;
@@ -501,12 +471,6 @@ rdfs:label "Freeing storage"@en .
 
 rdfs:subClassOf :Idiom ;
 rdfs:label "Optimizer"@en .
-
-###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#ConfidentialAndPseudoAnonymousContractEnforcement
-:ConfidentialAndPseudoAnonymousContractEnforcement rdf:type owl:Class ;
-
-rdfs:subClassOf :OffChainStoragePattern ;
-rdfs:label "Confidential and pseudo-anonymous contract enforcement"@en .
 
 ###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#SelfGeneratedTransactions
 :SelfGeneratedTransactions rdf:type owl:Class ;

@@ -5,8 +5,7 @@ import ContentContainer from '../layouts/ContentContainer';
 import { 
   getClassTree, 
   getPatternsByProblem,
-  getLinkedPatterns,
-  getPatterns
+  getPatternKnowledge
  } from '../libs/fuseki';
 import { makeStyles } from '@mui/styles';
 import { useSnackbar } from 'notistack';
@@ -22,28 +21,19 @@ import {
   getJSONFileContent
  } from '../libs/localstorage';
 import RationaleDialog from '../modals/RationaleDialog';
+import ScoreDialog from '../modals/ScoreDialog';
 
 const scoreDisplay = [
-  {
-    label: 'Not recommended',
-    color: '#ec644f'
-  },
-  {
-    label: 'Slightly recommended',
-    color: '#f3a64d'
-  },
-  {
-    label: 'Recommended',
-    color: '#e1c73a'
-  },
-  {
-    label: 'Highly recommended',
-    color: '#9ecd34'
-  },
-  {
-    label: 'Extremely recommended',
-    color: '#5baf2a'
-  }
+  { label: 'Not recommended', color: '#ec644f' },
+  { label: 'Not recommended', color: '#F0884E' },
+  { label: 'Slightly recommended', color: '#f3a64d' },
+  { label: 'Slightly recommended', color: '#E8BB41' },
+  { label: 'Recommended', color: '#e1c73a' },
+  { label: 'Recommended', color: '#e1c73a' },
+  { label: 'Highly recommended', color: '#C3CA37' },
+  { label: 'Highly recommended', color: '#9ecd34' },
+  { label: 'Extremely recommended', color: '#79BD2F' },
+  { label: 'Extremely recommended', color: '#5baf2a' }
 ];
 
 const Input = styled('input')({
@@ -94,6 +84,10 @@ export default function Recommendation({ setNbPatterns }) {
   const [selectedPatterns, setSelectedPatterns] = useState({});
   const [quizzState, setQuizzState] = useState(0);
   const [search, setSearch] = useState('');
+  const [page, setPage] = useState(1);
+  const [patterns, setPatterns] = useState({});
+  const [chosenPatterns, setChosenPatterns] = useState({});
+
   const [quizz, setQuizz] = useState({
     list: {},
     topQuestions: [], 
@@ -101,9 +95,16 @@ export default function Recommendation({ setNbPatterns }) {
     currentStep: 1,
     history: []
   });
-  const [page, setPage] = useState(1);
-  const [patterns, setPatterns] = useState({});
-  const [chosenPatterns, setChosenPatterns] = useState({});
+
+  const [scoreModalStates, setScoreModalStates] = useState({
+    open: false,
+    setOpen: (isOpen) => setScoreModalStates({ ...scoreModalStates, open: isOpen}),
+    proposal: {},
+    ratio: 0,
+    questionScore: 0,
+    totalScore: 0,
+    maxCitations: 0
+  });
 
   const INTERVAL = 18;
 
@@ -130,7 +131,7 @@ export default function Recommendation({ setNbPatterns }) {
 
     getStoredPatterns();
 
-    getPatterns()
+    getPatternKnowledge()
       .then((results) => {
           setPatterns(results);
       })
@@ -167,24 +168,40 @@ export default function Recommendation({ setNbPatterns }) {
     return patterns;
   }
 
-  const handleIndividualClick = (individual) => {
-    Object.keys(patterns).forEach(key => {
-        const pattern = patterns[key];
-        pattern.individuals.forEach((pIndividual, i) => {
-            if (individual.individual === pIndividual.individual) {
+  const handleVariantRelationClick = (clickedVariant) => {
+    Object.keys(patterns).forEach(pKey => {
+        const pattern = patterns[pKey];
+        Object.keys(pattern.variants).forEach((vKey, i) => {
+            if (vKey === clickedVariant.variant.value) {
                 handlePatternClick(pattern, i);
             }
+        }) 
+    })
+};
+
+  const handleProposalClick = (clickedProposal) => {
+    console.log(clickedProposal)
+    Object.keys(patterns).forEach(pKey => {
+        const pattern = patterns[pKey];
+        Object.keys(pattern.variants).forEach((vKey, i) => {
+            Object.keys(pattern.variants[vKey].proposals).forEach((proposalURI, j) => {
+                if (proposalURI === clickedProposal.proposal) {
+                    console.log(pattern)
+                    handlePatternClick(pattern, i, j);
+                }
+            });
         }) 
     })
   };
 
   const handlePatternAction = (action, pattern) => {
+    console.log(action, pattern)
     switch (action) {
-        case 'linkedPatternClick':
-            handleIndividualClick(pattern);
+        case 'linkedVariantClick':
+            handleVariantRelationClick(pattern);
             break;
-        case 'patternClick':
-            handlePatternClick(pattern);
+        case 'proposalClick':
+            handleProposalClick(pattern);
             break;
         case 'patternDelete':
             deleteLocalPattern(pattern);
@@ -428,58 +445,53 @@ export default function Recommendation({ setNbPatterns }) {
                   id="import-recommendation-input" 
                   type="file" 
                   onChange={resumeRecommendationFromFile} />
-              <Button variant="contained" component="span">
+              <Button variant="text" component="span">
                   Import
               </Button>
             </label>
           </div>
           <div>
-            <Button variant="contained" size="large" onClick={startQuizz}>Start</Button>
+            <Button variant="contained" onClick={startQuizz}>Start</Button>
           </div>
           <div hidden={!checkForResume()}>
-            <Button variant="contained" onClick={resumeQuizz}>Resume</Button>
+            <Button variant="text" onClick={resumeQuizz}>Resume</Button>
           </div>
         </Stack>
       </div>
     )
   }
 
-  const deleteLocalPattern = (pattern) => {
-    let newSelectedPatterns = {...selectedPatterns};
-    delete newSelectedPatterns[pattern.individual];
-    setSelectedPatterns(newSelectedPatterns);
-    setInLocalstorage('patterns', newSelectedPatterns);
-    enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
+  const storeLocalPattern = (proposal) => {
+    storePatternInLocalstorage(proposal);
+
+    setSelectedPatterns({
+        ...selectedPatterns,
+        [proposal.proposal]: proposal
+    })
+    enqueueSnackbar("Pattern successfully added.", { variant: 'success' });
   };
 
-  const storeLocalPattern = (pattern) => {
-      storePatternInLocalstorage(pattern);
-
-      setSelectedPatterns({
-          ...selectedPatterns,
-          [pattern.individual.value]: pattern
-      })
-      enqueueSnackbar("Pattern successfully added.", { variant: 'success' });
+  const deleteLocalPattern = (proposal) => {
+      let newSelectedPatterns = {...selectedPatterns};
+      delete newSelectedPatterns[proposal.proposal];
+      setSelectedPatterns(newSelectedPatterns);
+      setInLocalstorage('patterns', newSelectedPatterns);
+      enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
   };
 
-  const handlePatternClick = async (pattern, selectedTab = 0) => {
-    for (let i in pattern.individuals) {
-        let linkedPatterns = await getLinkedPatterns(pattern.individuals[i].individual);
-        pattern.individuals[i] = {
-           ...pattern.individuals[i],
-           linkedPatterns
-        }
-    }
-
+  const handlePatternClick = async (pattern, selectedVariant = -1, selectedProposal = -1) => {
     setModalStates({
         open: true,
-        selectedTab,
+        selectedTab: {
+            variant: selectedVariant,
+            proposal: selectedProposal
+        },
         pattern
     })
   }
 
-  const sortPatterns = (fKey, sKey) => {
-    return chosenPatterns[sKey]['score'] - chosenPatterns[fKey]['score'];
+  const sortPatterns = (a, b) => {
+    return b['score'] - a['score'];
   };
 
   const displayRankingInfo = () => {
@@ -487,7 +499,29 @@ export default function Recommendation({ setNbPatterns }) {
   };
 
   const getScoreDisplay = (score) => {
-    return scoreDisplay[Math.floor(score*4)];
+    return scoreDisplay[Math.floor(score*9)];
+  };
+
+  const getMaxCitations = () => {
+    let highest = 0;
+
+    Object.keys(patterns).forEach(pKey => {
+      Object.keys(patterns[pKey].variants).forEach(vKey => {
+        Object.keys(patterns[pKey].variants[vKey].proposals).forEach((prKey) => {
+          if (patterns[pKey].variants[vKey].proposals[prKey].citations > highest) {
+            highest = patterns[pKey].variants[vKey].proposals[prKey].citations;
+          }
+        })
+      })
+    });
+
+    return highest;
+  };
+
+  const getCitationScoreRatio = (citations) => {
+    const proposalCitations = (citations ? Math.log(citations) : 0)
+    const ratio = proposalCitations / Math.log(getMaxCitations());
+    return ratio;
   };
 
   const getFilteredChosenPatterns = () => {
@@ -495,8 +529,21 @@ export default function Recommendation({ setNbPatterns }) {
       .filter(
         key => chosenPatterns[key].label
         .toLowerCase()
-        .includes(search.toLowerCase()));
+        .includes(search.toLowerCase()))
+      .map(key => ({ ...chosenPatterns[key], score: chosenPatterns[key].score * getCitationScoreRatio(chosenPatterns[key].citations) }))
   };
+
+  const handleButtonAction = (proposal) => {
+    setScoreModalStates({
+      ...scoreModalStates,
+      open: true,
+      questionScore: proposal.score / getCitationScoreRatio(proposal.citations),
+      totalScore: proposal.score,
+      ratio: getCitationScoreRatio(proposal.citations),
+      proposal,
+      maxCitations: getMaxCitations()
+    });
+  }
 
   const displayPatternGrid = () => {
     return (
@@ -504,18 +551,23 @@ export default function Recommendation({ setNbPatterns }) {
         {getFilteredChosenPatterns()
           .sort(sortPatterns)
           .slice((page - 1) * INTERVAL, page * INTERVAL)
-          .map(key => 
+          .map(proposal => 
             <PatternCard 
-              pattern={chosenPatterns[key]}
+              pattern={proposal}
               selectedPatterns={selectedPatterns}
               handlePatternAction={handlePatternAction}
+              handleButtonAction={handleButtonAction}
               patternSubtext={[
                 {
-                  text: getScoreDisplay(chosenPatterns[key].score).label,
+                  text: proposal.citations ? `Cited ${proposal.citations} time${proposal.citations > 1 ? 's' : ''}` : 'Not cited',
+                  variant: 'overline'
+                },
+                {
+                  text: `${getScoreDisplay(proposal.score).label} (score: ${Math.round(proposal.score * 100)}%)`,
                   variant: 'overline'
                 }
               ]}
-              color={getScoreDisplay(chosenPatterns[key].score).color}
+              color={getScoreDisplay(proposal.score).color}
               isIndividual
             />)
           }
@@ -544,7 +596,7 @@ export default function Recommendation({ setNbPatterns }) {
           </Grid>
           <Grid item sm={2} xs={12} className={classes.optionBtnContainer}>
             <Button 
-              variant="contained" 
+              variant="outlined" 
               color="primary" 
               fullWidth 
               className={classes.exportBtn}
@@ -602,6 +654,7 @@ export default function Recommendation({ setNbPatterns }) {
         handlePatternModalAction={handlePatternAction}
       />
       <RationaleDialog open={rationaleOpen} setOpen={setRationaleOpen} />
+      <ScoreDialog {...scoreModalStates} />
     </ContentContainer>
   );
 }

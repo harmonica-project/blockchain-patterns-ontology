@@ -1,6 +1,6 @@
-import { parseResults, convertResultToMapping } from './helpers';
+import { parseResults } from './helpers';
 
-const FUSEKI_URL = "https://sparql.nextnet.top/ontotool/query"
+const FUSEKI_URL = "https://sparql.nextnet.top/ontotoolv2/query"
 const PREFIXES = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -22,11 +22,10 @@ const getOptions = (query) => {
 export const healthCheck = async () => {
     // test dummy query to check if Fuseki is live
     const query = `
-        SELECT ?s ?p ?v
+        SELECT ?l ?p
         WHERE {
-            ?s ?p ?v
+            onto:Pattern rdfs:label ?l
         }
-        LIMIT 1
     `
 
     try {
@@ -36,26 +35,6 @@ export const healthCheck = async () => {
     } catch (e) {
         console.error('Failed to fetch: ' + e);
         return false;
-    }
-}
-
-export const getSubclasses = async (className) => {
-    const query = `
-        SELECT ?subject ?label
-        WHERE {
-            ?subject rdfs:subClassOf ${className}.
-            ?subject rdfs:label ?label.
-        }
-    `
-    try {
-        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
-        if (response.status === 200) {
-            return convertResultToMapping(parseResults(await response.json()));
-        }
-        return [];
-    } catch (e) {
-        console.error('Failed to fetch: ' + e);
-        return [];
     }
 }
 
@@ -114,17 +93,20 @@ export const getClassTree = async (classname) => {
     }
 };
 
-export const getPattern = async (patternURI) => {
+export const getVariantRelations = async (variantURI) => {
     let query = `
-        SELECT DISTINCT ?label ?paper ?context ?solution ?classname
+        SELECT ?relation ?variant ?variant_label
         WHERE {
-            ${patternURI} rdfs:label ?label .
-            ${patternURI} onto:hasPaper ?paper .
-            ${patternURI} onto:ContextAndProblem ?context .
-            ${patternURI} onto:Solution ?solution .
-            ${patternURI} a ?classname .
-            ?classname rdfs:subClassOf* onto:Pattern
-        }
+            ${variantURI} ?relation ?variant
+            FILTER (?relation IN (
+                onto:requires,
+                onto:createdFrom,
+                onto:relatedTo,
+                onto:variantOf,
+                onto:benefitsFrom
+            ) ).
+            ?variant rdfs:label ?variant_label
+        } 
     `;
 
     try {
@@ -139,50 +121,13 @@ export const getPattern = async (patternURI) => {
     }
 };
 
-export const getLinkedPatterns = async (patternURI) => {
-    let query = `
-        SELECT ?relation ?individual ?pattern ?iLabel ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
-        WHERE {
-            ${patternURI} ?relation ?individual.
-            FILTER (?relation IN (
-                onto:requires,
-                onto:createdFrom,
-                onto:relatedTo,
-                onto:variantOf,
-                onto:benefitsFrom
-            ) ).
-            ?individual a ?pattern.
-            ?pattern rdfs:subClassOf* onto:Pattern.
-            ?individual rdfs:label ?iLabel .
-            ?individual onto:hasPaper ?paper .
-            ?individual onto:ContextAndProblem ?context .
-            ?individual onto:Solution ?solution.
-            ?paper onto:Title ?title.
-            ?paper onto:Identifier ?identifier.
-            ?paper onto:IdentifierType ?identifiertype.
-            ?paper onto:Authors ?authors
-        }
-    `;
-
-    try {
-        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
-        if (response.status === 200) {
-            return parseResults(await response.json()).map(r => ({ ...parseIndividual(r), relation: r.relation }));
-        };
-        return [];
-    } catch (e) {
-        console.error('Failed to fetch: ' + e);
-        return [];
-    }
-};
-
-const parseIndividual = (result) => {
+const parseProposal = (result) => {
     return {
-        individual: result.individual.value,
+        proposal: result.proposal.value,
         pattern: result.pattern.value,
         context: result.context.value,
         solution: result.solution.value,
-        label: result.iLabel.value,
+        label: result.proposal_label.value,
         paper: {
             paper: result.paper.value,
             title: result.title.value,
@@ -193,76 +138,66 @@ const parseIndividual = (result) => {
     }
 }
 
-const checkAndInsertIndividual = (result, individuals) => {
-    const index = individuals.findIndex(i => i.individual === result.individual.value);
-    if (index !== -1) {
-        individuals[index].classes.push(result.parent.value);
-    } else {
-        individuals.push({
-            ...parseIndividual(result),
-            classes: [result.parent.value]
-        })
-    }
-    
-    return individuals;
-};
+// used to merge proposal duplicated in the request as we also want to retrieve each of their classes
+const structurePatterns = (patterns, pCitations, vCitations, prCitations) => {
+    const newPatterns = {};
+    const pCitationsDict = {}
+    const vCitationsDict = {}
+    const prCitationsDict = {}
 
-const groupPatterns = (results) => {
-    const groupedPatterns = {};
+    pCitations.forEach(citation => pCitationsDict[citation.pattern.value] = parseInt(citation.citations.value));
+    vCitations.forEach(citation => vCitationsDict[citation.variant.value] = parseInt(citation.citations.value));
+    prCitations.forEach(citation => prCitationsDict[citation.proposal.value] = parseInt(citation.citations.value));
 
-    results.forEach(r => {
-        if (groupedPatterns[r.pattern.value]) {
-            groupedPatterns[r.pattern.value] = {
-                ...groupedPatterns[r.pattern.value],
-                individuals: checkAndInsertIndividual(r, groupedPatterns[r.pattern.value].individuals)
+    patterns.forEach(r => {
+        if (newPatterns[r.pattern.value]) {
+            if (newPatterns[r.pattern.value].variants[r.variant.value]) {
+                if (newPatterns[r.pattern.value].variants[r.variant.value].proposals[r.proposal.value]) {
+                    newPatterns[r.pattern.value].variants[r.variant.value].proposals[r.proposal.value].classes.push(r.parent.value);
+                } else {
+                    newPatterns[r.pattern.value].variants[r.variant.value].proposals[r.proposal.value] = {
+                        ...parseProposal(r),
+                        classes: [r.parent.value, r.pattern.value],
+                        citations: prCitationsDict[r.proposal.value] ?? 0
+                    }
+                }
+            } else {
+                newPatterns[r.pattern.value].variants[r.variant.value] = {
+                    proposals: {
+                        [r.proposal.value]: {
+                            ...parseProposal(r),
+                            classes: [r.parent.value, r.pattern.value],
+                            citations: prCitationsDict[r.proposal.value] ?? 0
+                        }
+                    },
+                    label: r.variant_label.value,
+                    citations: vCitationsDict[r.variant.value] ?? 0,
+                }
             }
         } else {
-            groupedPatterns[r.pattern.value] = {
+            newPatterns[r.pattern.value] = {
                 pattern: r.pattern.value,
-                label: r.pLabel.value,
-                individuals: [{
-                    ...parseIndividual(r),
-                    classes: [r.parent.value]
-                }]
+                label: r.pattern_label.value,
+                citations: pCitationsDict[r.pattern.value] ?? 0,
+                variants: {
+                    [r.variant.value]: {
+                        proposals: {
+                            [r.proposal.value]: {
+                                ...parseProposal(r),
+                                classes: [r.parent.value, r.pattern.value],
+                                citations: prCitationsDict[r.proposal.value] ?? 0
+                            }
+                        },
+                        label: r.variant_label.value,
+                        citations: vCitationsDict[r.variant.value] ?? 0,
+                    }
+                }
             }
         }
     });
 
-    return groupedPatterns;
+    return newPatterns;
 };
-
-export const getPatterns = async () => {
-    const query = `
-        SELECT ?parent ?pattern ?pLabel ?individual ?iLabel ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
-            WHERE {
-                ?individual a ?parent.
-                ?pattern rdfs:subClassOf* onto:Pattern.
-                ?individual a ?pattern.
-                ?pattern rdfs:label ?pLabel.
-                ?individual rdfs:label ?iLabel .
-                ?individual onto:hasPaper ?paper .
-                ?individual onto:ContextAndProblem ?context .
-                ?individual onto:Solution ?solution.
-                ?paper onto:Title ?title.
-                ?paper onto:Identifier ?identifier.
-                ?paper onto:IdentifierType ?identifiertype.
-                ?paper onto:Authors ?authors
-            }
-        `
-
-    try {
-        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
-        if (response.status === 200) {
-            const results = parseResults(await response.json());
-            const grouped = groupPatterns(results);
-            return grouped;
-        };
-        return [];
-    } catch (e) {
-        console.error('Failed to fetch: ' + e);
-        return [];
-    }
-}
 
 const addScoreToPatterns = (patterns, filterProblems) => {
     const newPatterns = patterns.map(pattern => ({
@@ -272,28 +207,148 @@ const addScoreToPatterns = (patterns, filterProblems) => {
     return newPatterns;
 };
 
+const getPatterns = async () => {
+    const query = `
+        SELECT ?parent ?pattern ?variant ?proposal ?pattern_label ?variant_label ?proposal_label ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors
+        WHERE {
+            ?proposal a ?parent .
+            ?proposal a onto:Proposal .
+            ?proposal onto:hasVariant ?variant .
+            ?variant a ?pattern .
+            ?pattern rdfs:subClassOf* onto:Pattern.
+            ?pattern rdfs:label ?pattern_label .
+            ?variant rdfs:label ?variant_label .
+            ?proposal rdfs:label ?proposal_label .
+            ?proposal onto:hasPaper ?paper .
+            ?proposal onto:ContextAndProblem ?context .
+            ?proposal onto:Solution ?solution.
+            ?paper onto:Title ?title.
+            ?paper onto:Identifier ?identifier.
+            ?paper onto:IdentifierType ?identifiertype.
+            ?paper onto:Authors ?authors
+        }
+    `
+
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            return parseResults(await response.json());
+        };
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
+    }
+}
+
+export const getPatternKnowledge = async () => {
+    const patterns = await getPatterns();
+    const pCitations = await getPatternsCitations();
+    const vCitations = await getVariantsCitations();
+    const prCitations = await getProposalCitations();
+
+    if (patterns.length) {
+        const grouped = structurePatterns(patterns, pCitations, vCitations, prCitations);
+        return grouped;
+    } else return [];
+}
+
+const getPatternsCitations = async () => {
+    let query = `
+        SELECT ?pattern (COUNT(*) as ?citations)
+        WHERE {
+            ?pattern rdfs:subClassOf* onto:Pattern .
+            ?variant a ?pattern .
+            ?variant onto:hasProposal ?proposal .
+            ?proposal onto:hasPaper ?paper .
+            ?paper onto:hasIdentifier ?identifier .
+            ?target onto:references ?identifier
+        } GROUP BY ?pattern 
+    `;
+
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            return parseResults(await response.json());
+        };
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
+    }
+}
+
+const getVariantsCitations = async () => {
+    let query = `
+        SELECT ?variant (COUNT(*) as ?citations)
+        WHERE {
+            ?variant a onto:Variant .
+            ?variant onto:hasProposal ?proposal .
+            ?proposal onto:hasPaper ?paper .
+            ?paper onto:hasIdentifier ?identifier .
+            ?target onto:references ?identifier
+        } GROUP BY ?variant 
+    `;
+
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            return parseResults(await response.json());
+        };
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
+    }
+}
+
+const getProposalCitations = async () => {
+    let query = `
+    SELECT ?proposal (COUNT(*) as ?citations)
+    WHERE {
+        ?proposal onto:hasPaper ?paper .
+        ?paper onto:hasIdentifier ?identifier .
+        ?target onto:references ?identifier
+    } GROUP BY ?proposal 
+    `;
+
+    try {
+        let response = await fetch( FUSEKI_URL, getOptions(PREFIXES + query) );
+        if (response.status === 200) {
+            return parseResults(await response.json());
+        };
+        return [];
+    } catch (e) {
+        console.error('Failed to fetch: ' + e);
+        return [];
+    }
+}
+
 export const getPatternsByProblem = async (filterProblems = {}) => {
     const queryTemplate = () => {
         return `
-            select distinct ?problem ?individual ?pattern ?pLabel ?iLabel ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors where {
-                    ?pattern rdfs:subClassOf* 
-                        [ 
-                        rdf:type owl:Restriction ;
-                        owl:onProperty onto:addressProblem ;
-                        owl:someValuesFrom ?problem
-                        ].
-                    FILTER (?problem IN (${Object.keys(filterProblems).join(',')}) ).
-                    ?pattern rdfs:subClassOf* onto:Pattern.
-                    ?individual a ?pattern.
-                    ?pattern rdfs:label ?pLabel.
-                    ?individual rdfs:label ?iLabel .
-                    ?individual onto:hasPaper ?paper .
-                    ?individual onto:ContextAndProblem ?context .
-                    ?individual onto:Solution ?solution.
-                    ?paper onto:Title ?title.
-                    ?paper onto:Identifier ?identifier.
-                    ?paper onto:IdentifierType ?identifiertype.
-                    ?paper onto:Authors ?authors
+            SELECT distinct ?problem ?variant ?proposal ?pattern ?variant_label ?pattern_label ?proposal_label ?paper ?context ?solution ?title ?identifier ?identifiertype ?authors 
+            WHERE {
+                ?pattern rdfs:subClassOf* 
+                    [ 
+                    rdf:type owl:Restriction ;
+                    owl:onProperty onto:addressProblem ;
+                    owl:someValuesFrom ?problem
+                    ].
+                FILTER (?problem IN (${Object.keys(filterProblems).join(',')}) ).
+                ?pattern rdfs:subClassOf* onto:Pattern.
+                ?proposal onto:hasVariant ?variant .
+                ?variant a ?pattern .
+                ?pattern rdfs:label ?pattern_label.
+                ?proposal rdfs:label ?proposal_label .
+                ?variant rdfs:label ?variant_label .
+                ?proposal onto:hasPaper ?paper .
+                ?proposal onto:ContextAndProblem ?context .
+                ?proposal onto:Solution ?solution.
+                ?paper onto:Title ?title.
+                ?paper onto:Identifier ?identifier.
+                ?paper onto:IdentifierType ?identifiertype.
+                ?paper onto:Authors ?authors
             }
         `
     }
@@ -305,7 +360,11 @@ export const getPatternsByProblem = async (filterProblems = {}) => {
             if (response.status === 200) {
                 const results = parseResults(await response.json());
                 const scored = addScoreToPatterns(results, filterProblems);
-                const mapped = scored.map(r => ({ ...parseIndividual(r), score: r.score }));
+                const citations = await getProposalCitations();
+                const citationsDict = {};
+
+                citations.forEach(citation => citationsDict[citation.proposal.value] = parseInt(citation.citations.value));
+                const mapped = scored.map(r => ({ ...parseProposal(r), score: r.score, citations: citationsDict[r.proposal.value] ? parseInt(citationsDict[r.proposal.value]) : 0 }));
                 return mapped;
             };
             return [];

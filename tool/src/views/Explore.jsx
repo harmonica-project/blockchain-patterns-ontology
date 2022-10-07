@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip, Pagination, TextField } from '@mui/material';
+import { Paper, Grid, Typography, Divider, List, ListItem, ListItemText, ListItemIcon, IconButton, Tooltip, Pagination, TextField, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import { makeStyles } from '@mui/styles';
 import ContentContainer from '../layouts/ContentContainer';
 import HealthCheck from '../components/HealthCheck';
-import { getPatterns, getLinkedPatterns, getClassTree } from '../libs/fuseki';
+import { getPatternKnowledge, getClassTree } from '../libs/fuseki';
 import ClassTabs from '../components/ClassTabs';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PatternModal from '../modals/PatternModal';
@@ -14,11 +14,20 @@ import {
     setInLocalstorage, 
     storePatternInLocalstorage 
 } from '../libs/localstorage';
-import {
-    parseToLabel
-} from '../libs/helpers';
 import PatternCard from '../components/PatternCard';
 import LoadingOverlay from '../components/LoadingOverlay';
+
+const colorRange = [
+    '#ec644f',
+    '#F0884E',
+    '#f3a64d',
+    '#E8BB41',
+    '#e1c73a',
+    '#C3CA37',
+    '#9ecd34',
+    '#79BD2F',
+    '#5baf2a'
+];
 
 const useStyles = makeStyles(() => ({
     section: {
@@ -60,33 +69,28 @@ export default function Explore({ setNbPatterns }) {
     const [classTree, setClassTree] = useState({});
     const [patterns, setPatterns] = useState([])
     const [selectorStates, setSelectorStates] = useState({});
-    const [modalStates, setModalStates] = useState({ "pattern": {}, open: false, selectedTab: 0 });
     const [open, setOpen] = useState(false);
+    const [orderPattern, setOrderPattern] = useState('citation-desc');
     const [selectedPatterns, setSelectedPatterns] = useState({});
+    const [filteredPatterns, setFilteredPatterns] = useState([]);
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState('');
-
+    const [modalStates, setModalStates] = useState({ 
+        "pattern": {},
+        open: false,
+        selectedTab: {
+            variant: 0,
+            proposal: -1
+        }
+    });
     const { enqueueSnackbar } = useSnackbar();
 
     // pagination interval
     const INTERVAL = 20;
-
-    const filterParents = (filterClasses) => {
-        let keyClasses = Object.keys(filterClasses);
     
-        for (let i in keyClasses) {
-            let key = keyClasses[i]
-            if (filterClasses[filterClasses[key]]) {
-                delete filterClasses[key];
-            }
-        }
-    
-        return filterClasses;
-    }
-
     useEffect(() => {
         setOpen(true);
-        getPatterns(filterParents({...selectorStates}))
+        getPatternKnowledge()
             .then((results) => {
                 setPatterns(results);
             })
@@ -99,8 +103,13 @@ export default function Explore({ setNbPatterns }) {
     }, []);
 
     useEffect(() => {
+        setFilteredPatterns(getFilteredPatterns());
+    }, [patterns]);
+
+    useEffect(() => {
         setPage(1);
-    }, [search, selectorStates]);
+        setFilteredPatterns(getFilteredPatterns());
+    }, [search, selectorStates, orderPattern]);
 
     useEffect(() => {
         setNbPatterns(Object.keys(selectedPatterns).length);
@@ -116,45 +125,40 @@ export default function Explore({ setNbPatterns }) {
     }, [])
 
     const handlePatternClick = async (pattern, selectedTab = 0) => {
-        for (let i in pattern.individuals) {
-            let linkedPatterns = await getLinkedPatterns(pattern.individuals[i].individual);
-            pattern.individuals[i] = {
-               ...pattern.individuals[i],
-               linkedPatterns
-            }
-        }
-
         setModalStates({
             open: true,
-            selectedTab,
+            selectedTab: {
+                variant: selectedTab,
+                proposal: -1
+            },
             pattern
         })
     }
 
-    const handleIndividualClick = (individual) => {
-        Object.keys(patterns).forEach(key => {
-            const pattern = patterns[key];
-            pattern.individuals.forEach((pIndividual, i) => {
-                if (individual.individual === pIndividual.individual) {
+    const handleVariantRelationClick = (clickedVariant) => {
+        Object.keys(patterns).forEach(pKey => {
+            const pattern = patterns[pKey];
+            Object.keys(pattern.variants).forEach((vKey, i) => {
+                if (vKey === clickedVariant.variant.value) {
                     handlePatternClick(pattern, i);
                 }
             }) 
         })
     };
 
-    const storeLocalPattern = (individual) => {
-        storePatternInLocalstorage(individual);
+    const storeLocalPattern = (proposal) => {
+        storePatternInLocalstorage(proposal);
 
         setSelectedPatterns({
             ...selectedPatterns,
-            [individual.individual]: individual
+            [proposal.proposal]: proposal
         })
         enqueueSnackbar("Pattern successfully added.", { variant: 'success' });
     };
 
-    const deleteLocalPattern = (individual) => {
+    const deleteLocalPattern = (proposal) => {
         let newSelectedPatterns = {...selectedPatterns};
-        delete newSelectedPatterns[individual.individual];
+        delete newSelectedPatterns[proposal.proposal];
         setSelectedPatterns(newSelectedPatterns);
         setInLocalstorage('patterns', newSelectedPatterns);
         enqueueSnackbar("Pattern successfully deleted.", { variant: 'success' });
@@ -162,8 +166,8 @@ export default function Explore({ setNbPatterns }) {
 
     const handlePatternAction = (action, individual) => {
         switch (action) {
-            case 'linkedPatternClick':
-                handleIndividualClick(individual);
+            case 'linkedVariantClick':
+                handleVariantRelationClick(individual);
                 break;
             case 'patternClick':
                 handlePatternClick(individual);
@@ -189,12 +193,12 @@ export default function Explore({ setNbPatterns }) {
         return Object.keys(selectors).map(key => selectors[key]);
     };
 
-    const selectorInIndividual = (selector, individual) => {
-        if (individual.classes.includes(selector)) return true;
+    const selectorInProposal = (selector, proposal) => {
+        if (proposal.classes.includes(selector)) return true;
         else {
             if (classTree[selector].childrens.length) {
                 for (let i in classTree[selector].childrens) {
-                    if (selectorInIndividual(classTree[selector].childrens[i], individual)) return true;
+                    if (selectorInProposal(classTree[selector].childrens[i], proposal)) return true;
                 }
 
                 return false;
@@ -202,60 +206,149 @@ export default function Explore({ setNbPatterns }) {
         }
     };
 
-    const shapeToPattern = (key) => {
-        let newIndividuals = JSON.parse(JSON.stringify(patterns[key].individuals)) ;
-
-        patterns[key].individuals.forEach((individual, i) => {
-            selectorStatesToArray().forEach(selector => {
-                if (!selectorInIndividual(selector, individual)) newIndividuals[i].discarded = true;
-            })
+    const filterProposals = (key) => {
+        let newPattern = structuredClone(patterns[key]);
+        Object.keys(patterns[key].variants).forEach(variant => {
+            Object.keys(patterns[key].variants[variant].proposals).forEach(proposal => {
+                selectorStatesToArray().forEach(selector => {
+                    if (!selectorInProposal(selector, patterns[key].variants[variant].proposals[proposal])) {
+                        delete newPattern.variants[variant].proposals[proposal];
+                    }
+                });
+            });
+            
+            if (!Object.keys(newPattern.variants[variant].proposals).length) {
+                delete newPattern.variants[variant];
+            }
         });
 
-        return {
-            ...patterns[key],
-            individuals: newIndividuals.filter(individual => !individual.discarded)
-        };
+        return Object.keys(newPattern.variants).length ? [newPattern] : [];
     };
 
+    const sortPatterns = (a, b) => {
+        switch (orderPattern) {
+            case 'alphabetical-asc':
+                return a.label < b.label ? -1 : 1;
+
+            case 'alphabetical-desc':
+                return a.label > b.label ? -1 : 1;
+                
+            case 'citation-asc':
+                if (a.citations < b.citations) return -1;
+                if (a.citations > b.citations) return 1;
+                return 0;
+
+            case 'citation-desc':
+                if (a.citations > b.citations) return -1;
+                if (a.citations < b.citations) return 1;
+                return 0;
+
+            default:
+                if (a.citations > b.citations) return -1;
+                if (a.citations < b.citations) return 1;
+                return 0;
+        }
+    }
+
     const getFilteredPatterns = () => {
-        return Object.keys({...patterns})
-            .filter(key => patterns[key].label.toLowerCase().includes(search.toLowerCase()))
-            .map(shapeToPattern)
-            .filter(pattern => pattern.individuals.length)
+        if (patterns) {
+            return Object.keys(patterns)
+                .filter(key => patterns[key].label.toLowerCase().includes(search.toLowerCase()))
+                .flatMap(filterProposals)
+                .sort(sortPatterns)
+        }
     };
+
+    const getPatternStats = (pattern) => {
+        const nbVariants = Object.keys(pattern.variants).length;
+        let nbProposals = 0;
+
+        Object.keys(pattern.variants).forEach(key => {
+            nbProposals += Object.keys(pattern.variants[key].proposals).length;
+        });
+
+        if (nbVariants) {
+            if (nbProposals) {
+                return `${nbVariants} variant${nbVariants > 1 ? 's' : ''} / ${nbProposals} proposal${nbProposals > 1 ? 's' : ''}`;
+            }
+
+            return `${nbVariants} variant${nbVariants > 1 ? 's' : ''} / No proposals.`;
+        }
+
+        return `No variants and proposals.`;
+    }
 
     const displayPatterns = () => {
         if (Object.keys(patterns).length) {
             return (
-                <Grid container className={classes.patternSpacing}>
-                    <TextField
-                        id="searchbar-textfield"
-                        label="Search a specific pattern ..."
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        placeholder="Type the pattern name"
-                        fullWidth
-                    />
-                    <br/>
-                    {getFilteredPatterns()
-                        .slice((page - 1) * INTERVAL, page * INTERVAL)
-                        .map(pattern => (
-                            <PatternCard 
-                                pattern={pattern} 
-                                handlePatternAction={handlePatternAction}
-                                cardSize={3}
-                                key={pattern.pattern}
-                                disableChips={true}
-                                patternSubtext={[{
-                                    text: parseToLabel(`${pattern.individuals.length} proposal${pattern.individuals.length > 1 ? 's' : ''}`),
-                                    variant: 'body2'
-                                }]}
-                            />
-                    ))}
+                <Grid container className={classes.patternSpacing} spacing={1}>
+                    <Grid item xs={9}>
+                        <TextField
+                            id="searchbar-textfield"
+                            label="Search a specific pattern ..."
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            placeholder="Type the pattern name"
+                            fullWidth
+                        />
+                    </Grid>
+                    <Grid item xs={3} sx={{ textAlign: 'center' }}>
+                        <FormControl variant="standard" sx={{ width: '90%'}} >
+                            <InputLabel id="order-select-label">Order by</InputLabel>
+                                <Select
+                                    labelId="order-select-label"
+                                    id="order-select"
+                                    value={orderPattern}
+                                    onChange={(e) => {
+                                        console.log(e.target.value)
+                                        setOrderPattern(e.target.value);
+                                    }}
+                                    label="Order by"
+                                >
+                                <MenuItem value={'alphabetical-asc'}>A-Z (asc.)</MenuItem>
+                                <MenuItem value={'alphabetical-desc'}>A-Z (asc.)</MenuItem>
+                                <MenuItem value={'citation-asc'}>Nb. of citations (asc.)</MenuItem>
+                                <MenuItem value={'citation-desc'}>Nb. of citations (desc.)</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Grid container>
+                            {filteredPatterns
+                                .slice((page - 1) * INTERVAL, page * INTERVAL)
+                                .map(pattern => (
+                                    <PatternCard 
+                                        pattern={pattern} 
+                                        handlePatternAction={handlePatternAction}
+                                        cardSize={3}
+                                        key={pattern.pattern}
+                                        disableChips={true}
+                                        color={getPatternColor(pattern.citations)}
+                                        patternSubtext={[
+                                            {
+                                                text: pattern.citations ? `Cited ${pattern.citations} time${pattern.citations > 1 ? 's' : ''}` : 'Not cited',
+                                                variant: 'overline'
+                                            },
+                                            {
+                                                text: getPatternStats(pattern),
+                                                variant: 'body2'
+                                            }
+                                        ]}
+                                    />
+                            ))}
+                        </Grid>
+                    </Grid>
                 </Grid>
             )
         } else return <div/>;
     };
+
+    // logarithmic display of color citations (to avoid having all cards in red if one paper is cited a lot!)
+    const getPatternColor = (citations) => {
+        const maxCitations = Math.max(...Object.keys(patterns).map(key => patterns[key].citations));
+        const ratio = (colorRange.length - 1) / Math.log(maxCitations);
+        return citations ? colorRange[parseInt(Math.log(citations) * ratio)] : colorRange[0];
+    }
 
     const displaySelectedClasses = () => {
         if (Object.keys(selectorStates).length === 0) {
@@ -354,12 +447,12 @@ export default function Explore({ setNbPatterns }) {
                             {
                                 open 
                                 ? "Loading patterns ..."
-                                : (getFilteredPatterns().length ? `${getFilteredPatterns().length}/${Object.keys(patterns).length}` : "No") + " corresponding patterns for this selection"
+                                : (filteredPatterns.length ? `${filteredPatterns.length}/${Object.keys(patterns).length}` : "No") + " corresponding patterns for this selection"
                             }
                         </Typography>
                         {displayPatterns()}
                         <Pagination 
-                            count={Math.ceil(getFilteredPatterns().length / INTERVAL)} 
+                            count={Math.ceil(filteredPatterns.length / INTERVAL)} 
                             size="large"
                             onChange={handlePageChange}
                             style={{display: (Object.keys(patterns).length ? 'block' : 'none')}}

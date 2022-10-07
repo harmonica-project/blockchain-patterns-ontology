@@ -47,7 +47,7 @@ export default function ClassTabs({classTree, handleChangeSelect, selectorStates
         // filtering unwanted filters
         return classTree['owl:Thing']
           .childrens
-          .filter(key => !['onto:Problem', 'onto:Paper', 'onto:Proposal'].includes(key))
+          .filter(key => !['onto:Problem', 'onto:Paper', 'onto:Proposal', 'onto:Variant', 'onto:Identifier'].includes(key))
       } else {
         return [];
       }
