@@ -838,3 +838,10 @@ rdfs:label "Contract Observer" .
 
 rdfs:label "Hash Secret" .
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#NicolasPatternV
+:NicolasPatternV rdf:type owl:NamedIndividual ,
+                   :NicolasPattern ,
+                   :Variant ;
+
+rdfs:label "Nicolas Pattern" .
+

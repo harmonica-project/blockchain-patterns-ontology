@@ -55,15 +55,15 @@ def parse_to_relation(name):
 
 def get_proposal_URI(proposal, papers):
   paper = get_paper_from_id(papers, proposal['Paper'])
-  return parse_to_URI(proposal['Name']) + get_first_author(paper['author']) + paper['year'] + get_first_word_title(paper['Title'])
+  return parse_to_URI(proposal['Name']) + get_paper_URI(paper)
 
 def get_proposal_name(proposal, papers):
   paper = get_paper_from_id(papers, proposal['Paper'])
-  return "{} ({}, {})".format(proposal['Name'], get_first_author(paper['author']), paper['year'])
+  return "{} (Paper {})".format(proposal['Name'], paper['ID'])
 
 
 def get_paper_URI(paper):
-  return get_first_author(paper['author']) + paper['year'] + get_first_word_title(paper['Title'])
+  return 'Paper' + paper['ID']
   
 # generate the links between proposals. 5 different links exists, they are listed in the array below for easy detection in the dict
 def get_links_between_proposals(proposals, example_mapping, papers):
@@ -229,10 +229,7 @@ def generate_papers(papers_list):
   papers = ""
   for paper in papers_list:
     papers += Template(paper_template).substitute(
-      author=get_first_author(paper['author']), 
-      year=paper['year'], 
       title=paper['Title'],
-      title_word=get_first_word_title(paper['Title']),
       properties=get_paper_properties(paper), 
       owner="nicolas",
       id=paper['ID']

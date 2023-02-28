@@ -682,3 +682,9 @@ rdfs:label "Contract Observer"@en .
 rdfs:subClassOf :ContractAccessControlPattern ;
 rdfs:label "Hash Secret"@en .
 
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#NicolasPattern
+:NicolasPattern rdf:type owl:Class ;
+
+rdfs:subClassOf :DataExchangePattern ;
+rdfs:label "Nicolas Pattern"@en .
+

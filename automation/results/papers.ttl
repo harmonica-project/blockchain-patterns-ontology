@@ -2,7 +2,7 @@
 :Paper2 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
-:Authors "MÃ¼ller, Marcel and Ostern, Nadine and Rosemann, Michael"^^rdfs:Literal ;
+:Authors "Müller, Marcel and Ostern, Nadine and Rosemann, Michael"^^rdfs:Literal ;
 :Year "2020"^^rdfs:Literal ;
 :Title "Silver Bullet for All Trust Issues? Blockchain-Based Trust Patterns for Collaborative Business Processes"^^rdfs:Literal ;
 :Identifier "10.1007/978-3-030-58779-6_1"^^rdfs:Literal ;
@@ -192,7 +192,7 @@ rdfs:label "A typology of blockchain recordkeeping solutions and some reflection
 :Paper27 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
-:Authors "WÃ¶hrer, Maximilian and Zdun, Uwe"^^rdfs:Literal ;
+:Authors "Wöhrer, Maximilian and Zdun, Uwe"^^rdfs:Literal ;
 :Year "2018"^^rdfs:Literal ;
 :Title "Design Patterns for Smart Contracts in the Ethereum Ecosystem"^^rdfs:Literal ;
 :Identifier "10.1109/Cybermatics_2018.2018.00255"^^rdfs:Literal ;
@@ -276,7 +276,7 @@ rdfs:label "Chapter One - Blockchain Technology Use Cases in Healthcare" .
 :Paper39 rdf:type owl:NamedIndividual ,
                           :Paper ;
 
-:Authors "MÃ¼hlberger, Roman and Bachhofner, Stefan and Ferrer, Eduardo CastellÃ³ and Ciccio, Claudio Di and Weber, Ingo and WÃ¶hrer, Maximilian and Zdun, Uwe"^^rdfs:Literal ;
+:Authors "Mühlberger, Roman and Bachhofner, Stefan and Ferrer, Eduardo Castelló and Ciccio, Claudio Di and Weber, Ingo and Wöhrer, Maximilian and Zdun, Uwe"^^rdfs:Literal ;
 :Year "2020"^^rdfs:Literal ;
 :Title "Foundational Oracle Patterns: Connecting Blockchain to the Off-Chain World"^^rdfs:Literal ;
 :Identifier "10.1007/978-3-030-58779-6_3"^^rdfs:Literal ;
@@ -285,4 +285,18 @@ rdfs:label "Chapter One - Blockchain Technology Use Cases in Healthcare" .
 
 :hasIdentifier :Identifier39 ;
 rdfs:label "Foundational Oracle Patterns: Connecting Blockchain to the Off-Chain World" .
+
+###  http://www.semanticweb.org/nicolas/ontologies/2021/8/patterns#Paper40
+:Paper40 rdf:type owl:NamedIndividual ,
+                          :Paper ;
+
+:Authors "Nicolas & Nicolas"^^rdfs:Literal ;
+:Year "2023"^^rdfs:Literal ;
+:Title "Nicolas’s paper"^^rdfs:Literal ;
+:Identifier "10.1109/ACCESS.2023.3235838"^^rdfs:Literal ;
+:IdentifierType "DOI"^^rdfs:Literal ;
+:Journal "IEEE Access"^^rdfs:Literal ;
+
+:hasIdentifier :Identifier40 ;
+rdfs:label "Nicolas’s paper" .
 
